@@ -1,0 +1,935 @@
+[
+  {
+    "id": 1039,
+    "type": "article",
+    "title": "OpenAI and Malta partner to bring ChatGPT Plus to all citizens",
+    "summary_en": "OpenAI and Malta partner to expand AI access, offering ChatGPT Plus and training to help citizens build practical AI skills and use AI responsibly.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/malta-chatgpt-plus-partnership",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1040,
+    "type": "article",
+    "title": "How business operations teams use Codex",
+    "summary_en": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
+    "summary_zh": "",
+    "url": "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1041,
+    "type": "article",
+    "title": "Databricks brings GPT-5.5 to enterprise agent workflows",
+    "summary_en": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/databricks",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1042,
+    "type": "article",
+    "title": "How data science teams use Codex",
+    "summary_en": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
+    "summary_zh": "",
+    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1043,
+    "type": "article",
+    "title": "A new personal finance experience in ChatGPT",
+    "summary_en": "Preview a new personal finance experience in ChatGPT for Pro users in the U.S. Securely connect your financial accounts and get AI-powered insights and guidance grounded in your financial context, goals, and priorities.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/personal-finance-chatgpt",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1044,
+    "type": "article",
+    "title": "How sales teams use Codex",
+    "summary_en": "See how sales teams can use Codex to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
+    "summary_zh": "",
+    "url": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1045,
+    "type": "article",
+    "title": "Sea's View on the Future of Agentic Software Development with Codex",
+    "summary_en": "Sea Limited's CPO explains why the company is deploying Codex across engineering teams to accelerate AI-native software development in Asia.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/sea-david-chen",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1046,
+    "type": "article",
+    "title": "Work with Codex from anywhere",
+    "summary_en": "Use Codex anywhere with the ChatGPT mobile app. Monitor, steer, and approve coding tasks in real time across devices and remote environments.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/work-with-codex-from-anywhere",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1047,
+    "type": "article",
+    "title": "Helping ChatGPT better recognize context in sensitive conversations",
+    "summary_en": "Learn how new ChatGPT safety updates improve context awareness in sensitive conversations, helping detect risk over time and respond more safely.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/chatgpt-recognize-context-in-sensitive-conversations",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1048,
+    "type": "article",
+    "title": "Building a safe, effective sandbox to enable Codex on Windows",
+    "summary_en": "Learn how OpenAI built a secure sandbox for Codex on Windows, enabling safe, efficient coding agents with controlled file access and network restrictions.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/building-codex-windows-sandbox",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1049,
+    "type": "article",
+    "title": "Our response to the TanStack npm supply chain attack",
+    "summary_en": "OpenAI details its response to the TanStack “Mini Shai-Hulud” supply chain attack, outlines protections taken to secure systems and signing certificates, and explains why macOS users must update OpenAI apps by June 12, 2026. Learn what happened, what was affected, and how OpenAI is strengthening defenses against evolving software supply chain threats.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1050,
+    "type": "article",
+    "title": "How finance teams use Codex",
+    "summary_en": "See how finance teams can use Codex to build MBRs, reporting packs, variance bridges, model checks, and planning scenarios from real work inputs.",
+    "summary_zh": "",
+    "url": "https://openai.com/academy/how-finance-teams-use-codex",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1051,
+    "type": "article",
+    "title": "AutoScout24 scales engineering with AI-powered workflows",
+    "summary_en": "Learn how AutoScout24 Group uses Codex and ChatGPT to speed development cycles, improve code quality, and expand AI adoption.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/autoscout24",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1052,
+    "type": "article",
+    "title": "How NVIDIA engineers and researchers build with Codex",
+    "summary_en": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/nvidia",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1053,
+    "type": "article",
+    "title": "What Parameter Golf taught us about AI-assisted research",
+    "summary_en": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/what-parameter-golf-taught-us",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1054,
+    "type": "article",
+    "title": "How ChatGPT adoption broadened in early 2026",
+    "summary_en": "ChatGPT adoption surged in Q1 2026, with fastest growth among users over 35 and more balanced gender usage, signaling broader mainstream AI adoption.",
+    "summary_zh": "",
+    "url": "https://openai.com/signals/research/2026q1-update",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1055,
+    "type": "article",
+    "title": "OpenAI Campus Network: Student club interest form",
+    "summary_en": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/openai-campus-network-student-club-interest-form",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1056,
+    "type": "article",
+    "title": "How enterprises are scaling AI",
+    "summary_en": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
+    "summary_zh": "",
+    "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1057,
+    "type": "article",
+    "title": "OpenAI launches DeployCo to help businesses build around intelligence",
+    "summary_en": "OpenAI launches DeployCo, a new enterprise deployment company built to help organizations bring frontier AI into production and turn it into measurable business impact.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/openai-launches-the-deployment-company",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1058,
+    "type": "article",
+    "title": "Running Codex safely at OpenAI",
+    "summary_en": "How OpenAI runs Codex securely with sandboxing, approvals, network policies, and agent-native telemetry to support safe and compliant coding agent adoption.",
+    "summary_zh": "",
+    "url": "https://openai.com/index/running-codex-safely",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:25"
+  },
+  {
+    "id": 1019,
+    "type": "article",
+    "title": "Reimagining the mouse pointer for the AI era",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://deepmind.google/blog/ai-pointer/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1020,
+    "type": "article",
+    "title": "AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://deepmind.google/blog/alphaevolve-impact/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1021,
+    "type": "article",
+    "title": "Enabling a new model for healthcare with AI co-clinician",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://deepmind.google/blog/ai-co-clinician/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1022,
+    "type": "article",
+    "title": "Announcing our partnership with the Republic of Korea",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1023,
+    "type": "article",
+    "title": "Decoupled DiLoCo: A new frontier for resilient, distributed AI training",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://deepmind.google/blog/decoupled-diloco/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1024,
+    "type": "article",
+    "title": "Partnering with industry leaders to accelerate AI transformation",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://deepmind.google/blog/partnering-with-industry-leaders-to-accelerate-ai-transformation/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1025,
+    "type": "article",
+    "title": "Gemini 3.1 Flash TTS: the next generation of expressive AI speech",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1026,
+    "type": "article",
+    "title": "Gemini Robotics-ER 1.6: Powering real-world robotics tasks through enhanced embodied reasoning",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://deepmind.google/blog/gemini-robotics-er-1-6/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1027,
+    "type": "article",
+    "title": "Gemma 4: Byte for byte, the most capable open models",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1028,
+    "type": "article",
+    "title": "Gemini 3.1 Flash Live: Making audio AI more natural and reliable",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1029,
+    "type": "article",
+    "title": "Protecting people from harmful manipulation",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://deepmind.google/blog/protecting-people-from-harmful-manipulation/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1030,
+    "type": "article",
+    "title": "Lyria 3 Pro: Create longer tracks in more",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1031,
+    "type": "article",
+    "title": "Measuring progress toward AGI: A cognitive framework",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1032,
+    "type": "article",
+    "title": "From games to biology and beyond: 10 years of AlphaGo’s impact",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://deepmind.google/blog/10-years-of-alphago/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1033,
+    "type": "article",
+    "title": "Gemini 3.1 Flash-Lite: Built for intelligence at scale",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1034,
+    "type": "article",
+    "title": "Nano Banana 2: Combining Pro capabilities with lightning-fast speed",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1035,
+    "type": "article",
+    "title": "Gemini 3.1 Pro: A smarter model for your most complex tasks",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1036,
+    "type": "article",
+    "title": "A new way to express yourself: Gemini can now create music",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/lyria-3",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1037,
+    "type": "article",
+    "title": "Accelerating discovery in India through AI-powered science and education",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 1038,
+    "type": "article",
+    "title": "Gemini 3 Deep Think: Advancing science, research and engineering",
+    "summary_en": "",
+    "summary_zh": "",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:23"
+  },
+  {
+    "id": 999,
+    "type": "paper",
+    "title": "Second-Order Multi-Level Variance Correction for Modality Competition in Multimodal Models",
+    "summary_en": "Autoregressive next-token training offers a unified formulation for image generation and text understanding, but it also creates strong modality competition that destabilizes optimization and limits large-batch scaling. We show that first-order optimizers such as AdamW are vulnerable to cross-modality gradient heterogeneity, while second-order preconditioning, particularly SOAP, provides a more stable basis for multimodal alignment. Building on this insight, we propose \\emph{ML-FOP-SOAP}, a second-order optimization framework with Multi-Level Variance Correction. Our Fisher-Orthogonal Projection suppresses variance-induced modality conflicts, reducing the trade-off between visual generation and textual understanding. To make this practical under large gradient accumulation, we introduce a hierarchical folding strategy that captures fine-grained variance with low micro-step overhead. Experiments on Janus and Emu3 show consistent gains across both modalities and stable training at batch size 8192. Compared with AdamW, our method improves sample efficiency by up to $1.4\\times$ and accelerates wall-clock training by up to $1.5\\times$, offering a robust optimizer for scaling multimodal foundation models.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16165",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1000,
+    "type": "paper",
+    "title": "Learn Where Outcomes Diverge: Efficient VLA RL via Probabilistic Chunk Masking",
+    "summary_en": "Reinforcement learning (RL) allows vision-language-action (VLA) policies to generalize beyond their training distribution by optimizing directly for task success, but post-training is computationally expensive. A natural response has been to speed rollout collection through faster simulators and world models. In GRPO-based VLA RL, we find that the dominant cost lies elsewhere: gradient computation accounts for approximately 78% of wall-clock time per step in our runs, while rollout collection accounts for only 21%. Gradient cost dominates because much of this computation is spent on phases that contribute little to learning. GRPO's learning signal is driven by advantage variance: only phases where successful and failed rollouts diverge produce learning signal. However, GRPO assigns the same advantage to every chunk in a rollout. As a result, actor-update compute is spent uniformly across the trajectory, including phases the policy already handles after pre-training and supervised fine-tuning. This paper presents Probabilistic Chunk Masking (PCM), a drop-in modification to GRPO that allocates gradient computation to a small, probabilistically selected subset of chunks per trajectory. PCM scores semantic phases using success-failure action variance, a rollout-derived proxy for per-phase gradient variance, and samples a fixed chunk budget with online-updated phase-level keep probabilities. We formalize per-phase gradient variance as the quantity determines where gradient computation is useful and show that success-failure action variance provides a measurable proxy for it. PCM requires no reward model or learned critic. On three LIBERO benchmarks, PCM matches the final success rate of standard GRPO while achieving 2.38 times wall-clock speedup, 4.8 times faster gradient updates, and 60% lower peak activation memory, while backpropagating through fewer than 20% of trajectory chunks.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16154",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1001,
+    "type": "paper",
+    "title": "Look Before You Leap: Autonomous Exploration for LLM Agents",
+    "summary_en": "Large language model based agents often fail in unfamiliar environments due to premature exploitation: a tendency to act on prior knowledge before acquiring sufficient environment-specific information. We identify autonomous exploration as a critical yet underexplored capability for building adaptive agents. To formalize and quantify this capability, we introduce Exploration Checkpoint Coverage, a verifiable metric that measures how broadly an agent discovers key states, objects, and affordances. Our systematic evaluation reveals that agents trained with standard task-oriented reinforcement learning consistently exhibit narrow and repetitive behaviors that impede downstream performance. To address this limitation, we develop a training strategy that interleaves task-execution rollouts and exploration rollouts, with each type of rollout optimized by its corresponding verifiable reward. Building on this training strategy, we propose the Explore-then-Act paradigm, which decouples information-gathering from task execution: agents first utilize an interaction budget to acquire grounded environmental knowledge, then leverage it for task resolution. Our results demonstrate that learning to systematically explore is imperative for building generalizable and real-world-ready agents.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16143",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1002,
+    "type": "paper",
+    "title": "SGR: A Stepwise Reasoning Framework for LLMs with External Subgraph Generation",
+    "summary_en": "Large Language Models (LLMs) have demonstrated strong capabilities across diverse NLP applications, such as translation, text generation, and question answering. Nevertheless, they remain limited in complex settings that demand deep reasoning and logical inference. Since these models are trained on large-scale text corpora, their generation process may still introduce irrelevant, noisy, or factually inconsistent content. To mitigate this problem, we introduce SGR, a stepwise framework that enhances LLM reasoning through external subgraph generation. SGR builds query-specific subgraphs from external knowledge bases and uses their semantic structure to support multi-step inference. By grounding intermediate reasoning steps in structured external knowledge, the framework helps the model concentrate on relevant entities, relations, and supporting evidence. In particular, SGR first constructs a subgraph tailored to the input question. It then guides the model to reason progressively over the generated structure and combines multiple reasoning trajectories to obtain the final prediction. Experimental results across several benchmark datasets show that SGR achieves consistent improvements over competitive baselines, highlighting its value for improving both reasoning accuracy and factual reliability.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16117",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1003,
+    "type": "paper",
+    "title": "DebiasRAG: A Tuning-Free Path to Fair Generation in Large Language Models through Retrieval-Augmented Generation",
+    "summary_en": "Large language models (LLMs) have achieved unprecedented success due to their exceptional generative capabilities. However, because they depend on knowledge encapsulated from training corpora, they may produce hallucinations, stereotypes, and socially biased content. In particular, LLMs are prone to prejudiced responses involving race, gender, and age, which are collectively referred to as social biases. Prior studies have used fine-tuning and prompt engineering to mitigate such biases in LLMs, but these methods require additional training resources or domain knowledge to design the framework. Moreover, they may degrade the original capabilities of LLMs and often overlook the need for dynamic debiasing contexts for fairer inference. In this paper, we propose DebiasRAG, a novel tuning-free and dynamic query-specific debiasing framework based on retrieval-augmented generation (RAG). DebiasRAG improves fairness while preserving the intrinsic properties of LLMs, such as representation ability. DebiasRAG consists of three stages: (1) query-specific debiasing candidate generation; (2) context candidate pool construction; and (3) gradient-updated debiasing-guided context piece reranking. First, DebiasRAG leverages self-diagnosed bias contexts relevant to the query through regular retrieval, where the bias contexts are prepared offline by the DebiasRAG provider. Given the query-specific bias contexts, DebiasRAG reversely produces debiasing contexts, which are provided as additional fairness constraints for LLM outputs. Second, a regular RAG retrieval process produces query-related contexts from the regular RAG document database, such as a chunked Wikipedia dataset.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16113",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1004,
+    "type": "paper",
+    "title": "Can Large Language Models Imitate Human Speech for Clinical Assessment? LLM-Driven Data Augmentation for Cognitive Score Prediction",
+    "summary_en": "Accurate assessment of cognitive decline from spontaneous speech remains challenging due to limited dataset size and class imbalance. In this work, we propose a large language model (LLM)-driven data augmentation framework to improve the prediction of cognitive scores from speech. Experiments are conducted on a Japanese corpus in which each participant provides both a spontaneous oral narrative and a written response to the same clinical prompt. The written responses serve as semantic anchors to generate multiple oral-like monologues in different styles using GPT-5. We then predict Hasegawa Dementia Scale scores, a widely used cognitive screening tool in Japan, using a Partial Least Squares regression model trained on Sentence-BERT speech embeddings. We investigate two augmentation strategies: random class-balanced selection, which yields moderate but unstable improvements, and similarity-guided class-balanced selection. The latter prioritizes semantically close synthetic samples, leading to more consistent improvements and substantially reducing prediction error for minority low-score participants while maintaining performance for the majority group. Overall, our findings demonstrate the potential of semantically guided LLM-driven augmentation as a principled approach for addressing class imbalance and improving data efficiency in clinical speech analysis.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16077",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1005,
+    "type": "paper",
+    "title": "ITGPT: Generative Pretraining on Irregular Timeseries",
+    "summary_en": "Timeseries regression models often struggle to leverage large volumes of labeled multimodal data, particularly when the data are irregularly sampled or contain missing values. This is common in domains like healthcare and predictive maintenance, where data are collected from unreliable sources, and labeling requires expert knowledge or costly equipments. Transformer-based large language models have proven effective on structured data such as text through self-supervised learning (SSL) and generative pretraining (GPT) frameworks. However, such models lack the flexibility to efficiently process irregularly sampled multimodal timeseries data. In this paper, we introduce ITGPT, an attention-based architecture designed for handling multimodal, irregularly sampled timeseries by allowing training with both SSL losses and GPT-like objectives. We evaluate its performance on a healthcare task with the TIHM dataset, and a predictive maintenance task with the CompX dataset. Our results demonstrate that ITGPT achieves state-of-the-art performance without requiring resampling, feature fusion or explicit data imputation. Furthermore, when labels are scarce, ITGPT effectively leverages unlabeled data through SSL and GPT training, outperforming the purely supervised approach. This represents an important step towards efficiently using large and unstructured timeseries datasets for practical inference tasks.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16069",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1006,
+    "type": "paper",
+    "title": "Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law",
+    "summary_en": "Recent advances in large language models (LLMs) have significantly enhanced automated legal reasoning. Yet, it remains unclear whether their performance reflects genuine legal reasoning ability or artifacts of data contamination. We present a comprehensive empirical study of tax law reasoning approaches and implement a contamination detection protocol to rigorously assess LLM reliability. We show that performance can be inflated by contamination. Building on this analysis, we conduct a systematic evaluation, comparing monolithic LLMs with hybrid systems that translate statutory text into formal representations and delegate inference to symbolic solvers. We build a novel test suite designed to probe generalization to unseen documents via case and rule variations. Our findings indicate that legal reasoning is inherently compositional and that neuro-symbolic frameworks offer a more reliable and robust foundation for legal AI, as well as improved generalization to unobserved situations.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16052",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1007,
+    "type": "paper",
+    "title": "Mind Dreamer: Untethering Imagination via Active Latent Intervention on Latent Manifolds",
+    "summary_en": "Model-Based Reinforcement Learning (MBRL) leverages latent imagination for sample efficiency, yet remains constrained by Historical Tethering: imagination is typically initialized from observed states. This creates a learning asymmetry, where the world model's manifold discovery outpaces the policy's sparse-reward optimization. We propose Mind Dreamer (MD), a framework that operationalizes Active Latent Intervention (ALI) to transcend Markovian continuity. MD reformulates discovery as the minimization of a global Relay Manifold Expected Free Energy (R-EFE); by sampling initial states from a learned generator $s_0 \\sim p_{gen}(\\cdot)$ rather than the historical buffer, MD utilizes an adversarial generator to synthesize non-continuous latent jumps to epistemic blind spots that are physically plausible yet cognitively challenging. To resolve the credit assignment paradox across these spatial ruptures, we derive the Relay Value Function (RVF) and Relay Uncertainty Function (RUF). These potentials treat synthesized anchors as counterfactual intermediary states, propagating pragmatic and epistemic value through a principled Bellman-style formulation. Notably, we prove that uncertainty propagation across discontinuities necessitates a quadratic discount $γ^2$, establishing a formal epistemic horizon. Theoretically, MD approximates a variance-minimizing importance sampler that expands the manifold's spectral gap, reducing the hitting time to critical bottleneck states. Empirically, MD achieves a 1.67$\\times$ average speedup over DreamerV3 on DeepMind Control Suite, reaching 8.8$\\times$ in sparse-reward tasks.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16030",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1008,
+    "type": "paper",
+    "title": "From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation",
+    "summary_en": "Compositional speech-to-speech translation (S2ST) systems built upon speech large language models (SpeechLLMs) have recently shown promising performance. However, existing S2ST systems often either neglect source-language information or encode it through a language-as-label paradigm, representing each source language as an independent flat embedding. Such a design overlooks systematic linguistic structure shared across languages, which may limit data-efficient multilingual adaptation when supervised S2ST data are scarce. To address this issue, we propose S2ST-Omni 2, a many-to-one compositional S2ST framework that systematically reformulates multilingual language conditioning from flat language labels to structured typological priors. Specifically, S2ST-Omni 2 revisits language conditioning at three levels: typology-informed hierarchical language encoding for structured source-language representation, dynamically-gated language-aware Dual-CTC for content-adaptive acoustic modulation, and typology-aware LLM prompting for decoder-side linguistic guidance. Experiments on CVSS-C show that S2ST-Omni 2 achieves superior average performance among representative S2ST approaches across BLEU, COMET, ASR-BLEU, and BLASER 2.0 under the adopted evaluation protocol. Ablation studies indicate that the proposed representation-level, acoustic-level, and decoding-level strategies provide complementary benefits. Moreover, controlled data-budget analyses and a Japanese-to-English evaluation using only approximately 3 hours of supervised training data suggest that explicit typological priors provide useful inductive biases for data-efficient multilingual S2ST.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16026",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1009,
+    "type": "paper",
+    "title": "Adaptive Outer-Loop Control of Quadrotors via Reinforcement Learning",
+    "summary_en": "Deep Reinforcement Learning (DRL) for quadrotor flight control typically relies on Domain Randomization (DR) for sim-to-real transfer, resulting in overly conservative policies that struggle with dynamic disturbances. To overcome this, we propose a novel adaptive control architecture that actively perceives and reacts to instantaneous perturbations. First, we train an optimal outer-loop policy, then replace its reliance on ground-truth disturbance data with a Residual Dynamics Predictor (RDP). The RDP estimates the external forces and moments acting on the aircraft in flight online using only the history of states and control actions. For seamless hardware transfer, we introduce a data-efficient linear calibration bridge and an online thrust correction mechanism that align the simulated latent space with reality using mere seconds of flight data. Real-world validations on a Crazyflie micro-quadrotor demonstrate that our adaptive controller significantly outperforms baselines, maintaining precise trajectory tracking under severe uncertainties including mass variations, asymmetric payloads, and dynamic slung loads",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16015",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1010,
+    "type": "paper",
+    "title": "Quantum Futures Interactive: A Live Demonstration of Post-Quantum Blockchain Security, Infrastructure Tradeoffs, and Sustainable Distributed Trust",
+    "summary_en": "Advances in quantum computing introduce long-term security challenges for widely deployed public-key cryptographic systems used across blockchain platforms and decentralized applications. Although post-quantum cryptography (PQC) standards are emerging, understanding quantum risk remains fragmented across research, engineering, governance, and investment communities. This demo presents Quantum Futures Interactive, a live interdisciplinary demonstration platform combining educational visualization, participatory interaction, and cryptographic artifact generation to illustrate the transition from classical to quantum-resilient blockchain systems. Participants engage in a structured interaction flow including quantum threat education, sentiment capture, technology prioritization, infrastructure tradeoff exploration, and generation of post-quantum cryptographic outputs. The system integrates distributed trust concepts, sustainability-aware infrastructure considerations, and responsible innovation within an interactive decision framework. The demonstration supports interdisciplinary dialogue on blockchain resilience while aligning with United Nations Sustainable Development Goals (SDGs).",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.15991",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1011,
+    "type": "paper",
+    "title": "Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective",
+    "summary_en": "Production machine translation relies overwhelmingly on encoder-decoder Seq2Seq models, yet reinforcement learning approaches to MT fine-tuning have largely targeted decoder-only LLMs at $\\geq$7B parameters, with limited systematic study of encoder-decoder architectures. We apply Group Relative Policy Optimization to NLLB-200 (600M and 1.3B) using a hybrid reference-free reward (LaBSE and COMET-Kiwi) that requires no parallel data at fine-tuning time, evaluating across 13 typologically diverse languages. GRPO yields consistent improvements on all 13 languages, up to $+$5.03 chrF++ for Traditional Chinese, and, without any target-language data, competes with 3-epoch supervised fine-tuning on morphologically complex languages . We identify a consistent empirical pattern in which gains are largest where baseline performance is weakest and reward discriminability is highest, making this approach most effective precisely where parallel data is scarcest, and replicate this pattern across English and Spanish source languages.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.15976",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1012,
+    "type": "paper",
+    "title": "PAGER: Bridging the Semantic-Execution Gap in Point-Precise Geometric GUI Control",
+    "summary_en": "Large vision-language models have significantly advanced GUI agents, enabling executable interaction across web, mobile, and desktop interfaces. Yet these gains largely rely on a forgiving region-tolerant paradigm, where many nearby pixels inside the same component remain valid. Precise geometric construction breaks this assumption: actions must land on points in continuous canvas space rather than tolerant regions. Because geometric primitives carry ontological dependencies, a local coordinate error can induce cascading topological failures that distort downstream objects and invalidate the final construction. We identify this regime as precision-sensitive GUI tasks, requiring point-level accuracy, geometry-aware verification, and robustness to dependency-driven error propagation. To benchmark it, we introduce PAGE Bench, with 4,906 problems and over 224K process-supervised, pixel-level GUI actions. We further propose PAGER, a topology-aware agent that decomposes construction into dependency-structured planning and pixel-level execution. Pixel-grounded supervised tuning establishes executable action grammar, while precision-aligned reinforcement learning mitigates rollout-induced exposure bias through state-conditioned geometric feedback. Experiments reveal a pronounced Semantic-Execution Gap: general multimodal models can exceed 88% action type accuracy yet remain below 6% task success. PAGER closes this gap, delivering 4.1x higher task success than the strongest evaluated general baseline and raising step success rate from below 9% for GUI-specialized agents to over 62%, establishing a new state of the art for point-precise GUI control.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.15963",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1013,
+    "type": "paper",
+    "title": "Imperfect World Models are Exploitable",
+    "summary_en": "We propose a novel definition of model exploitation in reinforcement learning. Informally, a world model is exploitable if it implies that one policy should be strictly preferred over another while the environment's true transition model implies the reverse. We analogize our definition with a prior characterization of reward hacking but show that the associated proof of inevitability does not transfer to exploitation. To overcome this obstruction, we develop a general theory of reward hacking and model exploitation that proves that exploitation is essentially unavoidable on large policy sets and yields the corresponding claim for hacking as a special case. Unfortunately, we also find that the conditions that guarantee unhackability in finite policy sets have no counterpart that precludes exploitation. Consequently, we introduce a relaxed notion of exploitation and derive a safe horizon within which it can be avoided. Taken together, our results establish a formal bridge between reward hacking and model exploitation and elucidate the limits of safe planning in world models.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.15960",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1014,
+    "type": "paper",
+    "title": "A Retrieval-Enhanced Transformer for Multi-Step Port-of-Call Sequence Prediction in Global Liner Shipping",
+    "summary_en": "Accurate multi-step port-of-call sequence prediction is vital for tactical resource orchestration and logistical efficiency. However, existing methods struggle with unreliable voyage schedules and the inability of AIS data to provide visibility beyond the immediate next port. To address this, this study proposes a Connectivity-Constrained and Retrieval-Enhanced (CCRE) deep learning framework. Inspired by Retrieval-Augmented Generation, CCRE introduces a retrieval-enhanced historical encoder that queries a global maritime database for contextually similar navigational precedents. Transforming these scenarios into candidate-level semantic representations compensates for data sparsity in long-tail routes and resolves routing ambiguities. Integrating this with a Transformer-based trajectory encoder, the architecture executes adaptive \"middle fusion\" via cross-attention. This dynamically shifts predictive reliance from real-time kinematics for short-term accuracy to historical context for long-term strategic stability. To ensure sequence-level coherence, forecasting is formulated as a joint sequence generation problem using an autoregressive Transformer decoder enriched with Scheduled Sampling and Gumbel-Softmax relaxation. This mitigates error accumulation, while topology masks strictly enforce maritime network reachability to eliminate operationally infeasible routes. Evaluated on a global dataset, CCRE achieves a 72.3% first-destination accuracy and a 61.4% average three-step accuracy, outperforming baselines like CatBoost and LSTM by average margins of 12.6% and 11.3%, respectively. Case studies further corroborate the model's scalability and ability to capture complex routing patterns across diverse international trade lanes.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.15937",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1015,
+    "type": "paper",
+    "title": "Towards Generalization of Block Attention via Automatic Segmentation and Block Distillation",
+    "summary_en": "Block attention, which processes the input as separate blocks that cannot attend to one another, offers significant potential to improve KV cache reuse in long-context scenarios such as Retrieval-Augmented Generation (RAG). However, its broader application is hindered by two key challenges: the difficulty of segmenting input text into meaningful, self-contained blocks, and the inefficiency of existing block fine-tuning methods that risk degrading performance. To address these, we first construct SemanticSeg, a large and diverse semantic segmentation dataset containing over 30k instances across 16 categories-including books, code, web text, and conversations with text lengths ranging from 2k to 32k. Using this dataset, we train a lightweight segmenter to automatically partition text into human-instinct-aligned blocks with controllable granularity. Second, we propose block distillation, a training framework that is more efficient than block fine-tuning, which uses a frozen full-attention teacher model to guide the block-attention student. This framework integrates three novel components: block sink tokens to mitigate information loss at block boundaries, block dropout to leverage training signals from all blocks, and token-level loss weighting to focus learning on block-attention-sensitive tokens. Experiments across multiple models and benchmarks demonstrate that our segmenter outperforms heuristic and statistical baselines, and block distillation achieves near-full-attention performance under block attention, establishing a practical and scalable pathway for deploying block attention.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.15913",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1016,
+    "type": "paper",
+    "title": "A Multi-Layer Cloud-IDS Pipeline with LLM and Adaptive Q-Learning Calibration",
+    "summary_en": "Security in cloud computing has become a major concern due to several factors such as layered cloud architectures, dynamic environments, and exposure to unseen or zero-day attacks. Moreover, intrusion detection systems (IDS) typically operate at specific layers and rely heavily on machine learning models, which often perform well in experimental settings but fail to sustain performance in real cloud deployments. In this work, we implement a confidence-aware multilevel intrusion detection system using reinforcement learning tailored for cloud environments. The system secures three distinct layers: network, host, and hypervisor. Machine learning models at each layer detect known attack patterns, while prediction confidence distinguishes reliable decisions from uncertain outcomes. Within the multi-gate flow, low-confidence events pass through a learned-threshold confidence gate (Gate-1), followed by a Chroma memory-matching gate (Gate-2), with unresolved events escalated to a large language model (LLM) for semantic analysis and explanation. Final attack promotion at Gate-3 uses calibrated LLM confidence or weighted-fusion fallback, while uncertain events are retained in a review bucket to avoid forced classification. Generated explanations and confirmed knowledge are stored in ChromaDB to support future analysis and retraining. The approach is first evaluated using static thresholds, establishing a baseline for comparison. Results show that the proposed system learns adaptive thresholds and reduces LLM escalation by 58.78%, lowering cost while maintaining strong performance (88.68% accuracy, 85.29% precision, 84.72% recall, 85.00% F1). The network and hypervisor layers achieve 98.02% and 97.08% accuracy, demonstrating a balanced and efficient detection system.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.15889",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1017,
+    "type": "paper",
+    "title": "Linked Multi-Model Data on Russian Domestic and Foreign Policy Speeches",
+    "summary_en": "This paper introduces a dataset of interlinked multimodal political communications from the Russian government, addressing persistent deficiencies in the availability of social text- and image-based data for authoritarian politics contexts. The dataset comprises two large corpora of official speeches delivered by senior actors within the Kremlin and the Russian Ministry of Foreign Affairs over multiple decades. For each speech, we provide Russian- and English-language texts, associated images and captions where available, and harmonized metadata including (e.g.) dates, speakers, (geo)locations, and official government content tags. Unique identifiers link images to speeches and align Russian and English versions of the same communication texts. We further augment these linked datasets with validated topical annotations for both speech texts and speech images, which are generated via transformer-based multimodal topic modeling and refined by a Russian politics expert. The resulting data resources support multimodal, multilingual, temporal, and/or spatial analyses of (authoritarian) political communication and offer a valuable testbed for social science research and large language model (LLM) applications in political domains.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.15886",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 1018,
+    "type": "paper",
+    "title": "Access Timing as Scaffolding: A Reinforcement Learning Approach to GenAI in Education",
+    "summary_en": "In recent years, generative AI (GenAI) in educational settings has become ubiquitous in students' daily lives, despite its potential to induce over-reliance, metacognitive disengagement, and diminished learning when used unrestrictedly. While most prior research has thus focused on how to pedagogically scaffold its usage, the question of when to allow off-the-shelf GenAI remains understudied and lacks pedagogically grounded empirical investigation. We treat access timing itself as a form of implicit scaffolding and operationalize it through a reinforcement learning (RL) agent that decides when students should access GenAI, with a reward function grounded in metacognitive theory, cognitive load theory, and productive failure. In a mixed-methods controlled lab study with N=105 participants, we compared the agent's effect on learning gains and metacognitive engagement to unrestricted and fully restricted use. Results show that strategically timed GenAI access under the reinforcement learning condition improved objective post-test performance and metacognitive accuracy compared with unrestricted access, while reducing task errors and time on task relative to complete withholding, all without the need for explicit metacognitive prompts or structured scaffolding. However, no between-condition differences emerged on self-reported metacognitive awareness. Overall, timing of GenAI access therefore is a tractable, theoretically grounded, and scalable pedagogical paradigm that improves over completely unrestricted and withheld access, compatible with off-the-shelf tools and potentially low adoption barrier. This opens up a new research area that explores how access timing can be facilitated by educators and implemented in human-AI learning system design.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.15850",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:22"
+  },
+  {
+    "id": 994,
+    "type": "paper",
+    "title": "AI-Mediated Communication Can Steer Collective Opinion",
+    "summary_en": "Generative artificial intelligence (AI) is increasingly integrated into the online platforms where humans exchange opinions; large language models (LLMs) now polish users' posts on LinkedIn and provide context for content shared on X. While prior work has shown that AI can express biased opinions and shape individuals' opinions during human-AI interactions, less attention has been paid to its influence on collective opinion formation when mediating human-to-human communication. We address this gap via a combination of empirical and theoretical analyses. We show empirically that LLMs from multiple popular families introduce directional biases when instructed to edit human-written texts on contested topics, for example, nudging texts in favor of gun control and against atheism. Building on this observation, we introduce a mathematical model of opinion dynamics in which an AI system sits between users on a social network, transforming the opinions they express and perceive. By analytically characterizing the equilibrium of this model and performing simulations on real social network data, we show that biases introduced by AI in human-to-human communication can be amplified through the network and shift collective opinion in their direction. In light of these findings, we investigate whether such biases are controllable by online platforms. We audit the \"Explain this post\" feature on X and find evidence of pro-life bias in Grok's outputs on abortion-related content, which we trace back to specific design choices. We conclude with a discussion of the broader implications of our findings in relation to ongoing legislative efforts in the European Union.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16245",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:21"
+  },
+  {
+    "id": 995,
+    "type": "paper",
+    "title": "Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search",
+    "summary_en": "Probabilistic forecasting of infectious diseases is crucial for public health but relies on labor-intensive manual model curation by expert modeling teams. This bespoke development bottlenecks scalability to granular geographic resolutions or emerging pathogens. Here, we present an autonomous system using Large Language Model (LLM)-guided tree search to iteratively generate, evaluate, and optimize executable forecasting software. In a fully prospective, real-time evaluation during the 2025-2026 US respiratory season, the system autonomously discovered methodologically diverse models for influenza, COVID-19, and respiratory syncytial virus (RSV). Aggregating these machine-generated models yielded an ensemble that consistently matched or outperformed the gold-standard, human-curated Centers for Disease Control and Prevention (CDC) hub ensembles out-of-sample. The system successfully navigated data-scarce \"cold start\" scenarios for RSV. Moreover, controlled retrospective ablations revealed that optimizing log-scale distance metrics prevents reward hacking, while an automated judge-in-the-loop ensures structural fidelity to complex scientific theories. By autonomously translating epidemiological theory into accurate, transparent code, this framework overcomes the modeling labor bottleneck, enabling rapid deployment of expert-level disease forecasting at unprecedented scales.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16238",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:21"
+  },
+  {
+    "id": 996,
+    "type": "paper",
+    "title": "Argus: Evidence Assembly for Scalable Deep Research Agents",
+    "summary_en": "Deep research agents have achieved remarkable progress on complex information seeking tasks. Even long ReAct style rollouts explore only a single trajectory, while recent state of the art systems scale inference time compute via parallel search and aggregation. Yet deep research answers are composed of complementary pieces of evidence, which parallel rollouts often duplicate rather than complete, yielding diminishing returns while pushing the aggregation context toward the model's limit. We propose Argus, an agentic system in which a Searcher and a Navigator cooperate to treat deep research as assembling a jigsaw from complementary evidence pieces, rather than brute forcing the whole answer in parallel. The Searcher collects evidence traces for a given sub-query through ReAct-style interaction. The Navigator maintains a shared evidence graph, verifying which pieces are still missing, dispatching Searchers to gather them, and reasoning over the completed graph to produce a source-traced final answer. We train the Navigator with reinforcement learning to verify, dispatch, and synthesize, while independently training the Searcher to remain a standard ReAct agent. The resulting Navigator supports rollouts with a single Searcher or many in parallel without retraining. With both Searcher and Navigator built on a 35B-A3B MoE backbone, Argus gains 5.5 points with a single Searcher and 12.7 points with 8 parallel Searchers, averaged over eight benchmarks. With 64 Searchers it reaches 86.2 on BrowseComp, surpassing every proprietary agent we benchmark, while the Navigator's reasoning context stays under 21.5K tokens.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16217",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:21"
+  },
+  {
+    "id": 997,
+    "type": "paper",
+    "title": "Improving Cross-Cultural Survey Simulation with Calibrated Value Personas",
+    "summary_en": "Large language models (LLMs) are increasingly used to simulate human opinions and survey responses, but their ability to reproduce population responses across cultures remains limited. Existing persona-based prompting methods typically rely on sociodemographic or personality traits, which are only indirect proxies for the values that shape human responses. We propose a value-based persona construction method that derives textual descriptors from survey responses capturing core cultural dimensions. By sampling value profiles from target populations and aggregating LLM responses across personas, we obtain population-level predictions grounded in observed value distributions. We further introduce a calibration procedure that improves response diversity while preserving estimated opinions. We show that our approach reduces prediction error across countries, with the largest improvements observed in underrepresented populations. This substantially narrows the performance gap between countries aligned with dominant LLM priors and those that are less represented in training data, while also yielding response distributions that closely match human diversity.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16193",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:21"
+  },
+  {
+    "id": 998,
+    "type": "paper",
+    "title": "BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control",
+    "summary_en": "Real-world control systems frequently operate under \\emph{piecewise stationary} conditions, where dynamics remain stable for extended periods before undergoing abrupt regime changes. Standard robust RL methods face a fundamental dilemma: a globally conservative policy wastes performance during stable periods, while a locally adaptive policy risks catastrophic failure when the regime changes undetected.\n  We propose \\textbf{BAPR} (Bayesian Amnesic Piecewise-Robust SAC), which unifies Bayesian Online Change Detection (BOCD) with robust ensemble RL. The BAPR operator -- a convex combination of mode-conditional Bellman operators weighted by a frozen belief distribution -- is a $γ$-contraction. A complementary counterexample, machine-verified in Lean~4, establishes a \\emph{sharp boundary}: when beliefs depend on the Q-function, the contraction factor becomes $γ+ λΔ$ (where $Δ$ is the mode reward gap), and contraction fails exactly when $γ+ λΔ\\geq 1$. We derive a \\emph{component-wise} formal error budget for the abstract operator -- every component machine-verified -- bounding post-switch recovery; the budget applies to the abstract mode-mixture operator and inherits to the implemented shared-critic algorithm only through the frozen-parameter design intuition. All results are formally verified with no \\texttt{sorry} (1,145 lines across 3 Lean~4 files, 22 machine-verified theorems). BOCD drives an adaptive conservatism mechanism: the policy becomes maximally conservative after detected change-points and smoothly relaxes as confidence grows, with detection delay $O(\\log(1/δ))$. A context-conditioning module trained via RMDM loss provides mode-aware representations from simulator-provided mode IDs at training time and requires no mode labels at deployment.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.16170",
+    "score": 0.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-18 07:51:21"
+  },
+  {
+    "id": 993,
+    "type": "article",
+    "title": "Newsroom",
+    "summary_en": "Our latest Opus model brings stronger performance across coding, agents, vision, and multi-step tasks, with greater thoroughness and consistency on the work that matters most.",
+    "summary_zh": "",
+    "url": "mailto:press@anthropic.com",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-18 07:51:20"
+  }
+]
