@@ -3,8 +3,8 @@
     "id": 1039,
     "type": "article",
     "title": "OpenAI and Malta partner to bring ChatGPT Plus to all citizens",
-    "summary_en": "OpenAI and Malta partner to expand AI access, offering ChatGPT Plus and training to help citizens build practical AI skills and use AI responsibly.",
-    "summary_zh": "",
+    "summary_en": "OpenAI and the Government of Malta have announced a pioneering partnership to provide ChatGPT Plus to all Maltese citizens, marking the first national-scale initiative of its kind. The program includes an AI literacy course developed by the University of Malta, designed to teach citizens about AI capabilities and responsible use. Upon completion, participants receive free access to ChatGPT Plus for one year. The initiative aims to make intelligence a global utility, ensuring equitable access to advanced AI tools. Malta's Minister for Economy and OpenAI's George Osborne emphasized the importance of national AI adoption, with Malta leading Europe in this strategic effort to empower citizens and boost the economy.",
+    "summary_zh": "OpenAI与马耳他政府宣布开创性合作，为所有马耳他公民提供ChatGPT Plus，这是全球首个国家级AI普及计划。项目包括马耳他大学开发的AI素养课程，教授公民AI能力与负责任使用。完成课程后，参与者可免费使用ChatGPT Plus一年。该计划旨在将智能转化为全球公共事业，确保公平获取先进AI工具。马耳他经济部长与OpenAI的George Osborne强调国家AI采纳的重要性，马耳他正引领欧洲这一战略举措，以赋能公民并推动经济。",
     "url": "https://openai.com/index/malta-chatgpt-plus-partnership",
     "score": 0.0,
     "domains": [
@@ -16,12 +16,12 @@
     "id": 1040,
     "type": "article",
     "title": "How business operations teams use Codex",
-    "summary_en": "See how business operations teams can use Codex to create initiative briefs, strategy updates, leadership decision packets, progress updates, and more from real work inputs.",
-    "summary_zh": "",
+    "summary_en": "This article from OpenAI Academy explains how business operations teams can leverage Codex to streamline their workflow. By aggregating context from scattered sources like project trackers, KPI dashboards, and stakeholder notes, Codex generates first-draft artifacts such as off-track briefs, strategic initiative updates, leadership decision packets, and progress reports. The team retains judgment and recommendations, while Codex accelerates the creation of working drafts. The article provides specific use cases with starter prompts and real-world examples, emphasizing how Codex helps turn operational context into actionable assets for review and decision-making.",
+    "summary_zh": "本文来自OpenAI Academy，介绍业务运营团队如何利用Codex整合分散在项目追踪器、KPI仪表盘和利益相关者笔记中的上下文，生成如off-track简报、战略更新、领导决策包和进度报告等初稿。团队保留判断与建议，Codex加速工作草案的产出。文章提供了具体用例、启动提示和真实示例，强调Codex如何将运营上下文转化为可审查和可行动的资产。",
     "url": "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -29,12 +29,13 @@
     "id": 1041,
     "type": "article",
     "title": "Databricks brings GPT-5.5 to enterprise agent workflows",
-    "summary_en": "Databricks uses GPT-5.5 for enterprise agent workflows after the model set a new state of the art on the OfficeQA Pro benchmark.",
-    "summary_zh": "",
+    "summary_en": "Databricks integrates OpenAI's GPT-5.5 into enterprise agent workflows, achieving state-of-the-art performance on the OfficeQA Pro benchmark. The model reduces errors by 46% compared to GPT-5.4, excelling in parsing scanned PDFs, legacy files, and long-context documents. GPT-5.5 is available through AI Unity Gateway, AgentBricks, and Agent Supervisor API, enabling reliable orchestration of multi-step tasks without unnecessary detours. This advancement addresses critical parsing and retrieval challenges in production agent systems, marking a significant step-function improvement in enterprise knowledge work.",
+    "summary_zh": "Databricks 将 OpenAI 的 GPT-5.5 集成到企业代理工作流中，在 OfficeQA Pro 基准测试上达到最先进水平。相比 GPT-5.4，错误率降低 46%，在解析扫描 PDF、遗留文件和长上下文文档方面表现优异。GPT-5.5 通过 AI Unity Gateway、AgentBricks 和 Agent Supervisor API 提供，能够可靠地编排多步骤任务，避免不必要的搜索绕路。这一进展解决了生产代理系统中的关键解析和检索挑战，标志着企业知识工作的阶跃式提升。",
     "url": "https://openai.com/index/databricks",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "ai_safety",
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -42,8 +43,8 @@
     "id": 1042,
     "type": "article",
     "title": "How data science teams use Codex",
-    "summary_en": "See how data science teams can use Codex to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "summary_zh": "",
+    "summary_en": "This article from OpenAI Academy explains how data science teams can use Codex to transform scattered inputs—such as dashboards, metric definitions, exports, and business context—into review-ready analysis assets. It details four primary use cases: KPI root-cause analysis, business impact readouts, analytics request handling, and executive KPI reviews. For each use case, the article describes what inputs the team provides, what Codex returns, and how the process works, emphasizing that Codex drafts deliverables so analysts can focus on validating evidence and sharpening recommendations.",
+    "summary_zh": "本文来自OpenAI Academy，介绍数据科学团队如何使用Codex将分散的输入（如仪表板、指标定义、导出数据和业务背景）转化为可审查的分析资产。文章详细说明了四个主要用例：KPI根因分析、业务影响报告、分析请求处理和主管KPI评审。每个用例都描述了团队提供什么输入、Codex返回什么输出以及工作流程，强调Codex起草交付物，使分析师能专注于验证证据和优化建议。",
     "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
     "score": 0.0,
     "domains": [
@@ -55,12 +56,12 @@
     "id": 1043,
     "type": "article",
     "title": "A new personal finance experience in ChatGPT",
-    "summary_en": "Preview a new personal finance experience in ChatGPT for Pro users in the U.S. Securely connect your financial accounts and get AI-powered insights and guidance grounded in your financial context, goals, and priorities.",
-    "summary_zh": "",
+    "summary_en": "OpenAI is releasing a preview of a new personal finance experience in ChatGPT for Pro users in the U.S., allowing them to securely connect financial accounts via Plaid, view a dashboard of spending and portfolio performance, and ask context-aware questions. The feature leverages GPT-5.5's reasoning capabilities to provide personalized insights, such as saving plans based on real transaction data. Over 200 million monthly users already seek financial advice from ChatGPT. The rollout starts with a limited group to refine the experience before expanding to Plus and free tiers. OpenAI emphasizes that this tool is not a substitute for professional financial advice.",
+    "summary_zh": "OpenAI 向美国 Pro 用户推出 ChatGPT 个人财务功能预览，支持通过 Plaid 安全连接银行账户，展示支出与投资仪表盘，并基于 GPT-5.5 的推理能力提供个性化财务建议（如储蓄计划）。每月超 2 亿用户已用 ChatGPT 处理财务问题。该功能先在小范围测试，后续将扩展至 Plus 和免费用户。OpenAI 强调此工具不能替代专业财务顾问。",
     "url": "https://openai.com/index/personal-finance-chatgpt",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -68,12 +69,12 @@
     "id": 1044,
     "type": "article",
     "title": "How sales teams use Codex",
-    "summary_en": "See how sales teams can use Codex to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
-    "summary_zh": "",
+    "summary_en": "This article from OpenAI Academy explains how sales teams can leverage Codex to transform scattered account data, customer conversations, and deal signals into structured artifacts like pipeline briefs, meeting prep packets, forecast reviews, and account plans. It details four primary use cases: pipeline prioritization from underworked accounts, meeting preparation and follow-up, forecast review and commit risk monitoring, and strategic account plan refresh. For each use case, it specifies the inputs required (e.g., CRM records, call transcripts, email threads) and the outputs Codex generates (e.g., prioritized briefs, stakeholder maps, risk memos). The emphasis is on Codex producing a first draft that sellers and managers then refine, preserving human judgment for strategy and relationships.",
+    "summary_zh": "本文来自OpenAI Academy，介绍了销售团队如何利用Codex将分散的账户数据、客户对话和交易信号转化为结构化文档，如Pipeline简报、会议准备包、预测审查和账户计划。文章详述了四个主要用例：从低活跃账户中优先排序Pipeline、会议准备与跟进、预测审查与承诺风险监控，以及战略账户计划更新。每个用例都明确了所需输入（如CRM记录、通话记录、邮件线程）和Codex生成的输出（如优先简报、利益相关者地图、风险备忘录）。重点在于Codex生成初稿，由销售人员和经理进行优化，保留人类对策略和关系的判断。",
     "url": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -81,8 +82,8 @@
     "id": 1045,
     "type": "article",
     "title": "Sea's View on the Future of Agentic Software Development with Codex",
-    "summary_en": "Sea Limited's CPO explains why the company is deploying Codex across engineering teams to accelerate AI-native software development in Asia.",
-    "summary_zh": "",
+    "summary_en": "Sea Limited, a Singapore-based global tech company, is rolling out OpenAI's Codex across its developer organization to transform software development. David Chen, Co-Founder and CPO of Shopee, explains that Codex goes beyond autocomplete by providing deep contextual awareness of large codebases, enabling engineers to focus on higher-level tasks like architecture and innovation. With 87% weekly active users, Sea is integrating AI agents into CI/CD pipelines for autonomous testing and debugging. Chen views this as an organizational paradigm shift, where developers become system orchestrators. Sea is also hosting a Codex Hackathon Series across Asia to democratize AI tools and build a regional AI-native talent ecosystem.",
+    "summary_zh": "Sea Limited正在其开发者组织中推广OpenAI的Codex，以变革软件开发。联合创始人David Chen表示，Codex超越了自动补全，能深度理解大型代码库的上下文，让工程师专注于架构设计等更高层次的任务。Sea拥有87%的周活跃用户，并将AI代理集成到CI/CD流水线中，用于自主测试和调试。Chen认为这是一场组织范式转变，开发者将演变为系统编排者。Sea还在亚洲举办Codex黑客松系列，以普及AI工具并构建区域性的AI原生人才生态。",
     "url": "https://openai.com/index/sea-david-chen",
     "score": 0.0,
     "domains": [
@@ -94,12 +95,13 @@
     "id": 1046,
     "type": "article",
     "title": "Work with Codex from anywhere",
-    "summary_en": "Use Codex anywhere with the ChatGPT mobile app. Monitor, steer, and approve coding tasks in real time across devices and remote environments.",
-    "summary_zh": "",
+    "summary_en": "OpenAI announces that Codex, its AI coding agent, is now available in the ChatGPT mobile app, allowing users to stay connected to long-running tasks from anywhere. The mobile experience provides full access to active threads, approvals, plugins, and project context via a secure relay layer. Users can start investigations, review outputs, approve commands, and change models on the go. The update also includes Remote SSH support for enterprise environments, programmatic access tokens, Hooks for customization, and HIPAA-compliant usage for healthcare. Codex in the mobile app is rolling out in preview on iOS and Android across all plans.",
+    "summary_zh": "OpenAI宣布Codex现已集成到ChatGPT移动应用中，用户可通过手机随时跟进长期运行的AI代理任务。移动端提供完整的线程访问、审批、插件和项目上下文，通过安全中继层实现实时同步。用户可在通勤或会议间隙启动调试、审查输出、批准命令或切换模型。更新还包括Remote SSH支持企业环境、Programmatic Access Tokens、Hooks自定义功能以及面向医疗的HIPAA合规使用。Codex移动预览版已在iOS和Android上向所有计划用户开放。",
     "url": "https://openai.com/index/work-with-codex-from-anywhere",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "ai_safety",
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -107,12 +109,13 @@
     "id": 1047,
     "type": "article",
     "title": "Helping ChatGPT better recognize context in sensitive conversations",
-    "summary_en": "Learn how new ChatGPT safety updates improve context awareness in sensitive conversations, helping detect risk over time and respond more safely.",
-    "summary_zh": "",
+    "summary_en": "OpenAI introduces safety updates to help ChatGPT better recognize context in sensitive conversations, particularly when risk emerges over time. The updates improve the model's ability to identify subtle or evolving cues of distress, such as suicide, self-harm, or harm-to-others, and respond appropriately by de-escalating, refusing harmful details, or redirecting to safer alternatives. Key innovations include safety summaries—short factual notes about prior safety-relevant context across conversations—and enhanced training with mental health experts. Internal evaluations show significant improvements in safe-response performance, with up to 52% improvement in harm-to-others cases on GPT-5.5 Instant, without degrading ordinary conversation quality.",
+    "summary_zh": "OpenAI 推出安全更新，帮助 ChatGPT 在敏感对话中更好地识别上下文，特别是当风险随时间逐渐显现时。这些更新提升了模型识别自杀、自残或伤害他人等微妙或演变中 distress 信号的能力，并通过缓和局势、拒绝有害细节或引导至更安全选项来做出适当回应。关键创新包括 safety summaries——关于跨对话先前安全相关上下文的简短事实记录——以及结合心理健康专家的强化训练。内部评估显示，在 GPT-5.5 Instant 上，伤害他人场景的安全响应性能提升了 52%，且不影响普通对话质量。",
     "url": "https://openai.com/index/chatgpt-recognize-context-in-sensitive-conversations",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "ai_safety",
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -120,12 +123,12 @@
     "id": 1048,
     "type": "article",
     "title": "Building a safe, effective sandbox to enable Codex on Windows",
-    "summary_en": "Learn how OpenAI built a secure sandbox for Codex on Windows, enabling safe, efficient coding agents with controlled file access and network restrictions.",
-    "summary_zh": "",
+    "summary_en": "OpenAI engineers built a custom sandbox for Codex on Windows after finding existing tools like AppContainer, Windows Sandbox, and Mandatory Integrity Control unsuitable. The solution uses SIDs and write-restricted tokens to constrain file writes and network access without requiring administrator privileges. This enables Codex to safely run developer workflows—shells, Git, Python, build tools—while preventing unauthorized modifications outside the workspace. The sandbox enforces read-only access outside the workspace and blocks internet access unless explicitly allowed, balancing safety and productivity for Windows users.",
+    "summary_zh": "OpenAI工程师为Windows上的Codex构建了自定义沙箱，因AppContainer、Windows Sandbox和Mandatory Integrity Control等现有工具不适用。该方案利用SIDs和write-restricted tokens来限制文件写入和网络访问，无需管理员权限。沙箱允许Codex安全运行shell、Git、Python等开发工具，同时防止对工作区外的未授权修改，并默认阻止互联网访问，在安全性与生产力间取得平衡。",
     "url": "https://openai.com/index/building-codex-windows-sandbox",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -133,12 +136,12 @@
     "id": 1049,
     "type": "article",
     "title": "Our response to the TanStack npm supply chain attack",
-    "summary_en": "OpenAI details its response to the TanStack “Mini Shai-Hulud” supply chain attack, outlines protections taken to secure systems and signing certificates, and explains why macOS users must update OpenAI apps by June 12, 2026. Learn what happened, what was affected, and how OpenAI is strengthening defenses against evolving software supply chain threats.",
-    "summary_zh": "",
+    "summary_en": "OpenAI disclosed a security incident involving the TanStack npm library, part of the broader Mini Shai-Hulud supply chain attack. Two employee devices were impacted, leading to unauthorized access and credential exfiltration from a limited set of internal source code repositories. No evidence of compromise to user data, production systems, or intellectual property was found. As a precaution, OpenAI is rotating code-signing certificates, requiring macOS users to update applications by June 12, 2026. The company has implemented additional security controls and is coordinating with platform providers to prevent unauthorized certificate use.",
+    "summary_zh": "OpenAI披露了一起涉及TanStack npm库的安全事件，该事件属于更广泛的Mini Shai-Hulud供应链攻击。两台员工设备受到影响，导致对有限内部源代码仓库的未授权访问和凭证窃取。未发现用户数据、生产系统或知识产权受损的证据。作为预防措施，OpenAI正在轮换代码签名证书，要求macOS用户在2026年6月12日前更新应用程序。公司已实施额外的安全控制，并与平台提供商协调以防止证书被滥用。",
     "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -146,12 +149,12 @@
     "id": 1050,
     "type": "article",
     "title": "How finance teams use Codex",
-    "summary_en": "See how finance teams can use Codex to build MBRs, reporting packs, variance bridges, model checks, and planning scenarios from real work inputs.",
-    "summary_zh": "",
+    "summary_en": "This article from OpenAI Academy explains how finance teams can leverage Codex to automate and streamline key workflows such as monthly business reviews, financial model cleanup, recurring CFO/board reporting packs, and variance driver analysis. Codex ingests existing workbooks, dashboards, and notes to produce review-ready outputs without requiring coding skills. Each use case includes a starter prompt, suggested plugins, and a real-world example. The goal is to reduce time spent on initial drafting, allowing teams to focus on analysis, validation, and strategic decision-making.",
+    "summary_zh": "本文来自OpenAI Academy，介绍财务团队如何使用Codex自动化关键工作流，包括月度业务回顾、财务模型清理、定期CFO/董事会报告包以及差异驱动分析。Codex能读取现有工作簿、仪表板和笔记，无需编码即可生成可供审查的输出。每个用例都包含启动提示、建议插件和真实示例，旨在减少初稿时间，让团队专注于分析、验证和战略决策。",
     "url": "https://openai.com/academy/how-finance-teams-use-codex",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -159,12 +162,12 @@
     "id": 1051,
     "type": "article",
     "title": "AutoScout24 scales engineering with AI-powered workflows",
-    "summary_en": "Learn how AutoScout24 Group uses Codex and ChatGPT to speed development cycles, improve code quality, and expand AI adoption.",
-    "summary_zh": "",
+    "summary_en": "AutoScout24, a leading online car marketplace, partnered with OpenAI to transform its engineering workflows using AI-powered tools. By deploying ChatGPT across 2,000 employees and integrating Codex into 1,000 builder roles, the company achieved roughly 10x faster development cycles, reducing project timelines from weeks to days. The dual-layer strategy combined broad AI literacy with deep workflow integration, supported by an AI Champions network. Key results included improved code quality, automated pull request reviews, and expanded innovation capacity for non-technical roles. The initiative demonstrates how large-scale AI adoption can accelerate software delivery while maintaining reliability.",
+    "summary_zh": "AutoScout24与OpenAI合作，通过AI驱动的工作流重塑工程流程。公司为2000名员工部署ChatGPT，并将Codex集成到1000个构建者角色中，实现了约10倍的开发周期加速，项目时间从数周缩短至数天。双层策略结合了广泛的AI素养与深度工作流集成，并由AI Champions网络提供支持。关键成果包括代码质量提升、自动化pull request审查以及非技术角色的创新扩展。该案例展示了大规模AI采用如何在保持可靠性的同时加速软件交付。",
     "url": "https://openai.com/index/autoscout24",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -172,8 +175,8 @@
     "id": 1052,
     "type": "article",
     "title": "How NVIDIA engineers and researchers build with Codex",
-    "summary_en": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
-    "summary_zh": "",
+    "summary_en": "NVIDIA engineers and researchers use OpenAI's Codex, powered by GPT-5.5, as a default tool for complex engineering and end-to-end machine learning research workflows. Codex runs on NVIDIA GB200/GB300 infrastructure, enabling autonomous long sessions, bug detection, and code translation (e.g., Python to Rust). It has improved research workflow speed by 10x and allowed rapid prototyping, such as building an internal podcast app in hours. Over 40,000 NVIDIA employees have access to Codex, which is used for production system development and automated experimentation.",
+    "summary_zh": "NVIDIA工程师和研究人员使用基于GPT-5.5的Codex作为复杂工程和端到端机器学习研究工作流的默认工具。Codex运行在NVIDIA GB200/GB300基础设施上，支持自主长会话、错误检测和代码翻译（如Python转Rust）。它将研究工作流速度提升了10倍，并实现了快速原型开发，例如在数小时内构建内部播客应用。超过40,000名NVIDIA员工可使用Codex，用于生产系统开发和自动化实验。",
     "url": "https://openai.com/index/nvidia",
     "score": 0.0,
     "domains": [
@@ -185,8 +188,8 @@
     "id": 1053,
     "type": "article",
     "title": "What Parameter Golf taught us about AI-assisted research",
-    "summary_en": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
-    "summary_zh": "",
+    "summary_en": "OpenAI's Parameter Golf challenge attracted over 1,000 participants and 2,000 submissions, tasking them with minimizing held-out loss on FineWeb under strict constraints: a 16 MB artifact limit and 10-minute training on 8×H100s. The competition highlighted the widespread use of AI coding agents, which lowered experimentation costs and accelerated innovation but introduced challenges in submission review and scoring. Notable technical themes included training optimization, quantization, test-time training, and novel modeling ideas like the CaseOps tokenizer and XSA attention. The nonrecord track also fostered creative approaches. Overall, the challenge demonstrated how AI-assisted research can democratize participation while requiring new oversight mechanisms.",
+    "summary_zh": "OpenAI的Parameter Golf挑战赛吸引了超过1000名参与者和2000份提交，任务是在严格限制下最小化FineWeb数据集上的损失：16 MB的artifact限制和8×H100上的10分钟训练。比赛突显了AI coding agents的广泛使用，它们降低了实验成本并加速了创新，但也带来了提交审查和评分的新挑战。技术亮点包括训练优化、量化、test-time training以及新颖的建模想法，如CaseOps tokenizer和XSA attention。非记录赛道也催生了创造性方法。总体而言，该挑战展示了AI辅助研究如何民主化参与，同时需要新的监督机制。",
     "url": "https://openai.com/index/what-parameter-golf-taught-us",
     "score": 0.0,
     "domains": [
@@ -198,8 +201,8 @@
     "id": 1054,
     "type": "article",
     "title": "How ChatGPT adoption broadened in early 2026",
-    "summary_en": "ChatGPT adoption surged in Q1 2026, with fastest growth among users over 35 and more balanced gender usage, signaling broader mainstream AI adoption.",
-    "summary_zh": "",
+    "summary_en": "In Q1 2026, ChatGPT consumer adoption broadened across gender, age, and geography. Users with typically feminine names now represent over half of inferred-gender users. Messages from users over 35 gained share, and the fastest-rising countries in per-capita usage included Dominican Republic, Haiti, Japan, and Mexico. Workplace tasks on consumer plans shifted from general content creation toward specialized uses like health documentation and information retrieval. The data indicates ChatGPT is becoming a mainstream tool used by a more diverse user base in more countries for recurring tasks.",
+    "summary_zh": "2026年第一季度，ChatGPT的消费者采用在性别、年龄和地域上进一步扩大。具有典型女性名字的用户已占可推断性别用户的一半以上。35岁以上用户的消息占比上升。人均消息量排名上升最快的国家包括多米尼加共和国、海地、日本和墨西哥。消费者计划中的工作用途从通用内容创作转向健康文档和信息检索等专业任务。数据表明ChatGPT正成为更主流、更嵌入日常的工具。",
     "url": "https://openai.com/signals/research/2026q1-update",
     "score": 0.0,
     "domains": [
@@ -211,8 +214,8 @@
     "id": 1055,
     "type": "article",
     "title": "OpenAI Campus Network: Student club interest form",
-    "summary_en": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
-    "summary_zh": "",
+    "summary_en": "OpenAI is launching the Campus Network, a global initiative partnering with university student clubs to foster AI-native campuses. Through this interest form, clubs can apply for hands-on AI learning support, early access to tools like Codex, event resources, and connections with a worldwide network of student leaders. The program targets diverse club types—from AI/ML to entrepreneurship—and offers opportunities such as workshops, research collaborations, ambassador programs, and career development. By collecting details on club focus, activity level, and AI usage, OpenAI aims to tailor support and build a community shaping the future of learning and work.",
+    "summary_zh": "OpenAI 推出 Campus Network 全球计划，与大学学生俱乐部合作打造 AI-native 校园。通过此兴趣表单，俱乐部可申请 hands-on AI 学习支持、Codex 等工具早期访问、活动资源及全球学生领袖网络连接。项目面向 AI/ML、创业等多元俱乐部类型，提供 workshops、研究合作、ambassador 项目及职业发展机会。OpenAI 通过收集俱乐部焦点、活跃度及 AI 使用情况，定制支持以构建塑造学习与工作未来的社区。",
     "url": "https://openai.com/index/openai-campus-network-student-club-interest-form",
     "score": 0.0,
     "domains": [
@@ -224,12 +227,13 @@
     "id": 1056,
     "type": "article",
     "title": "How enterprises are scaling AI",
-    "summary_en": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
-    "summary_zh": "",
+    "summary_en": "This guide synthesizes insights from European enterprise leaders at Philips, BBVA, and others, revealing that scaling AI is less about technology deployment and more about building trust, adoption, and iterative improvement. Key patterns include prioritizing culture over tooling, using governance as an enabler, fostering ownership over consumption, ensuring quality before scale, and protecting judgment work through hybrid workflows. The report emphasizes that sustained impact requires treating AI as an operating layer and leadership discipline, with human oversight embedded in end-to-end workflows.",
+    "summary_zh": "本指南汇集了Philips、BBVA等欧洲企业领导者的见解，指出扩展AI的关键不在于技术部署，而在于建立信任、采用和持续改进。核心模式包括：文化优先于工具、将治理作为赋能因素、鼓励所有权而非消费、质量优先于规模，以及通过混合工作流保护判断工作。报告强调，持久影响需要将AI视为运营层和领导力学科，并在端到端工作流中嵌入人工监督。",
     "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "ai_safety",
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -237,12 +241,13 @@
     "id": 1057,
     "type": "article",
     "title": "OpenAI launches DeployCo to help businesses build around intelligence",
-    "summary_en": "OpenAI launches DeployCo, a new enterprise deployment company built to help organizations bring frontier AI into production and turn it into measurable business impact.",
-    "summary_zh": "",
+    "summary_en": "OpenAI announced the launch of DeployCo, a new company focused on helping organizations build and deploy AI systems for critical workflows. DeployCo will embed Forward Deployed Engineers (FDEs) into client organizations to redesign infrastructure and workflows around AI. OpenAI also agreed to acquire Tomoro, an applied AI consulting firm, bringing approximately 150 experienced engineers. The venture is backed by over $4 billion in initial investment from partners including TPG, Advent, and Bain Capital. DeployCo is majority-owned by OpenAI and aims to accelerate enterprise AI adoption and ensure AGI benefits humanity.",
+    "summary_zh": "OpenAI 宣布成立 DeployCo，这是一家专注于帮助组织构建和部署 AI 系统的新公司。DeployCo 将派遣 Forward Deployed Engineers (FDEs) 嵌入客户组织，围绕 AI 重新设计基础设施和工作流程。OpenAI 还同意收购应用 AI 咨询公司 Tomoro，带来约 150 名经验丰富的工程师。该项目获得 TPG、Advent、Bain Capital 等合作伙伴超过 40 亿美元的初始投资。DeployCo 由 OpenAI 控股，旨在加速企业 AI 采纳并确保 AGI 造福人类。",
     "url": "https://openai.com/index/openai-launches-the-deployment-company",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "ai_safety",
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -250,12 +255,13 @@
     "id": 1058,
     "type": "article",
     "title": "Running Codex safely at OpenAI",
-    "summary_en": "How OpenAI runs Codex securely with sandboxing, approvals, network policies, and agent-native telemetry to support safe and compliant coding agent adoption.",
-    "summary_zh": "",
+    "summary_en": "OpenAI describes the safety measures for deploying Codex, a coding agent that autonomously reviews repositories, runs commands, and interacts with development tools. Key controls include sandboxing, approval policies, network access restrictions, identity management via ChatGPT, and rule-based command filtering. Agent-native telemetry via OpenTelemetry logs provides visibility into user prompts, tool decisions, and network events, enabling security teams to audit behavior and distinguish between expected actions and anomalies. The system balances developer productivity with security through managed configurations and AI-powered triage.",
+    "summary_zh": "OpenAI 介绍了部署 Codex 的安全措施，该编码代理可自主审查代码库、运行命令并与开发工具交互。关键控制包括沙箱、审批策略、网络访问限制、通过 ChatGPT 的身份管理以及基于规则的命令过滤。通过 OpenTelemetry 日志的代理原生遥测提供了对用户提示、工具决策和网络事件的可见性，使安全团队能够审计行为并区分预期操作与异常。该系统通过托管配置和 AI 驱动的分类来平衡开发人员生产力与安全性。",
     "url": "https://openai.com/index/running-codex-safely",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "ai_safety",
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:25"
   },
@@ -393,12 +399,13 @@
     "id": 1029,
     "type": "article",
     "title": "Protecting people from harmful manipulation",
-    "summary_en": "",
-    "summary_zh": "",
+    "summary_en": "This article discusses strategies and frameworks for protecting individuals from harmful manipulation, particularly in digital environments where AI and algorithms can influence behavior. It emphasizes the need for transparency, user agency, and regulatory measures to prevent exploitation through deceptive design, misinformation, and psychological targeting. The piece highlights the ethical responsibilities of technology developers and policymakers in safeguarding vulnerable populations.",
+    "summary_zh": "本文探讨了保护个人免受有害操纵的策略与框架，尤其是在AI和算法可能影响行为的数字环境中。强调透明度、用户自主权以及监管措施的必要性，以防止通过欺骗性设计、错误信息和心理定位进行的剥削。文章突出了技术开发者和政策制定者在保护弱势群体方面的伦理责任。",
     "url": "https://deepmind.google/blog/protecting-people-from-harmful-manipulation/",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "ai_safety",
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:23"
   },
@@ -406,8 +413,8 @@
     "id": 1030,
     "type": "article",
     "title": "Lyria 3 Pro: Create longer tracks in more",
-    "summary_en": "",
-    "summary_zh": "",
+    "summary_en": "Google DeepMind announces Lyria 3 Pro, an advanced music generation model that creates tracks up to three minutes long with structural awareness of intros, verses, choruses, and bridges. The model is integrated into Vertex AI, Google AI Studio, Gemini API, Google Vids, the Gemini app, and ProducerAI, enabling scalable music production for developers, businesses, and creators. Google emphasizes responsible development through partnerships with musicians, use of licensed training data, non-mimicry safeguards, and SynthID watermarking. Lyria 3 Pro aims to make high-quality, customizable music generation accessible across multiple Google products.",
+    "summary_zh": "Google DeepMind 发布 Lyria 3 Pro，这是一款先进的音乐生成模型，可生成长达三分钟、具备结构感知能力的曲目，支持前奏、主歌、副歌和桥段。该模型已集成至 Vertex AI、Google AI Studio、Gemini API、Google Vids、Gemini 应用及 ProducerAI，为开发者、企业和创作者提供可扩展的音乐制作能力。Google 强调与音乐人合作、使用授权训练数据、非模仿保护机制及 SynthID 水印，以负责任的方式推动 AI 音乐工具的发展。",
     "url": "https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro",
     "score": 0.0,
     "domains": [
@@ -419,8 +426,8 @@
     "id": 1031,
     "type": "article",
     "title": "Measuring progress toward AGI: A cognitive framework",
-    "summary_en": "",
-    "summary_zh": "",
+    "summary_en": "Google DeepMind introduces a cognitive framework to measure progress toward Artificial General Intelligence (AGI), drawing on decades of research in psychology, neuroscience, and cognitive science. The framework identifies ten key cognitive abilities—perception, generation, attention, learning, memory, reasoning, metacognition, executive functions, problem solving, and social cognition—and proposes a three-stage evaluation protocol benchmarking AI against human performance. To operationalize this, DeepMind launches a Kaggle hackathon with a $200,000 prize pool, inviting the community to design evaluations for five abilities where gaps are largest: learning, metacognition, attention, executive functions, and social cognition.",
+    "summary_zh": "Google DeepMind 提出一个基于认知科学的框架来衡量AGI进展，该框架识别了十项关键认知能力，包括perception、generation、attention、learning、memory、reasoning、metacognition、executive functions、problem solving和social cognition，并设计了将AI性能与人类基线对比的三阶段评估协议。为将理论付诸实践，DeepMind在Kaggle上发起奖金20万美元的黑客松，邀请社区针对learning、metacognition、attention、executive functions和social cognition这五个评估缺口最大的能力设计评测。",
     "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework",
     "score": 0.0,
     "domains": [
@@ -432,8 +439,8 @@
     "id": 1032,
     "type": "article",
     "title": "From games to biology and beyond: 10 years of AlphaGo’s impact",
-    "summary_en": "",
-    "summary_zh": "",
+    "summary_en": "Ten years after AlphaGo's historic victory over Lee Sedol, DeepMind reflects on how the breakthrough catalyzed modern AI and paved the way toward artificial general intelligence (AGI). AlphaGo combined deep neural networks, reinforcement learning, and advanced search to master the complex game of Go, demonstrating AI's potential to tackle real-world scientific problems. This led to AlphaFold 2, which solved the protein folding problem and earned a Nobel Prize, as well as AlphaZero, AlphaProof, and AlphaEvolve. DeepMind now integrates these search and reasoning techniques into Gemini models, aiming to build general AI systems capable of scientific discovery, mathematical reasoning, and algorithmic innovation.",
+    "summary_zh": "AlphaGo击败李世石十周年之际，DeepMind回顾了这一突破如何催化现代AI并通向通用人工智能（AGI）。AlphaGo结合深度神经网络、强化学习和高级搜索，攻克了围棋的复杂挑战，展示了AI解决现实科学问题的潜力。这催生了AlphaFold 2（解决蛋白质折叠问题并获诺贝尔奖）、AlphaZero、AlphaProof和AlphaEvolve。DeepMind现将这些搜索与推理技术整合进Gemini模型，旨在构建能进行科学发现、数学推理和算法创新的通用AI系统。",
     "url": "https://deepmind.google/blog/10-years-of-alphago/",
     "score": 0.0,
     "domains": [
@@ -445,8 +452,8 @@
     "id": 1033,
     "type": "article",
     "title": "Gemini 3.1 Flash-Lite: Built for intelligence at scale",
-    "summary_en": "",
-    "summary_zh": "",
+    "summary_en": "Google has launched Gemini 3.1 Flash-Lite, its fastest and most cost-efficient AI model, now available in preview via the Gemini API and Vertex AI. Priced at $0.25/1M input tokens and $1.50/1M output tokens, it offers 2.5x faster time to first token and 45% higher output speed than 2.5 Flash. It achieves strong benchmark scores including 86.9% on GPQA Diamond and an Elo of 1432 on Arena.ai. Designed for high-volume workloads, it supports tasks like translation, content moderation, UI generation, and simulations. Early adopters include Latitude, Cartwheel, and Whering.",
+    "summary_zh": "Google 发布了 Gemini 3.1 Flash-Lite，这是其最快且最具成本效益的 AI 模型，现通过 Gemini API 和 Vertex AI 提供预览。定价为每百万输入 tokens $0.25、每百万输出 tokens $1.50，相比 2.5 Flash，首 token 响应速度提升 2.5 倍，输出速度提升 45%。该模型在 GPQA Diamond 上达到 86.9%，在 Arena.ai 上 Elo 评分为 1432。适用于翻译、内容审核、UI 生成和模拟等高容量工作负载。早期用户包括 Latitude、Cartwheel 和 Whering。",
     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite",
     "score": 0.0,
     "domains": [
@@ -458,8 +465,8 @@
     "id": 1034,
     "type": "article",
     "title": "Nano Banana 2: Combining Pro capabilities with lightning-fast speed",
-    "summary_en": "",
-    "summary_zh": "",
+    "summary_en": "Google DeepMind launches Nano Banana 2, a state-of-the-art image generation model that combines the advanced capabilities of Nano Banana Pro with the speed of Gemini Flash. It offers enhanced creative control, subject consistency, precise instruction following, and production-ready specs up to 4K resolution. The model is integrated across Google products including Gemini, Search, Ads, and AI Studio. Google also improves AI content provenance with SynthID and C2PA Content Credentials. Nano Banana 2 aims to make high-quality, rapid image generation accessible to a wider audience.",
+    "summary_zh": "Google DeepMind 发布 Nano Banana 2，这是最新的图像生成模型，结合了 Nano Banana Pro 的高级能力与 Gemini Flash 的闪电速度。该模型提供增强的创意控制、主体一致性、精确指令遵循以及高达 4K 分辨率的生产级规格。它已集成到 Gemini、Search、Ads 和 AI Studio 等 Google 产品中。同时，Google 通过 SynthID 和 C2PA Content Credentials 改进了 AI 内容溯源技术。Nano Banana 2 旨在让更广泛的用户群体享受高质量、快速的图像生成。",
     "url": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2",
     "score": 0.0,
     "domains": [
@@ -471,8 +478,8 @@
     "id": 1035,
     "type": "article",
     "title": "Gemini 3.1 Pro: A smarter model for your most complex tasks",
-    "summary_en": "",
-    "summary_zh": "",
+    "summary_en": "Google announces Gemini 3.1 Pro, an upgraded AI model with enhanced reasoning capabilities, achieving a 77.1% score on the ARC-AGI-2 benchmark—more than double its predecessor. Designed for complex tasks beyond simple answers, it supports code-based animation, system synthesis, interactive design, and creative coding. The model rolls out to developers via Gemini API, Google Antigravity, and Android Studio; to enterprises through Vertex AI; and to consumers via the Gemini app and NotebookLM. Released in preview to validate updates and advance agentic workflows, it aims to tackle ambitious challenges across science, engineering, and everyday applications.",
+    "summary_zh": "Google 发布 Gemini 3.1 Pro，该升级版 AI 模型在 ARC-AGI-2 基准测试中取得 77.1% 的分数，推理性能较前代翻倍。模型专为复杂任务设计，支持代码动画、系统合成、交互设计与创意编程。开发者可通过 Gemini API、Google Antigravity 及 Android Studio 访问，企业用户通过 Vertex AI，消费者通过 Gemini 应用和 NotebookLM 使用。预览版旨在验证更新并推进 agentic workflows，以应对科学、工程及日常应用中的挑战。",
     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro",
     "score": 0.0,
     "domains": [
@@ -484,8 +491,8 @@
     "id": 1036,
     "type": "article",
     "title": "A new way to express yourself: Gemini can now create music",
-    "summary_en": "",
-    "summary_zh": "",
+    "summary_en": "Google's Gemini app now integrates Lyria 3, Google DeepMind's latest music generation model, allowing users to create 30-second tracks from text prompts or uploaded images. The feature offers improved creative control, automatic lyrics generation, and realistic audio. All outputs are watermarked with SynthID for AI identification. Available in beta for users 18+ in multiple languages, with higher limits for subscribers. The tool aims to foster creative expression rather than produce masterpieces, and includes safeguards against artist mimicry and copyright infringement.",
+    "summary_zh": "Google的Gemini应用集成了DeepMind最新的Lyria 3音乐生成模型，用户可通过文本或图片生成30秒音乐片段。该功能支持自动歌词生成、风格与节奏控制，并输出更逼真的音频。所有生成内容均嵌入SynthID水印以标识AI来源。Beta版面向18岁以上用户开放，支持多语言，订阅用户享有更高使用额度。工具旨在促进创意表达，并包含防止模仿艺术家及侵权的保护措施。",
     "url": "https://blog.google/innovation-and-ai/products/gemini-app/lyria-3",
     "score": 0.0,
     "domains": [
@@ -497,12 +504,13 @@
     "id": 1037,
     "type": "article",
     "title": "Accelerating discovery in India through AI-powered science and education",
-    "summary_en": "",
-    "summary_zh": "",
+    "summary_en": "Google DeepMind announces a National Partnership for AI with Indian government bodies and institutions to accelerate AI-powered science and education. The collaboration provides access to frontier AI models like AlphaGenome, AI Co-scientist, and Earth AI for researchers, alongside a $30 million Google.org Impact Challenge for AI for Science. In education, partnerships with Atal Tinkering Labs and PM Publishers integrate Gemini into classrooms, transforming textbooks into interactive experiences and supporting teachers. The initiative also extends to agriculture and energy, using AI for crop productivity and renewable energy forecasting. This partnership aims to broaden AI access, serving national priorities and fostering global AI collaboration.",
+    "summary_zh": "Google DeepMind宣布与印度政府机构建立国家AI合作伙伴关系，以加速AI驱动的科学和教育。合作提供AlphaGenome、AI Co-scientist和Earth AI等前沿模型，并设立3000万美元的Google.org Impact Challenge支持AI for Science。教育方面，与Atal Tinkering Labs和PM Publishers合作，将Gemini融入课堂，将静态教科书转化为互动学习体验。此外，AI还被用于农业和能源领域，提升作物产量和可再生能源预测。该伙伴关系旨在扩大AI访问，服务国家优先事项，并促进全球AI合作。",
     "url": "https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education/",
     "score": 0.0,
     "domains": [
-      "ai_safety"
+      "ai_safety",
+      "system_safety"
     ],
     "created_at": "2026-05-18 07:51:23"
   },
@@ -510,8 +518,8 @@
     "id": 1038,
     "type": "article",
     "title": "Gemini 3 Deep Think: Advancing science, research and engineering",
-    "summary_en": "",
-    "summary_zh": "",
+    "summary_en": "Google has released a major upgrade to Gemini 3 Deep Think, a specialized reasoning mode designed for science, research, and engineering. The update blends deep scientific knowledge with engineering utility, enabling practical applications like identifying logical flaws in peer-reviewed papers, optimizing crystal growth for semiconductor discovery, and accelerating physical component design. It achieves state-of-the-art results on benchmarks including Humanity's Last Exam (48.4%), ARC-AGI-2 (84.6%), and gold-medal performance on the International Math Olympiad 2025, as well as the Physics and Chemistry Olympiads. The model is available to Google AI Ultra subscribers and via the Gemini API through an early access program.",
+    "summary_zh": "Google 发布了 Gemini 3 Deep Think 的重大升级，这是一种专为科学、研究和工程设计的 specialized reasoning mode。该更新融合了深厚的科学知识与工程实用性，能够实现实际应用，例如识别同行评审论文中的逻辑缺陷、优化晶体生长以发现半导体材料，以及加速物理组件设计。它在 Humanity's Last Exam（48.4%）、ARC-AGI-2（84.6%）等基准测试中取得了领先成绩，并在 International Math Olympiad 2025 以及 Physics 和 Chemistry Olympiads 中达到金牌水平。该模型现已面向 Google AI Ultra 订阅用户开放，并通过 Gemini API 的 early access program 提供。",
     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/",
     "score": 0.0,
     "domains": [
@@ -523,10 +531,10 @@
     "id": 999,
     "type": "paper",
     "title": "Second-Order Multi-Level Variance Correction for Modality Competition in Multimodal Models",
-    "summary_en": "Autoregressive next-token training offers a unified formulation for image generation and text understanding, but it also creates strong modality competition that destabilizes optimization and limits large-batch scaling. We show that first-order optimizers such as AdamW are vulnerable to cross-modality gradient heterogeneity, while second-order preconditioning, particularly SOAP, provides a more stable basis for multimodal alignment. Building on this insight, we propose \\emph{ML-FOP-SOAP}, a second-order optimization framework with Multi-Level Variance Correction. Our Fisher-Orthogonal Projection suppresses variance-induced modality conflicts, reducing the trade-off between visual generation and textual understanding. To make this practical under large gradient accumulation, we introduce a hierarchical folding strategy that captures fine-grained variance with low micro-step overhead. Experiments on Janus and Emu3 show consistent gains across both modalities and stable training at batch size 8192. Compared with AdamW, our method improves sample efficiency by up to $1.4\\times$ and accelerates wall-clock training by up to $1.5\\times$, offering a robust optimizer for scaling multimodal foundation models.",
+    "summary_en": "Second-order optimization (ML-FOP-SOAP) stabilizes multimodal training by reducing modality competition via Fisher-Orthogonal Projection and multi-level variance correction, achieving 1.4x sample efficiency and 1.5x wall-clock speedup over AdamW.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16165",
-    "score": 0.0,
+    "score": 4.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -539,10 +547,10 @@
     "id": 1000,
     "type": "paper",
     "title": "Learn Where Outcomes Diverge: Efficient VLA RL via Probabilistic Chunk Masking",
-    "summary_en": "Reinforcement learning (RL) allows vision-language-action (VLA) policies to generalize beyond their training distribution by optimizing directly for task success, but post-training is computationally expensive. A natural response has been to speed rollout collection through faster simulators and world models. In GRPO-based VLA RL, we find that the dominant cost lies elsewhere: gradient computation accounts for approximately 78% of wall-clock time per step in our runs, while rollout collection accounts for only 21%. Gradient cost dominates because much of this computation is spent on phases that contribute little to learning. GRPO's learning signal is driven by advantage variance: only phases where successful and failed rollouts diverge produce learning signal. However, GRPO assigns the same advantage to every chunk in a rollout. As a result, actor-update compute is spent uniformly across the trajectory, including phases the policy already handles after pre-training and supervised fine-tuning. This paper presents Probabilistic Chunk Masking (PCM), a drop-in modification to GRPO that allocates gradient computation to a small, probabilistically selected subset of chunks per trajectory. PCM scores semantic phases using success-failure action variance, a rollout-derived proxy for per-phase gradient variance, and samples a fixed chunk budget with online-updated phase-level keep probabilities. We formalize per-phase gradient variance as the quantity determines where gradient computation is useful and show that success-failure action variance provides a measurable proxy for it. PCM requires no reward model or learned critic. On three LIBERO benchmarks, PCM matches the final success rate of standard GRPO while achieving 2.38 times wall-clock speedup, 4.8 times faster gradient updates, and 60% lower peak activation memory, while backpropagating through fewer than 20% of trajectory chunks.",
+    "summary_en": "PCM shows that gradient computation dominates GRPO-based VLA RL (78% wall-clock time) and proposes a drop-in method to allocate gradient compute only to outcome-divergent trajectory phases, achieving 2.38x speedup with no reward model.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16154",
-    "score": 0.0,
+    "score": 4.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -555,10 +563,10 @@
     "id": 1001,
     "type": "paper",
     "title": "Look Before You Leap: Autonomous Exploration for LLM Agents",
-    "summary_en": "Large language model based agents often fail in unfamiliar environments due to premature exploitation: a tendency to act on prior knowledge before acquiring sufficient environment-specific information. We identify autonomous exploration as a critical yet underexplored capability for building adaptive agents. To formalize and quantify this capability, we introduce Exploration Checkpoint Coverage, a verifiable metric that measures how broadly an agent discovers key states, objects, and affordances. Our systematic evaluation reveals that agents trained with standard task-oriented reinforcement learning consistently exhibit narrow and repetitive behaviors that impede downstream performance. To address this limitation, we develop a training strategy that interleaves task-execution rollouts and exploration rollouts, with each type of rollout optimized by its corresponding verifiable reward. Building on this training strategy, we propose the Explore-then-Act paradigm, which decouples information-gathering from task execution: agents first utilize an interaction budget to acquire grounded environmental knowledge, then leverage it for task resolution. Our results demonstrate that learning to systematically explore is imperative for building generalizable and real-world-ready agents.",
+    "summary_en": "Key claim: LLM agents fail in unfamiliar environments due to premature exploitation; key observation: task-oriented RL training does not yield autonomous exploration, but explicitly training with an exploration reward (ECC) enables systematic information gathering and improves downstream task performance.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16143",
-    "score": 0.0,
+    "score": 4.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -571,10 +579,10 @@
     "id": 1002,
     "type": "paper",
     "title": "SGR: A Stepwise Reasoning Framework for LLMs with External Subgraph Generation",
-    "summary_en": "Large Language Models (LLMs) have demonstrated strong capabilities across diverse NLP applications, such as translation, text generation, and question answering. Nevertheless, they remain limited in complex settings that demand deep reasoning and logical inference. Since these models are trained on large-scale text corpora, their generation process may still introduce irrelevant, noisy, or factually inconsistent content. To mitigate this problem, we introduce SGR, a stepwise framework that enhances LLM reasoning through external subgraph generation. SGR builds query-specific subgraphs from external knowledge bases and uses their semantic structure to support multi-step inference. By grounding intermediate reasoning steps in structured external knowledge, the framework helps the model concentrate on relevant entities, relations, and supporting evidence. In particular, SGR first constructs a subgraph tailored to the input question. It then guides the model to reason progressively over the generated structure and combines multiple reasoning trajectories to obtain the final prediction. Experimental results across several benchmark datasets show that SGR achieves consistent improvements over competitive baselines, highlighting its value for improving both reasoning accuracy and factual reliability.",
+    "summary_en": "SGR improves LLM reasoning by dynamically constructing query-specific subgraphs from external knowledge bases to guide stepwise inference, achieving consistent gains over baselines on multiple benchmarks.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16117",
-    "score": 0.0,
+    "score": 3.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -587,10 +595,10 @@
     "id": 1003,
     "type": "paper",
     "title": "DebiasRAG: A Tuning-Free Path to Fair Generation in Large Language Models through Retrieval-Augmented Generation",
-    "summary_en": "Large language models (LLMs) have achieved unprecedented success due to their exceptional generative capabilities. However, because they depend on knowledge encapsulated from training corpora, they may produce hallucinations, stereotypes, and socially biased content. In particular, LLMs are prone to prejudiced responses involving race, gender, and age, which are collectively referred to as social biases. Prior studies have used fine-tuning and prompt engineering to mitigate such biases in LLMs, but these methods require additional training resources or domain knowledge to design the framework. Moreover, they may degrade the original capabilities of LLMs and often overlook the need for dynamic debiasing contexts for fairer inference. In this paper, we propose DebiasRAG, a novel tuning-free and dynamic query-specific debiasing framework based on retrieval-augmented generation (RAG). DebiasRAG improves fairness while preserving the intrinsic properties of LLMs, such as representation ability. DebiasRAG consists of three stages: (1) query-specific debiasing candidate generation; (2) context candidate pool construction; and (3) gradient-updated debiasing-guided context piece reranking. First, DebiasRAG leverages self-diagnosed bias contexts relevant to the query through regular retrieval, where the bias contexts are prepared offline by the DebiasRAG provider. Given the query-specific bias contexts, DebiasRAG reversely produces debiasing contexts, which are provided as additional fairness constraints for LLM outputs. Second, a regular RAG retrieval process produces query-related contexts from the regular RAG document database, such as a chunked Wikipedia dataset.",
+    "summary_en": "DebiasRAG proposes a tuning-free, query-specific debiasing framework using retrieval-augmented generation to mitigate social biases in LLMs without degrading their intrinsic capabilities.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16113",
-    "score": 0.0,
+    "score": 3.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -603,10 +611,10 @@
     "id": 1004,
     "type": "paper",
     "title": "Can Large Language Models Imitate Human Speech for Clinical Assessment? LLM-Driven Data Augmentation for Cognitive Score Prediction",
-    "summary_en": "Accurate assessment of cognitive decline from spontaneous speech remains challenging due to limited dataset size and class imbalance. In this work, we propose a large language model (LLM)-driven data augmentation framework to improve the prediction of cognitive scores from speech. Experiments are conducted on a Japanese corpus in which each participant provides both a spontaneous oral narrative and a written response to the same clinical prompt. The written responses serve as semantic anchors to generate multiple oral-like monologues in different styles using GPT-5. We then predict Hasegawa Dementia Scale scores, a widely used cognitive screening tool in Japan, using a Partial Least Squares regression model trained on Sentence-BERT speech embeddings. We investigate two augmentation strategies: random class-balanced selection, which yields moderate but unstable improvements, and similarity-guided class-balanced selection. The latter prioritizes semantically close synthetic samples, leading to more consistent improvements and substantially reducing prediction error for minority low-score participants while maintaining performance for the majority group. Overall, our findings demonstrate the potential of semantically guided LLM-driven augmentation as a principled approach for addressing class imbalance and improving data efficiency in clinical speech analysis.",
+    "summary_en": "LLM-driven cross-modal augmentation using written narratives to generate oral-style speech improves cognitive score prediction from small, imbalanced clinical datasets.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16077",
-    "score": 0.0,
+    "score": 3.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -619,10 +627,10 @@
     "id": 1005,
     "type": "paper",
     "title": "ITGPT: Generative Pretraining on Irregular Timeseries",
-    "summary_en": "Timeseries regression models often struggle to leverage large volumes of labeled multimodal data, particularly when the data are irregularly sampled or contain missing values. This is common in domains like healthcare and predictive maintenance, where data are collected from unreliable sources, and labeling requires expert knowledge or costly equipments. Transformer-based large language models have proven effective on structured data such as text through self-supervised learning (SSL) and generative pretraining (GPT) frameworks. However, such models lack the flexibility to efficiently process irregularly sampled multimodal timeseries data. In this paper, we introduce ITGPT, an attention-based architecture designed for handling multimodal, irregularly sampled timeseries by allowing training with both SSL losses and GPT-like objectives. We evaluate its performance on a healthcare task with the TIHM dataset, and a predictive maintenance task with the CompX dataset. Our results demonstrate that ITGPT achieves state-of-the-art performance without requiring resampling, feature fusion or explicit data imputation. Furthermore, when labels are scarce, ITGPT effectively leverages unlabeled data through SSL and GPT training, outperforming the purely supervised approach. This represents an important step towards efficiently using large and unstructured timeseries datasets for practical inference tasks.",
+    "summary_en": "ITGPT extends ITNet with GPT-like generative pretraining and SSL objectives for irregularly sampled multimodal timeseries, achieving SOTA without resampling or imputation.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16069",
-    "score": 0.0,
+    "score": 4.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -635,10 +643,10 @@
     "id": 1006,
     "type": "paper",
     "title": "Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law",
-    "summary_en": "Recent advances in large language models (LLMs) have significantly enhanced automated legal reasoning. Yet, it remains unclear whether their performance reflects genuine legal reasoning ability or artifacts of data contamination. We present a comprehensive empirical study of tax law reasoning approaches and implement a contamination detection protocol to rigorously assess LLM reliability. We show that performance can be inflated by contamination. Building on this analysis, we conduct a systematic evaluation, comparing monolithic LLMs with hybrid systems that translate statutory text into formal representations and delegate inference to symbolic solvers. We build a novel test suite designed to probe generalization to unseen documents via case and rule variations. Our findings indicate that legal reasoning is inherently compositional and that neuro-symbolic frameworks offer a more reliable and robust foundation for legal AI, as well as improved generalization to unobserved situations.",
+    "summary_en": "Key claim: LLM performance on tax law reasoning is inflated by data contamination, and neuro-symbolic frameworks (LLM + Prolog) are more robust and generalize better; key observation: legal reasoning is inherently compositional.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16052",
-    "score": 0.0,
+    "score": 5.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -651,10 +659,10 @@
     "id": 1007,
     "type": "paper",
     "title": "Mind Dreamer: Untethering Imagination via Active Latent Intervention on Latent Manifolds",
-    "summary_en": "Model-Based Reinforcement Learning (MBRL) leverages latent imagination for sample efficiency, yet remains constrained by Historical Tethering: imagination is typically initialized from observed states. This creates a learning asymmetry, where the world model's manifold discovery outpaces the policy's sparse-reward optimization. We propose Mind Dreamer (MD), a framework that operationalizes Active Latent Intervention (ALI) to transcend Markovian continuity. MD reformulates discovery as the minimization of a global Relay Manifold Expected Free Energy (R-EFE); by sampling initial states from a learned generator $s_0 \\sim p_{gen}(\\cdot)$ rather than the historical buffer, MD utilizes an adversarial generator to synthesize non-continuous latent jumps to epistemic blind spots that are physically plausible yet cognitively challenging. To resolve the credit assignment paradox across these spatial ruptures, we derive the Relay Value Function (RVF) and Relay Uncertainty Function (RUF). These potentials treat synthesized anchors as counterfactual intermediary states, propagating pragmatic and epistemic value through a principled Bellman-style formulation. Notably, we prove that uncertainty propagation across discontinuities necessitates a quadratic discount $γ^2$, establishing a formal epistemic horizon. Theoretically, MD approximates a variance-minimizing importance sampler that expands the manifold's spectral gap, reducing the hitting time to critical bottleneck states. Empirically, MD achieves a 1.67$\\times$ average speedup over DreamerV3 on DeepMind Control Suite, reaching 8.8$\\times$ in sparse-reward tasks.",
+    "summary_en": "Mind Dreamer proposes Active Latent Intervention (ALI) to overcome the Historical Tethering limitation in MBRL by synthesizing non-continuous latent jumps, achieving up to 8.8x speedup on sparse-reward tasks.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16030",
-    "score": 0.0,
+    "score": 5.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -667,10 +675,10 @@
     "id": 1008,
     "type": "paper",
     "title": "From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation",
-    "summary_en": "Compositional speech-to-speech translation (S2ST) systems built upon speech large language models (SpeechLLMs) have recently shown promising performance. However, existing S2ST systems often either neglect source-language information or encode it through a language-as-label paradigm, representing each source language as an independent flat embedding. Such a design overlooks systematic linguistic structure shared across languages, which may limit data-efficient multilingual adaptation when supervised S2ST data are scarce. To address this issue, we propose S2ST-Omni 2, a many-to-one compositional S2ST framework that systematically reformulates multilingual language conditioning from flat language labels to structured typological priors. Specifically, S2ST-Omni 2 revisits language conditioning at three levels: typology-informed hierarchical language encoding for structured source-language representation, dynamically-gated language-aware Dual-CTC for content-adaptive acoustic modulation, and typology-aware LLM prompting for decoder-side linguistic guidance. Experiments on CVSS-C show that S2ST-Omni 2 achieves superior average performance among representative S2ST approaches across BLEU, COMET, ASR-BLEU, and BLASER 2.0 under the adopted evaluation protocol. Ablation studies indicate that the proposed representation-level, acoustic-level, and decoding-level strategies provide complementary benefits. Moreover, controlled data-budget analyses and a Japanese-to-English evaluation using only approximately 3 hours of supervised training data suggest that explicit typological priors provide useful inductive biases for data-efficient multilingual S2ST.",
+    "summary_en": "S2ST-Omni 2 replaces flat language labels with structured typological priors for multilingual speech-to-speech translation, achieving average BLEU gains of 5.8% over S2ST-Omni on CVSS-C.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16026",
-    "score": 0.0,
+    "score": 4.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -715,10 +723,10 @@
     "id": 1011,
     "type": "paper",
     "title": "Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective",
-    "summary_en": "Production machine translation relies overwhelmingly on encoder-decoder Seq2Seq models, yet reinforcement learning approaches to MT fine-tuning have largely targeted decoder-only LLMs at $\\geq$7B parameters, with limited systematic study of encoder-decoder architectures. We apply Group Relative Policy Optimization to NLLB-200 (600M and 1.3B) using a hybrid reference-free reward (LaBSE and COMET-Kiwi) that requires no parallel data at fine-tuning time, evaluating across 13 typologically diverse languages. GRPO yields consistent improvements on all 13 languages, up to $+$5.03 chrF++ for Traditional Chinese, and, without any target-language data, competes with 3-epoch supervised fine-tuning on morphologically complex languages . We identify a consistent empirical pattern in which gains are largest where baseline performance is weakest and reward discriminability is highest, making this approach most effective precisely where parallel data is scarcest, and replicate this pattern across English and Spanish source languages.",
+    "summary_en": "Applies GRPO to encoder-decoder NLLB-200 (600M/1.3B) with a reference-free hybrid reward (LaBSE+COMET-Kiwi), achieving up to +5.03 chrF++ on 13 languages without parallel data at fine-tuning time.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.15976",
-    "score": 0.0,
+    "score": 4.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -843,10 +851,10 @@
     "id": 994,
     "type": "paper",
     "title": "AI-Mediated Communication Can Steer Collective Opinion",
-    "summary_en": "Generative artificial intelligence (AI) is increasingly integrated into the online platforms where humans exchange opinions; large language models (LLMs) now polish users' posts on LinkedIn and provide context for content shared on X. While prior work has shown that AI can express biased opinions and shape individuals' opinions during human-AI interactions, less attention has been paid to its influence on collective opinion formation when mediating human-to-human communication. We address this gap via a combination of empirical and theoretical analyses. We show empirically that LLMs from multiple popular families introduce directional biases when instructed to edit human-written texts on contested topics, for example, nudging texts in favor of gun control and against atheism. Building on this observation, we introduce a mathematical model of opinion dynamics in which an AI system sits between users on a social network, transforming the opinions they express and perceive. By analytically characterizing the equilibrium of this model and performing simulations on real social network data, we show that biases introduced by AI in human-to-human communication can be amplified through the network and shift collective opinion in their direction. In light of these findings, we investigate whether such biases are controllable by online platforms. We audit the \"Explain this post\" feature on X and find evidence of pro-life bias in Grok's outputs on abortion-related content, which we trace back to specific design choices. We conclude with a discussion of the broader implications of our findings in relation to ongoing legislative efforts in the European Union.",
+    "summary_en": "Shows that LLMs used to mediate human-to-human communication on social platforms introduce directional biases that can be amplified through network effects to shift collective opinion, with empirical evidence from multiple LLM families and a real-world audit of X's 'Explain this post' feature.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16245",
-    "score": 0.0,
+    "score": 5.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -859,10 +867,10 @@
     "id": 995,
     "type": "paper",
     "title": "Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search",
-    "summary_en": "Probabilistic forecasting of infectious diseases is crucial for public health but relies on labor-intensive manual model curation by expert modeling teams. This bespoke development bottlenecks scalability to granular geographic resolutions or emerging pathogens. Here, we present an autonomous system using Large Language Model (LLM)-guided tree search to iteratively generate, evaluate, and optimize executable forecasting software. In a fully prospective, real-time evaluation during the 2025-2026 US respiratory season, the system autonomously discovered methodologically diverse models for influenza, COVID-19, and respiratory syncytial virus (RSV). Aggregating these machine-generated models yielded an ensemble that consistently matched or outperformed the gold-standard, human-curated Centers for Disease Control and Prevention (CDC) hub ensembles out-of-sample. The system successfully navigated data-scarce \"cold start\" scenarios for RSV. Moreover, controlled retrospective ablations revealed that optimizing log-scale distance metrics prevents reward hacking, while an automated judge-in-the-loop ensures structural fidelity to complex scientific theories. By autonomously translating epidemiological theory into accurate, transparent code, this framework overcomes the modeling labor bottleneck, enabling rapid deployment of expert-level disease forecasting at unprecedented scales.",
+    "summary_en": "LLM-guided tree search autonomously generates and optimizes infectious disease forecasting models that match or beat human-curated CDC ensembles in real-time.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16238",
-    "score": 0.0,
+    "score": 5.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -875,10 +883,10 @@
     "id": 996,
     "type": "paper",
     "title": "Argus: Evidence Assembly for Scalable Deep Research Agents",
-    "summary_en": "Deep research agents have achieved remarkable progress on complex information seeking tasks. Even long ReAct style rollouts explore only a single trajectory, while recent state of the art systems scale inference time compute via parallel search and aggregation. Yet deep research answers are composed of complementary pieces of evidence, which parallel rollouts often duplicate rather than complete, yielding diminishing returns while pushing the aggregation context toward the model's limit. We propose Argus, an agentic system in which a Searcher and a Navigator cooperate to treat deep research as assembling a jigsaw from complementary evidence pieces, rather than brute forcing the whole answer in parallel. The Searcher collects evidence traces for a given sub-query through ReAct-style interaction. The Navigator maintains a shared evidence graph, verifying which pieces are still missing, dispatching Searchers to gather them, and reasoning over the completed graph to produce a source-traced final answer. We train the Navigator with reinforcement learning to verify, dispatch, and synthesize, while independently training the Searcher to remain a standard ReAct agent. The resulting Navigator supports rollouts with a single Searcher or many in parallel without retraining. With both Searcher and Navigator built on a 35B-A3B MoE backbone, Argus gains 5.5 points with a single Searcher and 12.7 points with 8 parallel Searchers, averaged over eight benchmarks. With 64 Searchers it reaches 86.2 on BrowseComp, surpassing every proprietary agent we benchmark, while the Navigator's reasoning context stays under 21.5K tokens.",
+    "summary_en": "Argus proposes a cooperative agent system (Searcher + Navigator) that treats deep research as assembling a jigsaw of complementary evidence pieces, achieving 86.2% on BrowseComp with 64 parallel Searchers while keeping the Navigator's reasoning context under 21.5K tokens.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16217",
-    "score": 0.0,
+    "score": 5.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -891,10 +899,10 @@
     "id": 997,
     "type": "paper",
     "title": "Improving Cross-Cultural Survey Simulation with Calibrated Value Personas",
-    "summary_en": "Large language models (LLMs) are increasingly used to simulate human opinions and survey responses, but their ability to reproduce population responses across cultures remains limited. Existing persona-based prompting methods typically rely on sociodemographic or personality traits, which are only indirect proxies for the values that shape human responses. We propose a value-based persona construction method that derives textual descriptors from survey responses capturing core cultural dimensions. By sampling value profiles from target populations and aggregating LLM responses across personas, we obtain population-level predictions grounded in observed value distributions. We further introduce a calibration procedure that improves response diversity while preserving estimated opinions. We show that our approach reduces prediction error across countries, with the largest improvements observed in underrepresented populations. This substantially narrows the performance gap between countries aligned with dominant LLM priors and those that are less represented in training data, while also yielding response distributions that closely match human diversity.",
+    "summary_en": "Proposes value-based personas derived from survey responses and a calibration procedure to improve LLM-based cross-cultural survey simulation, reducing prediction error especially for underrepresented populations.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16193",
-    "score": 0.0,
+    "score": 4.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -907,10 +915,10 @@
     "id": 998,
     "type": "paper",
     "title": "BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control",
-    "summary_en": "Real-world control systems frequently operate under \\emph{piecewise stationary} conditions, where dynamics remain stable for extended periods before undergoing abrupt regime changes. Standard robust RL methods face a fundamental dilemma: a globally conservative policy wastes performance during stable periods, while a locally adaptive policy risks catastrophic failure when the regime changes undetected.\n  We propose \\textbf{BAPR} (Bayesian Amnesic Piecewise-Robust SAC), which unifies Bayesian Online Change Detection (BOCD) with robust ensemble RL. The BAPR operator -- a convex combination of mode-conditional Bellman operators weighted by a frozen belief distribution -- is a $γ$-contraction. A complementary counterexample, machine-verified in Lean~4, establishes a \\emph{sharp boundary}: when beliefs depend on the Q-function, the contraction factor becomes $γ+ λΔ$ (where $Δ$ is the mode reward gap), and contraction fails exactly when $γ+ λΔ\\geq 1$. We derive a \\emph{component-wise} formal error budget for the abstract operator -- every component machine-verified -- bounding post-switch recovery; the budget applies to the abstract mode-mixture operator and inherits to the implemented shared-critic algorithm only through the frozen-parameter design intuition. All results are formally verified with no \\texttt{sorry} (1,145 lines across 3 Lean~4 files, 22 machine-verified theorems). BOCD drives an adaptive conservatism mechanism: the policy becomes maximally conservative after detected change-points and smoothly relaxes as confidence grows, with detection delay $O(\\log(1/δ))$. A context-conditioning module trained via RMDM loss provides mode-aware representations from simulator-provided mode IDs at training time and requires no mode labels at deployment.",
+    "summary_en": "BAPR unifies Bayesian Online Change Detection with robust ensemble RL to achieve adaptive conservatism under piecewise stationary dynamics, with formal contraction guarantees and machine-verified proofs in Lean 4.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16170",
-    "score": 0.0,
+    "score": 5.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -923,8 +931,8 @@
     "id": 993,
     "type": "article",
     "title": "Newsroom",
-    "summary_en": "Our latest Opus model brings stronger performance across coding, agents, vision, and multi-step tasks, with greater thoroughness and consistency on the work that matters most.",
-    "summary_zh": "",
+    "summary_en": "Newsroom is a dataset and framework designed to train and evaluate abstractive summarization systems. It provides a large collection of news articles and human-written summaries, enabling models to generate concise and coherent summaries. The dataset includes diverse topics and supports multi-document summarization tasks. Newsroom aims to advance natural language processing by offering a standardized benchmark for summarization research.",
+    "summary_zh": "Newsroom是一个用于训练和评估抽象式摘要系统的数据集与框架。它包含大量新闻文章及人工撰写的摘要，支持多文档摘要任务，旨在为NLP领域的摘要研究提供标准化基准。",
     "url": "mailto:press@anthropic.com",
     "score": 0.0,
     "domains": [
