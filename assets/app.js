@@ -47,14 +47,18 @@
         ].join(' ').toLowerCase();
         return hay.includes(q);
       });
-      searchResults.innerHTML = hits.slice(0, 100).map(e => `
-        <article class="glass-card">
-          <h2><a href="${escapeAttr(e.url)}" target="_blank">${escapeHtml(e.title)}</a></h2>
-          <div class="meta">${escapeHtml(e.type)} · ${escapeHtml((e.domains || []).join(', '))}</div>
+      searchResults.innerHTML = hits.slice(0, 100).map(e => {
+        const pageUrl = e.article_page || e.url;
+        const origLink = e.article_page
+          ? `<a href="${escapeAttr(e.url)}" target="_blank" class="dim-link">Original →</a>`
+          : '';
+        return `<article class="glass-card">
+          <h2><a href="${escapeAttr(pageUrl)}">${escapeHtml(e.title)}</a></h2>
+          <div class="meta">${escapeHtml(e.type)} · ${escapeHtml((e.domains || []).join(', '))} ${origLink}</div>
           <div class="lang-en">${escapeHtml(e.summary_en || '')}</div>
-          <div class="lang-zh">${escapeHtml(e.summary_zh || '')}</div>
-        </article>
-      `).join('') || '<p>No matches.</p>';
+          <div class="lang-zh">${escapeHtml(e.summary_zh || e.summary_en || '')}</div>
+        </article>`;
+      }).join('') || '<p>No matches.</p>';
     };
     fetch('assets/search-index.json')
       .then(r => r.json())

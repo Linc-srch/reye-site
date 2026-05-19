@@ -1,5 +1,18 @@
 [
   {
+    "id": 1059,
+    "type": "article",
+    "title": "OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments",
+    "summary_en": "OpenAI has partnered with Dell to deploy its Codex AI coding assistant in hybrid and on-premise enterprise environments. This collaboration aims to bring advanced AI-powered code generation and assistance directly into corporate data centers, addressing security, latency, and data sovereignty concerns. By integrating Codex with Dell's infrastructure, enterprises can leverage AI for software development while maintaining control over sensitive data. The move signals a shift toward making large language models accessible in regulated industries that require on-premise deployment.",
+    "summary_zh": "OpenAI与Dell合作，将Codex AI编程助手部署到混合云和本地企业环境中。该合作旨在将先进的AI代码生成能力引入企业数据中心，解决安全、延迟和数据主权问题。通过集成Dell的基础设施，企业可在保持对敏感数据控制的同时，利用AI加速软件开发。此举标志着大语言模型向需要本地部署的受监管行业拓展。",
+    "url": "https://openai.com/index/dell-codex-enterprise-partnership",
+    "score": 0.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:11:46"
+  },
+  {
     "id": 1039,
     "type": "article",
     "title": "OpenAI and Malta partner to bring ChatGPT Plus to all citizens",
