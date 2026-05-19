@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search</h2>
+    <h2 class="lang-zh">RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search</h2>
+    <div class="meta">
+      Jinglong Xiong, Xiaotian Liu, Ruoxin Wang, Zihang Liu, Yefan Zhou, Yujun Yan, Yaoqing Yang · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>RL4RLA proposes a general RL framework that automates the discovery of interpretable, symbolic randomized linear algebra algorithms by using a numerical curriculum and Monte Carlo Graph Search to overcome sparse rewards and vast search spaces.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>RL4RLA proposes a general RL framework that automates the discovery of interpretable, symbolic randomized linear algebra algorithms by using a numerical curriculum and Monte Carlo Graph Search to overcome sparse rewards and vast search spaces.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — rl4rla</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search</li>
+<li><strong>Alias:</strong> rl4rla</li>
+<li><strong>Authors:</strong> Jinglong Xiong, Xiaotian Liu, Ruoxin Wang, Zihang Liu, Yefan Zhou, Yujun Yan, Yaoqing Yang</li>
+<li><strong>arXiv ID:</strong> 2605.18004</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18004</li>
+<li>HTML: https://arxiv.org/html/2605.18004v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18004</li>
+<li><strong>Tags:</strong> randomized-linear-algebra, reinforcement-learning, algorithm-discovery, curriculum-learning, monte-carlo-tree-search</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>RL4RLA proposes a general RL framework that automates the discovery of interpretable, symbolic randomized linear algebra algorithms by using a numerical curriculum and Monte Carlo Graph Search to overcome sparse rewards and vast search spaces.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Randomized linear algebra (RLA) algorithms are crucial for large-scale scientific computing and ML, but their discovery remains manual and expert-driven. While RL offers automation potential, standard approaches fail due to sparse reward landscapes and combinatorial search spaces inherent in composing multi-step RLA algorithms from basic primitives.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Automated algorithm discovery via evolutionary search (AutoML-Zero, LION) and program synthesis (DreamCoder).</li>
+<li>LLM-driven discovery (FunSearch, AlphaEvolve, AlgoTune) that biases toward training distribution and common code patterns.</li>
+<li>Neural approaches (Andrychowicz et al., Veličković et al.) that produce black-box representations with limited interpretability.</li>
+<li>Prior isolated efforts on learned sketching, preconditioners, and data-driven iterative solvers (Li et al., Indyk et al., Kaneda et al.).</li>
+<li>Classic RLA algorithms: sketch-and-solve (Blendenpik, LSRN), sketch-and-precondition, sketch-and-project, Newton Sketch, Randomized Kaczmarz.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>No general-purpose framework exists for automatically discovering interpretable, symbolic RLA algorithms from scratch. Existing methods either rely on manual design, black-box neural representations, or LLM-driven search that is biased toward common code patterns and cannot compose novel algorithmic structures from basic linear algebra primitives.</p>
+<h3>P — Proposal</h3>
+<p>RL4RLA formulates RLA algorithm discovery as learning to compose a grammar of linear-algebra primitives via RL. It introduces (1) a numerical curriculum that progressively increases problem difficulty to inject domain-specific inductive bias, and (2) Monte Carlo Graph Search (MCGS) that optimizes exploration by identifying and merging equivalent partial algorithms, enabling efficient search over multi-step compositions.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>RL4RLA rediscovers state-of-the-art RLA algorithms including sketch-and-precondition solvers, Randomized Kaczmarz, and Newton Sketch. It produces algorithms with customizable trade-offs between accuracy, speed, and stability, and generalizes to PSD eigenvalue problems with minimal interface changes.</p>
+<h3>Ablation</h3>
+<p>The numerical curriculum and Monte Carlo Graph Search are both critical: without the curriculum, search fails to discover multi-step compositions (e.g., Blendenpik requires 5-7 sequential operations); without MCGS, the search space becomes intractable due to combinatorial explosion.</p>
+<h3>Limitations</h3>
+<p>The framework currently focuses on linear least-squares and PSD eigenvalue problems; extension to other RLA domains (e.g., low-rank approximation, non-linear problems) may require additional primitives. The curriculum design relies on manual specification of difficulty stages, which may not generalize to all RLA subfields. The discovered algorithms are symbolic but still require verification of numerical stability in practice.</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a general, interpretable alternative to black-box neural or LLM-based algorithm discovery, which is crucial for scientific computing where verifiability is required.</li>
+<li>Demonstrates that curriculum learning and graph-based search can effectively tame sparse-reward combinatorial search spaces, a technique applicable to other algorithmic discovery domains.</li>
+<li>Enables targeted optimization of RLA algorithms for specific accuracy-speed-stability trade-offs, which is directly useful for your work on efficient numerical methods.</li>
+<li>Shows that RL can rediscover and potentially surpass manually designed RLA algorithms, opening the door to fully automated numerical linear algebra innovation.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply RL4RLA to discover novel RLA algorithms for your specific problem domains (e.g., low-rank approximation, randomized SVD variants).</li>
+<li>[ ] Extend the primitive set to include non-linear operations (e.g., Hessian approximations) for optimization problems beyond least-squares.</li>
+<li>[ ] Investigate automatic curriculum generation to remove manual stage design, making the framework more general.</li>
+<li>[ ] Compare RL4RLA-discovered algorithms against hand-tuned baselines on large-scale real-world datasets to assess practical speedups.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18004</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18004" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

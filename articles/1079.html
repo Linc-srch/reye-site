@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LogRouter: Adaptive Two-Level LLM Routing for Log Question Answering in Big Data Systems | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">LogRouter: Adaptive Two-Level LLM Routing for Log Question Answering in Big Data Systems</h2>
+    <h2 class="lang-zh">LogRouter: Adaptive Two-Level LLM Routing for Log Question Answering in Big Data Systems</h2>
+    <div class="meta">
+      Mert Coskuner, Merve Zeybel, Melik Mert Dolan · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>LogRouter proposes a two-level cost-aware router for log QA that achieves 88.4% mean accuracy and 55% latency reduction over a fixed-32B baseline by dispatching queries to LLM-bypass paths or appropriately-sized generators.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>LogRouter proposes a two-level cost-aware router for log QA that achieves 88.4% mean accuracy and 55% latency reduction over a fixed-32B baseline by dispatching queries to LLM-bypass paths or appropriately-sized generators.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — logrouter</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> LogRouter: Adaptive Two-Level LLM Routing for Log Question Answering in Big Data Systems</li>
+<li><strong>Alias:</strong> logrouter</li>
+<li><strong>Authors:</strong> Mert Coskuner, Merve Zeybel, Melik Mert Dolan</li>
+<li><strong>arXiv ID:</strong> 2605.18015</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18015</li>
+<li>HTML: https://arxiv.org/html/2605.18015v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18015</li>
+<li><strong>Tags:</strong> log-qa, cost-aware-routing, llm-routing, rag, big-data</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>LogRouter proposes a two-level cost-aware router for log QA that achieves 88.4% mean accuracy and 55% latency reduction over a fixed-32B baseline by dispatching queries to LLM-bypass paths or appropriately-sized generators.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Production log analytics in self-hosted environments requires natural-language access to massive log streams, but routing every query through a large language model is costly and often suboptimal. Existing log-RAG prototypes operate on static logs or rely on cloud APIs, and prior routing work (e.g., FrugalGPT, Adaptive-RAG) assumes every query ultimately reaches an LLM, missing the opportunity for LLM-bypass paths.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>LLMLogAnalyzer [1] proposes a clustering-based log chatbot with a router, but every query traverses a large generative model.</li>
+<li>FrugalGPT [2] cascades LLM APIs with early-exit confidence thresholds, achieving cost reduction but still routing all queries through an LLM.</li>
+<li>Adaptive-RAG [8] trains a classifier to route among retrieval strategies, but does not consider LLM-bypass paths.</li>
+<li>LogGPT [12] and Mudgal &amp; Wouhaybi [11] apply ChatGPT to log analysis but rely on commercial cloud APIs and have scalability limitations.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Prior log QA systems either route every query through a single LLM (wasting resources on simple queries) or rely on external cloud APIs (raising privacy/cost concerns). No existing work provides a production-grade, on-premises log QA system with explicit LLM-bypass paths and dynamic model-size selection for the semantic path.</p>
+<h3>P — Proposal</h3>
+<p>LogRouter is an end-to-end log QA system with a two-level cost-aware router: Level-1 dispatches queries to one of four paths (direct response, Druid keyword search, template lookup with SQL generation, pgvector semantic retrieval) using a regex-based keyword vocabulary, and Level-2 selects a 14B or 32B generator for the semantic path. The system is deployed on TUBITAK BILGEM's national big data platform with a PySpark-based Drain3 ingestion pipeline and dual-index storage in Apache Druid and PostgreSQL with pgvector.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On four LogHub datasets (70 questions total), the router achieves 88.4% mean accuracy (94.7% on Linux). The full pipeline attains mean ROUGE-1 of 0.373, BERTScore of 0.879, RAGAS Faithfulness of 0.779, and end-to-end latency of 18.6 s. In offline comparison, the routed system reduces mean latency by 55% vs. Fixed-32B (46.3 s vs. 102.1 s) while preserving Answer Correctness within 5.8 points and exceeding Fixed-14B on RAGAS Faithfulness across every dataset.</p>
+<h3>Ablation</h3>
+<p>Removing the router (always-32B) increases latency by 55% with marginal quality gain; removing Drain template extraction reduces routing precision significantly but does not affect generation quality, showing Drain contributes almost entirely to routing precision.</p>
+<h3>Limitations</h3>
+<p>['Evaluation is limited to 70 questions across four datasets, which may not capture the full diversity of real-world log queries.', 'The regex-based L1 router relies on handcrafted patterns (P0-P6) that may require maintenance as query patterns evolve.', 'The system is deployed on a specific platform (TUBITAK BILGEM), and generalizability to other big data environments is not demonstrated.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Demonstrates that cost-aware routing with LLM-bypass paths can recover most of the quality of an always-32B configuration at less than half the latency, a practical insight for resource-constrained deployments.</li>
+<li>Shows that Drain template extraction primarily benefits routing precision rather than generation quality, suggesting that lightweight parsing may suffice for retrieval in log QA.</li>
+<li>Provides a blueprint for on-premises log QA systems that avoid external API calls, addressing privacy and cost constraints in public-sector or enterprise settings.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate LogRouter on a larger and more diverse set of log queries (e.g., from production incidents) to validate generalizability.</li>
+<li>[ ] Explore learned routing policies (e.g., lightweight classifier) to replace the regex-based L1 router for better adaptability.</li>
+<li>[ ] Investigate the impact of different embedding models and chunking strategies on retrieval quality for log data.</li>
+<li>[ ] Extend the system to support multi-turn conversational log analysis and incorporate user feedback for router adaptation.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18015</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18015" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

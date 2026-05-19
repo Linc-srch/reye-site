@@ -33,8 +33,8 @@
   <section class="glass-card" style="border-left: 3px solid var(--accent);">
     <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);margin-bottom:0.5rem" class="lang-en">Daily Overview</h3>
     <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);margin-bottom:0.5rem" class="lang-zh">今日概览</h3>
-    <div class="lang-en">Today's cryptography-adjacent research reveals a strong emphasis on robustness and efficiency in learning and reasoning systems. Standout papers include 'BAPR' (Bayesian amnesic piecewise-robust RL), which provides formal contraction guarantees for non-stationary control, and 'Mind Dreamer', achieving up to 8.8x speedup via Active Latent Intervention in model-based RL. In LLM reasoning, 'Reasoners or Translators?' exposes data contamination inflating tax law performance, advocating neuro-symbolic frameworks (LLM + Prolog) for robustness. 'SGR' and 'DebiasRAG' tackle reasoning and fairness through external subgraph generation and tuning-free debiasing, respectively. Noteworthy is 'Argus', a cooperative agent system achieving 86.2% on BrowseComp, and 'Reference-Free RL Fine-Tuning for MT' applying GRPO to NLLB-200 for +5.03 chrF++ without parallel data. The theme of autonomous exploration appears in 'Look Before You Leap', while 'ITGPT' extends generative pretraining to irregular timeseries, achieving SOTA. Overall, the field is moving toward verifiable, contamination-aware, and resource-efficient methods.</div>
-    <div class="lang-zh">今日密码学相关研究强调学习与推理系统的鲁棒性和效率。亮点论文包括 'BAPR' (Bayesian amnesic piecewise-robust RL)，为非平稳控制提供形式化收缩保证；'Mind Dreamer' 通过 Active Latent Intervention 在基于模型的 RL 中实现高达 8.8 倍加速。在 LLM 推理方面，'Reasoners or Translators?' 揭示数据污染夸大了税法任务表现，主张采用神经符号框架 (LLM + Prolog) 提升鲁棒性。'SGR' 和 'DebiasRAG' 分别通过外部子图生成和无微调去偏方法解决推理与公平性问题。值得关注的还有 'Argus'，其协作智能体系统在 BrowseComp 上达到 86.2% 准确率；'Reference-Free RL Fine-Tuning for MT' 将 GRPO 应用于 NLLB-200，在无需平行数据下实现 +5.03 chrF++。自主探索主题出现在 'Look Before You Leap' 中，而 'ITGPT' 将生成式预训练扩展到不规则时间序列并达到 SOTA。整体趋势转向可验证、抗污染且资源高效的方法。</div>
+    <div class="lang-en">Today's cryptography-adjacent research reveals a strong emphasis on robustness and alignment in multimodal and multi-agent systems. Standout papers include 'Safety Geometry Collapse in Multimodal LLMs' (ReGap), which identifies a systematic geometric failure in refusal mechanisms under multimodal inputs, and 'BAPR' for non-stationary RL with formal guarantees. 'Argus' achieves 86.2% on BrowseComp via cooperative evidence assembly, while 'TeleCom-Bench' exposes an 'Execution Wall' where LLMs fail on procedural telecom tasks despite linguistic competence. Noteworthy is 'Predictive Prefetching for RAG', reducing latency by 43.5%, and 'RL4RLA', automating randomized linear algebra discovery. The 'Are Sparse Autoencoder Benchmarks Reliable?' paper critically audits SAEBench, finding TPP and SCR unreliable. No major announcements; the field continues to probe LLM limitations in specialized domains (tax law, telecom, nanomedicine) and proposes hybrid neuro-symbolic or retrieval-augmented solutions.</div>
+    <div class="lang-zh">今日密码学相关研究聚焦多模态与多智能体系统的鲁棒性与对齐。亮点论文包括《Safety Geometry Collapse in Multimodal LLMs》（ReGap），揭示多模态输入下拒绝机制的系统性几何失效；《BAPR》为非平稳强化学习提供形式化保证。《Argus》通过协作证据组装在BrowseComp上达到86.2%；《TeleCom-Bench》暴露了LLM在电信程序执行任务中的'执行墙'（Execution Wall），尽管语言接口准确率>90%，程序执行仅~30%。值得关注的还有《Predictive Prefetching for RAG》，延迟降低43.5%；《RL4RLA》自动化随机线性代数算法发现。《Are Sparse Autoencoder Benchmarks Reliable?》批判性审计SAEBench，指出TPP和SCR不可靠。无重大公告；领域持续探索LLM在专业领域（税法、电信、纳米医学）的局限，并提出神经符号混合或检索增强（RAG）方案。</div>
   </section>
   
 
@@ -46,146 +46,453 @@
   <section data-tab="papers">
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16165">Second-Order Multi-Level Variance Correction for Modality Competition in Multimodal Models</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16165">Second-Order Multi-Level Variance Correction for Modality Competition in Multimodal Models</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1060.html">Are Sparse Autoencoder Benchmarks Reliable?</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1060.html">Are Sparse Autoencoder Benchmarks Reliable?</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper audits SAEBench metrics and finds that TPP and SCR are unreliable, while sae-probes is the most reliable but still struggles to distinguish similar SAEs.</div>
+      <div class="lang-zh" style="font-size:0.9rem">This paper audits SAEBench metrics and finds that TPP and SCR are unreliable, while sae-probes is the most reliable but still struggles to distinguish similar SAEs.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18229" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1061.html">Context Memorization for Efficient Long Context Generation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1061.html">Context Memorization for Efficient Long Context Generation</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Proposes a training-free, lookup-based attention-state memory that externalizes long prefixes to eliminate inference-time prefix attention, achieving accuracy gains over ICL and RAG with lower latency and memory footprint.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Proposes a training-free, lookup-based attention-state memory that externalizes long prefixes to eliminate inference-time prefix attention, achieving accuracy gains over ICL and RAG with lower latency and memory footprint.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18226" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1062.html">PIPER: Content-Based Table Search via profiling and LLM-Generated Pseudoqueries</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1062.html">PIPER: Content-Based Table Search via profiling and LLM-Generated Pseudoqueries</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">PIPER proposes a content-based tabular dataset retrieval method that uses table profiles and LLM-generated pseudoqueries to outperform both metadata-based and TableQA baselines in poor-metadata settings.</div>
+      <div class="lang-zh" style="font-size:0.9rem">PIPER proposes a content-based tabular dataset retrieval method that uses table profiles and LLM-generated pseudoqueries to outperform both metadata-based and TableQA baselines in poor-metadata settings.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18199" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1063.html">Beyond the Cartesian Illusion: Testing Two-Stage Multi-Modal Theory of Mind under Perceptual Bottlenecks</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1063.html">Beyond the Cartesian Illusion: Testing Two-Stage Multi-Modal Theory of Mind under Perceptual Bottlenecks</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper exposes the 'Cartesian Illusion' in MLLMs and proposes a two-stage, sensory-bounded reasoning pipeline for second-order Theory of Mind that significantly outperforms baselines in occluded multi-agent scenarios.</div>
+      <div class="lang-zh" style="font-size:0.9rem">This paper exposes the 'Cartesian Illusion' in MLLMs and proposes a two-stage, sensory-bounded reasoning pipeline for second-order Theory of Mind that significantly outperforms baselines in occluded multi-agent scenarios.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18194" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1064.html">Pairwise Preference Reward and Group-Based Diversity Enhancement for Superior Open-Ended Generation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1064.html">Pairwise Preference Reward and Group-Based Diversity Enhancement for Superior Open-Ended Generation</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">PPR-GDE proposes a reinforcement learning method for open-ended generation that uses pairwise preference rewards and group-based diversity enhancement to achieve better alignment and diversity than GRPO and PPO.</div>
+      <div class="lang-zh" style="font-size:0.9rem">PPR-GDE proposes a reinforcement learning method for open-ended generation that uses pairwise preference rewards and group-based diversity enhancement to achieve better alignment and diversity than GRPO and PPO.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18191" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1065.html">Vision Inference Former: Sustaining Visual Consistency in Multimodal Large Language Models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1065.html">Vision Inference Former: Sustaining Visual Consistency in Multimodal Large Language Models</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">VIF introduces a lightweight module that continuously injects visual semantics during decoding to combat visual consistency decay in MLLMs, showing consistent gains across 14 benchmarks.</div>
+      <div class="lang-zh" style="font-size:0.9rem">VIF introduces a lightweight module that continuously injects visual semantics during decoding to combat visual consistency decay in MLLMs, showing consistent gains across 14 benchmarks.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18160" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1066.html">Foundation Models for Credit Risk Prediction: A Game Changer?</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1066.html">Foundation Models for Credit Risk Prediction: A Game Changer?</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Tabular foundation models (PFNs) outperform tuned GBMs and deep learning baselines in PD and LGD prediction, especially in small-data settings, without any hyperparameter tuning.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Tabular foundation models (PFNs) outperform tuned GBMs and deep learning baselines in PD and LGD prediction, especially in small-data settings, without any hyperparameter tuning.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18147" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1067.html">Evidence-Grounded Frontier Mapping and Agentic Hypothesis Generation in Nanomedicine</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1067.html">Evidence-Grounded Frontier Mapping and Agentic Hypothesis Generation in Nanomedicine</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">pArticleMap introduces a literature-mapping and agentic hypothesis-generation system that targets low-density bridge regions in nanomedicine, achieving a 61.0% future-neighborhood rate in retrospective benchmarks.</div>
+      <div class="lang-zh" style="font-size:0.9rem">pArticleMap introduces a literature-mapping and agentic hypothesis-generation system that targets low-density bridge regions in nanomedicine, achieving a 61.0% future-neighborhood rate in retrospective benchmarks.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18144" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1068.html">Generative AI and the Productivity Divide: Human-AI Complementarities in Education</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1068.html">Generative AI and the Productivity Divide: Human-AI Complementarities in Education</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">GenAI access raises average task performance but creates a new productivity divide driven by AI Interaction Competence (AIC), not traditional measures like GPA.</div>
+      <div class="lang-zh" style="font-size:0.9rem">GenAI access raises average task performance but creates a new productivity divide driven by AI Interaction Competence (AIC), not traditional measures like GPA.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18143" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1069.html">Faculty Orientations Shape Adoption of AI in Research and Teaching</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1069.html">Faculty Orientations Shape Adoption of AI in Research and Teaching</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Faculty AI adoption is driven not by attitudes or institutional support but by a coherent 'AI pedagogical orientation' reflecting beliefs about AI's role in disciplinary thinking and expertise.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Faculty AI adoption is driven not by attitudes or institutional support but by a coherent 'AI pedagogical orientation' reflecting beliefs about AI's role in disciplinary thinking and expertise.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18140" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1070.html">How Good LLMs Are at Answering Bangla Medical Visual Questions? Dataset and Benchmarking</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1070.html">How Good LLMs Are at Answering Bangla Medical Visual Questions? Dataset and Benchmarking</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Introduces the first clinically validated Bangla MedVQA dataset and shows that even top models like Gemini and GPT-4.1 mini achieve only 40.38% and 26.50% accuracy, with performance on specialized diagnostic questions falling below random chance.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Introduces the first clinically validated Bangla MedVQA dataset and shows that even top models like Gemini and GPT-4.1 mini achieve only 40.38% and 26.50% accuracy, with performance on specialized diagnostic questions falling below random chance.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18111" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1071.html">Safety Geometry Collapse in Multimodal LLMs and Adaptive Drift Correction</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1071.html">Safety Geometry Collapse in Multimodal LLMs and Adaptive Drift Correction</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Key claim: Multimodal inputs cause a systematic geometric collapse of the refusal direction in MLLMs, and key observation: counteracting modality-induced drift via a self-rectification signal (ReGap) restores safety without harming general capability.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Key claim: Multimodal inputs cause a systematic geometric collapse of the refusal direction in MLLMs, and key observation: counteracting modality-induced drift via a self-rectification signal (ReGap) restores safety without harming general capability.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18104" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1072.html">A Data-Efficient Path to Multilingual LLMs: Language Expansion via Post-training PARAM$Δ$ Integration into Upcycled MoE</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1072.html">A Data-Efficient Path to Multilingual LLMs: Language Expansion via Post-training PARAM$Δ$ Integration into Upcycled MoE</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">DeltaMoE resolves the trade-off between preserving original abilities and acquiring new languages by upcycling a dense LLM into an MoE and grafting a post-training delta, achieving +1.7 expanded language and +1.5 original language preservation over delta merging baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">DeltaMoE resolves the trade-off between preserving original abilities and acquiring new languages by upcycling a dense LLM into an MoE and grafting a post-training delta, achieving +1.7 expanded language and +1.5 original language preservation over delta merging baselines.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18083" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1073.html">LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1073.html">LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">LMAC uses an LLM to iteratively design and refine a communication protocol for cooperative MARL, explicitly targeting state reconstruction accuracy and uniformity across agents.</div>
+      <div class="lang-zh" style="font-size:0.9rem">LMAC uses an LLM to iteratively design and refine a communication protocol for cooperative MARL, explicitly targeting state reconstruction accuracy and uniformity across agents.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18077" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1074.html">A-ProS: Towards Reliable Autonomous Programming Through Multi-Model Feedback</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1074.html">A-ProS: Towards Reliable Autonomous Programming Through Multi-Model Feedback</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">A-ProS proposes a hybrid multi-model feedback framework that separates solution generation from specialized debugging, achieving over 2x greater gains than baseline agent loops on competitive programming problems.</div>
+      <div class="lang-zh" style="font-size:0.9rem">A-ProS proposes a hybrid multi-model feedback framework that separates solution generation from specialized debugging, achieving over 2x greater gains than baseline agent loops on competitive programming problems.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18073" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1075.html">PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1075.html">PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">PPAI is the first system for personalized LLM agent interoperability in P2P edge networks, achieving up to 7.96% accuracy improvement and 16.34% latency reduction by matching queries to specialized remote agents.</div>
+      <div class="lang-zh" style="font-size:0.9rem">PPAI is the first system for personalized LLM agent interoperability in P2P edge networks, achieving up to 7.96% accuracy improvement and 16.34% latency reduction by matching queries to specialized remote agents.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18067" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1076.html">FedSDR: Federated Self-Distillation with Rectification</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1076.html">FedSDR: Federated Self-Distillation with Rectification</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">FedSDR proposes a data-centric paradigm for federated LLM fine-tuning that uses self-distillation to align heterogeneous client data distributions, and introduces a dual-stream LoRA mechanism to resolve the 'Rewrite Paradox' where unconstrained distillation increases hallucinations.</div>
+      <div class="lang-zh" style="font-size:0.9rem">FedSDR proposes a data-centric paradigm for federated LLM fine-tuning that uses self-distillation to align heterogeneous client data distributions, and introduces a dual-stream LoRA mechanism to resolve the 'Rewrite Paradox' where unconstrained distillation increases hallucinations.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18028" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1077.html">TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications?</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1077.html">TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications?</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">TeleCom-Bench reveals a universal 'Execution Wall' where LLMs achieve >90% accuracy on linguistic interface tasks but collapse to ~30% on procedural execution tasks like solution generation in telecom.</div>
+      <div class="lang-zh" style="font-size:0.9rem">TeleCom-Bench reveals a universal 'Execution Wall' where LLMs achieve >90% accuracy on linguistic interface tasks but collapse to ~30% on procedural execution tasks like solution generation in telecom.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18025" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1078.html">Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1078.html">Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">IBAL proposes an information-theoretic adversarial attack that breaks inter-agent coordination by minimizing mutual information between groups, and trains robust policies under such disruptions.</div>
+      <div class="lang-zh" style="font-size:0.9rem">IBAL proposes an information-theoretic adversarial attack that breaks inter-agent coordination by minimizing mutual information between groups, and trains robust policies under such disruptions.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18024" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1079.html">LogRouter: Adaptive Two-Level LLM Routing for Log Question Answering in Big Data Systems</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1079.html">LogRouter: Adaptive Two-Level LLM Routing for Log Question Answering in Big Data Systems</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">LogRouter proposes a two-level cost-aware router for log QA that achieves 88.4% mean accuracy and 55% latency reduction over a fixed-32B baseline by dispatching queries to LLM-bypass paths or appropriately-sized generators.</div>
+      <div class="lang-zh" style="font-size:0.9rem">LogRouter proposes a two-level cost-aware router for log QA that achieves 88.4% mean accuracy and 55% latency reduction over a fixed-32B baseline by dispatching queries to LLM-bypass paths or appropriately-sized generators.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18015" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1080.html">RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1080.html">RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">RL4RLA proposes a general RL framework that automates the discovery of interpretable, symbolic randomized linear algebra algorithms by using a numerical curriculum and Monte Carlo Graph Search to overcome sparse rewards and vast search spaces.</div>
+      <div class="lang-zh" style="font-size:0.9rem">RL4RLA proposes a general RL framework that automates the discovery of interpretable, symbolic randomized linear algebra algorithms by using a numerical curriculum and Monte Carlo Graph Search to overcome sparse rewards and vast search spaces.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18004" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1081.html">MARR: Module-Adaptive Residual Reconstruction for Low-Bit Post-Training Quantization</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1081.html">MARR: Module-Adaptive Residual Reconstruction for Low-Bit Post-Training Quantization</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">MARR proposes module-adaptive scaling of residual terms in low-bit PTQ to balance accumulated-error correction and Hessian-approximation bias, achieving up to 20.2% performance gains on LLMs.</div>
+      <div class="lang-zh" style="font-size:0.9rem">MARR proposes module-adaptive scaling of residual terms in low-bit PTQ to balance accumulated-error correction and Hessian-approximation bias, achieving up to 20.2% performance gains on LLMs.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17997" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1082.html">Predictive Prefetching for Retrieval-Augmented Generation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1082.html">Predictive Prefetching for Retrieval-Augmented Generation</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Key claim: predictive prefetching of retrieval based on semantic precursors can reduce RAG latency by 43.5% while maintaining answer quality; key observation: retrieval needs are preceded by identifiable semantic precursors 8-16 tokens before uncertainty becomes critical.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Key claim: predictive prefetching of retrieval based on semantic precursors can reduce RAG latency by 43.5% while maintaining answer quality; key observation: retrieval needs are preceded by identifiable semantic precursors 8-16 tokens before uncertainty becomes critical.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17989" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1083.html">AutoVecCoder: Teaching LLMs to Generate Explicitly Vectorized Code</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1083.html">AutoVecCoder: Teaching LLMs to Generate Explicitly Vectorized Code</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">AutoVecCoder proposes a framework combining automated data synthesis (VecPrompt) and reinforcement learning (VecRL) to teach LLMs to generate explicitly vectorized SIMD code, achieving SOTA on SimdBench and sometimes surpassing -O3 compiler optimizations.</div>
+      <div class="lang-zh" style="font-size:0.9rem">AutoVecCoder proposes a framework combining automated data synthesis (VecPrompt) and reinforcement learning (VecRL) to teach LLMs to generate explicitly vectorized SIMD code, achieving SOTA on SimdBench and sometimes surpassing -O3 compiler optimizations.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17978" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1084.html">Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1084.html">Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">LGBO embeds LLM preferences into every BO iteration via a region-lifted preference mechanism, achieving 90% of best observed value within 6 iterations in wet-lab Fe-Cr electrolyte optimization vs. >10 for baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">LGBO embeds LLM preferences into every BO iteration via a region-lifted preference mechanism, achieving 90% of best observed value within 6 iterations in wet-lab Fe-Cr electrolyte optimization vs. >10 for baselines.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17976" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/999.html">Second-Order Multi-Level Variance Correction for Modality Competition in Multimodal Models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/999.html">Second-Order Multi-Level Variance Correction for Modality Competition in Multimodal Models</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">Second-order optimization (ML-FOP-SOAP) stabilizes multimodal training by reducing modality competition via Fisher-Orthogonal Projection and multi-level variance correction, achieving 1.4x sample efficiency and 1.5x wall-clock speedup over AdamW.</div>
       <div class="lang-zh" style="font-size:0.9rem">Second-order optimization (ML-FOP-SOAP) stabilizes multimodal training by reducing modality competition via Fisher-Orthogonal Projection and multi-level variance correction, achieving 1.4x sample efficiency and 1.5x wall-clock speedup over AdamW.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16165" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16154">Learn Where Outcomes Diverge: Efficient VLA RL via Probabilistic Chunk Masking</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16154">Learn Where Outcomes Diverge: Efficient VLA RL via Probabilistic Chunk Masking</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1000.html">Learn Where Outcomes Diverge: Efficient VLA RL via Probabilistic Chunk Masking</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1000.html">Learn Where Outcomes Diverge: Efficient VLA RL via Probabilistic Chunk Masking</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">PCM shows that gradient computation dominates GRPO-based VLA RL (78% wall-clock time) and proposes a drop-in method to allocate gradient compute only to outcome-divergent trajectory phases, achieving 2.38x speedup with no reward model.</div>
       <div class="lang-zh" style="font-size:0.9rem">PCM shows that gradient computation dominates GRPO-based VLA RL (78% wall-clock time) and proposes a drop-in method to allocate gradient compute only to outcome-divergent trajectory phases, achieving 2.38x speedup with no reward model.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16154" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16143">Look Before You Leap: Autonomous Exploration for LLM Agents</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16143">Look Before You Leap: Autonomous Exploration for LLM Agents</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1001.html">Look Before You Leap: Autonomous Exploration for LLM Agents</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1001.html">Look Before You Leap: Autonomous Exploration for LLM Agents</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">Key claim: LLM agents fail in unfamiliar environments due to premature exploitation; key observation: task-oriented RL training does not yield autonomous exploration, but explicitly training with an exploration reward (ECC) enables systematic information gathering and improves downstream task performance.</div>
       <div class="lang-zh" style="font-size:0.9rem">Key claim: LLM agents fail in unfamiliar environments due to premature exploitation; key observation: task-oriented RL training does not yield autonomous exploration, but explicitly training with an exploration reward (ECC) enables systematic information gathering and improves downstream task performance.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16143" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16117">SGR: A Stepwise Reasoning Framework for LLMs with External Subgraph Generation</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16117">SGR: A Stepwise Reasoning Framework for LLMs with External Subgraph Generation</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1002.html">SGR: A Stepwise Reasoning Framework for LLMs with External Subgraph Generation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1002.html">SGR: A Stepwise Reasoning Framework for LLMs with External Subgraph Generation</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">SGR improves LLM reasoning by dynamically constructing query-specific subgraphs from external knowledge bases to guide stepwise inference, achieving consistent gains over baselines on multiple benchmarks.</div>
       <div class="lang-zh" style="font-size:0.9rem">SGR improves LLM reasoning by dynamically constructing query-specific subgraphs from external knowledge bases to guide stepwise inference, achieving consistent gains over baselines on multiple benchmarks.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16117" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16113">DebiasRAG: A Tuning-Free Path to Fair Generation in Large Language Models through Retrieval-Augmented Generation</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16113">DebiasRAG: A Tuning-Free Path to Fair Generation in Large Language Models through Retrieval-Augmented Generation</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1003.html">DebiasRAG: A Tuning-Free Path to Fair Generation in Large Language Models through Retrieval-Augmented Generation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1003.html">DebiasRAG: A Tuning-Free Path to Fair Generation in Large Language Models through Retrieval-Augmented Generation</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">DebiasRAG proposes a tuning-free, query-specific debiasing framework using retrieval-augmented generation to mitigate social biases in LLMs without degrading their intrinsic capabilities.</div>
       <div class="lang-zh" style="font-size:0.9rem">DebiasRAG proposes a tuning-free, query-specific debiasing framework using retrieval-augmented generation to mitigate social biases in LLMs without degrading their intrinsic capabilities.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16113" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16077">Can Large Language Models Imitate Human Speech for Clinical Assessment? LLM-Driven Data Augmentation for Cognitive Score Prediction</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16077">Can Large Language Models Imitate Human Speech for Clinical Assessment? LLM-Driven Data Augmentation for Cognitive Score Prediction</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1004.html">Can Large Language Models Imitate Human Speech for Clinical Assessment? LLM-Driven Data Augmentation for Cognitive Score Prediction</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1004.html">Can Large Language Models Imitate Human Speech for Clinical Assessment? LLM-Driven Data Augmentation for Cognitive Score Prediction</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">LLM-driven cross-modal augmentation using written narratives to generate oral-style speech improves cognitive score prediction from small, imbalanced clinical datasets.</div>
       <div class="lang-zh" style="font-size:0.9rem">LLM-driven cross-modal augmentation using written narratives to generate oral-style speech improves cognitive score prediction from small, imbalanced clinical datasets.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16077" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16069">ITGPT: Generative Pretraining on Irregular Timeseries</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16069">ITGPT: Generative Pretraining on Irregular Timeseries</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1005.html">ITGPT: Generative Pretraining on Irregular Timeseries</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1005.html">ITGPT: Generative Pretraining on Irregular Timeseries</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">ITGPT extends ITNet with GPT-like generative pretraining and SSL objectives for irregularly sampled multimodal timeseries, achieving SOTA without resampling or imputation.</div>
       <div class="lang-zh" style="font-size:0.9rem">ITGPT extends ITNet with GPT-like generative pretraining and SSL objectives for irregularly sampled multimodal timeseries, achieving SOTA without resampling or imputation.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16069" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16052">Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16052">Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1006.html">Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1006.html">Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">Key claim: LLM performance on tax law reasoning is inflated by data contamination, and neuro-symbolic frameworks (LLM + Prolog) are more robust and generalize better; key observation: legal reasoning is inherently compositional.</div>
       <div class="lang-zh" style="font-size:0.9rem">Key claim: LLM performance on tax law reasoning is inflated by data contamination, and neuro-symbolic frameworks (LLM + Prolog) are more robust and generalize better; key observation: legal reasoning is inherently compositional.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16052" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16030">Mind Dreamer: Untethering Imagination via Active Latent Intervention on Latent Manifolds</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16030">Mind Dreamer: Untethering Imagination via Active Latent Intervention on Latent Manifolds</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1007.html">Mind Dreamer: Untethering Imagination via Active Latent Intervention on Latent Manifolds</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1007.html">Mind Dreamer: Untethering Imagination via Active Latent Intervention on Latent Manifolds</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">Mind Dreamer proposes Active Latent Intervention (ALI) to overcome the Historical Tethering limitation in MBRL by synthesizing non-continuous latent jumps, achieving up to 8.8x speedup on sparse-reward tasks.</div>
       <div class="lang-zh" style="font-size:0.9rem">Mind Dreamer proposes Active Latent Intervention (ALI) to overcome the Historical Tethering limitation in MBRL by synthesizing non-continuous latent jumps, achieving up to 8.8x speedup on sparse-reward tasks.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16030" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16026">From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16026">From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1008.html">From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1008.html">From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">S2ST-Omni 2 replaces flat language labels with structured typological priors for multilingual speech-to-speech translation, achieving average BLEU gains of 5.8% over S2ST-Omni on CVSS-C.</div>
       <div class="lang-zh" style="font-size:0.9rem">S2ST-Omni 2 replaces flat language labels with structured typological priors for multilingual speech-to-speech translation, achieving average BLEU gains of 5.8% over S2ST-Omni on CVSS-C.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16026" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.15976">Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.15976">Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1011.html">Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1011.html">Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">Applies GRPO to encoder-decoder NLLB-200 (600M/1.3B) with a reference-free hybrid reward (LaBSE+COMET-Kiwi), achieving up to +5.03 chrF++ on 13 languages without parallel data at fine-tuning time.</div>
       <div class="lang-zh" style="font-size:0.9rem">Applies GRPO to encoder-decoder NLLB-200 (600M/1.3B) with a reference-free hybrid reward (LaBSE+COMET-Kiwi), achieving up to +5.03 chrF++ on 13 languages without parallel data at fine-tuning time.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.15976" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16245">AI-Mediated Communication Can Steer Collective Opinion</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16245">AI-Mediated Communication Can Steer Collective Opinion</a></h2>
+      <h2 class="lang-en"><a href="../../articles/994.html">AI-Mediated Communication Can Steer Collective Opinion</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/994.html">AI-Mediated Communication Can Steer Collective Opinion</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">Shows that LLMs used to mediate human-to-human communication on social platforms introduce directional biases that can be amplified through network effects to shift collective opinion, with empirical evidence from multiple LLM families and a real-world audit of X's 'Explain this post' feature.</div>
       <div class="lang-zh" style="font-size:0.9rem">Shows that LLMs used to mediate human-to-human communication on social platforms introduce directional biases that can be amplified through network effects to shift collective opinion, with empirical evidence from multiple LLM families and a real-world audit of X's 'Explain this post' feature.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16245" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16238">Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16238">Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search</a></h2>
+      <h2 class="lang-en"><a href="../../articles/995.html">Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/995.html">Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">LLM-guided tree search autonomously generates and optimizes infectious disease forecasting models that match or beat human-curated CDC ensembles in real-time.</div>
       <div class="lang-zh" style="font-size:0.9rem">LLM-guided tree search autonomously generates and optimizes infectious disease forecasting models that match or beat human-curated CDC ensembles in real-time.</div>
       
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16238" target="_blank" class="dim-link">Original →</a></p>
+      
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16217">Argus: Evidence Assembly for Scalable Deep Research Agents</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16217">Argus: Evidence Assembly for Scalable Deep Research Agents</a></h2>
+      <h2 class="lang-en"><a href="../../articles/996.html">Argus: Evidence Assembly for Scalable Deep Research Agents</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/996.html">Argus: Evidence Assembly for Scalable Deep Research Agents</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">Argus proposes a cooperative agent system (Searcher + Navigator) that treats deep research as assembling a jigsaw of complementary evidence pieces, achieving 86.2% on BrowseComp with 64 parallel Searchers while keeping the Navigator's reasoning context under 21.5K tokens.</div>
       <div class="lang-zh" style="font-size:0.9rem">Argus proposes a cooperative agent system (Searcher + Navigator) that treats deep research as assembling a jigsaw of complementary evidence pieces, achieving 86.2% on BrowseComp with 64 parallel Searchers while keeping the Navigator's reasoning context under 21.5K tokens.</div>
       
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16193">Improving Cross-Cultural Survey Simulation with Calibrated Value Personas</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16193">Improving Cross-Cultural Survey Simulation with Calibrated Value Personas</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Proposes value-based personas derived from survey responses and a calibration procedure to improve LLM-based cross-cultural survey simulation, reducing prediction error especially for underrepresented populations.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Proposes value-based personas derived from survey responses and a calibration procedure to improve LLM-based cross-cultural survey simulation, reducing prediction error especially for underrepresented populations.</div>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16217" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="https://arxiv.org/abs/2605.16170">BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control</a></h2>
-      <h2 class="lang-zh"><a href="https://arxiv.org/abs/2605.16170">BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control</a></h2>
+      <h2 class="lang-en"><a href="../../articles/997.html">Improving Cross-Cultural Survey Simulation with Calibrated Value Personas</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/997.html">Improving Cross-Cultural Survey Simulation with Calibrated Value Personas</a></h2>
+      <div class="meta">arxiv · 2026-05-18</div>
+      <div class="lang-en" style="font-size:0.9rem">Proposes value-based personas derived from survey responses and a calibration procedure to improve LLM-based cross-cultural survey simulation, reducing prediction error especially for underrepresented populations.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Proposes value-based personas derived from survey responses and a calibration procedure to improve LLM-based cross-cultural survey simulation, reducing prediction error especially for underrepresented populations.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16193" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/998.html">BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/998.html">BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control</a></h2>
       <div class="meta">arxiv · 2026-05-18</div>
       <div class="lang-en" style="font-size:0.9rem">BAPR unifies Bayesian Online Change Detection with robust ensemble RL to achieve adaptive conservatism under piecewise stationary dynamics, with formal contraction guarantees and machine-verified proofs in Lean 4.</div>
       <div class="lang-zh" style="font-size:0.9rem">BAPR unifies Bayesian Online Change Detection with robust ensemble RL to achieve adaptive conservatism under piecewise stationary dynamics, with formal contraction guarantees and machine-verified proofs in Lean 4.</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16170" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Good LLMs Are at Answering Bangla Medical Visual Questions? Dataset and Benchmarking | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">How Good LLMs Are at Answering Bangla Medical Visual Questions? Dataset and Benchmarking</h2>
+    <h2 class="lang-zh">How Good LLMs Are at Answering Bangla Medical Visual Questions? Dataset and Benchmarking</h2>
+    <div class="meta">
+      Rafid Ahmed, Intesar Tahmid, Mir Sazzat Hossain, Tasnimul Hossain Tomal, Md Fahim, Md Farhad Alam Bhuiyan · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>Introduces the first clinically validated Bangla MedVQA dataset and shows that even top models like Gemini and GPT-4.1 mini achieve only 40.38% and 26.50% accuracy, with performance on specialized diagnostic questions falling below random chance.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>Introduces the first clinically validated Bangla MedVQA dataset and shows that even top models like Gemini and GPT-4.1 mini achieve only 40.38% and 26.50% accuracy, with performance on specialized diagnostic questions falling below random chance.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — bangla_medvqa</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> How Good LLMs Are at Answering Bangla Medical Visual Questions? Dataset and Benchmarking</li>
+<li><strong>Alias:</strong> bangla_medvqa</li>
+<li><strong>Authors:</strong> Rafid Ahmed, Intesar Tahmid, Mir Sazzat Hossain, Tasnimul Hossain Tomal, Md Fahim, Md Farhad Alam Bhuiyan</li>
+<li><strong>arXiv ID:</strong> 2605.18111</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18111</li>
+<li>HTML: https://arxiv.org/html/2605.18111v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18111</li>
+<li><strong>Tags:</strong> bangla-medvqa, low-resource-language, medical-visual-question-answering, llm-benchmark, clinical-validation</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Introduces the first clinically validated Bangla MedVQA dataset and shows that even top models like Gemini and GPT-4.1 mini achieve only 40.38% and 26.50% accuracy, with performance on specialized diagnostic questions falling below random chance.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Medical Visual Question Answering (MedVQA) has advanced with LLMs and LVLMs, but benchmarks are predominantly in English. Bangla, despite being the 7th most spoken language globally, lacks any established MedVQA benchmark, and existing low-resource language datasets suffer from annotation errors and lack clinical validation.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>ChitroJera (Barua et al. 2024) introduced a culturally relevant Bangla VQA corpus but not medical.</li>
+<li>Bangla-Bayanno (Hasan et al. 2025) created a large-scale Bangla VQA benchmark via LLM-assisted translation, but not medical.</li>
+<li>Existing English MedVQA benchmarks (VQA-RAD, SLAKE) show models struggle with fine-grained medical reasoning.</li>
+<li>Gu et al. (2024) proposed latent prompt assist for MedVQA, achieving SOTA on English benchmarks.</li>
+<li>Yu et al. (2025) introduced adaptive region-level visual prompts for generative MedVQA.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>No clinically validated Bangla MedVQA dataset exists; the only prior Bangla medical VQA resource (Remon 2025) lacks image source information, expert validation, and contains annotation errors. This limits evaluation of LLMs/LVLMs for Bangla medical visual reasoning, especially for specialized diagnostic questions.</p>
+<h3>P — Proposal</h3>
+<p>The authors construct BanglaMedVQA, a dataset of 1,374 clinically validated image-question-answer pairs from MedICaT and ChestX-ray14, covering five categories (modality, organ, abnormality, condition, position) grouped into generalized and specialized types. They benchmark open-source and closed-source LVLMs under zero-shot and chain-of-thought settings, revealing severe limitations in fine-grained medical reasoning for low-resource languages.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Gemini achieved 40.38% overall accuracy, GPT-4.1 mini 26.50%, and Gemma-3 occasionally outperformed on general categories. On specialized categories (Condition/Finding, Position), all models performed below random chance. Closed-source models performed significantly better in English than Bangla, and chain-of-thought reasoning plus GPT-4.1 mini visual descriptions improved performance.</p>
+<h3>Ablation</h3>
+<p>Incorporating chain-of-thought reasoning and supplementing inputs with GPT-4.1 mini-generated visual descriptions substantially improved performance, indicating that limited visual understanding is a key bottleneck.</p>
+<h3>Limitations</h3>
+<p>['Dataset size (1,374 pairs) is relatively small and limited to two source datasets (MedICaT, ChestX-ray14), potentially limiting generalizability.', 'Only zero-shot and chain-of-thought settings were evaluated; no fine-tuning or few-shot experiments were conducted.', 'The study does not explore the impact of different prompting strategies or model architectures beyond those tested.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Highlights the severe performance gap for low-resource languages in medical VQA, directly relevant to your work on equitable AI in healthcare.</li>
+<li>Demonstrates that even top-tier models fail on specialized diagnostic questions, reinforcing the need for domain-specific evaluation frameworks.</li>
+<li>Provides a reproducible benchmark and dataset for future research on Bangla medical AI, which can be extended to other low-resource languages.</li>
+<li>Shows that augmenting visual context (e.g., GPT-4.1 mini descriptions) can partially bridge the gap, suggesting a path for improving multimodal reasoning.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate the BanglaMedVQA dataset with fine-tuned or instruction-tuned models to see if performance improves beyond zero-shot.</li>
+<li>[ ] Extend the dataset to include more diverse medical imaging modalities and larger sample sizes.</li>
+<li>[ ] Investigate cross-lingual transfer learning from English MedVQA models to Bangla.</li>
+<li>[ ] Develop culturally and linguistically adapted visual description generation methods for low-resource languages.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18111</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18111" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

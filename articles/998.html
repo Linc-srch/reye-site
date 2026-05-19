@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control</h2>
+    <h2 class="lang-zh">BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control</h2>
+    <div class="meta">
+      Yifan Zhang, Liang Zheng · 
+      2026-05-18 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>BAPR unifies Bayesian Online Change Detection with robust ensemble RL to achieve adaptive conservatism under piecewise stationary dynamics, with formal contraction guarantees and machine-verified proofs in Lean 4.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>BAPR unifies Bayesian Online Change Detection with robust ensemble RL to achieve adaptive conservatism under piecewise stationary dynamics, with formal contraction guarantees and machine-verified proofs in Lean 4.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — bapr</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control</li>
+<li><strong>Alias:</strong> bapr</li>
+<li><strong>Authors:</strong> Yifan Zhang, Liang Zheng</li>
+<li><strong>arXiv ID:</strong> 2605.16170</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.16170</li>
+<li>HTML: https://arxiv.org/html/2605.16170v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.16170</li>
+<li><strong>Tags:</strong> non-stationary-rl, bayesian-change-detection, robust-rl, formal-verification, adaptive-conservatism</li>
+<li><strong>Domains:</strong> system_safety, ai_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>BAPR unifies Bayesian Online Change Detection with robust ensemble RL to achieve adaptive conservatism under piecewise stationary dynamics, with formal contraction guarantees and machine-verified proofs in Lean 4.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Real-world control systems often exhibit piecewise stationarity, where dynamics remain stable for periods before abrupt regime changes. Standard robust RL methods face a dilemma: globally conservative policies waste performance during stable periods, while locally adaptive policies risk catastrophic failure after undetected regime changes. Existing reactive adaptation methods lack principled change detection, and robust methods use static uncertainty sets that are either too conservative or insufficient.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Context-conditioned policies (ESCP, PEARL) learn latent mode representations but assume fixed tasks per episode and cannot handle intra-episode regime shifts.</li>
+<li>Meta-RL (MAML, RL^2) adapts quickly via gradient or recurrence but requires task distribution at meta-training time and does not explicitly detect change-points.</li>
+<li>Robust MDPs and distributionally robust RL use static uncertainty sets, leading to excessive conservatism during stable periods and insufficient conservatism after regime changes.</li>
+<li>Hidden-Parameter MDPs (HiP-MDPs) model non-stationarity via latent parameters but assume smooth parameter spaces, not abrupt discontinuities.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>No prior work provides a principled, time-aware mechanism that both detects regime changes online and modulates conservatism accordingly, with formal guarantees on contraction and recovery. Existing methods either adapt continuously (introducing variance) or hedge statically (wasting performance), lacking a sharp characterization of when belief-weighted Bellman operators remain contractions.</p>
+<h3>P — Proposal</h3>
+<p>BAPR integrates Bayesian Online Change Detection (BOCD) with robust ensemble SAC (RE-SAC). The BAPR operator is a convex combination of mode-conditional Bellman operators with frozen belief weights, proven to be a γ-contraction; a machine-verified counterexample shows that when beliefs depend on Q, contraction fails when γ + λΔ ≥ 1. BOCD drives an adaptive conservatism mechanism where the policy becomes maximally conservative after detected change-points and relaxes as confidence grows, with detection delay O(log(1/δ)). A context-conditioning module trained via RMDM loss provides mode-aware representations without requiring mode labels at deployment.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>BAPR achieves a 40% reduction in cumulative regret compared to RE-SAC and a 55% reduction compared to SAC in non-stationary MuJoCo environments with abrupt regime switches. The adaptive conservatism mechanism reduces performance variance by 30% across random seeds. Detection delay is empirically O(log(1/δ)) as predicted, with average detection within 5 time steps after a regime change.</p>
+<h3>Ablation</h3>
+<p>Ablation studies show that freezing the belief weights (frozen-parameter design) is critical: without freezing, the contraction factor degrades from γ to γ + λΔ, and performance drops by 25% in the worst case. The RMDM loss improves mode identification accuracy by 15% over a standard contrastive loss baseline.</p>
+<h3>Limitations</h3>
+<p>['The formal error budget applies to the abstract mode-mixture operator and inherits to the implemented algorithm only through the frozen-parameter design intuition, not via direct formal verification of the full implementation.', 'The method assumes piecewise stationarity with abrupt changes; it may not generalize to smoothly varying or continuously drifting dynamics.', 'The context-conditioning module requires simulator-provided mode IDs during training, which may not be available in all real-world settings.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a principled framework for adaptive conservatism in non-stationary control, directly applicable to safety-critical systems where regime changes are common (e.g., autonomous driving, robotics).</li>
+<li>The formal verification in Lean 4 sets a new standard for trustworthy RL algorithms, offering machine-checked guarantees on contraction and recovery bounds.</li>
+<li>The sharp boundary on belief-weighted Bellman operators (γ + λΔ ≥ 1) gives a clear design rule for when adaptive mechanisms can break stability, relevant to your work on robust RL and formal methods.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Implement BAPR on a real-world robotic platform (e.g., legged locomotion) to validate adaptive conservatism under physical wear and tear.</li>
+<li>[ ] Extend the formal verification to cover the full implementation, not just the abstract operator, using a verified RL framework like Cogent or VeriRL.</li>
+<li>[ ] Explore alternative change detection methods (e.g., CUSUM, Bayesian structural time series) to compare detection delay and robustness under model misspecification.</li>
+<li>[ ] Integrate BAPR with a digital identity system for adaptive access control, where regime changes correspond to security threat levels.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.16170</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.16170" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

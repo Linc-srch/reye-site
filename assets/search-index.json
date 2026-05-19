@@ -1,11 +1,437 @@
 [
   {
+    "id": 1060,
+    "type": "paper",
+    "title": "Are Sparse Autoencoder Benchmarks Reliable?",
+    "summary_en": "This paper audits SAEBench metrics and finds that TPP and SCR are unreliable, while sae-probes is the most reliable but still struggles to distinguish similar SAEs.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18229",
+    "article_page": "articles/1060.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1061,
+    "type": "paper",
+    "title": "Context Memorization for Efficient Long Context Generation",
+    "summary_en": "Proposes a training-free, lookup-based attention-state memory that externalizes long prefixes to eliminate inference-time prefix attention, achieving accuracy gains over ICL and RAG with lower latency and memory footprint.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18226",
+    "article_page": "articles/1061.html",
+    "score": 3.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1062,
+    "type": "paper",
+    "title": "PIPER: Content-Based Table Search via profiling and LLM-Generated Pseudoqueries",
+    "summary_en": "PIPER proposes a content-based tabular dataset retrieval method that uses table profiles and LLM-generated pseudoqueries to outperform both metadata-based and TableQA baselines in poor-metadata settings.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18199",
+    "article_page": "articles/1062.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1063,
+    "type": "paper",
+    "title": "Beyond the Cartesian Illusion: Testing Two-Stage Multi-Modal Theory of Mind under Perceptual Bottlenecks",
+    "summary_en": "This paper exposes the 'Cartesian Illusion' in MLLMs and proposes a two-stage, sensory-bounded reasoning pipeline for second-order Theory of Mind that significantly outperforms baselines in occluded multi-agent scenarios.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18194",
+    "article_page": "articles/1063.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1064,
+    "type": "paper",
+    "title": "Pairwise Preference Reward and Group-Based Diversity Enhancement for Superior Open-Ended Generation",
+    "summary_en": "PPR-GDE proposes a reinforcement learning method for open-ended generation that uses pairwise preference rewards and group-based diversity enhancement to achieve better alignment and diversity than GRPO and PPO.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18191",
+    "article_page": "articles/1064.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1065,
+    "type": "paper",
+    "title": "Vision Inference Former: Sustaining Visual Consistency in Multimodal Large Language Models",
+    "summary_en": "VIF introduces a lightweight module that continuously injects visual semantics during decoding to combat visual consistency decay in MLLMs, showing consistent gains across 14 benchmarks.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18160",
+    "article_page": "articles/1065.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1066,
+    "type": "paper",
+    "title": "Foundation Models for Credit Risk Prediction: A Game Changer?",
+    "summary_en": "Tabular foundation models (PFNs) outperform tuned GBMs and deep learning baselines in PD and LGD prediction, especially in small-data settings, without any hyperparameter tuning.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18147",
+    "article_page": "articles/1066.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1067,
+    "type": "paper",
+    "title": "Evidence-Grounded Frontier Mapping and Agentic Hypothesis Generation in Nanomedicine",
+    "summary_en": "pArticleMap introduces a literature-mapping and agentic hypothesis-generation system that targets low-density bridge regions in nanomedicine, achieving a 61.0% future-neighborhood rate in retrospective benchmarks.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18144",
+    "article_page": "articles/1067.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1068,
+    "type": "paper",
+    "title": "Generative AI and the Productivity Divide: Human-AI Complementarities in Education",
+    "summary_en": "GenAI access raises average task performance but creates a new productivity divide driven by AI Interaction Competence (AIC), not traditional measures like GPA.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18143",
+    "article_page": "articles/1068.html",
+    "score": 5.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1069,
+    "type": "paper",
+    "title": "Faculty Orientations Shape Adoption of AI in Research and Teaching",
+    "summary_en": "Faculty AI adoption is driven not by attitudes or institutional support but by a coherent 'AI pedagogical orientation' reflecting beliefs about AI's role in disciplinary thinking and expertise.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18140",
+    "article_page": "articles/1069.html",
+    "score": 3.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1070,
+    "type": "paper",
+    "title": "How Good LLMs Are at Answering Bangla Medical Visual Questions? Dataset and Benchmarking",
+    "summary_en": "Introduces the first clinically validated Bangla MedVQA dataset and shows that even top models like Gemini and GPT-4.1 mini achieve only 40.38% and 26.50% accuracy, with performance on specialized diagnostic questions falling below random chance.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18111",
+    "article_page": "articles/1070.html",
+    "score": 3.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1071,
+    "type": "paper",
+    "title": "Safety Geometry Collapse in Multimodal LLMs and Adaptive Drift Correction",
+    "summary_en": "Key claim: Multimodal inputs cause a systematic geometric collapse of the refusal direction in MLLMs, and key observation: counteracting modality-induced drift via a self-rectification signal (ReGap) restores safety without harming general capability.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18104",
+    "article_page": "articles/1071.html",
+    "score": 5.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1072,
+    "type": "paper",
+    "title": "A Data-Efficient Path to Multilingual LLMs: Language Expansion via Post-training PARAM$Δ$ Integration into Upcycled MoE",
+    "summary_en": "DeltaMoE resolves the trade-off between preserving original abilities and acquiring new languages by upcycling a dense LLM into an MoE and grafting a post-training delta, achieving +1.7 expanded language and +1.5 original language preservation over delta merging baselines.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18083",
+    "article_page": "articles/1072.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1073,
+    "type": "paper",
+    "title": "LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning",
+    "summary_en": "LMAC uses an LLM to iteratively design and refine a communication protocol for cooperative MARL, explicitly targeting state reconstruction accuracy and uniformity across agents.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18077",
+    "article_page": "articles/1073.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1074,
+    "type": "paper",
+    "title": "A-ProS: Towards Reliable Autonomous Programming Through Multi-Model Feedback",
+    "summary_en": "A-ProS proposes a hybrid multi-model feedback framework that separates solution generation from specialized debugging, achieving over 2x greater gains than baseline agent loops on competitive programming problems.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18073",
+    "article_page": "articles/1074.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1075,
+    "type": "paper",
+    "title": "PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence",
+    "summary_en": "PPAI is the first system for personalized LLM agent interoperability in P2P edge networks, achieving up to 7.96% accuracy improvement and 16.34% latency reduction by matching queries to specialized remote agents.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18067",
+    "article_page": "articles/1075.html",
+    "score": 3.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1076,
+    "type": "paper",
+    "title": "FedSDR: Federated Self-Distillation with Rectification",
+    "summary_en": "FedSDR proposes a data-centric paradigm for federated LLM fine-tuning that uses self-distillation to align heterogeneous client data distributions, and introduces a dual-stream LoRA mechanism to resolve the 'Rewrite Paradox' where unconstrained distillation increases hallucinations.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18028",
+    "article_page": "articles/1076.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1077,
+    "type": "paper",
+    "title": "TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications?",
+    "summary_en": "TeleCom-Bench reveals a universal 'Execution Wall' where LLMs achieve >90% accuracy on linguistic interface tasks but collapse to ~30% on procedural execution tasks like solution generation in telecom.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18025",
+    "article_page": "articles/1077.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1078,
+    "type": "paper",
+    "title": "Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning",
+    "summary_en": "IBAL proposes an information-theoretic adversarial attack that breaks inter-agent coordination by minimizing mutual information between groups, and trains robust policies under such disruptions.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18024",
+    "article_page": "articles/1078.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1079,
+    "type": "paper",
+    "title": "LogRouter: Adaptive Two-Level LLM Routing for Log Question Answering in Big Data Systems",
+    "summary_en": "LogRouter proposes a two-level cost-aware router for log QA that achieves 88.4% mean accuracy and 55% latency reduction over a fixed-32B baseline by dispatching queries to LLM-bypass paths or appropriately-sized generators.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18015",
+    "article_page": "articles/1079.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1080,
+    "type": "paper",
+    "title": "RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search",
+    "summary_en": "RL4RLA proposes a general RL framework that automates the discovery of interpretable, symbolic randomized linear algebra algorithms by using a numerical curriculum and Monte Carlo Graph Search to overcome sparse rewards and vast search spaces.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.18004",
+    "article_page": "articles/1080.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1081,
+    "type": "paper",
+    "title": "MARR: Module-Adaptive Residual Reconstruction for Low-Bit Post-Training Quantization",
+    "summary_en": "MARR proposes module-adaptive scaling of residual terms in low-bit PTQ to balance accumulated-error correction and Hessian-approximation bias, achieving up to 20.2% performance gains on LLMs.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.17997",
+    "article_page": "articles/1081.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1082,
+    "type": "paper",
+    "title": "Predictive Prefetching for Retrieval-Augmented Generation",
+    "summary_en": "Key claim: predictive prefetching of retrieval based on semantic precursors can reduce RAG latency by 43.5% while maintaining answer quality; key observation: retrieval needs are preceded by identifiable semantic precursors 8-16 tokens before uncertainty becomes critical.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.17989",
+    "article_page": "articles/1082.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1083,
+    "type": "paper",
+    "title": "AutoVecCoder: Teaching LLMs to Generate Explicitly Vectorized Code",
+    "summary_en": "AutoVecCoder proposes a framework combining automated data synthesis (VecPrompt) and reinforcement learning (VecRL) to teach LLMs to generate explicitly vectorized SIMD code, achieving SOTA on SimdBench and sometimes surpassing -O3 compiler optimizations.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.17978",
+    "article_page": "articles/1083.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
+    "id": 1084,
+    "type": "paper",
+    "title": "Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery",
+    "summary_en": "LGBO embeds LLM preferences into every BO iteration via a region-lifted preference mechanism, achieving 90% of best observed value within 6 iterations in wet-lab Fe-Cr electrolyte optimization vs. >10 for baselines.",
+    "summary_zh": "",
+    "url": "https://arxiv.org/abs/2605.17976",
+    "article_page": "articles/1084.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-19 02:56:46"
+  },
+  {
     "id": 1059,
     "type": "article",
     "title": "OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments",
     "summary_en": "OpenAI has partnered with Dell to deploy its Codex AI coding assistant in hybrid and on-premise enterprise environments. This collaboration aims to bring advanced AI-powered code generation and assistance directly into corporate data centers, addressing security, latency, and data sovereignty concerns. By integrating Codex with Dell's infrastructure, enterprises can leverage AI for software development while maintaining control over sensitive data. The move signals a shift toward making large language models accessible in regulated industries that require on-premise deployment.",
     "summary_zh": "OpenAI与Dell合作，将Codex AI编程助手部署到混合云和本地企业环境中。该合作旨在将先进的AI代码生成能力引入企业数据中心，解决安全、延迟和数据主权问题。通过集成Dell的基础设施，企业可在保持对敏感数据控制的同时，利用AI加速软件开发。此举标志着大语言模型向需要本地部署的受监管行业拓展。",
     "url": "https://openai.com/index/dell-codex-enterprise-partnership",
+    "article_page": "articles/1059.html",
     "score": 0.0,
     "domains": [
       "system_safety"
@@ -19,6 +445,7 @@
     "summary_en": "OpenAI and the Government of Malta have announced a pioneering partnership to provide ChatGPT Plus to all Maltese citizens, marking the first national-scale initiative of its kind. The program includes an AI literacy course developed by the University of Malta, designed to teach citizens about AI capabilities and responsible use. Upon completion, participants receive free access to ChatGPT Plus for one year. The initiative aims to make intelligence a global utility, ensuring equitable access to advanced AI tools. Malta's Minister for Economy and OpenAI's George Osborne emphasized the importance of national AI adoption, with Malta leading Europe in this strategic effort to empower citizens and boost the economy.",
     "summary_zh": "OpenAI与马耳他政府宣布开创性合作，为所有马耳他公民提供ChatGPT Plus，这是全球首个国家级AI普及计划。项目包括马耳他大学开发的AI素养课程，教授公民AI能力与负责任使用。完成课程后，参与者可免费使用ChatGPT Plus一年。该计划旨在将智能转化为全球公共事业，确保公平获取先进AI工具。马耳他经济部长与OpenAI的George Osborne强调国家AI采纳的重要性，马耳他正引领欧洲这一战略举措，以赋能公民并推动经济。",
     "url": "https://openai.com/index/malta-chatgpt-plus-partnership",
+    "article_page": "articles/1039.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -32,6 +459,7 @@
     "summary_en": "This article from OpenAI Academy explains how business operations teams can leverage Codex to streamline their workflow. By aggregating context from scattered sources like project trackers, KPI dashboards, and stakeholder notes, Codex generates first-draft artifacts such as off-track briefs, strategic initiative updates, leadership decision packets, and progress reports. The team retains judgment and recommendations, while Codex accelerates the creation of working drafts. The article provides specific use cases with starter prompts and real-world examples, emphasizing how Codex helps turn operational context into actionable assets for review and decision-making.",
     "summary_zh": "本文来自OpenAI Academy，介绍业务运营团队如何利用Codex整合分散在项目追踪器、KPI仪表盘和利益相关者笔记中的上下文，生成如off-track简报、战略更新、领导决策包和进度报告等初稿。团队保留判断与建议，Codex加速工作草案的产出。文章提供了具体用例、启动提示和真实示例，强调Codex如何将运营上下文转化为可审查和可行动的资产。",
     "url": "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
+    "article_page": "articles/1040.html",
     "score": 0.0,
     "domains": [
       "system_safety"
@@ -45,6 +473,7 @@
     "summary_en": "Databricks integrates OpenAI's GPT-5.5 into enterprise agent workflows, achieving state-of-the-art performance on the OfficeQA Pro benchmark. The model reduces errors by 46% compared to GPT-5.4, excelling in parsing scanned PDFs, legacy files, and long-context documents. GPT-5.5 is available through AI Unity Gateway, AgentBricks, and Agent Supervisor API, enabling reliable orchestration of multi-step tasks without unnecessary detours. This advancement addresses critical parsing and retrieval challenges in production agent systems, marking a significant step-function improvement in enterprise knowledge work.",
     "summary_zh": "Databricks 将 OpenAI 的 GPT-5.5 集成到企业代理工作流中，在 OfficeQA Pro 基准测试上达到最先进水平。相比 GPT-5.4，错误率降低 46%，在解析扫描 PDF、遗留文件和长上下文文档方面表现优异。GPT-5.5 通过 AI Unity Gateway、AgentBricks 和 Agent Supervisor API 提供，能够可靠地编排多步骤任务，避免不必要的搜索绕路。这一进展解决了生产代理系统中的关键解析和检索挑战，标志着企业知识工作的阶跃式提升。",
     "url": "https://openai.com/index/databricks",
+    "article_page": "articles/1041.html",
     "score": 0.0,
     "domains": [
       "ai_safety",
@@ -59,6 +488,7 @@
     "summary_en": "This article from OpenAI Academy explains how data science teams can use Codex to transform scattered inputs—such as dashboards, metric definitions, exports, and business context—into review-ready analysis assets. It details four primary use cases: KPI root-cause analysis, business impact readouts, analytics request handling, and executive KPI reviews. For each use case, the article describes what inputs the team provides, what Codex returns, and how the process works, emphasizing that Codex drafts deliverables so analysts can focus on validating evidence and sharpening recommendations.",
     "summary_zh": "本文来自OpenAI Academy，介绍数据科学团队如何使用Codex将分散的输入（如仪表板、指标定义、导出数据和业务背景）转化为可审查的分析资产。文章详细说明了四个主要用例：KPI根因分析、业务影响报告、分析请求处理和主管KPI评审。每个用例都描述了团队提供什么输入、Codex返回什么输出以及工作流程，强调Codex起草交付物，使分析师能专注于验证证据和优化建议。",
     "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+    "article_page": "articles/1042.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -72,6 +502,7 @@
     "summary_en": "OpenAI is releasing a preview of a new personal finance experience in ChatGPT for Pro users in the U.S., allowing them to securely connect financial accounts via Plaid, view a dashboard of spending and portfolio performance, and ask context-aware questions. The feature leverages GPT-5.5's reasoning capabilities to provide personalized insights, such as saving plans based on real transaction data. Over 200 million monthly users already seek financial advice from ChatGPT. The rollout starts with a limited group to refine the experience before expanding to Plus and free tiers. OpenAI emphasizes that this tool is not a substitute for professional financial advice.",
     "summary_zh": "OpenAI 向美国 Pro 用户推出 ChatGPT 个人财务功能预览，支持通过 Plaid 安全连接银行账户，展示支出与投资仪表盘，并基于 GPT-5.5 的推理能力提供个性化财务建议（如储蓄计划）。每月超 2 亿用户已用 ChatGPT 处理财务问题。该功能先在小范围测试，后续将扩展至 Plus 和免费用户。OpenAI 强调此工具不能替代专业财务顾问。",
     "url": "https://openai.com/index/personal-finance-chatgpt",
+    "article_page": "articles/1043.html",
     "score": 0.0,
     "domains": [
       "system_safety"
@@ -85,6 +516,7 @@
     "summary_en": "This article from OpenAI Academy explains how sales teams can leverage Codex to transform scattered account data, customer conversations, and deal signals into structured artifacts like pipeline briefs, meeting prep packets, forecast reviews, and account plans. It details four primary use cases: pipeline prioritization from underworked accounts, meeting preparation and follow-up, forecast review and commit risk monitoring, and strategic account plan refresh. For each use case, it specifies the inputs required (e.g., CRM records, call transcripts, email threads) and the outputs Codex generates (e.g., prioritized briefs, stakeholder maps, risk memos). The emphasis is on Codex producing a first draft that sellers and managers then refine, preserving human judgment for strategy and relationships.",
     "summary_zh": "本文来自OpenAI Academy，介绍了销售团队如何利用Codex将分散的账户数据、客户对话和交易信号转化为结构化文档，如Pipeline简报、会议准备包、预测审查和账户计划。文章详述了四个主要用例：从低活跃账户中优先排序Pipeline、会议准备与跟进、预测审查与承诺风险监控，以及战略账户计划更新。每个用例都明确了所需输入（如CRM记录、通话记录、邮件线程）和Codex生成的输出（如优先简报、利益相关者地图、风险备忘录）。重点在于Codex生成初稿，由销售人员和经理进行优化，保留人类对策略和关系的判断。",
     "url": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
+    "article_page": "articles/1044.html",
     "score": 0.0,
     "domains": [
       "system_safety"
@@ -98,6 +530,7 @@
     "summary_en": "Sea Limited, a Singapore-based global tech company, is rolling out OpenAI's Codex across its developer organization to transform software development. David Chen, Co-Founder and CPO of Shopee, explains that Codex goes beyond autocomplete by providing deep contextual awareness of large codebases, enabling engineers to focus on higher-level tasks like architecture and innovation. With 87% weekly active users, Sea is integrating AI agents into CI/CD pipelines for autonomous testing and debugging. Chen views this as an organizational paradigm shift, where developers become system orchestrators. Sea is also hosting a Codex Hackathon Series across Asia to democratize AI tools and build a regional AI-native talent ecosystem.",
     "summary_zh": "Sea Limited正在其开发者组织中推广OpenAI的Codex，以变革软件开发。联合创始人David Chen表示，Codex超越了自动补全，能深度理解大型代码库的上下文，让工程师专注于架构设计等更高层次的任务。Sea拥有87%的周活跃用户，并将AI代理集成到CI/CD流水线中，用于自主测试和调试。Chen认为这是一场组织范式转变，开发者将演变为系统编排者。Sea还在亚洲举办Codex黑客松系列，以普及AI工具并构建区域性的AI原生人才生态。",
     "url": "https://openai.com/index/sea-david-chen",
+    "article_page": "articles/1045.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -111,6 +544,7 @@
     "summary_en": "OpenAI announces that Codex, its AI coding agent, is now available in the ChatGPT mobile app, allowing users to stay connected to long-running tasks from anywhere. The mobile experience provides full access to active threads, approvals, plugins, and project context via a secure relay layer. Users can start investigations, review outputs, approve commands, and change models on the go. The update also includes Remote SSH support for enterprise environments, programmatic access tokens, Hooks for customization, and HIPAA-compliant usage for healthcare. Codex in the mobile app is rolling out in preview on iOS and Android across all plans.",
     "summary_zh": "OpenAI宣布Codex现已集成到ChatGPT移动应用中，用户可通过手机随时跟进长期运行的AI代理任务。移动端提供完整的线程访问、审批、插件和项目上下文，通过安全中继层实现实时同步。用户可在通勤或会议间隙启动调试、审查输出、批准命令或切换模型。更新还包括Remote SSH支持企业环境、Programmatic Access Tokens、Hooks自定义功能以及面向医疗的HIPAA合规使用。Codex移动预览版已在iOS和Android上向所有计划用户开放。",
     "url": "https://openai.com/index/work-with-codex-from-anywhere",
+    "article_page": "articles/1046.html",
     "score": 0.0,
     "domains": [
       "ai_safety",
@@ -125,6 +559,7 @@
     "summary_en": "OpenAI introduces safety updates to help ChatGPT better recognize context in sensitive conversations, particularly when risk emerges over time. The updates improve the model's ability to identify subtle or evolving cues of distress, such as suicide, self-harm, or harm-to-others, and respond appropriately by de-escalating, refusing harmful details, or redirecting to safer alternatives. Key innovations include safety summaries—short factual notes about prior safety-relevant context across conversations—and enhanced training with mental health experts. Internal evaluations show significant improvements in safe-response performance, with up to 52% improvement in harm-to-others cases on GPT-5.5 Instant, without degrading ordinary conversation quality.",
     "summary_zh": "OpenAI 推出安全更新，帮助 ChatGPT 在敏感对话中更好地识别上下文，特别是当风险随时间逐渐显现时。这些更新提升了模型识别自杀、自残或伤害他人等微妙或演变中 distress 信号的能力，并通过缓和局势、拒绝有害细节或引导至更安全选项来做出适当回应。关键创新包括 safety summaries——关于跨对话先前安全相关上下文的简短事实记录——以及结合心理健康专家的强化训练。内部评估显示，在 GPT-5.5 Instant 上，伤害他人场景的安全响应性能提升了 52%，且不影响普通对话质量。",
     "url": "https://openai.com/index/chatgpt-recognize-context-in-sensitive-conversations",
+    "article_page": "articles/1047.html",
     "score": 0.0,
     "domains": [
       "ai_safety",
@@ -139,6 +574,7 @@
     "summary_en": "OpenAI engineers built a custom sandbox for Codex on Windows after finding existing tools like AppContainer, Windows Sandbox, and Mandatory Integrity Control unsuitable. The solution uses SIDs and write-restricted tokens to constrain file writes and network access without requiring administrator privileges. This enables Codex to safely run developer workflows—shells, Git, Python, build tools—while preventing unauthorized modifications outside the workspace. The sandbox enforces read-only access outside the workspace and blocks internet access unless explicitly allowed, balancing safety and productivity for Windows users.",
     "summary_zh": "OpenAI工程师为Windows上的Codex构建了自定义沙箱，因AppContainer、Windows Sandbox和Mandatory Integrity Control等现有工具不适用。该方案利用SIDs和write-restricted tokens来限制文件写入和网络访问，无需管理员权限。沙箱允许Codex安全运行shell、Git、Python等开发工具，同时防止对工作区外的未授权修改，并默认阻止互联网访问，在安全性与生产力间取得平衡。",
     "url": "https://openai.com/index/building-codex-windows-sandbox",
+    "article_page": "articles/1048.html",
     "score": 0.0,
     "domains": [
       "system_safety"
@@ -152,6 +588,7 @@
     "summary_en": "OpenAI disclosed a security incident involving the TanStack npm library, part of the broader Mini Shai-Hulud supply chain attack. Two employee devices were impacted, leading to unauthorized access and credential exfiltration from a limited set of internal source code repositories. No evidence of compromise to user data, production systems, or intellectual property was found. As a precaution, OpenAI is rotating code-signing certificates, requiring macOS users to update applications by June 12, 2026. The company has implemented additional security controls and is coordinating with platform providers to prevent unauthorized certificate use.",
     "summary_zh": "OpenAI披露了一起涉及TanStack npm库的安全事件，该事件属于更广泛的Mini Shai-Hulud供应链攻击。两台员工设备受到影响，导致对有限内部源代码仓库的未授权访问和凭证窃取。未发现用户数据、生产系统或知识产权受损的证据。作为预防措施，OpenAI正在轮换代码签名证书，要求macOS用户在2026年6月12日前更新应用程序。公司已实施额外的安全控制，并与平台提供商协调以防止证书被滥用。",
     "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack",
+    "article_page": "articles/1049.html",
     "score": 0.0,
     "domains": [
       "system_safety"
@@ -165,6 +602,7 @@
     "summary_en": "This article from OpenAI Academy explains how finance teams can leverage Codex to automate and streamline key workflows such as monthly business reviews, financial model cleanup, recurring CFO/board reporting packs, and variance driver analysis. Codex ingests existing workbooks, dashboards, and notes to produce review-ready outputs without requiring coding skills. Each use case includes a starter prompt, suggested plugins, and a real-world example. The goal is to reduce time spent on initial drafting, allowing teams to focus on analysis, validation, and strategic decision-making.",
     "summary_zh": "本文来自OpenAI Academy，介绍财务团队如何使用Codex自动化关键工作流，包括月度业务回顾、财务模型清理、定期CFO/董事会报告包以及差异驱动分析。Codex能读取现有工作簿、仪表板和笔记，无需编码即可生成可供审查的输出。每个用例都包含启动提示、建议插件和真实示例，旨在减少初稿时间，让团队专注于分析、验证和战略决策。",
     "url": "https://openai.com/academy/how-finance-teams-use-codex",
+    "article_page": "articles/1050.html",
     "score": 0.0,
     "domains": [
       "system_safety"
@@ -178,6 +616,7 @@
     "summary_en": "AutoScout24, a leading online car marketplace, partnered with OpenAI to transform its engineering workflows using AI-powered tools. By deploying ChatGPT across 2,000 employees and integrating Codex into 1,000 builder roles, the company achieved roughly 10x faster development cycles, reducing project timelines from weeks to days. The dual-layer strategy combined broad AI literacy with deep workflow integration, supported by an AI Champions network. Key results included improved code quality, automated pull request reviews, and expanded innovation capacity for non-technical roles. The initiative demonstrates how large-scale AI adoption can accelerate software delivery while maintaining reliability.",
     "summary_zh": "AutoScout24与OpenAI合作，通过AI驱动的工作流重塑工程流程。公司为2000名员工部署ChatGPT，并将Codex集成到1000个构建者角色中，实现了约10倍的开发周期加速，项目时间从数周缩短至数天。双层策略结合了广泛的AI素养与深度工作流集成，并由AI Champions网络提供支持。关键成果包括代码质量提升、自动化pull request审查以及非技术角色的创新扩展。该案例展示了大规模AI采用如何在保持可靠性的同时加速软件交付。",
     "url": "https://openai.com/index/autoscout24",
+    "article_page": "articles/1051.html",
     "score": 0.0,
     "domains": [
       "system_safety"
@@ -191,6 +630,7 @@
     "summary_en": "NVIDIA engineers and researchers use OpenAI's Codex, powered by GPT-5.5, as a default tool for complex engineering and end-to-end machine learning research workflows. Codex runs on NVIDIA GB200/GB300 infrastructure, enabling autonomous long sessions, bug detection, and code translation (e.g., Python to Rust). It has improved research workflow speed by 10x and allowed rapid prototyping, such as building an internal podcast app in hours. Over 40,000 NVIDIA employees have access to Codex, which is used for production system development and automated experimentation.",
     "summary_zh": "NVIDIA工程师和研究人员使用基于GPT-5.5的Codex作为复杂工程和端到端机器学习研究工作流的默认工具。Codex运行在NVIDIA GB200/GB300基础设施上，支持自主长会话、错误检测和代码翻译（如Python转Rust）。它将研究工作流速度提升了10倍，并实现了快速原型开发，例如在数小时内构建内部播客应用。超过40,000名NVIDIA员工可使用Codex，用于生产系统开发和自动化实验。",
     "url": "https://openai.com/index/nvidia",
+    "article_page": "articles/1052.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -204,6 +644,7 @@
     "summary_en": "OpenAI's Parameter Golf challenge attracted over 1,000 participants and 2,000 submissions, tasking them with minimizing held-out loss on FineWeb under strict constraints: a 16 MB artifact limit and 10-minute training on 8×H100s. The competition highlighted the widespread use of AI coding agents, which lowered experimentation costs and accelerated innovation but introduced challenges in submission review and scoring. Notable technical themes included training optimization, quantization, test-time training, and novel modeling ideas like the CaseOps tokenizer and XSA attention. The nonrecord track also fostered creative approaches. Overall, the challenge demonstrated how AI-assisted research can democratize participation while requiring new oversight mechanisms.",
     "summary_zh": "OpenAI的Parameter Golf挑战赛吸引了超过1000名参与者和2000份提交，任务是在严格限制下最小化FineWeb数据集上的损失：16 MB的artifact限制和8×H100上的10分钟训练。比赛突显了AI coding agents的广泛使用，它们降低了实验成本并加速了创新，但也带来了提交审查和评分的新挑战。技术亮点包括训练优化、量化、test-time training以及新颖的建模想法，如CaseOps tokenizer和XSA attention。非记录赛道也催生了创造性方法。总体而言，该挑战展示了AI辅助研究如何民主化参与，同时需要新的监督机制。",
     "url": "https://openai.com/index/what-parameter-golf-taught-us",
+    "article_page": "articles/1053.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -217,6 +658,7 @@
     "summary_en": "In Q1 2026, ChatGPT consumer adoption broadened across gender, age, and geography. Users with typically feminine names now represent over half of inferred-gender users. Messages from users over 35 gained share, and the fastest-rising countries in per-capita usage included Dominican Republic, Haiti, Japan, and Mexico. Workplace tasks on consumer plans shifted from general content creation toward specialized uses like health documentation and information retrieval. The data indicates ChatGPT is becoming a mainstream tool used by a more diverse user base in more countries for recurring tasks.",
     "summary_zh": "2026年第一季度，ChatGPT的消费者采用在性别、年龄和地域上进一步扩大。具有典型女性名字的用户已占可推断性别用户的一半以上。35岁以上用户的消息占比上升。人均消息量排名上升最快的国家包括多米尼加共和国、海地、日本和墨西哥。消费者计划中的工作用途从通用内容创作转向健康文档和信息检索等专业任务。数据表明ChatGPT正成为更主流、更嵌入日常的工具。",
     "url": "https://openai.com/signals/research/2026q1-update",
+    "article_page": "articles/1054.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -230,6 +672,7 @@
     "summary_en": "OpenAI is launching the Campus Network, a global initiative partnering with university student clubs to foster AI-native campuses. Through this interest form, clubs can apply for hands-on AI learning support, early access to tools like Codex, event resources, and connections with a worldwide network of student leaders. The program targets diverse club types—from AI/ML to entrepreneurship—and offers opportunities such as workshops, research collaborations, ambassador programs, and career development. By collecting details on club focus, activity level, and AI usage, OpenAI aims to tailor support and build a community shaping the future of learning and work.",
     "summary_zh": "OpenAI 推出 Campus Network 全球计划，与大学学生俱乐部合作打造 AI-native 校园。通过此兴趣表单，俱乐部可申请 hands-on AI 学习支持、Codex 等工具早期访问、活动资源及全球学生领袖网络连接。项目面向 AI/ML、创业等多元俱乐部类型，提供 workshops、研究合作、ambassador 项目及职业发展机会。OpenAI 通过收集俱乐部焦点、活跃度及 AI 使用情况，定制支持以构建塑造学习与工作未来的社区。",
     "url": "https://openai.com/index/openai-campus-network-student-club-interest-form",
+    "article_page": "articles/1055.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -243,6 +686,7 @@
     "summary_en": "This guide synthesizes insights from European enterprise leaders at Philips, BBVA, and others, revealing that scaling AI is less about technology deployment and more about building trust, adoption, and iterative improvement. Key patterns include prioritizing culture over tooling, using governance as an enabler, fostering ownership over consumption, ensuring quality before scale, and protecting judgment work through hybrid workflows. The report emphasizes that sustained impact requires treating AI as an operating layer and leadership discipline, with human oversight embedded in end-to-end workflows.",
     "summary_zh": "本指南汇集了Philips、BBVA等欧洲企业领导者的见解，指出扩展AI的关键不在于技术部署，而在于建立信任、采用和持续改进。核心模式包括：文化优先于工具、将治理作为赋能因素、鼓励所有权而非消费、质量优先于规模，以及通过混合工作流保护判断工作。报告强调，持久影响需要将AI视为运营层和领导力学科，并在端到端工作流中嵌入人工监督。",
     "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
+    "article_page": "articles/1056.html",
     "score": 0.0,
     "domains": [
       "ai_safety",
@@ -257,6 +701,7 @@
     "summary_en": "OpenAI announced the launch of DeployCo, a new company focused on helping organizations build and deploy AI systems for critical workflows. DeployCo will embed Forward Deployed Engineers (FDEs) into client organizations to redesign infrastructure and workflows around AI. OpenAI also agreed to acquire Tomoro, an applied AI consulting firm, bringing approximately 150 experienced engineers. The venture is backed by over $4 billion in initial investment from partners including TPG, Advent, and Bain Capital. DeployCo is majority-owned by OpenAI and aims to accelerate enterprise AI adoption and ensure AGI benefits humanity.",
     "summary_zh": "OpenAI 宣布成立 DeployCo，这是一家专注于帮助组织构建和部署 AI 系统的新公司。DeployCo 将派遣 Forward Deployed Engineers (FDEs) 嵌入客户组织，围绕 AI 重新设计基础设施和工作流程。OpenAI 还同意收购应用 AI 咨询公司 Tomoro，带来约 150 名经验丰富的工程师。该项目获得 TPG、Advent、Bain Capital 等合作伙伴超过 40 亿美元的初始投资。DeployCo 由 OpenAI 控股，旨在加速企业 AI 采纳并确保 AGI 造福人类。",
     "url": "https://openai.com/index/openai-launches-the-deployment-company",
+    "article_page": "articles/1057.html",
     "score": 0.0,
     "domains": [
       "ai_safety",
@@ -271,6 +716,7 @@
     "summary_en": "OpenAI describes the safety measures for deploying Codex, a coding agent that autonomously reviews repositories, runs commands, and interacts with development tools. Key controls include sandboxing, approval policies, network access restrictions, identity management via ChatGPT, and rule-based command filtering. Agent-native telemetry via OpenTelemetry logs provides visibility into user prompts, tool decisions, and network events, enabling security teams to audit behavior and distinguish between expected actions and anomalies. The system balances developer productivity with security through managed configurations and AI-powered triage.",
     "summary_zh": "OpenAI 介绍了部署 Codex 的安全措施，该编码代理可自主审查代码库、运行命令并与开发工具交互。关键控制包括沙箱、审批策略、网络访问限制、通过 ChatGPT 的身份管理以及基于规则的命令过滤。通过 OpenTelemetry 日志的代理原生遥测提供了对用户提示、工具决策和网络事件的可见性，使安全团队能够审计行为并区分预期操作与异常。该系统通过托管配置和 AI 驱动的分类来平衡开发人员生产力与安全性。",
     "url": "https://openai.com/index/running-codex-safely",
+    "article_page": "articles/1058.html",
     "score": 0.0,
     "domains": [
       "ai_safety",
@@ -279,142 +725,13 @@
     "created_at": "2026-05-18 07:51:25"
   },
   {
-    "id": 1019,
-    "type": "article",
-    "title": "Reimagining the mouse pointer for the AI era",
-    "summary_en": "",
-    "summary_zh": "",
-    "url": "https://deepmind.google/blog/ai-pointer/",
-    "score": 0.0,
-    "domains": [
-      "ai_safety"
-    ],
-    "created_at": "2026-05-18 07:51:23"
-  },
-  {
-    "id": 1020,
-    "type": "article",
-    "title": "AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields",
-    "summary_en": "",
-    "summary_zh": "",
-    "url": "https://deepmind.google/blog/alphaevolve-impact/",
-    "score": 0.0,
-    "domains": [
-      "ai_safety"
-    ],
-    "created_at": "2026-05-18 07:51:23"
-  },
-  {
-    "id": 1021,
-    "type": "article",
-    "title": "Enabling a new model for healthcare with AI co-clinician",
-    "summary_en": "",
-    "summary_zh": "",
-    "url": "https://deepmind.google/blog/ai-co-clinician/",
-    "score": 0.0,
-    "domains": [
-      "ai_safety"
-    ],
-    "created_at": "2026-05-18 07:51:23"
-  },
-  {
-    "id": 1022,
-    "type": "article",
-    "title": "Announcing our partnership with the Republic of Korea",
-    "summary_en": "",
-    "summary_zh": "",
-    "url": "https://deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea/",
-    "score": 0.0,
-    "domains": [
-      "ai_safety"
-    ],
-    "created_at": "2026-05-18 07:51:23"
-  },
-  {
-    "id": 1023,
-    "type": "article",
-    "title": "Decoupled DiLoCo: A new frontier for resilient, distributed AI training",
-    "summary_en": "",
-    "summary_zh": "",
-    "url": "https://deepmind.google/blog/decoupled-diloco/",
-    "score": 0.0,
-    "domains": [
-      "ai_safety"
-    ],
-    "created_at": "2026-05-18 07:51:23"
-  },
-  {
-    "id": 1024,
-    "type": "article",
-    "title": "Partnering with industry leaders to accelerate AI transformation",
-    "summary_en": "",
-    "summary_zh": "",
-    "url": "https://deepmind.google/blog/partnering-with-industry-leaders-to-accelerate-ai-transformation/",
-    "score": 0.0,
-    "domains": [
-      "ai_safety"
-    ],
-    "created_at": "2026-05-18 07:51:23"
-  },
-  {
-    "id": 1025,
-    "type": "article",
-    "title": "Gemini 3.1 Flash TTS: the next generation of expressive AI speech",
-    "summary_en": "",
-    "summary_zh": "",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts",
-    "score": 0.0,
-    "domains": [
-      "ai_safety"
-    ],
-    "created_at": "2026-05-18 07:51:23"
-  },
-  {
-    "id": 1026,
-    "type": "article",
-    "title": "Gemini Robotics-ER 1.6: Powering real-world robotics tasks through enhanced embodied reasoning",
-    "summary_en": "",
-    "summary_zh": "",
-    "url": "https://deepmind.google/blog/gemini-robotics-er-1-6/",
-    "score": 0.0,
-    "domains": [
-      "ai_safety"
-    ],
-    "created_at": "2026-05-18 07:51:23"
-  },
-  {
-    "id": 1027,
-    "type": "article",
-    "title": "Gemma 4: Byte for byte, the most capable open models",
-    "summary_en": "",
-    "summary_zh": "",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
-    "score": 0.0,
-    "domains": [
-      "ai_safety"
-    ],
-    "created_at": "2026-05-18 07:51:23"
-  },
-  {
-    "id": 1028,
-    "type": "article",
-    "title": "Gemini 3.1 Flash Live: Making audio AI more natural and reliable",
-    "summary_en": "",
-    "summary_zh": "",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/",
-    "score": 0.0,
-    "domains": [
-      "ai_safety"
-    ],
-    "created_at": "2026-05-18 07:51:23"
-  },
-  {
     "id": 1029,
     "type": "article",
     "title": "Protecting people from harmful manipulation",
     "summary_en": "This article discusses strategies and frameworks for protecting individuals from harmful manipulation, particularly in digital environments where AI and algorithms can influence behavior. It emphasizes the need for transparency, user agency, and regulatory measures to prevent exploitation through deceptive design, misinformation, and psychological targeting. The piece highlights the ethical responsibilities of technology developers and policymakers in safeguarding vulnerable populations.",
     "summary_zh": "本文探讨了保护个人免受有害操纵的策略与框架，尤其是在AI和算法可能影响行为的数字环境中。强调透明度、用户自主权以及监管措施的必要性，以防止通过欺骗性设计、错误信息和心理定位进行的剥削。文章突出了技术开发者和政策制定者在保护弱势群体方面的伦理责任。",
     "url": "https://deepmind.google/blog/protecting-people-from-harmful-manipulation/",
+    "article_page": "articles/1029.html",
     "score": 0.0,
     "domains": [
       "ai_safety",
@@ -429,6 +746,7 @@
     "summary_en": "Google DeepMind announces Lyria 3 Pro, an advanced music generation model that creates tracks up to three minutes long with structural awareness of intros, verses, choruses, and bridges. The model is integrated into Vertex AI, Google AI Studio, Gemini API, Google Vids, the Gemini app, and ProducerAI, enabling scalable music production for developers, businesses, and creators. Google emphasizes responsible development through partnerships with musicians, use of licensed training data, non-mimicry safeguards, and SynthID watermarking. Lyria 3 Pro aims to make high-quality, customizable music generation accessible across multiple Google products.",
     "summary_zh": "Google DeepMind 发布 Lyria 3 Pro，这是一款先进的音乐生成模型，可生成长达三分钟、具备结构感知能力的曲目，支持前奏、主歌、副歌和桥段。该模型已集成至 Vertex AI、Google AI Studio、Gemini API、Google Vids、Gemini 应用及 ProducerAI，为开发者、企业和创作者提供可扩展的音乐制作能力。Google 强调与音乐人合作、使用授权训练数据、非模仿保护机制及 SynthID 水印，以负责任的方式推动 AI 音乐工具的发展。",
     "url": "https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro",
+    "article_page": "articles/1030.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -442,6 +760,7 @@
     "summary_en": "Google DeepMind introduces a cognitive framework to measure progress toward Artificial General Intelligence (AGI), drawing on decades of research in psychology, neuroscience, and cognitive science. The framework identifies ten key cognitive abilities—perception, generation, attention, learning, memory, reasoning, metacognition, executive functions, problem solving, and social cognition—and proposes a three-stage evaluation protocol benchmarking AI against human performance. To operationalize this, DeepMind launches a Kaggle hackathon with a $200,000 prize pool, inviting the community to design evaluations for five abilities where gaps are largest: learning, metacognition, attention, executive functions, and social cognition.",
     "summary_zh": "Google DeepMind 提出一个基于认知科学的框架来衡量AGI进展，该框架识别了十项关键认知能力，包括perception、generation、attention、learning、memory、reasoning、metacognition、executive functions、problem solving和social cognition，并设计了将AI性能与人类基线对比的三阶段评估协议。为将理论付诸实践，DeepMind在Kaggle上发起奖金20万美元的黑客松，邀请社区针对learning、metacognition、attention、executive functions和social cognition这五个评估缺口最大的能力设计评测。",
     "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework",
+    "article_page": "articles/1031.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -455,6 +774,7 @@
     "summary_en": "Ten years after AlphaGo's historic victory over Lee Sedol, DeepMind reflects on how the breakthrough catalyzed modern AI and paved the way toward artificial general intelligence (AGI). AlphaGo combined deep neural networks, reinforcement learning, and advanced search to master the complex game of Go, demonstrating AI's potential to tackle real-world scientific problems. This led to AlphaFold 2, which solved the protein folding problem and earned a Nobel Prize, as well as AlphaZero, AlphaProof, and AlphaEvolve. DeepMind now integrates these search and reasoning techniques into Gemini models, aiming to build general AI systems capable of scientific discovery, mathematical reasoning, and algorithmic innovation.",
     "summary_zh": "AlphaGo击败李世石十周年之际，DeepMind回顾了这一突破如何催化现代AI并通向通用人工智能（AGI）。AlphaGo结合深度神经网络、强化学习和高级搜索，攻克了围棋的复杂挑战，展示了AI解决现实科学问题的潜力。这催生了AlphaFold 2（解决蛋白质折叠问题并获诺贝尔奖）、AlphaZero、AlphaProof和AlphaEvolve。DeepMind现将这些搜索与推理技术整合进Gemini模型，旨在构建能进行科学发现、数学推理和算法创新的通用AI系统。",
     "url": "https://deepmind.google/blog/10-years-of-alphago/",
+    "article_page": "articles/1032.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -468,6 +788,7 @@
     "summary_en": "Google has launched Gemini 3.1 Flash-Lite, its fastest and most cost-efficient AI model, now available in preview via the Gemini API and Vertex AI. Priced at $0.25/1M input tokens and $1.50/1M output tokens, it offers 2.5x faster time to first token and 45% higher output speed than 2.5 Flash. It achieves strong benchmark scores including 86.9% on GPQA Diamond and an Elo of 1432 on Arena.ai. Designed for high-volume workloads, it supports tasks like translation, content moderation, UI generation, and simulations. Early adopters include Latitude, Cartwheel, and Whering.",
     "summary_zh": "Google 发布了 Gemini 3.1 Flash-Lite，这是其最快且最具成本效益的 AI 模型，现通过 Gemini API 和 Vertex AI 提供预览。定价为每百万输入 tokens $0.25、每百万输出 tokens $1.50，相比 2.5 Flash，首 token 响应速度提升 2.5 倍，输出速度提升 45%。该模型在 GPQA Diamond 上达到 86.9%，在 Arena.ai 上 Elo 评分为 1432。适用于翻译、内容审核、UI 生成和模拟等高容量工作负载。早期用户包括 Latitude、Cartwheel 和 Whering。",
     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite",
+    "article_page": "articles/1033.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -481,6 +802,7 @@
     "summary_en": "Google DeepMind launches Nano Banana 2, a state-of-the-art image generation model that combines the advanced capabilities of Nano Banana Pro with the speed of Gemini Flash. It offers enhanced creative control, subject consistency, precise instruction following, and production-ready specs up to 4K resolution. The model is integrated across Google products including Gemini, Search, Ads, and AI Studio. Google also improves AI content provenance with SynthID and C2PA Content Credentials. Nano Banana 2 aims to make high-quality, rapid image generation accessible to a wider audience.",
     "summary_zh": "Google DeepMind 发布 Nano Banana 2，这是最新的图像生成模型，结合了 Nano Banana Pro 的高级能力与 Gemini Flash 的闪电速度。该模型提供增强的创意控制、主体一致性、精确指令遵循以及高达 4K 分辨率的生产级规格。它已集成到 Gemini、Search、Ads 和 AI Studio 等 Google 产品中。同时，Google 通过 SynthID 和 C2PA Content Credentials 改进了 AI 内容溯源技术。Nano Banana 2 旨在让更广泛的用户群体享受高质量、快速的图像生成。",
     "url": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2",
+    "article_page": "articles/1034.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -494,6 +816,7 @@
     "summary_en": "Google announces Gemini 3.1 Pro, an upgraded AI model with enhanced reasoning capabilities, achieving a 77.1% score on the ARC-AGI-2 benchmark—more than double its predecessor. Designed for complex tasks beyond simple answers, it supports code-based animation, system synthesis, interactive design, and creative coding. The model rolls out to developers via Gemini API, Google Antigravity, and Android Studio; to enterprises through Vertex AI; and to consumers via the Gemini app and NotebookLM. Released in preview to validate updates and advance agentic workflows, it aims to tackle ambitious challenges across science, engineering, and everyday applications.",
     "summary_zh": "Google 发布 Gemini 3.1 Pro，该升级版 AI 模型在 ARC-AGI-2 基准测试中取得 77.1% 的分数，推理性能较前代翻倍。模型专为复杂任务设计，支持代码动画、系统合成、交互设计与创意编程。开发者可通过 Gemini API、Google Antigravity 及 Android Studio 访问，企业用户通过 Vertex AI，消费者通过 Gemini 应用和 NotebookLM 使用。预览版旨在验证更新并推进 agentic workflows，以应对科学、工程及日常应用中的挑战。",
     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro",
+    "article_page": "articles/1035.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -507,6 +830,7 @@
     "summary_en": "Google's Gemini app now integrates Lyria 3, Google DeepMind's latest music generation model, allowing users to create 30-second tracks from text prompts or uploaded images. The feature offers improved creative control, automatic lyrics generation, and realistic audio. All outputs are watermarked with SynthID for AI identification. Available in beta for users 18+ in multiple languages, with higher limits for subscribers. The tool aims to foster creative expression rather than produce masterpieces, and includes safeguards against artist mimicry and copyright infringement.",
     "summary_zh": "Google的Gemini应用集成了DeepMind最新的Lyria 3音乐生成模型，用户可通过文本或图片生成30秒音乐片段。该功能支持自动歌词生成、风格与节奏控制，并输出更逼真的音频。所有生成内容均嵌入SynthID水印以标识AI来源。Beta版面向18岁以上用户开放，支持多语言，订阅用户享有更高使用额度。工具旨在促进创意表达，并包含防止模仿艺术家及侵权的保护措施。",
     "url": "https://blog.google/innovation-and-ai/products/gemini-app/lyria-3",
+    "article_page": "articles/1036.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -520,6 +844,7 @@
     "summary_en": "Google DeepMind announces a National Partnership for AI with Indian government bodies and institutions to accelerate AI-powered science and education. The collaboration provides access to frontier AI models like AlphaGenome, AI Co-scientist, and Earth AI for researchers, alongside a $30 million Google.org Impact Challenge for AI for Science. In education, partnerships with Atal Tinkering Labs and PM Publishers integrate Gemini into classrooms, transforming textbooks into interactive experiences and supporting teachers. The initiative also extends to agriculture and energy, using AI for crop productivity and renewable energy forecasting. This partnership aims to broaden AI access, serving national priorities and fostering global AI collaboration.",
     "summary_zh": "Google DeepMind宣布与印度政府机构建立国家AI合作伙伴关系，以加速AI驱动的科学和教育。合作提供AlphaGenome、AI Co-scientist和Earth AI等前沿模型，并设立3000万美元的Google.org Impact Challenge支持AI for Science。教育方面，与Atal Tinkering Labs和PM Publishers合作，将Gemini融入课堂，将静态教科书转化为互动学习体验。此外，AI还被用于农业和能源领域，提升作物产量和可再生能源预测。该伙伴关系旨在扩大AI访问，服务国家优先事项，并促进全球AI合作。",
     "url": "https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education/",
+    "article_page": "articles/1037.html",
     "score": 0.0,
     "domains": [
       "ai_safety",
@@ -534,6 +859,7 @@
     "summary_en": "Google has released a major upgrade to Gemini 3 Deep Think, a specialized reasoning mode designed for science, research, and engineering. The update blends deep scientific knowledge with engineering utility, enabling practical applications like identifying logical flaws in peer-reviewed papers, optimizing crystal growth for semiconductor discovery, and accelerating physical component design. It achieves state-of-the-art results on benchmarks including Humanity's Last Exam (48.4%), ARC-AGI-2 (84.6%), and gold-medal performance on the International Math Olympiad 2025, as well as the Physics and Chemistry Olympiads. The model is available to Google AI Ultra subscribers and via the Gemini API through an early access program.",
     "summary_zh": "Google 发布了 Gemini 3 Deep Think 的重大升级，这是一种专为科学、研究和工程设计的 specialized reasoning mode。该更新融合了深厚的科学知识与工程实用性，能够实现实际应用，例如识别同行评审论文中的逻辑缺陷、优化晶体生长以发现半导体材料，以及加速物理组件设计。它在 Humanity's Last Exam（48.4%）、ARC-AGI-2（84.6%）等基准测试中取得了领先成绩，并在 International Math Olympiad 2025 以及 Physics 和 Chemistry Olympiads 中达到金牌水平。该模型现已面向 Google AI Ultra 订阅用户开放，并通过 Gemini API 的 early access program 提供。",
     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/",
+    "article_page": "articles/1038.html",
     "score": 0.0,
     "domains": [
       "ai_safety"
@@ -547,6 +873,7 @@
     "summary_en": "Second-order optimization (ML-FOP-SOAP) stabilizes multimodal training by reducing modality competition via Fisher-Orthogonal Projection and multi-level variance correction, achieving 1.4x sample efficiency and 1.5x wall-clock speedup over AdamW.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16165",
+    "article_page": "articles/999.html",
     "score": 4.0,
     "domains": [
       "ai_safety",
@@ -563,6 +890,7 @@
     "summary_en": "PCM shows that gradient computation dominates GRPO-based VLA RL (78% wall-clock time) and proposes a drop-in method to allocate gradient compute only to outcome-divergent trajectory phases, achieving 2.38x speedup with no reward model.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16154",
+    "article_page": "articles/1000.html",
     "score": 4.0,
     "domains": [
       "ai_safety",
@@ -579,6 +907,7 @@
     "summary_en": "Key claim: LLM agents fail in unfamiliar environments due to premature exploitation; key observation: task-oriented RL training does not yield autonomous exploration, but explicitly training with an exploration reward (ECC) enables systematic information gathering and improves downstream task performance.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16143",
+    "article_page": "articles/1001.html",
     "score": 4.0,
     "domains": [
       "ai_safety",
@@ -595,6 +924,7 @@
     "summary_en": "SGR improves LLM reasoning by dynamically constructing query-specific subgraphs from external knowledge bases to guide stepwise inference, achieving consistent gains over baselines on multiple benchmarks.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16117",
+    "article_page": "articles/1002.html",
     "score": 3.0,
     "domains": [
       "ai_safety",
@@ -611,6 +941,7 @@
     "summary_en": "DebiasRAG proposes a tuning-free, query-specific debiasing framework using retrieval-augmented generation to mitigate social biases in LLMs without degrading their intrinsic capabilities.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16113",
+    "article_page": "articles/1003.html",
     "score": 3.0,
     "domains": [
       "ai_safety",
@@ -627,6 +958,7 @@
     "summary_en": "LLM-driven cross-modal augmentation using written narratives to generate oral-style speech improves cognitive score prediction from small, imbalanced clinical datasets.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16077",
+    "article_page": "articles/1004.html",
     "score": 3.0,
     "domains": [
       "ai_safety",
@@ -643,6 +975,7 @@
     "summary_en": "ITGPT extends ITNet with GPT-like generative pretraining and SSL objectives for irregularly sampled multimodal timeseries, achieving SOTA without resampling or imputation.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16069",
+    "article_page": "articles/1005.html",
     "score": 4.0,
     "domains": [
       "ai_safety",
@@ -659,6 +992,7 @@
     "summary_en": "Key claim: LLM performance on tax law reasoning is inflated by data contamination, and neuro-symbolic frameworks (LLM + Prolog) are more robust and generalize better; key observation: legal reasoning is inherently compositional.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16052",
+    "article_page": "articles/1006.html",
     "score": 5.0,
     "domains": [
       "ai_safety",
@@ -675,6 +1009,7 @@
     "summary_en": "Mind Dreamer proposes Active Latent Intervention (ALI) to overcome the Historical Tethering limitation in MBRL by synthesizing non-continuous latent jumps, achieving up to 8.8x speedup on sparse-reward tasks.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16030",
+    "article_page": "articles/1007.html",
     "score": 5.0,
     "domains": [
       "ai_safety",
@@ -691,39 +1026,8 @@
     "summary_en": "S2ST-Omni 2 replaces flat language labels with structured typological priors for multilingual speech-to-speech translation, achieving average BLEU gains of 5.8% over S2ST-Omni on CVSS-C.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16026",
+    "article_page": "articles/1008.html",
     "score": 4.0,
-    "domains": [
-      "ai_safety",
-      "cryptography",
-      "digital_identity",
-      "system_safety"
-    ],
-    "created_at": "2026-05-18 07:51:22"
-  },
-  {
-    "id": 1009,
-    "type": "paper",
-    "title": "Adaptive Outer-Loop Control of Quadrotors via Reinforcement Learning",
-    "summary_en": "Deep Reinforcement Learning (DRL) for quadrotor flight control typically relies on Domain Randomization (DR) for sim-to-real transfer, resulting in overly conservative policies that struggle with dynamic disturbances. To overcome this, we propose a novel adaptive control architecture that actively perceives and reacts to instantaneous perturbations. First, we train an optimal outer-loop policy, then replace its reliance on ground-truth disturbance data with a Residual Dynamics Predictor (RDP). The RDP estimates the external forces and moments acting on the aircraft in flight online using only the history of states and control actions. For seamless hardware transfer, we introduce a data-efficient linear calibration bridge and an online thrust correction mechanism that align the simulated latent space with reality using mere seconds of flight data. Real-world validations on a Crazyflie micro-quadrotor demonstrate that our adaptive controller significantly outperforms baselines, maintaining precise trajectory tracking under severe uncertainties including mass variations, asymmetric payloads, and dynamic slung loads",
-    "summary_zh": "",
-    "url": "https://arxiv.org/abs/2605.16015",
-    "score": 0.0,
-    "domains": [
-      "ai_safety",
-      "cryptography",
-      "digital_identity",
-      "system_safety"
-    ],
-    "created_at": "2026-05-18 07:51:22"
-  },
-  {
-    "id": 1010,
-    "type": "paper",
-    "title": "Quantum Futures Interactive: A Live Demonstration of Post-Quantum Blockchain Security, Infrastructure Tradeoffs, and Sustainable Distributed Trust",
-    "summary_en": "Advances in quantum computing introduce long-term security challenges for widely deployed public-key cryptographic systems used across blockchain platforms and decentralized applications. Although post-quantum cryptography (PQC) standards are emerging, understanding quantum risk remains fragmented across research, engineering, governance, and investment communities. This demo presents Quantum Futures Interactive, a live interdisciplinary demonstration platform combining educational visualization, participatory interaction, and cryptographic artifact generation to illustrate the transition from classical to quantum-resilient blockchain systems. Participants engage in a structured interaction flow including quantum threat education, sentiment capture, technology prioritization, infrastructure tradeoff exploration, and generation of post-quantum cryptographic outputs. The system integrates distributed trust concepts, sustainability-aware infrastructure considerations, and responsible innovation within an interactive decision framework. The demonstration supports interdisciplinary dialogue on blockchain resilience while aligning with United Nations Sustainable Development Goals (SDGs).",
-    "summary_zh": "",
-    "url": "https://arxiv.org/abs/2605.15991",
-    "score": 0.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -739,119 +1043,8 @@
     "summary_en": "Applies GRPO to encoder-decoder NLLB-200 (600M/1.3B) with a reference-free hybrid reward (LaBSE+COMET-Kiwi), achieving up to +5.03 chrF++ on 13 languages without parallel data at fine-tuning time.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.15976",
+    "article_page": "articles/1011.html",
     "score": 4.0,
-    "domains": [
-      "ai_safety",
-      "cryptography",
-      "digital_identity",
-      "system_safety"
-    ],
-    "created_at": "2026-05-18 07:51:22"
-  },
-  {
-    "id": 1012,
-    "type": "paper",
-    "title": "PAGER: Bridging the Semantic-Execution Gap in Point-Precise Geometric GUI Control",
-    "summary_en": "Large vision-language models have significantly advanced GUI agents, enabling executable interaction across web, mobile, and desktop interfaces. Yet these gains largely rely on a forgiving region-tolerant paradigm, where many nearby pixels inside the same component remain valid. Precise geometric construction breaks this assumption: actions must land on points in continuous canvas space rather than tolerant regions. Because geometric primitives carry ontological dependencies, a local coordinate error can induce cascading topological failures that distort downstream objects and invalidate the final construction. We identify this regime as precision-sensitive GUI tasks, requiring point-level accuracy, geometry-aware verification, and robustness to dependency-driven error propagation. To benchmark it, we introduce PAGE Bench, with 4,906 problems and over 224K process-supervised, pixel-level GUI actions. We further propose PAGER, a topology-aware agent that decomposes construction into dependency-structured planning and pixel-level execution. Pixel-grounded supervised tuning establishes executable action grammar, while precision-aligned reinforcement learning mitigates rollout-induced exposure bias through state-conditioned geometric feedback. Experiments reveal a pronounced Semantic-Execution Gap: general multimodal models can exceed 88% action type accuracy yet remain below 6% task success. PAGER closes this gap, delivering 4.1x higher task success than the strongest evaluated general baseline and raising step success rate from below 9% for GUI-specialized agents to over 62%, establishing a new state of the art for point-precise GUI control.",
-    "summary_zh": "",
-    "url": "https://arxiv.org/abs/2605.15963",
-    "score": 0.0,
-    "domains": [
-      "ai_safety",
-      "cryptography",
-      "digital_identity",
-      "system_safety"
-    ],
-    "created_at": "2026-05-18 07:51:22"
-  },
-  {
-    "id": 1013,
-    "type": "paper",
-    "title": "Imperfect World Models are Exploitable",
-    "summary_en": "We propose a novel definition of model exploitation in reinforcement learning. Informally, a world model is exploitable if it implies that one policy should be strictly preferred over another while the environment's true transition model implies the reverse. We analogize our definition with a prior characterization of reward hacking but show that the associated proof of inevitability does not transfer to exploitation. To overcome this obstruction, we develop a general theory of reward hacking and model exploitation that proves that exploitation is essentially unavoidable on large policy sets and yields the corresponding claim for hacking as a special case. Unfortunately, we also find that the conditions that guarantee unhackability in finite policy sets have no counterpart that precludes exploitation. Consequently, we introduce a relaxed notion of exploitation and derive a safe horizon within which it can be avoided. Taken together, our results establish a formal bridge between reward hacking and model exploitation and elucidate the limits of safe planning in world models.",
-    "summary_zh": "",
-    "url": "https://arxiv.org/abs/2605.15960",
-    "score": 0.0,
-    "domains": [
-      "ai_safety",
-      "cryptography",
-      "digital_identity",
-      "system_safety"
-    ],
-    "created_at": "2026-05-18 07:51:22"
-  },
-  {
-    "id": 1014,
-    "type": "paper",
-    "title": "A Retrieval-Enhanced Transformer for Multi-Step Port-of-Call Sequence Prediction in Global Liner Shipping",
-    "summary_en": "Accurate multi-step port-of-call sequence prediction is vital for tactical resource orchestration and logistical efficiency. However, existing methods struggle with unreliable voyage schedules and the inability of AIS data to provide visibility beyond the immediate next port. To address this, this study proposes a Connectivity-Constrained and Retrieval-Enhanced (CCRE) deep learning framework. Inspired by Retrieval-Augmented Generation, CCRE introduces a retrieval-enhanced historical encoder that queries a global maritime database for contextually similar navigational precedents. Transforming these scenarios into candidate-level semantic representations compensates for data sparsity in long-tail routes and resolves routing ambiguities. Integrating this with a Transformer-based trajectory encoder, the architecture executes adaptive \"middle fusion\" via cross-attention. This dynamically shifts predictive reliance from real-time kinematics for short-term accuracy to historical context for long-term strategic stability. To ensure sequence-level coherence, forecasting is formulated as a joint sequence generation problem using an autoregressive Transformer decoder enriched with Scheduled Sampling and Gumbel-Softmax relaxation. This mitigates error accumulation, while topology masks strictly enforce maritime network reachability to eliminate operationally infeasible routes. Evaluated on a global dataset, CCRE achieves a 72.3% first-destination accuracy and a 61.4% average three-step accuracy, outperforming baselines like CatBoost and LSTM by average margins of 12.6% and 11.3%, respectively. Case studies further corroborate the model's scalability and ability to capture complex routing patterns across diverse international trade lanes.",
-    "summary_zh": "",
-    "url": "https://arxiv.org/abs/2605.15937",
-    "score": 0.0,
-    "domains": [
-      "ai_safety",
-      "cryptography",
-      "digital_identity",
-      "system_safety"
-    ],
-    "created_at": "2026-05-18 07:51:22"
-  },
-  {
-    "id": 1015,
-    "type": "paper",
-    "title": "Towards Generalization of Block Attention via Automatic Segmentation and Block Distillation",
-    "summary_en": "Block attention, which processes the input as separate blocks that cannot attend to one another, offers significant potential to improve KV cache reuse in long-context scenarios such as Retrieval-Augmented Generation (RAG). However, its broader application is hindered by two key challenges: the difficulty of segmenting input text into meaningful, self-contained blocks, and the inefficiency of existing block fine-tuning methods that risk degrading performance. To address these, we first construct SemanticSeg, a large and diverse semantic segmentation dataset containing over 30k instances across 16 categories-including books, code, web text, and conversations with text lengths ranging from 2k to 32k. Using this dataset, we train a lightweight segmenter to automatically partition text into human-instinct-aligned blocks with controllable granularity. Second, we propose block distillation, a training framework that is more efficient than block fine-tuning, which uses a frozen full-attention teacher model to guide the block-attention student. This framework integrates three novel components: block sink tokens to mitigate information loss at block boundaries, block dropout to leverage training signals from all blocks, and token-level loss weighting to focus learning on block-attention-sensitive tokens. Experiments across multiple models and benchmarks demonstrate that our segmenter outperforms heuristic and statistical baselines, and block distillation achieves near-full-attention performance under block attention, establishing a practical and scalable pathway for deploying block attention.",
-    "summary_zh": "",
-    "url": "https://arxiv.org/abs/2605.15913",
-    "score": 0.0,
-    "domains": [
-      "ai_safety",
-      "cryptography",
-      "digital_identity",
-      "system_safety"
-    ],
-    "created_at": "2026-05-18 07:51:22"
-  },
-  {
-    "id": 1016,
-    "type": "paper",
-    "title": "A Multi-Layer Cloud-IDS Pipeline with LLM and Adaptive Q-Learning Calibration",
-    "summary_en": "Security in cloud computing has become a major concern due to several factors such as layered cloud architectures, dynamic environments, and exposure to unseen or zero-day attacks. Moreover, intrusion detection systems (IDS) typically operate at specific layers and rely heavily on machine learning models, which often perform well in experimental settings but fail to sustain performance in real cloud deployments. In this work, we implement a confidence-aware multilevel intrusion detection system using reinforcement learning tailored for cloud environments. The system secures three distinct layers: network, host, and hypervisor. Machine learning models at each layer detect known attack patterns, while prediction confidence distinguishes reliable decisions from uncertain outcomes. Within the multi-gate flow, low-confidence events pass through a learned-threshold confidence gate (Gate-1), followed by a Chroma memory-matching gate (Gate-2), with unresolved events escalated to a large language model (LLM) for semantic analysis and explanation. Final attack promotion at Gate-3 uses calibrated LLM confidence or weighted-fusion fallback, while uncertain events are retained in a review bucket to avoid forced classification. Generated explanations and confirmed knowledge are stored in ChromaDB to support future analysis and retraining. The approach is first evaluated using static thresholds, establishing a baseline for comparison. Results show that the proposed system learns adaptive thresholds and reduces LLM escalation by 58.78%, lowering cost while maintaining strong performance (88.68% accuracy, 85.29% precision, 84.72% recall, 85.00% F1). The network and hypervisor layers achieve 98.02% and 97.08% accuracy, demonstrating a balanced and efficient detection system.",
-    "summary_zh": "",
-    "url": "https://arxiv.org/abs/2605.15889",
-    "score": 0.0,
-    "domains": [
-      "ai_safety",
-      "cryptography",
-      "digital_identity",
-      "system_safety"
-    ],
-    "created_at": "2026-05-18 07:51:22"
-  },
-  {
-    "id": 1017,
-    "type": "paper",
-    "title": "Linked Multi-Model Data on Russian Domestic and Foreign Policy Speeches",
-    "summary_en": "This paper introduces a dataset of interlinked multimodal political communications from the Russian government, addressing persistent deficiencies in the availability of social text- and image-based data for authoritarian politics contexts. The dataset comprises two large corpora of official speeches delivered by senior actors within the Kremlin and the Russian Ministry of Foreign Affairs over multiple decades. For each speech, we provide Russian- and English-language texts, associated images and captions where available, and harmonized metadata including (e.g.) dates, speakers, (geo)locations, and official government content tags. Unique identifiers link images to speeches and align Russian and English versions of the same communication texts. We further augment these linked datasets with validated topical annotations for both speech texts and speech images, which are generated via transformer-based multimodal topic modeling and refined by a Russian politics expert. The resulting data resources support multimodal, multilingual, temporal, and/or spatial analyses of (authoritarian) political communication and offer a valuable testbed for social science research and large language model (LLM) applications in political domains.",
-    "summary_zh": "",
-    "url": "https://arxiv.org/abs/2605.15886",
-    "score": 0.0,
-    "domains": [
-      "ai_safety",
-      "cryptography",
-      "digital_identity",
-      "system_safety"
-    ],
-    "created_at": "2026-05-18 07:51:22"
-  },
-  {
-    "id": 1018,
-    "type": "paper",
-    "title": "Access Timing as Scaffolding: A Reinforcement Learning Approach to GenAI in Education",
-    "summary_en": "In recent years, generative AI (GenAI) in educational settings has become ubiquitous in students' daily lives, despite its potential to induce over-reliance, metacognitive disengagement, and diminished learning when used unrestrictedly. While most prior research has thus focused on how to pedagogically scaffold its usage, the question of when to allow off-the-shelf GenAI remains understudied and lacks pedagogically grounded empirical investigation. We treat access timing itself as a form of implicit scaffolding and operationalize it through a reinforcement learning (RL) agent that decides when students should access GenAI, with a reward function grounded in metacognitive theory, cognitive load theory, and productive failure. In a mixed-methods controlled lab study with N=105 participants, we compared the agent's effect on learning gains and metacognitive engagement to unrestricted and fully restricted use. Results show that strategically timed GenAI access under the reinforcement learning condition improved objective post-test performance and metacognitive accuracy compared with unrestricted access, while reducing task errors and time on task relative to complete withholding, all without the need for explicit metacognitive prompts or structured scaffolding. However, no between-condition differences emerged on self-reported metacognitive awareness. Overall, timing of GenAI access therefore is a tractable, theoretically grounded, and scalable pedagogical paradigm that improves over completely unrestricted and withheld access, compatible with off-the-shelf tools and potentially low adoption barrier. This opens up a new research area that explores how access timing can be facilitated by educators and implemented in human-AI learning system design.",
-    "summary_zh": "",
-    "url": "https://arxiv.org/abs/2605.15850",
-    "score": 0.0,
     "domains": [
       "ai_safety",
       "cryptography",
@@ -867,6 +1060,7 @@
     "summary_en": "Shows that LLMs used to mediate human-to-human communication on social platforms introduce directional biases that can be amplified through network effects to shift collective opinion, with empirical evidence from multiple LLM families and a real-world audit of X's 'Explain this post' feature.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16245",
+    "article_page": "articles/994.html",
     "score": 5.0,
     "domains": [
       "ai_safety",
@@ -883,6 +1077,7 @@
     "summary_en": "LLM-guided tree search autonomously generates and optimizes infectious disease forecasting models that match or beat human-curated CDC ensembles in real-time.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16238",
+    "article_page": "articles/995.html",
     "score": 5.0,
     "domains": [
       "ai_safety",
@@ -899,6 +1094,7 @@
     "summary_en": "Argus proposes a cooperative agent system (Searcher + Navigator) that treats deep research as assembling a jigsaw of complementary evidence pieces, achieving 86.2% on BrowseComp with 64 parallel Searchers while keeping the Navigator's reasoning context under 21.5K tokens.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16217",
+    "article_page": "articles/996.html",
     "score": 5.0,
     "domains": [
       "ai_safety",
@@ -915,6 +1111,7 @@
     "summary_en": "Proposes value-based personas derived from survey responses and a calibration procedure to improve LLM-based cross-cultural survey simulation, reducing prediction error especially for underrepresented populations.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16193",
+    "article_page": "articles/997.html",
     "score": 4.0,
     "domains": [
       "ai_safety",
@@ -931,6 +1128,7 @@
     "summary_en": "BAPR unifies Bayesian Online Change Detection with robust ensemble RL to achieve adaptive conservatism under piecewise stationary dynamics, with formal contraction guarantees and machine-verified proofs in Lean 4.",
     "summary_zh": "",
     "url": "https://arxiv.org/abs/2605.16170",
+    "article_page": "articles/998.html",
     "score": 5.0,
     "domains": [
       "ai_safety",
@@ -947,6 +1145,7 @@
     "summary_en": "Newsroom is a dataset and framework designed to train and evaluate abstractive summarization systems. It provides a large collection of news articles and human-written summaries, enabling models to generate concise and coherent summaries. The dataset includes diverse topics and supports multi-document summarization tasks. Newsroom aims to advance natural language processing by offering a standardized benchmark for summarization research.",
     "summary_zh": "Newsroom是一个用于训练和评估抽象式摘要系统的数据集与框架。它包含大量新闻文章及人工撰写的摘要，支持多文档摘要任务，旨在为NLP领域的摘要研究提供标准化基准。",
     "url": "mailto:press@anthropic.com",
+    "article_page": "articles/993.html",
     "score": 0.0,
     "domains": [
       "ai_safety"

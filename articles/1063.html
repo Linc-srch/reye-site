@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond the Cartesian Illusion: Testing Two-Stage Multi-Modal Theory of Mind under Perceptual Bottlenecks | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Beyond the Cartesian Illusion: Testing Two-Stage Multi-Modal Theory of Mind under Perceptual Bottlenecks</h2>
+    <h2 class="lang-zh">Beyond the Cartesian Illusion: Testing Two-Stage Multi-Modal Theory of Mind under Perceptual Bottlenecks</h2>
+    <div class="meta">
+      Yajing Zhou, Xiangyu Kong · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper exposes the 'Cartesian Illusion' in MLLMs and proposes a two-stage, sensory-bounded reasoning pipeline for second-order Theory of Mind that significantly outperforms baselines in occluded multi-agent scenarios.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>This paper exposes the 'Cartesian Illusion' in MLLMs and proposes a two-stage, sensory-bounded reasoning pipeline for second-order Theory of Mind that significantly outperforms baselines in occluded multi-agent scenarios.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — observe-to-believe</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Beyond the Cartesian Illusion: Testing Two-Stage Multi-Modal Theory of Mind under Perceptual Bottlenecks</li>
+<li><strong>Alias:</strong> observe-to-believe</li>
+<li><strong>Authors:</strong> Yajing Zhou, Xiangyu Kong</li>
+<li><strong>arXiv ID:</strong> 2605.18194</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18194</li>
+<li>HTML: https://arxiv.org/html/2605.18194v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18194</li>
+<li><strong>Tags:</strong> theory-of-mind, embodied-ai, multi-modal, spatial-reasoning, cartesian-illusion</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper exposes the 'Cartesian Illusion' in MLLMs and proposes a two-stage, sensory-bounded reasoning pipeline for second-order Theory of Mind that significantly outperforms baselines in occluded multi-agent scenarios.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Multi-Modal Large Language Models (MLLMs) excel at general reasoning but struggle with embodied spatial intelligence, often relying on text-based probability distributions without grounded 3D understanding. Prior work in Embodied Question Answering and audio-visual learning has focused on first-order, single-agent tasks, assuming shared global coordinate systems.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Embodied Question Answering (EQA) and spatial reasoning with 3D-LLM, LEO, Video-3D LLM, Ego4D, EPIC-Kitchens, SQA3D</li>
+<li>Audio-visual learning platforms like SoundSpaces and audio-visual QA benchmarks (e.g., AST)</li>
+<li>Text-based Theory of Mind (ToM) models (e.g., Mao et al., Sap et al., Ullman)</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing MLLMs and EQA systems assume omnidirectional, shared spatial awareness (the 'Cartesian Illusion'), failing in multi-agent scenarios requiring second-order ToM. They cannot model an agent's belief strictly bounded by its physical orientation and sensory limitations, leading to spatial flip errors and hallucinations when agents are out of view.</p>
+<h3>P — Proposal</h3>
+<p>The paper introduces the Observe-to-Believe Pipeline, a training-free two-stage framework: Stage I extracts structured visual evidence from Agent A's egocentric stream, and Stage II performs a modality-aware perspective shift via spatial horizon conversion. The key insight is an Anchor-Based Embodied Spatial Decomposition Chain-of-Thought (CoT) that dynamically routes inference through visual or audio pathways based on whether Agent B's visual frustum captures Agent A.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>The zero-shot baseline accuracy for current MLLMs is 42%. The proposed sensory-bounded reasoning chain robustly outperforms pure egocentric and allocentric baselines, especially in challenging 'invisible' scenarios where agents lack line-of-sight.</p>
+<h3>Ablation</h3>
+<p>The dynamic modality-aware routing (switching between audio-visual and audio-only branches) is critical; ablating it causes performance to drop to near-baseline levels in occluded conditions.</p>
+<h3>Limitations</h3>
+<p>['The pipeline is training-free and relies on prompt engineering, which may limit scalability to more complex environments.', 'Evaluation is conducted in simulated environments; real-world sensor noise and latency are not addressed.', 'The framework assumes a fixed number of agents and does not handle dynamic, multi-party belief tracking.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Directly addresses a core limitation of current MLLMs in embodied AI: the inability to model another agent's sensory-constrained beliefs.</li>
+<li>Provides a principled, modular approach (geometric-to-semantic projection) that can be integrated into larger embodied systems.</li>
+<li>Highlights the importance of explicit epistemic modeling over end-to-end implicit reasoning for multi-agent coordination.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Test the Observe-to-Believe pipeline on real-world robotic platforms with noisy sensors.</li>
+<li>[ ] Extend the framework to handle more than two agents and dynamic belief updates over time.</li>
+<li>[ ] Explore fine-tuning MLLMs with the proposed CoT to improve zero-shot spatial ToM reasoning.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18194</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18194" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

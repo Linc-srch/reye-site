@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications? | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications?</h2>
+    <h2 class="lang-zh">TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications?</h2>
+    <div class="meta">
+      Jieting Xiao, Yun Lin, Huizhen Qiu, Rui Ma, Chen Zhong, Dongyang Xu, Xiao Long, Chaoyu Zhang, Qiaobo Hao, Ding Zou, Zhiguo Yang, Yanqin Gao, Fang Tan · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>TeleCom-Bench reveals a universal 'Execution Wall' where LLMs achieve &gt;90% accuracy on linguistic interface tasks but collapse to ~30% on procedural execution tasks like solution generation in telecom.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>TeleCom-Bench reveals a universal 'Execution Wall' where LLMs achieve &gt;90% accuracy on linguistic interface tasks but collapse to ~30% on procedural execution tasks like solution generation in telecom.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — telecom-bench</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications?</li>
+<li><strong>Alias:</strong> telecom-bench</li>
+<li><strong>Authors:</strong> Jieting Xiao, Yun Lin, Huizhen Qiu, Rui Ma, Chen Zhong, Dongyang Xu, Xiao Long, Chaoyu Zhang, Qiaobo Hao, Ding Zou, Zhiguo Yang, Yanqin Gao, Fang Tan</li>
+<li><strong>arXiv ID:</strong> 2605.18025</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18025</li>
+<li>HTML: https://arxiv.org/html/2605.18025v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18025</li>
+<li><strong>Tags:</strong> telecom-bench, llm-evaluation, execution-wall, domain-specific-benchmark, telecommunications</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>TeleCom-Bench reveals a universal 'Execution Wall' where LLMs achieve &gt;90% accuracy on linguistic interface tasks but collapse to ~30% on procedural execution tasks like solution generation in telecom.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>LLMs have been integrated into vertical domains like healthcare and finance, but deployment in telecommunications remains limited due to a lack of standardized evaluation. Existing telecom benchmarks focus on static foundational knowledge and isolated atomic skills, ignoring equipment-specific documentation and end-to-end industrial workflows.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>SPEC5G and TeleQnA evaluate foundational communication standards and theoretical principles.</li>
+<li>TeleMath and TeleTables assess isolated mathematical or tabular reasoning skills.</li>
+<li>TeleLogs and OpsEval explore operational and maintenance tasks but do not capture full task pipelines.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Current telecom benchmarks neglect product-specific documentation and end-to-end industrial workflows, leaving a gap between theoretical understanding and operational reality. They fail to model the complex multi-step reasoning required in real-world production systems, hindering the transition of LLMs from academic prototypes to production-ready telecom agents.</p>
+<h3>P — Proposal</h3>
+<p>TeleCom-Bench is a comprehensive benchmark with 12 evaluation sets and 22,678 curated samples, structured around two pillars: Multi-dimensional Knowledge Comprehension (integrating fundamentals, 3GPP protocols, 5G architecture, and proprietary product knowledge via knowledge graph-driven synthesis) and End-to-End Knowledge Application (formalizing six core tasks from live network agent workflows). The key insight is to evaluate LLMs across a synergistic hierarchy from factual recall to complex problem-solving.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Evaluations of eight state-of-the-art LLMs show &gt;90% accuracy in intent recognition and entity extraction, but performance drops to approximately 30% in solution generation. Models function competently as diagnosticians but fail as field engineers.</p>
+<h3>Ablation</h3>
+<p>The study identifies a universal 'Execution Wall' where performance collapses from linguistic interface tasks to procedural execution tasks, with solution generation accuracy around 30%.</p>
+<h3>Limitations</h3>
+<p>['The benchmark is limited to telecommunications domain and may not generalize to other verticals.', 'The evaluation focuses on current LLMs; future models may require updated benchmarks.', 'The dataset relies on proprietary product knowledge from ZTE, which may introduce vendor-specific bias.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a standardized diagnostic to pinpoint the deficit in procedural execution for telecom agents, relevant for building domain-specific LLMs.</li>
+<li>Highlights the gap between linguistic understanding and actionable engineering, informing alignment strategies for production-ready systems.</li>
+<li>Offers a hierarchical evaluation framework that can be adapted to other industrial domains with similar knowledge application needs.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Investigate fine-tuning or retrieval-augmented generation (RAG) methods to bridge the Execution Wall in telecom procedural tasks.</li>
+<li>[ ] Extend the benchmark to include more telecom sub-domains (e.g., satellite, optical) and real-time agent interactions.</li>
+<li>[ ] Explore multi-agent collaboration to decompose complex procedural tasks into manageable subtasks for LLMs.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18025</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18025" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

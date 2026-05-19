@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pairwise Preference Reward and Group-Based Diversity Enhancement for Superior Open-Ended Generation | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Pairwise Preference Reward and Group-Based Diversity Enhancement for Superior Open-Ended Generation</h2>
+    <h2 class="lang-zh">Pairwise Preference Reward and Group-Based Diversity Enhancement for Superior Open-Ended Generation</h2>
+    <div class="meta">
+      Guining Cao, Jiaxin Peng, Chu Zeng, Yu Zhao, Shuangyong Song, Yongxiang · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>PPR-GDE proposes a reinforcement learning method for open-ended generation that uses pairwise preference rewards and group-based diversity enhancement to achieve better alignment and diversity than GRPO and PPO.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>PPR-GDE proposes a reinforcement learning method for open-ended generation that uses pairwise preference rewards and group-based diversity enhancement to achieve better alignment and diversity than GRPO and PPO.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — ppr-gde</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Pairwise Preference Reward and Group-Based Diversity Enhancement for Superior Open-Ended Generation</li>
+<li><strong>Alias:</strong> ppr-gde</li>
+<li><strong>Authors:</strong> Guining Cao, Jiaxin Peng, Chu Zeng, Yu Zhao, Shuangyong Song, Yongxiang</li>
+<li><strong>arXiv ID:</strong> 2605.18191</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18191</li>
+<li>HTML: https://arxiv.org/html/2605.18191v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18191</li>
+<li><strong>Tags:</strong> reinforcement-learning, preference-alignment, diversity-enhancement, open-ended-generation, role-playing</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>PPR-GDE proposes a reinforcement learning method for open-ended generation that uses pairwise preference rewards and group-based diversity enhancement to achieve better alignment and diversity than GRPO and PPO.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Reinforcement learning from human feedback (RLHF) is widely used to align LLMs, but it relies on scalar rewards that are noisy for subjective open-ended tasks. Methods like GRPO use group-relative advantages but still depend on scalar rewards and suffer from diversity collapse, producing stereotypical outputs.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>PPO (Schulman et al., 2017) uses a value function and scalar rewards for policy optimization.</li>
+<li>GRPO (Shao et al., 2024) eliminates the value function and normalizes rewards within a group.</li>
+<li>DPO (Rafailov et al., 2023) and P3O (Wu et al., 2023) operate directly on comparative feedback but not in an online group-based RL framework.</li>
+<li>Diversity-preserving strategies (Li et al., 2016; Wen et al., 2024; Cui et al., 2025) regularize token-level entropy or lexical diversity but ignore semantic dispersion across multiple responses.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing RL methods for open-ended generation either discard the pairwise structure of preference judgments by converting them to scalar rewards, leading to unstable learning, or fail to prevent diversity collapse at the semantic level across multiple responses. No prior work unifies pairwise preference rewards with group-based semantic diversity in an online RL objective.</p>
+<h3>P — Proposal</h3>
+<p>PPR-GDE introduces a pairwise preference reward that preserves comparative structure and mitigates position bias via swapped-order comparisons, and a group-based diversity reward that encourages semantic dispersion within a response group. These signals are integrated into a unified group-relative policy optimization objective, instantiated on role-playing tasks.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On role-playing benchmarks (RoleBench, mCSQA), PPR-GDE achieves better alignment quality and expressive diversity than GRPO and PPO baselines. It maintains higher entropy and slower collapse, yielding 30% more clusters on average within generated response groups.</p>
+<h3>Ablation</h3>
+<p>Ablation studies confirm that pairwise preference is critical for alignment quality, while the group-based diversity metric is essential for achieving superior expressive diversity and broader semantic coverage.</p>
+<h3>Limitations</h3>
+<p>['The method is evaluated only on role-playing tasks; generalizability to other open-ended domains (e.g., creative writing, dialogue) is not demonstrated.', 'The pairwise comparisons require multiple judge calls per group, increasing computational cost.', 'The diversity reward relies on semantic embeddings, which may not capture all nuanced aspects of diversity (e.g., style, tone).']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a principled way to incorporate pairwise preferences directly into RL without scalar reward approximation, which could improve alignment in subjective domains relevant to your work.</li>
+<li>Addresses diversity collapse, a critical issue for open-ended generation systems that need to produce varied yet high-quality outputs.</li>
+<li>The group-relative formulation is computationally efficient compared to value-function-based methods, potentially scalable for your applications.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Implement PPR-GDE on your own open-ended generation task (e.g., dialogue or story generation) and compare with GRPO and DPO baselines.</li>
+<li>[ ] Analyze the trade-off between diversity reward weight and alignment quality using your evaluation metrics.</li>
+<li>[ ] Explore alternative diversity measures (e.g., lexical diversity, embedding diversity) within the group-based framework.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18191</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18191" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

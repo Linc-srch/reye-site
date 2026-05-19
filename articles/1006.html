@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law</h2>
+    <h2 class="lang-zh">Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law</h2>
+    <div class="meta">
+      Parisa Kordjamshidi, Samer Aslan, Madhavan Seshadri, Leslie Barrett, Enrico Santus · 
+      2026-05-18 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>Key claim: LLM performance on tax law reasoning is inflated by data contamination, and neuro-symbolic frameworks (LLM + Prolog) are more robust and generalize better; key observation: legal reasoning is inherently compositional.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>Key claim: LLM performance on tax law reasoning is inflated by data contamination, and neuro-symbolic frameworks (LLM + Prolog) are more robust and generalize better; key observation: legal reasoning is inherently compositional.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — taxlaw-neurosymbolic</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law</li>
+<li><strong>Alias:</strong> taxlaw-neurosymbolic</li>
+<li><strong>Authors:</strong> Parisa Kordjamshidi, Samer Aslan, Madhavan Seshadri, Leslie Barrett, Enrico Santus</li>
+<li><strong>arXiv ID:</strong> 2605.16052</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.16052</li>
+<li>HTML: https://arxiv.org/html/2605.16052v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.16052</li>
+<li><strong>Tags:</strong> tax-law, neuro-symbolic, contamination-detection, legal-reasoning, prolog</li>
+<li><strong>Domains:</strong> system_safety, ai_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Key claim: LLM performance on tax law reasoning is inflated by data contamination, and neuro-symbolic frameworks (LLM + Prolog) are more robust and generalize better; key observation: legal reasoning is inherently compositional.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>LLMs have shown impressive but inconsistent performance on legal reasoning tasks, with reported accuracies varying widely and concerns about data contamination inflating benchmark scores. Prior work in tax law has used the SARA dataset and proposed neuro-symbolic pipelines that combine LLMs for translation with symbolic solvers for inference, but systematic evaluation of contamination and generalization is lacking.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>SARA dataset (Holzenberger et al., 2020) provides human-annotated logical forms for tax law reasoning.</li>
+<li>Hu et al. (2025) evaluated LLMs on SARA, highlighting hallucinations and limited legal knowledge.</li>
+<li>Jurayj et al. (2025) proposed a Prolog-based framework with human-in-the-loop supervision to reduce tax errors.</li>
+<li>Sadowski &amp; Chudziak (2025) integrated formal logic into agentic frameworks for tax computation.</li>
+<li>Zou et al. (2024) used pairwise comparison for case-based entailment in tax law.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing evaluations of LLMs on legal reasoning do not systematically account for data contamination, which can inflate performance. Moreover, prior neuro-symbolic approaches lack a comprehensive comparison with monolithic LLMs under controlled case and rule variations to assess generalization and robustness.</p>
+<h3>P — Proposal</h3>
+<p>The paper proposes a contamination-aware evaluation protocol and a neuro-symbolic pipeline where an LLM translates case text into Prolog facts, and a Prolog solver performs deductive reasoning over formalized statutes. The key insight is that by separating translation (LLM) from reasoning (symbolic solver), the system becomes more robust to contamination and generalizes better to unseen case and rule variations.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On the SARA dataset, the neuro-symbolic approach achieves 92% accuracy on entailment (100 test cases) and 85% on numeric tasks (20 test cases), outperforming monolithic LLMs (e.g., GPT-4: 78% entailment, 70% numeric). Under contamination-aware evaluation, monolithic LLM accuracy drops by up to 15% on unseen documents, while neuro-symbolic accuracy remains stable.</p>
+<h3>Ablation</h3>
+<p>Removing the symbolic solver and using LLM-only reasoning reduces entailment accuracy from 92% to 74%, confirming that the symbolic component is critical for robust performance.</p>
+<h3>Limitations</h3>
+<p>['The study is limited to the tax law domain and the SARA dataset, which may not generalize to other legal areas.', 'The neuro-symbolic pipeline relies on human-coded Prolog statute rules, which are costly to create and maintain.', 'LLM translation errors in case formalization can still propagate to the symbolic solver, though the paper does not fully quantify this failure mode.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Highlights the risk of data contamination in legal AI benchmarks, which is relevant for any domain relying on public datasets.</li>
+<li>Demonstrates that neuro-symbolic approaches can provide verifiable and robust reasoning, aligning with the need for explainable AI in high-stakes applications.</li>
+<li>The compositional nature of legal reasoning suggests that hybrid systems may be necessary for reliable generalization, a lesson applicable to other structured reasoning tasks.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply the contamination detection protocol to other legal benchmarks (e.g., CaseHOLD, LexGLUE) to assess inflation.</li>
+<li>[ ] Explore automated generation of Prolog rules from statutes using LLMs to reduce human effort.</li>
+<li>[ ] Extend the neuro-symbolic framework to other domains with formal rules (e.g., regulatory compliance, contract analysis).</li>
+<li>[ ] Investigate the impact of LLM translation errors on downstream symbolic reasoning and develop error-correction mechanisms.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.16052</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.16052" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

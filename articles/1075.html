@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence</h2>
+    <h2 class="lang-zh">PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence</h2>
+    <div class="meta">
+      Zile Wang, Qianli Liu, Kaibin Guo, Haodong Wang, Jian Lin, Zicong Hong, Song Guo · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>PPAI is the first system for personalized LLM agent interoperability in P2P edge networks, achieving up to 7.96% accuracy improvement and 16.34% latency reduction by matching queries to specialized remote agents.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>PPAI is the first system for personalized LLM agent interoperability in P2P edge networks, achieving up to 7.96% accuracy improvement and 16.34% latency reduction by matching queries to specialized remote agents.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — ppai</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence</li>
+<li><strong>Alias:</strong> ppai</li>
+<li><strong>Authors:</strong> Zile Wang, Qianli Liu, Kaibin Guo, Haodong Wang, Jian Lin, Zicong Hong, Song Guo</li>
+<li><strong>arXiv ID:</strong> 2605.18067</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18067</li>
+<li>HTML: https://arxiv.org/html/2605.18067v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18067</li>
+<li><strong>Tags:</strong> llm-agents, edge-intelligence, peer-to-peer, agent-routing, bayesian-game</li>
+<li><strong>Domains:</strong> system_safety, digital_identity</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>PPAI is the first system for personalized LLM agent interoperability in P2P edge networks, achieving up to 7.96% accuracy improvement and 16.34% latency reduction by matching queries to specialized remote agents.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Deploying LLMs on edge devices enables personalized agents via fine-tuning or RAG, but individual agents are limited to their owner's domain. Existing multi-agent collaboration systems assume co-located models on a single device, not decentralized P2P settings with dynamic agent pools.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>RouterDC and KABB perform agent routing but assume on-device co-location</li>
+<li>Mobile-Agent-v2 and MobileSteward focus on single-device mobile agent orchestration</li>
+<li>P2P file-sharing systems (BitTorrent, DHT) handle uniform data, not specialized agent competencies</li>
+<li>Multi-agent frameworks (MetaGPT, SWE-agent) enable collaboration but not in decentralized edge environments</li>
+</ul>
+<h3>G — Gap</h3>
+<p>No existing system supports query-agent matching and load balancing in a fully decentralized P2P network where agents have diverse specializations, churn dynamically, and real-time load is unobservable. Prior routing methods cannot handle the scalability and interchangeability challenges of such environments.</p>
+<h3>P — Proposal</h3>
+<p>PPAI introduces a prototype-based query-agent pair scoring mechanism that projects queries and agents into a fixed latent space for efficient matching under churn. It also formulates routing as a Bayesian game with a Cost of Delegation metric, using belief distributions from historical interactions to estimate peer load and achieve Bayesian Nash equilibrium.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On multiple tasks, PPAI achieves average accuracy improvement up to 7.96% and reduces latency by 16.34% compared to baseline under high user demand simulation.</p>
+<h3>Ablation</h3>
+<p>The prototype-based scoring mechanism and Bayesian game load balancing both contribute significantly; removing either component degrades accuracy and increases latency, though exact ablation numbers are not provided in the abstract.</p>
+<h3>Limitations</h3>
+<p>['The system assumes each user deploys only one specialized agent locally, limiting multi-agent scenarios on a single device', 'Belief-based load estimation may lag under extreme churn or bursty query arrivals', 'Evaluation is simulation-based; real-world deployment on heterogeneous edge hardware is not demonstrated']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Enables collaborative edge intelligence without central servers, aligning with privacy-preserving and low-latency requirements</li>
+<li>Prototype-based scoring is a novel approach for dynamic agent matching that could generalize to other P2P AI systems</li>
+<li>Bayesian game formulation provides theoretical grounding for decentralized load balancing under partial observability</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Implement PPAI on real edge devices (e.g., AI PCs, smartphones) to validate latency and accuracy in practice</li>
+<li>[ ] Extend the prototype space to support multi-modal queries and agents</li>
+<li>[ ] Explore incentive mechanisms to encourage agents to share load fairly in the P2P network</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18067</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18067" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

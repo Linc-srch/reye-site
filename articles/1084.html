@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery</h2>
+    <h2 class="lang-zh">Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery</h2>
+    <div class="meta">
+      Xinzhe Yuan, Zhuo Chen, Jianshu Zhang, Huan Xiong, Nanyang Ye, Yuqiang Li, Qinying Gu · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>LGBO embeds LLM preferences into every BO iteration via a region-lifted preference mechanism, achieving 90% of best observed value within 6 iterations in wet-lab Fe-Cr electrolyte optimization vs. &gt;10 for baselines.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>LGBO embeds LLM preferences into every BO iteration via a region-lifted preference mechanism, achieving 90% of best observed value within 6 iterations in wet-lab Fe-Cr electrolyte optimization vs. &gt;10 for baselines.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — lgbo</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery</li>
+<li><strong>Alias:</strong> lgbo</li>
+<li><strong>Authors:</strong> Xinzhe Yuan, Zhuo Chen, Jianshu Zhang, Huan Xiong, Nanyang Ye, Yuqiang Li, Qinying Gu</li>
+<li><strong>arXiv ID:</strong> 2605.17976</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.17976</li>
+<li>HTML: https://arxiv.org/html/2605.17976v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.17976</li>
+<li><strong>Tags:</strong> bayesian-optimization, llm-guided-optimization, scientific-discovery, preference-guided-bo, wet-lab-validation</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>LGBO embeds LLM preferences into every BO iteration via a region-lifted preference mechanism, achieving 90% of best observed value within 6 iterations in wet-lab Fe-Cr electrolyte optimization vs. &gt;10 for baselines.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Bayesian Optimization (BO) is widely used for expensive black-box optimization in scientific discovery but suffers from slow cold-start and poor scalability in high dimensions. Prior works use LLMs only for warm-start initialization or candidate generation, leaving LLM guidance loosely coupled with the optimization loop.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>LLAMBO uses LLMs for warm-start initialization and candidate generation but final decisions are made by standard acquisition functions.</li>
+<li>ADO-LLM and ReasoningBO apply LLM-assisted proposals in domain-specific settings like analog circuit design.</li>
+<li>LLINBO proposes an LLM-in-the-loop framework for early exploration to address cold-start.</li>
+<li>BOPRO leverages LLMs as implicit Bayesian priors via in-context learning.</li>
+<li>CAKE uses LLMs to construct kernel functions for structured optimization.</li>
+<li>ColaBO integrates human expert preferences via path reweighting but assumes stable one-off feedback.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing LLM-augmented BO methods treat LLMs as auxiliary components, injecting guidance only at initialization or as candidate proposals overridden by acquisition functions. No prior framework continuously and stably integrates evolving LLM preferences throughout the optimization loop while maintaining theoretical guarantees.</p>
+<h3>P — Proposal</h3>
+<p>LGBO introduces a region-lifted preference mechanism that translates LLM suggestions into lightweight priors shifting the surrogate mean while leaving covariance unchanged, enabling stable integration of iterative LLM guidance. The framework provides theoretical guarantees that aligned preferences accelerate convergence while misleading guidance incurs bounded cost.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>LGBO consistently outperforms baselines across dry benchmarks in physics, chemistry, biology, and materials science. In wet-lab Fe-Cr battery electrolyte optimization, LGBO attains 90% of best observed value within 6 iterations, whereas standard BO and LLM-augmented baselines require more than 10.</p>
+<h3>Ablation</h3>
+<p>Ablation studies (not fully detailed in excerpt) likely show that the region-lifted preference mechanism is key to stable convergence; the paper proves theoretically that LGBO does not perform significantly worse than standard BO in worst case.</p>
+<h3>Limitations</h3>
+<p>['LLM guidance quality depends on domain knowledge encoded in the LLM; weak or noisy preferences may not accelerate convergence.', 'The region-lifted preference mechanism adds complexity in tuning the preference strength and region definition.', 'Theoretical guarantees assume preferences align with objective; misleading guidance only bounded, not eliminated.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Directly relevant to your work on integrating LLMs into scientific optimization workflows, especially for expensive experimental loops.</li>
+<li>Provides a principled way to incorporate semantic reasoning without destabilizing the BO surrogate model.</li>
+<li>Demonstrates practical impact with real wet-lab validation, bridging simulation and real-world experiments.</li>
+<li>Theoretical bounds on convergence under misaligned preferences offer robustness guarantees important for safety-critical applications.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Implement LGBO on your own scientific optimization tasks (e.g., materials discovery, drug design) to benchmark against standard BO and LLM-warm-start baselines.</li>
+<li>[ ] Explore adaptive mechanisms for tuning the region-lifted preference strength based on observed alignment between LLM suggestions and objective.</li>
+<li>[ ] Investigate combining LGBO with transfer learning or multi-fidelity methods for further sample efficiency gains.</li>
+<li>[ ] Test LGBO with different LLM backbones (e.g., GPT-4, Llama, domain-finetuned models) to assess sensitivity to LLM quality.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.17976</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.17976" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective</h2>
+    <h2 class="lang-zh">Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective</h2>
+    <div class="meta">
+      Ernesto Garcia-Estrada, Carlos Escolano, José A. R. Fonallosa · 
+      2026-05-18 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>Applies GRPO to encoder-decoder NLLB-200 (600M/1.3B) with a reference-free hybrid reward (LaBSE+COMET-Kiwi), achieving up to +5.03 chrF++ on 13 languages without parallel data at fine-tuning time.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>Applies GRPO to encoder-decoder NLLB-200 (600M/1.3B) with a reference-free hybrid reward (LaBSE+COMET-Kiwi), achieving up to +5.03 chrF++ on 13 languages without parallel data at fine-tuning time.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — grpo-seq2seq-mt</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective</li>
+<li><strong>Alias:</strong> grpo-seq2seq-mt</li>
+<li><strong>Authors:</strong> Ernesto Garcia-Estrada, Carlos Escolano, José A. R. Fonallosa</li>
+<li><strong>arXiv ID:</strong> 2605.15976</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.15976</li>
+<li>HTML: https://arxiv.org/html/2605.15976v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.15976</li>
+<li><strong>Tags:</strong> grpo, machine-translation, reference-free, seq2seq, low-resource</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Applies GRPO to encoder-decoder NLLB-200 (600M/1.3B) with a reference-free hybrid reward (LaBSE+COMET-Kiwi), achieving up to +5.03 chrF++ on 13 languages without parallel data at fine-tuning time.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Production MT relies on encoder-decoder Seq2Seq models, but recent RL fine-tuning advances (e.g., GRPO) have focused on decoder-only LLMs ≥7B parameters. Reference-free quality estimators like LaBSE and COMET-Kiwi have matured, enabling RL-based MT improvement without parallel data.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>RL for sequence generation: policy gradient methods (Ranzato et al., 2016), minimum risk training (Shen et al., 2016), RLHF via PPO (Ouyang et al., 2022).</li>
+<li>GRPO introduced in DeepSeekMath (Shao et al., 2024) and scaled in DeepSeek-R1 (Guo et al., 2025); GRRM addresses scalar reward limitations (Yang et al., 2026).</li>
+<li>GRPO applied to MT with decoder-only LLMs: He et al. (2025) on Qwen2.5-7B, Feng et al. (2025) on 7B models, SSR-Zero (Yang et al., 2025), Lu et al. (2025) on Chinese-centric low-resource MT.</li>
+<li>Reference-free quality estimation: COMET-Kiwi (Rei et al., 2022, 2023), LaBSE (Feng et al., 2022).</li>
+<li>Multilingual Seq2Seq MT: NLLB-200 (Costa-jussà et al., 2022); concurrent work by Attia and Fikri (2026) applies GRPO to NLLB-200 with round-trip reconstruction.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Prior GRPO-based MT fine-tuning exclusively targets decoder-only LLMs ≥7B parameters, ignoring the encoder-decoder architectures dominant in production. No systematic study characterizes GRPO gains across typologically diverse languages with varying baseline performance and reward discriminability, and the cost of removing parallel supervision remains unexplored.</p>
+<h3>P — Proposal</h3>
+<p>The authors apply GRPO to NLLB-200 (600M and 1.3B) using a hybrid reference-free reward (LaBSE + COMET-Kiwi) that requires only monolingual source text at fine-tuning time. They evaluate across 13 typologically diverse languages, identifying a consistent pattern where gains are largest when baseline performance is weakest and reward discriminability is highest.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>GRPO improves over baseline on all 13 languages at both model scales, with up to +5.03 chrF++ for Traditional Chinese. Without any target-language data, it competes with 3-epoch supervised fine-tuning on morphologically complex languages. Gains transfer across domains on FLORES-200 and NTREX-128. The pattern replicates for both English and Spanish source languages.</p>
+<h3>Ablation</h3>
+<p>The pipeline requires approximately 500 source sentences for reliable gains and exhibits zero catastrophic forgetting on held-out languages. The KL penalty coefficient β is investigated in §4.5 (specific numbers not provided in truncated text).</p>
+<h3>Limitations</h3>
+<p>['Reward models (LaBSE and COMET-Kiwi) are pre-trained on parallel data, so the approach is not fully unsupervised.', 'Experiments are limited to NLLB-200; generalizability to other encoder-decoder architectures is not shown.', 'Gain pattern (largest gains where baseline is weakest) is empirical and may not hold for all language pairs or domains.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Demonstrates that RL fine-tuning for MT is feasible on practical encoder-decoder models (600M–1.3B) rather than requiring 7B+ decoder-only LLMs, reducing compute and memory barriers.</li>
+<li>The reference-free approach eliminates the need for parallel data during fine-tuning, which is critical for low-resource languages where such data is scarce.</li>
+<li>The identified gain pattern (largest improvements where baseline is weakest) provides a heuristic for selecting languages where reference-free RL is most beneficial.</li>
+<li>Runs on a single 24 GB GPU with 4-bit quantization and LoRA, making it accessible to researchers with limited resources.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply GRPO to other encoder-decoder MT models (e.g., M2M-100, OpusMT) to test generalizability.</li>
+<li>[ ] Explore alternative reference-free rewards (e.g., BLEURT, BARTScore) and their impact on gain patterns.</li>
+<li>[ ] Investigate the effect of group size K and temperature sampling on GRPO stability and performance for Seq2Seq models.</li>
+<li>[ ] Extend evaluation to more low-resource and morphologically complex languages beyond the 13 studied.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.15976</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.15976" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

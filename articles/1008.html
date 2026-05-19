@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation</h2>
+    <h2 class="lang-zh">From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation</h2>
+    <div class="meta">
+      Yu Pan, Yang Hou, Xiongfei Wu, Liang Zhang, Yves Le Traon, Lei Ma, Jianjun Zhao · 
+      2026-05-18 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>S2ST-Omni 2 replaces flat language labels with structured typological priors for multilingual speech-to-speech translation, achieving average BLEU gains of 5.8% over S2ST-Omni on CVSS-C.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>S2ST-Omni 2 replaces flat language labels with structured typological priors for multilingual speech-to-speech translation, achieving average BLEU gains of 5.8% over S2ST-Omni on CVSS-C.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — s2st-omni2</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation</li>
+<li><strong>Alias:</strong> s2st-omni2</li>
+<li><strong>Authors:</strong> Yu Pan, Yang Hou, Xiongfei Wu, Liang Zhang, Yves Le Traon, Lei Ma, Jianjun Zhao</li>
+<li><strong>arXiv ID:</strong> 2605.16026</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.16026</li>
+<li>HTML: https://arxiv.org/html/2605.16026v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.16026</li>
+<li><strong>Tags:</strong> speech-to-speech-translation, typological-priors, multilingual, speech-llm, data-efficient</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>S2ST-Omni 2 replaces flat language labels with structured typological priors for multilingual speech-to-speech translation, achieving average BLEU gains of 5.8% over S2ST-Omni on CVSS-C.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Compositional speech-to-speech translation (S2ST) systems built on SpeechLLMs have shown promise, but typically encode source language as a flat label, ignoring cross-lingual structural regularities. This limits data-efficient adaptation when supervised multilingual S2ST data is scarce.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>S2ST-Omni [32] introduces language-label conditioning into a SpeechLLM-based compositional S2ST framework.</li>
+<li>Cascaded S2ST pipelines (ASR+MT+TTS) suffer from error propagation and lack global optimization.</li>
+<li>End-to-end S2ST [23,21,4] and compositional S2ST [12,13,32] offer modular alternatives.</li>
+<li>Typology-based language representations in NLP [7,29,36,31] motivate structured linguistic priors.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing S2ST systems either ignore source-language information or use flat language embeddings, which fail to capture systematic linguistic structures (morphology, reordering, genealogical relatedness) shared across languages. This oversight hinders data-efficient multilingual adaptation when supervised S2ST data is limited.</p>
+<h3>P — Proposal</h3>
+<p>S2ST-Omni 2 reformulates language conditioning into three structured levels: typology-informed hierarchical language encoding (TI-HLE) decomposes source language into morphology, reordering, genealogical family, and residual channels; dynamically-gated language-aware Dual-CTC modulates acoustic features adaptively; typology-aware LLM prompting injects linguistic priors into decoding. These components act as training-time inductive biases without increasing inference cost.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On CVSS-C, S2ST-Omni 2 achieves average relative gains of 5.8% in BLEU and 4.6% in ASR-BLEU over S2ST-Omni, with consistent improvements in COMET and BLASER 2.0. A Japanese-to-English evaluation using only ~3 hours of supervised data shows explicit typological priors benefit data-efficient multilingual S2ST.</p>
+<h3>Ablation</h3>
+<p>Ablation studies confirm that representation-level (TI-HLE), acoustic-level (dynamically-gated LA-Dual-CTC), and decoding-level (typology-aware prompting) strategies provide complementary benefits, with each component contributing to overall performance.</p>
+<h3>Limitations</h3>
+<p>['The typological priors are hand-crafted and may not cover all relevant linguistic features across diverse languages.', 'Evaluation is limited to CVSS-C dataset; generalization to other domains or low-resource language pairs is not extensively validated.', 'The framework relies on a frozen Whisper encoder and Qwen3-4B decoder, which may not be optimal for all language pairs.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Demonstrates that structured linguistic priors (typology) can replace flat language labels for more data-efficient multilingual S2ST, relevant for low-resource language translation.</li>
+<li>Provides a modular framework (TI-HLE, Dual-CTC, typology-aware prompting) that can be adapted to other SpeechLLM-based systems.</li>
+<li>Shows that training-time inductive biases can improve performance without increasing inference cost, a practical advantage for deployment.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Explore automatic extraction of typological features from raw speech or text to reduce manual engineering.</li>
+<li>[ ] Extend evaluation to more language pairs and real-world noisy conditions to assess robustness.</li>
+<li>[ ] Investigate integration of typological priors into other components (e.g., TTS backend) for end-to-end gains.</li>
+<li>[ ] Apply similar structured conditioning to other multilingual tasks (e.g., ASR, MT) to validate generality.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.16026</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.16026" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>
