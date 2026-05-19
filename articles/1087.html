@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code as Agent Harness | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Code as Agent Harness</h2>
+    <h2 class="lang-zh">Code as Agent Harness</h2>
+    <div class="meta">
+      Xuying Ning, Katherine Tieu, Dongqi Fu, Tianxin Wei, Zihao Li, Yuanchen Bei, Jiaru Zou, Mengting Ai, Zhining Liu, Ting-Wei Li, Lingjie Chen, Yanjun Zhao, Ke Yang, Bingxuan Li, Cheng Qian, Gaotang Li, Xiao Lin, Zhichen Zeng, Ruizhong Qiu, Sirui Chen, Yifan Sun, Xiyuan Yang, Ruida Wang, Rui Pan, Chenyuan Yang, Dylan Zhang, Liri Fang, Zikun Cui, Yang Cao, Pan Chen, Dorothy Sun, Ren Chen, Mahesh Srinivasan, Nipun Mathur, Yinglong Xia, Hong Li, Hong Yan, Pan Lu, Lingming Zhang, Tong Zhang, Hanghang Tong, Jingrui He · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This survey proposes that code serves as the executable, inspectable, and stateful medium for agent reasoning, acting, and environment modeling, shifting the focus from code as an output to code as the operational substrate for agentic AI.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>This survey proposes that code serves as the executable, inspectable, and stateful medium for agent reasoning, acting, and environment modeling, shifting the focus from code as an output to code as the operational substrate for agentic AI.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — code-as-agent-harness</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Code as Agent Harness</li>
+<li><strong>Alias:</strong> code-as-agent-harness</li>
+<li><strong>Authors:</strong> Xuying Ning, Katherine Tieu, Dongqi Fu, Tianxin Wei, Zihao Li, Yuanchen Bei, Jiaru Zou, Mengting Ai, Zhining Liu, Ting-Wei Li, Lingjie Chen, Yanjun Zhao, Ke Yang, Bingxuan Li, Cheng Qian, Gaotang Li, Xiao Lin, Zhichen Zeng, Ruizhong Qiu, Sirui Chen, Yifan Sun, Xiyuan Yang, Ruida Wang, Rui Pan, Chenyuan Yang, Dylan Zhang, Liri Fang, Zikun Cui, Yang Cao, Pan Chen, Dorothy Sun, Ren Chen, Mahesh Srinivasan, Nipun Mathur, Yinglong Xia, Hong Li, Hong Yan, Pan Lu, Lingming Zhang, Tong Zhang, Hanghang Tong, Jingrui He</li>
+<li><strong>arXiv ID:</strong> 2605.18747</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18747</li>
+<li>HTML: https://arxiv.org/html/2605.18747v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18747</li>
+<li><strong>Tags:</strong> agent-harness, code-as-medium, llm-agents, multi-agent-systems, survey</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This survey proposes that code serves as the executable, inspectable, and stateful medium for agent reasoning, acting, and environment modeling, shifting the focus from code as an output to code as the operational substrate for agentic AI.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Large language models (LLMs) have advanced code generation from competitive programming to repository-level software engineering. In emerging agentic systems, code is increasingly used not just as a target artifact but as a medium for reasoning, acting, and environment modeling, leading to a need for a unified framework to understand this shift.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Program-aided reasoning methods (e.g., PAL, Chain-of-Code) externalize intermediate computation into executable code.</li>
+<li>Embodied agents (e.g., Code as Policies, Voyager) use generated programs as executable policies for physical or simulated worlds.</li>
+<li>Software engineering agents (e.g., SWE-bench, InterCode) use codebases, execution traces, and tests as structured environment representations.</li>
+<li>Agent harness frameworks (e.g., MetaHarness, AutoHarness) discuss the software layer that connects LLMs to tools, APIs, and feedback channels.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing surveys treat code primarily as the end product of LLMs, focusing on generation quality. There is no unified view that centers code as the executable and inspectable medium through which agents reason, act, maintain state, and coordinate, especially across long-horizon and multi-agent settings.</p>
+<h3>P — Proposal</h3>
+<p>The paper introduces 'code as agent harness', a unified perspective organizing agent systems into three layers: harness interface (code for reasoning, acting, environment modeling), harness mechanisms (planning, memory, tool use, feedback-driven control), and scaling the harness (multi-agent orchestration over shared code artifacts). The key insight is that code serves as the operational substrate that makes agent behavior executable, verifiable, and stateful.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>As a survey, the paper does not present new experimental results but summarizes representative methods across applications including coding assistants, GUI/OS automation, embodied agents, scientific discovery, personalization, DevOps, and enterprise workflows. It cites performance gains from methods like Code as Policies (robotic task success), SWE-bench (repository-level bug fixing), and Voyager (skill discovery in Minecraft).</p>
+<h3>Ablation</h3>
+<p>No ablation study is presented; the paper is a survey that synthesizes existing work and identifies open challenges.</p>
+<h3>Limitations</h3>
+<p>['The survey does not provide a quantitative comparison or benchmark for the proposed unified view.', 'The framework is conceptual and may require further empirical validation across diverse agent systems.', 'The paper focuses on code-centric harnesses, potentially underrepresenting non-code-based agent architectures (e.g., purely neural or symbolic planners).']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a structured taxonomy to understand how code enables closed-loop agentic behavior, relevant to building reliable AI agents.</li>
+<li>Highlights the role of agent-initiated code artifacts (e.g., tests, temporary tools, DSL programs) as a relatively underexplored area for improving agent autonomy.</li>
+<li>Connects code-centric design to key challenges like verification under incomplete feedback and multi-agent state consistency, which are critical for deploying agents in safety-critical domains.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Explore how agent-initiated code artifacts (e.g., regression tests, reusable skills) can be automatically generated and maintained to improve long-horizon task reliability.</li>
+<li>[ ] Investigate harness optimization methods that use execution feedback to iteratively improve agent code without regressing performance.</li>
+<li>[ ] Design evaluation protocols that go beyond final task success to measure intermediate state consistency, failure recovery, and multi-agent coordination quality.</li>
+<li>[ ] Apply the code-as-agent-harness framework to build a unified benchmark for comparing different harness architectures across domains.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18747</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18747" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Democratizing Large-Scale Re-Optimization with LLM-Guided Model Patches | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Democratizing Large-Scale Re-Optimization with LLM-Guided Model Patches</h2>
+    <h2 class="lang-zh">Democratizing Large-Scale Re-Optimization with LLM-Guided Model Patches</h2>
+    <div class="meta">
+      Tinghan Ye, Arnaud Deza, Ved Mohan, El Mehdi Er Raqabi, Pascal Van Hentenryck · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>Key claim: LLMs can act as OR experts to dynamically re-optimize large-scale industrial models via natural-language patches; key observation: a toolbox of primal information and solver-aware techniques is essential for scalability and solution quality.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>Key claim: LLMs can act as OR experts to dynamically re-optimize large-scale industrial models via natural-language patches; key observation: a toolbox of primal information and solver-aware techniques is essential for scalability and solution quality.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — reopt-llm</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Democratizing Large-Scale Re-Optimization with LLM-Guided Model Patches</li>
+<li><strong>Alias:</strong> reopt-llm</li>
+<li><strong>Authors:</strong> Tinghan Ye, Arnaud Deza, Ved Mohan, El Mehdi Er Raqabi, Pascal Van Hentenryck</li>
+<li><strong>arXiv ID:</strong> 2605.18692</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18692</li>
+<li>HTML: https://arxiv.org/html/2605.18692v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18692</li>
+<li><strong>Tags:</strong> llm-or-hybrid, re-optimization, mixed-integer-programming, agentic-ai, decision-support</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Key claim: LLMs can act as OR experts to dynamically re-optimize large-scale industrial models via natural-language patches; key observation: a toolbox of primal information and solver-aware techniques is essential for scalability and solution quality.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Optimization models deployed in industry often become outdated as business rules evolve, requiring costly expert intervention. Recent advances in LLMs offer potential for natural-language-driven model editing, but existing approaches treat re-optimization as code generation or black-box repair without leveraging mathematical structure. This paper bridges that gap by introducing an agentic framework that combines LLM reasoning with a structured re-optimization toolbox.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>LLM-assisted code generation and decision support (Li et al., 2023; Kong et al., 2025; Simchi-Levi et al., 2025a)</li>
+<li>Primal heuristics and warm-start techniques for mixed-integer programming</li>
+<li>Agentic AI frameworks for operations research</li>
+<li>Interactive optimization and decision-support systems</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing LLM-based approaches treat re-optimization as pure code generation or black-box repair, ignoring the mathematical structure and feasibility implications of edits in large-scale MIPs. This leaves a fundamental interpretability bottleneck: understanding what to change in a large-scale model is often harder than solving it, especially under tight time constraints.</p>
+<h3>P — Proposal</h3>
+<p>The paper proposes ReOpt-LLM, an agentic framework where an LLM acts as an OR expert, translating user natural-language prompts into structured patch-based model updates. The LLM selects re-optimization techniques from a toolbox (historical solutions, valid inequalities, solver configs, metaheuristics) to accelerate solving while preserving quality. The key insight is that the LLM operationalizes OR expertise by orchestrating solver-aware actions, not replacing it.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On the OCP Group online supply chain case, the framework achieved a 100% success rate in re-optimization with a median runtime of 2.3 seconds per prompt. On the Cornell exam scheduling offline case, it achieved a 95% success rate with a median runtime of 12.1 seconds, and solutions were within 0.5% of the optimal objective value.</p>
+<h3>Ablation</h3>
+<p>Removing the toolbox (primal information and solver configurations) increased median runtime by 8x on the supply chain case and 15x on the exam scheduling case, and reduced solution quality by up to 12% in the offline setting.</p>
+<h3>Limitations</h3>
+<p>["The framework relies on the LLM's ability to correctly parse ambiguous user prompts, which can lead to incorrect model edits in edge cases.", 'The toolbox is manually curated for each domain; generalizing to new problem types requires expert effort to design appropriate heuristics and valid inequalities.', 'Scalability to extremely large instances (e.g., &gt;10M variables) is not tested; the toolbox overhead may become significant.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Directly addresses the sustainability of deployed optimization models by reducing dependency on OR experts for routine re-optimization.</li>
+<li>Demonstrates a practical LLM+OR hybrid that balances interpretability (structured patches) and computational efficiency (toolbox), relevant to your work on human-AI collaboration.</li>
+<li>The two case studies (online vs offline) provide a template for evaluating LLM-based re-optimization across different operational constraints.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Implement the ReOpt-LLM framework on your own optimization models (e.g., supply chain or scheduling) to test generalizability.</li>
+<li>[ ] Explore automatic toolbox generation using LLM to propose valid inequalities or heuristics for new problem domains.</li>
+<li>[ ] Evaluate the framework's robustness to adversarial or ambiguous user prompts in a controlled experiment.</li>
+<li>[ ] Compare ReOpt-LLM against pure LLM code-generation baselines on a benchmark of re-optimization tasks.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18692</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18692" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

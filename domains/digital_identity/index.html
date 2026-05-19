@@ -33,8 +33,8 @@
   <section class="glass-card" style="border-left: 3px solid var(--accent);">
     <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);margin-bottom:0.5rem" class="lang-en">Daily Overview</h3>
     <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);margin-bottom:0.5rem" class="lang-zh">今日概览</h3>
-    <div class="lang-en">Today's digital identity research reveals a strong emphasis on robustness and reliability across multimodal and multi-agent systems. A standout paper, 'Safety Geometry Collapse in Multimodal LLMs and Adaptive Drift Correction,' identifies a critical vulnerability where multimodal inputs systematically collapse refusal directions in MLLMs, proposing ReGap for self-rectification. Another notable contribution, 'TeleCom-Bench,' exposes an 'Execution Wall' in LLMs for telecom tasks, achieving >90% on linguistic tasks but collapsing to ~30% on procedural execution, highlighting a domain-specific reliability gap. 'Argus' introduces a cooperative agent system for deep research, achieving 86.2% on BrowseComp. Recurring themes include data contamination in legal reasoning (addressed by neuro-symbolic frameworks like LLM + Prolog), predictive prefetching for RAG latency reduction (43.5%), and the productivity divide in GenAI education driven by AI Interaction Competence (AIC). Noteworthy announcements include 'FedSDR' for federated LLM fine-tuning with self-distillation, and 'DeltaMoE' for multilingual expansion via upcycled MoE. The day's work collectively underscores a shift toward verifying model behavior under stress, with formal guarantees and adaptive mechanisms becoming central to digital identity trust.</div>
-    <div class="lang-zh">今日数字身份研究聚焦多模态与多智能体系统的鲁棒性和可靠性。亮点论文《Safety Geometry Collapse in Multimodal LLMs and Adaptive Drift Correction》发现多模态输入会系统性破坏MLLM的拒绝方向，提出ReGap进行自适应纠正。《TeleCom-Bench》揭示了LLM在电信任务中的“执行墙”：语言接口任务准确率超90%，但程序执行任务（如解决方案生成）骤降至约30%，凸显领域可靠性缺口。《Argus》提出协作式深度研究智能体系统，在BrowseComp上达86.2%。反复出现的主题包括：法律推理中的数据污染（通过LLM + Prolog等神经符号框架解决）、面向RAG的预测性预取（延迟降低43.5%）、以及由AI交互能力（AIC）驱动的GenAI教育生产力鸿沟。值得关注的公告包括：基于自蒸馏的联邦LLM微调框架FedSDR，以及通过升级MoE实现多语言扩展的DeltaMoE。今日工作整体强调在压力下验证模型行为，形式化保证与自适应机制正成为数字身份信任的核心。</div>
+    <div class="lang-en">Today's digital identity research reveals a strong focus on benchmarking and evaluation frameworks for LLMs and multimodal systems, with several papers introducing new suites to test specific capabilities. Standout contributions include CrossView Suite (cross-view spatial reasoning), STT-Arena (spatio-temporal tool use), and SCICONVBENCH (scientific clarification), which collectively expose significant performance gaps even in frontier models. A recurring theme is the push toward more robust and interpretable reasoning: AMR-SD and GPRL advance reinforcement learning with token-level credit assignment and multi-dimensional preference embeddings, while DashAttention introduces differentiable sparse attention. Notable announcements include Lance and Semantic Generative Tuning for unified multimodal models, and EnvFactory for scalable tool-use agent training. The paper on predictable confabulations provides a scaling law linking model size and topic frequency to factual recall quality, offering practical insights for model development. The survey on code as agent harness reframes code as an executable medium for agent reasoning, signaling a paradigm shift in agent design. Overall, today's items emphasize the need for more granular evaluation, adaptive reasoning, and trustworthy deployment in digital identity systems.</div>
+    <div class="lang-zh">今日数字身份领域的研究聚焦于LLM和多模态系统的基准测试与评估框架，多项工作提出了针对特定能力的新测试套件。突出贡献包括CrossView Suite（跨视角空间推理）、STT-Arena（时空工具使用）和SCICONVBENCH（科学澄清），这些工作揭示了即使是前沿模型也存在显著性能差距。反复出现的主题是推动更鲁棒和可解释的推理：AMR-SD和GPRL通过token级信用分配和多维偏好嵌入推进强化学习，而DashAttention引入了可微分稀疏注意力。值得注意的发布包括Lance和Semantic Generative Tuning用于统一多模态模型，以及EnvFactory用于可扩展工具使用智能体训练。关于可预测虚构的论文提出了一个将模型大小和主题频率与事实回忆质量关联的缩放定律，为模型开发提供了实用见解。关于代码作为智能体框架的综述将代码重新定义为智能体推理、行动和环境建模的可执行、可检查和有状态媒介，标志着智能体设计的范式转变。总体而言，今日内容强调了在数字身份系统中进行更细粒度评估、自适应推理和可信部署的必要性。</div>
   </section>
   
 
@@ -46,453 +46,233 @@
   <section data-tab="papers">
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1060.html">Are Sparse Autoencoder Benchmarks Reliable?</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1060.html">Are Sparse Autoencoder Benchmarks Reliable?</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1086.html">DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1086.html">DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">This paper audits SAEBench metrics and finds that TPP and SCR are unreliable, while sae-probes is the most reliable but still struggles to distinguish similar SAEs.</div>
-      <div class="lang-zh" style="font-size:0.9rem">This paper audits SAEBench metrics and finds that TPP and SCR are unreliable, while sae-probes is the most reliable but still struggles to distinguish similar SAEs.</div>
+      <div class="lang-en" style="font-size:0.9rem">DashAttention replaces the hard top-k block selection in hierarchical attention with differentiable α-entmax routing, enabling adaptive per-query sparsity and end-to-end gradient flow while achieving 75% sparsity with accuracy comparable to full attention.</div>
+      <div class="lang-zh" style="font-size:0.9rem">DashAttention replaces the hard top-k block selection in hierarchical attention with differentiable α-entmax routing, enabling adaptive per-query sparsity and end-to-end gradient flow while achieving 75% sparsity with accuracy comparable to full attention.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18229" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18753" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1061.html">Context Memorization for Efficient Long Context Generation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1061.html">Context Memorization for Efficient Long Context Generation</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1087.html">Code as Agent Harness</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1087.html">Code as Agent Harness</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Proposes a training-free, lookup-based attention-state memory that externalizes long prefixes to eliminate inference-time prefix attention, achieving accuracy gains over ICL and RAG with lower latency and memory footprint.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Proposes a training-free, lookup-based attention-state memory that externalizes long prefixes to eliminate inference-time prefix attention, achieving accuracy gains over ICL and RAG with lower latency and memory footprint.</div>
+      <div class="lang-en" style="font-size:0.9rem">This survey proposes that code serves as the executable, inspectable, and stateful medium for agent reasoning, acting, and environment modeling, shifting the focus from code as an output to code as the operational substrate for agentic AI.</div>
+      <div class="lang-zh" style="font-size:0.9rem">This survey proposes that code serves as the executable, inspectable, and stateful medium for agent reasoning, acting, and environment modeling, shifting the focus from code as an output to code as the operational substrate for agentic AI.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18226" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18747" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1062.html">PIPER: Content-Based Table Search via profiling and LLM-Generated Pseudoqueries</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1062.html">PIPER: Content-Based Table Search via profiling and LLM-Generated Pseudoqueries</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1088.html">Actionable World Representation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1088.html">Actionable World Representation</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">PIPER proposes a content-based tabular dataset retrieval method that uses table profiles and LLM-generated pseudoqueries to outperform both metadata-based and TableQA baselines in poor-metadata settings.</div>
-      <div class="lang-zh" style="font-size:0.9rem">PIPER proposes a content-based tabular dataset retrieval method that uses table profiles and LLM-generated pseudoqueries to outperform both metadata-based and TableQA baselines in poor-metadata settings.</div>
+      <div class="lang-en" style="font-size:0.9rem">WorldString proposes a unified neural architecture that learns actionable digital twins of articulated, skinned, and soft objects directly from point clouds or RGB-D video, enabling controllable state-conditioned 3D generation.</div>
+      <div class="lang-zh" style="font-size:0.9rem">WorldString proposes a unified neural architecture that learns actionable digital twins of articulated, skinned, and soft objects directly from point clouds or RGB-D video, enabling controllable state-conditioned 3D generation.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18199" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18743" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1063.html">Beyond the Cartesian Illusion: Testing Two-Stage Multi-Modal Theory of Mind under Perceptual Bottlenecks</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1063.html">Beyond the Cartesian Illusion: Testing Two-Stage Multi-Modal Theory of Mind under Perceptual Bottlenecks</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1089.html">Vision-OPD: Learning to See Fine Details for Multimodal LLMs via On-Policy Self-Distillation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1089.html">Vision-OPD: Learning to See Fine Details for Multimodal LLMs via On-Policy Self-Distillation</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">This paper exposes the 'Cartesian Illusion' in MLLMs and proposes a two-stage, sensory-bounded reasoning pipeline for second-order Theory of Mind that significantly outperforms baselines in occluded multi-agent scenarios.</div>
-      <div class="lang-zh" style="font-size:0.9rem">This paper exposes the 'Cartesian Illusion' in MLLMs and proposes a two-stage, sensory-bounded reasoning pipeline for second-order Theory of Mind that significantly outperforms baselines in occluded multi-agent scenarios.</div>
+      <div class="lang-en" style="font-size:0.9rem">Vision-OPD proposes a self-distillation framework that transfers a model's own crop-conditioned perception to full-image inference, significantly narrowing the regional-to-global perception gap in MLLMs without external teachers or inference-time tool use.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Vision-OPD proposes a self-distillation framework that transfers a model's own crop-conditioned perception to full-image inference, significantly narrowing the regional-to-global perception gap in MLLMs without external teachers or inference-time tool use.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18194" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18740" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1064.html">Pairwise Preference Reward and Group-Based Diversity Enhancement for Superior Open-Ended Generation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1064.html">Pairwise Preference Reward and Group-Based Diversity Enhancement for Superior Open-Ended Generation</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1090.html">What Does the AI Doctor Value? Auditing Pluralism in the Clinical Ethics of Language Models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1090.html">What Does the AI Doctor Value? Auditing Pluralism in the Clinical Ethics of Language Models</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">PPR-GDE proposes a reinforcement learning method for open-ended generation that uses pairwise preference rewards and group-based diversity enhancement to achieve better alignment and diversity than GRPO and PPO.</div>
-      <div class="lang-zh" style="font-size:0.9rem">PPR-GDE proposes a reinforcement learning method for open-ended generation that uses pairwise preference rewards and group-based diversity enhancement to achieve better alignment and diversity than GRPO and PPO.</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper audits value pluralism in LLMs by constructing a benchmark of 50 clinical ethical dilemmas and using a revealed-preference attribution method to show that individual models are near-deterministic and systematically underweight patient autonomy, risking a deployment monoculture.</div>
+      <div class="lang-zh" style="font-size:0.9rem">This paper audits value pluralism in LLMs by constructing a benchmark of 50 clinical ethical dilemmas and using a revealed-preference attribution method to show that individual models are near-deterministic and systematically underweight patient autonomy, risking a deployment monoculture.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18191" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18738" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1065.html">Vision Inference Former: Sustaining Visual Consistency in Multimodal Large Language Models</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1065.html">Vision Inference Former: Sustaining Visual Consistency in Multimodal Large Language Models</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1091.html">Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1091.html">Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">VIF introduces a lightweight module that continuously injects visual semantics during decoding to combat visual consistency decay in MLLMs, showing consistent gains across 14 benchmarks.</div>
-      <div class="lang-zh" style="font-size:0.9rem">VIF introduces a lightweight module that continuously injects visual semantics during decoding to combat visual consistency decay in MLLMs, showing consistent gains across 14 benchmarks.</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper shows that factual recall quality in LLMs follows a sigmoid scaling law in the log-linear combination of model size and topic frequency in training data, explaining up to 94% of variance within model families.</div>
+      <div class="lang-zh" style="font-size:0.9rem">This paper shows that factual recall quality in LLMs follows a sigmoid scaling law in the log-linear combination of model size and topic frequency in training data, explaining up to 94% of variance within model families.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18160" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18732" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1066.html">Foundation Models for Credit Risk Prediction: A Game Changer?</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1066.html">Foundation Models for Credit Risk Prediction: A Game Changer?</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1092.html">General Preference Reinforcement Learning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1092.html">General Preference Reinforcement Learning</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Tabular foundation models (PFNs) outperform tuned GBMs and deep learning baselines in PD and LGD prediction, especially in small-data settings, without any hyperparameter tuning.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Tabular foundation models (PFNs) outperform tuned GBMs and deep learning baselines in PD and LGD prediction, especially in small-data settings, without any hyperparameter tuning.</div>
+      <div class="lang-en" style="font-size:0.9rem">GPRL extends GRPO-style online RL to open-ended tasks by replacing scalar rewards with a multi-dimensional, intransitivity-aware preference embedding from the General Preference Model, achieving 56.51% length-controlled win rate on AlpacaEval 2.0 while resisting reward hacking.</div>
+      <div class="lang-zh" style="font-size:0.9rem">GPRL extends GRPO-style online RL to open-ended tasks by replacing scalar rewards with a multi-dimensional, intransitivity-aware preference embedding from the General Preference Model, achieving 56.51% length-controlled win rate on AlpacaEval 2.0 while resisting reward hacking.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18147" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18721" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1067.html">Evidence-Grounded Frontier Mapping and Agentic Hypothesis Generation in Nanomedicine</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1067.html">Evidence-Grounded Frontier Mapping and Agentic Hypothesis Generation in Nanomedicine</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1093.html">Semantic Generative Tuning for Unified Multimodal Models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1093.html">Semantic Generative Tuning for Unified Multimodal Models</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">pArticleMap introduces a literature-mapping and agentic hypothesis-generation system that targets low-density bridge regions in nanomedicine, achieving a 61.0% future-neighborhood rate in retrospective benchmarks.</div>
-      <div class="lang-zh" style="font-size:0.9rem">pArticleMap introduces a literature-mapping and agentic hypothesis-generation system that targets low-density bridge regions in nanomedicine, achieving a 61.0% future-neighborhood rate in retrospective benchmarks.</div>
+      <div class="lang-en" style="font-size:0.9rem">SGT shows that using image segmentation as a generative proxy significantly improves both visual understanding and generation in unified multimodal models, achieving a 6.02% gain on CV-Bench and 90.0% on GenEval.</div>
+      <div class="lang-zh" style="font-size:0.9rem">SGT shows that using image segmentation as a generative proxy significantly improves both visual understanding and generation in unified multimodal models, achieving a 6.02% gain on CV-Bench and 90.0% on GenEval.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18144" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18714" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1068.html">Generative AI and the Productivity Divide: Human-AI Complementarities in Education</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1068.html">Generative AI and the Productivity Divide: Human-AI Complementarities in Education</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1094.html">EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1094.html">EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">GenAI access raises average task performance but creates a new productivity divide driven by AI Interaction Competence (AIC), not traditional measures like GPA.</div>
-      <div class="lang-zh" style="font-size:0.9rem">GenAI access raises average task performance but creates a new productivity divide driven by AI Interaction Competence (AIC), not traditional measures like GPA.</div>
+      <div class="lang-en" style="font-size:0.9rem">EnvFactory proposes a fully automated framework for scaling tool-use agents by autonomously constructing verified executable environments from authentic online resources and synthesizing natural multi-turn trajectories with implicit intents, achieving up to +15% on BFCLv3 with only 85 environments.</div>
+      <div class="lang-zh" style="font-size:0.9rem">EnvFactory proposes a fully automated framework for scaling tool-use agents by autonomously constructing verified executable environments from authentic online resources and synthesizing natural multi-turn trajectories with implicit intents, achieving up to +15% on BFCLv3 with only 85 environments.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18143" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18703" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1069.html">Faculty Orientations Shape Adoption of AI in Research and Teaching</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1069.html">Faculty Orientations Shape Adoption of AI in Research and Teaching</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1095.html">Democratizing Large-Scale Re-Optimization with LLM-Guided Model Patches</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1095.html">Democratizing Large-Scale Re-Optimization with LLM-Guided Model Patches</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Faculty AI adoption is driven not by attitudes or institutional support but by a coherent 'AI pedagogical orientation' reflecting beliefs about AI's role in disciplinary thinking and expertise.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Faculty AI adoption is driven not by attitudes or institutional support but by a coherent 'AI pedagogical orientation' reflecting beliefs about AI's role in disciplinary thinking and expertise.</div>
+      <div class="lang-en" style="font-size:0.9rem">Key claim: LLMs can act as OR experts to dynamically re-optimize large-scale industrial models via natural-language patches; key observation: a toolbox of primal information and solver-aware techniques is essential for scalability and solution quality.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Key claim: LLMs can act as OR experts to dynamically re-optimize large-scale industrial models via natural-language patches; key observation: a toolbox of primal information and solver-aware techniques is essential for scalability and solution quality.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18140" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18692" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1070.html">How Good LLMs Are at Answering Bangla Medical Visual Questions? Dataset and Benchmarking</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1070.html">How Good LLMs Are at Answering Bangla Medical Visual Questions? Dataset and Benchmarking</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1096.html">Lance: Unified Multimodal Modeling by Multi-Task Synergy</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1096.html">Lance: Unified Multimodal Modeling by Multi-Task Synergy</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Introduces the first clinically validated Bangla MedVQA dataset and shows that even top models like Gemini and GPT-4.1 mini achieve only 40.38% and 26.50% accuracy, with performance on specialized diagnostic questions falling below random chance.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Introduces the first clinically validated Bangla MedVQA dataset and shows that even top models like Gemini and GPT-4.1 mini achieve only 40.38% and 26.50% accuracy, with performance on specialized diagnostic questions falling below random chance.</div>
+      <div class="lang-en" style="font-size:0.9rem">Lance proposes a lightweight native unified multimodal model that achieves strong image/video generation and understanding via a dual-stream MoE architecture and staged multi-task training, outperforming open-source unified models with only 3B activated parameters.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Lance proposes a lightweight native unified multimodal model that achieves strong image/video generation and understanding via a dual-stream MoE architecture and staged multi-task training, outperforming open-source unified models with only 3B activated parameters.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18111" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18678" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1071.html">Safety Geometry Collapse in Multimodal LLMs and Adaptive Drift Correction</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1071.html">Safety Geometry Collapse in Multimodal LLMs and Adaptive Drift Correction</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1097.html">COOPO: Cyclic Offline-Online Policy Optimization Algorithm</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1097.html">COOPO: Cyclic Offline-Online Policy Optimization Algorithm</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Key claim: Multimodal inputs cause a systematic geometric collapse of the refusal direction in MLLMs, and key observation: counteracting modality-induced drift via a self-rectification signal (ReGap) restores safety without harming general capability.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Key claim: Multimodal inputs cause a systematic geometric collapse of the refusal direction in MLLMs, and key observation: counteracting modality-induced drift via a self-rectification signal (ReGap) restores safety without harming general capability.</div>
+      <div class="lang-en" style="font-size:0.9rem">COOPO proposes a cyclic offline-online RL framework that repeatedly anchors the policy to a static dataset via KL-regularized updates to eliminate catastrophic forgetting and distributional shift, achieving better sample efficiency and final returns than state-of-the-art hybrid methods.</div>
+      <div class="lang-zh" style="font-size:0.9rem">COOPO proposes a cyclic offline-online RL framework that repeatedly anchors the policy to a static dataset via KL-regularized updates to eliminate catastrophic forgetting and distributional shift, achieving better sample efficiency and final returns than state-of-the-art hybrid methods.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18104" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18675" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1072.html">A Data-Efficient Path to Multilingual LLMs: Language Expansion via Post-training PARAM$Δ$ Integration into Upcycled MoE</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1072.html">A Data-Efficient Path to Multilingual LLMs: Language Expansion via Post-training PARAM$Δ$ Integration into Upcycled MoE</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1098.html">Generative AI Advertising as a Problem of Trustworthy Commercial Intervention</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1098.html">Generative AI Advertising as a Problem of Trustworthy Commercial Intervention</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">DeltaMoE resolves the trade-off between preserving original abilities and acquiring new languages by upcycling a dense LLM into an MoE and grafting a post-training delta, achieving +1.7 expanded language and +1.5 original language preservation over delta merging baselines.</div>
-      <div class="lang-zh" style="font-size:0.9rem">DeltaMoE resolves the trade-off between preserving original abilities and acquiring new languages by upcycling a dense LLM into an MoE and grafting a post-training delta, achieving +1.7 expanded language and +1.5 original language preservation over delta merging baselines.</div>
+      <div class="lang-en" style="font-size:0.9rem">Generative AI advertising shifts from content placement to process intervention, creating a trustworthiness crisis that current detection and disclosure frameworks cannot address.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Generative AI advertising shifts from content placement to process intervention, creating a trustworthiness crisis that current detection and disclosure frameworks cannot address.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18083" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18673" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1073.html">LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1073.html">LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1099.html">SCICONVBENCH: Benchmarking LLMs on Multi-Turn Clarification for Task Formulation in Computational Science</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1099.html">SCICONVBENCH: Benchmarking LLMs on Multi-Turn Clarification for Task Formulation in Computational Science</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">LMAC uses an LLM to iteratively design and refine a communication protocol for cooperative MARL, explicitly targeting state reconstruction accuracy and uniformity across agents.</div>
-      <div class="lang-zh" style="font-size:0.9rem">LMAC uses an LLM to iteratively design and refine a communication protocol for cooperative MARL, explicitly targeting state reconstruction accuracy and uniformity across agents.</div>
+      <div class="lang-en" style="font-size:0.9rem">SCICONVBENCH reveals that frontier LLMs resolve only 52.7% of disambiguation cases in fluid mechanics and frequently make silent assumptions, highlighting a critical upstream failure in scientific task formulation.</div>
+      <div class="lang-zh" style="font-size:0.9rem">SCICONVBENCH reveals that frontier LLMs resolve only 52.7% of disambiguation cases in fluid mechanics and frequently make silent assumptions, highlighting a critical upstream failure in scientific task formulation.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18077" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18630" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1074.html">A-ProS: Towards Reliable Autonomous Programming Through Multi-Model Feedback</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1074.html">A-ProS: Towards Reliable Autonomous Programming Through Multi-Model Feedback</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1100.html">CrossView Suite: Harnessing Cross-view Spatial Intelligence of MLLMs with Dataset, Model and Benchmark</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1100.html">CrossView Suite: Harnessing Cross-view Spatial Intelligence of MLLMs with Dataset, Model and Benchmark</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">A-ProS proposes a hybrid multi-model feedback framework that separates solution generation from specialized debugging, achieving over 2x greater gains than baseline agent loops on competitive programming problems.</div>
-      <div class="lang-zh" style="font-size:0.9rem">A-ProS proposes a hybrid multi-model feedback framework that separates solution generation from specialized debugging, achieving over 2x greater gains than baseline agent loops on competitive programming problems.</div>
+      <div class="lang-en" style="font-size:0.9rem">CrossView Suite proposes a unified dataset (CrossViewSet), benchmark (CrossViewBench), and model (CrossViewer) to enable MLLMs to perform explicit object-level cross-view spatial reasoning, addressing the lack of large-scale mask-grounded training data, comprehensive evaluation, and alignment mechanisms.</div>
+      <div class="lang-zh" style="font-size:0.9rem">CrossView Suite proposes a unified dataset (CrossViewSet), benchmark (CrossViewBench), and model (CrossViewer) to enable MLLMs to perform explicit object-level cross-view spatial reasoning, addressing the lack of large-scale mask-grounded training data, comprehensive evaluation, and alignment mechanisms.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18073" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18621" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1075.html">PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1075.html">PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1105.html">MA$^{2}$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1105.html">MA$^{2}$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">PPAI is the first system for personalized LLM agent interoperability in P2P edge networks, achieving up to 7.96% accuracy improvement and 16.34% latency reduction by matching queries to specialized remote agents.</div>
-      <div class="lang-zh" style="font-size:0.9rem">PPAI is the first system for personalized LLM agent interoperability in P2P edge networks, achieving up to 7.96% accuracy improvement and 16.34% latency reduction by matching queries to specialized remote agents.</div>
+      <div class="lang-en" style="font-size:0.9rem">MA$^{2}$P proposes a meta-cognitive multi-agent framework that improves persuasive dialogue success by inferring latent mental states and selecting domain-adaptive strategies, outperforming LLM baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">MA$^{2}$P proposes a meta-cognitive multi-agent framework that improves persuasive dialogue success by inferring latent mental states and selecting domain-adaptive strategies, outperforming LLM baselines.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18067" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18572" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1076.html">FedSDR: Federated Self-Distillation with Rectification</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1076.html">FedSDR: Federated Self-Distillation with Rectification</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1106.html">Query-Conditioned Knowledge Alignment for Reliable Cross-System Medical Reasoning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1106.html">Query-Conditioned Knowledge Alignment for Reliable Cross-System Medical Reasoning</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">FedSDR proposes a data-centric paradigm for federated LLM fine-tuning that uses self-distillation to align heterogeneous client data distributions, and introduces a dual-stream LoRA mechanism to resolve the 'Rewrite Paradox' where unconstrained distillation increases hallucinations.</div>
-      <div class="lang-zh" style="font-size:0.9rem">FedSDR proposes a data-centric paradigm for federated LLM fine-tuning that uses self-distillation to align heterogeneous client data distributions, and introduces a dual-stream LoRA mechanism to resolve the 'Rewrite Paradox' where unconstrained distillation increases hallucinations.</div>
+      <div class="lang-en" style="font-size:0.9rem">QCEA reformulates entity alignment as a query-conditioned ranking problem to handle context-dependent, asymmetric, and many-to-many correspondences in cross-system medical knowledge graphs, showing consistent improvements in Hit@K and MRR over static baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">QCEA reformulates entity alignment as a query-conditioned ranking problem to handle context-dependent, asymmetric, and many-to-many correspondences in cross-system medical knowledge graphs, showing consistent improvements in Hit@K and MRR over static baselines.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18028" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18570" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1077.html">TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications?</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1077.html">TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications?</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1107.html">Estimating Item Difficulty with Large Language Models as Experts</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1107.html">Estimating Item Difficulty with Large Language Models as Experts</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">TeleCom-Bench reveals a universal 'Execution Wall' where LLMs achieve >90% accuracy on linguistic interface tasks but collapse to ~30% on procedural execution tasks like solution generation in telecom.</div>
-      <div class="lang-zh" style="font-size:0.9rem">TeleCom-Bench reveals a universal 'Execution Wall' where LLMs achieve >90% accuracy on linguistic interface tasks but collapse to ~30% on procedural execution tasks like solution generation in telecom.</div>
+      <div class="lang-en" style="font-size:0.9rem">LLMs can estimate item difficulty with moderate-to-strong correlation to empirical data, with pairwise comparison outperforming absolute judgement, and token probabilities plus few-shot prompting closing the gap.</div>
+      <div class="lang-zh" style="font-size:0.9rem">LLMs can estimate item difficulty with moderate-to-strong correlation to empirical data, with pairwise comparison outperforming absolute judgement, and token probabilities plus few-shot prompting closing the gap.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18025" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18562" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1078.html">Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1078.html">Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1108.html">Federated Martingale Posterior Samping</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1108.html">Federated Martingale Posterior Samping</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">IBAL proposes an information-theoretic adversarial attack that breaks inter-agent coordination by minimizing mutual information between groups, and trains robust policies under such disruptions.</div>
-      <div class="lang-zh" style="font-size:0.9rem">IBAL proposes an information-theoretic adversarial attack that breaks inter-agent coordination by minimizing mutual information between groups, and trains robust policies under such disruptions.</div>
+      <div class="lang-en" style="font-size:0.9rem">Federated Martingale Posterior (FMP) replaces the prior-likelihood pair with a predictive distribution and enables one-shot embarrassingly parallel Bayesian inference by having clients upload compressed data embeddings instead of raw data.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Federated Martingale Posterior (FMP) replaces the prior-likelihood pair with a predictive distribution and enables one-shot embarrassingly parallel Bayesian inference by having clients upload compressed data embeddings instead of raw data.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18024" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18554" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1079.html">LogRouter: Adaptive Two-Level LLM Routing for Log Question Answering in Big Data Systems</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1079.html">LogRouter: Adaptive Two-Level LLM Routing for Log Question Answering in Big Data Systems</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1109.html">STT-Arena: A More Realistic Environment for Tool-Using with Spatio-Temporal Dynamics</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1109.html">STT-Arena: A More Realistic Environment for Tool-Using with Spatio-Temporal Dynamics</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">LogRouter proposes a two-level cost-aware router for log QA that achieves 88.4% mean accuracy and 55% latency reduction over a fixed-32B baseline by dispatching queries to LLM-bypass paths or appropriately-sized generators.</div>
-      <div class="lang-zh" style="font-size:0.9rem">LogRouter proposes a two-level cost-aware router for log QA that achieves 88.4% mean accuracy and 55% latency reduction over a fixed-32B baseline by dispatching queries to LLM-bypass paths or appropriately-sized generators.</div>
+      <div class="lang-en" style="font-size:0.9rem">STT-Arena introduces a benchmark for evaluating LLMs' adaptive replanning under spatio-temporal dynamics, revealing that even the best proprietary models achieve under 40% accuracy.</div>
+      <div class="lang-zh" style="font-size:0.9rem">STT-Arena introduces a benchmark for evaluating LLMs' adaptive replanning under spatio-temporal dynamics, revealing that even the best proprietary models achieve under 40% accuracy.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18015" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18548" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1080.html">RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1080.html">RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1110.html">AMR-SD: Asymmetric Meta-Reflective Self-Distillation for Token-Level Credit Assignment</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1110.html">AMR-SD: Asymmetric Meta-Reflective Self-Distillation for Token-Level Credit Assignment</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">RL4RLA proposes a general RL framework that automates the discovery of interpretable, symbolic randomized linear algebra algorithms by using a numerical curriculum and Monte Carlo Graph Search to overcome sparse rewards and vast search spaces.</div>
-      <div class="lang-zh" style="font-size:0.9rem">RL4RLA proposes a general RL framework that automates the discovery of interpretable, symbolic randomized linear algebra algorithms by using a numerical curriculum and Monte Carlo Graph Search to overcome sparse rewards and vast search spaces.</div>
+      <div class="lang-en" style="font-size:0.9rem">AMR-SD introduces a reflection bottleneck and Causal Information Gain (CIG) to achieve sparse, token-level credit assignment in RLVR for LLMs, preventing late-stage collapse and outperforming GRPO and self-distillation baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">AMR-SD introduces a reflection bottleneck and Causal Information Gain (CIG) to achieve sparse, token-level credit assignment in RLVR for LLMs, preventing late-stage collapse and outperforming GRPO and self-distillation baselines.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18004" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1081.html">MARR: Module-Adaptive Residual Reconstruction for Low-Bit Post-Training Quantization</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1081.html">MARR: Module-Adaptive Residual Reconstruction for Low-Bit Post-Training Quantization</a></h2>
-      <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">MARR proposes module-adaptive scaling of residual terms in low-bit PTQ to balance accumulated-error correction and Hessian-approximation bias, achieving up to 20.2% performance gains on LLMs.</div>
-      <div class="lang-zh" style="font-size:0.9rem">MARR proposes module-adaptive scaling of residual terms in low-bit PTQ to balance accumulated-error correction and Hessian-approximation bias, achieving up to 20.2% performance gains on LLMs.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17997" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1082.html">Predictive Prefetching for Retrieval-Augmented Generation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1082.html">Predictive Prefetching for Retrieval-Augmented Generation</a></h2>
-      <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Key claim: predictive prefetching of retrieval based on semantic precursors can reduce RAG latency by 43.5% while maintaining answer quality; key observation: retrieval needs are preceded by identifiable semantic precursors 8-16 tokens before uncertainty becomes critical.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Key claim: predictive prefetching of retrieval based on semantic precursors can reduce RAG latency by 43.5% while maintaining answer quality; key observation: retrieval needs are preceded by identifiable semantic precursors 8-16 tokens before uncertainty becomes critical.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17989" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1083.html">AutoVecCoder: Teaching LLMs to Generate Explicitly Vectorized Code</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1083.html">AutoVecCoder: Teaching LLMs to Generate Explicitly Vectorized Code</a></h2>
-      <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">AutoVecCoder proposes a framework combining automated data synthesis (VecPrompt) and reinforcement learning (VecRL) to teach LLMs to generate explicitly vectorized SIMD code, achieving SOTA on SimdBench and sometimes surpassing -O3 compiler optimizations.</div>
-      <div class="lang-zh" style="font-size:0.9rem">AutoVecCoder proposes a framework combining automated data synthesis (VecPrompt) and reinforcement learning (VecRL) to teach LLMs to generate explicitly vectorized SIMD code, achieving SOTA on SimdBench and sometimes surpassing -O3 compiler optimizations.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17978" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1084.html">Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1084.html">Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery</a></h2>
-      <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">LGBO embeds LLM preferences into every BO iteration via a region-lifted preference mechanism, achieving 90% of best observed value within 6 iterations in wet-lab Fe-Cr electrolyte optimization vs. >10 for baselines.</div>
-      <div class="lang-zh" style="font-size:0.9rem">LGBO embeds LLM preferences into every BO iteration via a region-lifted preference mechanism, achieving 90% of best observed value within 6 iterations in wet-lab Fe-Cr electrolyte optimization vs. >10 for baselines.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17976" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/999.html">Second-Order Multi-Level Variance Correction for Modality Competition in Multimodal Models</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/999.html">Second-Order Multi-Level Variance Correction for Modality Competition in Multimodal Models</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Second-order optimization (ML-FOP-SOAP) stabilizes multimodal training by reducing modality competition via Fisher-Orthogonal Projection and multi-level variance correction, achieving 1.4x sample efficiency and 1.5x wall-clock speedup over AdamW.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Second-order optimization (ML-FOP-SOAP) stabilizes multimodal training by reducing modality competition via Fisher-Orthogonal Projection and multi-level variance correction, achieving 1.4x sample efficiency and 1.5x wall-clock speedup over AdamW.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16165" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1000.html">Learn Where Outcomes Diverge: Efficient VLA RL via Probabilistic Chunk Masking</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1000.html">Learn Where Outcomes Diverge: Efficient VLA RL via Probabilistic Chunk Masking</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">PCM shows that gradient computation dominates GRPO-based VLA RL (78% wall-clock time) and proposes a drop-in method to allocate gradient compute only to outcome-divergent trajectory phases, achieving 2.38x speedup with no reward model.</div>
-      <div class="lang-zh" style="font-size:0.9rem">PCM shows that gradient computation dominates GRPO-based VLA RL (78% wall-clock time) and proposes a drop-in method to allocate gradient compute only to outcome-divergent trajectory phases, achieving 2.38x speedup with no reward model.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16154" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1001.html">Look Before You Leap: Autonomous Exploration for LLM Agents</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1001.html">Look Before You Leap: Autonomous Exploration for LLM Agents</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Key claim: LLM agents fail in unfamiliar environments due to premature exploitation; key observation: task-oriented RL training does not yield autonomous exploration, but explicitly training with an exploration reward (ECC) enables systematic information gathering and improves downstream task performance.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Key claim: LLM agents fail in unfamiliar environments due to premature exploitation; key observation: task-oriented RL training does not yield autonomous exploration, but explicitly training with an exploration reward (ECC) enables systematic information gathering and improves downstream task performance.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16143" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1002.html">SGR: A Stepwise Reasoning Framework for LLMs with External Subgraph Generation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1002.html">SGR: A Stepwise Reasoning Framework for LLMs with External Subgraph Generation</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">SGR improves LLM reasoning by dynamically constructing query-specific subgraphs from external knowledge bases to guide stepwise inference, achieving consistent gains over baselines on multiple benchmarks.</div>
-      <div class="lang-zh" style="font-size:0.9rem">SGR improves LLM reasoning by dynamically constructing query-specific subgraphs from external knowledge bases to guide stepwise inference, achieving consistent gains over baselines on multiple benchmarks.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16117" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1003.html">DebiasRAG: A Tuning-Free Path to Fair Generation in Large Language Models through Retrieval-Augmented Generation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1003.html">DebiasRAG: A Tuning-Free Path to Fair Generation in Large Language Models through Retrieval-Augmented Generation</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">DebiasRAG proposes a tuning-free, query-specific debiasing framework using retrieval-augmented generation to mitigate social biases in LLMs without degrading their intrinsic capabilities.</div>
-      <div class="lang-zh" style="font-size:0.9rem">DebiasRAG proposes a tuning-free, query-specific debiasing framework using retrieval-augmented generation to mitigate social biases in LLMs without degrading their intrinsic capabilities.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16113" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1004.html">Can Large Language Models Imitate Human Speech for Clinical Assessment? LLM-Driven Data Augmentation for Cognitive Score Prediction</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1004.html">Can Large Language Models Imitate Human Speech for Clinical Assessment? LLM-Driven Data Augmentation for Cognitive Score Prediction</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">LLM-driven cross-modal augmentation using written narratives to generate oral-style speech improves cognitive score prediction from small, imbalanced clinical datasets.</div>
-      <div class="lang-zh" style="font-size:0.9rem">LLM-driven cross-modal augmentation using written narratives to generate oral-style speech improves cognitive score prediction from small, imbalanced clinical datasets.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16077" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1005.html">ITGPT: Generative Pretraining on Irregular Timeseries</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1005.html">ITGPT: Generative Pretraining on Irregular Timeseries</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">ITGPT extends ITNet with GPT-like generative pretraining and SSL objectives for irregularly sampled multimodal timeseries, achieving SOTA without resampling or imputation.</div>
-      <div class="lang-zh" style="font-size:0.9rem">ITGPT extends ITNet with GPT-like generative pretraining and SSL objectives for irregularly sampled multimodal timeseries, achieving SOTA without resampling or imputation.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16069" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1006.html">Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1006.html">Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Key claim: LLM performance on tax law reasoning is inflated by data contamination, and neuro-symbolic frameworks (LLM + Prolog) are more robust and generalize better; key observation: legal reasoning is inherently compositional.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Key claim: LLM performance on tax law reasoning is inflated by data contamination, and neuro-symbolic frameworks (LLM + Prolog) are more robust and generalize better; key observation: legal reasoning is inherently compositional.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16052" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1007.html">Mind Dreamer: Untethering Imagination via Active Latent Intervention on Latent Manifolds</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1007.html">Mind Dreamer: Untethering Imagination via Active Latent Intervention on Latent Manifolds</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Mind Dreamer proposes Active Latent Intervention (ALI) to overcome the Historical Tethering limitation in MBRL by synthesizing non-continuous latent jumps, achieving up to 8.8x speedup on sparse-reward tasks.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Mind Dreamer proposes Active Latent Intervention (ALI) to overcome the Historical Tethering limitation in MBRL by synthesizing non-continuous latent jumps, achieving up to 8.8x speedup on sparse-reward tasks.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16030" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1008.html">From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1008.html">From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">S2ST-Omni 2 replaces flat language labels with structured typological priors for multilingual speech-to-speech translation, achieving average BLEU gains of 5.8% over S2ST-Omni on CVSS-C.</div>
-      <div class="lang-zh" style="font-size:0.9rem">S2ST-Omni 2 replaces flat language labels with structured typological priors for multilingual speech-to-speech translation, achieving average BLEU gains of 5.8% over S2ST-Omni on CVSS-C.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16026" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1011.html">Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1011.html">Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Applies GRPO to encoder-decoder NLLB-200 (600M/1.3B) with a reference-free hybrid reward (LaBSE+COMET-Kiwi), achieving up to +5.03 chrF++ on 13 languages without parallel data at fine-tuning time.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Applies GRPO to encoder-decoder NLLB-200 (600M/1.3B) with a reference-free hybrid reward (LaBSE+COMET-Kiwi), achieving up to +5.03 chrF++ on 13 languages without parallel data at fine-tuning time.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.15976" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/994.html">AI-Mediated Communication Can Steer Collective Opinion</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/994.html">AI-Mediated Communication Can Steer Collective Opinion</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Shows that LLMs used to mediate human-to-human communication on social platforms introduce directional biases that can be amplified through network effects to shift collective opinion, with empirical evidence from multiple LLM families and a real-world audit of X's 'Explain this post' feature.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Shows that LLMs used to mediate human-to-human communication on social platforms introduce directional biases that can be amplified through network effects to shift collective opinion, with empirical evidence from multiple LLM families and a real-world audit of X's 'Explain this post' feature.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16245" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/995.html">Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/995.html">Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">LLM-guided tree search autonomously generates and optimizes infectious disease forecasting models that match or beat human-curated CDC ensembles in real-time.</div>
-      <div class="lang-zh" style="font-size:0.9rem">LLM-guided tree search autonomously generates and optimizes infectious disease forecasting models that match or beat human-curated CDC ensembles in real-time.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16238" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/996.html">Argus: Evidence Assembly for Scalable Deep Research Agents</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/996.html">Argus: Evidence Assembly for Scalable Deep Research Agents</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Argus proposes a cooperative agent system (Searcher + Navigator) that treats deep research as assembling a jigsaw of complementary evidence pieces, achieving 86.2% on BrowseComp with 64 parallel Searchers while keeping the Navigator's reasoning context under 21.5K tokens.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Argus proposes a cooperative agent system (Searcher + Navigator) that treats deep research as assembling a jigsaw of complementary evidence pieces, achieving 86.2% on BrowseComp with 64 parallel Searchers while keeping the Navigator's reasoning context under 21.5K tokens.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16217" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/997.html">Improving Cross-Cultural Survey Simulation with Calibrated Value Personas</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/997.html">Improving Cross-Cultural Survey Simulation with Calibrated Value Personas</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Proposes value-based personas derived from survey responses and a calibration procedure to improve LLM-based cross-cultural survey simulation, reducing prediction error especially for underrepresented populations.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Proposes value-based personas derived from survey responses and a calibration procedure to improve LLM-based cross-cultural survey simulation, reducing prediction error especially for underrepresented populations.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16193" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/998.html">BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/998.html">BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">BAPR unifies Bayesian Online Change Detection with robust ensemble RL to achieve adaptive conservatism under piecewise stationary dynamics, with formal contraction guarantees and machine-verified proofs in Lean 4.</div>
-      <div class="lang-zh" style="font-size:0.9rem">BAPR unifies Bayesian Online Change Detection with robust ensemble RL to achieve adaptive conservatism under piecewise stationary dynamics, with formal contraction guarantees and machine-verified proofs in Lean 4.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16170" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18529" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     

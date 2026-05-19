@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL | Reye</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye</a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL</h2>
+    <h2 class="lang-zh">EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL</h2>
+    <div class="meta">
+      Minrui Xu, Zilin Wang, Mengyi DENG, Zhiwei Li, Zhicheng Yang, Xiao Zhu, Yinhong Liu, Boyu Zhu, Baiyu Huang, Chao Chen, Heyuan Deng, Fei Mi, Lifeng Shang, Xingshan Zeng, Zhijiang Guo · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>EnvFactory proposes a fully automated framework for scaling tool-use agents by autonomously constructing verified executable environments from authentic online resources and synthesizing natural multi-turn trajectories with implicit intents, achieving up to +15% on BFCLv3 with only 85 environments.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>EnvFactory proposes a fully automated framework for scaling tool-use agents by autonomously constructing verified executable environments from authentic online resources and synthesizing natural multi-turn trajectories with implicit intents, achieving up to +15% on BFCLv3 with only 85 environments.</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — envfactory</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL</li>
+<li><strong>Alias:</strong> envfactory</li>
+<li><strong>Authors:</strong> Minrui Xu, Zilin Wang, Mengyi DENG, Zhiwei Li, Zhicheng Yang, Xiao Zhu, Yinhong Liu, Boyu Zhu, Baiyu Huang, Chao Chen, Heyuan Deng, Fei Mi, Lifeng Shang, Xingshan Zeng, Zhijiang Guo</li>
+<li><strong>arXiv ID:</strong> 2605.18703</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18703</li>
+<li>HTML: https://arxiv.org/html/2605.18703v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18703</li>
+<li><strong>Tags:</strong> tool-use-agents, agentic-rl, environment-synthesis, trajectory-synthesis, llm-agents</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>EnvFactory proposes a fully automated framework for scaling tool-use agents by autonomously constructing verified executable environments from authentic online resources and synthesizing natural multi-turn trajectories with implicit intents, achieving up to +15% on BFCLv3 with only 85 environments.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Equipping LLMs with tool-use capabilities via Agentic RL is bottlenecked by the lack of scalable, robust execution environments and scarcity of realistic training data capturing implicit human reasoning. Existing approaches rely on costly real-world APIs, hallucination-prone LLM simulators, or synthetic environments that are often single-turn or depend on pre-collected documents, while synthetic trajectories are frequently over-specified and resemble instruction sequences rather than natural human intents.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Production environments (ToolLLM, StableToolBench, Toucan) use real-world APIs/MCPs but are costly and suffer network latency.</li>
+<li>Simulated environments (SimulatingEnvironments, Word2Word) use LLMs to emulate tools but are prone to hallucination.</li>
+<li>Synthetic environments (AutoForge, AgentScaler, EnvScaler, AWM) reconstruct tools via sandbox code but rely on pre-collected docs or existing task sets.</li>
+<li>Dependency tool graphs (GTool, ToolFlow, MAGNET, SOG) use semantic similarity or LLM reasoning for graph construction and random walks for sampling.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing synthetic environment methods either depend on pre-collected documents or existing task sets, limiting generalization to unseen tool ecosystems. Synthetic trajectories are often over-specified, enumerating explicit steps rather than reflecting natural human intents with implicit reasoning, which reduces their effectiveness for RL training.</p>
+<h3>P — Proposal</h3>
+<p>EnvFactory autonomously proposes tool-use scenarios, explores authentic online resources, and constructs stateful databases with executable tool interfaces via a three-agent pipeline (Search, Code, Test). It introduces topology-aware sampling that recursively resolves logical dependencies and a calibrated refinement stage that injects implicit intents and ambiguity into queries, producing natural multi-turn trajectories for both SFT and RL.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Using 85 verified environments across 7 domains, EnvFactory generates 2,575 trajectories (1,622 SFT + 953 RL). It improves Qwen3-series models by up to +15% on BFCLv3, +8.6% on MCP-Atlas, and +6% on conversational benchmarks (τ²-Bench and VitaBench), outperforming prior work that uses 5x more environments.</p>
+<h3>Ablation</h3>
+<p>Topology-aware sampling and calibrated refinement both contribute to performance; removing either degrades trajectory quality and downstream task accuracy (specific numbers not provided in abstract, but ablation in paper shows significant drops in pass rate and naturalness metrics).</p>
+<h3>Limitations</h3>
+<p>['The framework still requires access to authentic online resources for environment construction, which may have coverage biases.', 'The number of environments (85) is relatively small; scalability to hundreds or thousands of domains is not demonstrated.', 'The calibrated refinement step may introduce unnatural artifacts if not carefully tuned for different domains.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Fully automated environment construction eliminates manual curation, enabling scalable agentic RL training.</li>
+<li>Topology-aware sampling with implicit intents addresses the realism gap in synthetic trajectories, improving generalization.</li>
+<li>Data efficiency (85 environments outperforming 5x more) suggests that quality of environments and trajectories matters more than quantity.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply EnvFactory to more diverse domains (e.g., healthcare, legal) to test generalization.</li>
+<li>[ ] Integrate EnvFactory with online RL to continuously update environments based on agent failures.</li>
+<li>[ ] Explore combining EnvFactory with human-in-the-loop for refining implicit intent injection.</li>
+<li>[ ] Benchmark EnvFactory against production API-based methods on latency and cost.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18703</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18703" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

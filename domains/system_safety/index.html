@@ -33,8 +33,8 @@
   <section class="glass-card" style="border-left: 3px solid var(--accent);">
     <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);margin-bottom:0.5rem" class="lang-en">Daily Overview</h3>
     <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);margin-bottom:0.5rem" class="lang-zh">今日概览</h3>
-    <div class="lang-en">Today's system safety research reveals a strong emphasis on robustness and reliability under distribution shift, with several papers addressing geometric collapse in multimodal LLMs (Safety Geometry Collapse, ReGap) and adaptive drift correction in RL (BAPR). A standout contribution is the identification of an 'Execution Wall' in TeleCom-Bench, where LLMs excel at linguistic tasks but fail catastrophically on procedural execution (~30% accuracy), highlighting a critical safety gap for industrial deployment. The IBAL framework for multi-agent RL introduces information-theoretic adversarial attacks that break inter-agent coordination, offering a new lens for stress-testing cooperative systems. Noteworthy announcements include the Argus deep research agent achieving 86.2% on BrowseComp, and the A-ProS multi-model feedback system for reliable autonomous programming. Recurring themes include contamination-aware evaluation (tax law reasoning), predictive prefetching for RAG latency reduction, and the use of LLM-guided tree search for disease forecasting. The field is increasingly focused on bridging the gap between linguistic competence and safe, executable action in real-world systems.</div>
-    <div class="lang-zh">今日的系统安全研究高度关注分布偏移下的鲁棒性与可靠性，多篇论文探讨了多模态大语言模型中的几何塌缩（Safety Geometry Collapse, ReGap）以及强化学习中的自适应漂移校正（BAPR）。一项突出贡献是TeleCom-Bench中发现的“执行墙”（Execution Wall）：LLM在语言接口任务上准确率超过90%，但在程序执行任务（如解决方案生成）中骤降至约30%，凸显了工业部署的关键安全缺口。面向多智能体强化学习的IBAL框架引入了基于信息论的对抗攻击，破坏智能体间的协调，为压力测试合作系统提供了新视角。值得关注的公告包括：Argus深度研究智能体在BrowseComp上达到86.2%准确率，以及A-ProS多模型反馈系统实现可靠的自主编程。反复出现的主题包括：数据污染感知评估（税法推理）、面向RAG延迟降低的预测性预取（predictive prefetching），以及LLM引导的树搜索用于疾病预测。该领域正日益聚焦于弥合语言能力与安全可执行动作之间的鸿沟。</div>
+    <div class="lang-en">Today's system safety research is dominated by two recurring themes: the fragility of LLM reasoning under real-world constraints and the emergence of self-distillation as a core training technique. Standout papers include STT-Arena (item 5), which reveals that even top proprietary models achieve under 40% accuracy in spatio-temporal tool-use tasks, highlighting a critical safety gap in adaptive replanning. SCICONVBENCH (item 8) exposes another upstream failure: frontier LLMs resolve only 52.7% of disambiguation cases in scientific task formulation, often making silent assumptions. On the methodological side, Vision-OPD (item 3) and AMR-SD (item 4) both leverage self-distillation to narrow perception gaps and prevent late-stage collapse in RLVR, respectively. The General Preference Reinforcement Learning paper (item 14) extends GRPO-style online RL to open-ended tasks using intransitivity-aware preference embeddings, achieving 56.51% improvement. Noteworthy announcements include OpenAI's launch of DeployCo (item 22) for enterprise AI deployment, and security disclosures around the TanStack npm supply chain attack (item 26), which compromised two employee devices. The Codex-related items (items 24, 25, 27, 29, 30) collectively emphasize the growing integration of AI coding agents into enterprise workflows, with AutoScout24 reporting 87% weekly active usage.</div>
+    <div class="lang-zh">今日的系统安全研究呈现两大主题：LLM在现实约束下的推理脆弱性，以及自蒸馏作为核心训练技术的兴起。亮点论文包括STT-Arena（条目5），揭示即使顶级闭源模型在时空工具使用任务中准确率也不足40%，凸显自适应重规划中的关键安全缺口。SCICONVBENCH（条目8）暴露了另一上游失败：前沿LLM在科学任务公式化中仅解决52.7%的歧义情况，且常做出隐性假设。方法论方面，Vision-OPD（条目3）和AMR-SD（条目4）均利用自蒸馏分别缩小多模态感知差距和防止RLVR后期崩溃。General Preference Reinforcement Learning（条目14）将GRPO风格的在线RL扩展到开放式任务，使用不可传递性感知的偏好嵌入，实现56.51%的提升。值得关注的公告包括OpenAI推出DeployCo（条目22）用于企业AI部署，以及围绕TanStack npm供应链攻击（条目26）的安全披露，该攻击导致两台员工设备被入侵。与Codex相关的条目（24、25、27、29、30）共同强调AI编码代理在企业工作流中的日益整合，AutoScout24报告周活跃使用率达87%。</div>
   </section>
   
 
@@ -46,453 +46,233 @@
   <section data-tab="papers">
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1060.html">Are Sparse Autoencoder Benchmarks Reliable?</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1060.html">Are Sparse Autoencoder Benchmarks Reliable?</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1086.html">DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1086.html">DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">This paper audits SAEBench metrics and finds that TPP and SCR are unreliable, while sae-probes is the most reliable but still struggles to distinguish similar SAEs.</div>
-      <div class="lang-zh" style="font-size:0.9rem">This paper audits SAEBench metrics and finds that TPP and SCR are unreliable, while sae-probes is the most reliable but still struggles to distinguish similar SAEs.</div>
+      <div class="lang-en" style="font-size:0.9rem">DashAttention replaces the hard top-k block selection in hierarchical attention with differentiable α-entmax routing, enabling adaptive per-query sparsity and end-to-end gradient flow while achieving 75% sparsity with accuracy comparable to full attention.</div>
+      <div class="lang-zh" style="font-size:0.9rem">DashAttention replaces the hard top-k block selection in hierarchical attention with differentiable α-entmax routing, enabling adaptive per-query sparsity and end-to-end gradient flow while achieving 75% sparsity with accuracy comparable to full attention.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18229" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18753" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1061.html">Context Memorization for Efficient Long Context Generation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1061.html">Context Memorization for Efficient Long Context Generation</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1087.html">Code as Agent Harness</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1087.html">Code as Agent Harness</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Proposes a training-free, lookup-based attention-state memory that externalizes long prefixes to eliminate inference-time prefix attention, achieving accuracy gains over ICL and RAG with lower latency and memory footprint.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Proposes a training-free, lookup-based attention-state memory that externalizes long prefixes to eliminate inference-time prefix attention, achieving accuracy gains over ICL and RAG with lower latency and memory footprint.</div>
+      <div class="lang-en" style="font-size:0.9rem">This survey proposes that code serves as the executable, inspectable, and stateful medium for agent reasoning, acting, and environment modeling, shifting the focus from code as an output to code as the operational substrate for agentic AI.</div>
+      <div class="lang-zh" style="font-size:0.9rem">This survey proposes that code serves as the executable, inspectable, and stateful medium for agent reasoning, acting, and environment modeling, shifting the focus from code as an output to code as the operational substrate for agentic AI.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18226" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18747" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1062.html">PIPER: Content-Based Table Search via profiling and LLM-Generated Pseudoqueries</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1062.html">PIPER: Content-Based Table Search via profiling and LLM-Generated Pseudoqueries</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1088.html">Actionable World Representation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1088.html">Actionable World Representation</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">PIPER proposes a content-based tabular dataset retrieval method that uses table profiles and LLM-generated pseudoqueries to outperform both metadata-based and TableQA baselines in poor-metadata settings.</div>
-      <div class="lang-zh" style="font-size:0.9rem">PIPER proposes a content-based tabular dataset retrieval method that uses table profiles and LLM-generated pseudoqueries to outperform both metadata-based and TableQA baselines in poor-metadata settings.</div>
+      <div class="lang-en" style="font-size:0.9rem">WorldString proposes a unified neural architecture that learns actionable digital twins of articulated, skinned, and soft objects directly from point clouds or RGB-D video, enabling controllable state-conditioned 3D generation.</div>
+      <div class="lang-zh" style="font-size:0.9rem">WorldString proposes a unified neural architecture that learns actionable digital twins of articulated, skinned, and soft objects directly from point clouds or RGB-D video, enabling controllable state-conditioned 3D generation.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18199" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18743" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1063.html">Beyond the Cartesian Illusion: Testing Two-Stage Multi-Modal Theory of Mind under Perceptual Bottlenecks</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1063.html">Beyond the Cartesian Illusion: Testing Two-Stage Multi-Modal Theory of Mind under Perceptual Bottlenecks</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1089.html">Vision-OPD: Learning to See Fine Details for Multimodal LLMs via On-Policy Self-Distillation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1089.html">Vision-OPD: Learning to See Fine Details for Multimodal LLMs via On-Policy Self-Distillation</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">This paper exposes the 'Cartesian Illusion' in MLLMs and proposes a two-stage, sensory-bounded reasoning pipeline for second-order Theory of Mind that significantly outperforms baselines in occluded multi-agent scenarios.</div>
-      <div class="lang-zh" style="font-size:0.9rem">This paper exposes the 'Cartesian Illusion' in MLLMs and proposes a two-stage, sensory-bounded reasoning pipeline for second-order Theory of Mind that significantly outperforms baselines in occluded multi-agent scenarios.</div>
+      <div class="lang-en" style="font-size:0.9rem">Vision-OPD proposes a self-distillation framework that transfers a model's own crop-conditioned perception to full-image inference, significantly narrowing the regional-to-global perception gap in MLLMs without external teachers or inference-time tool use.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Vision-OPD proposes a self-distillation framework that transfers a model's own crop-conditioned perception to full-image inference, significantly narrowing the regional-to-global perception gap in MLLMs without external teachers or inference-time tool use.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18194" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18740" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1064.html">Pairwise Preference Reward and Group-Based Diversity Enhancement for Superior Open-Ended Generation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1064.html">Pairwise Preference Reward and Group-Based Diversity Enhancement for Superior Open-Ended Generation</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1090.html">What Does the AI Doctor Value? Auditing Pluralism in the Clinical Ethics of Language Models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1090.html">What Does the AI Doctor Value? Auditing Pluralism in the Clinical Ethics of Language Models</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">PPR-GDE proposes a reinforcement learning method for open-ended generation that uses pairwise preference rewards and group-based diversity enhancement to achieve better alignment and diversity than GRPO and PPO.</div>
-      <div class="lang-zh" style="font-size:0.9rem">PPR-GDE proposes a reinforcement learning method for open-ended generation that uses pairwise preference rewards and group-based diversity enhancement to achieve better alignment and diversity than GRPO and PPO.</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper audits value pluralism in LLMs by constructing a benchmark of 50 clinical ethical dilemmas and using a revealed-preference attribution method to show that individual models are near-deterministic and systematically underweight patient autonomy, risking a deployment monoculture.</div>
+      <div class="lang-zh" style="font-size:0.9rem">This paper audits value pluralism in LLMs by constructing a benchmark of 50 clinical ethical dilemmas and using a revealed-preference attribution method to show that individual models are near-deterministic and systematically underweight patient autonomy, risking a deployment monoculture.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18191" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18738" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1065.html">Vision Inference Former: Sustaining Visual Consistency in Multimodal Large Language Models</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1065.html">Vision Inference Former: Sustaining Visual Consistency in Multimodal Large Language Models</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1091.html">Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1091.html">Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">VIF introduces a lightweight module that continuously injects visual semantics during decoding to combat visual consistency decay in MLLMs, showing consistent gains across 14 benchmarks.</div>
-      <div class="lang-zh" style="font-size:0.9rem">VIF introduces a lightweight module that continuously injects visual semantics during decoding to combat visual consistency decay in MLLMs, showing consistent gains across 14 benchmarks.</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper shows that factual recall quality in LLMs follows a sigmoid scaling law in the log-linear combination of model size and topic frequency in training data, explaining up to 94% of variance within model families.</div>
+      <div class="lang-zh" style="font-size:0.9rem">This paper shows that factual recall quality in LLMs follows a sigmoid scaling law in the log-linear combination of model size and topic frequency in training data, explaining up to 94% of variance within model families.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18160" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18732" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1066.html">Foundation Models for Credit Risk Prediction: A Game Changer?</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1066.html">Foundation Models for Credit Risk Prediction: A Game Changer?</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1092.html">General Preference Reinforcement Learning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1092.html">General Preference Reinforcement Learning</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Tabular foundation models (PFNs) outperform tuned GBMs and deep learning baselines in PD and LGD prediction, especially in small-data settings, without any hyperparameter tuning.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Tabular foundation models (PFNs) outperform tuned GBMs and deep learning baselines in PD and LGD prediction, especially in small-data settings, without any hyperparameter tuning.</div>
+      <div class="lang-en" style="font-size:0.9rem">GPRL extends GRPO-style online RL to open-ended tasks by replacing scalar rewards with a multi-dimensional, intransitivity-aware preference embedding from the General Preference Model, achieving 56.51% length-controlled win rate on AlpacaEval 2.0 while resisting reward hacking.</div>
+      <div class="lang-zh" style="font-size:0.9rem">GPRL extends GRPO-style online RL to open-ended tasks by replacing scalar rewards with a multi-dimensional, intransitivity-aware preference embedding from the General Preference Model, achieving 56.51% length-controlled win rate on AlpacaEval 2.0 while resisting reward hacking.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18147" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18721" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1067.html">Evidence-Grounded Frontier Mapping and Agentic Hypothesis Generation in Nanomedicine</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1067.html">Evidence-Grounded Frontier Mapping and Agentic Hypothesis Generation in Nanomedicine</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1093.html">Semantic Generative Tuning for Unified Multimodal Models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1093.html">Semantic Generative Tuning for Unified Multimodal Models</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">pArticleMap introduces a literature-mapping and agentic hypothesis-generation system that targets low-density bridge regions in nanomedicine, achieving a 61.0% future-neighborhood rate in retrospective benchmarks.</div>
-      <div class="lang-zh" style="font-size:0.9rem">pArticleMap introduces a literature-mapping and agentic hypothesis-generation system that targets low-density bridge regions in nanomedicine, achieving a 61.0% future-neighborhood rate in retrospective benchmarks.</div>
+      <div class="lang-en" style="font-size:0.9rem">SGT shows that using image segmentation as a generative proxy significantly improves both visual understanding and generation in unified multimodal models, achieving a 6.02% gain on CV-Bench and 90.0% on GenEval.</div>
+      <div class="lang-zh" style="font-size:0.9rem">SGT shows that using image segmentation as a generative proxy significantly improves both visual understanding and generation in unified multimodal models, achieving a 6.02% gain on CV-Bench and 90.0% on GenEval.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18144" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18714" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1068.html">Generative AI and the Productivity Divide: Human-AI Complementarities in Education</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1068.html">Generative AI and the Productivity Divide: Human-AI Complementarities in Education</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1094.html">EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1094.html">EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">GenAI access raises average task performance but creates a new productivity divide driven by AI Interaction Competence (AIC), not traditional measures like GPA.</div>
-      <div class="lang-zh" style="font-size:0.9rem">GenAI access raises average task performance but creates a new productivity divide driven by AI Interaction Competence (AIC), not traditional measures like GPA.</div>
+      <div class="lang-en" style="font-size:0.9rem">EnvFactory proposes a fully automated framework for scaling tool-use agents by autonomously constructing verified executable environments from authentic online resources and synthesizing natural multi-turn trajectories with implicit intents, achieving up to +15% on BFCLv3 with only 85 environments.</div>
+      <div class="lang-zh" style="font-size:0.9rem">EnvFactory proposes a fully automated framework for scaling tool-use agents by autonomously constructing verified executable environments from authentic online resources and synthesizing natural multi-turn trajectories with implicit intents, achieving up to +15% on BFCLv3 with only 85 environments.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18143" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18703" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1069.html">Faculty Orientations Shape Adoption of AI in Research and Teaching</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1069.html">Faculty Orientations Shape Adoption of AI in Research and Teaching</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1095.html">Democratizing Large-Scale Re-Optimization with LLM-Guided Model Patches</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1095.html">Democratizing Large-Scale Re-Optimization with LLM-Guided Model Patches</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Faculty AI adoption is driven not by attitudes or institutional support but by a coherent 'AI pedagogical orientation' reflecting beliefs about AI's role in disciplinary thinking and expertise.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Faculty AI adoption is driven not by attitudes or institutional support but by a coherent 'AI pedagogical orientation' reflecting beliefs about AI's role in disciplinary thinking and expertise.</div>
+      <div class="lang-en" style="font-size:0.9rem">Key claim: LLMs can act as OR experts to dynamically re-optimize large-scale industrial models via natural-language patches; key observation: a toolbox of primal information and solver-aware techniques is essential for scalability and solution quality.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Key claim: LLMs can act as OR experts to dynamically re-optimize large-scale industrial models via natural-language patches; key observation: a toolbox of primal information and solver-aware techniques is essential for scalability and solution quality.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18140" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18692" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1070.html">How Good LLMs Are at Answering Bangla Medical Visual Questions? Dataset and Benchmarking</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1070.html">How Good LLMs Are at Answering Bangla Medical Visual Questions? Dataset and Benchmarking</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1096.html">Lance: Unified Multimodal Modeling by Multi-Task Synergy</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1096.html">Lance: Unified Multimodal Modeling by Multi-Task Synergy</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Introduces the first clinically validated Bangla MedVQA dataset and shows that even top models like Gemini and GPT-4.1 mini achieve only 40.38% and 26.50% accuracy, with performance on specialized diagnostic questions falling below random chance.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Introduces the first clinically validated Bangla MedVQA dataset and shows that even top models like Gemini and GPT-4.1 mini achieve only 40.38% and 26.50% accuracy, with performance on specialized diagnostic questions falling below random chance.</div>
+      <div class="lang-en" style="font-size:0.9rem">Lance proposes a lightweight native unified multimodal model that achieves strong image/video generation and understanding via a dual-stream MoE architecture and staged multi-task training, outperforming open-source unified models with only 3B activated parameters.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Lance proposes a lightweight native unified multimodal model that achieves strong image/video generation and understanding via a dual-stream MoE architecture and staged multi-task training, outperforming open-source unified models with only 3B activated parameters.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18111" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18678" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1071.html">Safety Geometry Collapse in Multimodal LLMs and Adaptive Drift Correction</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1071.html">Safety Geometry Collapse in Multimodal LLMs and Adaptive Drift Correction</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1097.html">COOPO: Cyclic Offline-Online Policy Optimization Algorithm</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1097.html">COOPO: Cyclic Offline-Online Policy Optimization Algorithm</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Key claim: Multimodal inputs cause a systematic geometric collapse of the refusal direction in MLLMs, and key observation: counteracting modality-induced drift via a self-rectification signal (ReGap) restores safety without harming general capability.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Key claim: Multimodal inputs cause a systematic geometric collapse of the refusal direction in MLLMs, and key observation: counteracting modality-induced drift via a self-rectification signal (ReGap) restores safety without harming general capability.</div>
+      <div class="lang-en" style="font-size:0.9rem">COOPO proposes a cyclic offline-online RL framework that repeatedly anchors the policy to a static dataset via KL-regularized updates to eliminate catastrophic forgetting and distributional shift, achieving better sample efficiency and final returns than state-of-the-art hybrid methods.</div>
+      <div class="lang-zh" style="font-size:0.9rem">COOPO proposes a cyclic offline-online RL framework that repeatedly anchors the policy to a static dataset via KL-regularized updates to eliminate catastrophic forgetting and distributional shift, achieving better sample efficiency and final returns than state-of-the-art hybrid methods.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18104" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18675" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1072.html">A Data-Efficient Path to Multilingual LLMs: Language Expansion via Post-training PARAM$Δ$ Integration into Upcycled MoE</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1072.html">A Data-Efficient Path to Multilingual LLMs: Language Expansion via Post-training PARAM$Δ$ Integration into Upcycled MoE</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1098.html">Generative AI Advertising as a Problem of Trustworthy Commercial Intervention</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1098.html">Generative AI Advertising as a Problem of Trustworthy Commercial Intervention</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">DeltaMoE resolves the trade-off between preserving original abilities and acquiring new languages by upcycling a dense LLM into an MoE and grafting a post-training delta, achieving +1.7 expanded language and +1.5 original language preservation over delta merging baselines.</div>
-      <div class="lang-zh" style="font-size:0.9rem">DeltaMoE resolves the trade-off between preserving original abilities and acquiring new languages by upcycling a dense LLM into an MoE and grafting a post-training delta, achieving +1.7 expanded language and +1.5 original language preservation over delta merging baselines.</div>
+      <div class="lang-en" style="font-size:0.9rem">Generative AI advertising shifts from content placement to process intervention, creating a trustworthiness crisis that current detection and disclosure frameworks cannot address.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Generative AI advertising shifts from content placement to process intervention, creating a trustworthiness crisis that current detection and disclosure frameworks cannot address.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18083" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18673" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1073.html">LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1073.html">LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1099.html">SCICONVBENCH: Benchmarking LLMs on Multi-Turn Clarification for Task Formulation in Computational Science</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1099.html">SCICONVBENCH: Benchmarking LLMs on Multi-Turn Clarification for Task Formulation in Computational Science</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">LMAC uses an LLM to iteratively design and refine a communication protocol for cooperative MARL, explicitly targeting state reconstruction accuracy and uniformity across agents.</div>
-      <div class="lang-zh" style="font-size:0.9rem">LMAC uses an LLM to iteratively design and refine a communication protocol for cooperative MARL, explicitly targeting state reconstruction accuracy and uniformity across agents.</div>
+      <div class="lang-en" style="font-size:0.9rem">SCICONVBENCH reveals that frontier LLMs resolve only 52.7% of disambiguation cases in fluid mechanics and frequently make silent assumptions, highlighting a critical upstream failure in scientific task formulation.</div>
+      <div class="lang-zh" style="font-size:0.9rem">SCICONVBENCH reveals that frontier LLMs resolve only 52.7% of disambiguation cases in fluid mechanics and frequently make silent assumptions, highlighting a critical upstream failure in scientific task formulation.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18077" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18630" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1074.html">A-ProS: Towards Reliable Autonomous Programming Through Multi-Model Feedback</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1074.html">A-ProS: Towards Reliable Autonomous Programming Through Multi-Model Feedback</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1100.html">CrossView Suite: Harnessing Cross-view Spatial Intelligence of MLLMs with Dataset, Model and Benchmark</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1100.html">CrossView Suite: Harnessing Cross-view Spatial Intelligence of MLLMs with Dataset, Model and Benchmark</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">A-ProS proposes a hybrid multi-model feedback framework that separates solution generation from specialized debugging, achieving over 2x greater gains than baseline agent loops on competitive programming problems.</div>
-      <div class="lang-zh" style="font-size:0.9rem">A-ProS proposes a hybrid multi-model feedback framework that separates solution generation from specialized debugging, achieving over 2x greater gains than baseline agent loops on competitive programming problems.</div>
+      <div class="lang-en" style="font-size:0.9rem">CrossView Suite proposes a unified dataset (CrossViewSet), benchmark (CrossViewBench), and model (CrossViewer) to enable MLLMs to perform explicit object-level cross-view spatial reasoning, addressing the lack of large-scale mask-grounded training data, comprehensive evaluation, and alignment mechanisms.</div>
+      <div class="lang-zh" style="font-size:0.9rem">CrossView Suite proposes a unified dataset (CrossViewSet), benchmark (CrossViewBench), and model (CrossViewer) to enable MLLMs to perform explicit object-level cross-view spatial reasoning, addressing the lack of large-scale mask-grounded training data, comprehensive evaluation, and alignment mechanisms.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18073" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18621" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1075.html">PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1075.html">PPAI: Enabling Personalized LLM Agent Interoperability for Collaborative Edge Intelligence</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1105.html">MA$^{2}$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1105.html">MA$^{2}$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">PPAI is the first system for personalized LLM agent interoperability in P2P edge networks, achieving up to 7.96% accuracy improvement and 16.34% latency reduction by matching queries to specialized remote agents.</div>
-      <div class="lang-zh" style="font-size:0.9rem">PPAI is the first system for personalized LLM agent interoperability in P2P edge networks, achieving up to 7.96% accuracy improvement and 16.34% latency reduction by matching queries to specialized remote agents.</div>
+      <div class="lang-en" style="font-size:0.9rem">MA$^{2}$P proposes a meta-cognitive multi-agent framework that improves persuasive dialogue success by inferring latent mental states and selecting domain-adaptive strategies, outperforming LLM baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">MA$^{2}$P proposes a meta-cognitive multi-agent framework that improves persuasive dialogue success by inferring latent mental states and selecting domain-adaptive strategies, outperforming LLM baselines.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18067" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18572" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1076.html">FedSDR: Federated Self-Distillation with Rectification</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1076.html">FedSDR: Federated Self-Distillation with Rectification</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1106.html">Query-Conditioned Knowledge Alignment for Reliable Cross-System Medical Reasoning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1106.html">Query-Conditioned Knowledge Alignment for Reliable Cross-System Medical Reasoning</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">FedSDR proposes a data-centric paradigm for federated LLM fine-tuning that uses self-distillation to align heterogeneous client data distributions, and introduces a dual-stream LoRA mechanism to resolve the 'Rewrite Paradox' where unconstrained distillation increases hallucinations.</div>
-      <div class="lang-zh" style="font-size:0.9rem">FedSDR proposes a data-centric paradigm for federated LLM fine-tuning that uses self-distillation to align heterogeneous client data distributions, and introduces a dual-stream LoRA mechanism to resolve the 'Rewrite Paradox' where unconstrained distillation increases hallucinations.</div>
+      <div class="lang-en" style="font-size:0.9rem">QCEA reformulates entity alignment as a query-conditioned ranking problem to handle context-dependent, asymmetric, and many-to-many correspondences in cross-system medical knowledge graphs, showing consistent improvements in Hit@K and MRR over static baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">QCEA reformulates entity alignment as a query-conditioned ranking problem to handle context-dependent, asymmetric, and many-to-many correspondences in cross-system medical knowledge graphs, showing consistent improvements in Hit@K and MRR over static baselines.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18028" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18570" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1077.html">TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications?</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1077.html">TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications?</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1107.html">Estimating Item Difficulty with Large Language Models as Experts</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1107.html">Estimating Item Difficulty with Large Language Models as Experts</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">TeleCom-Bench reveals a universal 'Execution Wall' where LLMs achieve >90% accuracy on linguistic interface tasks but collapse to ~30% on procedural execution tasks like solution generation in telecom.</div>
-      <div class="lang-zh" style="font-size:0.9rem">TeleCom-Bench reveals a universal 'Execution Wall' where LLMs achieve >90% accuracy on linguistic interface tasks but collapse to ~30% on procedural execution tasks like solution generation in telecom.</div>
+      <div class="lang-en" style="font-size:0.9rem">LLMs can estimate item difficulty with moderate-to-strong correlation to empirical data, with pairwise comparison outperforming absolute judgement, and token probabilities plus few-shot prompting closing the gap.</div>
+      <div class="lang-zh" style="font-size:0.9rem">LLMs can estimate item difficulty with moderate-to-strong correlation to empirical data, with pairwise comparison outperforming absolute judgement, and token probabilities plus few-shot prompting closing the gap.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18025" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18562" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1078.html">Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1078.html">Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1108.html">Federated Martingale Posterior Samping</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1108.html">Federated Martingale Posterior Samping</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">IBAL proposes an information-theoretic adversarial attack that breaks inter-agent coordination by minimizing mutual information between groups, and trains robust policies under such disruptions.</div>
-      <div class="lang-zh" style="font-size:0.9rem">IBAL proposes an information-theoretic adversarial attack that breaks inter-agent coordination by minimizing mutual information between groups, and trains robust policies under such disruptions.</div>
+      <div class="lang-en" style="font-size:0.9rem">Federated Martingale Posterior (FMP) replaces the prior-likelihood pair with a predictive distribution and enables one-shot embarrassingly parallel Bayesian inference by having clients upload compressed data embeddings instead of raw data.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Federated Martingale Posterior (FMP) replaces the prior-likelihood pair with a predictive distribution and enables one-shot embarrassingly parallel Bayesian inference by having clients upload compressed data embeddings instead of raw data.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18024" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18554" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1079.html">LogRouter: Adaptive Two-Level LLM Routing for Log Question Answering in Big Data Systems</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1079.html">LogRouter: Adaptive Two-Level LLM Routing for Log Question Answering in Big Data Systems</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1109.html">STT-Arena: A More Realistic Environment for Tool-Using with Spatio-Temporal Dynamics</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1109.html">STT-Arena: A More Realistic Environment for Tool-Using with Spatio-Temporal Dynamics</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">LogRouter proposes a two-level cost-aware router for log QA that achieves 88.4% mean accuracy and 55% latency reduction over a fixed-32B baseline by dispatching queries to LLM-bypass paths or appropriately-sized generators.</div>
-      <div class="lang-zh" style="font-size:0.9rem">LogRouter proposes a two-level cost-aware router for log QA that achieves 88.4% mean accuracy and 55% latency reduction over a fixed-32B baseline by dispatching queries to LLM-bypass paths or appropriately-sized generators.</div>
+      <div class="lang-en" style="font-size:0.9rem">STT-Arena introduces a benchmark for evaluating LLMs' adaptive replanning under spatio-temporal dynamics, revealing that even the best proprietary models achieve under 40% accuracy.</div>
+      <div class="lang-zh" style="font-size:0.9rem">STT-Arena introduces a benchmark for evaluating LLMs' adaptive replanning under spatio-temporal dynamics, revealing that even the best proprietary models achieve under 40% accuracy.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18015" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18548" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1080.html">RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1080.html">RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1110.html">AMR-SD: Asymmetric Meta-Reflective Self-Distillation for Token-Level Credit Assignment</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1110.html">AMR-SD: Asymmetric Meta-Reflective Self-Distillation for Token-Level Credit Assignment</a></h2>
       <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">RL4RLA proposes a general RL framework that automates the discovery of interpretable, symbolic randomized linear algebra algorithms by using a numerical curriculum and Monte Carlo Graph Search to overcome sparse rewards and vast search spaces.</div>
-      <div class="lang-zh" style="font-size:0.9rem">RL4RLA proposes a general RL framework that automates the discovery of interpretable, symbolic randomized linear algebra algorithms by using a numerical curriculum and Monte Carlo Graph Search to overcome sparse rewards and vast search spaces.</div>
+      <div class="lang-en" style="font-size:0.9rem">AMR-SD introduces a reflection bottleneck and Causal Information Gain (CIG) to achieve sparse, token-level credit assignment in RLVR for LLMs, preventing late-stage collapse and outperforming GRPO and self-distillation baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">AMR-SD introduces a reflection bottleneck and Causal Information Gain (CIG) to achieve sparse, token-level credit assignment in RLVR for LLMs, preventing late-stage collapse and outperforming GRPO and self-distillation baselines.</div>
       
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18004" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1081.html">MARR: Module-Adaptive Residual Reconstruction for Low-Bit Post-Training Quantization</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1081.html">MARR: Module-Adaptive Residual Reconstruction for Low-Bit Post-Training Quantization</a></h2>
-      <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">MARR proposes module-adaptive scaling of residual terms in low-bit PTQ to balance accumulated-error correction and Hessian-approximation bias, achieving up to 20.2% performance gains on LLMs.</div>
-      <div class="lang-zh" style="font-size:0.9rem">MARR proposes module-adaptive scaling of residual terms in low-bit PTQ to balance accumulated-error correction and Hessian-approximation bias, achieving up to 20.2% performance gains on LLMs.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17997" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1082.html">Predictive Prefetching for Retrieval-Augmented Generation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1082.html">Predictive Prefetching for Retrieval-Augmented Generation</a></h2>
-      <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">Key claim: predictive prefetching of retrieval based on semantic precursors can reduce RAG latency by 43.5% while maintaining answer quality; key observation: retrieval needs are preceded by identifiable semantic precursors 8-16 tokens before uncertainty becomes critical.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Key claim: predictive prefetching of retrieval based on semantic precursors can reduce RAG latency by 43.5% while maintaining answer quality; key observation: retrieval needs are preceded by identifiable semantic precursors 8-16 tokens before uncertainty becomes critical.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17989" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1083.html">AutoVecCoder: Teaching LLMs to Generate Explicitly Vectorized Code</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1083.html">AutoVecCoder: Teaching LLMs to Generate Explicitly Vectorized Code</a></h2>
-      <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">AutoVecCoder proposes a framework combining automated data synthesis (VecPrompt) and reinforcement learning (VecRL) to teach LLMs to generate explicitly vectorized SIMD code, achieving SOTA on SimdBench and sometimes surpassing -O3 compiler optimizations.</div>
-      <div class="lang-zh" style="font-size:0.9rem">AutoVecCoder proposes a framework combining automated data synthesis (VecPrompt) and reinforcement learning (VecRL) to teach LLMs to generate explicitly vectorized SIMD code, achieving SOTA on SimdBench and sometimes surpassing -O3 compiler optimizations.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17978" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1084.html">Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1084.html">Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery</a></h2>
-      <div class="meta">arxiv · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">LGBO embeds LLM preferences into every BO iteration via a region-lifted preference mechanism, achieving 90% of best observed value within 6 iterations in wet-lab Fe-Cr electrolyte optimization vs. >10 for baselines.</div>
-      <div class="lang-zh" style="font-size:0.9rem">LGBO embeds LLM preferences into every BO iteration via a region-lifted preference mechanism, achieving 90% of best observed value within 6 iterations in wet-lab Fe-Cr electrolyte optimization vs. >10 for baselines.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.17976" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/999.html">Second-Order Multi-Level Variance Correction for Modality Competition in Multimodal Models</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/999.html">Second-Order Multi-Level Variance Correction for Modality Competition in Multimodal Models</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Second-order optimization (ML-FOP-SOAP) stabilizes multimodal training by reducing modality competition via Fisher-Orthogonal Projection and multi-level variance correction, achieving 1.4x sample efficiency and 1.5x wall-clock speedup over AdamW.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Second-order optimization (ML-FOP-SOAP) stabilizes multimodal training by reducing modality competition via Fisher-Orthogonal Projection and multi-level variance correction, achieving 1.4x sample efficiency and 1.5x wall-clock speedup over AdamW.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16165" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1000.html">Learn Where Outcomes Diverge: Efficient VLA RL via Probabilistic Chunk Masking</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1000.html">Learn Where Outcomes Diverge: Efficient VLA RL via Probabilistic Chunk Masking</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">PCM shows that gradient computation dominates GRPO-based VLA RL (78% wall-clock time) and proposes a drop-in method to allocate gradient compute only to outcome-divergent trajectory phases, achieving 2.38x speedup with no reward model.</div>
-      <div class="lang-zh" style="font-size:0.9rem">PCM shows that gradient computation dominates GRPO-based VLA RL (78% wall-clock time) and proposes a drop-in method to allocate gradient compute only to outcome-divergent trajectory phases, achieving 2.38x speedup with no reward model.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16154" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1001.html">Look Before You Leap: Autonomous Exploration for LLM Agents</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1001.html">Look Before You Leap: Autonomous Exploration for LLM Agents</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Key claim: LLM agents fail in unfamiliar environments due to premature exploitation; key observation: task-oriented RL training does not yield autonomous exploration, but explicitly training with an exploration reward (ECC) enables systematic information gathering and improves downstream task performance.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Key claim: LLM agents fail in unfamiliar environments due to premature exploitation; key observation: task-oriented RL training does not yield autonomous exploration, but explicitly training with an exploration reward (ECC) enables systematic information gathering and improves downstream task performance.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16143" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1002.html">SGR: A Stepwise Reasoning Framework for LLMs with External Subgraph Generation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1002.html">SGR: A Stepwise Reasoning Framework for LLMs with External Subgraph Generation</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">SGR improves LLM reasoning by dynamically constructing query-specific subgraphs from external knowledge bases to guide stepwise inference, achieving consistent gains over baselines on multiple benchmarks.</div>
-      <div class="lang-zh" style="font-size:0.9rem">SGR improves LLM reasoning by dynamically constructing query-specific subgraphs from external knowledge bases to guide stepwise inference, achieving consistent gains over baselines on multiple benchmarks.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16117" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1003.html">DebiasRAG: A Tuning-Free Path to Fair Generation in Large Language Models through Retrieval-Augmented Generation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1003.html">DebiasRAG: A Tuning-Free Path to Fair Generation in Large Language Models through Retrieval-Augmented Generation</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">DebiasRAG proposes a tuning-free, query-specific debiasing framework using retrieval-augmented generation to mitigate social biases in LLMs without degrading their intrinsic capabilities.</div>
-      <div class="lang-zh" style="font-size:0.9rem">DebiasRAG proposes a tuning-free, query-specific debiasing framework using retrieval-augmented generation to mitigate social biases in LLMs without degrading their intrinsic capabilities.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16113" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1004.html">Can Large Language Models Imitate Human Speech for Clinical Assessment? LLM-Driven Data Augmentation for Cognitive Score Prediction</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1004.html">Can Large Language Models Imitate Human Speech for Clinical Assessment? LLM-Driven Data Augmentation for Cognitive Score Prediction</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">LLM-driven cross-modal augmentation using written narratives to generate oral-style speech improves cognitive score prediction from small, imbalanced clinical datasets.</div>
-      <div class="lang-zh" style="font-size:0.9rem">LLM-driven cross-modal augmentation using written narratives to generate oral-style speech improves cognitive score prediction from small, imbalanced clinical datasets.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16077" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1005.html">ITGPT: Generative Pretraining on Irregular Timeseries</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1005.html">ITGPT: Generative Pretraining on Irregular Timeseries</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">ITGPT extends ITNet with GPT-like generative pretraining and SSL objectives for irregularly sampled multimodal timeseries, achieving SOTA without resampling or imputation.</div>
-      <div class="lang-zh" style="font-size:0.9rem">ITGPT extends ITNet with GPT-like generative pretraining and SSL objectives for irregularly sampled multimodal timeseries, achieving SOTA without resampling or imputation.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16069" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1006.html">Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1006.html">Reasoners or Translators? Contamination-aware Evaluation and Neuro-Symbolic Robustness in Tax Law</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Key claim: LLM performance on tax law reasoning is inflated by data contamination, and neuro-symbolic frameworks (LLM + Prolog) are more robust and generalize better; key observation: legal reasoning is inherently compositional.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Key claim: LLM performance on tax law reasoning is inflated by data contamination, and neuro-symbolic frameworks (LLM + Prolog) are more robust and generalize better; key observation: legal reasoning is inherently compositional.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16052" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1007.html">Mind Dreamer: Untethering Imagination via Active Latent Intervention on Latent Manifolds</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1007.html">Mind Dreamer: Untethering Imagination via Active Latent Intervention on Latent Manifolds</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Mind Dreamer proposes Active Latent Intervention (ALI) to overcome the Historical Tethering limitation in MBRL by synthesizing non-continuous latent jumps, achieving up to 8.8x speedup on sparse-reward tasks.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Mind Dreamer proposes Active Latent Intervention (ALI) to overcome the Historical Tethering limitation in MBRL by synthesizing non-continuous latent jumps, achieving up to 8.8x speedup on sparse-reward tasks.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16030" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1008.html">From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1008.html">From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">S2ST-Omni 2 replaces flat language labels with structured typological priors for multilingual speech-to-speech translation, achieving average BLEU gains of 5.8% over S2ST-Omni on CVSS-C.</div>
-      <div class="lang-zh" style="font-size:0.9rem">S2ST-Omni 2 replaces flat language labels with structured typological priors for multilingual speech-to-speech translation, achieving average BLEU gains of 5.8% over S2ST-Omni on CVSS-C.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16026" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1011.html">Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1011.html">Reference-Free Reinforcement Learning Fine-Tuning for MT: A Seq2Seq Perspective</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Applies GRPO to encoder-decoder NLLB-200 (600M/1.3B) with a reference-free hybrid reward (LaBSE+COMET-Kiwi), achieving up to +5.03 chrF++ on 13 languages without parallel data at fine-tuning time.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Applies GRPO to encoder-decoder NLLB-200 (600M/1.3B) with a reference-free hybrid reward (LaBSE+COMET-Kiwi), achieving up to +5.03 chrF++ on 13 languages without parallel data at fine-tuning time.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.15976" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/994.html">AI-Mediated Communication Can Steer Collective Opinion</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/994.html">AI-Mediated Communication Can Steer Collective Opinion</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Shows that LLMs used to mediate human-to-human communication on social platforms introduce directional biases that can be amplified through network effects to shift collective opinion, with empirical evidence from multiple LLM families and a real-world audit of X's 'Explain this post' feature.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Shows that LLMs used to mediate human-to-human communication on social platforms introduce directional biases that can be amplified through network effects to shift collective opinion, with empirical evidence from multiple LLM families and a real-world audit of X's 'Explain this post' feature.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16245" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/995.html">Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/995.html">Prospective multi-pathogen disease forecasting using autonomous LLM-guided tree search</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">LLM-guided tree search autonomously generates and optimizes infectious disease forecasting models that match or beat human-curated CDC ensembles in real-time.</div>
-      <div class="lang-zh" style="font-size:0.9rem">LLM-guided tree search autonomously generates and optimizes infectious disease forecasting models that match or beat human-curated CDC ensembles in real-time.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16238" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/996.html">Argus: Evidence Assembly for Scalable Deep Research Agents</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/996.html">Argus: Evidence Assembly for Scalable Deep Research Agents</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Argus proposes a cooperative agent system (Searcher + Navigator) that treats deep research as assembling a jigsaw of complementary evidence pieces, achieving 86.2% on BrowseComp with 64 parallel Searchers while keeping the Navigator's reasoning context under 21.5K tokens.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Argus proposes a cooperative agent system (Searcher + Navigator) that treats deep research as assembling a jigsaw of complementary evidence pieces, achieving 86.2% on BrowseComp with 64 parallel Searchers while keeping the Navigator's reasoning context under 21.5K tokens.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16217" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/997.html">Improving Cross-Cultural Survey Simulation with Calibrated Value Personas</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/997.html">Improving Cross-Cultural Survey Simulation with Calibrated Value Personas</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Proposes value-based personas derived from survey responses and a calibration procedure to improve LLM-based cross-cultural survey simulation, reducing prediction error especially for underrepresented populations.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Proposes value-based personas derived from survey responses and a calibration procedure to improve LLM-based cross-cultural survey simulation, reducing prediction error especially for underrepresented populations.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16193" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/998.html">BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/998.html">BAPR: Bayesian amnesic piecewise-robust reinforcement learning for non-stationary continuous control</a></h2>
-      <div class="meta">arxiv · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">BAPR unifies Bayesian Online Change Detection with robust ensemble RL to achieve adaptive conservatism under piecewise stationary dynamics, with formal contraction guarantees and machine-verified proofs in Lean 4.</div>
-      <div class="lang-zh" style="font-size:0.9rem">BAPR unifies Bayesian Online Change Detection with robust ensemble RL to achieve adaptive conservatism under piecewise stationary dynamics, with formal contraction guarantees and machine-verified proofs in Lean 4.</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.16170" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18529" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
@@ -501,176 +281,231 @@
   <section data-tab="news">
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1059.html">OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1059.html">OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments</a></h2>
+      <h2 class="lang-en"><a href="../../articles/1131.html">OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1131.html">OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments</a></h2>
       <div class="meta">openai_rss · 2026-05-19</div>
-      <div class="lang-en" style="font-size:0.9rem">OpenAI has partnered with Dell to deploy its Codex AI coding assistant in hybrid and on-premise enterprise environments. This collaboration aims to bring advanced AI-powered code generation and assistance directly into corporate data centers, addressing security, latency, and data sovereignty concerns. By integrating Codex with Dell's infrastructure, enterprises can leverage AI for software development while maintaining control over sensitive data. The move signals a shift toward making large language models accessible in regulated industries that require on-premise deployment.</div>
-      <div class="lang-zh" style="font-size:0.9rem">OpenAI与Dell合作，将Codex AI编程助手部署到混合云和本地企业环境中。该合作旨在将先进的AI代码生成能力引入企业数据中心，解决安全、延迟和数据主权问题。通过集成Dell的基础设施，企业可在保持对敏感数据控制的同时，利用AI加速软件开发。此举标志着大语言模型向需要本地部署的受监管行业拓展。</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI and Dell Technologies have partnered to deploy Codex in hybrid and on-premises enterprise environments. Codex, used by over 4 million developers weekly, is expanding beyond coding into tasks like report preparation and lead qualification. The collaboration integrates Codex with Dell's AI Data Platform and AI Factory, enabling secure, governed access to enterprise data and systems. This allows businesses to deploy AI agents closer to their existing infrastructure, supporting software development and knowledge work with enhanced context and control, providing a practical path to production-scale AI adoption.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI与Dell Technologies合作，将Codex部署到混合云和本地企业环境中。Codex每周有超过400万开发者使用，其应用已从代码开发扩展到报告准备和线索筛选等任务。此次合作将Codex与Dell AI Data Platform及Dell AI Factory集成，使企业能在安全、受控的环境下访问内部数据与系统。这有助于企业在现有基础设施上部署AI代理，提升软件开发与知识工作的上下文感知能力，为生产级AI应用提供可行路径。</div>
       
       <p style="margin-top:0.5rem"><a href="https://openai.com/index/dell-codex-enterprise-partnership" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1040.html">How business operations teams use Codex</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1040.html">How business operations teams use Codex</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">This article from OpenAI Academy explains how business operations teams can leverage Codex to streamline their workflow. By aggregating context from scattered sources like project trackers, KPI dashboards, and stakeholder notes, Codex generates first-draft artifacts such as off-track briefs, strategic initiative updates, leadership decision packets, and progress reports. The team retains judgment and recommendations, while Codex accelerates the creation of working drafts. The article provides specific use cases with starter prompts and real-world examples, emphasizing how Codex helps turn operational context into actionable assets for review and decision-making.</div>
-      <div class="lang-zh" style="font-size:0.9rem">本文来自OpenAI Academy，介绍业务运营团队如何利用Codex整合分散在项目追踪器、KPI仪表盘和利益相关者笔记中的上下文，生成如off-track简报、战略更新、领导决策包和进度报告等初稿。团队保留判断与建议，Codex加速工作草案的产出。文章提供了具体用例、启动提示和真实示例，强调Codex如何将运营上下文转化为可审查和可行动的资产。</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1041.html">Databricks brings GPT-5.5 to enterprise agent workflows</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1041.html">Databricks brings GPT-5.5 to enterprise agent workflows</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Databricks integrates OpenAI's GPT-5.5 into enterprise agent workflows, achieving state-of-the-art performance on the OfficeQA Pro benchmark. The model reduces errors by 46% compared to GPT-5.4, excelling in parsing scanned PDFs, legacy files, and long-context documents. GPT-5.5 is available through AI Unity Gateway, AgentBricks, and Agent Supervisor API, enabling reliable orchestration of multi-step tasks without unnecessary detours. This advancement addresses critical parsing and retrieval challenges in production agent systems, marking a significant step-function improvement in enterprise knowledge work.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Databricks 将 OpenAI 的 GPT-5.5 集成到企业代理工作流中，在 OfficeQA Pro 基准测试上达到最先进水平。相比 GPT-5.4，错误率降低 46%，在解析扫描 PDF、遗留文件和长上下文文档方面表现优异。GPT-5.5 通过 AI Unity Gateway、AgentBricks 和 Agent Supervisor API 提供，能够可靠地编排多步骤任务，避免不必要的搜索绕路。这一进展解决了生产代理系统中的关键解析和检索挑战，标志着企业知识工作的阶跃式提升。</div>
-      
-      <p style="margin-top:0.5rem"><a href="https://openai.com/index/databricks" target="_blank" class="dim-link">Original →</a></p>
-      
-    </article>
-    
-    <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1043.html">A new personal finance experience in ChatGPT</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1043.html">A new personal finance experience in ChatGPT</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">OpenAI is releasing a preview of a new personal finance experience in ChatGPT for Pro users in the U.S., allowing them to securely connect financial accounts via Plaid, view a dashboard of spending and portfolio performance, and ask context-aware questions. The feature leverages GPT-5.5's reasoning capabilities to provide personalized insights, such as saving plans based on real transaction data. Over 200 million monthly users already seek financial advice from ChatGPT. The rollout starts with a limited group to refine the experience before expanding to Plus and free tiers. OpenAI emphasizes that this tool is not a substitute for professional financial advice.</div>
-      <div class="lang-zh" style="font-size:0.9rem">OpenAI 向美国 Pro 用户推出 ChatGPT 个人财务功能预览，支持通过 Plaid 安全连接银行账户，展示支出与投资仪表盘，并基于 GPT-5.5 的推理能力提供个性化财务建议（如储蓄计划）。每月超 2 亿用户已用 ChatGPT 处理财务问题。该功能先在小范围测试，后续将扩展至 Plus 和免费用户。OpenAI 强调此工具不能替代专业财务顾问。</div>
+      <h2 class="lang-en"><a href="../../articles/1133.html">A new personal finance experience in ChatGPT</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1133.html">A new personal finance experience in ChatGPT</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI has released a preview of a new personal finance experience in ChatGPT for Pro users in the U.S., allowing them to securely connect financial accounts, view a dashboard of spending and portfolio performance, and ask context-aware questions. The feature leverages GPT-5.5's reasoning capabilities to provide personalized insights based on users' financial data, goals, and lifestyle. It supports over 12,000 financial institutions via Plaid, with Intuit integration forthcoming. OpenAI emphasizes user data control and plans to expand to Plus users after learning from early adoption. The tool is designed to complement, not replace, professional financial advice.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI向美国Pro用户发布了ChatGPT个人财务体验预览版，用户可安全连接金融账户，查看支出与投资组合仪表盘，并基于GPT-5.5的推理能力提出情境化问题。该功能通过Plaid支持超过12,000家金融机构，即将集成Intuit，强调用户数据控制，计划在早期学习后向Plus用户开放。此工具旨在辅助而非替代专业财务建议。</div>
       
       <p style="margin-top:0.5rem"><a href="https://openai.com/index/personal-finance-chatgpt" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1044.html">How sales teams use Codex</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1044.html">How sales teams use Codex</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">This article from OpenAI Academy explains how sales teams can leverage Codex to transform scattered account data, customer conversations, and deal signals into structured artifacts like pipeline briefs, meeting prep packets, forecast reviews, and account plans. It details four primary use cases: pipeline prioritization from underworked accounts, meeting preparation and follow-up, forecast review and commit risk monitoring, and strategic account plan refresh. For each use case, it specifies the inputs required (e.g., CRM records, call transcripts, email threads) and the outputs Codex generates (e.g., prioritized briefs, stakeholder maps, risk memos). The emphasis is on Codex producing a first draft that sellers and managers then refine, preserving human judgment for strategy and relationships.</div>
-      <div class="lang-zh" style="font-size:0.9rem">本文来自OpenAI Academy，介绍了销售团队如何利用Codex将分散的账户数据、客户对话和交易信号转化为结构化文档，如Pipeline简报、会议准备包、预测审查和账户计划。文章详述了四个主要用例：从低活跃账户中优先排序Pipeline、会议准备与跟进、预测审查与承诺风险监控，以及战略账户计划更新。每个用例都明确了所需输入（如CRM记录、通话记录、邮件线程）和Codex生成的输出（如优先简报、利益相关者地图、风险备忘录）。重点在于Codex生成初稿，由销售人员和经理进行优化，保留人类对策略和关系的判断。</div>
+      <h2 class="lang-en"><a href="../../articles/1134.html">How sales teams use Codex</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1134.html">How sales teams use Codex</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">This article from OpenAI Academy explains how sales teams can use Codex to transform scattered account context, customer conversations, and deal signals into actionable artifacts like pipeline briefs, meeting packs, forecast reviews, and account plans. It details four primary use cases: pipeline prioritization from underworked accounts, meeting preparation and follow-up, forecast review and commit risk monitoring, and strategic account plan refresh. For each use case, it specifies the inputs required, the outputs generated, and provides starter prompts and real-world examples. The core value is that Codex accelerates the creation of working drafts, allowing sellers and managers to focus on strategy and judgment.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文来自OpenAI Academy，阐述了销售团队如何利用Codex将分散的账户背景、客户对话和交易信号转化为可操作的文档，如管道简报、会议资料、预测审查和账户计划。文章详细介绍了四个主要用例：从低活跃账户中优先挖掘管道机会、会议准备与跟进、预测审查与承诺风险监控，以及战略账户计划更新。每个用例都明确了所需输入、生成输出，并提供了启动提示和真实示例。其核心价值在于Codex能加速创建工作草稿，让销售人员和经理专注于策略与判断。</div>
       
       <p style="margin-top:0.5rem"><a href="https://openai.com/academy/codex-for-work/how-sales-teams-use-codex" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1046.html">Work with Codex from anywhere</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1046.html">Work with Codex from anywhere</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">OpenAI announces that Codex, its AI coding agent, is now available in the ChatGPT mobile app, allowing users to stay connected to long-running tasks from anywhere. The mobile experience provides full access to active threads, approvals, plugins, and project context via a secure relay layer. Users can start investigations, review outputs, approve commands, and change models on the go. The update also includes Remote SSH support for enterprise environments, programmatic access tokens, Hooks for customization, and HIPAA-compliant usage for healthcare. Codex in the mobile app is rolling out in preview on iOS and Android across all plans.</div>
-      <div class="lang-zh" style="font-size:0.9rem">OpenAI宣布Codex现已集成到ChatGPT移动应用中，用户可通过手机随时跟进长期运行的AI代理任务。移动端提供完整的线程访问、审批、插件和项目上下文，通过安全中继层实现实时同步。用户可在通勤或会议间隙启动调试、审查输出、批准命令或切换模型。更新还包括Remote SSH支持企业环境、Programmatic Access Tokens、Hooks自定义功能以及面向医疗的HIPAA合规使用。Codex移动预览版已在iOS和Android上向所有计划用户开放。</div>
+      <h2 class="lang-en"><a href="../../articles/1138.html">Sea's View on the Future of Agentic Software Development with Codex</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1138.html">Sea's View on the Future of Agentic Software Development with Codex</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Sea Limited, a Singapore-based global tech company, is rolling out OpenAI's Codex across its developer organization, with 87% weekly active usage. David Chen, Co-Founder and CPO of Shopee, explains that Codex goes beyond autocomplete to provide deep contextual awareness of large, disparate codebases, enabling engineers to focus on higher-level tasks like architectural design. The company is integrating AI agents into CI/CD pipelines for autonomous testing and debugging. Chen sees this as an organizational paradigm shift, transforming developers into system orchestrators. Sea is also partnering with OpenAI to host a Codex Hackathon Series across Asia to democratize access to AI tools and build a regional AI-native talent ecosystem.</div>
+      <div class="lang-zh" style="font-size:0.9rem">新加坡全球科技公司Sea Limited正在其开发者组织中推广OpenAI的Codex，周活跃用户率达87%。Shopee联合创始人兼CPO David Chen表示，Codex超越了自动补全功能，能深度理解庞大且分散的代码库上下文，使工程师能专注于架构设计等更高层次的任务。该公司正在将AI代理集成到CI/CD流水线中，用于自主测试和调试。Chen认为这是一场组织范式转变，将开发者转变为系统编排者。Sea还与OpenAI合作，在亚洲举办Codex黑客松系列，以普及AI工具并构建区域性的AI原生人才生态。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/sea-david-chen" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1139.html">Work with Codex from anywhere</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1139.html">Work with Codex from anywhere</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI announces that Codex, its AI coding agent, is now available in the ChatGPT mobile app as a preview. This allows users to stay connected to long-running coding tasks from their phone, reviewing outputs, approving commands, and providing guidance in real time. The feature uses a secure relay layer to sync state across devices without exposing machines to the public internet. It supports starting investigations, unblocking decisions, and synthesizing information on the go. Additionally, updates include Remote SSH support, programmatic access tokens, hooks for customization, and HIPAA-compliant use for enterprise workspaces.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI 宣布其 AI 编程代理 Codex 现已在 ChatGPT 移动应用中提供预览。用户可通过手机实时连接长时间运行的编码任务，审查输出、批准命令并提供指导。该功能使用安全中继层同步设备状态，无需将机器暴露于公共互联网。支持随时启动调查、解除决策阻塞和综合信息。此外，更新包括 Remote SSH 支持、程序化访问令牌、Hooks 自定义以及面向企业工作区的 HIPAA 合规使用。</div>
       
       <p style="margin-top:0.5rem"><a href="https://openai.com/index/work-with-codex-from-anywhere" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1047.html">Helping ChatGPT better recognize context in sensitive conversations</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1047.html">Helping ChatGPT better recognize context in sensitive conversations</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">OpenAI introduces safety updates to help ChatGPT better recognize context in sensitive conversations, particularly when risk emerges over time. The updates improve the model's ability to identify subtle or evolving cues of distress, such as suicide, self-harm, or harm-to-others, and respond appropriately by de-escalating, refusing harmful details, or redirecting to safer alternatives. Key innovations include safety summaries—short factual notes about prior safety-relevant context across conversations—and enhanced training with mental health experts. Internal evaluations show significant improvements in safe-response performance, with up to 52% improvement in harm-to-others cases on GPT-5.5 Instant, without degrading ordinary conversation quality.</div>
-      <div class="lang-zh" style="font-size:0.9rem">OpenAI 推出安全更新，帮助 ChatGPT 在敏感对话中更好地识别上下文，特别是当风险随时间逐渐显现时。这些更新提升了模型识别自杀、自残或伤害他人等微妙或演变中 distress 信号的能力，并通过缓和局势、拒绝有害细节或引导至更安全选项来做出适当回应。关键创新包括 safety summaries——关于跨对话先前安全相关上下文的简短事实记录——以及结合心理健康专家的强化训练。内部评估显示，在 GPT-5.5 Instant 上，伤害他人场景的安全响应性能提升了 52%，且不影响普通对话质量。</div>
+      <h2 class="lang-en"><a href="../../articles/1140.html">Helping ChatGPT better recognize context in sensitive conversations</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1140.html">Helping ChatGPT better recognize context in sensitive conversations</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI introduces safety updates for ChatGPT to better recognize evolving risk in sensitive conversations, particularly suicide, self-harm, and harm-to-others scenarios. The system uses context-aware training and safety summaries—short factual notes about prior safety-relevant context—to distinguish benign interactions from high-risk ones. These summaries are created by a safety reasoning model, stored temporarily, and used only for serious concerns. Internal evaluations show significant improvements: safe-response performance improved by 50% in suicide/self-harm cases and 16% in harm-to-others within single conversations, and by 52% and 39% respectively across multiple conversations on GPT-5.5 Instant. The work was guided by mental health experts and aims to de-escalate, refuse harmful details, or redirect to safer alternatives without overreacting in ordinary chats.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI 为 ChatGPT 推出安全更新，使其能更好地识别敏感对话中随时间演变的潜在风险，特别是自杀、自伤和伤害他人场景。系统通过上下文感知训练和 safety summaries（由安全推理模型生成的简短事实性笔记，临时存储且仅用于严重关切）来区分良性互动与高风险情况。内部评估显示显著改进：在单次对话中，自杀/自伤场景的安全响应性能提升 50%，伤害他人场景提升 16%；在 GPT-5.5 Instant 上跨对话场景分别提升 52% 和 39%。该工作由心理健康专家指导，旨在通过缓和、拒绝有害细节或引导至更安全替代方案来恰当回应，同时避免在日常对话中过度反应。</div>
       
       <p style="margin-top:0.5rem"><a href="https://openai.com/index/chatgpt-recognize-context-in-sensitive-conversations" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1048.html">Building a safe, effective sandbox to enable Codex on Windows</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1048.html">Building a safe, effective sandbox to enable Codex on Windows</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">OpenAI engineers built a custom sandbox for Codex on Windows after finding existing tools like AppContainer, Windows Sandbox, and Mandatory Integrity Control unsuitable. The solution uses SIDs and write-restricted tokens to constrain file writes and network access without requiring administrator privileges. This enables Codex to safely run developer workflows—shells, Git, Python, build tools—while preventing unauthorized modifications outside the workspace. The sandbox enforces read-only access outside the workspace and blocks internet access unless explicitly allowed, balancing safety and productivity for Windows users.</div>
-      <div class="lang-zh" style="font-size:0.9rem">OpenAI工程师为Windows上的Codex构建了自定义沙箱，因AppContainer、Windows Sandbox和Mandatory Integrity Control等现有工具不适用。该方案利用SIDs和write-restricted tokens来限制文件写入和网络访问，无需管理员权限。沙箱允许Codex安全运行shell、Git、Python等开发工具，同时防止对工作区外的未授权修改，并默认阻止互联网访问，在安全性与生产力间取得平衡。</div>
+      <h2 class="lang-en"><a href="../../articles/1141.html">Building a safe, effective sandbox to enable Codex on Windows</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1141.html">Building a safe, effective sandbox to enable Codex on Windows</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI's Codex coding agent on Windows lacked a sandbox, forcing users to either approve every command or grant full access. Existing Windows isolation tools like AppContainer, Windows Sandbox, and Mandatory Integrity Control were unsuitable due to rigidity, product limitations, or security risks. The team built a custom unelevated sandbox using SIDs and write-restricted tokens to enforce file-write and network constraints without requiring administrator privileges. This approach provides granular control over where Codex can modify files, balancing safety and developer productivity on Windows.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI的Codex编码代理在Windows上缺乏沙箱，用户被迫要么批准每个命令，要么授予完全访问权限。现有的Windows隔离工具如AppContainer、Windows Sandbox和Mandatory Integrity Control因灵活性差、产品限制或安全风险而不适用。团队构建了一个自定义的非提权沙箱，利用SIDs和write-restricted tokens来强制执行文件写入和网络约束，无需管理员权限。该方法提供了对Codex可修改文件位置的精细控制，在Windows上平衡了安全性和开发效率。</div>
       
       <p style="margin-top:0.5rem"><a href="https://openai.com/index/building-codex-windows-sandbox" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1049.html">Our response to the TanStack npm supply chain attack</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1049.html">Our response to the TanStack npm supply chain attack</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">OpenAI disclosed a security incident involving the TanStack npm library, part of the broader Mini Shai-Hulud supply chain attack. Two employee devices were impacted, leading to unauthorized access and credential exfiltration from a limited set of internal source code repositories. No evidence of compromise to user data, production systems, or intellectual property was found. As a precaution, OpenAI is rotating code-signing certificates, requiring macOS users to update applications by June 12, 2026. The company has implemented additional security controls and is coordinating with platform providers to prevent unauthorized certificate use.</div>
-      <div class="lang-zh" style="font-size:0.9rem">OpenAI披露了一起涉及TanStack npm库的安全事件，该事件属于更广泛的Mini Shai-Hulud供应链攻击。两台员工设备受到影响，导致对有限内部源代码仓库的未授权访问和凭证窃取。未发现用户数据、生产系统或知识产权受损的证据。作为预防措施，OpenAI正在轮换代码签名证书，要求macOS用户在2026年6月12日前更新应用程序。公司已实施额外的安全控制，并与平台提供商协调以防止证书被滥用。</div>
+      <h2 class="lang-en"><a href="../../articles/1142.html">Our response to the TanStack npm supply chain attack</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1142.html">Our response to the TanStack npm supply chain attack</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI disclosed a security incident involving the TanStack npm library, part of the broader Mini Shai-Hulud supply chain attack. Two employee devices were compromised, leading to limited credential exfiltration from internal source code repositories. No evidence of user data, production system, or intellectual property compromise was found. As a precaution, OpenAI is rotating code-signing certificates, requiring macOS users to update apps by June 12, 2026. The company has implemented additional security controls and is coordinating with platform providers to prevent unauthorized certificate use. This incident highlights the growing threat of supply chain attacks targeting shared software dependencies.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI披露了一起涉及TanStack npm库的安全事件，该事件是更广泛的Mini Shai-Hulud供应链攻击的一部分。两台员工设备被入侵，导致内部源代码仓库中的有限凭据被窃取。没有证据表明用户数据、生产系统或知识产权受损。作为预防措施，OpenAI正在轮换代码签名证书，要求macOS用户在2026年6月12日前更新应用。公司已实施额外的安全控制，并与平台提供商协调以防止证书被滥用。此事件凸显了针对共享软件依赖的供应链攻击威胁日益增长。</div>
       
       <p style="margin-top:0.5rem"><a href="https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1050.html">How finance teams use Codex</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1050.html">How finance teams use Codex</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">This article from OpenAI Academy explains how finance teams can leverage Codex to automate and streamline key workflows such as monthly business reviews, financial model cleanup, recurring CFO/board reporting packs, and variance driver analysis. Codex ingests existing workbooks, dashboards, and notes to produce review-ready outputs without requiring coding skills. Each use case includes a starter prompt, suggested plugins, and a real-world example. The goal is to reduce time spent on initial drafting, allowing teams to focus on analysis, validation, and strategic decision-making.</div>
-      <div class="lang-zh" style="font-size:0.9rem">本文来自OpenAI Academy，介绍财务团队如何使用Codex自动化关键工作流，包括月度业务回顾、财务模型清理、定期CFO/董事会报告包以及差异驱动分析。Codex能读取现有工作簿、仪表板和笔记，无需编码即可生成可供审查的输出。每个用例都包含启动提示、建议插件和真实示例，旨在减少初稿时间，让团队专注于分析、验证和战略决策。</div>
+      <h2 class="lang-en"><a href="../../articles/1143.html">How finance teams use Codex</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1143.html">How finance teams use Codex</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">This article from OpenAI Academy explains how finance teams can leverage Codex to automate and streamline key workflows such as monthly business reviews, model cleanup, recurring reporting packs, and variance analysis. By ingesting existing workbooks, dashboards, and notes, Codex produces review-ready documents with source-backed numbers, freeing teams to focus on analysis and decision-making rather than manual assembly. The piece details four specific use cases with starter prompts and real-world examples, emphasizing that no coding is required.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文来自OpenAI Academy，介绍了金融团队如何使用Codex自动化月度业务回顾、模型清理、定期报告和差异分析等关键工作流。通过导入现有的工作簿、仪表盘和笔记，Codex能生成带有来源引用的可审阅文档，让团队专注于分析和决策而非手动整理。文章详细说明了四个具体用例，包括启动提示和真实示例，强调无需编程即可使用。</div>
       
       <p style="margin-top:0.5rem"><a href="https://openai.com/academy/how-finance-teams-use-codex" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1051.html">AutoScout24 scales engineering with AI-powered workflows</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1051.html">AutoScout24 scales engineering with AI-powered workflows</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">AutoScout24, a leading online car marketplace, partnered with OpenAI to transform its engineering workflows using AI-powered tools. By deploying ChatGPT across 2,000 employees and integrating Codex into 1,000 builder roles, the company achieved roughly 10x faster development cycles, reducing project timelines from weeks to days. The dual-layer strategy combined broad AI literacy with deep workflow integration, supported by an AI Champions network. Key results included improved code quality, automated pull request reviews, and expanded innovation capacity for non-technical roles. The initiative demonstrates how large-scale AI adoption can accelerate software delivery while maintaining reliability.</div>
-      <div class="lang-zh" style="font-size:0.9rem">AutoScout24与OpenAI合作，通过AI驱动的工作流重塑工程流程。公司为2000名员工部署ChatGPT，并将Codex集成到1000个构建者角色中，实现了约10倍的开发周期加速，项目时间从数周缩短至数天。双层策略结合了广泛的AI素养与深度工作流集成，并由AI Champions网络提供支持。关键成果包括代码质量提升、自动化pull request审查以及非技术角色的创新扩展。该案例展示了大规模AI采用如何在保持可靠性的同时加速软件交付。</div>
+      <h2 class="lang-en"><a href="../../articles/1145.html">AutoScout24 scales engineering with AI-powered workflows</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1145.html">AutoScout24 scales engineering with AI-powered workflows</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">AutoScout24 Group, a leading online car marketplace, partnered with OpenAI to scale engineering using AI-powered workflows. By deploying ChatGPT across 2,000 employees and integrating Codex into 1,000 builder roles, the company achieved ~10x faster development cycles, improved code quality, and expanded AI adoption. The dual-layer strategy combined broad AI literacy with deep workflow integration, supported by an AI Champions network. Key results include reduced development timelines from weeks to days, enhanced code consistency, and increased innovation capacity across technical and non-technical teams. The initiative underscores how AI can transform software engineering at scale.</div>
+      <div class="lang-zh" style="font-size:0.9rem">AutoScout24 Group与OpenAI合作，通过AI驱动的工作流扩展工程能力。该公司向2000名员工部署ChatGPT，并将Codex集成到1000个构建者角色中，实现了约10倍的开发周期加速、代码质量提升和AI采用率扩大。双层策略结合了广泛的AI素养与深度工作流集成，并由AI Champions网络支持。关键成果包括开发时间从数周缩短至数天、代码一致性增强以及跨技术与非技术团队的创新能力提升。该案例展示了AI如何大规模变革软件工程。</div>
       
       <p style="margin-top:0.5rem"><a href="https://openai.com/index/autoscout24" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1056.html">How enterprises are scaling AI</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1056.html">How enterprises are scaling AI</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">This guide synthesizes insights from European enterprise leaders at Philips, BBVA, and others, revealing that scaling AI is less about technology deployment and more about building trust, adoption, and iterative improvement. Key patterns include prioritizing culture over tooling, using governance as an enabler, fostering ownership over consumption, ensuring quality before scale, and protecting judgment work through hybrid workflows. The report emphasizes that sustained impact requires treating AI as an operating layer and leadership discipline, with human oversight embedded in end-to-end workflows.</div>
-      <div class="lang-zh" style="font-size:0.9rem">本指南汇集了Philips、BBVA等欧洲企业领导者的见解，指出扩展AI的关键不在于技术部署，而在于建立信任、采用和持续改进。核心模式包括：文化优先于工具、将治理作为赋能因素、鼓励所有权而非消费、质量优先于规模，以及通过混合工作流保护判断工作。报告强调，持久影响需要将AI视为运营层和领导力学科，并在端到端工作流中嵌入人工监督。</div>
+      <h2 class="lang-en"><a href="../../articles/1149.html">How enterprises are scaling AI</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1149.html">How enterprises are scaling AI</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">This guide synthesizes insights from European enterprise leaders at Philips, BBVA, Mirakl, Scout24, Jetbrains, and Scania, revealing that scaling AI is less about technical rollout and more about building trust, adoption, and continuous improvement. Key patterns include prioritizing culture over tooling, using governance as an enabler, fostering ownership over consumption, ensuring quality before scale, and protecting judgment work through hybrid workflows. The report emphasizes that sustained impact requires trust, ownership, and quality built in from the start, with AI embedded in end-to-end workflows under human oversight.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本指南综合了Philips、BBVA、Mirakl、Scout24、Jetbrains和Scania等欧洲企业领导者的见解，指出规模化AI的关键不在于技术部署，而在于建立信任、采用和持续改进的条件。核心模式包括：文化优先于工具、将治理作为赋能因素、鼓励所有权而非消费、质量优先于规模，以及通过混合工作流保护判断工作。报告强调，持久的影响力需要从一开始就建立信任、所有权和质量，将AI嵌入端到端工作流并保持人类监督。</div>
       
       <p style="margin-top:0.5rem"><a href="https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1057.html">OpenAI launches DeployCo to help businesses build around intelligence</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1057.html">OpenAI launches DeployCo to help businesses build around intelligence</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">OpenAI announced the launch of DeployCo, a new company focused on helping organizations build and deploy AI systems for critical workflows. DeployCo will embed Forward Deployed Engineers (FDEs) into client organizations to redesign infrastructure and workflows around AI. OpenAI also agreed to acquire Tomoro, an applied AI consulting firm, bringing approximately 150 experienced engineers. The venture is backed by over $4 billion in initial investment from partners including TPG, Advent, and Bain Capital. DeployCo is majority-owned by OpenAI and aims to accelerate enterprise AI adoption and ensure AGI benefits humanity.</div>
-      <div class="lang-zh" style="font-size:0.9rem">OpenAI 宣布成立 DeployCo，这是一家专注于帮助组织构建和部署 AI 系统的新公司。DeployCo 将派遣 Forward Deployed Engineers (FDEs) 嵌入客户组织，围绕 AI 重新设计基础设施和工作流程。OpenAI 还同意收购应用 AI 咨询公司 Tomoro，带来约 150 名经验丰富的工程师。该项目获得 TPG、Advent、Bain Capital 等合作伙伴超过 40 亿美元的初始投资。DeployCo 由 OpenAI 控股，旨在加速企业 AI 采纳并确保 AGI 造福人类。</div>
+      <h2 class="lang-en"><a href="../../articles/1150.html">OpenAI launches DeployCo to help businesses build around intelligence</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1150.html">OpenAI launches DeployCo to help businesses build around intelligence</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI announced the launch of DeployCo, a new standalone company focused on helping enterprises deploy AI systems into critical workflows. DeployCo will embed Forward Deployed Engineers (FDEs) into client organizations to redesign infrastructure and processes around frontier AI. OpenAI also agreed to acquire Tomoro, an applied AI consulting firm, bringing approximately 150 experienced FDEs to DeployCo from day one. The initiative is backed by over $4 billion in initial investment from a consortium of global investment firms, consultancies, and system integrators, including TPG, Advent, and Bain Capital. DeployCo aims to accelerate real-world AI adoption and ensure durable operational impact.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI宣布成立DeployCo，这是一家专注于帮助企业将AI系统部署到关键工作流中的新公司。DeployCo将派遣Forward Deployed Engineers (FDEs)进入客户组织，围绕前沿AI重新设计基础设施和流程。OpenAI还同意收购应用AI咨询公司Tomoro，为DeployCo带来约150名经验丰富的FDEs。该计划获得了由TPG、Advent和Bain Capital等全球投资机构、咨询公司和系统集成商组成的财团超过40亿美元的初始投资。DeployCo旨在加速AI在实际场景中的采用，并确保持久的运营影响。</div>
       
       <p style="margin-top:0.5rem"><a href="https://openai.com/index/openai-launches-the-deployment-company" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1058.html">Running Codex safely at OpenAI</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1058.html">Running Codex safely at OpenAI</a></h2>
-      <div class="meta">openai_rss · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">OpenAI describes the safety measures for deploying Codex, a coding agent that autonomously reviews repositories, runs commands, and interacts with development tools. Key controls include sandboxing, approval policies, network access restrictions, identity management via ChatGPT, and rule-based command filtering. Agent-native telemetry via OpenTelemetry logs provides visibility into user prompts, tool decisions, and network events, enabling security teams to audit behavior and distinguish between expected actions and anomalies. The system balances developer productivity with security through managed configurations and AI-powered triage.</div>
-      <div class="lang-zh" style="font-size:0.9rem">OpenAI 介绍了部署 Codex 的安全措施，该编码代理可自主审查代码库、运行命令并与开发工具交互。关键控制包括沙箱、审批策略、网络访问限制、通过 ChatGPT 的身份管理以及基于规则的命令过滤。通过 OpenTelemetry 日志的代理原生遥测提供了对用户提示、工具决策和网络事件的可见性，使安全团队能够审计行为并区分预期操作与异常。该系统通过托管配置和 AI 驱动的分类来平衡开发人员生产力与安全性。</div>
+      <h2 class="lang-en"><a href="../../articles/1112.html">AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1112.html">AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">AlphaEvolve, a Gemini-powered coding agent by Google DeepMind, has scaled its impact across diverse fields over the past year. It improves DNA sequencing accuracy via DeepConsensus, boosts electricity grid optimization by increasing feasible solutions from 14% to over 88%, and enhances natural disaster prediction by 5%. In research, it achieves 10x lower error in quantum circuits on Willow, solves Erdős problems, and breaks records in Traveling Salesman and Ramsey Numbers. It optimizes TPU design, cache policies, and Google Spanner, reducing write amplification by 20%. Commercial applications include doubling Klarna's training speed, improving Substrate's lithography runtime, and saving FM Logistic 15,000 km annually.</div>
+      <div class="lang-zh" style="font-size:0.9rem">AlphaEvolve是Google DeepMind基于Gemini的编码智能体，过去一年在多个领域扩大了影响。它通过DeepConsensus将DNA测序错误减少30%，将电网优化中可行解比例从14%提升至88%以上，并将自然灾害预测准确率提高5%。在量子物理中，它使Willow处理器上的量子电路误差降低10倍；解决了Erdős问题，并改进了Traveling Salesman Problem和Ramsey Numbers的下界。它还优化了TPU设计、缓存策略和Google Spanner，将写入放大降低20%。商业应用中，Klarna训练速度翻倍，Substrate光刻运行时速提升多倍，FM Logistic年节省超15,000公里路程。</div>
       
-      <p style="margin-top:0.5rem"><a href="https://openai.com/index/running-codex-safely" target="_blank" class="dim-link">Original →</a></p>
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/alphaevolve-impact/" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1029.html">Protecting people from harmful manipulation</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1029.html">Protecting people from harmful manipulation</a></h2>
-      <div class="meta">deepmind_blog · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">This article discusses strategies and frameworks for protecting individuals from harmful manipulation, particularly in digital environments where AI and algorithms can influence behavior. It emphasizes the need for transparency, user agency, and regulatory measures to prevent exploitation through deceptive design, misinformation, and psychological targeting. The piece highlights the ethical responsibilities of technology developers and policymakers in safeguarding vulnerable populations.</div>
-      <div class="lang-zh" style="font-size:0.9rem">本文探讨了保护个人免受有害操纵的策略与框架，尤其是在AI和算法可能影响行为的数字环境中。强调透明度、用户自主权以及监管措施的必要性，以防止通过欺骗性设计、错误信息和心理定位进行的剥削。文章突出了技术开发者和政策制定者在保护弱势群体方面的伦理责任。</div>
+      <h2 class="lang-en"><a href="../../articles/1113.html">Enabling a new model for healthcare with AI co-clinician</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1113.html">Enabling a new model for healthcare with AI co-clinician</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind introduces the AI co-clinician research initiative to address the global shortage of healthcare workers by augmenting clinicians with collaborative AI agents under expert supervision. The system is evaluated in both clinician-facing and patient-facing settings. In clinician-facing tests, it outperforms leading evidence synthesis tools on 98 primary care queries with zero critical errors in 97 cases, and surpasses frontier models on open-ended medication queries (OpenFDA RxQA). In patient-facing telemedical simulations using real-time multimodal AI (audio/video), it demonstrates capabilities like guiding physical exams and correcting inhaler technique, though expert physicians still outperform it overall, suggesting AI is best used as a supportive tool.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 宣布了 AI co-clinician 研究计划，旨在通过协作式 AI 代理在专家临床监督下辅助医生，应对全球医疗人员短缺。在面向医生的评估中，该系统在 98 个初级保健查询上优于领先的证据合成工具，97 例无严重错误，并在开放式药物问答（OpenFDA RxQA）上超越前沿模型。在面向患者的远程医疗模拟中，利用实时多模态 AI（音频/视频）展示了指导体检和纠正吸入器使用等能力，但专家医生整体表现更优，表明 AI 当前最适合作为支持工具而非替代品。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/ai-co-clinician/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1114.html">Announcing our partnership with the Republic of Korea</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1114.html">Announcing our partnership with the Republic of Korea</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind announces a partnership with the Republic of Korea's Ministry of Science and ICT (MSIT) to accelerate scientific discovery using frontier AI. The collaboration includes establishing an AI Campus in Seoul, leveraging models like AlphaEvolve, AlphaGenome, AlphaFold, AI co-scientist, and WeatherNext for life sciences, energy, and climate. It also focuses on cultivating local AI talent through internships and scholarships, and partnering with the Korean AI Safety Institute (AISI) on safety research. Building on the AlphaGo legacy, this initiative aims to support Korea's AI strategy and national grand challenges.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind与韩国科学技术信息通信部（MSIT）宣布合作，利用前沿AI加速科学发现。合作包括在首尔建立AI Campus，应用AlphaEvolve、AlphaGenome、AlphaFold、AI co-scientist和WeatherNext等模型于生命科学、能源和气候领域。同时通过实习和奖学金培养本地AI人才，并与韩国AI Safety Institute（AISI）合作开展安全研究。此举旨在延续AlphaGo遗产，支持韩国AI战略和国家重大挑战。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1115.html">Decoupled DiLoCo: A new frontier for resilient, distributed AI training</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1115.html">Decoupled DiLoCo: A new frontier for resilient, distributed AI training</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Decoupled DiLoCo, introduced by Google DeepMind, is a distributed training architecture that partitions large language model training into decoupled 'islands' of compute with asynchronous data flow. This design isolates hardware failures, allowing other islands to continue training uninterrupted, and supports self-healing reintegration of failed units. It dramatically reduces bandwidth requirements compared to conventional synchronization methods, enabling training across distant data centers with internet-scale connectivity. Experiments with Gemma 4 models showed that Decoupled DiLoCo maintains high goodput under hardware failures and achieves equivalent ML performance to traditional approaches, while also allowing mixing of different hardware generations like TPU v6e and TPU v5p.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 提出的 Decoupled DiLoCo 是一种分布式训练架构，将大语言模型训练划分为解耦的“计算岛”，通过异步数据流连接。这种设计隔离了硬件故障，使其他岛能继续高效训练，并支持故障单元的自愈重连。相比传统同步方法，它大幅降低了带宽需求，支持通过互联网级连接在远程数据中心间训练。使用 Gemma 4 模型的实验表明，Decoupled DiLoCo 在硬件故障下保持高有效训练产出，并达到与传统方法相同的 ML 性能，同时允许混合不同代硬件如 TPU v6e 和 TPU v5p。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/decoupled-diloco/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1118.html">Gemini Robotics-ER 1.6: Powering real-world robotics tasks through enhanced embodied reasoning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1118.html">Gemini Robotics-ER 1.6: Powering real-world robotics tasks through enhanced embodied reasoning</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind introduces Gemini Robotics-ER 1.6, a significant upgrade to its embodied reasoning model for robotics. The model enhances spatial reasoning, multi-view understanding, and success detection, enabling robots to perform complex tasks like instrument reading, pointing, and counting with unprecedented precision. It integrates with tools like Google Search and vision-language-action models, and supports agentic vision for code execution. Benchmark results show improvements over previous versions. The model is available via the Gemini API and Google AI Studio, with a focus on safety and real-world applications such as facility inspection in collaboration with Boston Dynamics.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 发布了 Gemini Robotics-ER 1.6，这是其具身推理模型的重要升级。该模型增强了空间推理、多视角理解和成功检测能力，使机器人能够以空前精度执行仪表读取、指向和计数等复杂任务。它集成了 Google Search 和 vision-language-action models 等工具，并支持 agentic vision 进行代码执行。基准测试结果显示其性能优于前代版本。该模型通过 Gemini API 和 Google AI Studio 提供，注重安全性，并与 Boston Dynamics 合作应用于设施检查等真实场景。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/gemini-robotics-er-1-6/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1119.html">Gemma 4: Byte for byte, the most capable open models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1119.html">Gemma 4: Byte for byte, the most capable open models</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind introduces Gemma 4, its most capable open model family, designed for advanced reasoning and agentic workflows. Available in four sizes (E2B, E4B, 26B MoE, 31B Dense), Gemma 4 delivers state-of-the-art intelligence-per-parameter, outperforming models 20x its size on benchmarks. Key features include native function calling, structured JSON output, vision and audio processing, 128K-256K context windows, and support for 140+ languages. Released under Apache 2.0, the models run efficiently on diverse hardware from mobile devices to GPUs. Gemma 4 builds on over 400 million downloads of previous versions, offering developers a powerful open-source foundation for building autonomous agents and AI applications.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 发布 Gemma 4，其最强大的开放模型系列，专为高级推理和 agentic workflows 设计。提供四种尺寸（E2B、E4B、26B MoE、31B Dense），Gemma 4 在每参数智能上达到领先水平，在基准测试中超越 20 倍规模模型。关键能力包括原生 function calling、结构化 JSON 输出、视觉与音频处理、128K-256K 上下文窗口，以及 140+ 语言支持。采用 Apache 2.0 许可，模型可在从移动设备到 GPU 的多种硬件上高效运行。Gemma 4 基于前代超 4 亿次下载的社区基础，为开发者构建自主 agent 和 AI 应用提供了强大的开源基础。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1120.html">Gemini 3.1 Flash Live: Making audio AI more natural and reliable</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1120.html">Gemini 3.1 Flash Live: Making audio AI more natural and reliable</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google has launched Gemini 3.1 Flash Live, its highest-quality audio model designed for natural and reliable real-time dialogue. The model offers improved precision, lower latency, and better tonal understanding, enabling fluid voice interactions. Developers can access it via the Gemini Live API in Google AI Studio, while enterprises can use it for customer experience. The model leads benchmarks like ComplexFuncBench Audio and Scale AI's Audio MultiChallenge. It is available in over 200 countries through Search Live and Gemini Live, and all audio outputs are watermarked with SynthID to prevent misinformation.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google 发布了 Gemini 3.1 Flash Live，这是其最高质量的音频模型，旨在实现自然且可靠的实时对话。该模型具有更高的精度、更低的延迟和更好的语调理解能力，支持流畅的语音交互。开发者可通过 Google AI Studio 中的 Gemini Live API 访问，企业可用于客户体验。该模型在 ComplexFuncBench Audio 和 Scale AI 的 Audio MultiChallenge 等基准测试中领先，并已在超过200个国家通过 Search Live 和 Gemini Live 提供，所有音频输出均使用 SynthID 水印以防止 misinformation。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1121.html">Protecting people from harmful manipulation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1121.html">Protecting people from harmful manipulation</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind released a study on AI's potential for harmful manipulation, creating the first empirically validated toolkit to measure this risk in real-world settings. The research involved over 10,000 participants across the UK, US, and India, focusing on high-stakes domains like finance and health. Findings show that AI's manipulative success varies by domain, with health being the least susceptible. The study measures both efficacy (whether AI changes minds) and propensity (how often it attempts manipulation). DeepMind also introduced a Harmful Manipulation Critical Capability Level (CCL) within its Frontier Safety Framework to track and mitigate these risks as AI capabilities evolve.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 发布了关于AI有害操纵潜力的研究，创建了首个经实证验证的工具包来测量现实世界中的此类风险。研究涵盖英国、美国和印度超过1万名参与者，聚焦金融和健康等高 stakes 领域。结果显示，AI的操纵效果因领域而异，健康领域最不敏感。研究测量了 efficacy（是否改变想法）和 propensity（尝试操纵的频率）。DeepMind 还在其 Frontier Safety Framework 中引入了 Harmful Manipulation Critical Capability Level (CCL)，以追踪和缓解随着AI能力发展而出现的风险。</div>
       
       <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/protecting-people-from-harmful-manipulation/" target="_blank" class="dim-link">Original →</a></p>
       
     </article>
     
     <article class="glass-card">
-      <h2 class="lang-en"><a href="../../articles/1037.html">Accelerating discovery in India through AI-powered science and education</a></h2>
-      <h2 class="lang-zh"><a href="../../articles/1037.html">Accelerating discovery in India through AI-powered science and education</a></h2>
-      <div class="meta">deepmind_blog · 2026-05-18</div>
-      <div class="lang-en" style="font-size:0.9rem">Google DeepMind announces a National Partnership for AI with Indian government bodies and institutions to accelerate AI-powered science and education. The collaboration provides access to frontier AI models like AlphaGenome, AI Co-scientist, and Earth AI for researchers, alongside a $30 million Google.org Impact Challenge for AI for Science. In education, partnerships with Atal Tinkering Labs and PM Publishers integrate Gemini into classrooms, transforming textbooks into interactive experiences and supporting teachers. The initiative also extends to agriculture and energy, using AI for crop productivity and renewable energy forecasting. This partnership aims to broaden AI access, serving national priorities and fostering global AI collaboration.</div>
-      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind宣布与印度政府机构建立国家AI合作伙伴关系，以加速AI驱动的科学和教育。合作提供AlphaGenome、AI Co-scientist和Earth AI等前沿模型，并设立3000万美元的Google.org Impact Challenge支持AI for Science。教育方面，与Atal Tinkering Labs和PM Publishers合作，将Gemini融入课堂，将静态教科书转化为互动学习体验。此外，AI还被用于农业和能源领域，提升作物产量和可再生能源预测。该伙伴关系旨在扩大AI访问，服务国家优先事项，并促进全球AI合作。</div>
+      <h2 class="lang-en"><a href="../../articles/1129.html">Accelerating discovery in India through AI-powered science and education</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1129.html">Accelerating discovery in India through AI-powered science and education</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind announces a national partnership with Indian government bodies and institutions to scale AI in science and education. The collaboration provides access to frontier AI models like AlphaGenome, AI Co-scientist, and Earth AI for scientific research, alongside initiatives to empower students and teachers through Gemini-powered tools, interactive textbooks, and innovation hubs. The partnership also extends to agriculture and energy sectors, leveraging AI for crop productivity and renewable energy forecasting. This effort aims to accelerate discovery, enhance learning, and address national priorities, building on India's leadership in AI adoption and global AI summits.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind宣布与印度政府及机构建立国家合作伙伴关系，以在科学和教育领域推广AI。合作提供AlphaGenome、AI Co-scientist和Earth AI等前沿模型用于科研，同时通过Gemini驱动的工具、互动教科书和创新中心赋能学生与教师。此外，AI还被应用于农业和能源领域，提升作物产量和可再生能源预测。此举旨在加速发现、改善学习，并应对国家优先事项，依托印度在AI采用和全球AI峰会中的领导地位。</div>
       
       <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education/" target="_blank" class="dim-link">Original →</a></p>
       
