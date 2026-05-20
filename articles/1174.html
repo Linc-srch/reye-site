@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auditing Privacy in Multi-Tenant RAG under Account Collusion | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Auditing Privacy in Multi-Tenant RAG under Account Collusion</h2>
+    <h2 class="lang-zh">审计多租户RAG中的账户合谋隐私泄露</h2>
+    <div class="meta">
+      Florian A. D. Burnat, Brittany I. Davidson · 
+      2026-05-20 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>Key claim: Per-account DP guarantees in multi-tenant RAG structurally understate joint leakage under account collusion; key observation: the degradation rate is Θ(√k·ε_acc) and is empirically verifiable via a novel audit protocol.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文揭示了多租户RAG系统中，多个账户合谋会系统性削弱单账户差分隐私保证，退化率为Θ(√k·ε_acc)。作者设计并验证了首个无需修改部署的审计协议，能够针对检索分数通道发布量化(PASS, ε_audit)判决，填补了理论与实际威胁模型之间的空白。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — collusion-rag-audit</h1>
+<p><strong>Key Takeaways</strong>
+- Same-index multi-account collusion degrades per-account DP guarantees at a rate of Θ(√k·ε_acc) for Gaussian-noised retrieval.
+- First audit protocol for unmodified multi-tenant RAG deployments that issues a quantitative (PASS, ε_audit) verdict for the retrieval-score channel.
+- Empirical validation confirms the √k scaling trend for membership inference AUC against two falsification gates.
+- Protocol composes generic cryptographic primitives (Merkle ledgers, ZK proofs) with six RAG-specific primitives without index disclosure.
+- Identifies and corrects a δ-accounting error in naive multi-account composition, requiring δ_policy &gt; k_max·δ_acc.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Auditing Privacy in Multi-Tenant RAG under Account Collusion</li>
+<li><strong>Alias:</strong> collusion-rag-audit</li>
+<li><strong>Authors:</strong> Florian A. D. Burnat, Brittany I. Davidson</li>
+<li><strong>arXiv ID:</strong> 2605.19847</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.19847</li>
+<li>HTML: https://arxiv.org/html/2605.19847v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.19847</li>
+<li><strong>Tags:</strong> differential-privacy, retrieval-augmented-generation, multi-tenant, account-collusion, audit-protocol, zero-knowledge-proofs</li>
+<li><strong>Domains:</strong> system_safety, cryptography</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Key claim: Per-account DP guarantees in multi-tenant RAG structurally understate joint leakage under account collusion; key observation: the degradation rate is Θ(√k·ε_acc) and is empirically verifiable via a novel audit protocol.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Production RAG services (e.g., Microsoft 365 Copilot, OpenAI Assistants) are multi-tenant and advertise per-account differential privacy. Recent membership inference attacks treat a single attacker as the unit of analysis, but multi-account abuse is an operational reality. Regulatory frameworks like the EU AI Act require auditable disclosure without model or data exposure.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Single-attacker RAG MIA (Naseh2025-riddle, Gao2025-dcmi, Li2025-generating, Wang2025-leaks, Liu2024-mask) treat k=1 and stateless API.</li>
+<li>Federated learning collusion (Lyu2023-cerberus, Pasquini2022-eluding) models coordination at training time against gradient aggregation.</li>
+<li>DP-RAG defenses (Cheng2025-remoterag) modify deployments to leak less per query; this work leaves deployment intact.</li>
+<li>DP composition theory (DworkRothblumVadhan2010, KairouzOhViswanath2017, VadhanWang2021-concurrent) provides the rate but not the threat model.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing per-account DP guarantees assume a single attacker (k=1), but production RAG accounts are cheap and adversaries can pool multiple accounts. No prior work formalizes the privacy degradation under same-index multi-account collusion or provides an audit protocol that works against unmodified deployments without index disclosure.</p>
+<h3>P — Proposal</h3>
+<p>The paper defines (ε,δ,k)-collusion DP for multi-tenant RAG and proves a tight Θ(√k·ε_acc) degradation rate for Gaussian-noised retrieval. It designs a verifier-runnable audit protocol using cryptographic primitives (Merkle ledgers, ZK proofs, Gaussian noise attestations) and six RAG-specific primitives to issue a (PASS, ε_audit) verdict for the retrieval-score channel without modifying the deployment.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Empirical AUC-vs-k curve on a synthetic multi-tenant FAISS-based harness confirms the √k trend: at fixed per-account budget, AUC = 1/2 + Θ(√k·ε_acc). The trend survives top-K post-processing and a trained embedder at the parameters tested. Two falsification gates (slope and tightness) plus one diagnostic (scale collapse) are passed.</p>
+<h3>Ablation</h3>
+<p>Ablation confirms that the √k scaling holds under top-K post-processing and with a trained embedder; alternative-adversary robustness is also verified. The Rényi-DP moments accountant gives tighter realized (ε,δ) pairs than the closed-form bound at moderate k.</p>
+<h3>Limitations</h3>
+<p>['Generation-channel privacy (LLM output conditioned on selected documents) is explicitly scoped out; only the retrieval-score channel is audited.', 'The protocol assumes the provider honestly follows the commitment phase; malicious providers could deviate before attestation.', 'Empirical validation is on a synthetic deployment; real-world production RAG services may have additional complexities (e.g., caching, rate-limit evasion).']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Directly addresses a realistic threat model (multi-account collusion) that is operationally relevant for production RAG services.</li>
+<li>Provides a practical audit protocol that aligns with regulatory requirements (EU AI Act, DSA) for third-party audit without data disclosure.</li>
+<li>Bridges the gap between DP theory and empirical MIA by deriving and validating a RAG-specific MIA prediction.</li>
+<li>Highlights that multi-account abuse is not just fraud but a privacy boundary failure, reframing operational practices.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Extend the audit protocol to cover the generation channel (LLM output privacy) and compose with the retrieval-score audit.</li>
+<li>[ ] Test the protocol on real-world production RAG deployments (e.g., Microsoft 365 Copilot, OpenAI Assistants) with provider cooperation.</li>
+<li>[ ] Develop a coalition-size estimator that works under adaptive adversaries and dynamic account creation.</li>
+<li>[ ] Explore alternative noise mechanisms (e.g., Laplace) and their collusion degradation rates.</li>
+<li>[ ] Integrate the audit protocol into existing DP-RAG defense frameworks (e.g., Cheng2025-remoterag) for end-to-end verification.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>审计多租户RAG中的账户合谋隐私泄露</h1>
+<p><strong>主要结论</strong>
+- 相同索引的多账户合谋使高斯噪声检索的每账户DP保证以Θ(√k·ε_acc)速率退化。
+- 首个针对未修改多租户RAG部署的审计协议，可发布检索分数通道的量化(PASS, ε_audit)判决。
+- 实验验证了成员推断AUC随k呈√k增长趋势，并通过了两个伪造门测试。
+- 协议将通用密码学原语（Merkle账本、ZK证明）与六个RAG特定原语组合，无需泄露索引。
+- 发现并纠正了朴素多账户组合中的δ核算错误，要求δ_policy &gt; k_max·δ_acc。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>核心主张：多租户RAG中的每账户DP保证在账户合谋下系统性低估了联合泄露；关键发现：退化率为Θ(√k·ε_acc)，且可通过新型审计协议进行实证验证。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：生产级RAG服务（如Microsoft 365 Copilot、OpenAI Assistants）为多租户架构，并宣称提供每账户差分隐私。现有成员推断攻击将单一攻击者作为分析单元，但多账户滥用是操作现实。欧盟AI法案等监管框架要求在不暴露模型或数据的情况下进行可审计披露。</p>
+<p><strong>相关工作</strong>：单攻击者RAG MIA（Naseh2025-riddle等）假设k=1且API无状态；联邦学习合谋（Lyu2023-cerberus等）在训练时针对梯度聚合建模协调；DP-RAG防御（Cheng2025-remoterag）修改部署以减少每次查询泄露，本文保持部署不变；DP组合理论（DworkRothblumVadhan2010等）提供了速率但未涉及威胁模型。</p>
+<p><strong>差距</strong>：现有每账户DP保证假设单一攻击者（k=1），但生产RAG账户成本低廉，攻击者可汇集多个账户。尚无工作形式化相同索引多账户合谋下的隐私退化，或提供针对未修改部署且无需索引泄露的审计协议。</p>
+<p><strong>提案</strong>：本文定义了多租户RAG的(ε,δ,k)-合谋DP，并证明了高斯噪声检索下严格的Θ(√k·ε_acc)退化率。设计了验证者可运行的审计协议，使用密码学原语（Merkle账本、ZK证明、高斯噪声证明）和六个RAG特定原语，在不修改部署的情况下为检索分数通道发布(PASS, ε_audit)判决。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>主要结果：在基于FAISS的合成多租户测试平台上，实证AUC随k变化的曲线确认了√k趋势：在固定每账户预算下，AUC = 1/2 + Θ(√k·ε_acc)。该趋势在top-K后处理和训练嵌入器下依然成立。通过了两个伪造门测试（斜率门和紧致门）以及一个诊断测试（尺度崩溃）。</p>
+<h3>消融实验</h3>
+<p>消融实验确认√k缩放关系在top-K后处理和训练嵌入器下成立；替代攻击者的鲁棒性也得到验证。Rényi-DP矩会计在中等k下比闭式界给出更紧的(ε,δ)对。</p>
+<h3>局限性</h3>
+<p>['生成通道隐私（LLM基于选定文档的输出）被明确排除在外，仅审计检索分数通道。', '协议假设提供者诚实遵循承诺阶段；恶意提供者可能在证明前偏离。', '实证验证基于合成部署；真实生产RAG服务可能存在额外复杂性（如缓存、速率限制规避）。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>直接针对生产RAG服务操作相关的现实威胁模型（多账户合谋）。</li>
+<li>提供符合监管要求（EU AI法案、DSA）的实用审计协议，无需数据披露即可进行第三方审计。</li>
+<li>通过推导并验证RAG特定的MIA预测，弥合了DP理论与实证MIA之间的差距。</li>
+<li>强调多账户滥用不仅是欺诈问题，更是隐私边界失效，重新定义了操作实践。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将审计协议扩展至生成通道（LLM输出隐私），并与检索分数审计组合。</li>
+<li>[ ] 在真实生产RAG部署（如Microsoft 365 Copilot、OpenAI Assistants）上测试协议，需提供者合作。</li>
+<li>[ ] 开发适用于自适应攻击者和动态账户创建的联盟规模估计器。</li>
+<li>[ ] 探索替代噪声机制（如Laplace）及其合谋退化率。</li>
+<li>[ ] 将审计协议集成到现有DP-RAG防御框架（如Cheng2025-remoterag）中，实现端到端验证。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.19847</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.19847" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

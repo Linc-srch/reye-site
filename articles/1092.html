@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General Preference Reinforcement Learning | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">General Preference Reinforcement Learning</h2>
+    <h2 class="lang-zh">通用偏好强化学习</h2>
+    <div class="meta">
+      Muhammad Umer, Muhammad Ahmed Mohsin, Ahsan Bilal, Arslan Chaudhry, Andreas Haupt, Sanmi Koyejo, Emily Fox, John M. Cioffi · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>GPRL extends GRPO-style online RL to open-ended tasks by replacing scalar rewards with a multi-dimensional, intransitivity-aware preference embedding from the General Preference Model, achieving 56.51% length-controlled win rate on AlpacaEval 2.0 while resisting reward hacking.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出GPRL方法，将通用偏好模型（GPM）的多维、不可传递性偏好嵌入与GRPO风格的在线强化学习相结合，有效解决了开放任务中的奖励破解问题。在AlpacaEval 2.0上实现了56.51%的长度控制胜率，显著优于现有方法。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — gprl</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> General Preference Reinforcement Learning</li>
+<li><strong>Alias:</strong> gprl</li>
+<li><strong>Authors:</strong> Muhammad Umer, Muhammad Ahmed Mohsin, Ahsan Bilal, Arslan Chaudhry, Andreas Haupt, Sanmi Koyejo, Emily Fox, John M. Cioffi</li>
+<li><strong>arXiv ID:</strong> 2605.18721</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18721</li>
+<li>HTML: https://arxiv.org/html/2605.18721v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18721</li>
+<li><strong>Tags:</strong> reinforcement-learning, preference-optimization, reward-hacking, multi-dimensional-reward, llm-alignment</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>GPRL extends GRPO-style online RL to open-ended tasks by replacing scalar rewards with a multi-dimensional, intransitivity-aware preference embedding from the General Preference Model, achieving 56.51% length-controlled win rate on AlpacaEval 2.0 while resisting reward hacking.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Post-training for LLMs has split into two tracks: online RL with verifiable rewards (e.g., GRPO) excels at math/code but cannot handle open-ended tasks, while preference optimization (e.g., DPO, SimPO) handles open-ended generation but lacks continuous exploration. Scalar reward models used in online RL for open-ended tasks suffer from reward hacking because they collapse multi-dimensional quality into a single proxy.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>GRPO (Group Relative Policy Optimization) provides critic-free online RL with group-relative advantages, used with verifiable rewards for math/code.</li>
+<li>DPO, SimPO, SPPO, and Nash-MD are offline/game-theoretic preference optimization methods that avoid explicit reward modeling but forgo online exploration.</li>
+<li>RLVR (Reinforcement Learning with Verifiable Rewards) uses programmatic verifiers for math/code but cannot extend to open-ended tasks.</li>
+<li>Multi-objective RLHF returns a Pareto family from independent scalar rewards, requiring multiple training runs.</li>
+<li>General Preference Model (GPM) embeds responses into k skew-symmetric subspaces to represent intransitive preferences and multi-dimensional quality.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Scalar reward models used in online RL for open-ended tasks are incomplete proxies for multi-dimensional quality, causing reward hacking as the policy exploits whichever axis the RM is most sensitive to. Existing preference optimization methods lack continuous exploration, while online RL with scalar RMs cannot maintain balanced improvement across quality dimensions.</p>
+<h3>P — Proposal</h3>
+<p>GPRL treats the General Preference Model (GPM) as a structured, multi-dimensional reward source for GRPO-style online RL. It computes per-dimension group-relative advantages across GPM's k subspaces, normalizes each on its own scale, and aggregates them with context-dependent eigenvalues, preventing any single axis from dominating. A closed-loop drift monitor detects and corrects single-axis exploitation by reweighting dimensions and tightening the KL trust region during training.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Starting from Llama-3-8B-Instruct, GPRL achieves 56.51% length-controlled win rate on AlpacaEval 2.0, outperforming GRPO+BT by 14.59 points. It also beats SimPO and SPPO on Arena-Hard, MT-Bench, and WildBench, and resists reward hacking across extended training runs.</p>
+<h3>Ablation</h3>
+<p>Using k=3 subspaces (from Skywork-Reward) saturates performance; the drift monitor reweights dimensions when variance profile drifts, preventing single-axis exploitation without external evaluation signals.</p>
+<h3>Limitations</h3>
+<p>GPRL requires training a GPM embedding model, adding complexity compared to scalar RM approaches. The optimal number of subspaces k is dataset-dependent and may not generalize across domains. The drift monitor's threshold tuning may require task-specific calibration.</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a principled way to combine online exploration with multi-dimensional preference signals, directly addressing reward hacking in open-ended tasks.</li>
+<li>The per-dimension advantage normalization and drift monitor offer a general framework for stable multi-objective online RL without separate reward models.</li>
+<li>Demonstrates that intransitivity-aware preference models can be effectively integrated into policy optimization, not just preference ranking.</li>
+<li>Achieves SOTA results on multiple benchmarks while maintaining robustness over extended training, relevant for production alignment pipelines.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate GPRL on larger base models (e.g., Llama-3-70B) to test scalability and benchmark against frontier models.</li>
+<li>[ ] Explore adaptive selection of k per prompt or domain to improve generalization across diverse tasks.</li>
+<li>[ ] Apply the drift monitor concept to other multi-objective RL settings beyond LLM alignment.</li>
+<li>[ ] Investigate combining GPRL with verifiable rewards for hybrid math/open-ended tasks.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>通用偏好强化学习</h1>
+<p><strong>主要结论</strong>
+- GPRL将多维偏好嵌入作为结构化奖励源，替代标量奖励模型，从根本上缓解奖励破解。
+- 通过逐维度组相对优势归一化和上下文相关特征值聚合，防止单一质量维度主导优化。
+- 闭环漂移监控器动态调整维度权重并收紧KL信任区域，确保训练稳定性。
+- 在AlpacaEval 2.0、Arena-Hard等多个基准上达到最先进水平，且对长程训练具有鲁棒性。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>关键主张：GPRL通过多维、不可传递性偏好嵌入扩展了GRPO风格在线RL到开放任务；关键观察：标量奖励模型因将多维质量坍缩为单一代理而导致奖励破解，而GPRL的逐维度优势归一化和漂移监控有效避免了这一问题。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：LLM后训练分为两条路径：基于可验证奖励的在线RL（如GRPO）擅长数学/代码但无法处理开放任务；偏好优化（如DPO、SimPO）处理开放生成但缺乏持续探索。开放任务中使用的标量奖励模型因将多维质量坍缩为单一代理而遭受奖励破解。</p>
+<p><strong>相关工作</strong>：GRPO提供无评论家的在线RL；DPO、SimPO等离线/博弈论方法避免显式奖励建模但放弃在线探索；RLVR使用程序化验证器但无法扩展至开放任务；多目标RLHF需多次训练；通用偏好模型（GPM）将响应嵌入k个斜对称子空间以表示不可传递偏好和多维质量。</p>
+<p><strong>差距</strong>：开放任务中使用的标量奖励模型是多维质量的不完整代理，导致奖励破解——策略利用奖励模型最敏感的轴。现有偏好优化方法缺乏持续探索，而带标量RM的在线RL无法维持各质量维度的均衡提升。</p>
+<p><strong>提案</strong>：GPRL将GPM作为结构化多维奖励源用于GRPO风格在线RL。它计算GPM的k个子空间上的逐维度组相对优势，按各自尺度归一化，并用上下文相关特征值聚合，防止单一轴主导。闭环漂移监控器通过重新加权维度和收紧KL信任区域来检测和纠正单轴利用。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>从Llama-3-8B-Instruct开始，GPRL在AlpacaEval 2.0上达到56.51%的长度控制胜率，比GRPO+BT高出14.59个百分点。在Arena-Hard、MT-Bench和WildBench上，GPRL也优于SimPO和SPPO，并在长程训练中抵抗奖励破解。</p>
+<h3>消融实验</h3>
+<p>使用k=3个子空间（来自Skywork-Reward）即可饱和性能；漂移监控器在方差分布漂移时重新加权维度，无需外部评估信号即可防止单轴利用。</p>
+<h3>局限性</h3>
+<p>GPRL需要训练GPM嵌入模型，相比标量RM方法增加了复杂性。最优子空间数量k依赖于数据集，可能无法跨领域泛化。漂移监控器的阈值调整可能需要任务特定的校准。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了一种将在线探索与多维偏好信号相结合的原则性方法，直接解决开放任务中的奖励破解问题。</li>
+<li>逐维度优势归一化和漂移监控器为无需独立奖励模型的多目标在线RL提供了通用框架。</li>
+<li>证明不可传递性感知偏好模型可以有效集成到策略优化中，而不仅限于偏好排序。</li>
+<li>在多个基准上达到最先进结果，同时对长程训练保持鲁棒性，对生产级对齐管线有重要意义。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在更大基座模型（如Llama-3-70B）上评估GPRL，测试可扩展性并与前沿模型对比。</li>
+<li>[ ] 探索按提示或领域自适应选择k值，以提高跨多样任务的泛化能力。</li>
+<li>[ ] 将漂移监控器概念应用于LLM对齐之外的其他多目标RL场景。</li>
+<li>[ ] 研究将GPRL与可验证奖励结合，用于混合数学/开放任务。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18721</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18721" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

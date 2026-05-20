@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAXenstein: Accelerated Benchmarking for First-Person Environments | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">JAXenstein: Accelerated Benchmarking for First-Person Environments</h2>
+    <h2 class="lang-zh">JAXenstein：面向第一人称环境的加速基准测试</h2>
+    <div class="meta">
+      Ruo Yu Tao, George Konidaris · 
+      2026-05-20 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>JAXenstein introduces the first JAX-native first-person benchmark, achieving several times faster simulation than existing vision-based benchmarks, enabling rapid iteration on exploration and partial observability problems.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文介绍了JAXenstein，首个基于JAX的第一人称基准测试平台，通过纯JAX实现的Wolfenstein 3D光线投射引擎，在单CPU核心上实现比ViZDoom和MiniWorld约6倍的加速，并支持通过vmap扩展到数百个并行环境。它为JAX强化学习生态填补了视觉第一人称领域的空白，为探索和部分可观测性问题的研究提供了高效工具。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — jaxenstein</h1>
+<p><strong>Key Takeaways</strong>
+- JAXenstein is a JAX-native benchmark implementing the Wolfenstein 3D ray-casting engine for first-person RL tasks.
+- It achieves ~6x speedup over ViZDoom and MiniWorld on a single CPU core, and scales to hundreds of parallel environments via vmap.
+- The benchmark includes ports of ViZDoom, DeepMind Lab, and MiniGrid environments, all in pure JAX for end-to-end GPU acceleration.
+- Ray casting with DDA enables fast rendering but limits environments to tile-based maps without height changes or complex objects.
+- JAXenstein fills a gap in the JAX RL ecosystem by providing visual first-person domains for testing exploration and partial observability.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> JAXenstein: Accelerated Benchmarking for First-Person Environments</li>
+<li><strong>Alias:</strong> jaxenstein</li>
+<li><strong>Authors:</strong> Ruo Yu Tao, George Konidaris</li>
+<li><strong>arXiv ID:</strong> 2605.19926</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.19926</li>
+<li>HTML: https://arxiv.org/html/2605.19926v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.19926</li>
+<li><strong>Tags:</strong> reinforcement-learning, jax, first-person-benchmark, ray-casting, wolfenstein-3d</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>JAXenstein introduces the first JAX-native first-person benchmark, achieving several times faster simulation than existing vision-based benchmarks, enabling rapid iteration on exploration and partial observability problems.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Reinforcement learning progress has been driven by challenging benchmarks like ALE and MuJoCo, but modern JAX-based RL frameworks lack visual first-person domains critical for testing exploration and partial observability. Existing first-person benchmarks like ViZDoom and DeepMind Lab are not implemented in JAX, creating a bottleneck for fast, scalable experimentation.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>ViZDoom (Wydmuch et al., 2019) — first-person RL benchmark based on Doom engine, not JAX-native.</li>
+<li>DeepMind Lab (Beattie et al., 2016) — first-person 3D navigation tasks, not JAX-native.</li>
+<li>MiniWorld/MiniGrid (Chevalier-Boisvert et al., 2023) — lightweight 3D and grid-world benchmarks, not JAX-native.</li>
+<li>Brax (Freeman et al., 2021) — JAX-based physics benchmark for continuous control, not first-person vision.</li>
+<li>PureJaxRL (Lu et al., 2022) — end-to-end JAX RL training pipeline, but lacked first-person environments.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>The JAX RL ecosystem lacks benchmarks for visual first-person tasks, which are essential for evaluating exploration and partial observability. Existing first-person benchmarks are not implemented in JAX, preventing researchers from leveraging JIT compilation and vmap for fast, scalable experimentation.</p>
+<h3>P — Proposal</h3>
+<p>JAXenstein implements a lightweight Wolfenstein 3D ray-casting engine entirely in JAX, supporting JIT and vmap for massive parallelization. It ports existing first-person environments (ViZDoom, DeepMind Lab, MiniGrid) and new ASCII-maze-based tasks, achieving ~6x speedup over ViZDoom on CPU and enabling GPU-accelerated end-to-end training.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>JAXenstein achieves ~6x steps-per-second over ViZDoom and MiniWorld on a single CPU core. In training with recurrent PPO over 1M steps, JAXenstein with pure JAX pipeline achieves much higher environment steps per second than ViZDoom with Stable Baselines3, and ViZDoom crashes when parallelizing &gt;64 environments while JAXenstein scales further.</p>
+<h3>Ablation</h3>
+<p>Rendering at native low resolution (without rescaling) provides massive per-timestep speedups, as images are typically downsampled for deep RL; this design choice is a key factor in JAXenstein's speed advantage.</p>
+<h3>Limitations</h3>
+<p>['Ray casting with DDA requires tile-based maps, preventing rendering of stairs, jumping, height differences, or complex 3D objects.', 'Environments with shooting and enemy interaction are not yet implemented (planned for later release).', 'Simplified visual assets (no textures, sprites only) may limit transferability to photorealistic domains.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a fast, scalable testbed for first-person RL in JAX, directly enabling faster iteration on exploration and partial observability algorithms.</li>
+<li>Demonstrates how classic game engine techniques (ray casting) can be repurposed for modern ML infrastructure (JAX) to achieve order-of-magnitude speedups.</li>
+<li>Fills a critical gap in the JAX RL ecosystem, which previously lacked vision-based first-person domains despite their importance for challenging RL problems.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate JAXenstein on exploration algorithms (e.g., RND, ICM, Go-Explore) to benchmark sample efficiency in first-person tasks.</li>
+<li>[ ] Extend JAXenstein with more complex rendering (e.g., textured walls, enemies) while maintaining JAX compatibility.</li>
+<li>[ ] Integrate JAXenstein with existing JAX RL libraries (e.g., PureJaxRL, Brax) for turnkey experimentation.</li>
+<li>[ ] Compare JAXenstein training speed and sample efficiency against non-JAX first-person benchmarks on standard RL algorithms.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>JAXenstein：面向第一人称环境的加速基准测试</h1>
+<p><strong>主要结论</strong>
+- JAXenstein是首个JAX原生基准测试，实现了Wolfenstein 3D光线投射引擎，用于第一人称强化学习任务。
+- 在单CPU核心上，它比ViZDoom和MiniWorld快约6倍，并通过vmap支持数百个并行环境。
+- 该基准测试包含了ViZDoom、DeepMind Lab和MiniGrid环境的移植版本，全部基于纯JAX实现，支持端到端GPU加速。
+- 基于DDA的光线投射渲染速度快，但限制了环境只能使用基于瓦片的地图，无法处理高度变化或复杂物体。
+- JAXenstein填补了JAX强化学习生态中缺乏视觉第一人称领域的空白，为测试探索和部分可观测性提供了重要工具。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>JAXenstein提出了首个JAX原生第一人称基准测试，比现有视觉基准测试快数倍，能够加速探索和部分可观测性问题的迭代研究。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：强化学习的发展得益于ALE和MuJoCo等挑战性基准测试，但现代基于JAX的强化学习框架缺乏视觉第一人称领域，而这对于测试探索和部分可观测性至关重要。现有的第一人称基准测试如ViZDoom和DeepMind Lab并非JAX原生，成为快速、可扩展实验的瓶颈。</p>
+<p><strong>相关工作</strong>：ViZDoom基于Doom引擎，非JAX原生；DeepMind Lab提供第一人称3D导航任务，非JAX原生；MiniWorld/MiniGrid是轻量级3D和网格世界基准测试，非JAX原生；Brax是JAX物理基准测试，用于连续控制，但非第一人称视觉；PureJaxRL提供了端到端JAX强化学习训练流程，但缺乏第一人称环境。</p>
+<p><strong>差距</strong>：JAX强化学习生态缺乏视觉第一人称任务的基准测试，而这些任务对于评估探索和部分可观测性至关重要。现有的第一人称基准测试未在JAX中实现，阻碍了研究者利用JIT编译和vmap进行快速、可扩展的实验。</p>
+<p><strong>提案</strong>：JAXenstein在JAX中实现了一个轻量级的Wolfenstein 3D光线投射引擎，支持JIT和vmap实现大规模并行化。它移植了现有的第一人称环境（ViZDoom、DeepMind Lab、MiniGrid）并新增了基于ASCII迷宫的任务，在CPU上比ViZDoom快约6倍，并支持GPU加速的端到端训练。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>主要结果：JAXenstein在单CPU核心上每秒步数比ViZDoom和MiniWorld快约6倍。在使用循环PPO进行100万步训练时，纯JAX管线的JAXenstein比使用Stable Baselines3的ViZDoom实现了更高的环境每秒步数，且ViZDoom在并行超过64个环境时会崩溃，而JAXenstein可以进一步扩展。</p>
+<h3>消融实验</h3>
+<p>消融实验发现：以原生低分辨率渲染（不进行缩放）可以带来巨大的每时间步加速，因为图像通常会被降采样用于深度强化学习；这一设计选择是JAXenstein速度优势的关键因素。</p>
+<h3>局限性</h3>
+<p>['基于DDA的光线投射需要基于瓦片的地图，无法渲染楼梯、跳跃、高度差异或复杂的3D物体。', '涉及射击和敌人交互的环境尚未实现（计划在后续版本中发布）。', '简化的视觉资产（无纹理，仅有精灵）可能限制向逼真领域的迁移能力。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>为JAX中的第一人称强化学习提供了一个快速、可扩展的测试平台，直接加速了探索和部分可观测性算法的迭代。</li>
+<li>展示了如何将经典游戏引擎技术（光线投射）重新用于现代机器学习基础设施（JAX），实现数量级的加速。</li>
+<li>填补了JAX强化学习生态的关键空白，该生态此前缺乏基于视觉的第一人称领域，尽管这些领域对解决具有挑战性的强化学习问题至关重要。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在JAXenstein上评估探索算法（如RND、ICM、Go-Explore），以基准测试第一人称任务中的样本效率。</li>
+<li>[ ] 扩展JAXenstein以支持更复杂的渲染（如纹理墙壁、敌人），同时保持JAX兼容性。</li>
+<li>[ ] 将JAXenstein与现有的JAX强化学习库（如PureJaxRL、Brax）集成，实现一键式实验。</li>
+<li>[ ] 在标准强化学习算法上，比较JAXenstein的训练速度和样本效率与非JAX第一人称基准测试的差异。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.19926</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.19926" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

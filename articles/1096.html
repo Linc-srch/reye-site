@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lance: Unified Multimodal Modeling by Multi-Task Synergy | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Lance: Unified Multimodal Modeling by Multi-Task Synergy</h2>
+    <h2 class="lang-zh">Lance：通过多任务协同实现统一多模态建模</h2>
+    <div class="meta">
+      Fengyi Fu, Mengqi Huang, Shaojin Wu, Yunsheng Jiang, Yufei Huo, Hao Li, Yinghang Song, Fei Ding, Jianzhu Guo, Qian He, Zheren Fu, Zhendong Mao, Yongdong Zhang · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>Lance proposes a lightweight native unified multimodal model that achieves strong image/video generation and understanding via a dual-stream MoE architecture and staged multi-task training, outperforming open-source unified models with only 3B activated parameters.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出Lance，一个轻量级原生统一多模态模型，通过双流混合专家架构和分阶段多任务训练，在仅3B激活参数下实现了强大的图像/视频生成与理解能力，显著优于现有开源统一模型。该工作为资源受限场景下的多模态AI研究提供了实用范式。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — lance</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Lance: Unified Multimodal Modeling by Multi-Task Synergy</li>
+<li><strong>Alias:</strong> lance</li>
+<li><strong>Authors:</strong> Fengyi Fu, Mengqi Huang, Shaojin Wu, Yunsheng Jiang, Yufei Huo, Hao Li, Yinghang Song, Fei Ding, Jianzhu Guo, Qian He, Zheren Fu, Zhendong Mao, Yongdong Zhang</li>
+<li><strong>arXiv ID:</strong> 2605.18678</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18678</li>
+<li>HTML: https://arxiv.org/html/2605.18678v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18678</li>
+<li><strong>Tags:</strong> unified-multimodal, mixture-of-experts, multi-task-learning, image-generation, video-generation</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Lance proposes a lightweight native unified multimodal model that achieves strong image/video generation and understanding via a dual-stream MoE architecture and staged multi-task training, outperforming open-source unified models with only 3B activated parameters.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Multimodal AI is moving toward native unified models that integrate understanding, generation, and editing. Existing systems often separate understanding (semantic reasoning) and generation (visual synthesis) into different architectures, or use a single visual representation that struggles to balance both. Recent unified models like Emu3, Show-o, and TUNA have made progress but remain limited in task coverage and often require large model capacity.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Non-native unified models like MetaQuery-XL, SEED-X, TokenFlow-XL, ILLUME, InternVL-U, and UniVideo assemble separately pre-trained components for understanding and generation.</li>
+<li>Native unified models like Chameleon, LWM, Janus, Transfusion, Emu3, Show-o, Bagel, Mogao, HaploOmni, VILA-U, HunyuanImage 3.0, Emu3.5, TUNA, and TUNA-2 jointly pre-train a unified architecture but often cover limited task subsets.</li>
+<li>MLLMs (e.g., Flamingo, LLaVA, Qwen-VL, InternVL) align visual encoders with language backbones for understanding, while diffusion/flow models (e.g., FLUX, Seedream, CogVideoX) focus on generation.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing unified models suffer from two key limitations: (1) visual-representation mismatch between understanding (high-level semantic features) and generation (low-level continuous representations), and (2) limited task coverage, with most methods confined to text-image domains or partial task combinations, leaving full image-video understanding, generation, and editing insufficiently explored. Diverse generation tasks like editing and subject-driven generation are often added as downstream fine-tuning rather than systematically optimized in multi-task training.</p>
+<h3>P — Proposal</h3>
+<p>Lance introduces a dual-stream mixture-of-experts (MoE) architecture on shared interleaved multimodal sequences, enabling joint context learning while decoupling pathways for understanding and generation. It uses modality-aware rotary positional encoding (MaPE) to mitigate interference among heterogeneous visual tokens and boost cross-task alignment. Training follows a staged multi-task paradigm with capability-oriented objectives and adaptive data scheduling to strengthen both semantic comprehension and visual generation.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Lance with 3B activated parameters substantially outperforms existing open-source unified models on image and video generation tasks (e.g., T2I, T2V, I2V) while maintaining competitive multimodal understanding performance. All results are achieved within a 128-GPU training budget. Detailed benchmark numbers are referenced in the paper's experimental section.</p>
+<h3>Ablation</h3>
+<p>The dual-stream MoE architecture and MaPE are key to balancing understanding and generation; removing either degrades performance. Staged multi-task training with adaptive data scheduling improves both semantic comprehension and visual synthesis compared to joint training without staging.</p>
+<h3>Limitations</h3>
+<p>['The paper does not provide explicit numerical comparisons on all benchmarks in the provided excerpt, making it hard to quantify gains precisely.', 'The model is evaluated only on open-source baselines; comparison with proprietary systems (e.g., GPT-4V, Gemini) is missing.', 'The 128-GPU budget is modest, but scaling behavior to larger compute or model sizes is not explored.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Demonstrates that lightweight unified multimodal models can achieve strong performance via architectural innovations (dual-stream MoE, MaPE) rather than brute-force scaling.</li>
+<li>Provides a practical paradigm for multi-task synergy, showing that broader task coverage (including editing, subject-driven generation) can emerge from systematic multi-task training.</li>
+<li>Relevant to resource-constrained research settings: 3B activated parameters and 128-GPU training budget make the approach accessible.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate Lance on additional benchmarks (e.g., video understanding, long-context reasoning) to assess generalization.</li>
+<li>[ ] Explore scaling Lance to larger model sizes or longer training budgets to see if performance gains continue.</li>
+<li>[ ] Investigate the emergent generalization property: which unseen tasks benefit most from multi-task synergy?</li>
+<li>[ ] Apply the dual-stream MoE architecture to other modalities (e.g., audio, 3D) for unified multimodal modeling.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>Lance：通过多任务协同实现统一多模态建模</h1>
+<p><strong>主要结论</strong>
+- Lance采用双流MoE架构，在共享交错多模态序列上实现联合上下文学习，同时解耦理解与生成路径。
+- 提出模态感知旋转位置编码（MaPE），缓解异构视觉token间的干扰，提升跨任务对齐。
+- 分阶段多任务训练结合自适应数据调度，系统性地优化语义理解与视觉生成。
+- 仅3B激活参数和128-GPU训练预算即可达到领先性能，验证了架构创新而非暴力扩展的有效性。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>Lance通过双流MoE架构和分阶段多任务训练，在轻量级模型上实现了统一多模态理解与生成，关键发现是架构创新可替代大规模参数扩展。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>多模态AI正朝着原生统一模型发展，但现有系统常将理解与生成分离，或使用单一视觉表示难以平衡两者。相关工作如Emu3、Show-o等虽取得进展，但任务覆盖有限且需大模型容量。现有统一模型存在两个关键局限：(1) 理解所需的高层语义特征与生成所需的低层连续表示之间的视觉表示不匹配；(2) 任务覆盖有限，多数方法局限于文本-图像领域或部分任务组合，图像-视频理解、生成和编辑尚未充分探索。Lance提出在共享交错多模态序列上采用双流混合专家架构，通过模态感知旋转位置编码（MaPE）缓解异构视觉token干扰，并采用分阶段多任务训练范式，结合能力导向目标和自适应数据调度，强化语义理解与视觉生成。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>Lance在3B激活参数下，在图像和视频生成任务（如T2I、T2V、I2V）上显著优于现有开源统一模型，同时保持有竞争力的多模态理解性能。所有结果均在128-GPU训练预算内实现。详细基准数值请参阅论文实验部分。</p>
+<h3>消融实验</h3>
+<p>双流MoE架构和MaPE是平衡理解与生成的关键；移除任一组件都会导致性能下降。分阶段多任务训练结合自适应数据调度相比无分阶段的联合训练，在语义理解和视觉合成上均有提升。</p>
+<h3>局限性</h3>
+<p>['论文摘要中未提供所有基准的明确数值对比，难以精确量化增益。', '模型仅与开源基线比较，缺少与闭源系统（如GPT-4V、Gemini）的对比。', '128-GPU预算虽适中，但未探索向更大计算量或模型规模的扩展行为。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>证明轻量级统一多模态模型可通过架构创新（双流MoE、MaPE）而非暴力扩展实现强性能。</li>
+<li>提供了多任务协同的实用范式，表明更广泛的任务覆盖（包括编辑、主体驱动生成）可从系统性多任务训练中涌现。</li>
+<li>对资源受限的研究场景具有参考价值：3B激活参数和128-GPU训练预算使该方法易于复现。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在更多基准（如视频理解、长上下文推理）上评估Lance，以检验泛化能力。</li>
+<li>[ ] 探索将Lance扩展到更大模型规模或更长训练预算，观察性能增益是否持续。</li>
+<li>[ ] 研究涌现泛化特性：哪些未见任务从多任务协同中受益最多？</li>
+<li>[ ] 将双流MoE架构应用于其他模态（如音频、3D），实现统一多模态建模。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18678</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18678" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

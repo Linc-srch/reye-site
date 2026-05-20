@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIDE: Efficient and Lossless MoE Diffusion LLM Inference with I/O-aware Expert Offload | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">TIDE: Efficient and Lossless MoE Diffusion LLM Inference with I/O-aware Expert Offload</h2>
+    <h2 class="lang-zh">TIDE：面向MoE扩散大语言模型的高效无损推理系统</h2>
+    <div class="meta">
+      Zhiben Chen, Youpeng Zhao, Yang Sui, Jun Wang, Yuzhang Shang · 
+      2026-05-20 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>TIDE proposes a lossless, training-free inference system that exploits temporal stability of expert activations to achieve up to 1.5x throughput improvement for MoE diffusion LLMs on resource-constrained devices.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出TIDE，一种面向混合专家扩散大语言模型（MoE-dLLM）的无损、免训练推理加速系统。通过利用相邻去噪步骤中专家激活的时间稳定性，TIDE采用基于间隔的专家刷新策略，将推理调度建模为数学规划问题，在资源受限的单GPU-CPU系统上实现高达1.5倍的吞吐量提升。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — tide</h1>
+<p><strong>Key Takeaways</strong>
+- TIDE leverages temporal stability of expert activations across adjacent denoising steps in MoE-dLLMs to reduce I/O overhead.
+- Interval-based expert refresh strategy updates expert placement only at selected steps, minimizing GPU-CPU data transfer.
+- Inference scheduling is formulated as a mathematical programming problem to find the optimal refresh interval.
+- TIDE is lossless and training-free, achieving up to 1.4x and 1.5x throughput improvements on LLaDA2.0-mini and LLaDA2.0-flash.
+- The method is designed for resource-constrained single GPU-CPU systems, enabling efficient MoE-dLLM deployment.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> TIDE: Efficient and Lossless MoE Diffusion LLM Inference with I/O-aware Expert Offload</li>
+<li><strong>Alias:</strong> tide</li>
+<li><strong>Authors:</strong> Zhiben Chen, Youpeng Zhao, Yang Sui, Jun Wang, Yuzhang Shang</li>
+<li><strong>arXiv ID:</strong> 2605.20179</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.20179</li>
+<li>HTML: https://arxiv.org/html/2605.20179v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.20179</li>
+<li><strong>Tags:</strong> moe-dllm, inference-optimization, expert-offloading, resource-constrained, lossless-acceleration</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>TIDE proposes a lossless, training-free inference system that exploits temporal stability of expert activations to achieve up to 1.5x throughput improvement for MoE diffusion LLMs on resource-constrained devices.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Diffusion Large Language Models (dLLMs) offer parallel block-level decoding and bidirectional context, making them attractive for edge deployment. However, scaling dLLMs with mixture-of-experts (MoE) architectures introduces memory and I/O challenges on resource-constrained hardware.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Fast-dLLM: block-wise approximate KV caching and confidence-aware parallel decoding for dense dLLMs.</li>
+<li>dKV-Cache: exploits stable KV states in neighboring steps to reduce attention computation.</li>
+<li>Learn2PD: learning-based filter model to avoid redundant decoding in dLLMs.</li>
+<li>MoE inference systems for AR models: expert offloading (e.g., Mixtral offloading) and CPU routing (e.g., FlexGen).</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing methods for MoE inference either incur prohibitive I/O overhead by swapping experts every step or become CPU-bound by routing tokens to CPU experts. No prior work addresses the unique execution pattern of MoE-dLLMs, where each denoising step activates a wide, fragmented expert footprint for all tokens in a block.</p>
+<h3>P — Proposal</h3>
+<p>TIDE introduces an interval-based expert refresh strategy that exploits the temporal stability of expert activations across adjacent denoising steps. It formulates inference scheduling as a mathematical programming problem to find the optimal refresh interval that minimizes I/O traffic and CPU computation, achieving lossless acceleration without model training.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On a single GPU-CPU system, TIDE achieves up to 1.4x throughput improvement over baselines on LLaDA2.0-mini and 1.5x on LLaDA2.0-flash, evaluated on NVIDIA A100 and H100 GPUs.</p>
+<h3>Ablation</h3>
+<p>The optimal refresh interval is determined via a constrained mathematical programming model; using a fixed interval of 5 steps yields near-optimal performance, with cosine similarity of expert routing remaining above 0.95 for step pairs separated by 5 steps.</p>
+<h3>Limitations</h3>
+<p>['The method assumes temporal stability of expert activations, which may degrade for very long generation sequences or highly dynamic prompts.', 'The mathematical programming model requires hardware profiling, which may need recalibration for different GPU-CPU configurations.', 'Evaluation is limited to LLaDA2.0 models; generalizability to other MoE-dLLMs is not fully explored.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Enables deployment of large MoE-dLLMs on edge devices, aligning with the trend toward on-device AI for privacy and latency.</li>
+<li>Lossless and training-free acceleration is highly practical for production systems where model accuracy cannot be compromised.</li>
+<li>The interval-based refresh strategy is a novel application of temporal stability in diffusion processes, potentially applicable to other iterative inference tasks.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Test TIDE on other MoE-dLLM architectures (e.g., DeepSeek-MoE) to validate generalizability.</li>
+<li>[ ] Explore adaptive interval selection based on real-time expert activation similarity.</li>
+<li>[ ] Integrate TIDE with existing dLLM caching or compression techniques for further efficiency gains.</li>
+<li>[ ] Evaluate on multi-GPU or heterogeneous memory systems (e.g., CPU+NPU).</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>TIDE：面向MoE扩散大语言模型的高效无损推理系统</h1>
+<p><strong>主要结论</strong>
+- TIDE利用MoE-dLLM相邻去噪步骤中专家激活的时间稳定性，减少I/O开销。
+- 基于间隔的专家刷新策略仅在选定步骤更新专家放置，最小化GPU-CPU数据传输。
+- 推理调度被建模为数学规划问题，以找到最优刷新间隔。
+- TIDE是无损且免训练的，在LLaDA2.0-mini和LLaDA2.0-flash上分别实现1.4倍和1.5倍的吞吐量提升。
+- 该方法专为资源受限的单GPU-CPU系统设计，支持高效的MoE-dLLM部署。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>TIDE提出了一种无损、免训练的推理系统，利用专家激活的时间稳定性，在资源受限设备上为MoE扩散大语言模型实现高达1.5倍的吞吐量提升。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>扩散大语言模型（dLLM）支持并行块级解码和双向上下文，适合边缘部署，但混合专家（MoE）架构在资源受限硬件上带来内存和I/O挑战。现有MoE推理方法要么每步交换专家导致高昂I/O开销，要么将令牌路由到CPU专家导致CPU瓶颈。TIDE提出基于间隔的专家刷新策略，利用相邻去噪步骤中专家激活的时间稳定性，并将推理调度建模为数学规划问题以找到最优刷新间隔，实现无损加速。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在单GPU-CPU系统上，TIDE在NVIDIA A100和H100 GPU上评估，相比基线在LLaDA2.0-mini上实现1.4倍吞吐量提升，在LLaDA2.0-flash上实现1.5倍吞吐量提升。</p>
+<h3>消融实验</h3>
+<p>最优刷新间隔通过约束数学规划模型确定；使用固定间隔5步可获得接近最优的性能，间隔5步的专家路由余弦相似度仍保持在0.95以上。</p>
+<h3>局限性</h3>
+<p>['该方法假设专家激活具有时间稳定性，对于极长生成序列或高度动态的提示可能退化。', '数学规划模型需要硬件性能分析，不同GPU-CPU配置可能需要重新校准。', '评估仅限于LLaDA2.0模型，对其他MoE-dLLM的泛化性尚未充分探索。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>支持在边缘设备上部署大型MoE-dLLM，符合隐私和低延迟的端侧AI趋势。</li>
+<li>无损且免训练的加速方式对生产系统非常实用，模型精度不受影响。</li>
+<li>基于间隔的刷新策略是扩散过程中时间稳定性的新颖应用，可能适用于其他迭代推理任务。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在其他MoE-dLLM架构（如DeepSeek-MoE）上测试TIDE以验证泛化性。</li>
+<li>[ ] 探索基于实时专家激活相似性的自适应间隔选择。</li>
+<li>[ ] 将TIDE与现有dLLM缓存或压缩技术集成，进一步提升效率。</li>
+<li>[ ] 在多GPU或异构内存系统（如CPU+NPU）上评估。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.20179</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.20179" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

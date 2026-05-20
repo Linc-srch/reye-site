@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BalanceRAG: Joint Risk Calibration for Cascaded Retrieval-Augmented Generation | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">BalanceRAG: Joint Risk Calibration for Cascaded Retrieval-Augmented Generation</h2>
+    <h2 class="lang-zh">BalanceRAG：级联检索增强生成的联合风险校准</h2>
+    <div class="meta">
+      Zijun Jia, Yuanchang Ye, Sen Jia, Yiyao Qian, Haoning Wang, Baojie Chen, Diyin Tang, Jinsong Yu, Zhiyuan Wang · 
+      2026-05-20 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>BalanceRAG proposes a training-free, statistically certified framework for joint risk calibration of cascaded LLM-only/RAG systems, enabling adaptive retrieval with finite-sample error control and higher coverage.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出一种无需训练、具有统计保证的联合风险校准框架，用于级联LLM-only/RAG系统。通过将阈值对选择建模为二维网格上的多重检验问题，并采用序贯图检验（SGT）方法，BalanceRAG能够在控制选择条件错误率的同时最大化覆盖率，显著优于传统的逐阶段校准方法。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — balancerag</h1>
+<p><strong>Key Takeaways</strong>
+- BalanceRAG jointly calibrates LLM-only and RAG thresholds for cascaded RAG, avoiding conservative stage-wise calibration.
+- It formulates threshold pair selection as a multiple testing problem over a 2D lattice and uses Sequential Graphical Testing (SGT) to certify safe operating points.
+- The method provides finite-sample, high-probability control of the selection-conditioned error rate while maximizing coverage.
+- Experiments on three open-domain QA benchmarks show BalanceRAG meets prescribed risk levels, improves coverage, and reduces unnecessary retrieval calls compared to always-on RAG.
+- BalanceRAG extends to multi-risk calibration, jointly controlling answer error and retrieval usage.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> BalanceRAG: Joint Risk Calibration for Cascaded Retrieval-Augmented Generation</li>
+<li><strong>Alias:</strong> balancerag</li>
+<li><strong>Authors:</strong> Zijun Jia, Yuanchang Ye, Sen Jia, Yiyao Qian, Haoning Wang, Baojie Chen, Diyin Tang, Jinsong Yu, Zhiyuan Wang</li>
+<li><strong>arXiv ID:</strong> 2605.20084</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.20084</li>
+<li>HTML: https://arxiv.org/html/2605.20084v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.20084</li>
+<li><strong>Tags:</strong> retrieval-augmented-generation, risk-control, cascaded-systems, selective-prediction, llm-reliability</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>BalanceRAG proposes a training-free, statistically certified framework for joint risk calibration of cascaded LLM-only/RAG systems, enabling adaptive retrieval with finite-sample error control and higher coverage.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Large language models (LLMs) suffer from factual inaccuracies, which retrieval-augmented generation (RAG) can mitigate but at a cost. Applying RAG to every query is wasteful when the LLM alone is reliable, motivating cascaded RAG where queries are first handled by an LLM-only branch and escalated to RAG only when uncertain. Prior adaptive RAG methods use heuristic routing without statistical guarantees on the final error rate.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Adaptive RAG methods (e.g., Mallen et al., 2023; Jeong et al., 2024; Tang et al., 2025) route queries based on uncertainty or complexity but lack finite-sample risk guarantees.</li>
+<li>Risk control in selective prediction (Angelopoulos et al., 2024; Gui et al., 2024; Jung et al., 2024) provides finite-sample guarantees but does not address joint calibration for cascaded LLM/RAG routing.</li>
+<li>Conformal prediction and risk control frameworks (Wang et al., 2024b, 2025e, 2025b; Tan et al., 2025) offer statistical guarantees for single-branch systems.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing cascaded RAG systems calibrate thresholds stage by stage, which is overly conservative because the final utility depends on the joint threshold pair. There is no prior work providing finite-sample risk control for the combined LLM-only/RAG routing decision, leaving a gap in statistically certified adaptive retrieval.</p>
+<h3>P — Proposal</h3>
+<p>BalanceRAG frames joint threshold calibration as a multiple testing problem over a two-dimensional lattice of threshold pairs. It uses Sequential Graphical Testing (SGT) to propagate significance budget across the lattice, certifying safe operating points that control the selection-conditioned error rate at a user-specified level while maximizing acceptance rate. The method is training-free and extends to multi-risk calibration for controlling both answer error and retrieval usage.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On three open-domain QA benchmarks (Natural Questions, TriviaQA, WebQuestions) with multiple LLM backbones (LLaMA-2-7B, LLaMA-2-13B, Mistral-7B), BalanceRAG meets prescribed risk levels (e.g., α=0.1) with coverage up to 85-92%, compared to always-on RAG coverage of 100% but with higher retrieval cost. BalanceRAG reduces retrieval calls by 30-50% while maintaining comparable or better accuracy on accepted examples.</p>
+<h3>Ablation</h3>
+<p>Ablation shows that joint calibration via SGT achieves higher coverage than stage-wise calibration (e.g., 88% vs 82% at α=0.1) and significantly outperforms Bonferroni correction (88% vs 75%), demonstrating the benefit of exploiting the lattice structure.</p>
+<h3>Limitations</h3>
+<p>['The method relies on the availability of well-calibrated uncertainty scores from both branches, which may not be trivial for all LLMs.', 'The lattice search and SGT procedure may become computationally expensive for very fine-grained thresholds.', 'The framework assumes the calibration set is representative of the test distribution; distribution shift could degrade guarantees.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a principled way to balance accuracy, coverage, and retrieval cost in RAG systems with statistical guarantees.</li>
+<li>Directly applicable to building more efficient and reliable LLM-based QA systems in production.</li>
+<li>The joint calibration idea could be extended to other cascaded or multi-branch LLM architectures.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply BalanceRAG to other domains beyond open-domain QA, such as medical or legal question answering.</li>
+<li>[ ] Explore integration with learned uncertainty estimators to improve calibration efficiency.</li>
+<li>[ ] Investigate adaptive threshold selection under distribution shift using online risk control.</li>
+<li>[ ] Extend the framework to more than two branches (e.g., multi-source RAG).</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>BalanceRAG：级联检索增强生成的联合风险校准</h1>
+<p><strong>主要结论</strong>
+- BalanceRAG联合校准LLM-only和RAG的阈值，避免了保守的逐阶段校准。
+- 将阈值对选择建模为二维网格上的多重检验问题，使用序贯图检验（SGT）认证安全操作点。
+- 提供有限样本、高概率的错误率控制，同时最大化覆盖率。
+- 在三个开放域QA基准上，BalanceRAG满足预设风险水平，提高覆盖率，并减少不必要的检索调用。
+- 可扩展到多风险校准，同时控制答案错误和检索使用率。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>BalanceRAG提出一种无需训练、具有统计保证的联合风险校准框架，关键观察是现有级联RAG系统逐阶段校准过于保守，而联合校准能显著提升覆盖率。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：大语言模型（LLM）存在事实不准确问题，检索增强生成（RAG）可以缓解但成本高。对每个查询都使用RAG是浪费的，因此出现了级联RAG：查询先由LLM-only分支处理，仅在不确定时升级到RAG。先前的自适应RAG方法使用启发式路由，缺乏对最终错误率的统计保证。</p>
+<p><strong>相关工作</strong>：自适应RAG方法（如Mallen et al., 2023; Jeong et al., 2024; Tang et al., 2025）基于不确定性或复杂度路由查询，但缺乏有限样本风险保证。选择性预测中的风险控制（Angelopoulos et al., 2024; Gui et al., 2024; Jung et al., 2024）提供有限样本保证，但未解决级联LLM/RAG路由的联合校准问题。共形预测和风险控制框架（Wang et al., 2024b, 2025e, 2025b; Tan et al., 2025）为单分支系统提供统计保证。</p>
+<p><strong>差距</strong>：现有级联RAG系统逐阶段校准阈值，由于最终效用取决于联合阈值对，这种做法过于保守。目前没有工作为LLM-only/RAG联合路由决策提供有限样本风险控制，在统计认证的自适应检索方面存在空白。</p>
+<p><strong>提案</strong>：BalanceRAG将联合阈值校准建模为二维阈值对网格上的多重检验问题。它使用序贯图检验（SGT）在网格上传播显著性预算，认证安全操作点，在用户指定水平下控制选择条件错误率，同时最大化接受率。该方法无需训练，并可扩展到多风险校准，同时控制答案错误和检索使用率。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在三个开放域QA基准（Natural Questions、TriviaQA、WebQuestions）上，使用多个LLM骨干（LLaMA-2-7B、LLaMA-2-13B、Mistral-7B），BalanceRAG满足预设风险水平（如α=0.1），覆盖率达到85-92%，而始终开启RAG的覆盖率为100%但检索成本更高。BalanceRAG在保持被接受示例精度相当或更好的同时，减少了30-50%的检索调用。</p>
+<h3>消融实验</h3>
+<p>消融实验表明，通过SGT进行联合校准比逐阶段校准获得更高覆盖率（例如α=0.1时88% vs 82%），并显著优于Bonferroni校正（88% vs 75%），证明了利用网格结构的优势。</p>
+<h3>局限性</h3>
+<p>['该方法依赖于两个分支都能提供良好校准的不确定性分数，这对所有LLM来说可能并非易事。', '对于非常细粒度的阈值，网格搜索和SGT过程可能计算开销较大。', '该框架假设校准集能代表测试分布；分布偏移可能降低保证的有效性。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>为在RAG系统中平衡准确性、覆盖率和检索成本提供了一种有统计保证的原则性方法。</li>
+<li>可直接用于构建更高效、更可靠的基于LLM的QA生产系统。</li>
+<li>联合校准思想可扩展到其他级联或多分支LLM架构。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将BalanceRAG应用于开放域QA以外的领域，如医疗或法律问答。</li>
+<li>[ ] 探索与学习型不确定性估计器集成，以提高校准效率。</li>
+<li>[ ] 研究在分布偏移下使用在线风险控制的自适应阈值选择。</li>
+<li>[ ] 将框架扩展到两个以上分支（例如多源RAG）。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.20084</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.20084" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

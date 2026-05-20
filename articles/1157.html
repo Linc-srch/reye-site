@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BiRD: A Bidirectional Ranking Defense Mechanism for Retrieval Augmented Generation | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">BiRD: A Bidirectional Ranking Defense Mechanism for Retrieval Augmented Generation</h2>
+    <h2 class="lang-zh">BiRD：面向检索增强生成的双向排序防御机制</h2>
+    <div class="meta">
+      Chengcai Gao, Zhihong Sun, Xiaochuan Shi, Qiufeng Wang, Chao Liang · 
+      2026-05-20 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>BiRD introduces a bidirectional ranking defense that leverages ranking context consistency to efficiently detect poisoned documents in RAG, achieving high robustness with minimal latency.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出BiRD，一种利用双向排序一致性高效检测检索增强生成（RAG）中毒文档的防御方法。实验表明，BiRD可将PoisonedRAG攻击成功率降低54%，任务准确率提升56%，且平均额外延迟低于1秒。该方法为RAG安全提供了兼顾鲁棒性与效率的新思路。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — bird</h1>
+<p><strong>Key Takeaways</strong>
+- Poisoned documents show stronger alignment between backward and forward rankings than benign ones.
+- BiRD uses forward ranking for semantic relevance and backward ranking for ranking context consistency.
+- BiRD reduces PoisonedRAG attack success rate by up to 54% and improves task accuracy by up to 56%.
+- Average additional latency of BiRD is under 1 second, making it efficient.
+- Evaluated across 3 datasets, 3 retrievers, 3 LLMs, and 2 attack scenarios.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> BiRD: A Bidirectional Ranking Defense Mechanism for Retrieval Augmented Generation</li>
+<li><strong>Alias:</strong> bird</li>
+<li><strong>Authors:</strong> Chengcai Gao, Zhihong Sun, Xiaochuan Shi, Qiufeng Wang, Chao Liang</li>
+<li><strong>arXiv ID:</strong> 2605.20123</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.20123</li>
+<li>HTML: https://arxiv.org/html/2605.20123v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.20123</li>
+<li><strong>Tags:</strong> retrieval-augmented-generation, corpus-poisoning-defense, bidirectional-ranking, adversarial-robustness, ranking-context</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>BiRD introduces a bidirectional ranking defense that leverages ranking context consistency to efficiently detect poisoned documents in RAG, achieving high robustness with minimal latency.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Retrieval-Augmented Generation (RAG) enhances LLMs by retrieving external knowledge but is vulnerable to corpus poisoning attacks. Existing defenses rely on semantic analysis or voting, which are either computationally expensive or weak against strong attacks.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>SeConRAG and TrustRAG use clustering-filtering with semantic analysis but incur high computational overhead.</li>
+<li>ReliabilityRAG and Certifiably Robust RAG use voting-consistency but are vulnerable to high-intensity poisoning.</li>
+<li>AstuteRAG and InstructRAG use LLM internal knowledge for filtering but are limited by LLM knowledge boundaries.</li>
+<li>PoisonedRAG, GASLITE, and ReGENT are corpus poisoning attacks that inject malicious documents to manipulate retrieval.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing defenses focus solely on semantic content relevance, ignoring the retrieval context defined by ranking structures. This leads to a trade-off between computational cost and robustness, especially under strong poisoning attacks.</p>
+<h3>P — Proposal</h3>
+<p>BiRD is a bidirectional ranking defense that uses forward ranking to assess semantic relevance and backward ranking to quantify ranking context consistency. It filters poisoned documents by detecting strong alignment between backward and forward rankings, a discriminative pattern of poisoned documents.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On HotpotQA with ANCE retriever, BiRD reduces PoisonedRAG attack success rate by 54% and improves task accuracy by 56%. Average additional latency is under 1 second across all settings.</p>
+<h3>Ablation</h3>
+<p>Ablation on the backward ranking signal shows that removing it increases attack success rate by over 30%, confirming its critical role in detecting poisoned documents.</p>
+<h3>Limitations</h3>
+<p>['BiRD assumes the attacker cannot control the backward retrieval process, which may not hold in adaptive attacks.', 'The method relies on the quality of the retriever; weak retrievers may reduce discriminative power.', 'Evaluation is limited to English datasets and specific attack types; generalization to other languages or attacks is untested.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a novel perspective on RAG security by exploiting ranking structure rather than just semantics.</li>
+<li>Offers a practical defense with low latency, suitable for real-time RAG systems.</li>
+<li>The bidirectional ranking pattern could inspire new detection methods for other retrieval-based systems.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Test BiRD against adaptive attacks that manipulate backward retrieval.</li>
+<li>[ ] Extend evaluation to multilingual and domain-specific RAG systems.</li>
+<li>[ ] Explore combining BiRD with other defense mechanisms for layered protection.</li>
+<li>[ ] Investigate the theoretical bounds of the bidirectional ranking pattern.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>BiRD：面向检索增强生成的双向排序防御机制</h1>
+<p><strong>主要结论</strong>
+- 中毒文档在前后向排序之间表现出比良性文档更强的对齐性。
+- BiRD利用前向排序评估语义相关性，后向排序衡量排序上下文一致性。
+- BiRD将PoisonedRAG攻击成功率降低高达54%，任务准确率提升高达56%。
+- BiRD的平均额外延迟低于1秒，具有高效性。
+- 在3个数据集、3个检索器、3个LLM和2种攻击场景下进行了评估。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>BiRD通过利用排序上下文一致性高效检测RAG中的中毒文档，以极低延迟实现了高鲁棒性。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>检索增强生成（RAG）通过检索外部知识增强大语言模型，但易受语料投毒攻击。现有防御依赖语义分析或投票，要么计算开销大，要么对强攻击效果弱。SeConRAG和TrustRAG使用聚类过滤与语义分析，但计算开销高；ReliabilityRAG和Certifiably Robust RAG采用投票一致性，但对高强度投毒脆弱；AstuteRAG和InstructRAG利用LLM内部知识过滤，但受限于LLM知识边界。PoisonedRAG、GASLITE和ReGENT等语料投毒攻击通过注入恶意文档操纵检索。现有防御仅关注语义内容相关性，忽略了由排序结构定义的检索上下文，导致计算成本与鲁棒性之间的权衡，尤其在强投毒攻击下。BiRD是一种双向排序防御，使用前向排序评估语义相关性，后向排序量化排序上下文一致性，通过检测前后向排序的强对齐（中毒文档的判别性模式）来过滤中毒文档。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在HotpotQA数据集上使用ANCE检索器，BiRD将PoisonedRAG攻击成功率降低54%，任务准确率提升56%。在所有设置下，平均额外延迟低于1秒。</p>
+<h3>消融实验</h3>
+<p>对后向排序信号的消融实验表明，移除该信号会使攻击成功率提高超过30%，证实了其在检测中毒文档中的关键作用。</p>
+<h3>局限性</h3>
+<p>BiRD假设攻击者无法控制后向检索过程，这在自适应攻击中可能不成立。该方法依赖检索器质量，弱检索器可能降低判别能力。评估仅限于英文数据集和特定攻击类型，对其他语言或攻击的泛化性尚未测试。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>通过利用排序结构而非仅语义，为RAG安全提供了新颖视角。</li>
+<li>提供了一种低延迟的实用防御，适用于实时RAG系统。</li>
+<li>双向排序模式可能启发其他基于检索的系统的检测方法。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 测试BiRD对抗操纵后向检索的自适应攻击。</li>
+<li>[ ] 将评估扩展到多语言和领域特定的RAG系统。</li>
+<li>[ ] 探索将BiRD与其他防御机制结合以实现分层保护。</li>
+<li>[ ] 研究双向排序模式的理论界限。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.20123</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.20123" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MixRea: Benchmarking Explicit-Implicit Reasoning in Large Language Models | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">MixRea: Benchmarking Explicit-Implicit Reasoning in Large Language Models</h2>
+    <h2 class="lang-zh">MixRea：大型语言模型中的显式-隐式推理基准测试</h2>
+    <div class="meta">
+      Yuanqing Cai, Ziyi Huang, Minhao Liu, Lixin Duan, Wen Li, Yanru Zhang · 
+      2026-05-20 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>Key claim: LLMs exhibit inattentional blindness (failing to attend to subtle implicit cues) under explicit instructions, as shown by the MixRea benchmark where even the best model achieves only 42.8% consistency.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文揭示了大型语言模型（LLM）在显式指令下存在类似人类的“非注意盲视”现象，即忽略微妙的隐式线索。作者构建了包含2,246道多选题的MixRea基准测试，涵盖9种推理类型，发现最佳模型（Gemini 2.5 Pro）的一致性仅为42.8%。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — mixrea</h1>
+<p><strong>Key Takeaways</strong>
+- Introduces explicit-implicit reasoning task to test if LLMs exhibit inattentional blindness like humans.
+- MixRea benchmark: 2,246 MCQs across 9 reasoning types with varied explicit/implicit info distributions.
+- Best model (Gemini 2.5 Pro) achieves only 42.8% consistency, showing widespread inattentional blindness.
+- Proposes PRCP prompting that recovers overlooked causal relations, outperforming CoT and one-shot.
+- Limitation persists across multi-source reasoning tasks, indicating a fundamental LLM weakness.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> MixRea: Benchmarking Explicit-Implicit Reasoning in Large Language Models</li>
+<li><strong>Alias:</strong> mixrea</li>
+<li><strong>Authors:</strong> Yuanqing Cai, Ziyi Huang, Minhao Liu, Lixin Duan, Wen Li, Yanru Zhang</li>
+<li><strong>arXiv ID:</strong> 2605.20128</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.20128</li>
+<li>HTML: https://arxiv.org/html/2605.20128v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.20128</li>
+<li><strong>Tags:</strong> inattentional-blindness, explicit-implicit-reasoning, llm-benchmark, prompting-method, causal-reasoning</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Key claim: LLMs exhibit inattentional blindness (failing to attend to subtle implicit cues) under explicit instructions, as shown by the MixRea benchmark where even the best model achieves only 42.8% consistency.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>LLMs are increasingly used in high-stakes domains like medicine and law, where missing subtle contextual cues can have severe consequences. Inspired by the 'invisible gorilla' experiment on human inattentional blindness, this work investigates whether LLMs, trained on human-preferred corpora, similarly fail to integrate implicit information when focused on explicit tasks.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Context understanding benchmarks (LongBench, LooGLE) evaluate long-document and cross-paragraph reasoning.</li>
+<li>Instruction-context alignment benchmarks (FollowBench, ComplexBench, SIFo) test fine-grained consistency between instructions and context.</li>
+<li>Prior work does not assess whether LLMs autonomously explore indirect yet important implicit cues under specific requirements.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing benchmarks evaluate context understanding or instruction-context alignment but do not test whether LLMs can identify and integrate subtle implicit causal cues when focused on explicit task instructions. This gap mirrors human inattentional blindness and is critical for high-stakes decision-making.</p>
+<h3>P — Proposal</h3>
+<p>The paper introduces explicit-implicit reasoning as a new task and constructs MixRea, a benchmark of 2,246 MCQs across 9 reasoning types. Based on error analysis, they propose Potential Relation Completion Prompting (PRCP), which prompts models to recover overlooked causal relations, improving reasoning consistency over CoT and one-shot baselines.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Evaluated 21 advanced LLMs (Gemini 2.5 Pro/Flash, Deepseek-R1/V3, GPT-4o, Claude 3.7, Qwen-max/2.5/2, LLaMA 3.1/3.0, Gemma 3/2). Best model Gemini 2.5 Pro achieved 42.8% consistency. PRCP improved performance over CoT and one-shot settings across multiple tasks.</p>
+<h3>Ablation</h3>
+<p>Ablation on three additional multi-source reasoning tasks showed that inattentional blindness persists, confirming it is a fundamental limitation stemming from LLMs' limited ability to integrate multi-source information.</p>
+<h3>Limitations</h3>
+<p>['Benchmark is based on synthetic story contexts from Possible Stories dataset, which may not fully capture real-world complexity.', 'PRCP prompting improves but does not fully solve inattentional blindness; best model still below 50% consistency.', 'Evaluation limited to English; cross-lingual or multilingual generalization is not explored.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Directly relevant to AI safety: models missing implicit cues in high-stakes decisions (e.g., medical diagnosis, legal analysis) could lead to harmful outcomes.</li>
+<li>Highlights a fundamental cognitive limitation in LLMs that mirrors human attention biases, suggesting need for cognitively aligned architectures.</li>
+<li>Provides a new benchmark (MixRea) and prompting method (PRCP) that can be used to evaluate and improve reasoning robustness in your own models.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Test your own LLM on MixRea to assess inattentional blindness in your application domain.</li>
+<li>[ ] Implement PRCP prompting in your pipeline and compare with CoT on multi-source reasoning tasks.</li>
+<li>[ ] Explore architectural modifications (e.g., attention mechanisms) to improve implicit cue integration.</li>
+<li>[ ] Extend evaluation to multilingual or domain-specific contexts (e.g., clinical notes, legal documents).</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>MixRea：大型语言模型中的显式-隐式推理基准测试</h1>
+<p><strong>主要结论</strong>
+- 提出了显式-隐式推理任务，用于测试LLM是否像人类一样存在非注意盲视。
+- MixRea基准测试包含2,246道多选题，覆盖9种推理类型，显式和隐式信息分布多样。
+- 最佳模型（Gemini 2.5 Pro）仅达到42.8%的一致性，表明非注意盲视普遍存在。
+- 提出的PRCP提示方法通过恢复被忽略的因果关联，优于CoT和单样本提示。
+- 该局限性在多种多源推理任务中持续存在，表明这是LLM的根本性弱点。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>关键主张：LLM在显式指令下存在非注意盲视（无法关注微妙的隐式线索），MixRea基准测试显示最佳模型仅达到42.8%的一致性。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：LLM越来越多地应用于医学和法律等高风险领域，忽略微妙的上下文线索可能造成严重后果。受人类非注意盲视的“隐形大猩猩”实验启发，本文研究LLM在专注于显式任务时是否同样无法整合隐式信息。
+<strong>相关工作</strong>：现有上下文理解基准（如LongBench、LooGLE）评估长文档和跨段落推理；指令-上下文对齐基准（如FollowBench、ComplexBench、SIFo）测试指令与上下文之间的细粒度一致性。但先前工作未评估LLM在特定要求下是否自主探索间接但重要的隐式线索。
+<strong>差距</strong>：现有基准评估上下文理解或指令-上下文对齐，但未测试LLM在专注于显式任务指令时能否识别并整合微妙的隐式因果线索。这一差距反映了人类的非注意盲视，对高风险决策至关重要。
+<strong>方案</strong>：本文引入显式-隐式推理作为新任务，构建了包含2,246道多选题、覆盖9种推理类型的MixRea基准。基于错误分析，提出潜在关系补全提示（PRCP），引导模型恢复被忽略的因果关联，在推理一致性上优于CoT和单样本基线。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>评估了21个先进LLM（包括Gemini 2.5 Pro/Flash、Deepseek-R1/V3、GPT-4o、Claude 3.7、Qwen-max/2.5/2、LLaMA 3.1/3.0、Gemma 3/2）。最佳模型Gemini 2.5 Pro达到42.8%的一致性。PRCP提示在多个任务上优于CoT和单样本设置。</p>
+<h3>消融实验</h3>
+<p>在三个额外的多源推理任务上的消融实验表明，非注意盲视持续存在，证实这是LLM整合多源信息能力有限所导致的根本性局限。</p>
+<h3>局限性</h3>
+<p>['基准测试基于Possible Stories数据集的合成故事背景，可能无法完全反映真实世界的复杂性。', 'PRCP提示有所改进但未完全解决非注意盲视；最佳模型一致性仍低于50%。', '评估仅限于英文，未探索跨语言或多语言泛化能力。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>直接关乎AI安全：在高风险决策（如医疗诊断、法律分析）中，模型忽略隐式线索可能导致有害后果。</li>
+<li>揭示了LLM中与人类注意力偏差相似的认知局限，表明需要认知对齐的架构。</li>
+<li>提供了新的基准（MixRea）和提示方法（PRCP），可用于评估和改进自身模型的推理鲁棒性。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在MixRea上测试自己的LLM，评估其在应用领域中的非注意盲视程度。</li>
+<li>[ ] 在管线中实现PRCP提示，并与CoT在多源推理任务上进行比较。</li>
+<li>[ ] 探索架构修改（如注意力机制）以改进隐式线索整合能力。</li>
+<li>[ ] 将评估扩展到多语言或特定领域上下文（如临床笔记、法律文件）。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.20128</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.20128" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

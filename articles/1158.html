@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draft Less, Retrieve More: Hybrid Tree Construction for Speculative Decoding | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Draft Less, Retrieve More: Hybrid Tree Construction for Speculative Decoding</h2>
+    <h2 class="lang-zh">少草稿，多检索：面向推测解码的混合树构建方法</h2>
+    <div class="meta">
+      Yuhao Shen, Tianyu Liu, Xinyi Hu, Quan Kong, Baolin Zhang, Jun Dai, Jun Zhang, Shuang Ge, Lei Chen, Yue Li, Mingcheng Wan, Cong Wang · 
+      2026-05-20 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>Graft introduces a prune-then-graft framework that reuses pruned slots for retrieval, overcoming the inherent MAT loss of dynamic pruning and achieving state-of-the-art speedups in speculative decoding.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出了一种名为Graft的推测解码框架，通过“剪枝-嫁接”机制，将动态剪枝释放的计算预算用于检索，从而打破了延迟与平均接受长度之间的帕累托权衡。该方法无需训练、无损，并在短上下文、长上下文和大规模设置下均实现了新的帕累托前沿，在Qwen3-235B上最高获得5.41倍加速。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — graft</h1>
+<p><strong>Key Takeaways</strong>
+- Graft breaks the latency-MAT tradeoff in speculative decoding by using retrieval to fill slots freed by pruning.
+- Pruning releases computational budget; retrieval compensates for coverage loss with near-zero overhead.
+- Graft is training-free, lossless, and establishes a new Pareto frontier across short-context, long-context, and large-scale settings.
+- On Qwen3-235B, Graft achieves up to 5.41x speedup and improves average speedup over EAGLE-3 by 21.8%.
+- The method scales naturally to long contexts: longer prompts boost retrieval hit rates while making drafting more expensive.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Draft Less, Retrieve More: Hybrid Tree Construction for Speculative Decoding</li>
+<li><strong>Alias:</strong> graft</li>
+<li><strong>Authors:</strong> Yuhao Shen, Tianyu Liu, Xinyi Hu, Quan Kong, Baolin Zhang, Jun Dai, Jun Zhang, Shuang Ge, Lei Chen, Yue Li, Mingcheng Wan, Cong Wang</li>
+<li><strong>arXiv ID:</strong> 2605.20104</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.20104</li>
+<li>HTML: https://arxiv.org/html/2605.20104v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.20104</li>
+<li><strong>Tags:</strong> speculative-decoding, llm-inference, retrieval-augmented, tree-pruning, training-free</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Graft introduces a prune-then-graft framework that reuses pruned slots for retrieval, overcoming the inherent MAT loss of dynamic pruning and achieving state-of-the-art speedups in speculative decoding.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Speculative decoding accelerates LLM inference via a draft-then-verify paradigm. Recent methods build large draft trees to maximize acceptance rate, but this incurs severe VRAM and compute overhead. Dynamic-depth pruning reduces this cost but discards valid candidates, creating a strict latency-MAT tradeoff.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>EAGLE-3: dense tree drafting using target-model features, achieving high MAT but high overhead.</li>
+<li>Dynamic pruning methods (DDD, SVIP, ECHO): prune low-confidence branches to reduce cost, but MAT is bounded below dense trees.</li>
+<li>Retrieval-based SD (SAM-Decoding, PLD, REST, Token Recycle): use external sources but often as standalone drafters or with CPU-side overhead.</li>
+<li>Block drafting (DFlash): parallel block-level speculation, extended by Graft in preliminary experiments.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing dynamic pruning methods strictly produce subtrees of the original dense tree, so confidence misjudgments inevitably reduce the mean accepted length below the dense-tree upper bound. This creates an unsolved Pareto tradeoff between speed and MAT that pruning alone cannot overcome.</p>
+<h3>P — Proposal</h3>
+<p>Graft couples pruning and retrieval in a sequential prune-then-graft mechanism: first prune low-confidence branches to release budget, then graft highly predictive retrieved tokens into the vacated slots. Retrieval is rooted at the current token, prepared in parallel with drafting, and uses a GPU-resident adjacency matrix with online updates, keeping overhead near zero and preserving lossless verification.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On short-context benchmarks, Graft achieves up to 5.41x speedup and improves average speedup over EAGLE-3 by 21.8% on Qwen3-235B. On long-context LLaMA3.1-8B, it reaches 3.22x average speedup; on Qwen3-14B, it outperforms EAGLE3-64K by 16.6%.</p>
+<h3>Ablation</h3>
+<p>Ablation confirms that both pruning and retrieval are essential: pruning alone reduces MAT below dense tree, but adding retrieval recovers and even exceeds dense-tree MAT while maintaining lower latency.</p>
+<h3>Limitations</h3>
+<p>['Retrieval effectiveness depends on context diversity; repetitive or highly novel sequences may yield lower hit rates.', 'The current retrieval adjacency matrix is limited to local n-gram patterns and may not capture long-range dependencies.', 'Preliminary DFlash extension is exploratory and not yet fully optimized for block drafting paradigms.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Directly addresses the core latency bottleneck in LLM inference, relevant to any deployment requiring high throughput.</li>
+<li>Shows that pruning and retrieval can be complementary rather than competing, a design insight applicable beyond SD.</li>
+<li>Training-free and lossless integration makes it practical for production systems without additional fine-tuning.</li>
+<li>Scales naturally with context length, aligning with the trend toward long-context models.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Explore adaptive retrieval strategies (e.g., learned retrieval heads) to improve hit rates on diverse or novel text.</li>
+<li>[ ] Extend Graft to non-autoregressive draft structures (e.g., block drafting) with full optimization.</li>
+<li>[ ] Apply the prune-then-graft concept to other latency-critical inference tasks like multi-turn dialogue or agentic loops.</li>
+<li>[ ] Investigate combining Graft with quantization or sparse attention for further speedups.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>少草稿，多检索：面向推测解码的混合树构建方法</h1>
+<p><strong>主要结论</strong>
+- Graft通过检索填充剪枝释放的槽位，打破了推测解码中延迟与平均接受长度之间的权衡。
+- 剪枝释放计算预算，检索以近零开销补偿覆盖损失。
+- Graft无需训练、无损，在短上下文、长上下文和大规模设置下均建立了新的帕累托前沿。
+- 在Qwen3-235B上，Graft实现最高5.41倍加速，平均加速比EAGLE-3提升21.8%。
+- 该方法自然扩展到长上下文：更长的提示词提升检索命中率，同时使草稿生成成本更高。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>Graft提出了一种“先剪枝后嫁接”的框架，重用剪枝槽位进行检索，克服了动态剪枝固有的平均接受长度损失，在推测解码中实现了最先进的加速效果。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：推测解码通过“草稿-验证”范式加速大语言模型推理。近期方法构建大型草稿树以最大化接受率，但带来了严重的显存和计算开销。动态深度剪枝降低了这一成本，但丢弃了有效候选，造成了严格的延迟-平均接受长度权衡。相关工作：EAGLE-3使用目标模型特征构建密集草稿树，平均接受长度高但开销大；动态剪枝方法（DDD、SVIP、ECHO）剪枝低置信度分支以降低成本，但平均接受长度受限于密集树；基于检索的推测解码（SAM-Decoding、PLD、REST、Token Recycle）使用外部源，但通常作为独立草稿器或存在CPU端开销；块草稿（DFlash）实现并行块级推测，Graft在初步实验中对其进行了扩展。差距：现有动态剪枝方法严格产生原始密集树的子树，因此置信度误判不可避免地使平均接受长度低于密集树上界。这造成了剪枝无法克服的速度与平均接受长度之间的帕累托权衡。提案：Graft在顺序的“剪枝-嫁接”机制中耦合了剪枝和检索：首先剪枝低置信度分支以释放预算，然后将高预测性的检索令牌嫁接到空出的槽位中。检索以当前令牌为根，与草稿生成并行准备，使用GPU驻留的邻接矩阵并在线更新，保持近零开销并实现无损验证。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在短上下文基准测试中，Graft在Qwen3-235B上实现最高5.41倍加速，平均加速比EAGLE-3提升21.8%。在长上下文LLaMA3.1-8B上，平均加速达到3.22倍；在Qwen3-14B上，比EAGLE3-64K提升16.6%。</p>
+<h3>消融实验</h3>
+<p>消融实验证实剪枝和检索均不可或缺：仅剪枝会使平均接受长度低于密集树，但加入检索后平均接受长度恢复甚至超过密集树，同时保持更低延迟。</p>
+<h3>局限性</h3>
+<p>['检索效果依赖于上下文多样性；重复或高度新颖的序列可能导致较低的命中率。', '当前的检索邻接矩阵局限于局部n-gram模式，可能无法捕捉长距离依赖。', '初步的DFlash扩展尚处于探索阶段，未针对块草稿范式进行充分优化。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>直接解决了大语言模型推理中的核心延迟瓶颈，适用于任何需要高吞吐量的部署场景。</li>
+<li>展示了剪枝和检索可以互补而非竞争，这一设计洞察可推广至推测解码之外。</li>
+<li>无需训练且无损集成，使其无需额外微调即可用于生产系统。</li>
+<li>自然随上下文长度扩展，与长上下文模型的发展趋势一致。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 探索自适应检索策略（如学习型检索头）以提高在多样化或新颖文本上的命中率。</li>
+<li>[ ] 将Graft扩展到非自回归草稿结构（如块草稿），并进行全面优化。</li>
+<li>[ ] 将“剪枝-嫁接”概念应用于其他延迟关键型推理任务，如多轮对话或智能体循环。</li>
+<li>[ ] 研究将Graft与量化或稀疏注意力结合以进一步加速。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.20104</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.20104" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

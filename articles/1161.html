@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Probing Embodied LLMs: When Higher Observation Fidelity Hurts Problem Solving | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Probing Embodied LLMs: When Higher Observation Fidelity Hurts Problem Solving</h2>
+    <h2 class="lang-zh">探究具身大语言模型：更高观测保真度为何反而损害问题解决能力</h2>
+    <div class="meta">
+      Oussama Zenkri, Oliver Brock · 
+      2026-05-20 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper reveals that increasing observation fidelity counterintuitively harms embodied LLM problem solving, and that moderate perceptual noise can improve performance by breaking repetitive action loops.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文通过锁箱谜题（Lockbox puzzle）这一诊断任务，系统性地研究了观测保真度与感知噪声对具身大语言模型（Embodied LLM）闭环决策的影响。令人惊讶的是，研究发现原始RGB输入的表现优于地面真值符号状态，而适度的感知噪声（40%翻转概率）能使成功率提升2.85倍，这挑战了“感知越好，推理越强”的传统假设。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — probing-embodied-llms</h1>
+<p><strong>Key Takeaways</strong>
+- Higher observation fidelity (ground-truth symbolic state) leads to worse performance in embodied LLM problem solving than raw RGB input.
+- Moderate perceptual noise (40% flip probability) improves success rate by 2.85x over noise-free baseline by reducing repetitive action loops.
+- Success rates alone are insufficient for evaluating embodied LLMs; performance may reflect interplay between perceptual errors and reasoning failures.
+- The Lockbox puzzle serves as a diagnostic task to probe closed-loop behavior across observation modalities.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Probing Embodied LLMs: When Higher Observation Fidelity Hurts Problem Solving</li>
+<li><strong>Alias:</strong> probing-embodied-llms</li>
+<li><strong>Authors:</strong> Oussama Zenkri, Oliver Brock</li>
+<li><strong>arXiv ID:</strong> 2605.20072</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.20072</li>
+<li>HTML: https://arxiv.org/html/2605.20072v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.20072</li>
+<li><strong>Tags:</strong> embodied-llm, observation-fidelity, behavioral-probing, lockbox-puzzle, perceptual-noise</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper reveals that increasing observation fidelity counterintuitively harms embodied LLM problem solving, and that moderate perceptual noise can improve performance by breaking repetitive action loops.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>LLMs are increasingly used as cognitive components in robotic systems, but their opaque decision processes make it difficult to attribute success or failure in closed-loop embodied tasks. Prior work evaluates LLMs primarily via aggregate success rates, which conflate perception, reasoning, and environmental dynamics.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Embodied LLM agents for robotic manipulation (e.g., mon2025embodied)</li>
+<li>Lockbox puzzles as diagnostic tasks in cognitive biology and robotics (e.g., auersperg2013explorative, baum2017opening)</li>
+<li>Behavioral probing and empirical AI methodology (e.g., cohen1995empirical)</li>
+<li>Repetitive action loops in LLM agents (e.g., lai2026specra)</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing evaluations of embodied LLMs focus on final success rates without probing how observation fidelity and perceptual noise affect closed-loop decision making. The interaction between observation quality and reasoning failures remains unexplored.</p>
+<h3>P — Proposal</h3>
+<p>The authors adopt a behavioral probing approach, varying observation fidelity (RGB, RGB-D, ground-truth symbolic) in the Lockbox puzzle with a physical robot and simulation. They introduce controlled observational noise by randomly flipping perceived action outcomes to isolate its effect on problem-solving behavior.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>In physical experiments, agents achieved highest success with raw RGB input and lowest with ground-truth symbolic observations. In simulation, moderate noise at 40% flip probability yielded a 2.85-fold success rate increase over the noise-free baseline.</p>
+<h3>Ablation</h3>
+<p>The improvement from noise is linked to a reduction in repetitive action loops; noise-free agents exhibited more repetitive subsequences, while moderate noise disrupted these loops.</p>
+<h3>Limitations</h3>
+<p>['The study uses a single task (Lockbox) with binary joint states, limiting generalizability to more complex or continuous environments.', 'The simulation abstracts away real-world perceptual and actuation noise, so the interaction between controlled noise and natural noise is not fully explored.', 'Only one LLM architecture is tested; results may vary across different models and prompting strategies.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Challenges the assumption that better perception always improves embodied reasoning, relevant to designing robotic systems with imperfect sensors.</li>
+<li>Highlights the need for behavioral probing methods beyond success rates to understand LLM decision dynamics in closed-loop tasks.</li>
+<li>Suggests that controlled noise could be a deliberate design tool to mitigate failure modes like repetitive loops in LLM agents.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Test the effect of observation fidelity and noise across different LLM architectures and prompting strategies.</li>
+<li>[ ] Explore whether similar noise benefits appear in other sequential decision-making tasks with hidden dependencies.</li>
+<li>[ ] Investigate the interaction between controlled perceptual noise and natural sensor noise in physical robotic systems.</li>
+<li>[ ] Develop metrics to quantify reasoning robustness beyond success rates, such as loop detection or exploration efficiency.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>探究具身大语言模型：更高观测保真度为何反而损害问题解决能力</h1>
+<p><strong>主要结论</strong>
+- 更高的观测保真度（地面真值符号状态）反而导致具身LLM问题解决性能下降，不如原始RGB输入。
+- 适度的感知噪声（40%翻转概率）通过打破重复动作循环，使成功率相比无噪声基线提升2.85倍。
+- 仅凭成功率评估具身LLM是不够的；性能可能反映感知错误与推理失败之间的相互作用。
+- 锁箱谜题可作为探测不同观测模态下闭环行为的诊断任务。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文揭示了一个反直觉的发现：提高观测保真度反而损害具身LLM的问题解决能力，而适度的感知噪声能通过打破重复动作循环来提升性能。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：大语言模型越来越多地被用作机器人系统中的认知组件，但其不透明的决策过程使得在闭环具身任务中难以归因成功或失败。先前的工作主要通过聚合成功率来评估LLM，这混淆了感知、推理和环境动态。
+<strong>相关工作</strong>：包括用于机器人操作的具身LLM智能体、作为认知生物学和机器人学诊断任务的锁箱谜题、行为探测与经验性AI方法论，以及LLM智能体中的重复动作循环。
+<strong>差距</strong>：现有对具身LLM的评估聚焦于最终成功率，而未探究观测保真度和感知噪声如何影响闭环决策。观测质量与推理失败之间的相互作用尚未被探索。
+<strong>提议</strong>：作者采用行为探测方法，在物理机器人和仿真中，针对锁箱谜题变化观测保真度（RGB、RGB-D、地面真值符号），并通过随机翻转感知到的动作结果引入受控观测噪声，以隔离其对问题解决行为的影响。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在物理实验中，智能体使用原始RGB输入时成功率最高，使用地面真值符号观测时最低。在仿真中，40%翻转概率的适度噪声使成功率相比无噪声基线提升了2.85倍。</p>
+<h3>消融实验</h3>
+<p>性能提升与重复动作循环的减少有关：无噪声的智能体表现出更多的重复子序列，而适度噪声打断了这些循环。</p>
+<h3>局限性</h3>
+<p>['本研究仅使用单一任务（锁箱谜题）和二元关节状态，限制了向更复杂或连续环境的泛化性。', '仿真抽象掉了真实世界的感知和执行噪声，因此受控噪声与自然噪声之间的相互作用未被充分探索。', '仅测试了一种LLM架构；结果可能因不同模型和提示策略而异。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>挑战了“更好的感知总能提升具身推理”的假设，对设计具有不完美传感器的机器人系统具有启示意义。</li>
+<li>强调了在成功率之外需要行为探测方法，以理解LLM在闭环任务中的决策动态。</li>
+<li>提示受控噪声可作为一种有意设计工具，用于缓解LLM智能体中的重复循环等故障模式。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在不同LLM架构和提示策略下测试观测保真度和噪声的影响。</li>
+<li>[ ] 探索类似噪声益处是否出现在其他具有隐藏依赖性的序列决策任务中。</li>
+<li>[ ] 研究受控感知噪声与物理机器人系统中自然传感器噪声之间的相互作用。</li>
+<li>[ ] 开发超越成功率的推理鲁棒性量化指标，如循环检测或探索效率。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.20072</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.20072" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

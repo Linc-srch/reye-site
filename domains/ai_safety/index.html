@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Safety | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <nav>
+      <a href="../../search.html">Search</a>
+      <a href="../../about.html">About</a>
+    </nav>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">AI Safety</span>
+    <span class="lang-zh">AI 安全</span>
+  </p>
+
+  <h2 class="lang-en" style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;letter-spacing:-0.02em">AI Safety</h2>
+  <h2 class="lang-zh" style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;letter-spacing:-0.02em">AI 安全</h2>
+
+  
+
+  <div class="tabs">
+    <button data-target="papers">Papers</button>
+    <button data-target="news">News &amp; Blogs</button>
+  </div>
+
+  <section data-tab="papers">
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1151.html">TIDE: Efficient and Lossless MoE Diffusion LLM Inference with I/O-aware Expert Offload</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1151.html">TIDE：面向MoE扩散大语言模型的高效无损推理系统</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">TIDE proposes a lossless, training-free inference system that exploits temporal stability of expert activations to achieve up to 1.5x throughput improvement for MoE diffusion LLMs on resource-constrained devices.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出TIDE，一种面向混合专家扩散大语言模型（MoE-dLLM）的无损、免训练推理加速系统。通过利用相邻去噪步骤中专家激活的时间稳定性，TIDE采用基于间隔的专家刷新策略，将推理调度建模为数学规划问题，在资源受限的单GPU-CPU系统上实现高达1.5倍的吞吐量提升。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20179" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1152.html">ClinSeekAgent: Automating Multimodal Evidence Seeking for Agentic Clinical Reasoning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1152.html">ClinSeekAgent：自动化多模态证据检索的智能临床推理框架</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">ClinSeekAgent proposes an automated agentic framework for dynamic multimodal evidence seeking that outperforms fixed curated-context settings by actively retrieving and integrating evidence from raw EHRs, web knowledge, and medical images.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出ClinSeekAgent，一个自动化智能体框架，能够主动从原始电子健康记录、网络知识和医学影像中动态检索并整合多模态证据，显著优于固定上下文设置。在文本任务上，它将Claude Opus 4.6的F1分数从60.0提升至63.2；在多模态任务上，提升幅度高达15.1个点。此外，通过轨迹蒸馏得到的紧凑模型ClinSeek-35B-A3B在AgentEHR-Bench上达到34.0 F1，比基线提升11.9个点。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20176" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1153.html">KoRe: Compact Knowledge Representations for Large Language Models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1153.html">KoRe：面向大型语言模型的紧凑知识表示</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">KoRe proposes a token-efficient method to inject structured knowledge from knowledge graphs into LLMs via discrete tokens, achieving competitive QA performance with up to 10x fewer tokens.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出KoRe方法，通过方向残差向量量化将知识图谱的1跳子图压缩为离散令牌，实现高效注入大语言模型。相比文本序列化，令牌使用量减少高达10倍，且在三个问答基准上取得竞争性能，并支持对未见实体的泛化。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20170" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1154.html">Not Every Rubric Teaches Equally: Policy-Aware Rubric Rewards for RLVR</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1154.html">并非每条评分标准都同样有效：面向策略感知的评分奖励用于RLVR</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">POW3R introduces a policy-aware rubric reward framework that dynamically reweights criteria based on their current contrastiveness, significantly improving training efficiency and final performance in multi-criteria RLVR.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出POW3R框架，通过动态重加权评分标准，解决了静态聚合中训练压力浪费在饱和或无效标准上的问题。实验表明，POW3R在30项比较中赢得24项，并将训练步数减少2.5-4倍。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20164" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1155.html">Less Back-and-Forth: A Comparative Study of Structured Prompting</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1155.html">减少来回：结构化提示的对比研究</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper provides empirical evidence that a simple prompt checklist can improve LLM response quality and reduce user effort more effectively than raw prompts or interactive clarifying questions.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文通过对比原始提示、清单改进提示和澄清问题提示三种策略，发现清单提示在输出质量和交互效率上均表现最优。研究覆盖四种任务类型和三种大语言模型，为设计高效的人机交互界面提供了实证依据。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20149" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1156.html">MixRea: Benchmarking Explicit-Implicit Reasoning in Large Language Models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1156.html">MixRea：大型语言模型中的显式-隐式推理基准测试</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Key claim: LLMs exhibit inattentional blindness (failing to attend to subtle implicit cues) under explicit instructions, as shown by the MixRea benchmark where even the best model achieves only 42.8% consistency.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文揭示了大型语言模型（LLM）在显式指令下存在类似人类的“非注意盲视”现象，即忽略微妙的隐式线索。作者构建了包含2,246道多选题的MixRea基准测试，涵盖9种推理类型，发现最佳模型（Gemini 2.5 Pro）的一致性仅为42.8%。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20128" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1157.html">BiRD: A Bidirectional Ranking Defense Mechanism for Retrieval Augmented Generation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1157.html">BiRD：面向检索增强生成的双向排序防御机制</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">BiRD introduces a bidirectional ranking defense that leverages ranking context consistency to efficiently detect poisoned documents in RAG, achieving high robustness with minimal latency.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出BiRD，一种利用双向排序一致性高效检测检索增强生成（RAG）中毒文档的防御方法。实验表明，BiRD可将PoisonedRAG攻击成功率降低54%，任务准确率提升56%，且平均额外延迟低于1秒。该方法为RAG安全提供了兼顾鲁棒性与效率的新思路。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20123" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1158.html">Draft Less, Retrieve More: Hybrid Tree Construction for Speculative Decoding</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1158.html">少草稿，多检索：面向推测解码的混合树构建方法</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Graft introduces a prune-then-graft framework that reuses pruned slots for retrieval, overcoming the inherent MAT loss of dynamic pruning and achieving state-of-the-art speedups in speculative decoding.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出了一种名为Graft的推测解码框架，通过“剪枝-嫁接”机制，将动态剪枝释放的计算预算用于检索，从而打破了延迟与平均接受长度之间的帕累托权衡。该方法无需训练、无损，并在短上下文、长上下文和大规模设置下均实现了新的帕累托前沿，在Qwen3-235B上最高获得5.41倍加速。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20104" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1159.html">BalanceRAG: Joint Risk Calibration for Cascaded Retrieval-Augmented Generation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1159.html">BalanceRAG：级联检索增强生成的联合风险校准</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">BalanceRAG proposes a training-free, statistically certified framework for joint risk calibration of cascaded LLM-only/RAG systems, enabling adaptive retrieval with finite-sample error control and higher coverage.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出一种无需训练、具有统计保证的联合风险校准框架，用于级联LLM-only/RAG系统。通过将阈值对选择建模为二维网格上的多重检验问题，并采用序贯图检验（SGT）方法，BalanceRAG能够在控制选择条件错误率的同时最大化覆盖率，显著优于传统的逐阶段校准方法。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20084" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1160.html">CopT: Contrastive On-Policy Thinking with Continuous Spaces for General and Agentic Reasoning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1160.html">CopT：基于连续空间的对比性在线思考用于通用与智能体推理</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">CopT proposes a reversed reasoning pipeline that drafts an answer before thinking, using continuous embeddings as contrastive verifiers to decide when to trust the draft and when to trigger on-policy reflection, improving both accuracy and token efficiency.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出一种反转的推理流程：先草拟答案，再通过连续嵌入作为对比验证器，利用反向KL估计器评估草稿可靠性，并动态控制在线思考过程。该方法无需额外训练，即可在数学、编程和智能体推理任务上实现高达23%的准确率提升和57%的token节省。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20075" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1161.html">Probing Embodied LLMs: When Higher Observation Fidelity Hurts Problem Solving</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1161.html">探究具身大语言模型：更高观测保真度为何反而损害问题解决能力</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper reveals that increasing observation fidelity counterintuitively harms embodied LLM problem solving, and that moderate perceptual noise can improve performance by breaking repetitive action loops.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文通过锁箱谜题（Lockbox puzzle）这一诊断任务，系统性地研究了观测保真度与感知噪声对具身大语言模型（Embodied LLM）闭环决策的影响。令人惊讶的是，研究发现原始RGB输入的表现优于地面真值符号状态，而适度的感知噪声（40%翻转概率）能使成功率提升2.85倍，这挑战了“感知越好，推理越强”的传统假设。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20072" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1162.html">Text-to-SPARQL Generation with Reinforcement Learning: A GRPO-based Approach on DBLP</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1162.html">Deep Note — text2sparql-grpo</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper demonstrates that reinforcement learning with outcome-based rewards can train a small 1.7B language model to generate SPARQL queries zero-shot, achieving competitive results without gold query supervision.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文展示了如何通过基于结果奖励的强化学习（GRPO）训练一个1.7B的小语言模型，在无需金标准查询标注的情况下，实现零样本Text-to-SPARQL生成，并在DBLP-QuAD基准上取得38.4%的准确率。与需要金标准查询的监督微调（DoRA）相比，该方法虽然准确率略低（47.2% vs 38.4%），但在标注稀缺的实际场景中更具可行性。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20066" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1163.html">Rewarding Beliefs, Not Actions: Consistency-Guided Credit Assignment for Long-Horizon Agents</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1163.html">奖励信念而非行动：面向长周期智能体的一致性引导信用分配方法</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">ReBel introduces a belief-consistency credit assignment method that turns sparse terminal rewards into dense self-supervised signals for long-horizon LLM agents under partial observability, achieving significant gains over episode-level and step-level baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出ReBel方法，通过信念一致性监督将稀疏的终端奖励转化为密集的自监督信号，有效解决了部分可观测环境下长周期LLM智能体的信用分配难题。在ALFWorld和WebShop基准上，ReBel相比GRPO将任务成功率提升高达20.4个百分点，并实现了2.1倍的样本效率提升。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20061" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1164.html">When Critics Disagree: Adaptive Reward Poisoning Attacks in RIS-Aided Wireless Control System</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1164.html">当评论家意见相左时：RIS辅助无线控制系统中的自适应奖励投毒攻击</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper introduces a novel disagreement-guided reward poisoning attack that exploits SAC's twin-critic uncertainty to maximally degrade performance in RIS-assisted cognitive radio networks, showing that state-adaptive attacks are far more damaging than fixed-timing baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出了一种新颖的、基于评论家分歧引导的自适应奖励投毒攻击（DGRP），专门针对RIS辅助认知无线电网络中的SAC算法。实验表明，这种状态自适应攻击在降低用户数据速率和RIS效率方面，显著优于传统的周期性或探索触发式攻击，揭示了深度强化学习无线系统面临的新安全威胁。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20037" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1165.html">GeoX: Mastering Geospatial Reasoning Through Self-Play and Verifiable Rewards</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1165.html">GeoX：通过自我博弈与可验证奖励掌握地理空间推理</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">GeoX introduces a self-play framework that uses executable programs and verifiable rewards to master geospatial reasoning from unlabeled satellite imagery, eliminating the need for costly human annotation.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出GeoX，一种无需人工标注数据的自我博弈框架，通过可执行程序生成可验证奖励，从而掌握地理空间推理。实验表明，该方法在遥感VQA和目标计数基准上平均提升高达5.5个点，匹配甚至超越基于百万级人工标注数据训练的基线模型。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20006" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1166.html">Fine-Tuning Without Forgetting via Loss-Adaptive Learning Rates</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1166.html">通过损失自适应学习率实现无遗忘微调</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">FINCH introduces a loss-adaptive learning rate schedule that reduces catastrophic forgetting during fine-tuning by bounding per-step forgetting via the product of learning rate and sqrt(loss), achieving a 93% average forgetting reduction while matching target-task performance.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出FINCH方法，通过损失自适应学习率调度来减少微调中的灾难性遗忘。该方法基于理论推导，将每步遗忘上界控制在学习率乘以损失平方根的乘积内，在保持目标任务性能的同时平均减少93%的遗忘。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.20005" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1167.html">Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1167.html">通过序列熵变化检测流畅的优化型对抗提示</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">CPD Online detects fluent optimization-based adversarial suffixes by monitoring sequential entropy changes, achieving superior F1 and localization without training.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出了一种无需训练的在线变点检测方法CPD Online，通过监控令牌级熵流来检测优化型对抗后缀。该方法在六个LLM上均优于窗口困惑度基线，F1最高达0.82，并能定位79.6%的触发点位于对抗后缀内。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.19966" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1168.html">Probabilistic Tiny Recursive Model</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1168.html">Probabilistic Tiny Recursive Model</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">PTRM introduces a task-agnostic test-time compute scaling method that uses stochastic latent trajectories and the model's own Q head to dramatically improve accuracy on reasoning puzzles without retraining.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出了一种任务无关的测试时计算扩展方法PTRM，通过在递归推理的每一步向潜在状态注入高斯噪声，生成多条随机轨迹，并利用模型原有的Q头选择最佳答案。该方法无需重新训练，即可在Sudoku-Extreme和Pencil Puzzle Bench上大幅提升准确率，甚至以极低的成本超越前沿大语言模型。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.19943" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1169.html">What Are LLMs Doing to Scientific Communication? Measuring Changes in Writing Practices and Reading Experience</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1169.html">大型语言模型对科学交流的影响：写作实践与阅读体验变化的测量</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper provides the first large-scale, mixed-methods evidence that LLM-assisted writing is measurably changing scientific communication style and that these changes affect reader perceptions in complex, subjective ways.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文通过分析37,000篇ACL论文（2020-2024年）和3,000对人类-LLM写作对，首次大规模混合方法证明了LLM辅助写作正在显著改变科学交流风格，并影响读者感知。研究发现LLM改进的文本更易理解、更令人兴奋，但也引发了对AI的负面态度，揭示了信任悖论。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.19936" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1170.html">PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1170.html">PEEK：面向长上下文LLM智能体的上下文地图定向缓存</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">PEEK introduces a context map that caches orientation knowledge about a recurring external context, enabling LLM agents to achieve higher accuracy and efficiency on long-context tasks with significantly fewer iterations and lower cost.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出PEEK，通过一个恒定大小的上下文地图缓存可复用的定向知识（如内容组织、有用实体），使LLM智能体在重复处理相同外部上下文时显著提升准确率和效率。实验表明，PEEK在长上下文推理任务上提升6.3-34.0%，同时迭代次数减少93-145次，成本降低1.7-5.8倍。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.19932" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1171.html">JAXenstein: Accelerated Benchmarking for First-Person Environments</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1171.html">JAXenstein：面向第一人称环境的加速基准测试</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">JAXenstein introduces the first JAX-native first-person benchmark, achieving several times faster simulation than existing vision-based benchmarks, enabling rapid iteration on exploration and partial observability problems.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文介绍了JAXenstein，首个基于JAX的第一人称基准测试平台，通过纯JAX实现的Wolfenstein 3D光线投射引擎，在单CPU核心上实现比ViZDoom和MiniWorld约6倍的加速，并支持通过vmap扩展到数百个并行环境。它为JAX强化学习生态填补了视觉第一人称领域的空白，为探索和部分可观测性问题的研究提供了高效工具。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.19926" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1172.html">Streamlined Constraint Reasoning via CNN Pattern Recognition on Enumerated Solutions</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1172.html">基于CNN模式识别的枚举解流线约束推理</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper introduces a novel streamliner-synthesis pipeline that uses CNN pattern recognition on enumerated solutions to ground LLM-generated constraints in observed structure, achieving dramatic speedups on hardened CP benchmarks.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出了一种新颖的流线约束合成流水线，利用CNN对枚举解进行模式识别，将LLM生成的约束建立在观察到的解结构上，在硬化的约束规划基准上实现了显著加速。该方法在Vessel Loading、Social Golfers和Black Hole问题上分别实现了98.8%、98.6%和89.4%的求解时间缩减，最佳单流线约束的几何平均加速比高达932倍、356倍和1103倍。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.19895" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1173.html">Are Tools Always Beneficial? Learning to Invoke Tools Adaptively for Dual-Mode Multimodal LLM Reasoning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1173.html">Deep Note — AutoTool：工具总是有益的吗？学习自适应调用工具以实现双模式多模态大语言模型推理</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">AutoTool challenges the assumption that tool usage is always beneficial by introducing adaptive, dual-mode reasoning that improves both accuracy and efficiency in multimodal LLMs.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文挑战了“工具使用总是有益”的假设，提出AutoTool框架，通过强化学习中的双模式推理策略，让多模态大语言模型根据查询自适应决定是否调用工具。实验表明，该方法在V*基准上准确率提升21.8%，在POPE基准上效率提升44.9%，有效平衡了精度与计算开销。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.19852" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1174.html">Auditing Privacy in Multi-Tenant RAG under Account Collusion</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1174.html">审计多租户RAG中的账户合谋隐私泄露</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Key claim: Per-account DP guarantees in multi-tenant RAG structurally understate joint leakage under account collusion; key observation: the degradation rate is Θ(√k·ε_acc) and is empirically verifiable via a novel audit protocol.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文揭示了多租户RAG系统中，多个账户合谋会系统性削弱单账户差分隐私保证，退化率为Θ(√k·ε_acc)。作者设计并验证了首个无需修改部署的审计协议，能够针对检索分数通道发布量化(PASS, ε_audit)判决，填补了理论与实际威胁模型之间的空白。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.19847" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1175.html">From Prompts to Pavement Through Time: Temporal Grounding in Agentic Scene-to-Plan Reasoning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1175.html">从提示到路面穿越时间：智能体场景到规划推理中的时间接地</a></h2>
+      <div class="meta">arxiv · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper empirically demonstrates that prompt-based temporal grounding in multi-agent LLM planners reshapes reasoning style but fails to yield statistically significant improvements in standard NLP correctness metrics, establishing the first benchmark for temporal scene-to-plan reasoning.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文首次为自动驾驶中的时间场景到规划推理建立了实证基准，发现基于提示的时间接地虽然能重塑多智能体LLM规划器的推理风格，但在标准NLP正确性指标上并未带来统计显著的提升。Sentinel架构通过专用智能体实现预测性危险推理和稳定纠正行为，为未来研究提供了可复现的评估框架。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.19824" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1086.html">DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1086.html">DashAttention：可微分自适应稀疏分层注意力</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">DashAttention replaces the hard top-k block selection in hierarchical attention with differentiable α-entmax routing, enabling adaptive per-query sparsity and end-to-end gradient flow while achieving 75% sparsity with accuracy comparable to full attention.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出DashAttention，用可微分的α-entmax路由替代分层注意力中硬性的top-k块选择，实现每个查询的自适应稀疏性，同时保持端到端梯度流动。在长上下文任务中，该方法以75%的稀疏性达到与全注意力相当的精度，并实现了最高3.36倍的推理加速。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18753" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1087.html">Code as Agent Harness</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1087.html">Deep Note — 代码即智能体框架</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">This survey proposes that code serves as the executable, inspectable, and stateful medium for agent reasoning, acting, and environment modeling, shifting the focus from code as an output to code as the operational substrate for agentic AI.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出了一种统一的视角，将代码视为智能体推理、行动和环境建模的可执行、可检查、有状态的媒介，而非仅仅作为输出产物。它系统性地梳理了现有工作，并构建了三层框架（接口、机制、扩展），为理解和设计基于代码的智能体系统提供了结构化指南。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18747" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1088.html">Actionable World Representation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1088.html">Actionable World Representation</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">WorldString proposes a unified neural architecture that learns actionable digital twins of articulated, skinned, and soft objects directly from point clouds or RGB-D video, enabling controllable state-conditioned 3D generation.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出WorldString，一种统一的神经架构，能够直接从点云或RGB-D视频中学习可操作的数字孪生，涵盖铰接、蒙皮和软体物体。它通过全微分网络实现状态条件化的3D生成，在多个物体类别上取得了最先进的重建精度，为机器人策略学习和物理世界模型提供了基础构建模块。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18743" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1089.html">Vision-OPD: Learning to See Fine Details for Multimodal LLMs via On-Policy Self-Distillation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1089.html">Vision-OPD：通过在线策略自蒸馏让多模态大语言模型看清细节</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Vision-OPD proposes a self-distillation framework that transfers a model's own crop-conditioned perception to full-image inference, significantly narrowing the regional-to-global perception gap in MLLMs without external teachers or inference-time tool use.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出Vision-OPD，一种无需外部教师模型或推理时工具调用的自蒸馏框架，通过将模型自身的裁剪条件感知能力迁移至全图推理，显著缩小了多模态大语言模型在细粒度理解上的区域-全局感知差距。仅用6.2K合成三元组训练的4B/9B模型，在多个细粒度基准上超越了包括GPT-5.4、Gemini-3.1-Pro在内的更大开源和闭源模型，且不增加推理开销。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18740" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1090.html">What Does the AI Doctor Value? Auditing Pluralism in the Clinical Ethics of Language Models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1090.html">AI医生看重什么？语言模型临床伦理中的多元性审计</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper audits value pluralism in LLMs by constructing a benchmark of 50 clinical ethical dilemmas and using a revealed-preference attribution method to show that individual models are near-deterministic and systematically underweight patient autonomy, risking a deployment monoculture.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文通过构建50个临床伦理困境基准，并采用揭示偏好归因方法，系统审计了大型语言模型（LLM）在临床决策中的价值多元性。研究发现单个模型近乎确定性且系统性地低估患者自主权，存在部署单一文化的风险。该工作为医疗AI安全与多元对齐提供了重要方法论。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18738" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1091.html">Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1091.html">可预测的虚构：LLM的事实回忆能力随模型规模与主题频率缩放</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">This paper shows that factual recall quality in LLMs follows a sigmoid scaling law in the log-linear combination of model size and topic frequency in training data, explaining up to 94% of variance within model families.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出一个统一的S形缩放定律，将模型参数规模与训练数据中主题频率结合，可解释LLM事实回忆质量高达94%的方差。该工作为预测模型在特定主题上的知识盲区提供了定量工具，对构建可靠AI系统具有直接指导意义。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18732" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1092.html">General Preference Reinforcement Learning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1092.html">通用偏好强化学习</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">GPRL extends GRPO-style online RL to open-ended tasks by replacing scalar rewards with a multi-dimensional, intransitivity-aware preference embedding from the General Preference Model, achieving 56.51% length-controlled win rate on AlpacaEval 2.0 while resisting reward hacking.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出GPRL方法，将通用偏好模型（GPM）的多维、不可传递性偏好嵌入与GRPO风格的在线强化学习相结合，有效解决了开放任务中的奖励破解问题。在AlpacaEval 2.0上实现了56.51%的长度控制胜率，显著优于现有方法。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18721" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1093.html">Semantic Generative Tuning for Unified Multimodal Models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1093.html">语义生成调优：面向统一多模态模型的生成式对齐方法</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">SGT shows that using image segmentation as a generative proxy significantly improves both visual understanding and generation in unified multimodal models, achieving a 6.02% gain on CV-Bench and 90.0% on GenEval.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出语义生成调优（SGT），通过将图像分割作为生成代理任务，有效对齐统一多模态模型中的视觉理解与生成能力。实验表明，SGT在CV-Bench上提升6.02%，在GenEval上达到90.0%，显著优于现有方法。该工作挑战了像素级重建对齐的常见做法，为构建通用多模态系统提供了新思路。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18714" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1094.html">EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1094.html">EnvFactory：通过可执行环境合成与鲁棒强化学习扩展工具使用智能体</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">EnvFactory proposes a fully automated framework for scaling tool-use agents by autonomously constructing verified executable environments from authentic online resources and synthesizing natural multi-turn trajectories with implicit intents, achieving up to +15% on BFCLv3 with only 85 environments.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出EnvFactory，一个全自动框架，通过从真实在线资源自主构建可验证的可执行环境，并合成包含隐式意图的自然多轮轨迹，解决了工具使用智能体在强化学习训练中缺乏可扩展环境和真实数据的问题。仅用85个环境即可在BFCLv3上提升高达15%，数据效率显著优于此前需要5倍以上环境的工作。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18703" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1095.html">Democratizing Large-Scale Re-Optimization with LLM-Guided Model Patches</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1095.html">Deep Note — reopt-llm</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Key claim: LLMs can act as OR experts to dynamically re-optimize large-scale industrial models via natural-language patches; key observation: a toolbox of primal information and solver-aware techniques is essential for scalability and solution quality.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出ReOpt-LLM框架，利用大语言模型作为运筹学专家，通过自然语言补丁动态重新优化大规模工业模型。实验表明，该方法在在线供应链案例中实现100%成功率，中位运行时间仅2.3秒，显著降低了对运筹学专家的依赖。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18692" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1096.html">Lance: Unified Multimodal Modeling by Multi-Task Synergy</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1096.html">Lance：通过多任务协同实现统一多模态建模</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Lance proposes a lightweight native unified multimodal model that achieves strong image/video generation and understanding via a dual-stream MoE architecture and staged multi-task training, outperforming open-source unified models with only 3B activated parameters.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出Lance，一个轻量级原生统一多模态模型，通过双流混合专家架构和分阶段多任务训练，在仅3B激活参数下实现了强大的图像/视频生成与理解能力，显著优于现有开源统一模型。该工作为资源受限场景下的多模态AI研究提供了实用范式。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18678" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1097.html">COOPO: Cyclic Offline-Online Policy Optimization Algorithm</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1097.html">COOPO：循环离线-在线策略优化算法</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">COOPO proposes a cyclic offline-online RL framework that repeatedly anchors the policy to a static dataset via KL-regularized updates to eliminate catastrophic forgetting and distributional shift, achieving better sample efficiency and final returns than state-of-the-art hybrid methods.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出COOPO，一种循环离线-在线强化学习框架，通过KL正则化更新将策略反复锚定到静态数据集，从而消除灾难性遗忘和分布偏移。实验表明，该方法在D4RL基准上以更少的在线交互步数取得了优于现有混合方法的最终回报。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18675" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1098.html">Generative AI Advertising as a Problem of Trustworthy Commercial Intervention</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1098.html">生成式AI广告：可信商业干预问题</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Generative AI advertising shifts from content placement to process intervention, creating a trustworthiness crisis that current detection and disclosure frameworks cannot address.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文重新定义了生成式AI广告问题，指出其从内容投放转向过程干预，带来了现有检测与披露框架无法应对的信任危机。论文提出了一个四层影响分类法（产品提及、信息框架、行为重定向、长期偏好塑造），并分析了各层在不同架构中的实现方式及开放问题。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18673" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1099.html">SCICONVBENCH: Benchmarking LLMs on Multi-Turn Clarification for Task Formulation in Computational Science</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1099.html">SCICONVBENCH：基准测试大语言模型在计算科学任务制定中的多轮澄清能力</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">SCICONVBENCH reveals that frontier LLMs resolve only 52.7% of disambiguation cases in fluid mechanics and frequently make silent assumptions, highlighting a critical upstream failure in scientific task formulation.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出了SCICONVBENCH基准，专门评估大语言模型在计算科学领域（如流体力学）中通过多轮对话澄清模糊或不一致用户请求的能力。实验表明，最先进的模型在流体力学消歧任务中仅解决52.7%的案例，且常做出隐性假设，揭示了科学任务制定环节的关键上游失败。该基准为构建可靠的科学AI助手提供了系统化的评估框架。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18630" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1100.html">CrossView Suite: Harnessing Cross-view Spatial Intelligence of MLLMs with Dataset, Model and Benchmark</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1100.html">CrossView Suite：利用数据集、模型和基准测试增强多模态大语言模型的跨视角空间智能</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">CrossView Suite proposes a unified dataset (CrossViewSet), benchmark (CrossViewBench), and model (CrossViewer) to enable MLLMs to perform explicit object-level cross-view spatial reasoning, addressing the lack of large-scale mask-grounded training data, comprehensive evaluation, and alignment mechanisms.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出了一个完整的跨视角空间推理解决方案，包括大规模掩码标注数据集CrossViewSet、统一基准测试CrossViewBench以及三阶段模型CrossViewer。其核心创新在于显式的物体级跨视角对齐机制，显著优于现有模型的隐式融合方法，为多模态大语言模型的空间智能发展提供了关键数据、评估和建模框架。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18621" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1105.html">MA$^{2}$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1105.html">MA$^{2}$P：面向复杂说服的元认知自主智能体框架</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">MA$^{2}$P proposes a meta-cognitive multi-agent framework that improves persuasive dialogue success by inferring latent mental states and selecting domain-adaptive strategies, outperforming LLM baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出MA$^{2}$P，一个元认知多智能体框架，通过推断对话者的潜在心理状态并选择领域自适应策略，显著提升说服成功率。在PersuasionForGood数据集上，MA$^{2}$P达到72.4%的成功率，远超GPT-4的58.1%，并在健康、金融、教育三个领域表现一致。该工作为构建具有社会感知能力的AI智能体提供了原则性方法。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18572" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1106.html">Query-Conditioned Knowledge Alignment for Reliable Cross-System Medical Reasoning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1106.html">基于查询条件的知识对齐：面向可靠的跨系统医学推理</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">QCEA reformulates entity alignment as a query-conditioned ranking problem to handle context-dependent, asymmetric, and many-to-many correspondences in cross-system medical knowledge graphs, showing consistent improvements in Hit@K and MRR over static baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出QCEA方法，将实体对齐重新定义为查询条件排序问题，以处理跨系统医学知识图谱中上下文依赖、非对称和多对多的对应关系。实验表明，在中医-西医知识图谱上，QCEA在Hit@K和MRR指标上持续优于静态基线方法，并显著提升下游RAG的答案准确率。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18570" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1107.html">Estimating Item Difficulty with Large Language Models as Experts</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1107.html">利用大型语言模型作为专家评估题目难度</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">LLMs can estimate item difficulty with moderate-to-strong correlation to empirical data, with pairwise comparison outperforming absolute judgement, and token probabilities plus few-shot prompting closing the gap.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文系统性地探索了使用现成的大型语言模型（LLM）作为专家来评估题目难度的可行性。研究发现，LLM的难度估计与基于实证数据的项目反应理论（IRT）难度值具有中等到强的正相关，其中成对比较方法优于绝对判断，而使用token概率和少样本提示能进一步缩小差距。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18562" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1108.html">Federated Martingale Posterior Samping</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1108.html">联邦鞅后验采样</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Federated Martingale Posterior (FMP) replaces the prior-likelihood pair with a predictive distribution and enables one-shot embarrassingly parallel Bayesian inference by having clients upload compressed data embeddings instead of raw data.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出联邦鞅后验（FMP）方法，用预测分布替代先验-似然对，实现单轮、可并行化的联邦贝叶斯推断。客户端仅需上传压缩后的数据嵌入，服务器聚合后运行集中式预测采样器，在保持隐私和通信效率的同时，显著提升校准性能。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18554" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1109.html">STT-Arena: A More Realistic Environment for Tool-Using with Spatio-Temporal Dynamics</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1109.html">STT-Arena：一个更真实的时空动态工具使用环境</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">STT-Arena introduces a benchmark for evaluating LLMs' adaptive replanning under spatio-temporal dynamics, revealing that even the best proprietary models achieve under 40% accuracy.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出了STT-Arena基准，用于评估大语言模型在时空动态条件下的自适应重规划能力。实验表明，即使是最先进的闭源模型，准确率也不到40%，揭示了现有基准在评估工具使用智能体时的关键缺失。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18548" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1110.html">AMR-SD: Asymmetric Meta-Reflective Self-Distillation for Token-Level Credit Assignment</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1110.html">AMR-SD：非对称元反思自蒸馏用于令牌级信用分配</a></h2>
+      <div class="meta">arxiv · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">AMR-SD introduces a reflection bottleneck and Causal Information Gain (CIG) to achieve sparse, token-level credit assignment in RLVR for LLMs, preventing late-stage collapse and outperforming GRPO and self-distillation baselines.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文提出AMR-SD方法，通过引入反思瓶颈和因果信息增益（CIG），在RLVR中实现稀疏、令牌级的信用分配，有效防止训练后期崩溃，并在数学、科学和工具使用基准上显著优于GRPO和自蒸馏基线。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://arxiv.org/abs/2605.18529" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+  </section>
+
+  <section data-tab="news">
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1191.html">Introducing OpenAI for Singapore</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1191.html">Introducing OpenAI for Singapore</a></h2>
+      <div class="meta">openai_rss · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI announces its expansion into Singapore, establishing a new office to support the growing demand for AI technologies in the Asia-Pacific region. The move aims to foster local partnerships, advance AI research, and provide better access to OpenAI's tools and models for businesses and developers in Singapore. This strategic expansion reflects OpenAI's commitment to global collaboration and responsible AI deployment.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI宣布在新加坡设立新办公室，以支持亚太地区对AI技术日益增长的需求。此举旨在促进本地合作、推进AI研究，并为新加坡的企业和开发者提供更好的OpenAI工具和模型访问。这一战略扩张体现了OpenAI对全球合作和负责任AI部署的承诺。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/introducing-openai-for-singapore" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1176.html">Introducing Gemini Omni</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1176.html">Introducing Gemini Omni</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind introduces Gemini Omni, a natively multimodal model that can generate and edit videos from any combination of inputs—text, images, audio, and video. The first model, Gemini Omni Flash, is rolling out in the Gemini app, Google Flow, and YouTube Shorts. It supports natural language video editing with consistent character and physics, real-world knowledge grounding, and multi-turn refinement. Features include transforming scenes, reimagining actions, and creating videos from references. Outputs include SynthID watermarks for transparency. Future updates will add image and audio output modalities.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 发布 Gemini Omni，这是一个原生多模态模型，能从文本、图像、音频和视频等任意输入生成并编辑视频。首个模型 Gemini Omni Flash 已在 Gemini 应用、Google Flow 和 YouTube Shorts 中推出。它支持通过自然语言进行视频编辑，保持角色和物理一致性，并基于 Gemini 的世界知识进行推理。功能包括场景变换、动作重想象和基于参考的视频生成。所有输出均包含 SynthID 水印以确保透明度。未来将支持图像和音频输出。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1177.html">Strengthening Singapore’s AI Future: A New National Partnership</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1177.html">Strengthening Singapore’s AI Future: A New National Partnership</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind announced a national AI partnership with Singapore to advance healthcare, education, scientific discovery, and sustainability. The collaboration includes AI co-clinician research, pandemic preparedness using AlphaFold, a Gemma-powered running assistant for blind athletes, and training on agentic AI tools. Google also provides Gemini for Education to all educators and launches the 'AI for the Planet' accelerator. The partnership emphasizes responsible AI through safety benchmarks with IMDA and MLCommons, aiming to generate S$3.3 billion in economic value by 2040.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind与新加坡建立国家AI合作伙伴关系，聚焦医疗、教育、科学发现和可持续发展。合作包括AI co-clinician研究、利用AlphaFold进行大流行病准备、为视障运动员开发Gemma驱动的跑步助手，以及agentic AI工具培训。Google向所有教育工作者提供Gemini for Education，并启动'AI for the Planet'加速器。该合作强调通过IMDA和MLCommons制定多模态安全基准，预计到2040年创造33亿新元经济价值。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/strengthening-singapores-ai-future-a-new-national-partnership/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1178.html">Gemini 3.5: frontier intelligence with action</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1178.html">Gemini 3.5: frontier intelligence with action</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind introduces Gemini 3.5, a new family of frontier models designed for agentic workflows and coding. The initial release, 3.5 Flash, delivers flagship-level intelligence with exceptional speed, outperforming previous models on benchmarks like Terminal-Bench 2.1 and CharXiv Reasoning. It excels at long-horizon tasks, enabling developers and enterprises to automate complex workflows at lower cost. Powered by the Antigravity harness, it supports collaborative subagents for scalable problem-solving. The model is integrated into the Gemini app, Google Search, and enterprise platforms, with safety measures aligned with the Frontier Safety Framework. A 3.5 Pro version is forthcoming.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 发布了 Gemini 3.5 系列模型，专注于 agentic 工作流和编码。首发版本 3.5 Flash 在 Terminal-Bench 2.1 和 CharXiv Reasoning 等基准测试中表现领先，兼具旗舰级智能与极速推理。它擅长处理长周期任务，通过 Antigravity 框架支持多子智能体协作，显著降低自动化复杂流程的成本。该模型已集成至 Gemini 应用、Google Search 及企业平台，并遵循 Frontier Safety Framework 强化安全防护。3.5 Pro 版本预计下月推出。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1179.html">Gemini for Science: AI experiments and tools for a new era of discovery</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1179.html">Gemini for Science: AI experiments and tools for a new era of discovery</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Google introduces Gemini for Science, a suite of AI tools and experiments designed to accelerate scientific discovery. The collection includes three prototypes: Hypothesis Generation (built with Co-Scientist) for automated literature synthesis and idea generation, Computational Discovery (using AlphaEvolve and ERA) for parallel testing of code variations, and Literature Insights (powered by NotebookLM) for structured analysis of scientific papers. Additionally, Science Skills integrates over 30 life science databases for rapid genomic and bioinformatic analyses. These tools aim to serve as a force multiplier for researchers, enabling faster hypothesis testing and literature review. Google is collaborating with over 100 institutions and enterprise partners to validate and deploy these systems.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google 推出 Gemini for Science，这是一套旨在加速科学发现的AI工具和实验。该系列包括三个原型：基于 Co-Scientist 的 Hypothesis Generation，用于自动文献综合和创意生成；使用 AlphaEvolve 和 ERA 的 Computational Discovery，用于并行测试代码变体；以及由 NotebookLM 驱动的 Literature Insights，用于结构化分析科学论文。此外，Science Skills 集成了超过30个生命科学数据库，用于快速基因组和生物信息学分析。这些工具旨在作为研究人员的倍增器，加速假设测试和文献回顾。Google 正在与超过100家机构和合作伙伴合作，验证和部署这些系统。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1180.html">Co-Scientist: A multi-agent AI partner to accelerate research</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1180.html">Co-Scientist: A multi-agent AI partner to accelerate research</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind introduces Co-Scientist, a multi-agent AI system built with Gemini that accelerates scientific discovery by generating, debating, and evolving hypotheses. The system uses specialized agents organized into three phases: generating ideas, debating them through simulated peer review and tournaments, and evolving top candidates. Validated in life sciences, it has helped uncover drug repurposing candidates for liver fibrosis, propose RNA-based approaches for ALS, and identify genetic leads for reversing cellular aging. Co-Scientist integrates web search, specialized databases, and tools like AlphaFold, and is available as an experimental tool for researchers.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 发布了 Co-Scientist，一个基于 Gemini 的多智能体 AI 系统，通过生成、辩论和演化假设来加速科学发现。系统包含生成、反思、排名、进化等专门智能体，并采用“想法锦标赛”机制验证和优化假设。在生命科学领域，该系统已帮助发现肝纤维化药物再利用候选方案、提出 ALS 的 RNA 疗法思路，并识别逆转细胞衰老的基因线索。Co-Scientist 整合了 web 搜索、ChEMBL、UniProt 和 AlphaFold 等工具，现已作为实验工具向研究人员开放。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1182.html">Making it easier to understand how content was created and edited</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1182.html">Making it easier to understand how content was created and edited</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Google is expanding its content transparency and verification tools across Search, Gemini, Chrome, Pixel, and Cloud to help users understand the origin and edits of digital content. Key technologies include SynthID, a digital watermark for AI-generated media, and C2PA Content Credentials, an industry standard for tracking content provenance. Pixel phones now support Content Credentials for camera-captured images and soon video. Google also introduces an AI Content Detection API on Cloud and partners with OpenAI, Kakao, ElevenLabs, Meta, and NVIDIA to promote interoperable provenance standards. The goal is to empower users to verify whether content is AI-generated, authentic, or altered.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google正在扩展其内容透明度和验证工具，覆盖Search、Gemini、Chrome、Pixel和Cloud，帮助用户了解数字内容的来源和编辑历史。核心技术包括SynthID（用于AI生成内容的数字水印）和C2PA Content Credentials（追踪内容来源的行业标准）。Pixel手机已支持为相机拍摄的图像添加Content Credentials，即将支持视频。Google还推出基于Cloud的AI Content Detection API，并与OpenAI、Kakao、ElevenLabs、Meta和NVIDIA合作推广互操作标准，旨在让用户轻松验证内容是否为AI生成、真实或经过修改。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1184.html">Simulate real-world places with Project Genie and Street View</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1184.html">Simulate real-world places with Project Genie and Street View</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind and Google Labs announce Project Genie, a general-purpose world model now integrated with Street View imagery to generate interactive, real-world-grounded virtual environments. Users can select a U.S. location, apply creative styles like 'Ocean World' or 'B&W film', and describe a character to create imaginative scenes tied to actual places. The capability, powered by Maps Imagery Grounding, is available to Google AI Ultra subscribers globally. Project Genie remains an experimental research prototype, with plans to expand location coverage and improve detail accuracy.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind与Google Labs推出Project Genie，这是一个通用世界模型，现整合Street View图像，可生成基于真实地点的交互式虚拟环境。用户可选择美国地点，应用如“Ocean World”或“B&W film”等创意风格，并描述角色，从而创建与现实场景关联的想象世界。该功能由Maps Imagery Grounding技术驱动，向全球Google AI Ultra订阅用户开放。Project Genie仍为实验性研究原型，计划扩展地点覆盖并提升细节精度。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie-expands/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1185.html">Uniting biological toolkits for a new approach to ALS</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1185.html">Uniting biological toolkits for a new approach to ALS</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind's Co-Scientist AI bridges the gap between mechanical engineer Ritu Raman and chemical biologist Ryan Flynn to accelerate ALS research. Raman builds living nerve and muscle tissues to model the disease, while Flynn maps RNA on cell surfaces. Co-Scientist compressed months of literature review into actionable insights, generating testable hypotheses and ranking directions by feasibility and risk. The best leads involved cell-surface interactions, prompting Raman to collaborate with Flynn. Together, they used Co-Scientist iteratively to combine their toolkits, now searching for novel RNA-based mechanisms and drugs to target ALS.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind的Co-Scientist AI连接了机械工程师Ritu Raman和化学生物学家Ryan Flynn，以加速ALS研究。Raman构建活体神经和肌肉组织来模拟疾病，而Flynn绘制细胞表面的RNA图谱。Co-Scientist将数月文献综述压缩为可操作的见解，生成可测试假设并按可行性和风险排序方向。最佳线索涉及细胞表面相互作用，促使Raman与Flynn合作。他们迭代使用Co-Scientist结合各自工具包，现在寻找新型RNA机制和药物来靶向ALS。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/uniting-biological-toolkits-for-a-new-approach-to-als/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1188.html">Opening new paths in aging research</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1188.html">Opening new paths in aging research</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind's Co-Scientist, developed with Calico Life Sciences, aids aging research by synthesizing scattered biological findings into testable hypotheses. It helped generate a novel hypothesis on how metabolism regulates the integrated stress response (ISR), a cellular mechanism linked to aging and disease. Researchers used Co-Scientist to refine experimental designs and incorporate new data, leading to significant findings on ISR's role in health. The tool's scientific discernment impressed experts, cutting through noisy literature to identify promising research directions.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind的Co-Scientist与Calico Life Sciences合作，通过整合零散的生物学发现生成可验证的假设，助力衰老研究。它帮助提出了关于代谢如何调控integrated stress response (ISR)的新颖假说，ISR是一种与衰老和疾病相关的细胞机制。研究人员利用Co-Scientist优化实验设计并整合新数据，取得了关于ISR在健康中作用的重要发现。该工具的科学辨别力给专家留下深刻印象，能过滤嘈杂文献，识别有前景的研究方向。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/opening-new-paths-in-aging-research/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1189.html">Accelerating discovery of liver disease mechanisms</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1189.html">Accelerating discovery of liver disease mechanisms</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind's Co-Scientist, used by University of Edinburgh researchers, accelerates liver disease research by synthesizing vast biomedical literature to generate novel hypotheses. Focusing on metabolic dysfunction-associated steatohepatitis (MASH), the system identified the NLRP3 inflammasome as a key molecular bridge linking inflammation and metabolism, a connection previously unrecognized. This hypothesis, experimentally verified, explains why the drug resmetirom helps only a narrow patient subset and suggests targeted dual-therapies. Co-Scientist narrows the search among overwhelming drug combinations, acting as a 'jetpack' to shorten iteration cycles for breakthroughs.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind的Co-Scientist被爱丁堡大学研究人员用于加速肝病研究，通过综合海量生物医学文献生成新假设。针对代谢功能障碍相关脂肪性肝炎（MASH），该系统识别出NLRP3炎症小体作为连接炎症与代谢的关键分子桥梁，这一此前未被发现的联系经实验验证，解释了药物resmetirom仅对少数患者有效的原因，并提示了靶向联合疗法。Co-Scientist在大量药物组合中缩小搜索范围，如同科学家的“喷气背包”，缩短了突破性发现的迭代周期。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/accelerating-discovery-of-liver-disease-mechanisms/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1190.html">Fast-tracking genetic leads to reverse cellular aging</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1190.html">Fast-tracking genetic leads to reverse cellular aging</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-20</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind's Co-Scientist AI accelerates aging research by analyzing vast genetic screening data and scientific literature. Biologists Omar Abudayyeh and Jonathan Gootenberg use it to identify genetic factors that reverse cellular senescence, proposing over 20 novel leads, with lab tests validating several that drove cells to a younger state. Co-Scientist also reduces data analysis time from six months to days, enabling faster hypothesis testing and discovery.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind的Co-Scientist AI通过分析大量基因筛选数据和科学文献，加速衰老研究。生物学家Omar Abudayyeh和Jonathan Gootenberg利用它识别逆转细胞衰老的遗传因子，提出了20多个新线索，实验室验证了其中几个成功使细胞恢复年轻状态。Co-Scientist还将数据分析时间从六个月缩短至几天，加快了假设测试和发现进程。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/fast-tracking-genetic-leads-to-reverse-cellular-aging/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1132.html">OpenAI and Malta partner to bring ChatGPT Plus to all citizens</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1132.html">OpenAI and Malta partner to bring ChatGPT Plus to all citizens</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI and the Government of Malta have announced a pioneering partnership to provide ChatGPT Plus to all Maltese citizens. The initiative includes an AI literacy course developed by the University of Malta, designed to teach responsible AI use. Upon completion, citizens receive free access to ChatGPT Plus for one year. This program, managed by the Malta Digital Innovation Authority, aims to empower citizens with practical AI skills and position Malta as a global leader in national AI adoption. The partnership reflects OpenAI's vision of making intelligence a global utility and is part of the OpenAI for Countries initiative, tailored to local priorities.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI与马耳他政府宣布开创性合作，为所有马耳他公民提供ChatGPT Plus。项目包括由马耳他大学开发的AI素养课程，教授负责任地使用AI。完成课程后，公民可免费使用ChatGPT Plus一年。该计划由马耳他数字创新管理局管理，旨在赋能公民掌握实用AI技能，使马耳他成为国家AI应用的全球领导者。此次合作体现了OpenAI将智能作为全球公用事业的愿景，是OpenAI for Countries计划的一部分，根据当地需求定制。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/malta-chatgpt-plus-partnership" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1135.html">How business operations teams use Codex</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1135.html">How business operations teams use Codex</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">This article from OpenAI Academy explains how business operations teams can leverage Codex to streamline the creation of decision-ready artifacts. It details four primary use cases: initiative off-track briefs, strategic initiative health updates, leadership decision packets, and board or company progress updates. For each use case, the article specifies the inputs the team provides (e.g., project trackers, KPI dashboards, meeting notes) and the structured outputs Codex generates (e.g., executive briefs, decision packets). The emphasis is on Codex handling the initial draft, allowing the team to focus on judgment, recommendations, and stakeholder review, thereby accelerating the decision-making process.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文来自OpenAI Academy，阐述了业务运营团队如何利用Codex将分散的项目背景、指标、追踪器和利益相关者输入转化为决策就绪的简报、更新、资料包和权衡模型。文章详细介绍了四个主要用例：计划偏离轨道简报、战略计划健康更新、领导层决策包以及董事会或公司进度更新。对于每个用例，文章明确了团队提供的输入（如项目追踪器、KPI仪表盘、会议记录）以及Codex生成的结构化输出（如高管简报、决策包）。重点在于Codex处理初稿，让团队专注于判断、建议和利益相关者审查，从而加速决策过程。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1136.html">How data science teams use Codex</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1136.html">How data science teams use Codex</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">This article from OpenAI Academy explains how data science teams can leverage Codex to transform scattered inputs—such as dashboards, metric definitions, exports, and business context—into polished analysis assets. It outlines four key use cases: KPI root-cause analysis, business impact readouts, analytics request handling, and executive KPI reviews. For each use case, it details what the team provides and what Codex returns, including charts, caveats, source links, and recommendations. The goal is to accelerate the creation of first drafts, allowing analysts to focus on validation and decision-making. The article includes starter prompts and real-world examples to guide adoption.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本文来自OpenAI Academy，介绍了数据科学团队如何使用Codex将分散的输入（如仪表板、指标定义、导出数据和业务背景）快速转化为可用的分析资产。文章详细说明了四个关键用例：KPI根因分析、业务影响报告、分析请求处理和执行KPI审查。每个用例都列出了团队提供的内容和Codex返回的结果，包括图表、注意事项、来源链接和建议。目标是加速初稿生成，让分析师专注于验证和决策。文中还提供了启动提示和实际案例以指导应用。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1137.html">Databricks brings GPT-5.5 to enterprise agent workflows</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1137.html">Databricks brings GPT-5.5 to enterprise agent workflows</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Databricks integrates OpenAI's GPT-5.5 into enterprise agent workflows, achieving state-of-the-art performance on the OfficeQA Pro benchmark. The model reduces errors by 46% compared to GPT-5.4, excelling in parsing scanned PDFs, legacy documents, and long-context tasks. GPT-5.5 demonstrates improved orchestration, avoiding unnecessary search detours and reliably retrieving context. Available through AI Unity Gateway, AgentBricks, and Agent Supervisor API, it enables customers to build custom multi-step agent workflows with enhanced accuracy and efficiency.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Databricks将OpenAI的GPT-5.5集成到企业agent工作流中，在OfficeQA Pro基准测试上达到最先进水平。相比GPT-5.4，错误率降低46%，在解析扫描PDF、遗留文档和长上下文任务中表现优异。GPT-5.5改进了编排能力，避免不必要的搜索绕路，可靠地检索上下文。通过AI Unity Gateway、AgentBricks和Agent Supervisor API提供，支持客户构建自定义多步agent工作流，提升准确性和效率。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/databricks" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1138.html">Sea's View on the Future of Agentic Software Development with Codex</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1138.html">Sea's View on the Future of Agentic Software Development with Codex</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Sea Limited, a Singapore-based global tech company, is rolling out OpenAI's Codex across its developer organization, with 87% weekly active usage. David Chen, Co-Founder and CPO of Shopee, explains that Codex goes beyond autocomplete to provide deep contextual awareness of large, disparate codebases, enabling engineers to focus on higher-level tasks like architectural design. The company is integrating AI agents into CI/CD pipelines for autonomous testing and debugging. Chen sees this as an organizational paradigm shift, transforming developers into system orchestrators. Sea is also partnering with OpenAI to host a Codex Hackathon Series across Asia to democratize access to AI tools and build a regional AI-native talent ecosystem.</div>
+      <div class="lang-zh" style="font-size:0.9rem">新加坡全球科技公司Sea Limited正在其开发者组织中推广OpenAI的Codex，周活跃用户率达87%。Shopee联合创始人兼CPO David Chen表示，Codex超越了自动补全功能，能深度理解庞大且分散的代码库上下文，使工程师能专注于架构设计等更高层次的任务。该公司正在将AI代理集成到CI/CD流水线中，用于自主测试和调试。Chen认为这是一场组织范式转变，将开发者转变为系统编排者。Sea还与OpenAI合作，在亚洲举办Codex黑客松系列，以普及AI工具并构建区域性的AI原生人才生态。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/sea-david-chen" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1139.html">Work with Codex from anywhere</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1139.html">Work with Codex from anywhere</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI announces that Codex, its AI coding agent, is now available in the ChatGPT mobile app as a preview. This allows users to stay connected to long-running coding tasks from their phone, reviewing outputs, approving commands, and providing guidance in real time. The feature uses a secure relay layer to sync state across devices without exposing machines to the public internet. It supports starting investigations, unblocking decisions, and synthesizing information on the go. Additionally, updates include Remote SSH support, programmatic access tokens, hooks for customization, and HIPAA-compliant use for enterprise workspaces.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI 宣布其 AI 编程代理 Codex 现已在 ChatGPT 移动应用中提供预览。用户可通过手机实时连接长时间运行的编码任务，审查输出、批准命令并提供指导。该功能使用安全中继层同步设备状态，无需将机器暴露于公共互联网。支持随时启动调查、解除决策阻塞和综合信息。此外，更新包括 Remote SSH 支持、程序化访问令牌、Hooks 自定义以及面向企业工作区的 HIPAA 合规使用。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/work-with-codex-from-anywhere" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1140.html">Helping ChatGPT better recognize context in sensitive conversations</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1140.html">Helping ChatGPT better recognize context in sensitive conversations</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI introduces safety updates for ChatGPT to better recognize evolving risk in sensitive conversations, particularly suicide, self-harm, and harm-to-others scenarios. The system uses context-aware training and safety summaries—short factual notes about prior safety-relevant context—to distinguish benign interactions from high-risk ones. These summaries are created by a safety reasoning model, stored temporarily, and used only for serious concerns. Internal evaluations show significant improvements: safe-response performance improved by 50% in suicide/self-harm cases and 16% in harm-to-others within single conversations, and by 52% and 39% respectively across multiple conversations on GPT-5.5 Instant. The work was guided by mental health experts and aims to de-escalate, refuse harmful details, or redirect to safer alternatives without overreacting in ordinary chats.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI 为 ChatGPT 推出安全更新，使其能更好地识别敏感对话中随时间演变的潜在风险，特别是自杀、自伤和伤害他人场景。系统通过上下文感知训练和 safety summaries（由安全推理模型生成的简短事实性笔记，临时存储且仅用于严重关切）来区分良性互动与高风险情况。内部评估显示显著改进：在单次对话中，自杀/自伤场景的安全响应性能提升 50%，伤害他人场景提升 16%；在 GPT-5.5 Instant 上跨对话场景分别提升 52% 和 39%。该工作由心理健康专家指导，旨在通过缓和、拒绝有害细节或引导至更安全替代方案来恰当回应，同时避免在日常对话中过度反应。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/chatgpt-recognize-context-in-sensitive-conversations" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1144.html">How NVIDIA engineers and researchers build with Codex</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1144.html">How NVIDIA engineers and researchers build with Codex</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">NVIDIA engineers and researchers use OpenAI's Codex, powered by GPT-5.5, to accelerate complex engineering tasks and end-to-end machine learning research workflows. Codex runs on NVIDIA GB200 and GB300 infrastructure, enabling autonomous long sessions with high accuracy. Senior software engineer Dennis Hannusch reports 10x speed improvements in research workflows and uses Codex to evolve internal platforms from MVP to production, including building a podcast recording app in hours. AI researcher Shaunak Joshi leverages Codex as a creative research agent for literature review, hypothesis generation, and remote experiment execution via SSH. Codex also excels at translating Python code to Rust, achieving 20x efficiency gains.</div>
+      <div class="lang-zh" style="font-size:0.9rem">NVIDIA工程师和研究人员使用基于GPT-5.5的Codex加速复杂工程任务和端到端机器学习研究流程。Codex运行在NVIDIA GB200和GB300基础设施上，支持长时间自主会话并保持高精度。高级软件工程师Dennis Hannusch报告研究流程速度提升10倍，利用Codex将内部平台从MVP演进到生产环境，并在数小时内构建了播客录制应用。AI研究员Shaunak Joshi将Codex作为创意研究代理，用于文献综述、假设生成和通过SSH远程执行实验。Codex还能将Python代码翻译为Rust，实现20倍效率提升。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/nvidia" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1146.html">What Parameter Golf taught us about AI-assisted research</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1146.html">What Parameter Golf taught us about AI-assisted research</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Parameter Golf was an open machine learning challenge by OpenAI with over 1,000 participants and 2,000 submissions. Participants minimized held-out loss on FineWeb under strict constraints: 16 MB artifact limit and 10-minute training on 8×H100s. The challenge revealed widespread use of AI coding agents, which lowered experimentation costs and accelerated innovation but introduced issues in submission review and attribution. Notable techniques included Muon weight decay, GPTQ-lite quantization, test-time training, and novel tokenizers like CaseOps. The competition also served as a talent discovery platform, highlighting the impact of AI agents on research workflows and community dynamics.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Parameter Golf是OpenAI发起的一项开放机器学习挑战，吸引了超过1000名参与者和2000份提交。参与者需在严格约束下最小化FineWeb数据集上的损失：16 MB工件限制和8×H100上10分钟训练。挑战揭示了AI coding agents的广泛使用，降低了实验成本并加速创新，但也带来了提交审核和归属问题。突出技术包括Muon权重衰减、GPTQ-lite量化、test-time training和CaseOps分词器。该竞赛还成为人才发现平台，凸显了AI agents对研究流程和社区动态的影响。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/what-parameter-golf-taught-us" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1147.html">How ChatGPT adoption broadened in early 2026</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1147.html">How ChatGPT adoption broadened in early 2026</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">In Q1 2026, ChatGPT consumer adoption broadened significantly across gender, age, and geography. Users with typically feminine names now represent over half of inferred-gender users, and those over 35 increased their message share. Adoption rose fastest in Latin America, Asia-Pacific, and Africa, with countries like the Dominican Republic and Japan climbing the per-capita ranking. Workplace use on consumer plans shifted from general content creation toward specialized tasks like health documentation and information retrieval. The data indicates ChatGPT is transitioning from early adopter tool to mainstream utility, with more diverse users and deeper integration into recurring workflows.</div>
+      <div class="lang-zh" style="font-size:0.9rem">2026年第一季度，ChatGPT的消费者采用在性别、年龄和地域上显著扩大。具有典型女性名字的用户已占可推断性别用户的一半以上，35岁以上用户的消息占比上升。拉丁美洲、亚太和非洲国家的采用增长最快，多米尼加共和国和日本等国的消息人均排名上升。在工作场景中，消费者计划的使用从通用内容创作转向健康文档和信息检索等专业任务。数据表明ChatGPT正从早期采用者工具转变为主流应用，用户群体更多元，使用更深入日常流程。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/signals/research/2026q1-update" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1148.html">OpenAI Campus Network: Student club interest form</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1148.html">OpenAI Campus Network: Student club interest form</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI is launching the Campus Network initiative to partner with student clubs worldwide, offering hands-on AI learning, support for events and research, early tool access, and global leadership connections. An interest form collects club details, focus areas, AI usage, and desired opportunities like workshops, ambassador programs, and credits.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI推出Campus Network计划，与全球学生俱乐部合作，提供AI实践学习、活动与研究支持、工具早期访问及全球领导力连接。兴趣表单收集俱乐部信息、重点领域、AI使用情况及所需支持如workshops、ambassador项目和credits。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/openai-campus-network-student-club-interest-form" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1149.html">How enterprises are scaling AI</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1149.html">How enterprises are scaling AI</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">This guide synthesizes insights from European enterprise leaders at Philips, BBVA, Mirakl, Scout24, Jetbrains, and Scania, revealing that scaling AI is less about technical rollout and more about building trust, adoption, and continuous improvement. Key patterns include prioritizing culture over tooling, using governance as an enabler, fostering ownership over consumption, ensuring quality before scale, and protecting judgment work through hybrid workflows. The report emphasizes that sustained impact requires trust, ownership, and quality built in from the start, with AI embedded in end-to-end workflows under human oversight.</div>
+      <div class="lang-zh" style="font-size:0.9rem">本指南综合了Philips、BBVA、Mirakl、Scout24、Jetbrains和Scania等欧洲企业领导者的见解，指出规模化AI的关键不在于技术部署，而在于建立信任、采用和持续改进的条件。核心模式包括：文化优先于工具、将治理作为赋能因素、鼓励所有权而非消费、质量优先于规模，以及通过混合工作流保护判断工作。报告强调，持久的影响力需要从一开始就建立信任、所有权和质量，将AI嵌入端到端工作流并保持人类监督。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1150.html">OpenAI launches DeployCo to help businesses build around intelligence</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1150.html">OpenAI launches DeployCo to help businesses build around intelligence</a></h2>
+      <div class="meta">openai_rss · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI announced the launch of DeployCo, a new standalone company focused on helping enterprises deploy AI systems into critical workflows. DeployCo will embed Forward Deployed Engineers (FDEs) into client organizations to redesign infrastructure and processes around frontier AI. OpenAI also agreed to acquire Tomoro, an applied AI consulting firm, bringing approximately 150 experienced FDEs to DeployCo from day one. The initiative is backed by over $4 billion in initial investment from a consortium of global investment firms, consultancies, and system integrators, including TPG, Advent, and Bain Capital. DeployCo aims to accelerate real-world AI adoption and ensure durable operational impact.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI宣布成立DeployCo，这是一家专注于帮助企业将AI系统部署到关键工作流中的新公司。DeployCo将派遣Forward Deployed Engineers (FDEs)进入客户组织，围绕前沿AI重新设计基础设施和流程。OpenAI还同意收购应用AI咨询公司Tomoro，为DeployCo带来约150名经验丰富的FDEs。该计划获得了由TPG、Advent和Bain Capital等全球投资机构、咨询公司和系统集成商组成的财团超过40亿美元的初始投资。DeployCo旨在加速AI在实际场景中的采用，并确保持久的运营影响。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/openai-launches-the-deployment-company" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1125.html">Gemini 3.1 Flash-Lite: Built for intelligence at scale</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1125.html">Gemini 3.1 Flash-Lite: Built for intelligence at scale</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google has launched Gemini 3.1 Flash-Lite, its fastest and most cost-efficient AI model, now available in preview via the Gemini API and Vertex AI. Priced at $0.25/1M input tokens and $1.50/1M output tokens, it offers 2.5x faster time to first token and 45% higher output speed than 2.5 Flash while maintaining quality. It achieves a 1432 Elo score on Arena.ai and excels on benchmarks like GPQA Diamond (86.9%) and MMMU Pro (76.8%). The model supports adjustable thinking levels for high-volume tasks such as translation, content moderation, UI generation, and simulations, with early adopters including Latitude, Cartwheel, and Whering.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google 发布了 Gemini 3.1 Flash-Lite，这是其最快且最具成本效益的 AI 模型，现通过 Gemini API 和 Vertex AI 提供预览。定价为每百万输入 tokens $0.25、每百万输出 tokens $1.50，相比 2.5 Flash，首次输出 token 速度提升 2.5 倍，输出速度提升 45%，同时保持相似或更优质量。该模型在 Arena.ai 上获得 1432 Elo 评分，在 GPQA Diamond 和 MMMU Pro 等基准测试中表现优异。它支持可调节的思考层级，适用于翻译、内容审核、UI 生成和模拟等高容量任务，早期采用者包括 Latitude、Cartwheel 和 Whering。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1111.html">Reimagining the mouse pointer for the AI era</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1111.html">Reimagining the mouse pointer for the AI era</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind is reimagining the mouse pointer for the AI era by integrating Gemini-powered capabilities that understand both visual and semantic context. The goal is to eliminate the need for users to drag information into separate AI tools, instead enabling intuitive, cross-application collaboration through pointing and speaking. Four principles guide this work: maintaining user flow, combining pointing with natural language, leveraging contextual shorthand like 'this' and 'that', and turning pixels into actionable entities. Experimental demos show users editing images, finding map locations, or summarizing PDFs simply by pointing. The technology is being integrated into Chrome and the Googlebook laptop experience.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 正在重新构想 AI 时代的鼠标指针，通过集成 Gemini 使其理解视觉和语义上下文。目标是消除用户将信息拖入独立 AI 工具的繁琐操作，实现跨应用的直观协作。四项原则指导这一工作：保持用户流程、结合指向与自然语言、利用“这个”和“那个”等上下文简写、将像素转化为可操作实体。实验演示显示，用户只需指向即可编辑图像、查找地图位置或总结 PDF。该技术正被集成到 Chrome 和 Googlebook 笔记本体验中。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/ai-pointer/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1112.html">AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1112.html">AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">AlphaEvolve, a Gemini-powered coding agent by Google DeepMind, has scaled its impact across diverse fields over the past year. It improves DNA sequencing accuracy via DeepConsensus, boosts electricity grid optimization by increasing feasible solutions from 14% to over 88%, and enhances natural disaster prediction by 5%. In research, it achieves 10x lower error in quantum circuits on Willow, solves Erdős problems, and breaks records in Traveling Salesman and Ramsey Numbers. It optimizes TPU design, cache policies, and Google Spanner, reducing write amplification by 20%. Commercial applications include doubling Klarna's training speed, improving Substrate's lithography runtime, and saving FM Logistic 15,000 km annually.</div>
+      <div class="lang-zh" style="font-size:0.9rem">AlphaEvolve是Google DeepMind基于Gemini的编码智能体，过去一年在多个领域扩大了影响。它通过DeepConsensus将DNA测序错误减少30%，将电网优化中可行解比例从14%提升至88%以上，并将自然灾害预测准确率提高5%。在量子物理中，它使Willow处理器上的量子电路误差降低10倍；解决了Erdős问题，并改进了Traveling Salesman Problem和Ramsey Numbers的下界。它还优化了TPU设计、缓存策略和Google Spanner，将写入放大降低20%。商业应用中，Klarna训练速度翻倍，Substrate光刻运行时速提升多倍，FM Logistic年节省超15,000公里路程。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/alphaevolve-impact/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1113.html">Enabling a new model for healthcare with AI co-clinician</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1113.html">Enabling a new model for healthcare with AI co-clinician</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind introduces the AI co-clinician research initiative to address the global shortage of healthcare workers by augmenting clinicians with collaborative AI agents under expert supervision. The system is evaluated in both clinician-facing and patient-facing settings. In clinician-facing tests, it outperforms leading evidence synthesis tools on 98 primary care queries with zero critical errors in 97 cases, and surpasses frontier models on open-ended medication queries (OpenFDA RxQA). In patient-facing telemedical simulations using real-time multimodal AI (audio/video), it demonstrates capabilities like guiding physical exams and correcting inhaler technique, though expert physicians still outperform it overall, suggesting AI is best used as a supportive tool.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 宣布了 AI co-clinician 研究计划，旨在通过协作式 AI 代理在专家临床监督下辅助医生，应对全球医疗人员短缺。在面向医生的评估中，该系统在 98 个初级保健查询上优于领先的证据合成工具，97 例无严重错误，并在开放式药物问答（OpenFDA RxQA）上超越前沿模型。在面向患者的远程医疗模拟中，利用实时多模态 AI（音频/视频）展示了指导体检和纠正吸入器使用等能力，但专家医生整体表现更优，表明 AI 当前最适合作为支持工具而非替代品。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/ai-co-clinician/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1114.html">Announcing our partnership with the Republic of Korea</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1114.html">Announcing our partnership with the Republic of Korea</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind announces a partnership with the Republic of Korea's Ministry of Science and ICT (MSIT) to accelerate scientific discovery using frontier AI. The collaboration includes establishing an AI Campus in Seoul, leveraging models like AlphaEvolve, AlphaGenome, AlphaFold, AI co-scientist, and WeatherNext for life sciences, energy, and climate. It also focuses on cultivating local AI talent through internships and scholarships, and partnering with the Korean AI Safety Institute (AISI) on safety research. Building on the AlphaGo legacy, this initiative aims to support Korea's AI strategy and national grand challenges.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind与韩国科学技术信息通信部（MSIT）宣布合作，利用前沿AI加速科学发现。合作包括在首尔建立AI Campus，应用AlphaEvolve、AlphaGenome、AlphaFold、AI co-scientist和WeatherNext等模型于生命科学、能源和气候领域。同时通过实习和奖学金培养本地AI人才，并与韩国AI Safety Institute（AISI）合作开展安全研究。此举旨在延续AlphaGo遗产，支持韩国AI战略和国家重大挑战。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1115.html">Decoupled DiLoCo: A new frontier for resilient, distributed AI training</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1115.html">Decoupled DiLoCo: A new frontier for resilient, distributed AI training</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Decoupled DiLoCo, introduced by Google DeepMind, is a distributed training architecture that partitions large language model training into decoupled 'islands' of compute with asynchronous data flow. This design isolates hardware failures, allowing other islands to continue training uninterrupted, and supports self-healing reintegration of failed units. It dramatically reduces bandwidth requirements compared to conventional synchronization methods, enabling training across distant data centers with internet-scale connectivity. Experiments with Gemma 4 models showed that Decoupled DiLoCo maintains high goodput under hardware failures and achieves equivalent ML performance to traditional approaches, while also allowing mixing of different hardware generations like TPU v6e and TPU v5p.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 提出的 Decoupled DiLoCo 是一种分布式训练架构，将大语言模型训练划分为解耦的“计算岛”，通过异步数据流连接。这种设计隔离了硬件故障，使其他岛能继续高效训练，并支持故障单元的自愈重连。相比传统同步方法，它大幅降低了带宽需求，支持通过互联网级连接在远程数据中心间训练。使用 Gemma 4 模型的实验表明，Decoupled DiLoCo 在硬件故障下保持高有效训练产出，并达到与传统方法相同的 ML 性能，同时允许混合不同代硬件如 TPU v6e 和 TPU v5p。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/decoupled-diloco/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1116.html">Partnering with industry leaders to accelerate AI transformation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1116.html">Partnering with industry leaders to accelerate AI transformation</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind announces partnerships with Accenture, Bain & Company, BCG, Deloitte, and McKinsey to accelerate enterprise AI adoption. The collaboration aims to bridge the AI adoption gap, as only 25% of organizations have scaled AI into production. The initiative focuses on three pillars: enabling industry-specific AI capabilities, providing early access to frontier models like Gemini, and connecting AI leadership with customer executives. The goal is to drive responsible AI transformation across sectors such as finance, manufacturing, retail, and media, contributing to global economic growth.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind宣布与Accenture、Bain & Company、BCG、Deloitte和McKinsey合作，加速企业AI应用。该合作旨在弥合AI采用差距，目前仅25%的组织将AI规模化投入生产。计划聚焦三大支柱：开发行业特定AI能力、提供Gemini等前沿模型的早期访问、以及连接AI领导层与客户高管。目标是在金融、制造、零售和媒体等领域推动负责任的AI转型，促进全球经济增长。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/partnering-with-industry-leaders-to-accelerate-ai-transformation/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1117.html">Gemini 3.1 Flash TTS: the next generation of expressive AI speech</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1117.html">Gemini 3.1 Flash TTS: the next generation of expressive AI speech</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google has launched Gemini 3.1 Flash TTS, a new text-to-speech model offering improved controllability, expressivity, and speech quality. It introduces audio tags that allow users to adjust vocal style, pace, and delivery via natural language commands embedded in text. The model supports over 70 languages, features native multi-speaker dialogue, and achieves a high Elo score on the Artificial Analysis TTS leaderboard. All generated audio is watermarked with SynthID to prevent misinformation. Developers can access it via Google AI Studio, Vertex AI, and Google Vids, with configurable controls for fine-tuning and consistent voice export.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google 发布了 Gemini 3.1 Flash TTS，这是一款新的文本转语音模型，提供了更强的可控性、表现力和语音质量。它引入了 audio tags，允许用户通过嵌入文本的自然语言指令调整发声风格、语速和表达方式。该模型支持超过 70 种语言，具备原生多说话人对话能力，并在 Artificial Analysis TTS 排行榜上取得了高 Elo 分数。所有生成的音频都使用 SynthID 水印以防止 misinformation。开发者可通过 Google AI Studio、Vertex AI 和 Google Vids 访问，并利用可配置的控制进行微调和一致的语音导出。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1118.html">Gemini Robotics-ER 1.6: Powering real-world robotics tasks through enhanced embodied reasoning</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1118.html">Gemini Robotics-ER 1.6: Powering real-world robotics tasks through enhanced embodied reasoning</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind introduces Gemini Robotics-ER 1.6, a significant upgrade to its embodied reasoning model for robotics. The model enhances spatial reasoning, multi-view understanding, and success detection, enabling robots to perform complex tasks like instrument reading, pointing, and counting with unprecedented precision. It integrates with tools like Google Search and vision-language-action models, and supports agentic vision for code execution. Benchmark results show improvements over previous versions. The model is available via the Gemini API and Google AI Studio, with a focus on safety and real-world applications such as facility inspection in collaboration with Boston Dynamics.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 发布了 Gemini Robotics-ER 1.6，这是其具身推理模型的重要升级。该模型增强了空间推理、多视角理解和成功检测能力，使机器人能够以空前精度执行仪表读取、指向和计数等复杂任务。它集成了 Google Search 和 vision-language-action models 等工具，并支持 agentic vision 进行代码执行。基准测试结果显示其性能优于前代版本。该模型通过 Gemini API 和 Google AI Studio 提供，注重安全性，并与 Boston Dynamics 合作应用于设施检查等真实场景。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/gemini-robotics-er-1-6/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1119.html">Gemma 4: Byte for byte, the most capable open models</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1119.html">Gemma 4: Byte for byte, the most capable open models</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind introduces Gemma 4, its most capable open model family, designed for advanced reasoning and agentic workflows. Available in four sizes (E2B, E4B, 26B MoE, 31B Dense), Gemma 4 delivers state-of-the-art intelligence-per-parameter, outperforming models 20x its size on benchmarks. Key features include native function calling, structured JSON output, vision and audio processing, 128K-256K context windows, and support for 140+ languages. Released under Apache 2.0, the models run efficiently on diverse hardware from mobile devices to GPUs. Gemma 4 builds on over 400 million downloads of previous versions, offering developers a powerful open-source foundation for building autonomous agents and AI applications.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 发布 Gemma 4，其最强大的开放模型系列，专为高级推理和 agentic workflows 设计。提供四种尺寸（E2B、E4B、26B MoE、31B Dense），Gemma 4 在每参数智能上达到领先水平，在基准测试中超越 20 倍规模模型。关键能力包括原生 function calling、结构化 JSON 输出、视觉与音频处理、128K-256K 上下文窗口，以及 140+ 语言支持。采用 Apache 2.0 许可，模型可在从移动设备到 GPU 的多种硬件上高效运行。Gemma 4 基于前代超 4 亿次下载的社区基础，为开发者构建自主 agent 和 AI 应用提供了强大的开源基础。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1120.html">Gemini 3.1 Flash Live: Making audio AI more natural and reliable</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1120.html">Gemini 3.1 Flash Live: Making audio AI more natural and reliable</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google has launched Gemini 3.1 Flash Live, its highest-quality audio model designed for natural and reliable real-time dialogue. The model offers improved precision, lower latency, and better tonal understanding, enabling fluid voice interactions. Developers can access it via the Gemini Live API in Google AI Studio, while enterprises can use it for customer experience. The model leads benchmarks like ComplexFuncBench Audio and Scale AI's Audio MultiChallenge. It is available in over 200 countries through Search Live and Gemini Live, and all audio outputs are watermarked with SynthID to prevent misinformation.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google 发布了 Gemini 3.1 Flash Live，这是其最高质量的音频模型，旨在实现自然且可靠的实时对话。该模型具有更高的精度、更低的延迟和更好的语调理解能力，支持流畅的语音交互。开发者可通过 Google AI Studio 中的 Gemini Live API 访问，企业可用于客户体验。该模型在 ComplexFuncBench Audio 和 Scale AI 的 Audio MultiChallenge 等基准测试中领先，并已在超过200个国家通过 Search Live 和 Gemini Live 提供，所有音频输出均使用 SynthID 水印以防止 misinformation。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1121.html">Protecting people from harmful manipulation</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1121.html">Protecting people from harmful manipulation</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind released a study on AI's potential for harmful manipulation, creating the first empirically validated toolkit to measure this risk in real-world settings. The research involved over 10,000 participants across the UK, US, and India, focusing on high-stakes domains like finance and health. Findings show that AI's manipulative success varies by domain, with health being the least susceptible. The study measures both efficacy (whether AI changes minds) and propensity (how often it attempts manipulation). DeepMind also introduced a Harmful Manipulation Critical Capability Level (CCL) within its Frontier Safety Framework to track and mitigate these risks as AI capabilities evolve.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 发布了关于AI有害操纵潜力的研究，创建了首个经实证验证的工具包来测量现实世界中的此类风险。研究涵盖英国、美国和印度超过1万名参与者，聚焦金融和健康等高 stakes 领域。结果显示，AI的操纵效果因领域而异，健康领域最不敏感。研究测量了 efficacy（是否改变想法）和 propensity（尝试操纵的频率）。DeepMind 还在其 Frontier Safety Framework 中引入了 Harmful Manipulation Critical Capability Level (CCL)，以追踪和缓解随着AI能力发展而出现的风险。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/protecting-people-from-harmful-manipulation/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1122.html">Lyria 3 Pro: Create longer tracks in more</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1122.html">Lyria 3 Pro: Create longer tracks in more</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind announces Lyria 3 Pro, an advanced music generation model that creates tracks up to 3 minutes long with structural awareness of intros, verses, choruses, and bridges. It is integrated into Vertex AI, Google AI Studio, Gemini API, Google Vids, the Gemini app, and ProducerAI. The model is developed responsibly with musician partnerships, uses SynthID watermarking, and avoids mimicking existing artists. Lyria 3 Pro aims to scale high-fidelity music production for developers, businesses, and creators.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 发布 Lyria 3 Pro，这是先进的音乐生成模型，可创建长达 3 分钟、具有结构感知（如主歌、副歌）的曲目。该模型已集成到 Vertex AI、Google AI Studio、Gemini API、Google Vids、Gemini 应用和 ProducerAI 中。开发过程与音乐人合作，采用 SynthID 水印，并避免模仿现有艺术家，旨在为开发者、企业和创作者规模化高质量音乐制作。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1123.html">Measuring progress toward AGI: A cognitive framework</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1123.html">Measuring progress toward AGI: A cognitive framework</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind introduces a cognitive science-based framework to measure progress toward Artificial General Intelligence (AGI). The framework defines ten key cognitive abilities—such as perception, learning, reasoning, and social cognition—and proposes a three-stage evaluation protocol comparing AI performance to human baselines. To operationalize this, DeepMind launches a Kaggle hackathon with a $200,000 prize pool, inviting researchers to design evaluations for five under-tested abilities: learning, metacognition, attention, executive functions, and social cognition. The goal is to create empirical tools for tracking AGI development.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind 提出基于认知科学的框架来衡量通用人工智能（AGI）的进展。该框架定义了十种关键认知能力，如感知、学习、推理和社交认知，并设计了将AI性能与人类基线对比的三阶段评估协议。为落实这一框架，DeepMind 在 Kaggle 上发起奖金池为20万美元的黑客松，邀请研究者针对学习、元认知、注意力、执行功能和社交认知这五种评估缺口最大的能力设计评测任务。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/measuring-agi-cognitive-framework" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1124.html">From games to biology and beyond: 10 years of AlphaGo’s impact</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1124.html">From games to biology and beyond: 10 years of AlphaGo’s impact</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Ten years ago, AlphaGo defeated a world champion at Go, marking the start of the modern AI era. Its creative 'Move 37' demonstrated AI's potential beyond human intuition. Using deep neural networks, reinforcement learning, and search, AlphaGo tackled the game's vast complexity. This breakthrough led to AlphaFold, which solved protein folding and won a Nobel Prize, and inspired systems like AlphaProof for mathematical reasoning, AlphaEvolve for algorithm discovery, and AI co-scientists. DeepMind now integrates these techniques into Gemini, aiming toward artificial general intelligence (AGI) to solve major scientific and societal challenges.</div>
+      <div class="lang-zh" style="font-size:0.9rem">十年前，AlphaGo击败围棋世界冠军，开启了现代AI时代。其创造性的‘Move 37’展示了AI超越人类直觉的潜力。通过深度神经网络、reinforcement learning和搜索技术，AlphaGo攻克了围棋的巨大复杂性。这一突破催生了AlphaFold，解决了蛋白质折叠问题并获诺贝尔奖，还启发了AlphaProof（数学推理）、AlphaEvolve（算法发现）和AI co-scientist等系统。DeepMind正将这些技术整合到Gemini中，迈向artificial general intelligence (AGI)，以解决重大科学和社会挑战。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/10-years-of-alphago/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1126.html">Nano Banana 2: Combining Pro capabilities with lightning-fast speed</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1126.html">Nano Banana 2: Combining Pro capabilities with lightning-fast speed</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind launches Nano Banana 2, a new image generation model that combines the advanced world knowledge, quality, and reasoning of Nano Banana Pro with the lightning-fast speed of Gemini Flash. It enables rapid edits, subject consistency, precise instruction following, and production-ready specs up to 4K. The model is rolling out across Google products including Gemini, Search, AI Studio, Vertex AI, Flow, and Google Ads. Google also enhances provenance with SynthID and C2PA Content Credentials for AI content identification.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind发布Nano Banana 2，该模型结合了Nano Banana Pro的高级世界知识与Gemini Flash的闪电速度，支持快速编辑、主题一致性、精确指令遵循和高达4K的生产级规格。模型已部署至Gemini、Search、AI Studio、Vertex AI、Flow及Google Ads等产品。Google同时通过SynthID和C2PA Content Credentials增强AI内容溯源能力。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/technology/ai/nano-banana-2" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1127.html">Gemini 3.1 Pro: A smarter model for your most complex tasks</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1127.html">Gemini 3.1 Pro: A smarter model for your most complex tasks</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google announces Gemini 3.1 Pro, an upgraded AI model with improved reasoning capabilities for complex tasks. It achieves a 77.1% score on ARC-AGI-2, more than doubling the performance of its predecessor. The model is rolling out to developers via Gemini API, Vertex AI, and Google Antigravity, to enterprises through Vertex AI and Gemini Enterprise, and to consumers via the Gemini app and NotebookLM. It excels in code-based animation, complex system synthesis, interactive design, and creative coding. The preview release aims to validate updates and advance agentic workflows before general availability.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google 发布 Gemini 3.1 Pro，这是一款推理能力显著提升的 AI 模型，在 ARC-AGI-2 基准测试中取得 77.1% 的分数，性能较 3 Pro 翻倍。该模型面向开发者通过 Gemini API、Vertex AI 和 Google Antigravity 等平台提供预览，企业用户可通过 Vertex AI 和 Gemini Enterprise 访问，消费者则可通过 Gemini 应用和 NotebookLM 使用。3.1 Pro 在代码动画、复杂系统合成、交互设计和创意编程方面表现出色，旨在验证更新并推进 agentic workflows。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1128.html">A new way to express yourself: Gemini can now create music</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1128.html">A new way to express yourself: Gemini can now create music</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google's Gemini app now integrates Lyria 3, an advanced music generation model from DeepMind, allowing users to create 30-second tracks from text prompts or uploaded images. The feature offers creative control over style, vocals, and tempo, with automatic lyric generation. All outputs are watermarked with SynthID for AI content identification. Available in beta for users 18+ in multiple languages, with higher limits for subscribers. The tool aims to facilitate creative expression rather than produce masterpieces, and is also rolling out to YouTube's Dream Track for Shorts creators.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google的Gemini应用集成了DeepMind的最新音乐生成模型Lyria 3，用户可通过文本描述或上传图片生成30秒的音乐轨道。该功能支持对风格、人声和节奏的创意控制，并自动生成歌词。所有输出均嵌入SynthID水印以标识AI内容。Beta版面向18岁以上用户开放，支持多种语言，订阅用户享有更高使用限制。该工具旨在促进创意表达，而非创作音乐杰作，同时也在YouTube的Dream Track中向Shorts创作者推出。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/products/gemini-app/lyria-3" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1129.html">Accelerating discovery in India through AI-powered science and education</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1129.html">Accelerating discovery in India through AI-powered science and education</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google DeepMind announces a national partnership with Indian government bodies and institutions to scale AI in science and education. The collaboration provides access to frontier AI models like AlphaGenome, AI Co-scientist, and Earth AI for scientific research, alongside initiatives to empower students and teachers through Gemini-powered tools, interactive textbooks, and innovation hubs. The partnership also extends to agriculture and energy sectors, leveraging AI for crop productivity and renewable energy forecasting. This effort aims to accelerate discovery, enhance learning, and address national priorities, building on India's leadership in AI adoption and global AI summits.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google DeepMind宣布与印度政府及机构建立国家合作伙伴关系，以在科学和教育领域推广AI。合作提供AlphaGenome、AI Co-scientist和Earth AI等前沿模型用于科研，同时通过Gemini驱动的工具、互动教科书和创新中心赋能学生与教师。此外，AI还被应用于农业和能源领域，提升作物产量和可再生能源预测。此举旨在加速发现、改善学习，并应对国家优先事项，依托印度在AI采用和全球AI峰会中的领导地位。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1130.html">Gemini 3 Deep Think: Advancing science, research and engineering</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1130.html">Gemini 3 Deep Think: Advancing science, research and engineering</a></h2>
+      <div class="meta">deepmind_blog · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Google has released a major upgrade to Gemini 3 Deep Think, a specialized reasoning mode designed to advance science, research, and engineering. The model achieves state-of-the-art results on rigorous benchmarks, including 48.4% on Humanity's Last Exam and 84.6% on ARC-AGI-2, and demonstrates gold-medal performance on the International Math Olympiad 2025 as well as physics and chemistry olympiads. Early testers have used it to identify subtle logical flaws in peer-reviewed mathematics papers and optimize crystal growth fabrication methods. The updated Deep Think is now available to Google AI Ultra subscribers in the Gemini app and via the Gemini API through an early access program.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Google 发布了 Gemini 3 Deep Think 的重大升级，这是一种专门用于推进科学、研究和工程的推理模式。该模型在多个严格基准测试中取得了领先成果，包括 Humanity's Last Exam 上达到 48.4%，ARC-AGI-2 上达到 84.6%，并在国际数学奥林匹克 2025 以及物理和化学奥林匹克中展现了金牌级表现。早期测试者已利用它识别同行评审数学论文中的细微逻辑缺陷，并优化晶体生长制造方法。更新后的 Deep Think 现面向 Google AI Ultra 订阅者开放，并通过 Gemini API 提供早期访问计划。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1085.html">Newsroom</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1085.html">Newsroom</a></h2>
+      <div class="meta">anthropic_news · 2026-05-19</div>
+      <div class="lang-en" style="font-size:0.9rem">Newsroom is a system developed by the New York Times for managing and publishing news content. It integrates various editorial tools, workflows, and data to support the production of digital and print journalism. The platform enables journalists to write, edit, and collaborate on stories, while also managing multimedia assets and metadata. Newsroom aims to streamline the news production process and improve efficiency in the newsroom environment.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Newsroom是纽约时报开发的新闻内容管理与发布系统，集成了编辑工具、工作流和数据，支持数字与印刷新闻生产。平台让记者可以写作、编辑和协作，同时管理多媒体资产和元数据，旨在简化新闻生产流程并提高效率。</div>
+      
+      <p style="margin-top:0.5rem"><a href="mailto:press@anthropic.com" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+  </section>
+
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

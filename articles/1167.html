@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes</h2>
+    <h2 class="lang-zh">通过序列熵变化检测流畅的优化型对抗提示</h2>
+    <div class="meta">
+      Mohammed Alshaalan, Miguel R. D. Rodrigues · 
+      2026-05-20 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>CPD Online detects fluent optimization-based adversarial suffixes by monitoring sequential entropy changes, achieving superior F1 and localization without training.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出了一种无需训练的在线变点检测方法CPD Online，通过监控令牌级熵流来检测优化型对抗后缀。该方法在六个LLM上均优于窗口困惑度基线，F1最高达0.82，并能定位79.6%的触发点位于对抗后缀内。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — cpd-online</h1>
+<p><strong>Key Takeaways</strong>
+- Adversarial suffix detection is cast as an online change-point detection problem on token-level entropy streams.
+- CPD uses a robust baseline from the system prompt (median + MAD) and a one-sided CUSUM statistic, requiring no training.
+- CPD outperforms windowed perplexity (WPP) on F1 across all six tested LLMs, achieving AUROC 0.88 and F1 0.82 on LLaMA-2-7B.
+- CPD localizes 79.6% of triggers inside the adversarial suffix, vs. 17-46% for WPP, enabling token-level attack localization.
+- As a gate for LLaMA Guard, CPD reduces guard calls by 17-22% on benign-dominated traffic while preserving detection quality.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes</li>
+<li><strong>Alias:</strong> cpd-online</li>
+<li><strong>Authors:</strong> Mohammed Alshaalan, Miguel R. D. Rodrigues</li>
+<li><strong>arXiv ID:</strong> 2605.19966</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.19966</li>
+<li>HTML: https://arxiv.org/html/2605.19966v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.19966</li>
+<li><strong>Tags:</strong> adversarial-suffix-detection, change-point-detection, llm-safety, entropy-analysis, online-detection</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>CPD Online detects fluent optimization-based adversarial suffixes by monitoring sequential entropy changes, achieving superior F1 and localization without training.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Optimization-based adversarial suffixes (e.g., GCG, AutoDAN) can jailbreak aligned LLMs while remaining fluent, evading static and windowed perplexity detectors. Existing defenses either use statistical perplexity-based scores or auxiliary safety classifiers (e.g., LLaMA Guard), but both have limitations: perplexity methods fail on fluent attacks, and guard models add latency and can be attacked themselves.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Perplexity-based detectors (PP, WPP) assume adversarial suffixes are disfluent, but fail on fluency-optimized attacks (Jain et al., 2023; Alon &amp; Kamfonas, 2023).</li>
+<li>Safety classifiers like LLaMA Guard (Inan et al., 2023) achieve strong benchmark scores but introduce latency and can be targeted by optimization-based attacks.</li>
+<li>Optimization-based suffix attacks: GCG (Zou et al., 2023), AutoDAN (Zhu et al., 2024), AdvPrompter (Paulus et al., 2025), BEAST (Sadasivan et al., 2024), AutoDAN-HGA (Liu et al., 2024).</li>
+<li>Change-point detection (Page CUSUM) is applied to token-level entropy streams for the first time in this context.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing statistical detectors (PP, WPP) assume adversarial suffixes are statistically unlikely and disfluent, but optimization-based attacks can produce fluent suffixes with perplexity within benign range. Safety classifiers like LLaMA Guard are expensive and can be attacked. No prior work applies online change-point detection within a single request at the token level to detect and localize adversarial suffixes.</p>
+<h3>P — Proposal</h3>
+<p>CPD Online formulates adversarial suffix detection as an online change-point detection problem on the token-level next-token entropy stream. It uses the LLM system prompt to estimate a robust baseline (median and MAD), standardizes user-token entropies, and applies a one-sided Page CUSUM statistic to detect sustained upward shifts. The method is model-agnostic, training-free, and runs online, providing both prompt-level decisions and token-level localization of the suffix onset.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On a benchmark of 1,012 optimization-based suffix attacks (GCG, AutoDAN, AdvPrompter, BEAST, AutoDAN-HGA) and 1,012 perplexity-controlled benign prompts, CPD improves F1 over the strongest windowed-perplexity baseline on all six open-weight chat models (LLaMA-2-7B/13B, Vicuna-7B/13B, Qwen2.5-7B/14B). On LLaMA-2-7B at k=0, CPD achieves AUROC 0.88 and F1 0.82 (vs. PP AUROC 0.46 and best WPP F1 0.74). CPD concentrates 79.6% of its triggers inside the adversarial suffix, versus 17-46% for WPP. As a gate for LLaMA Guard, CPD reduces guard calls by 17-22% on benign-dominated deployment while preserving detection quality.</p>
+<h3>Ablation</h3>
+<p>The canonical CUSUM setting (k=0) yields the best trade-off; CPD's performance is robust to the choice of threshold via simple sweeps over F1 and false-positive rates.</p>
+<h3>Limitations</h3>
+<p>['CPD relies on a fixed system prompt for baseline estimation; changes in system prompt may require recalibration.', 'The method assumes adversarial suffixes induce a sustained upward shift in entropy; attacks that mimic benign entropy dynamics could potentially evade detection.', 'Evaluation is limited to open-weight chat models; performance on proprietary or instruction-tuned models may vary.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>CPD offers a lightweight, training-free detection method that can be integrated into existing LLM serving pipelines with minimal overhead.</li>
+<li>Token-level localization of adversarial suffixes enables targeted mitigation (e.g., truncation or re-prompting) rather than full prompt rejection.</li>
+<li>The approach is model-agnostic and can be applied to any autoregressive LLM with access to token-level logits.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate CPD on proprietary models (e.g., GPT-4, Claude) to assess transferability.</li>
+<li>[ ] Explore adaptive attacks that specifically target entropy-based detection to understand robustness boundaries.</li>
+<li>[ ] Integrate CPD as a real-time filter in production LLM serving systems and measure latency/throughput impact.</li>
+<li>[ ] Extend CPD to detect other types of adversarial inputs (e.g., prompt injection, multi-turn attacks).</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>通过序列熵变化检测流畅的优化型对抗提示</h1>
+<p><strong>主要结论</strong>
+- 将对抗后缀检测转化为令牌级熵流上的在线变点检测问题
+- 使用系统提示的稳健基线（中位数+MAD）和单侧CUSUM统计量，无需训练
+- 在六个LLM上F1均优于窗口困惑度，LLaMA-2-7B上AUROC达0.88，F1达0.82
+- 79.6%的触发点位于对抗后缀内，而窗口困惑度仅为17-46%，实现令牌级定位
+- 作为LLaMA Guard的门控，在良性流量占优时减少17-22%的守卫调用，同时保持检测质量</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>CPD Online通过监控序列熵变化检测流畅的优化型对抗后缀，无需训练即可实现优于窗口困惑度的F1和定位能力。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：优化型对抗后缀（如GCG、AutoDAN）能绕过静态和窗口困惑度检测器，现有防御要么基于困惑度（对流畅攻击失效），要么依赖辅助安全分类器（增加延迟且易被攻击）。相关工作：困惑度检测器假设对抗后缀不流畅，但流畅攻击可绕过；安全分类器如LLaMA Guard性能好但延迟高；变点检测首次应用于令牌级熵流。差距：现有统计检测器假设对抗后缀统计上不可能且不流畅，但优化攻击可生成流畅后缀；安全分类器成本高且易被攻击；尚无工作将在线变点检测用于单请求令牌级检测和定位。提案：CPD Online将对抗后缀检测建模为令牌级下一令牌熵流上的在线变点检测问题，利用系统提示估计稳健基线，标准化用户令牌熵，应用单侧Page CUSUM统计量检测持续上升偏移，无需训练且模型无关。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在包含1012个优化型对抗后缀攻击（GCG、AutoDAN、AdvPrompter、BEAST、AutoDAN-HGA）和1012个困惑度控制良性提示的基准上，CPD在六个开放权重聊天模型（LLaMA-2-7B/13B、Vicuna-7B/13B、Qwen2.5-7B/14B）上F1均优于最强窗口困惑度基线。在LLaMA-2-7B上k=0时，CPD的AUROC为0.88，F1为0.82（对比PP AUROC 0.46，最佳WPP F1 0.74）。CPD将79.6%的触发点集中在对抗后缀内，而WPP仅为17-46%。作为LLaMA Guard的门控，CPD在良性流量占优的部署中减少17-22%的守卫调用，同时保持检测质量。</p>
+<h3>消融实验</h3>
+<p>典型CUSUM设置（k=0）取得最佳权衡；CPD对阈值选择具有鲁棒性，通过简单扫描F1和假阳性率即可确定。</p>
+<h3>局限性</h3>
+<p>['CPD依赖固定系统提示进行基线估计；系统提示变化可能需要重新校准。', '该方法假设对抗后缀引起熵的持续上升偏移；模仿良性熵动态的攻击可能规避检测。', '评估仅限于开放权重聊天模型；在专有或指令调优模型上的性能可能不同。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>CPD提供轻量级、无需训练的检测方法，可集成到现有LLM服务管道中，开销极小。</li>
+<li>令牌级对抗后缀定位支持针对性缓解（如截断或重新提示），而非完全拒绝提示。</li>
+<li>该方法模型无关，可应用于任何可访问令牌级logits的自回归LLM。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在专有模型（如GPT-4、Claude）上评估CPD，检验可迁移性。</li>
+<li>[ ] 探索专门针对熵检测的自适应攻击，理解鲁棒性边界。</li>
+<li>[ ] 将CPD集成到生产LLM服务系统中作为实时过滤器，测量延迟和吞吐量影响。</li>
+<li>[ ] 扩展CPD以检测其他类型的对抗输入（如提示注入、多轮攻击）。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.19966</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.19966" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

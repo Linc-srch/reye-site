@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency</h2>
+    <h2 class="lang-zh">可预测的虚构：LLM的事实回忆能力随模型规模与主题频率缩放</h2>
+    <div class="meta">
+      Matthew L. Smith, Jonathan P. Shock, Samuel T. Segun, Iyiola E. Olatunji, Tegawendé F. Bissyandé · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper shows that factual recall quality in LLMs follows a sigmoid scaling law in the log-linear combination of model size and topic frequency in training data, explaining up to 94% of variance within model families.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出一个统一的S形缩放定律，将模型参数规模与训练数据中主题频率结合，可解释LLM事实回忆质量高达94%的方差。该工作为预测模型在特定主题上的知识盲区提供了定量工具，对构建可靠AI系统具有直接指导意义。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — predictable-confabulations</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency</li>
+<li><strong>Alias:</strong> predictable-confabulations</li>
+<li><strong>Authors:</strong> Matthew L. Smith, Jonathan P. Shock, Samuel T. Segun, Iyiola E. Olatunji, Tegawendé F. Bissyandé</li>
+<li><strong>arXiv ID:</strong> 2605.18732</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18732</li>
+<li>HTML: https://arxiv.org/html/2605.18732v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18732</li>
+<li><strong>Tags:</strong> scaling-laws, factual-recall, superposition, confabulation, llm-reliability</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper shows that factual recall quality in LLMs follows a sigmoid scaling law in the log-linear combination of model size and topic frequency in training data, explaining up to 94% of variance within model families.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Scaling laws for LLMs have primarily focused on aggregate loss, not decomposed into specific capabilities like factual recall. Prior work has separately linked model size to knowledge capacity via superposition and topic frequency to recall accuracy, but no unified predictive framework existed.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Kaplan et al. established power-law scaling of loss with model size, dataset size, and compute.</li>
+<li>Hoffmann et al. refined scaling laws for compute-optimal training.</li>
+<li>Allen-Zhu and Li showed knowledge capacity scales at ~2 bits per parameter.</li>
+<li>Elhage et al. introduced superposition as encoding more features than dimensions.</li>
+<li>Kandpal et al. and Mallen et al. showed LLMs struggle with long-tail knowledge.</li>
+<li>Liu et al. provided empirical evidence for strong superposition in LLMs.</li>
+<li>Carlini et al. quantified memorization increasing with data repetition and model size.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>No prior work combined model size and training-data frequency into a single predictive scaling law for factual recall quality. Existing studies treated these factors independently, lacking a unified functional form that could predict recall performance across models and topics.</p>
+<h3>P — Proposal</h3>
+<p>The authors propose a sigmoid scaling law where recall quality = σ(α log10 P + β log10 S + γ), with P as parameter count and S as topic frequency proxy. This is motivated by a superposition-inspired signal-to-noise ratio model: signal strength scales with concept frequency, noise floor scales inversely with model capacity.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Evaluated 38 models on 8,913 scholarly references across 24 topics. The two-variable model explains 60% of variance across 16 dense models from 4 families (R²=0.599, N=384), rising to 74-94% within individual families. Topic frequency positively associated with recall quality independently of architecture or parameter count.</p>
+<h3>Ablation</h3>
+<p>Within-family R² values range from 0.74 to 0.94, indicating that the sigmoid form fits better when controlling for architectural differences; the cross-family R² of 0.60 shows that model family-specific factors account for additional variance.</p>
+<h3>Limitations</h3>
+<p>['The proxy S (OpenAlex work count) conflates topic frequency with inventory size, not formally separating signal strength from concept count.', 'The theoretical framework relies on several assumptions (e.g., power-law signal mapping, Zipfian concept frequencies) that are plausible but not uniquely selected by the data.', 'Only scholarly references are used as factual recall targets; generalizability to other factual domains is not established.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a quantitative tool to predict which facts an LLM will recall based on model size and training data composition, directly relevant to building reliable AI systems.</li>
+<li>The superposition-inspired SNR model offers a mechanistic explanation for why larger models recall rarer facts better, connecting scaling laws to interpretability research.</li>
+<li>Enables proactive identification of knowledge gaps in LLMs for specific topics, informing data collection or retrieval augmentation strategies.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Validate the scaling law on other factual domains (e.g., Wikidata, medical facts) to test generalizability.</li>
+<li>[ ] Use the model to predict recall quality for specific topics in a target LLM and design targeted fine-tuning or retrieval augmentation.</li>
+<li>[ ] Investigate whether the sigmoid form holds for other capabilities (e.g., reasoning, translation) to build a unified scaling theory.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>可预测的虚构：LLM的事实回忆能力随模型规模与主题频率缩放</h1>
+<p><strong>主要结论</strong>
+- LLM的事实回忆质量遵循S形缩放定律：回忆质量 = σ(α log₁₀ 参数量 + β log₁₀ 主题频率 + γ)。
+- 该模型在单个模型家族内可解释74%-94%的方差，跨家族解释60%的方差。
+- 主题频率与回忆质量正相关，独立于架构或参数量。
+- 基于叠加原理的信噪比模型提供了机制解释：信号强度随概念频率缩放，噪声基底随模型容量反比缩放。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文核心主张：事实回忆质量遵循S形缩放定律，关键发现：模型规模与主题频率的log-线性组合可解释高达94%的方差。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>背景：LLM缩放定律主要关注聚合损失，未分解到具体能力如事实回忆。相关工作：Kaplan等人建立损失与模型规模、数据规模、计算量的幂律缩放；Allen-Zhu和Li显示知识容量约2比特/参数；Elhage等人引入叠加原理；Kandpal等人和Mallen等人显示LLM在长尾知识上表现不佳。差距：尚无工作将模型规模与训练数据频率结合为单一预测性缩放定律。提案：作者提出S形缩放定律，其中回忆质量 = σ(α log₁₀ P + β log₁₀ S + γ)，P为参数量，S为主题频率代理，基于叠加启发的信噪比模型。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在38个模型上评估了8,913个学术参考文献，涵盖24个主题。双变量模型在4个家族的16个密集模型上解释60%的方差（R²=0.599，N=384），在单个家族内升至74%-94%。主题频率与回忆质量正相关，独立于架构或参数量。</p>
+<h3>消融实验</h3>
+<p>家族内R²值范围为0.74至0.94，表明控制架构差异后S形拟合更好；跨家族R²为0.60，显示模型家族特定因素贡献额外方差。</p>
+<h3>局限性</h3>
+<p>['代理S（OpenAlex作品数）混淆了主题频率与库存规模，未正式分离信号强度与概念数量。', '理论框架依赖若干假设（如幂律信号映射、Zipfian概念频率），虽合理但数据未唯一选择。', '仅使用学术参考文献作为事实回忆目标，未验证对其他事实领域的泛化性。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供定量工具预测LLM基于模型规模和训练数据组成的事实回忆能力，直接相关于构建可靠AI系统。</li>
+<li>叠加启发的信噪比模型为更大模型更好回忆稀有事实提供了机制解释，连接缩放定律与可解释性研究。</li>
+<li>能够主动识别LLM在特定主题上的知识盲区，指导数据收集或检索增强策略。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在其他事实领域（如Wikidata、医学事实）验证缩放定律以测试泛化性。</li>
+<li>[ ] 使用模型预测目标LLM在特定主题上的回忆质量，设计针对性微调或检索增强。</li>
+<li>[ ] 研究S形形式是否适用于其他能力（如推理、翻译），以构建统一缩放理论。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18732</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18732" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

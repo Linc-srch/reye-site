@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fine-Tuning Without Forgetting via Loss-Adaptive Learning Rates | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Fine-Tuning Without Forgetting via Loss-Adaptive Learning Rates</h2>
+    <h2 class="lang-zh">通过损失自适应学习率实现无遗忘微调</h2>
+    <div class="meta">
+      Parjanya Prajakta Prashant, Jiongli Zhu, Aldan Creo, Babak Salimi · 
+      2026-05-20 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>FINCH introduces a loss-adaptive learning rate schedule that reduces catastrophic forgetting during fine-tuning by bounding per-step forgetting via the product of learning rate and sqrt(loss), achieving a 93% average forgetting reduction while matching target-task performance.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出FINCH方法，通过损失自适应学习率调度来减少微调中的灾难性遗忘。该方法基于理论推导，将每步遗忘上界控制在学习率乘以损失平方根的乘积内，在保持目标任务性能的同时平均减少93%的遗忘。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — finch</h1>
+<p><strong>Key Takeaways</strong>
+- Per-step forgetting is bounded by learning rate times sqrt(mini-batch loss).
+- FINCH adapts learning rate inversely to sqrt(loss), keeping forgetting bound uniform.
+- FINCH reduces forgetting by 93% on average while matching standard fine-tuning task accuracy.
+- On Qwen3-4B knowledge acquisition, FINCH cuts TruthfulQA degradation by 5x and reverses HaluEval degradation.
+- Learning rate schedules are an effective tool for controlling forgetting without modifying the fine-tuning objective.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Fine-Tuning Without Forgetting via Loss-Adaptive Learning Rates</li>
+<li><strong>Alias:</strong> finch</li>
+<li><strong>Authors:</strong> Parjanya Prajakta Prashant, Jiongli Zhu, Aldan Creo, Babak Salimi</li>
+<li><strong>arXiv ID:</strong> 2605.20005</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.20005</li>
+<li>HTML: https://arxiv.org/html/2605.20005v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.20005</li>
+<li><strong>Tags:</strong> catastrophic-forgetting, fine-tuning, learning-rate-schedule, loss-adaptive, llm</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>FINCH introduces a loss-adaptive learning rate schedule that reduces catastrophic forgetting during fine-tuning by bounding per-step forgetting via the product of learning rate and sqrt(loss), achieving a 93% average forgetting reduction while matching target-task performance.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Fine-tuning large language models on new data often causes catastrophic forgetting of pretrained capabilities. Existing data-oblivious methods mitigate this by downweighting high-loss tokens or sequences, but this hurts performance on tasks where hard tokens are essential for learning, such as knowledge acquisition or low-resource language adaptation.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Catastrophic forgetting mitigation via replay, regularization, or parameter protection (e.g., Kirkpatrick et al., LoRA, distillation).</li>
+<li>Data-oblivious methods that downweight high-loss tokens (Sanyal et al., Lin et al., Wu et al.) struggle when hard tokens are essential.</li>
+<li>Learning rate schedules for forgetting: fixed small LR (Lin et al.) hurts new task performance; per-layer LR tuning (Kenneweg et al.) is expensive.</li>
+<li>FINCH is the first to adapt learning rate per step based on mini-batch loss to control forgetting.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing data-oblivious methods suppress high-loss tokens to reduce forgetting, but this harms performance on tasks where those tokens are critical for learning new capabilities. No prior work controls forgetting purely through learning rate adaptation without modifying the fine-tuning objective.</p>
+<h3>P — Proposal</h3>
+<p>FINCH (Forgetting-aware Inverse loss schedule) sets the learning rate inversely proportional to the square root of the mini-batch loss, derived from a theoretical bound showing per-step forgetting ≤ η * sqrt(loss). This keeps the forgetting bound uniform across training, allowing high-loss tokens to contribute while reducing forgetting. The method requires no access to pretraining data and leaves the fine-tuning objective unchanged.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Across knowledge acquisition, science, and low-resource language adaptation benchmarks, FINCH reduces forgetting by 93% on average while matching standard SFT task accuracy. On Qwen3-4B knowledge acquisition, TruthfulQA degradation drops from -13.9 to -2.6 (5x improvement), and HaluEval changes from -9.8 to +3.3.</p>
+<h3>Ablation</h3>
+<p>Simply lowering the learning rate under a standard schedule reduces forgetting but fails to reach competitive new-task accuracy, while FINCH achieves both.</p>
+<h3>Limitations</h3>
+<p>['The theoretical bound relies on assumptions (e.g., smoothness, bounded gradients) that may not hold in practice.', 'FINCH requires tuning the base learning rate and the schedule scaling factor, which may vary across tasks.', 'The method is evaluated on models up to 4B parameters; scalability to larger models is not demonstrated.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a simple, theoretically motivated method to control forgetting without modifying the loss or requiring pretraining data.</li>
+<li>Demonstrates that learning rate schedules can shape model behavior beyond optimization, relevant for safety and alignment.</li>
+<li>Shows strong empirical results on factuality and hallucination metrics, directly impacting model reliability.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Test FINCH on larger models (e.g., 7B, 13B) and diverse fine-tuning scenarios.</li>
+<li>[ ] Combine FINCH with other forgetting mitigation techniques (e.g., replay if data available).</li>
+<li>[ ] Explore adaptive schedules based on other metrics (e.g., gradient norm, confidence).</li>
+<li>[ ] Apply FINCH to continual learning settings with multiple fine-tuning stages.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>通过损失自适应学习率实现无遗忘微调</h1>
+<p><strong>主要结论</strong>
+- 每步遗忘的上界由学习率乘以小批量损失平方根决定。
+- FINCH根据损失平方根反比调整学习率，使遗忘上界在整个训练过程中保持一致。
+- FINCH平均减少93%的遗忘，同时匹配标准微调的任务准确率。
+- 在Qwen3-4B知识获取任务中，FINCH将TruthfulQA退化降低5倍，并逆转HaluEval退化。
+- 学习率调度是控制遗忘的有效工具，无需修改微调目标函数。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>FINCH提出了一种损失自适应学习率调度，通过将每步遗忘上界限制为学习率与损失平方根的乘积，在减少93%平均遗忘的同时保持目标任务性能。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>C — 背景：在大语言模型上微调新数据常导致预训练能力的灾难性遗忘。现有数据无关方法通过降低高损失token或序列的权重来缓解，但这会损害那些硬token对学习至关重要的任务（如知识获取或低资源语言适应）的性能。R — 相关工作：灾难性遗忘缓解方法包括重放、正则化或参数保护（如Kirkpatrick等人、LoRA、蒸馏）。数据无关方法（Sanyal等人、Lin等人、Wu等人）降低高损失token权重，但在硬token至关重要时效果不佳。学习率调度方面：固定小学习率（Lin等人）损害新任务性能；逐层学习率调整（Kenneweg等人）成本高昂。FINCH是首个基于小批量损失自适应调整每步学习率以控制遗忘的方法。G — 差距：现有数据无关方法通过抑制高损失token来减少遗忘，但这会损害那些token对学习新能力至关重要的任务性能。此前没有工作纯粹通过学习率自适应来控制遗忘而不修改微调目标。P — 方案：FINCH（遗忘感知逆损失调度）将学习率设置为与小批量损失平方根成反比，基于理论推导：每步遗忘 ≤ η * sqrt(loss)。这使得遗忘上界在整个训练中保持一致，允许高损失token贡献的同时减少遗忘。该方法无需访问预训练数据，且不改变微调目标。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在知识获取、科学和低资源语言适应基准上，FINCH平均减少93%的遗忘，同时匹配标准SFT任务准确率。在Qwen3-4B知识获取任务中，TruthfulQA退化从-13.9降至-2.6（提升5倍），HaluEval从-9.8变为+3.3。</p>
+<h3>消融实验</h3>
+<p>简单降低标准调度下的学习率可以减少遗忘，但无法达到有竞争力的新任务准确率，而FINCH同时实现了两者。</p>
+<h3>局限性</h3>
+<p>['理论界依赖于实际中可能不成立的假设（如平滑性、有界梯度）。', 'FINCH需要调整基础学习率和调度缩放因子，这些可能因任务而异。', '该方法仅在高达4B参数的模型上评估，未展示对更大模型的可扩展性。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了一种简单、有理论依据的方法来控制遗忘，无需修改损失函数或预训练数据。</li>
+<li>证明了学习率调度可以塑造模型行为，超越优化本身，对安全性和对齐有重要意义。</li>
+<li>在事实性和幻觉指标上展示了强劲的实证结果，直接影响模型可靠性。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在更大模型（如7B、13B）和多样化微调场景中测试FINCH。</li>
+<li>[ ] 将FINCH与其他遗忘缓解技术（如数据可用时的重放）结合。</li>
+<li>[ ] 探索基于其他指标（如梯度范数、置信度）的自适应调度。</li>
+<li>[ ] 将FINCH应用于多阶段微调的持续学习场景。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.20005</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.20005" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>
