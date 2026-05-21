@@ -30,6 +30,13 @@
   <h2 class="lang-zh" style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;letter-spacing:-0.02em">AI 安全</h2>
 
   
+  <section class="glass-card" style="border-left: 3px solid var(--accent);">
+    <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);margin-bottom:0.5rem" class="lang-en">Daily Overview</h3>
+    <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);margin-bottom:0.5rem" class="lang-zh">今日概览</h3>
+    <div class="lang-en">Today's AI safety research reveals a strong focus on auditing and robustness in retrieval-augmented generation (RAG) systems. A standout paper, 'Auditing Privacy in Multi-Tenant RAG under Account Collusion,' identifies a structural vulnerability where per-account DP guarantees degrade at Θ(√k·ε_acc) under collusion, offering empirical verification. Another notable work, 'BiRD: A Bidirectional Ranking Defense Mechanism for Retrieval Augmented Generation,' introduces a training-free defense using ranking context consistency to detect poisoned documents with high robustness and low latency. 'BalanceRAG' provides a statistically certified framework for joint risk calibration in cascaded RAG systems. In the reasoning domain, 'CopT: Contrastive On-Policy Thinking with Continuous Spaces' proposes a reversed reasoning pipeline using continuous embeddings as contrastive verifiers, while 'Probabilistic Tiny Recursive Model' introduces a task-agnostic test-time compute scaling method. 'What Does the AI Doctor Value?' audits value pluralism in LLMs using clinical ethical dilemmas, revealing near-deterministic model behavior. 'Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes' offers a training-free detection method. Recurring themes include privacy auditing, adversarial robustness, and value alignment in LLMs.</div>
+    <div class="lang-zh">今天的AI安全研究重点关注检索增强生成（RAG）系统的审计与鲁棒性。一篇突出论文《Auditing Privacy in Multi-Tenant RAG under Account Collusion》揭示了结构性漏洞：在账户共谋下，每个账户的DP保证以Θ(√k·ε_acc)速率退化，并提供了经验验证。另一项值得注意的工作《BiRD: A Bidirectional Ranking Defense Mechanism for RAG》引入了一种无需训练的防御方法，利用排序上下文一致性高效检测有毒文档，兼具高鲁棒性和低延迟。《BalanceRAG》为级联RAG系统提供了统计认证的联合风险校准框架。在推理领域，《CopT: Contrastive On-Policy Thinking with Continuous Spaces》提出了一种反向推理流水线，使用连续嵌入作为对比验证器；《Probabilistic Tiny Recursive Model》引入了任务无关的测试时计算扩展方法。《What Does the AI Doctor Value?》通过临床伦理困境审计LLM的价值多元性，揭示了近乎确定性的模型行为。《Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes》提供了一种无需训练的检测方法。反复出现的主题包括隐私审计、对抗鲁棒性以及LLM中的价值对齐。</div>
+  </section>
+  
 
   <div class="tabs">
     <button data-target="papers">Papers</button>
@@ -547,6 +554,28 @@
   </section>
 
   <section data-tab="news">
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1193.html">The next phase of OpenAI’s Education for Countries</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1193.html">The next phase of OpenAI’s Education for Countries</a></h2>
+      <div class="meta">openai_rss · 2026-05-21</div>
+      <div class="lang-en" style="font-size:0.9rem">OpenAI announces the next phase of its Education for Countries initiative, expanding access to AI learning resources and tools for educators and students globally. The program aims to equip nations with the skills and knowledge needed to leverage AI technologies responsibly, focusing on curriculum development, teacher training, and ethical AI use. This phase includes partnerships with governments and educational institutions to create localized content and foster AI literacy, ensuring that countries can harness AI for economic growth and societal benefit while addressing safety and equity concerns.</div>
+      <div class="lang-zh" style="font-size:0.9rem">OpenAI 宣布其 Education for Countries 计划进入下一阶段，旨在扩大全球教育者和学生获取 AI 学习资源与工具的渠道。该计划专注于课程开发、教师培训及伦理 AI 使用，通过与政府和教育机构合作创建本地化内容，提升 AI 素养，确保各国在应对安全与公平问题的同时，利用 AI 促进经济增长与社会福祉。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/the-next-phase-of-education-for-countries" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1194.html">An OpenAI model has disproved a central conjecture in discrete geometry</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1194.html">An OpenAI model has disproved a central conjecture in discrete geometry</a></h2>
+      <div class="meta">openai_rss · 2026-05-21</div>
+      <div class="lang-en" style="font-size:0.9rem">An OpenAI model has autonomously disproved a central conjecture in discrete geometry, the Erdős unit distance problem, which asks for the maximum number of unit-distance pairs among n points in the plane. For nearly 80 years, the prevailing belief was that square-grid constructions were essentially optimal. The AI produced an infinite family of configurations achieving a polynomial improvement, with a fixed exponent δ > 0. The proof, verified by external mathematicians, uses sophisticated ideas from algebraic number theory. This marks the first time an AI has autonomously solved a prominent open problem central to a subfield of mathematics, demonstrating advanced reasoning capabilities.</div>
+      <div class="lang-zh" style="font-size:0.9rem">一个OpenAI模型自主推翻了几何离散数学中的一个核心猜想，即Erdős单位距离问题。该问题询问平面上n个点之间单位距离对的最大数量。近80年来，主流观点认为方形网格构造基本是最优的。该AI生成了一个无限族配置，实现了多项式改进，具有固定指数δ > 0。该证明经外部数学家验证，运用了代数数论中的复杂思想。这标志着AI首次自主解决了一个数学子领域中的著名开放问题，展示了其高级推理能力。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
     
     <article class="glass-card">
       <h2 class="lang-en"><a href="../../articles/1191.html">Introducing OpenAI for Singapore</a></h2>

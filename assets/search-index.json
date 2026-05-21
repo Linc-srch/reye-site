@@ -1,5 +1,47 @@
 [
   {
+    "id": 1193,
+    "type": "article",
+    "title": "The next phase of OpenAI’s Education for Countries",
+    "summary_en": "OpenAI announces the next phase of its Education for Countries initiative, expanding access to AI learning resources and tools for educators and students globally. The program aims to equip nations with the skills and knowledge needed to leverage AI technologies responsibly, focusing on curriculum development, teacher training, and ethical AI use. This phase includes partnerships with governments and educational institutions to create localized content and foster AI literacy, ensuring that countries can harness AI for economic growth and societal benefit while addressing safety and equity concerns.",
+    "summary_zh": "OpenAI 宣布其 Education for Countries 计划进入下一阶段，旨在扩大全球教育者和学生获取 AI 学习资源与工具的渠道。该计划专注于课程开发、教师培训及伦理 AI 使用，通过与政府和教育机构合作创建本地化内容，提升 AI 素养，确保各国在应对安全与公平问题的同时，利用 AI 促进经济增长与社会福祉。",
+    "url": "https://openai.com/index/the-next-phase-of-education-for-countries",
+    "article_page": "articles/1193.html",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-21 09:02:10"
+  },
+  {
+    "id": 1194,
+    "type": "article",
+    "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+    "summary_en": "An OpenAI model has autonomously disproved a central conjecture in discrete geometry, the Erdős unit distance problem, which asks for the maximum number of unit-distance pairs among n points in the plane. For nearly 80 years, the prevailing belief was that square-grid constructions were essentially optimal. The AI produced an infinite family of configurations achieving a polynomial improvement, with a fixed exponent δ > 0. The proof, verified by external mathematicians, uses sophisticated ideas from algebraic number theory. This marks the first time an AI has autonomously solved a prominent open problem central to a subfield of mathematics, demonstrating advanced reasoning capabilities.",
+    "summary_zh": "一个OpenAI模型自主推翻了几何离散数学中的一个核心猜想，即Erdős单位距离问题。该问题询问平面上n个点之间单位距离对的最大数量。近80年来，主流观点认为方形网格构造基本是最优的。该AI生成了一个无限族配置，实现了多项式改进，具有固定指数δ > 0。该证明经外部数学家验证，运用了代数数论中的复杂思想。这标志着AI首次自主解决了一个数学子领域中的著名开放问题，展示了其高级推理能力。",
+    "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
+    "article_page": "articles/1194.html",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-21 09:02:10"
+  },
+  {
+    "id": 1195,
+    "type": "article",
+    "title": "How Ramp engineers accelerate code review with Codex",
+    "summary_en": "Ramp engineers use OpenAI's Codex to accelerate code review by automatically generating pull request summaries and identifying potential issues. The tool integrates with their development workflow, reducing manual review time and improving code quality. Codex analyzes code changes and produces concise, actionable feedback, enabling faster iteration cycles. This approach demonstrates how large language models can enhance developer productivity in real-world engineering environments.",
+    "summary_zh": "Ramp的工程师利用OpenAI的Codex自动生成PR摘要并识别潜在问题，加速代码审查流程。该工具集成到开发工作流中，减少人工审查时间并提升代码质量。Codex分析代码变更后提供简洁可操作的反馈，加快迭代周期。这一实践展示了大型语言模型在真实工程环境中提升开发者生产力的潜力。",
+    "url": "https://openai.com/index/ramp",
+    "article_page": "articles/1195.html",
+    "score": 0.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-21 09:02:10"
+  },
+  {
     "id": 1191,
     "type": "article",
     "title": "Introducing OpenAI for Singapore",

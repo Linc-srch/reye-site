@@ -30,6 +30,13 @@
   <h2 class="lang-zh" style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;letter-spacing:-0.02em">系统安全</h2>
 
   
+  <section class="glass-card" style="border-left: 3px solid var(--accent);">
+    <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);margin-bottom:0.5rem" class="lang-en">Daily Overview</h3>
+    <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);margin-bottom:0.5rem" class="lang-zh">今日概览</h3>
+    <div class="lang-en">Today's system safety research highlights a strong focus on auditing and robustness in retrieval-augmented generation (RAG) and multi-agent systems. A recurring theme is the vulnerability of privacy guarantees under collusion, as seen in 'Auditing Privacy in Multi-Tenant RAG under Account Collusion' (Θ(√k·ε_acc) degradation). Standout papers include 'BiRD' (bidirectional ranking defense for RAG) and 'BalanceRAG' (training-free risk calibration), both addressing retrieval security without latency overhead. In reasoning, 'CopT' and 'GeoX' introduce novel self-play and contrastive methods for agentic tasks, while 'STT-Arena' reveals that even top proprietary models achieve under 40% accuracy in spatio-temporal tool use. Noteworthy announcements include 'TIDE' for efficient MoE diffusion LLM inference and 'Federated Martingale Posterior' for one-shot Bayesian inference. The clinical ethics audit ('What Does the AI Doctor Value?') exposes near-deterministic value systems in LLMs, raising pluralism concerns. Overall, the field is shifting toward verifiable, attack-aware system designs.</div>
+    <div class="lang-zh">今日的系统安全研究聚焦于检索增强生成（RAG）和多智能体系统中的审计与鲁棒性。一个反复出现的主题是隐私保证在共谋攻击下的脆弱性，如《Auditing Privacy in Multi-Tenant RAG under Account Collusion》所示（退化率为Θ(√k·ε_acc)）。突出论文包括《BiRD》（RAG的双向排序防御）和《BalanceRAG》（免训练风险校准），两者均以低延迟解决检索安全问题。在推理方面，《CopT》和《GeoX》引入了用于智能体任务的新型自博弈和对比方法，而《STT-Arena》揭示即使顶级闭源模型在时空工具使用中准确率也低于40%。值得关注的公告包括用于MoE扩散LLM高效推理的《TIDE》和用于一次性贝叶斯推断的《Federated Martingale Posterior》。临床伦理审计（《What Does the AI Doctor Value?》）暴露了LLM中近乎确定性的价值体系，引发了对多元主义的担忧。总体而言，该领域正朝着可验证、抗攻击的系统设计方向发展。</div>
+  </section>
+  
 
   <div class="tabs">
     <button data-target="papers">Papers</button>
@@ -547,6 +554,17 @@
   </section>
 
   <section data-tab="news">
+    
+    <article class="glass-card">
+      <h2 class="lang-en"><a href="../../articles/1195.html">How Ramp engineers accelerate code review with Codex</a></h2>
+      <h2 class="lang-zh"><a href="../../articles/1195.html">How Ramp engineers accelerate code review with Codex</a></h2>
+      <div class="meta">openai_rss · 2026-05-21</div>
+      <div class="lang-en" style="font-size:0.9rem">Ramp engineers use OpenAI's Codex to accelerate code review by automatically generating pull request summaries and identifying potential issues. The tool integrates with their development workflow, reducing manual review time and improving code quality. Codex analyzes code changes and produces concise, actionable feedback, enabling faster iteration cycles. This approach demonstrates how large language models can enhance developer productivity in real-world engineering environments.</div>
+      <div class="lang-zh" style="font-size:0.9rem">Ramp的工程师利用OpenAI的Codex自动生成PR摘要并识别潜在问题，加速代码审查流程。该工具集成到开发工作流中，减少人工审查时间并提升代码质量。Codex分析代码变更后提供简洁可操作的反馈，加快迭代周期。这一实践展示了大型语言模型在真实工程环境中提升开发者生产力的潜力。</div>
+      
+      <p style="margin-top:0.5rem"><a href="https://openai.com/index/ramp" target="_blank" class="dim-link">Original →</a></p>
+      
+    </article>
     
     <article class="glass-card">
       <h2 class="lang-en"><a href="../../articles/1192.html">Advancing content provenance for a safer, more transparent AI ecosystem</a></h2>
