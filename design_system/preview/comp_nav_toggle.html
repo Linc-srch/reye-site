@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row-c { display: flex; gap: 14px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--color-fg-3); width: 90px; }
+  /* nav */
+  .nav-link {
+    color: var(--color-fg-2); text-decoration: none; font-size: 0.88rem;
+    padding: 0.3rem 0.65rem; border-radius: 999px; cursor: pointer;
+    transition: color 0.15s, background 0.15s;
+  }
+  .nav-link:hover, .nav-link.is-hover { color: var(--color-fg-1); background: rgba(255,255,255,0.07); }
+  /* lang toggle */
+  .lt { display: flex; gap: 0.35rem; }
+  .lt button {
+    background: transparent; color: var(--color-fg-2);
+    border: 1px solid var(--color-border);
+    padding: 0.3rem 0.75rem; border-radius: 999px;
+    cursor: pointer; font-size: 0.82rem;
+    font-family: var(--font-sans);
+  }
+  .lt button.active { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+  /* tabs */
+  .tab {
+    padding: 0.4rem 1rem; border-radius: 999px; background: rgba(22,22,35,0.62);
+    color: var(--color-fg-2); border: 1px solid var(--color-border);
+    cursor: pointer; font-size: 0.86rem; font-family: var(--font-sans);
+  }
+  .tab.active { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+</style></head>
+<body><div class="wrap">
+  <div class="row-c">
+    <span class="lbl">nav link</span>
+    <a class="nav-link" href="#">Search</a>
+    <a class="nav-link is-hover" href="#">Insights</a>
+    <a class="nav-link" href="#">About</a>
+  </div>
+  <div class="row-c">
+    <span class="lbl">lang toggle</span>
+    <div class="lt">
+      <button class="active">EN</button>
+      <button>中</button>
+    </div>
+    <div class="lt">
+      <button>EN</button>
+      <button class="active">中</button>
+    </div>
+  </div>
+  <div class="row-c">
+    <span class="lbl">tabs</span>
+    <button class="tab active">Papers</button>
+    <button class="tab">News &amp; Blogs</button>
+    <button class="tab">All</button>
+  </div>
+</div></body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .swatch { display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 0; }
+  .chip { height: 88px; border-radius: 14px; border: 1px solid var(--color-border); position: relative; overflow: hidden; }
+  .chip.has-tint::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(80,110,255,0.4), transparent 70%);
+    opacity: 0.4;
+  }
+  .meta-row { display: flex; justify-content: space-between; align-items: baseline; }
+  .name { font-size: 12px; color: var(--color-fg-1); font-weight: 500; }
+  .val  { font-family: var(--font-mono); font-size: 11px; color: var(--color-fg-2); }
+</style></head>
+<body><div class="wrap">
+  <div class="row">
+    <div class="swatch">
+      <div class="chip" style="background: #070710;"></div>
+      <div class="meta-row"><span class="name">bg</span><span class="val">#070710</span></div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background: #0c0c18;"></div>
+      <div class="meta-row"><span class="name">bg-2</span><span class="val">#0c0c18</span></div>
+    </div>
+    <div class="swatch">
+      <div class="chip has-tint" style="background: rgba(22,22,35,0.62); backdrop-filter: blur(24px);"></div>
+      <div class="meta-row"><span class="name">glass</span><span class="val">rgba(22,22,35,.62)</span></div>
+    </div>
+    <div class="swatch">
+      <div class="chip has-tint" style="background: rgba(16,16,28,0.48); backdrop-filter: blur(24px);"></div>
+      <div class="meta-row"><span class="name">glass-2</span><span class="val">rgba(16,16,28,.48)</span></div>
+    </div>
+    <div class="swatch">
+      <div class="chip has-tint" style="background: rgba(255,255,255,0.06);"></div>
+      <div class="meta-row"><span class="name">glass-hi</span><span class="val">white·6%</span></div>
+    </div>
+  </div>
+</div></body></html>

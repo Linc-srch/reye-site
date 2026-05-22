@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 96" width="540" height="96">
+  <defs>
+    <radialGradient id="iris" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#9bbcff"></stop>
+      <stop offset="55%" stop-color="#6d9eff"></stop>
+      <stop offset="100%" stop-color="#3a52a8"></stop>
+    </radialGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b47eff"></stop>
+      <stop offset="100%" stop-color="#6d9eff"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="540" height="96" fill="#070710"></rect>
+  
+  <g transform="translate(16, 24) scale(1.5)">
+    <path d="M 2 16 C 8 6, 24 6, 30 16 C 24 26, 8 26, 2 16 Z" fill="none" stroke="url(#rim)" stroke-width="1.4" stroke-linejoin="round"></path>
+    <circle cx="16" cy="16" r="6.4" fill="url(#iris)"></circle>
+    <ellipse cx="16" cy="16" rx="1.1" ry="5.2" fill="#070710"></ellipse>
+    <circle cx="13.6" cy="14" r="0.9" fill="#ffffff" fill-opacity="0.75"></circle>
+  </g>
+  <text x="76" y="63" font-family="-apple-system, &#39;SF Pro Display&#39;, system-ui, sans-serif" font-size="44" font-weight="600" fill="#e8e8f0" letter-spacing="-0.5">
+    Reye <tspan font-weight="400" font-size="30" fill="#8888a0">· 数字信任之眼</tspan>
+  </text>
+</svg>

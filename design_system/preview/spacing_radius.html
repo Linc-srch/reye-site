@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row-r { display: flex; gap: 18px; align-items: flex-end; justify-content: space-between; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
+  .shape { background: rgba(22,22,35,0.62); border: 1px solid var(--color-border); backdrop-filter: blur(24px); }
+  .s-sm { width: 80px; height: 60px; border-radius: 6px; }
+  .s-md { width: 100px; height: 75px; border-radius: 12px; }
+  .s-lg { width: 130px; height: 95px; border-radius: 18px; }
+  .s-pill { width: 110px; height: 36px; border-radius: 999px; display: flex; align-items: center; justify-content: center; color: var(--color-fg-1); font-size: 12px; }
+  .tk { font-family: var(--font-mono); font-size: 11px; color: var(--color-fg-1); }
+  .val { font-family: var(--font-mono); font-size: 10px; color: var(--color-fg-3); }
+  .use { font-size: 11px; color: var(--color-fg-2); text-align: center; max-width: 110px; line-height: 1.4; }
+</style></head>
+<body><div class="wrap">
+  <div class="row-r">
+    <div class="item">
+      <div class="shape s-sm"></div>
+      <span class="tk">radius-sm</span><span class="val">6px</span>
+      <span class="use">inline code</span>
+    </div>
+    <div class="item">
+      <div class="shape s-md"></div>
+      <span class="tk">radius-md</span><span class="val">12px</span>
+      <span class="use">inputs, small surfaces</span>
+    </div>
+    <div class="item">
+      <div class="shape s-lg"></div>
+      <span class="tk">radius-lg</span><span class="val">18px</span>
+      <span class="use">cards, header</span>
+    </div>
+    <div class="item">
+      <div class="shape s-pill">pill</div>
+      <span class="tk">radius-pill</span><span class="val">999px</span>
+      <span class="use">tags, nav, tabs</span>
+    </div>
+  </div>
+</div></body></html>

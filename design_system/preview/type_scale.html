@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row-spec {
+    display: grid;
+    grid-template-columns: 80px 1fr 90px;
+    gap: 12px;
+    align-items: baseline;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .row-spec:last-child { border-bottom: none; }
+  .tk { font-family: var(--font-mono); font-size: 11px; color: var(--color-fg-2); }
+  .px { font-family: var(--font-mono); font-size: 10px; color: var(--color-fg-3); text-align: right; }
+  .smp { color: var(--color-fg-1); }
+</style></head>
+<body><div class="wrap">
+  <div class="row-spec">
+    <span class="tk">display</span>
+    <span class="smp" style="font-size: 2.2rem; font-weight: 700; color: var(--color-accent); line-height: 1;">98</span>
+    <span class="px">35.2 / 700</span>
+  </div>
+  <div class="row-spec">
+    <span class="tk">h1</span>
+    <span class="smp" style="font-size: 1.3rem; font-weight: 600; letter-spacing: -0.02em;">DashAttention</span>
+    <span class="px">20.8 / 600</span>
+  </div>
+  <div class="row-spec">
+    <span class="tk">h2</span>
+    <span class="smp" style="font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em;">About this feed</span>
+    <span class="px">19.2 / 600</span>
+  </div>
+  <div class="row-spec">
+    <span class="tk">h3</span>
+    <span class="smp" style="font-size: 1.05rem; font-weight: 600;">AI Safety</span>
+    <span class="px">16.8 / 600</span>
+  </div>
+  <div class="row-spec">
+    <span class="tk">body</span>
+    <span class="smp" style="font-size: 1rem; line-height: 1.65;">Default reading size for prose.</span>
+    <span class="px">16.0 / 400</span>
+  </div>
+  <div class="row-spec">
+    <span class="tk">meta</span>
+    <span class="smp" style="font-size: 0.9rem; color: var(--color-fg-2);">Updated 2026-05-21 · 107 articles</span>
+    <span class="px">14.4 / 400</span>
+  </div>
+  <div class="row-spec">
+    <span class="tk">tag</span>
+    <span class="smp" style="font-size: 0.82rem;">Search</span>
+    <span class="px">13.1 / 400</span>
+  </div>
+  <div class="row-spec">
+    <span class="tk">tiny</span>
+    <span class="smp" style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--color-fg-2);">SUMMARY</span>
+    <span class="px">12.5 / 400</span>
+  </div>
+  <div class="row-spec">
+    <span class="tk">micro</span>
+    <span class="smp" style="font-size: 0.75rem; color: var(--color-accent);">large language models</span>
+    <span class="px">12.0 / 400</span>
+  </div>
+</div></body></html>

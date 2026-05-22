@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .head {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.8rem 1.2rem;
+    background: rgba(22,22,35,0.62);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    backdrop-filter: blur(24px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.55);
+  }
+  .head h1 { font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; color: var(--color-fg-1); }
+  .head .zh { font-weight: 400; font-size: 0.82em; }
+  .head nav { display: flex; gap: 0.6rem; align-items: center; }
+  .head nav a { color: var(--color-fg-2); text-decoration: none; font-size: 0.88rem; padding: 0.3rem 0.65rem; border-radius: 999px; }
+  .lt { display: flex; gap: 0.35rem; }
+  .lt button {
+    background: transparent; color: var(--color-fg-2); border: 1px solid var(--color-border);
+    padding: 0.3rem 0.75rem; border-radius: 999px; font-size: 0.82rem; font-family: var(--font-sans);
+  }
+  .lt button.active { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+</style></head>
+<body><div class="wrap">
+  <div class="head">
+    <h1>🔭 Reye · <span class="zh">数字信任研究之眼</span></h1>
+    <nav>
+      <a>Search</a>
+      <a>Insights</a>
+      <a>About</a>
+      <div class="lt">
+        <button class="active">EN</button>
+        <button>中</button>
+      </div>
+    </nav>
+  </div>
+</div></body></html>

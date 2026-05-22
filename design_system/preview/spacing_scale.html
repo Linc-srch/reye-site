@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row-sp { display: flex; align-items: flex-end; gap: 6px; padding: 16px 0; }
+  .bar {
+    background: var(--color-accent);
+    border-radius: 2px 2px 0 0;
+    width: 28px;
+    opacity: 0.85;
+  }
+  .col-tk { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .tk { font-family: var(--font-mono); font-size: 10px; color: var(--color-fg-2); }
+  .px { font-family: var(--font-mono); font-size: 10px; color: var(--color-fg-3); }
+  .note { margin-top: 8px; font-size: 11px; color: var(--color-fg-3); line-height: 1.5; }
+</style></head>
+<body><div class="wrap">
+  <div class="row-sp">
+    <div class="col-tk"><div class="bar" style="height: 4px;"></div><span class="tk">1</span><span class="px">4</span></div>
+    <div class="col-tk"><div class="bar" style="height: 6px;"></div><span class="tk">2</span><span class="px">6</span></div>
+    <div class="col-tk"><div class="bar" style="height: 8px;"></div><span class="tk">3</span><span class="px">8</span></div>
+    <div class="col-tk"><div class="bar" style="height: 12px;"></div><span class="tk">4</span><span class="px">12</span></div>
+    <div class="col-tk"><div class="bar" style="height: 16px;"></div><span class="tk">5</span><span class="px">16</span></div>
+    <div class="col-tk"><div class="bar" style="height: 22px;"></div><span class="tk">6</span><span class="px">22</span></div>
+    <div class="col-tk"><div class="bar" style="height: 26px;"></div><span class="tk">7</span><span class="px">26</span></div>
+    <div class="col-tk"><div class="bar" style="height: 32px;"></div><span class="tk">8</span><span class="px">32</span></div>
+    <div class="col-tk"><div class="bar" style="height: 48px;"></div><span class="tk">9</span><span class="px">48</span></div>
+  </div>
+  <p class="note">
+    rem-based, 16-px root. Card padding uses <code style="font-family: var(--font-mono); color: var(--color-fg-2);">space-6 space-7</code> (22×26). Card stack gap = <code style="font-family: var(--font-mono); color: var(--color-fg-2);">space-5</code> (16). Loose grid — no rigid 8-pt enforcement.
+  </p>
+</div></body></html>

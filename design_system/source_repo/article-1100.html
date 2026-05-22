@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CrossView Suite: Harnessing Cross-view Spatial Intelligence of MLLMs with Dataset, Model and Benchmark | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <p class="breadcrumb">
+    <a href="../assets/../index.html">Home</a>
+    <span>›</span>
+    <span class="lang-en">Analysis</span>
+    <span class="lang-zh">分析</span>
+  </p>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">CrossView Suite: Harnessing Cross-view Spatial Intelligence of MLLMs with Dataset, Model and Benchmark</h2>
+    <h2 class="lang-zh">CrossView Suite：利用数据集、模型和基准测试增强多模态大语言模型的跨视角空间智能</h2>
+    <div class="meta">
+      Wei Wang, Yuqian Yuan, Tianwei Lin, Wenqiao Zhang, Siliang Tang, Jun Xiao, Yueting Zhuang · 
+      2026-05-19 · 
+      arxiv
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>CrossView Suite proposes a unified dataset (CrossViewSet), benchmark (CrossViewBench), and model (CrossViewer) to enable MLLMs to perform explicit object-level cross-view spatial reasoning, addressing the lack of large-scale mask-grounded training data, comprehensive evaluation, and alignment mechanisms.</p>
+    </div>
+    
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出了一个完整的跨视角空间推理解决方案，包括大规模掩码标注数据集CrossViewSet、统一基准测试CrossViewBench以及三阶段模型CrossViewer。其核心创新在于显式的物体级跨视角对齐机制，显著优于现有模型的隐式融合方法，为多模态大语言模型的空间智能发展提供了关键数据、评估和建模框架。</p>
+    </div>
+    
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — crossview-suite</h1>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> CrossView Suite: Harnessing Cross-view Spatial Intelligence of MLLMs with Dataset, Model and Benchmark</li>
+<li><strong>Alias:</strong> crossview-suite</li>
+<li><strong>Authors:</strong> Wei Wang, Yuqian Yuan, Tianwei Lin, Wenqiao Zhang, Siliang Tang, Jun Xiao, Yueting Zhuang</li>
+<li><strong>arXiv ID:</strong> 2605.18621</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.18621</li>
+<li>HTML: https://arxiv.org/html/2605.18621v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.18621</li>
+<li><strong>Tags:</strong> cross-view-reasoning, multimodal-llm, spatial-intelligence, object-alignment, multi-view-benchmark</li>
+<li><strong>Domains:</strong> system_safety, digital_identity</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>CrossView Suite proposes a unified dataset (CrossViewSet), benchmark (CrossViewBench), and model (CrossViewer) to enable MLLMs to perform explicit object-level cross-view spatial reasoning, addressing the lack of large-scale mask-grounded training data, comprehensive evaluation, and alignment mechanisms.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Multimodal large language models (MLLMs) have achieved strong single-view understanding, but real-world applications require reasoning across multiple viewpoints. Existing resources like Ego-Exo4D and MMVM provide multi-view data or benchmarks, but they lack large-scale mask-grounded instruction data, scene-disjoint evaluation, and explicit cross-view object alignment.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Single-view MLLMs (Flamingo, BLIP-2, LLaVA, InternVL, Qwen3-VL) excel at captioning and VQA but lack multi-view reasoning.</li>
+<li>Multi-view datasets (Ego-Exo4D, EgoHumans, MessyTable, MMPTrack) provide synchronized views but not mask-grounded instruction tuning data.</li>
+<li>Multi-view benchmarks (MMVM, All-Angles Bench, MV-ScanQA) evaluate partial capabilities but lack unified, multi-dimensional assessment.</li>
+<li>Region-aware MLLMs (e.g., GLaMM) ground objects within one image but do not establish cross-view identity consistency.</li>
+<li>Non-MLLM cross-view methods (IDMR, VICI, ObjectRelator) achieve association but cannot support open-ended reasoning.</li>
+<li>Multi-image MLLMs (e.g., Qwen2-VL, InternVL2) process multiple images but rely on implicit fusion without explicit object-level alignment.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Current MLLMs lack large-scale mask-grounded cross-view instruction data, a unified multi-dimensional benchmark, and an object-centric framework for explicit cross-view alignment. Existing datasets do not provide scalable supervision for object-level reasoning, benchmarks cover only partial tasks, and models rely on implicit fusion rather than explicit object correspondence.</p>
+<h3>P — Proposal</h3>
+<p>CrossView Suite introduces CrossViewSet (1.6M samples, 17 task types) via a multi-agent data engine, CrossViewBench (17,000 questions, scene-disjoint) for systematic evaluation, and CrossViewer, a three-stage framework (Perception -&gt; Alignment -&gt; Reasoning) with an Adaptive Region Tokenizer (ART) and Object-Centric Cross-View Aligner (OCVA) for explicit object-level alignment. The key insight is that explicit cross-view object alignment, large-scale training data, and systematic evaluation are critical for advancing MLLMs toward spatial intelligence.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>CrossViewer achieves 83.4% accuracy on CrossViewBench, outperforming Qwen2-VL-72B (79.2%), InternVL2-76B (78.5%), and LLaVA-NeXT-72B (72.1%). On MMVM benchmark, CrossViewer reaches 82.1% vs. Qwen2-VL-72B (78.5%). On All-Angles Bench, it scores 79.8% vs. Qwen2-VL-72B (76.3%). On MV-ScanQA, it achieves 81.2% vs. Qwen2-VL-72B (77.9%).</p>
+<h3>Ablation</h3>
+<p>Removing the explicit alignment stage (OCVA) drops accuracy from 83.4% to 78.1% on CrossViewBench, while removing the ART tokenizer reduces it to 79.5%, confirming the importance of both explicit alignment and fine-grained object tokenization.</p>
+<h3>Limitations</h3>
+<p>['The dataset and benchmark are built from four public sources, which may not cover all real-world multi-view scenarios (e.g., extreme lighting, dynamic scenes).', 'The model relies on mask annotations during training, which may limit applicability to settings without pre-computed masks.', 'The framework is evaluated on static multi-view images; temporal or video-based cross-view reasoning is not addressed.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a complete pipeline (data, benchmark, model) for cross-view spatial reasoning, directly applicable to embodied AI and multi-agent systems.</li>
+<li>Demonstrates that explicit object-level alignment significantly outperforms implicit fusion in MLLMs, a key insight for designing future multi-view models.</li>
+<li>The multi-agent data engine offers a scalable method to generate high-quality instruction data from raw multi-view sources, reducing annotation cost.</li>
+<li>The scene-disjoint benchmark enables fair and comprehensive evaluation, setting a standard for future cross-view research.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate CrossViewer on real-world robotics or autonomous driving datasets with dynamic multi-camera setups.</li>
+<li>[ ] Extend the framework to handle video input and temporal cross-view reasoning.</li>
+<li>[ ] Explore unsupervised or weakly-supervised variants to reduce reliance on mask annotations.</li>
+<li>[ ] Integrate CrossViewer with existing embodied agents for object manipulation and navigation tasks.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    
+
+    
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>CrossView Suite：利用数据集、模型和基准测试增强多模态大语言模型的跨视角空间智能</h1>
+<p><strong>主要结论</strong>
+- 提出CrossViewSet（160万样本、17种任务类型），通过多智能体数据引擎从原始多视角数据生成高质量掩码标注指令数据。
+- 构建CrossViewBench（1.7万问题、场景分离设计），系统评估跨视角推理能力，避免数据泄露。
+- 设计CrossViewer模型，采用感知→对齐→推理三阶段框架，通过自适应区域分词器和物体中心跨视角对齐器实现显式物体级对齐。
+- 实验表明，显式对齐机制带来显著提升：去除对齐模块后准确率从83.4%降至78.1%。
+- 在多个基准上超越Qwen2-VL-72B、InternVL2-76B等大模型，验证了显式跨视角物体对齐的有效性。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文核心主张是显式的跨视角物体对齐、大规模训练数据和系统化评估是提升多模态大语言模型空间智能的关键，关键观察是现有模型依赖隐式融合而缺乏显式物体对应关系。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>上下文</strong>：多模态大语言模型在单视角理解上表现优异，但实际应用需要跨视角推理。现有资源如Ego-Exo4D和MMVM提供多视角数据或基准，但缺乏大规模掩码标注指令数据、场景分离评估和显式跨视角物体对齐。</p>
+<p><strong>相关工作</strong>：单视角MLLM（Flamingo、BLIP-2、LLaVA、InternVL、Qwen3-VL）擅长描述和VQA但缺乏多视角推理；多视角数据集（Ego-Exo4D、EgoHumans、MessyTable、MMPTrack）提供同步视角但无掩码指令数据；多视角基准（MMVM、All-Angles Bench、MV-ScanQA）评估部分能力但缺乏统一多维评估；区域感知MLLM（如GLaMM）在单图内定位物体但无法建立跨视角身份一致性；非MLLM跨视角方法（IDMR、VICI、ObjectRelator）实现关联但不支持开放推理；多图像MLLM（如Qwen2-VL、InternVL2）处理多图但依赖隐式融合。</p>
+<p><strong>差距</strong>：当前MLLM缺乏大规模掩码标注跨视角指令数据、统一多维基准以及以物体为中心的显式对齐框架。现有数据集无法提供可扩展的物体级推理监督，基准仅覆盖部分任务，模型依赖隐式融合而非显式物体对应。</p>
+<p><strong>提案</strong>：CrossView Suite引入CrossViewSet（160万样本、17种任务类型，通过多智能体数据引擎生成）、CrossViewBench（1.7万问题、场景分离）用于系统评估，以及CrossViewer三阶段框架（感知→对齐→推理），包含自适应区域分词器和物体中心跨视角对齐器实现显式物体级对齐。核心见解是显式跨视角物体对齐、大规模训练数据和系统化评估对推动MLLM走向空间智能至关重要。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>CrossViewer在CrossViewBench上达到83.4%准确率，优于Qwen2-VL-72B（79.2%）、InternVL2-76B（78.5%）和LLaVA-NeXT-72B（72.1%）。在MMVM基准上，CrossViewer达到82.1% vs Qwen2-VL-72B（78.5%）。在All-Angles Bench上得分79.8% vs Qwen2-VL-72B（76.3%）。在MV-ScanQA上达到81.2% vs Qwen2-VL-72B（77.9%）。</p>
+<h3>消融实验</h3>
+<p>去除显式对齐阶段（OCVA）后，CrossViewBench准确率从83.4%降至78.1%；去除ART分词器后降至79.5%，证实了显式对齐和细粒度物体分词的重要性。</p>
+<h3>局限性</h3>
+<p>['数据集和基准来自四个公开来源，可能未覆盖所有真实世界多视角场景（如极端光照、动态场景）。', '模型在训练时依赖掩码标注，可能限制在无预计算掩码场景下的适用性。', '框架仅在静态多视角图像上评估，未涉及基于时间或视频的跨视角推理。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了数据、基准、模型完整的跨视角空间推理管线，可直接应用于具身智能和多智能体系统。</li>
+<li>证明显式物体级对齐显著优于隐式融合，为未来多视角模型设计提供关键见解。</li>
+<li>多智能体数据引擎提供可扩展的高质量指令数据生成方法，降低标注成本。</li>
+<li>场景分离基准实现公平全面评估，为跨视角研究设立标准。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在真实机器人或自动驾驶数据集上评估CrossViewer，考虑动态多摄像头设置。</li>
+<li>[ ] 扩展框架以处理视频输入和时间维度的跨视角推理。</li>
+<li>[ ] 探索无监督或弱监督变体，减少对掩码标注的依赖。</li>
+<li>[ ] 将CrossViewer与现有具身智能体集成，用于物体操作和导航任务。</li>
+</ul>
+    </div>
+    
+
+    <div class="tags">
+      <span class="tag">2605.18621</span>
+    </div>
+
+    
+    <p style="margin-top: 1rem;">
+      <a href="https://arxiv.org/abs/2605.18621" target="_blank" class="dim-link">Original source →</a>
+    </p>
+    
+  </article>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

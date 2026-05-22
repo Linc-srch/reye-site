@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .pill {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 16px; border-radius: 14px;
+    border: 1px solid var(--color-border);
+    background: rgba(22,22,35,0.55);
+  }
+  .dot { width: 32px; height: 32px; border-radius: 999px; }
+  .lab { font-size: 13px; color: var(--color-fg-1); font-weight: 500; }
+  .val { font-family: var(--font-mono); font-size: 11px; color: var(--color-fg-2); }
+  .note { font-size: 11px; color: var(--color-fg-3); margin-top: 12px; line-height: 1.5; }
+</style></head>
+<body><div class="wrap">
+  <div class="grid">
+    <div class="pill"><div class="dot" style="background: #4ad29a;"></div><span class="lab">success</span><span class="val">#4ad29a</span></div>
+    <div class="pill"><div class="dot" style="background: #f5b454;"></div><span class="lab">warning</span><span class="val">#f5b454</span></div>
+    <div class="pill"><div class="dot" style="background: #ff7a7a;"></div><span class="lab">danger</span><span class="val">#ff7a7a</span></div>
+  </div>
+  <p class="note">Extension tokens. The production Reye site renders no semantic color — add only when truly needed.</p>
+</div></body></html>

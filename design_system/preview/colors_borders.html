@@ -1,0 +1,45 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row2 { display: flex; gap: 16px; }
+  .col-half { flex: 1; }
+  .card {
+    background: rgba(22,22,35,0.62);
+    border-radius: 18px;
+    padding: 16px;
+    backdrop-filter: blur(24px);
+    margin-bottom: 8px;
+  }
+  .b-rest    { border: 1px solid rgba(255,255,255,0.09); }
+  .b-hover   { border: 1px solid rgba(255,255,255,0.20); }
+  .b-accent  { border: 1px solid rgba(110,158,255,0.28); }
+  .b-solid   { border: 1px solid #6d9eff; background: #6d9eff; color: #fff; padding: 6px 14px; border-radius: 999px; display: inline-block; font-size: 13px; font-weight: 500; }
+  .cap { font-size: 11px; color: var(--color-fg-2); font-family: var(--font-mono); }
+  .stack { display: flex; flex-direction: column; gap: 4px; }
+</style></head>
+<body><div class="wrap">
+  <div class="row2">
+    <div class="col-half stack">
+      <div class="card b-rest">Resting border</div>
+      <div class="cap">--color-border &nbsp;rgba(255,255,255,.09)</div>
+    </div>
+    <div class="col-half stack">
+      <div class="card b-hover">Hover border</div>
+      <div class="cap">--color-border-hover &nbsp;rgba(255,255,255,.20)</div>
+    </div>
+  </div>
+  <div style="height: 14px;"></div>
+  <div class="row2">
+    <div class="col-half stack">
+      <div class="card b-accent" style="padding: 10px 14px;">
+        <span style="color: #6d9eff; font-size: 12px;">tinted accent border on pill</span>
+      </div>
+      <div class="cap">accent-soft-border &nbsp;rgba(110,158,255,.28)</div>
+    </div>
+    <div class="col-half stack" style="justify-content: center; align-items: flex-start;">
+      <span class="b-solid">EN</span>
+      <div class="cap">solid accent &nbsp;active state</div>
+    </div>
+  </div>
+</div></body></html>

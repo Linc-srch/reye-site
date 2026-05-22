@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <radialGradient id="orb-blue" cx="80%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#506eff" stop-opacity="0.35"></stop>
+      <stop offset="68%" stop-color="#506eff" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="orb-violet" cx="15%" cy="85%" r="55%">
+      <stop offset="0%" stop-color="#a05aff" stop-opacity="0.28"></stop>
+      <stop offset="65%" stop-color="#a05aff" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="600" fill="#070710"></rect>
+  <rect width="1200" height="600" fill="url(#orb-blue)"></rect>
+  <rect width="1200" height="600" fill="url(#orb-violet)"></rect>
+</svg>

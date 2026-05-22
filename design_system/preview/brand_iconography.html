@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row-g { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--color-fg-3); width: 140px; }
+  .pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 4px 10px; border-radius: 6px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--color-border);
+    font-family: var(--font-sans); color: var(--color-fg-1); font-size: 16px;
+  }
+  .pill .ch { color: var(--color-fg-2); font-size: 18px; padding: 0 2px; }
+  .pill .ch.arrow { color: var(--color-accent); }
+  .note { color: var(--color-fg-2); font-size: 11px; font-style: italic; line-height: 1.5; }
+</style></head>
+<body><div class="wrap">
+  <div class="row-g">
+    <span class="lbl">brand mark</span>
+    <span class="pill">🔭</span>
+    <span class="note">U+1F52D · the one emoji on the site · always paired with "Reye"</span>
+  </div>
+  <div class="row-g">
+    <span class="lbl">breadcrumb separator</span>
+    <span class="pill"><span class="ch">›</span></span>
+    <span class="note">U+203A · margin 0 0.4rem · dim text color</span>
+  </div>
+  <div class="row-g">
+    <span class="lbl">meta separator</span>
+    <span class="pill"><span class="ch">·</span></span>
+    <span class="note">U+00B7 · never a slash or pipe</span>
+  </div>
+  <div class="row-g">
+    <span class="lbl">outbound link</span>
+    <span class="pill">Original source <span class="ch arrow">→</span></span>
+    <span class="note">U+2192 · always trailing</span>
+  </div>
+</div></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .demo {
+    background: rgba(22,22,35,0.62);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    padding: 22px 26px;
+    backdrop-filter: blur(24px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.55);
+  }
+  .demo h2 { font-size: 17px; font-weight: 600; color: var(--color-fg-1); letter-spacing: -0.01em; margin-bottom: 6px; }
+  .demo .meta { color: var(--color-fg-2); font-size: 13px; margin-bottom: 8px; }
+  .demo p { color: var(--color-fg-1); font-size: 13px; line-height: 1.65; }
+  .tags { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+  .tag {
+    background: rgba(110, 158, 255, 0.13);
+    border: 1px solid rgba(110, 158, 255, 0.28);
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    color: var(--color-accent);
+  }
+</style></head>
+<body><div class="wrap">
+  <div class="demo">
+    <h2>DashAttention: Differentiable Sparse Hierarchical Attention</h2>
+    <div class="meta">Yuxiang Huang et al · 2026-05-19 · arxiv</div>
+    <p>α-entmax routing replaces hard top-k block selection — 75% sparsity with comparable accuracy and a 3.36× speedup over FlashAttention-3.</p>
+    <div class="tags">
+      <span class="tag">long-context</span>
+      <span class="tag">differentiable-routing</span>
+      <span class="tag">entmax</span>
+    </div>
+  </div>
+</div></body></html>

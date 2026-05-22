@@ -1,0 +1,200 @@
+/* ============================================================
+   Reye · 数字信任研究之眼 — Design Tokens
+   ------------------------------------------------------------
+   Dark glassmorphism, iOS 17-inspired. Bilingual (EN/中).
+   Imported from source repo, expanded into a token system.
+   ============================================================ */
+
+/* Google Fonts — Noto Sans SC for CJK fallback, Fira Code for mono.
+   SF Pro / SF Mono fall back on non-Apple OS; flag for the user. */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap");
+
+:root {
+  /* ── Color · Surface ────────────────────────────────────── */
+  --color-bg:           #070710;   /* page background, near-black w/ blue tint */
+  --color-bg-2:         #0c0c18;   /* secondary surface */
+  --color-glass:        rgba(22, 22, 35, 0.62);  /* card surface, behind blur */
+  --color-glass-2:      rgba(16, 16, 28, 0.48);  /* deeper card surface */
+  --color-glass-hi:     rgba(255, 255, 255, 0.06); /* input fields */
+
+  /* ── Color · Border ─────────────────────────────────────── */
+  --color-border:       rgba(255, 255, 255, 0.09);
+  --color-border-hover: rgba(255, 255, 255, 0.20);
+
+  /* ── Color · Text ───────────────────────────────────────── */
+  --color-fg-1:         #e8e8f0;   /* primary text, near-white slightly cool */
+  --color-fg-2:         #8888a0;   /* secondary, metadata, dim links */
+  --color-fg-3:         #5a5a78;   /* tertiary, disabled */
+  --color-fg-on-accent: #ffffff;   /* white on accent bg */
+
+  /* ── Color · Accent ─────────────────────────────────────── */
+  --color-accent:       #6d9eff;   /* primary blue, links + active states */
+  --color-accent-2:     #b47eff;   /* secondary violet, ambient orb only */
+  --color-accent-soft:  rgba(110, 158, 255, 0.13);  /* tag bg */
+  --color-accent-soft-border: rgba(110, 158, 255, 0.28); /* tag border */
+
+  /* ── Color · Semantic (extended for this DS) ────────────── */
+  --color-success:      #4ad29a;
+  --color-warning:      #f5b454;
+  --color-danger:       #ff7a7a;
+
+  /* ── Gradient · Ambient orbs ────────────────────────────── */
+  --gradient-orb-blue:    radial-gradient(circle, rgba(80, 110, 255, 0.15) 0%, transparent 68%);
+  --gradient-orb-violet:  radial-gradient(circle, rgba(160, 90, 255, 0.11) 0%, transparent 65%);
+  --gradient-hero:        linear-gradient(135deg, rgba(70,100,255,0.10) 0%, rgba(140,70,255,0.07) 100%);
+
+  /* ── Typography · Stacks ────────────────────────────────── */
+  --font-sans: -apple-system, "SF Pro Display", "SF Pro Text", system-ui,
+               "Noto Sans SC", "PingFang SC", "Helvetica Neue", sans-serif;
+  --font-mono: "SF Mono", "Fira Code", ui-monospace, "Cascadia Code",
+               "Menlo", monospace;
+
+  /* ── Typography · Scale (rem-based, 16px root) ──────────── */
+  --fs-display: 2.2rem;     /* domain count, hero stats */
+  --fs-h1:      1.3rem;     /* article title */
+  --fs-h2:      1.2rem;     /* page-level title */
+  --fs-h3:      1.05rem;    /* card heading */
+  --fs-body:    1.00rem;    /* default reading size */
+  --fs-meta:    0.90rem;    /* card meta, hero stats body */
+  --fs-small:   0.88rem;    /* nav, code */
+  --fs-tag:     0.82rem;    /* nav buttons, lang toggle */
+  --fs-tiny:    0.78rem;    /* section eyebrows */
+  --fs-micro:   0.75rem;    /* tags */
+
+  /* ── Typography · Weights ───────────────────────────────── */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* ── Typography · Line-height & tracking ────────────────── */
+  --lh-tight:  1.30;        /* h1, big counts */
+  --lh-snug:   1.40;        /* h3, card heads */
+  --lh-base:   1.65;        /* body */
+  --tracking-tight:  -0.02em;
+  --tracking-snug:   -0.01em;
+  --tracking-eyebrow: 0.09em;
+
+  /* ── Radius ─────────────────────────────────────────────── */
+  --radius-sm:   6px;       /* inline code */
+  --radius-md:   12px;      /* small cards, inputs */
+  --radius-lg:   18px;      /* glass cards, header */
+  --radius-pill: 999px;     /* tags, nav buttons, lang toggle */
+
+  /* ── Shadow ─────────────────────────────────────────────── */
+  --shadow-card:       0 8px 32px rgba(0, 0, 0, 0.55);
+  --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.65),
+                       0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  /* ── Blur ───────────────────────────────────────────────── */
+  --blur-glass: blur(24px);
+
+  /* ── Spacing (multiples of 4px, rem-relative) ───────────── */
+  --space-1:  0.25rem;   /* 4 */
+  --space-2:  0.4rem;    /* ~6, used for inline gaps */
+  --space-3:  0.5rem;    /* 8 */
+  --space-4:  0.75rem;   /* 12 */
+  --space-5:  1rem;      /* 16 */
+  --space-6:  1.4rem;    /* ~22, card padding y */
+  --space-7:  1.6rem;    /* ~26, card padding x */
+  --space-8:  2rem;      /* 32 */
+  --space-9:  3rem;      /* 48 */
+
+  /* ── Motion ─────────────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast:    0.15s;    /* nav hover, tag toggle */
+  --dur-base:    0.20s;    /* card hover */
+  --dur-smooth:  0.30s;    /* page-level transitions */
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  --content-max: 1080px;
+}
+
+/* ============================================================
+   Semantic helpers — drop these classes on bare HTML.
+   ============================================================ */
+.t-display {
+  font-family: var(--font-sans);
+  font-size: var(--fs-display);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  color: var(--color-accent);
+  letter-spacing: var(--tracking-snug);
+}
+.t-h1 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-fg-1);
+}
+.t-h2 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-fg-1);
+}
+.t-h3 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  color: var(--color-fg-1);
+}
+.t-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-tiny);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-fg-2);
+}
+.t-body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-base);
+  color: var(--color-fg-1);
+}
+.t-meta {
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  color: var(--color-fg-2);
+  line-height: var(--lh-base);
+}
+.t-small {
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  color: var(--color-fg-2);
+}
+.t-code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.2rem 0.45rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-fg-1);
+}
+
+/* ============================================================
+   Glass card — used everywhere as the primary surface.
+   ============================================================ */
+.glass-card {
+  background: var(--color-glass);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-7);
+  backdrop-filter: var(--blur-glass);
+  -webkit-backdrop-filter: var(--blur-glass);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow var(--dur-base) var(--ease-out),
+              border-color var(--dur-base) var(--ease-out),
+              transform var(--dur-base) var(--ease-out);
+}
+.glass-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-border-hover);
+}

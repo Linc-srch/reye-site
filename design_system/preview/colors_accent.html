@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .demo {
+    border-radius: 14px; padding: 16px;
+    border: 1px solid var(--color-border);
+    background: rgba(22,22,35,0.62);
+    backdrop-filter: blur(24px);
+  }
+  .demo .accent-line { color: var(--color-accent); font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+  .demo a { color: var(--color-accent); text-decoration: none; font-size: 13px; }
+  .demo a:hover { text-decoration: underline; }
+  .demo .count { font-size: 32px; font-weight: 700; color: var(--color-accent); line-height: 1; }
+  .demo .lbl { color: var(--color-fg-2); font-size: 12px; margin-top: 8px; font-family: var(--font-mono); }
+  .tag {
+    display: inline-block;
+    background: rgba(110, 158, 255, 0.13); border: 1px solid rgba(110, 158, 255, 0.28);
+    padding: 3px 10px; border-radius: 999px; font-size: 12px; color: var(--color-accent);
+    margin-right: 4px;
+  }
+  .violet-note {
+    border-radius: 14px; padding: 14px;
+    border: 1px dashed var(--color-border);
+    color: var(--color-fg-2); font-size: 12px; line-height: 1.5;
+    background: radial-gradient(circle at 80% 50%, rgba(160,90,255,0.16), transparent 70%);
+  }
+  .violet-note strong { color: #b47eff; }
+</style></head>
+<body><div class="wrap">
+  <div class="grid">
+    <div class="demo">
+      <div class="accent-line">DashAttention paper</div>
+      <a href="#">Read full Deep Note →</a>
+      <div class="lbl">accent on glass</div>
+    </div>
+    <div class="demo">
+      <div class="count">98</div>
+      <div class="lbl">accent as count</div>
+    </div>
+    <div class="demo" style="grid-column: span 2;">
+      <span class="tag">large language models</span>
+      <span class="tag">post-quantum cryptography</span>
+      <span class="tag">3GPP</span>
+      <div class="lbl" style="margin-top: 10px;">accent-soft + accent-soft-border on tag pills</div>
+    </div>
+    <div class="violet-note" style="grid-column: span 2;">
+      <strong>--accent-2 #b47eff</strong> exists only inside the ambient orb gradient — never on text, never on chrome.
+    </div>
+  </div>
+</div></body></html>

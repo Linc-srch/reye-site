@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .pane {
+    background: rgba(22,22,35,0.62);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    padding: 20px 22px;
+    backdrop-filter: blur(24px);
+    display: flex; flex-direction: column; justify-content: center; min-height: 120px;
+  }
+  .wordmark-full { font-size: 26px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-fg-1); }
+  .wordmark-full .zh { font-weight: 400; font-size: 0.7em; color: var(--color-fg-2); }
+  .wordmark-mini { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-fg-1); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--color-fg-3); margin-top: 8px; }
+</style></head>
+<body><div class="wrap">
+  <div class="grid">
+    <div class="pane">
+      <div class="wordmark-full">🔭 Reye · <span class="zh">数字信任研究之眼</span></div>
+      <div class="lbl">primary lockup · header on every page</div>
+    </div>
+    <div class="pane">
+      <div class="wordmark-mini">🔭 Reye</div>
+      <div class="lbl">compact · favicon, social card, small surfaces</div>
+    </div>
+  </div>
+</div></body></html>
