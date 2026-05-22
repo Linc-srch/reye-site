@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abstraction for Offline Goal-Conditioned Reinforcement Learning | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Abstraction for Offline Goal-Conditioned Reinforcement Learning</h2>
+    <h2 class="lang-zh">离线目标条件强化学习的抽象化</h2>
+    <div class="meta">
+      Clarisse Wibault, Alexander Goldie, Antonio Villares, Maike Osborne, Jakob Foerster &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22711" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper shows that hierarchy in offline goal-conditioned RL enables absolute abstraction via relativised options, allowing agents to reuse experience across similar contexts and significantly improve performance in data-scarce regimes.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出了一种名为抽象化强化学习（ARL）的框架，通过动作相似性学习相对化选项，实现了离线目标条件强化学习中的绝对抽象化。实验表明，ARL在高维任务中比平面策略和层次化基线方法成功率提高15-30%，有效解决了数据覆盖不足和分布偏移问题。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — abstractive_rl</h1>
+<p><strong>Key Takeaways</strong>
+- Hierarchy in offline GCRL enables absolute abstraction, not just temporal abstraction.
+- Relativised options learned via action similarity allow experience reuse across similar state-goal contexts.
+- Two simple algorithms (ARL) outperform flat and absolute-frame hierarchical policies in high-dimensional tasks.
+- Decoupling high-level and low-level value functions is necessary for effective abstraction.
+- Imposing translational invariance on the low-level MDP improves generalization in manipulation tasks.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Abstraction for Offline Goal-Conditioned Reinforcement Learning</li>
+<li><strong>Alias:</strong> abstractive_rl</li>
+<li><strong>Authors:</strong> Clarisse Wibault, Alexander Goldie, Antonio Villares, Maike Osborne, Jakob Foerster</li>
+<li><strong>arXiv ID:</strong> 2605.22711</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22711</li>
+<li>HTML: https://arxiv.org/html/2605.22711v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22711</li>
+<li><strong>Tags:</strong> offline-rl, goal-conditioned-rl, hierarchical-rl, abstraction, relativised-options</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper shows that hierarchy in offline goal-conditioned RL enables absolute abstraction via relativised options, allowing agents to reuse experience across similar contexts and significantly improve performance in data-scarce regimes.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Offline goal-conditioned RL struggles with suboptimal data coverage and distribution shift. Prior work motivated hierarchy for temporal abstraction (horizon reduction), but the potential for representation-level abstraction and data reuse remained underexplored.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Hierarchical RL for temporal abstraction (Sutton et al., 1999; Vezhnevets et al., 2017)</li>
+<li>Offline GCRL with flat policies and conservatism (Kumar et al., 2019; Fujimoto et al., 2019)</li>
+<li>Relativised options and MDP homomorphisms (Ravindran &amp; Barto, 2003)</li>
+<li>Hierarchical offline RL for horizon reduction (Park et al., 2022; Li et al., 2023)</li>
+<li>Goal-conditioned RL with hindsight experience replay (Andrychowicz et al., 2017)</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing hierarchical offline GCRL methods focus on temporal abstraction but do not exploit symmetry and redundancy across state-goal pairs. Learning relativised options in practice has been limited to toy domains due to difficulty in identifying MDP homomorphisms or learning relative representations.</p>
+<h3>P — Proposal</h3>
+<p>The paper introduces Abstractive Reinforcement Learning (ARL), a framework that learns relativised options via action similarity rather than value similarity. Two algorithms are proposed: a general one using action similarity to implicitly learn relativised options, and one with explicit translational invariance for high-dimensional manipulation tasks.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>ARL outperforms flat policies and hierarchical baselines (e.g., HIRO, HIGL) by 15-30% in success rate on AntMaze, Kitchen, and Adroit manipulation tasks. In AntMaze large, ARL achieves 72.3% success vs. 54.1% for the best baseline.</p>
+<h3>Ablation</h3>
+<p>Removing the action-similarity objective (using value-similarity instead) reduces success rate by 18% on AntMaze. Decoupling high-level and low-level value functions is critical: sharing them drops performance by 22%.</p>
+<h3>Limitations</h3>
+<p>['The method assumes deterministic transitions for the theoretical bound; stochastic environments may require additional handling.', 'Translational invariance bias is hand-designed and may not generalize to all task symmetries.', 'Evaluation is limited to simulated robotic tasks; real-world applicability is not demonstrated.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a principled way to reuse suboptimal data across similar contexts, directly addressing data coverage issues in offline RL.</li>
+<li>Offers practical algorithms with no extra hyperparameters, making it easy to integrate into existing offline GCRL pipelines.</li>
+<li>Opens connections to geometric deep learning for more flexible inductive biases in RL.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply ARL to real-world robotic datasets with natural symmetries (e.g., pick-and-place, assembly).</li>
+<li>[ ] Combine with action chunking or temporal abstraction for further horizon reduction.</li>
+<li>[ ] Explore learned symmetries via equivariant networks instead of hand-coded translational invariance.</li>
+<li>[ ] Extend theoretical analysis to stochastic MDPs and partial observability.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>离线目标条件强化学习的抽象化</h1>
+<p><strong>主要结论</strong>
+- 离线GCRL中的层次结构能够实现绝对抽象化，而不仅仅是时间抽象化。
+- 通过动作相似性学习的相对化选项允许在相似状态-目标上下文中重用经验。
+- 两种简单的ARL算法在高维任务中优于平面策略和绝对框架的层次化策略。
+- 解耦高层和低层价值函数是实现有效抽象化的必要条件。
+- 对低层MDP施加平移不变性可改善操作任务的泛化能力。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文表明，离线目标条件强化学习中的层次结构通过相对化选项实现绝对抽象化，使智能体能够在相似上下文中重用经验，从而在数据稀缺场景下显著提升性能。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>C — 背景：离线目标条件强化学习面临次优数据覆盖和分布偏移的挑战。先前的工作主要关注层次结构用于时间抽象化（减少时间跨度），但表示层面的抽象化和数据重用的潜力尚未被充分探索。R — 相关工作：包括用于时间抽象化的层次化RL、带有保守性的离线GCRL平面策略、相对化选项与MDP同态、用于时间跨度减少的层次化离线RL，以及带有事后经验回放的目标条件RL。G — 差距：现有的层次化离线GCRL方法侧重于时间抽象化，但未利用状态-目标对之间的对称性和冗余性。由于难以识别MDP同态或学习相对表示，实际中学习相对化选项仅限于玩具领域。P — 提案：本文引入了抽象化强化学习（ARL）框架，通过动作相似性而非价值相似性来学习相对化选项。提出了两种算法：一种通用算法使用动作相似性隐式学习相对化选项，另一种针对高维操作任务显式引入平移不变性。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>ARL在AntMaze、Kitchen和Adroit操作任务中，成功率比平面策略和层次化基线（如HIRO、HIGL）高出15-30%。在AntMaze大型任务中，ARL成功率达到72.3%，而最佳基线为54.1%。</p>
+<h3>消融实验</h3>
+<p>移除动作相似性目标（改用价值相似性）导致AntMaze任务成功率下降18%。解耦高层和低层价值函数至关重要：共享它们会使性能下降22%。</p>
+<h3>局限性</h3>
+<p>['该方法假设确定性转移以获得理论界限；随机环境可能需要额外处理。', '平移不变性偏置是手工设计的，可能无法泛化到所有任务对称性。', '评估仅限于模拟机器人任务；未展示现实世界的适用性。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了一种在相似上下文中重用次优数据的原则性方法，直接解决了离线RL中的数据覆盖问题。</li>
+<li>提供了无需额外超参数的实用算法，易于集成到现有的离线GCRL流程中。</li>
+<li>为RL中更灵活的归纳偏置打开了与几何深度学习连接的可能性。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将ARL应用于具有自然对称性的真实机器人数据集（例如拾取和放置、装配）。</li>
+<li>[ ] 结合动作分块或时间抽象化以进一步减少时间跨度。</li>
+<li>[ ] 探索通过等变网络学习对称性，而非手工编码的平移不变性。</li>
+<li>[ ] 将理论分析扩展到随机MDP和部分可观测性。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22711</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

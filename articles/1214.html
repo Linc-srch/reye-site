@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation</h2>
+    <h2 class="lang-zh">SegCompass：利用稀疏自编码器探索可解释对齐以增强推理分割</h2>
+    <div class="meta">
+      Zhenyu Lu, Liupeng Li, Jinpeng Wang, Haoqian Kang, Yan Feng, Ke Chen, Yaowei Wang &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22658" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>SegCompass introduces a novel SAE-driven interpretable alignment pathway that bridges reasoning and segmentation, achieving SOTA performance while providing a white-box view of the model's decision process.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出SegCompass，通过稀疏自编码器（SAE）将链式推理与视觉分割对齐到共享的高维稀疏概念空间，实现了白盒化的可解释连接。该方法在五个基准上达到或超越最先进性能，并揭示了稀疏概念质量与掩码精度之间的强相关性。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — segcompass</h1>
+<p><strong>Key Takeaways</strong>
+- SegCompass uses a Sparse Autoencoder (SAE) to create an explicit, interpretable, and differentiable alignment between chain-of-thought reasoning and visual segmentation.
+- The SAE maps both CoT and visual tokens into a shared high-dimensional sparse concept space, enabling a white-box connection that is more traceable than latent queries and more coherent than textual readouts.
+- The model is trained end-to-end with reinforcement learning for the reasoning path and supervised learning for segmentation, unifying both objectives.
+- SegCompass matches or surpasses state-of-the-art performance on five benchmarks (gRefCOCO, RefCOCO, RefCOCO+, RefCOCOg, ReasonSeg).
+- Qualitative and quantitative analyses show a strong correlation between the quality of learned sparse concepts and final mask accuracy.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation</li>
+<li><strong>Alias:</strong> segcompass</li>
+<li><strong>Authors:</strong> Zhenyu Lu, Liupeng Li, Jinpeng Wang, Haoqian Kang, Yan Feng, Ke Chen, Yaowei Wang</li>
+<li><strong>arXiv ID:</strong> 2605.22658</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22658</li>
+<li>HTML: https://arxiv.org/html/2605.22658v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22658</li>
+<li><strong>Tags:</strong> sparse-autoencoder, reasoning-segmentation, interpretable-alignment, multimodal-llm, chain-of-thought</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>SegCompass introduces a novel SAE-driven interpretable alignment pathway that bridges reasoning and segmentation, achieving SOTA performance while providing a white-box view of the model's decision process.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Reasoning segmentation requires models to localize objects based on complex, multi-step instructions. Existing methods either use opaque latent query alignment or textual localization readouts that are merely readable but not truly interpretable, lacking a transparent connection between reasoning and visual perception.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>LISA bridges MLLMs and reasoning segmentation via a special token, but relies on opaque latent features.</li>
+<li>PerceptionGPT, PixelLM, SegLLM, OMG-LLaVA, GroundHog, GLaMM, UniPixel, UniRES, LIRA, RAS follow the same latent query alignment paradigm.</li>
+<li>SAM4MLLM, Seg-Zero, Seg-R1, VisionReasoner generate textual coordinates via CoT and feed them to SAM, but these are post-hoc and not truly interpretable.</li>
+<li>Text4Seg generates textual patch indices and applies CRF or SAM for mask refinement.</li>
+<li>SAEs have been used to interpret LLM internals by disentangling features; SAE-V extends this to multimodal LLMs.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Current reasoning segmentation pipelines fail to transparently connect compositional reasoning to visual perception. Latent query alignment is end-to-end but opaque, while textual localization readout is merely readable and often an unconstrained post-hoc step, lacking a truly interpretable and verifiable connection from reasoning to mask prediction.</p>
+<h3>P — Proposal</h3>
+<p>SegCompass leverages a Sparse Autoencoder (SAE) to map both chain-of-thought (CoT) tokens and visual tokens into a shared high-dimensional sparse concept space. A query codebook selects salient concepts, which are then spatially grounded by a slot mapper into a multi-slot heatmap that guides the final mask decoder, all trained end-to-end with reinforcement learning for reasoning and supervised segmentation loss.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>SegCompass matches or surpasses state-of-the-art on gRefCOCO, RefCOCO, RefCOCO+, RefCOCOg, and ReasonSeg. For example, on ReasonSeg (val), it achieves 56.3 mIoU, outperforming LISA (52.9), PerceptionGPT (53.8), and LIRA (55.1). On gRefCOCO (testA), it achieves 68.2 mIoU, surpassing prior best 67.4.</p>
+<h3>Ablation</h3>
+<p>Removing the SAE module causes a 4.2 mIoU drop on ReasonSeg, and replacing the sparse concept space with a dense latent space reduces performance by 3.1 mIoU, confirming the importance of the SAE-driven sparse alignment.</p>
+<h3>Limitations</h3>
+<p>['The SAE introduces additional computational overhead during training and inference due to the high-dimensional sparse mapping.', 'Interpretability analysis is currently qualitative and correlational; causal intervention studies are needed to confirm that specific concepts directly cause mask predictions.', 'The method has only been evaluated on segmentation tasks; its applicability to other dense prediction tasks (e.g., detection, depth estimation) is unexplored.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a concrete method to make multimodal LLM reasoning transparent for safety-critical applications like robotics and medical imaging.</li>
+<li>Demonstrates that sparse autoencoders can serve as a bridge between language reasoning and visual perception, opening new avenues for interpretable AI.</li>
+<li>The unified RL + supervised training paradigm could be adapted to other vision-language tasks requiring both reasoning and grounding.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply causal intervention on specific sparse concepts to verify their direct role in mask prediction.</li>
+<li>[ ] Extend the SAE-driven alignment to other dense prediction tasks such as referring detection or panoptic segmentation.</li>
+<li>[ ] Explore scaling the SAE concept space to larger vocabularies for finer-grained interpretability.</li>
+<li>[ ] Investigate the use of SegCompass for safety-critical applications where model reasoning must be auditable.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>SegCompass：利用稀疏自编码器探索可解释对齐以增强推理分割</h1>
+<p><strong>主要结论</strong>
+- SegCompass使用稀疏自编码器（SAE）在链式推理与视觉分割之间建立显式、可解释且可微的对齐。
+- SAE将推理和视觉token映射到共享的高维稀疏概念空间，提供比潜在查询更可追溯、比文本读出更连贯的白盒连接。
+- 模型通过强化学习优化推理路径、监督学习优化分割，端到端统一训练。
+- 在gRefCOCO、RefCOCO、RefCOCO+、RefCOCOg和ReasonSeg五个基准上达到或超越最先进性能。
+- 定性和定量分析表明，学习到的稀疏概念质量与最终掩码精度高度相关。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>SegCompass提出了一种新颖的SAE驱动的可解释对齐路径，在实现最先进性能的同时，提供了模型决策过程的白盒视图。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：推理分割要求模型基于复杂多步指令定位目标，现有方法要么使用不透明的潜在查询对齐，要么使用仅可读但非真正可解释的文本定位读出，缺乏推理与视觉感知之间的透明连接。相关工作：LISA通过特殊token桥接多模态大模型与推理分割，但依赖不透明潜在特征；PerceptionGPT、PixelLM等遵循相同范式；SAM4MLLM等通过CoT生成文本坐标后馈入SAM，但属于事后步骤且非真正可解释；SAE已被用于解释大模型内部机制，SAE-V将其扩展到多模态大模型。差距：当前推理分割流程无法透明地连接组合推理与视觉感知，潜在查询对齐端到端但不透明，文本定位读出仅可读且常为无约束的事后步骤，缺乏从推理到掩码预测的真正可解释且可验证的连接。提案：SegCompass利用稀疏自编码器（SAE）将链式推理token和视觉token映射到共享的高维稀疏概念空间，查询码本选择显著概念，再由槽映射器将其空间接地为多槽热图，引导最终掩码解码器，整个流程通过强化学习优化推理、监督分割损失端到端训练。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>主要结果：SegCompass在gRefCOCO、RefCOCO、RefCOCO+、RefCOCOg和ReasonSeg上达到或超越最先进性能。例如，在ReasonSeg（验证集）上达到56.3 mIoU，超过LISA（52.9）、PerceptionGPT（53.8）和LIRA（55.1）；在gRefCOCO（testA）上达到68.2 mIoU，超过此前最佳67.4。</p>
+<h3>消融实验</h3>
+<p>移除SAE模块导致ReasonSeg上mIoU下降4.2；将稀疏概念空间替换为密集潜在空间导致性能下降3.1 mIoU，证实了SAE驱动的稀疏对齐的重要性。</p>
+<h3>局限性</h3>
+<p>['SAE在训练和推理中因高维稀疏映射引入额外计算开销。', '当前可解释性分析为定性和相关性研究，需因果干预实验确认特定概念直接导致掩码预测。', '该方法仅在分割任务上评估，在其他密集预测任务（如检测、深度估计）上的适用性尚未探索。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>为机器人、医学影像等安全关键应用提供了使多模态大模型推理透明化的具体方法。</li>
+<li>证明稀疏自编码器可作为语言推理与视觉感知之间的桥梁，为可解释AI开辟新途径。</li>
+<li>统一的强化学习加监督训练范式可推广至其他需要推理与接地的视觉语言任务。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 对特定稀疏概念进行因果干预，验证其在掩码预测中的直接作用。</li>
+<li>[ ] 将SAE驱动的对齐扩展到其他密集预测任务，如指代检测或全景分割。</li>
+<li>[ ] 探索扩大SAE概念空间词汇量以实现更细粒度的可解释性。</li>
+<li>[ ] 研究SegCompass在需要可审计模型推理的安全关键应用中的使用。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22658</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

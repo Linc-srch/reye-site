@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two is better than one: A Collapse-free Multi-Reward RLIF Training Framework | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Two is better than one: A Collapse-free Multi-Reward RLIF Training Framework</h2>
+    <h2 class="lang-zh">两个优于一个：一种无崩溃的多奖励RLIF训练框架</h2>
+    <div class="meta">
+      Shourov Joarder, Diganta Sikdar, Ahsan Habib Akash, Binod Bhattarai, Prashnna Gyawali &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22620" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper demonstrates that combining two complementary internal rewards with targeted regularization can stabilize unsupervised RL for LLM reasoning, matching supervised methods without external labels.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出了一种多奖励RLIF框架，通过结合答案级聚类投票奖励和完成级自确信度奖励，并引入GDPO归一化和KL-Cov正则化，有效解决了单奖励RLIF方法中的奖励黑客攻击和熵崩溃问题。实验表明，该方法在数学和代码基准测试上性能接近有监督的RLVR方法，且训练过程稳定。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — multi-reward-rlif</h1>
+<p><strong>Key Takeaways</strong>
+- Single-reward RLIF methods suffer from reward hacking, entropy collapse, and degraded reasoning due to over-optimization of a single proxy.
+- Proposes a multi-reward RLIF framework combining answer-level cluster voting reward and completion-level self-certainty reward.
+- GDPO-based normalization prevents reward-scale imbalance between the two reward channels.
+- KL-Cov regularization targets low-entropy high-covariance tokens to prevent entropy collapse while preserving exploration.
+- Achieves stable long-horizon reasoning and performance close to supervised RLVR on math and code benchmarks.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Two is better than one: A Collapse-free Multi-Reward RLIF Training Framework</li>
+<li><strong>Alias:</strong> multi-reward-rlif</li>
+<li><strong>Authors:</strong> Shourov Joarder, Diganta Sikdar, Ahsan Habib Akash, Binod Bhattarai, Prashnna Gyawali</li>
+<li><strong>arXiv ID:</strong> 2605.22620</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22620</li>
+<li>HTML: https://arxiv.org/html/2605.22620v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22620</li>
+<li><strong>Tags:</strong> reinforcement-learning, llm-reasoning, entropy-collapse, multi-reward, unsupervised-rl</li>
+<li><strong>Domains:</strong> ai_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper demonstrates that combining two complementary internal rewards with targeted regularization can stabilize unsupervised RL for LLM reasoning, matching supervised methods without external labels.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Reinforcement learning with verifiable rewards (RLVR) improves LLM reasoning but requires external supervision. Reinforcement learning from internal feedback (RLIF) offers an unsupervised alternative using signals from the model itself, but existing single-reward RLIF methods often lead to reward hacking and entropy collapse.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>INTUITOR (Zhao et al., 2025b) uses self-certainty (KL divergence from uniform) as a single internal reward.</li>
+<li>EMPO (Zhang et al., 2025a) uses entropy minimization via semantic clustering of rollouts.</li>
+<li>TTRL (Zuo et al., 2025) shows majority voting as an effective reward for test-time RL without labels.</li>
+<li>Absolute Zero (Zhao et al., 2025a) and R-Zero (Huang et al., 2025) propose self-play frameworks removing curated datasets.</li>
+<li>Co-rewarding (Zhang et al., 2025c) seeks complementary supervision from multiple views to stabilize self-supervised RL.</li>
+<li>GDPO (Liu et al., 2026) normalizes each reward channel independently within groups to prevent scale dominance.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing RLIF methods rely on a single internal reward signal (e.g., self-certainty or majority voting), which incentivizes entropy reduction and brevity, leading to reward hacking, entropy collapse, and degraded reasoning structure over extended training. No prior work combines multiple complementary internal rewards with targeted regularization to prevent collapse in unsupervised RL for LLMs.</p>
+<h3>P — Proposal</h3>
+<p>The authors propose a multi-reward RLIF framework that decomposes the training signal into an answer-level reward (based on cluster voting of final answers) and a completion-level reward (based on token-wise self-certainty). They apply GDPO-based normalization to balance the two rewards and introduce KL-Cov regularization that penalizes low-entropy, high-covariance tokens responsible for disproportionate entropy reduction, preserving exploration and preventing late-stage collapse.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On five mathematical reasoning benchmarks (GSM8K, MATH, etc.) and two code-generation benchmarks, the method outperforms single-reward RLIF baselines (self-certainty, majority voting) and achieves performance close to supervised RLVR methods. For example, on GSM8K, the method achieves 82.3% accuracy vs. 79.1% for self-certainty and 80.5% for majority voting, while supervised RLVR achieves 83.1%. Training remains stable over extended steps without degradation.</p>
+<h3>Ablation</h3>
+<p>Removing KL-Cov regularization leads to a 4.2% drop in average accuracy across benchmarks and a 15% faster entropy collapse (measured by token entropy reduction rate). Removing GDPO normalization causes reward scale dominance, with the self-certainty reward overwhelming the cluster voting reward, resulting in a 3.8% performance drop.</p>
+<h3>Limitations</h3>
+<p>["The method still relies on the model's own outputs for reward signals, which may limit improvement if the model's initial generations are poor.", 'The cluster voting reward requires defining answer equivalence, which may be non-trivial for open-ended generation tasks.', 'KL-Cov regularization adds computational overhead for identifying high-covariance tokens per batch.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a principled way to combine multiple internal rewards for unsupervised RL, directly addressing the collapse problem that plagues single-reward methods.</li>
+<li>The KL-Cov regularization technique is a targeted solution to entropy collapse, preserving structural tokens (e.g., 'however', 'because') critical for chain-of-thought reasoning.</li>
+<li>Demonstrates that unsupervised RL can approach supervised performance, which is crucial for scaling reasoning to domains without ground-truth labels.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply the multi-reward RLIF framework to other domains like scientific reasoning or dialogue where external rewards are scarce.</li>
+<li>[ ] Investigate adaptive weighting of the two reward channels during training instead of fixed weights.</li>
+<li>[ ] Explore combining more than two complementary internal rewards (e.g., diversity, coherence) with similar normalization and regularization.</li>
+<li>[ ] Test the method on larger models (e.g., 70B+) to verify stability at scale.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>两个优于一个：一种无崩溃的多奖励RLIF训练框架</h1>
+<p><strong>主要结论</strong>
+- 单奖励RLIF方法因过度优化单一代理奖励，容易导致奖励黑客攻击、熵崩溃和推理能力退化。
+- 提出的多奖励RLIF框架结合了答案级聚类投票奖励和完成级自确信度奖励，通过GDPO归一化平衡两种奖励尺度。
+- KL-Cov正则化针对低熵高协方差令牌，防止熵崩溃同时保留探索能力。
+- 该方法在数学和代码基准测试上实现了接近有监督RLVR的稳定长程推理性能。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文证明，结合两种互补的内部奖励和针对性正则化，可以稳定无监督RL用于LLM推理，无需外部标签即可匹配有监督方法。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：基于可验证奖励的强化学习（RLVR）改进了LLM推理，但需要外部监督。基于内部反馈的强化学习（RLIF）利用模型自身信号提供无监督替代方案，但现有单奖励RLIF方法常导致奖励黑客攻击和熵崩溃。相关工作：INTUITOR使用自确信度作为单一内部奖励；EMPO通过语义聚类进行熵最小化；TTRL展示了多数投票作为无标签测试时RL的有效奖励；Absolute Zero和R-Zero提出了去除精心策划数据集的自博弈框架；Co-rewarding寻求多视角互补监督以稳定自监督RL；GDPO独立归一化每个奖励通道以防止尺度主导。差距：现有RLIF方法依赖单一内部奖励信号，激励熵减少和简洁性，导致奖励黑客攻击、熵崩溃和推理结构退化，尚无工作结合多种互补内部奖励和针对性正则化来防止LLM无监督RL中的崩溃。提议：作者提出多奖励RLIF框架，将训练信号分解为答案级奖励（基于最终答案的聚类投票）和完成级奖励（基于令牌级自确信度），应用GDPO归一化平衡两种奖励，并引入KL-Cov正则化惩罚低熵高协方差令牌，保留探索能力，防止后期崩溃。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在五个数学推理基准（GSM8K、MATH等）和两个代码生成基准上，该方法优于单奖励RLIF基线（自确信度、多数投票），性能接近有监督RLVR方法。例如，在GSM8K上，该方法达到82.3%准确率，自确信度为79.1%，多数投票为80.5%，而有监督RLVR为83.1%。训练在扩展步骤中保持稳定，无退化。</p>
+<h3>消融实验</h3>
+<p>移除KL-Cov正则化导致平均准确率下降4.2%，熵崩溃速度加快15%（以令牌熵降低率衡量）。移除GDPO归一化导致奖励尺度主导，自确信度奖励压倒聚类投票奖励，性能下降3.8%。</p>
+<h3>局限性</h3>
+<p>['该方法仍依赖模型自身输出作为奖励信号，若模型初始生成质量差，可能限制改进。', '聚类投票奖励需要定义答案等价性，对于开放式生成任务可能较为困难。', 'KL-Cov正则化增加了每批次识别高协方差令牌的计算开销。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了一种结合多种内部奖励进行无监督RL的原则性方法，直接解决了单奖励方法中的崩溃问题。</li>
+<li>KL-Cov正则化技术是针对熵崩溃的针对性解决方案，保留了链式推理中关键的结构性令牌（如“然而”、“因为”）。</li>
+<li>证明无监督RL可以接近有监督性能，这对于将推理扩展到缺乏真实标签的领域至关重要。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将多奖励RLIF框架应用于其他领域，如科学推理或对话，这些领域外部奖励稀缺。</li>
+<li>[ ] 研究训练过程中两个奖励通道的自适应权重，而非固定权重。</li>
+<li>[ ] 探索结合两个以上互补内部奖励（如多样性、连贯性），并采用类似的归一化和正则化。</li>
+<li>[ ] 在更大模型（如70B+）上测试该方法，以验证大规模下的稳定性。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22620</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

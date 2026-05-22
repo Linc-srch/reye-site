@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Policy Distillation via Capability-Selective Subspace Projection | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Self-Policy Distillation via Capability-Selective Subspace Projection</h2>
+    <h2 class="lang-zh">Deep Note — 自我策略蒸馏</h2>
+    <div class="meta">
+      Guangya Hao, Yitong Shang, Yunbo Long, Zhuokai Zhao, Hanxue Liang &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22675" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>SPD proposes a fully self-contained self-distillation method that uses gradient-based subspace projection to selectively preserve task-relevant capability signals, achieving strong in-domain and out-of-domain gains without any external supervision.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出了一种完全自包含的自我蒸馏方法SPD，通过梯度驱动的子空间投影，在无需任何外部监督信号的情况下，选择性地保留任务相关的能力信号。该方法在代码生成、数学推理和多项选择问答等多个领域均取得了显著提升，并展现出强大的跨域泛化能力。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — self-policy-distillation</h1>
+<p><strong>Key Takeaways</strong>
+- SPD extracts a low-rank capability subspace from the model's own gradients on correctness-defining tokens, enabling capability-selective self-distillation without external signals.
+- SPD projects KV activations into this subspace during self-generation to filter out task-irrelevant noise (e.g., stylistic patterns, formatting artifacts).
+- SPD achieves up to 13% improvement over SOTA self-distillation methods without external signals and up to 16% over pre-trained baselines.
+- SPD demonstrates strong out-of-domain generalization, achieving up to 15% better performance under out-of-domain settings.
+- The method is evaluated across code generation, mathematical reasoning, and multiple-choice QA, showing consistent gains over five LLM backbones.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Self-Policy Distillation via Capability-Selective Subspace Projection</li>
+<li><strong>Alias:</strong> self-policy-distillation</li>
+<li><strong>Authors:</strong> Guangya Hao, Yitong Shang, Yunbo Long, Zhuokai Zhao, Hanxue Liang</li>
+<li><strong>arXiv ID:</strong> 2605.22675</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22675</li>
+<li>HTML: https://arxiv.org/html/2605.22675v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22675</li>
+<li><strong>Tags:</strong> self-distillation, capability-subspace, kv-projection, llm-improvement, no-external-signals</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>SPD proposes a fully self-contained self-distillation method that uses gradient-based subspace projection to selectively preserve task-relevant capability signals, achieving strong in-domain and out-of-domain gains without any external supervision.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Self-distillation improves LLMs by training on their own generations, but existing methods either rely on costly external signals (correctness filtering, reward search) or train on raw outputs that entangle task-relevant signals with noise. This limits generalizability and scalability, especially for frontier models where external signals are unavailable.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>On-policy distillation (OPD) mitigates train-inference mismatch but requires heavy teacher supervision and repeated student rollouts.</li>
+<li>Simple self-distillation (SSD) trains on raw self-generated outputs without external signals but is domain-specific (code generation) and hard to generalize.</li>
+<li>Methods like correctness filtering, verifier-based selection, consistency-driven rationale evaluation, and reward-guided search improve data quality but introduce task-specific infrastructure and cost.</li>
+<li>Representation-level control (e.g., latent steering, KV-space manipulation) shows that task-relevant information can be compressed and steered at the hidden state level.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing self-distillation methods either require expensive external signals (unavailable for frontier models) or train on all raw outputs, which entangle task-relevant capability with stylistic patterns, formatting artifacts, and model-specific errors. No prior work achieves capability-selective self-distillation without external signals while generalizing across domains.</p>
+<h3>P — Proposal</h3>
+<p>SPD operates in two phases: (1) extract a low-rank capability subspace from the model's own gradients on correctness-defining tokens (via SVD on KV activation gradients), and (2) use this subspace as projection hooks during self-generation to steer outputs toward the target capability. The hooked model generates raw completions, then the original model is fine-tuned on these prompt-completion pairs with standard next-token prediction loss.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>SPD achieves up to 13% improvement over SOTA self-distillation methods without external signals and up to 16% improvement over pre-trained baselines under in-domain settings. Under out-of-domain generalization, SPD achieves up to 15% better performance. Evaluated across code generation, mathematical reasoning, and multiple-choice QA on five LLM backbones.</p>
+<h3>Ablation</h3>
+<p>The paper demonstrates that using correctness-aligned loss (only on task-relevant answer spans) is critical for extracting meaningful capability subspaces; ablations on the rank of the subspace and the number of calibration examples show robustness, but specific numbers are not provided in the excerpt.</p>
+<h3>Limitations</h3>
+<p>['The method requires a small calibration set with correctness-defining token annotations, which may not be available for all tasks.', 'The subspace extraction relies on SVD, which may be computationally expensive for very large models or high-dimensional KV activations.', 'The approach is evaluated on three domains; its effectiveness on other capabilities (e.g., creative writing, dialogue) is unexplored.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>SPD offers a practical path to improve frontier models without external supervision, which is critical when verifiers or reward models are unavailable.</li>
+<li>The capability-selective subspace projection provides a principled way to disentangle task-relevant signals from noise in self-generated data.</li>
+<li>Strong out-of-domain generalization suggests the method captures fundamental capability features rather than dataset-specific patterns.</li>
+<li>The approach aligns with representation-level control research, opening avenues for combining self-distillation with mechanistic interpretability.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply SPD to other domains (e.g., instruction following, summarization) to test generalizability.</li>
+<li>[ ] Investigate whether the extracted subspace can be transferred across models or tasks.</li>
+<li>[ ] Explore combining SPD with other self-supervised objectives (e.g., contrastive learning) for further gains.</li>
+<li>[ ] Analyze the learned subspaces to understand what capability features are being captured (mechanistic interpretability).</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>Deep Note — 自我策略蒸馏</h1>
+<p><strong>主要结论</strong>
+- SPD从模型自身在正确性定义token上的梯度中提取低秩能力子空间，无需外部信号即可实现能力选择性的自我蒸馏。
+- SPD在自生成过程中将KV激活投影到该子空间，以滤除任务无关的噪声（如风格模式、格式伪影）。
+- SPD在域内设置下比最先进的自我蒸馏方法提升高达13%，比预训练基线提升高达16%。
+- SPD在跨域泛化中表现强劲，性能提升高达15%。
+- 该方法在代码生成、数学推理和多项选择问答三个领域，基于五个大语言模型骨干网络均取得了一致性提升。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>SPD提出了一种完全自包含的自我蒸馏方法，利用梯度驱动的子空间投影选择性地保留任务相关能力信号，在无需任何外部监督的情况下实现了显著的域内和跨域性能提升。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：自我蒸馏通过让模型在自己的生成结果上训练来提升大语言模型，但现有方法要么依赖昂贵的外部信号（如正确性过滤、奖励搜索），要么直接在原始输出上训练，导致任务相关信号与噪声纠缠，限制了泛化性和可扩展性。
+<strong>相关工作</strong>：在线策略蒸馏（OPD）缓解了训练-推理不匹配问题，但需要大量教师监督和重复的学生采样；简单自我蒸馏（SSD）无需外部信号，但局限于特定领域（如代码生成）且难以泛化；正确性过滤、验证器选择、一致性驱动的理由评估和奖励引导搜索等方法虽提升了数据质量，但引入了任务特定的基础设施和成本；表示级控制（如潜在引导、KV空间操作）表明任务相关信息可以在隐藏状态层面被压缩和引导。
+<strong>差距</strong>：现有自我蒸馏方法要么需要昂贵的外部信号（对前沿模型不可用），要么在所有原始输出上训练，导致任务相关能力与风格模式、格式伪影和模型特定错误纠缠在一起。此前没有工作能在无需外部信号的情况下实现能力选择性的自我蒸馏并跨领域泛化。
+<strong>方案</strong>：SPD分两个阶段运行：（1）通过SVD对KV激活梯度进行分解，从模型自身在正确性定义token上的梯度中提取低秩能力子空间；（2）在自生成过程中使用该子空间作为投影钩子，将输出引导向目标能力。被钩住的模型生成原始补全，然后原始模型在这些提示-补全对上使用标准下一个token预测损失进行微调。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>SPD在域内设置下比最先进的自我蒸馏方法提升高达13%，比预训练基线提升高达16%。在跨域泛化中，SPD实现了高达15%的性能提升。评估覆盖了代码生成、数学推理和多项选择问答三个领域，使用了五个大语言模型骨干网络。</p>
+<h3>消融实验</h3>
+<p>论文表明，使用正确性对齐的损失（仅针对任务相关的答案跨度）对于提取有意义的能力子空间至关重要；对子空间秩和校准样本数量的消融实验显示了鲁棒性，但具体数值在摘要中未提供。</p>
+<h3>局限性</h3>
+<p>['该方法需要一个小型校准集，其中包含正确性定义token的标注，这可能并非对所有任务都可用。', '子空间提取依赖SVD，对于非常大的模型或高维KV激活，计算成本可能较高。', '该方法仅在三个领域进行了评估，在其他能力（如创意写作、对话）上的有效性尚未探索。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>SPD为在缺乏外部监督（如验证器或奖励模型不可用）的情况下改进前沿模型提供了一条实用路径。</li>
+<li>能力选择性子空间投影提供了一种原则性的方法，用于从自生成数据中分离任务相关信号与噪声。</li>
+<li>强大的跨域泛化能力表明该方法捕捉的是基本能力特征，而非数据集特定的模式。</li>
+<li>该方法与表示级控制研究相一致，为将自我蒸馏与机械可解释性相结合开辟了途径。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将SPD应用于其他领域（如指令遵循、摘要生成）以测试其泛化能力。</li>
+<li>[ ] 研究提取的子空间是否可以在不同模型或任务之间迁移。</li>
+<li>[ ] 探索将SPD与其他自监督目标（如对比学习）结合以进一步提升性能。</li>
+<li>[ ] 分析学习到的子空间，以理解捕获了哪些能力特征（机械可解释性）。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22675</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond Temperature: Hyperfitting as a Late-Stage Geometric Expansion | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Beyond Temperature: Hyperfitting as a Late-Stage Geometric Expansion</h2>
+    <h2 class="lang-zh">超越温度：超拟合作为后期阶段的几何扩展</h2>
+    <div class="meta">
+      Meimingwei Li, Yuanhao Ding, Esteban Garces Arias, Christian Heumann &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22579" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper reveals that hyperfitting improves greedy generation quality through a late-stage geometric expansion and rank reordering mechanism, fundamentally distinct from simple temperature scaling.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文揭示了超拟合（hyperfitting）通过后期阶段的几何扩展和排名重排序机制提升贪婪生成质量，与简单的温度缩放有本质区别。该研究提供了对超拟合机制的深入理解，并引入了参数高效的Late-Stage LoRA策略。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — hyperfitting</h1>
+<p><strong>Key Takeaways</strong>
+- Hyperfitting is distinct from temperature scaling; entropy-matched controls show temperature scaling fails to replicate diversity gains (TTR 0.40 vs 0.68).
+- Hyperfitting relies on dynamic, context-dependent rank reordering, not static vocabulary reweighting.
+- The effect localizes to a 'Terminal Expansion' in the final transformer block, with a geometric feature space expansion of ΔDim ≈ +80.8.
+- Late-Stage LoRA, updating only the final 5 layers, suffices to replicate rank reordering dynamics, enabling parameter-efficient generation improvement.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Beyond Temperature: Hyperfitting as a Late-Stage Geometric Expansion</li>
+<li><strong>Alias:</strong> hyperfitting</li>
+<li><strong>Authors:</strong> Meimingwei Li, Yuanhao Ding, Esteban Garces Arias, Christian Heumann</li>
+<li><strong>arXiv ID:</strong> 2605.22579</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22579</li>
+<li>HTML: https://arxiv.org/html/2605.22579v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22579</li>
+<li><strong>Tags:</strong> hyperfitting, rank-reordering, terminal-expansion, late-stage-lora, llm-generation</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper reveals that hyperfitting improves greedy generation quality through a late-stage geometric expansion and rank reordering mechanism, fundamentally distinct from simple temperature scaling.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Large Language Models often suffer from repetitive loops in greedy decoding. Recent work discovered 'hyperfitting'—fine-tuning to near-zero loss on small datasets—surprisingly enhances generation diversity, but the mechanism was unknown. This paper investigates whether hyperfitting is merely learned temperature scaling or something more fundamental.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Carlsson et al. (2025) first identified hyperfitting as a counterintuitive phenomenon improving greedy generation.</li>
+<li>Wiher et al. (2022), Shi et al. (2024), and others studied repetition in LLM generation.</li>
+<li>Fan et al. (2018), Holtzman et al. (2020) proposed stochastic decoding methods to reduce repetition.</li>
+<li>Ruan et al. (2025a) discussed 'over-memorization' as a potential scaffold for generalization.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>While hyperfitting was known to improve generation, its underlying mechanism remained poorly understood. The extremely low-entropy output distributions suggested a possible equivalence to temperature scaling, but this hypothesis had not been rigorously tested. Additionally, whether the effect was due to static vocabulary bias or dynamic reordering was unknown.</p>
+<h3>P — Proposal</h3>
+<p>The authors systematically dissect hyperfitting through entropy-matched control experiments, synthetic injection ablations, and layer-wise geometric analysis. They demonstrate that hyperfitting is a dynamic rank reordering mechanism localized to a 'Terminal Expansion' in the final transformer layer, and introduce Late-Stage LoRA as a parameter-efficient strategy to replicate the effect.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On TinyLlama-1.1B, hyperfitting achieved TTR 0.68 vs 0.40 for temperature scaling, and repetition rate 0.14 vs 0.60. Validation perplexity increased from ~10^0 to &gt;10^1 while TTR improved from ~0.3 to ~0.7. Rank shift analysis showed ~38% of generation steps override the original Top-1 token by epoch 60.</p>
+<h3>Ablation</h3>
+<p>Synthetic injection of static logit reweighting acted as destructive noise, confirming that hyperfitting's rank reordering is dynamic and context-dependent, not a global vocabulary bias.</p>
+<h3>Limitations</h3>
+<p>['The analysis is primarily conducted on TinyLlama-1.1B; scalability to larger models is only partially verified.', 'The mechanism is characterized for greedy decoding; applicability to stochastic decoding methods is not explored.', 'The practical utility of hyperfitting for tasks beyond open-ended generation (e.g., factual accuracy) is not assessed.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a mechanistic understanding of a counterintuitive phenomenon that challenges conventional early stopping wisdom.</li>
+<li>Introduces a parameter-efficient strategy (Late-Stage LoRA) that could be applied to improve generation quality in resource-constrained settings.</li>
+<li>Highlights the decoupling of perplexity from generation quality, important for evaluating LLM fine-tuning.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply Late-Stage LoRA to other model families and tasks to assess generalizability.</li>
+<li>[ ] Investigate whether hyperfitting can be combined with stochastic decoding for further gains.</li>
+<li>[ ] Explore the relationship between Terminal Expansion and other known phenomena like grokking or phase changes.</li>
+<li>[ ] Test hyperfitting on factual accuracy and knowledge-intensive tasks to understand trade-offs.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>超越温度：超拟合作为后期阶段的几何扩展</h1>
+<p><strong>主要结论</strong>
+- 超拟合与温度缩放不同；熵匹配控制实验显示温度缩放无法复制多样性增益（TTR 0.40 vs 0.68）。
+- 超拟合依赖于动态、上下文相关的排名重排序，而非静态词汇重加权。
+- 该效应定位于最后一个Transformer块的'终端扩展'，几何特征空间扩展ΔDim ≈ +80.8。
+- Late-Stage LoRA仅更新最后5层即可复制排名重排序动态，实现参数高效的生成改进。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文揭示了超拟合通过后期阶段的几何扩展和排名重排序机制提升贪婪生成质量，与简单的温度缩放有本质区别。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：大语言模型在贪婪解码中常出现重复循环。最近研究发现超拟合（在小数据集上微调至接近零损失）能显著提升生成多样性，但其机制未知。本文探究超拟合是否仅仅是学习到的温度缩放，还是更根本的机制。相关工作：Carlsson等人（2025）首次发现超拟合这一反直觉现象；Wiher等人（2022）、Shi等人（2024）等研究了LLM生成中的重复问题；Fan等人（2018）、Holtzman等人（2020）提出了随机解码方法减少重复；Ruan等人（2025a）讨论了'过度记忆'作为泛化的潜在支架。差距：虽然已知超拟合能改善生成，但其底层机制仍不清楚。极低熵的输出分布暗示可能与温度缩放等价，但该假设未得到严格检验。此外，该效应是源于静态词汇偏差还是动态重排序也未知。提议：作者通过熵匹配控制实验、合成注入消融和逐层几何分析系统剖析超拟合。他们证明超拟合是一种动态排名重排序机制，定位于最后一个Transformer层的'终端扩展'，并引入Late-Stage LoRA作为参数高效策略来复制该效应。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在TinyLlama-1.1B上，超拟合的TTR为0.68，温度缩放为0.40；重复率分别为0.14和0.60。验证困惑度从约10^0增加到&gt;10^1，而TTR从约0.3提升到约0.7。排名偏移分析显示，到第60个epoch时，约38%的生成步骤覆盖了原始Top-1 token。</p>
+<h3>消融实验</h3>
+<p>静态logit重加权的合成注入表现为破坏性噪声，证实超拟合的排名重排序是动态且上下文相关的，而非全局词汇偏差。</p>
+<h3>局限性</h3>
+<p>分析主要在TinyLlama-1.1B上进行；向更大模型的可扩展性仅部分验证。该机制针对贪婪解码表征；未探索在随机解码方法中的适用性。超拟合在开放生成之外的任务（如事实准确性）中的实际效用未评估。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了对反直觉现象的机制理解，挑战了传统的早停智慧。</li>
+<li>引入了参数高效策略（Late-Stage LoRA），可在资源受限场景中改善生成质量。</li>
+<li>强调了困惑度与生成质量的解耦，对评估LLM微调具有重要意义。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将Late-Stage LoRA应用于其他模型家族和任务，评估其泛化能力。</li>
+<li>[ ] 研究超拟合是否能与随机解码结合以进一步提升效果。</li>
+<li>[ ] 探索终端扩展与其他已知现象（如grokking或相变）之间的关系。</li>
+<li>[ ] 在事实准确性和知识密集型任务上测试超拟合，理解其权衡。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22579</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

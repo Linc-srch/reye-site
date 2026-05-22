@@ -20,7 +20,7 @@
 
   <article class="glass-card article-detail">
     <h2 class="lang-en">Post-Training is About States, Not Tokens: A State Distribution View of SFT, RL, and On-Policy Distillation</h2>
-    <h2 class="lang-zh">Post-Training is About States, Not Tokens: A State Distribution View of SFT, RL, and On-Policy Distillation</h2>
+    <h2 class="lang-zh">后训练关乎状态而非词元：从状态分布视角看SFT、RL与在线策略蒸馏</h2>
     <div class="meta">
       Dong Nie &nbsp;·&nbsp; 
       2026-05-22 &nbsp;·&nbsp; 
@@ -34,7 +34,7 @@
     </div>
     <div class="lang-zh">
       <h3>摘要</h3>
-      <p>This paper argues that the state distribution on which supervision is applied (on-policy vs off-policy) is as important as the loss function for understanding post-training phenomena like catastrophic forgetting and teacher-student reversal.</p>
+      <p>本文提出后训练方法的效果不仅取决于损失函数，更取决于监督信号施加时的状态分布（在线策略 vs. 离线策略）。通过控制实验证明，在线策略方法（RL、在线策略蒸馏）能保持局部性并避免灾难性遗忘，而离线策略的SFT在数据集状态偏离时会导致严重遗忘。</p>
     </div>
 
     
@@ -83,7 +83,7 @@
 <p>The paper formalizes post-training as state-distribution shaping, decomposing methods into state source (off-policy dataset vs on-policy learner) and signal source (labels, rewards, teacher logits). It conducts controlled experiments with Qwen3-0.6B-Base on GSM8K, using TruthfulQA and MMLU for retention, to demonstrate that on-policy state supervision (RL, OPD) preserves locality and enables improvement beyond degraded teachers.</p>
 <hr />
 <h2>3) Figures</h2>
-<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<p><em>No figures extracted.</em></p>
 <hr />
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
@@ -115,78 +115,46 @@
     </div>
     <div class="lang-zh">
       <h3>深度笔记</h3>
-      <h1>Deep Note — state-distribution-post-training</h1>
-<p><strong>Key Takeaways</strong>
-- Post-training behavior is governed by the interaction between supervision signal and training state distribution, not just the loss function.
-- On-policy state supervision (RL, OPD) preserves locality and can allow students to improve beyond degraded teachers.
-- SFT's off-policy nature can cause catastrophic forgetting when dataset states diverge from the learner's induced states.
-- OPD from a degraded SFT teacher surpasses that teacher on target and retention tasks, despite using the teacher as the only supervision source.
-- Lightweight on-policy RL improves target performance while preserving retention, unlike aggressive SFT.</p>
-<h2>0) Metadata</h2>
-<ul>
-<li><strong>Title:</strong> Post-Training is About States, Not Tokens: A State Distribution View of SFT, RL, and On-Policy Distillation</li>
-<li><strong>Alias:</strong> state-distribution-post-training</li>
-<li><strong>Authors:</strong> Dong Nie</li>
-<li><strong>arXiv ID:</strong> 2605.22731</li>
-<li><strong>Published:</strong> </li>
-<li><strong>Links:</strong></li>
-<li>Abs: https://arxiv.org/abs/2605.22731</li>
-<li>HTML: https://arxiv.org/html/2605.22731v1</li>
-<li>PDF: https://arxiv.org/pdf/2605.22731</li>
-<li><strong>Tags:</strong> post-training, state-distribution, sft, reinforcement-learning, distillation</li>
-<li><strong>Domains:</strong> ai_safety, system_safety</li>
-<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
-</ul>
+      <h1>后训练关乎状态而非词元：从状态分布视角看SFT、RL与在线策略蒸馏</h1>
+<p><strong>主要结论</strong>
+- 后训练行为由监督信号与训练状态分布的交互决定，而非仅由损失函数决定。
+- 在线策略状态监督（RL、在线策略蒸馏）保持局部性，使学生模型能超越退化的教师模型。
+- SFT的离线策略特性在数据集状态与学习器诱导状态偏离时会导致灾难性遗忘。
+- 从退化的SFT教师进行在线策略蒸馏，在目标任务和保留任务上均超越该教师。
+- 轻量级在线策略RL能提升目标性能同时保持保留能力，与激进的SFT形成对比。</p>
 <hr />
-<h2>1) Why-read</h2>
-<p>This paper argues that the state distribution on which supervision is applied (on-policy vs off-policy) is as important as the loss function for understanding post-training phenomena like catastrophic forgetting and teacher-student reversal.</p>
+<h2>1) 阅读理由</h2>
+<p>本文核心主张：监督施加时的状态分布（在线 vs. 离线）与损失函数同等重要；关键观察：在线策略方法能保持局部性并避免遗忘，而离线策略SFT在状态偏离时导致灾难性遗忘。</p>
 <hr />
-<h2>2) CRGP</h2>
-<h3>C — Context</h3>
-<p>Large language model post-training methods (SFT, RL, distillation) are typically analyzed through their loss functions (maximum likelihood, policy gradients, KL divergences). However, these analyses overlook the role of the state distribution—the prompt plus generated prefix—on which the supervision is applied. The paper proposes a unified state-distribution view to explain why methods with similar objectives can behave differently.</p>
-<h3>R — Related work</h3>
-<ul>
-<li>Standard SFT analysis focuses on maximum likelihood and exposure bias.</li>
-<li>RL for LLMs often emphasizes reward modeling and KL penalties.</li>
-<li>Distillation literature compares forward and reverse KL divergences.</li>
-<li>Catastrophic forgetting in LLMs is typically attributed to objective-level factors.</li>
-<li>On-policy vs off-policy distinctions are common in RL but underexplored in LLM post-training.</li>
-</ul>
-<h3>G — Gap</h3>
-<p>Existing analyses of post-training methods focus on loss functions (e.g., forward KL, reverse KL, policy gradients) but neglect the complementary factor of the state distribution on which supervision is applied. This oversight makes it difficult to explain phenomena like catastrophic forgetting under aggressive SFT, stability of RL with sparse rewards, and students outperforming teachers in distillation.</p>
-<h3>P — Proposal</h3>
-<p>The paper formalizes post-training as state-distribution shaping, decomposing methods into state source (off-policy dataset vs on-policy learner) and signal source (labels, rewards, teacher logits). It conducts controlled experiments with Qwen3-0.6B-Base on GSM8K, using TruthfulQA and MMLU for retention, to demonstrate that on-policy state supervision (RL, OPD) preserves locality and enables improvement beyond degraded teachers.</p>
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：大语言模型后训练方法（SFT、RL、蒸馏）通常通过损失函数（最大似然、策略梯度、KL散度）来分析，但这些分析忽略了状态分布——即监督施加时的提示词与生成前缀——的作用。本文提出统一的状态分布视角，解释为何具有相似目标的方法表现不同。</p>
+<p><strong>相关工作</strong>：标准SFT分析聚焦于最大似然和曝光偏差；RL for LLMs常强调奖励建模和KL惩罚；蒸馏文献比较前向与反向KL散度；LLM灾难性遗忘通常归因于目标层面的因素；在线 vs. 离线策略在RL中常见，但在LLM后训练中未被充分探索。</p>
+<p><strong>差距</strong>：现有后训练方法分析聚焦于损失函数（如前向KL、反向KL、策略梯度），但忽略了监督施加时状态分布这一互补因素。这一疏忽导致难以解释激进SFT下的灾难性遗忘、稀疏奖励RL的稳定性以及学生超越教师等现象。</p>
+<p><strong>提案</strong>：本文将后训练形式化为状态分布塑造，将方法分解为状态来源（离线策略数据集 vs. 在线策略学习器）和信号来源（标签、奖励、教师logits）。在Qwen3-0.6B-Base上使用GSM8K进行控制实验，并用TruthfulQA和MMLU评估保留能力，证明在线策略状态监督（RL、在线策略蒸馏）保持局部性并允许超越退化的教师。</p>
 <hr />
-<h2>3) Figures</h2>
-<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<h2>3) 实验</h2>
+<p>在GSM8K上，轻度SFT将准确率从约18%提升至约42%，且对TruthfulQA和MMLU几乎没有遗忘。激进SFT使GSM8K降至约30%，并导致显著的保留损失。从激进SFT教师进行在线策略蒸馏，将GSM8K恢复至约40%，并在TruthfulQA和MMLU上超越该教师。轻量级在线策略RL将GSM8K提升至约38%，同时保持保留能力。</p>
+<h3>消融实验</h3>
+<p>比较轻度与激进SFT表明，激进的离线策略更新导致保留损失，而在线策略方法（在线策略蒸馏、RL）即使在提升目标性能时也能保持保留能力。</p>
+<h3>局限性</h3>
+<p>实验规模较小（Qwen3-0.6B-Base，单GPU），可能无法推广到更大模型或多样化任务。研究未探索多轮交互或长上下文场景，其中状态分布效应可能不同。论文未提供在线策略方法为何能保持保留能力的理论保证，仅基于经验观察。</p>
 <hr />
-<h2>4) Experiments</h2>
-<h3>Main results</h3>
-<p>On GSM8K, mild SFT improved accuracy from ~18% to ~42% with little forgetting on TruthfulQA and MMLU. Stress SFT degraded GSM8K to ~30% and caused substantial retention loss. OPD from the stress SFT teacher recovered GSM8K to ~40% and surpassed the teacher on TruthfulQA and MMLU. Lightweight on-policy RL improved GSM8K to ~38% while preserving retention.</p>
-<h3>Ablation</h3>
-<p>Comparing mild vs stress SFT shows that aggressive off-policy updates cause retention loss, while on-policy methods (OPD, RL) maintain retention even when improving target performance.</p>
-<h3>Limitations</h3>
-<p>['Experiments are small-scale (Qwen3-0.6B-Base, single GPU) and may not generalize to larger models or diverse tasks.', 'The study does not explore multi-turn interactions or long-context scenarios where state distribution effects may differ.', 'The paper does not provide a theoretical guarantee for why on-policy methods preserve retention beyond empirical observation.']</p>
-<hr />
-<h2>5) Why it matters</h2>
+<h2>4) 重要性</h2>
 <ol>
-<li>Provides a unified framework to compare SFT, RL, and distillation, helping researchers choose methods based on state distribution properties.</li>
-<li>Explains why on-policy methods (RL, OPD) can be more robust to forgetting, relevant for safety-critical fine-tuning.</li>
-<li>Suggests that distillation success depends on state source, not just teacher quality, informing knowledge transfer strategies.</li>
-<li>Highlights the importance of state distribution in post-training, which may impact alignment and capability preservation.</li>
+<li>提供了统一框架来比较SFT、RL和蒸馏，帮助研究者根据状态分布特性选择方法。</li>
+<li>解释了在线策略方法（RL、在线策略蒸馏）为何对遗忘更鲁棒，对安全关键微调具有重要价值。</li>
+<li>表明蒸馏成功取决于状态来源而非仅教师质量，为知识迁移策略提供指导。</li>
+<li>强调状态分布在后训练中的重要性，可能影响对齐与能力保持。</li>
 </ol>
 <hr />
-<h2>6) Next steps</h2>
+<h2>5) 下一步</h2>
 <ul>
-<li>[ ] Validate findings on larger models (e.g., 7B, 70B) and more diverse tasks (coding, instruction following).</li>
-<li>[ ] Explore hybrid approaches that combine off-policy efficiency with on-policy locality.</li>
-<li>[ ] Investigate theoretical bounds on state distribution drift and its relation to forgetting.</li>
-<li>[ ] Apply state-distribution view to multi-turn RL and long-context scenarios.</li>
-<li>[ ] Develop practical guidelines for selecting state source based on task and retention requirements.</li>
+<li>[ ] 在更大模型（如7B、70B）和更多样化任务（编码、指令跟随）上验证发现。</li>
+<li>[ ] 探索结合离线策略效率与在线策略局部性的混合方法。</li>
+<li>[ ] 研究状态分布漂移的理论界限及其与遗忘的关系。</li>
+<li>[ ] 将状态分布视角应用于多轮RL和长上下文场景。</li>
+<li>[ ] 基于任务和保留需求制定选择状态来源的实用指南。</li>
 </ul>
-<hr />
-<h2>7) Scoring</h2>
-<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
     </div>
     
 

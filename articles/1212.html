@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clipping Bottleneck: Stabilizing RLVR via Stochastic Recovery of Near-Boundary Signals | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Clipping Bottleneck: Stabilizing RLVR via Stochastic Recovery of Near-Boundary Signals</h2>
+    <h2 class="lang-zh">裁剪瓶颈：通过近边界信号的随机恢复稳定RLVR</h2>
+    <div class="meta">
+      Shuo Yang, Jinda Lu, Chiyu Ma, Kexin Huang, Haoming Meng, Qihui Zhang, Yuyang Liu, Bolin Ding, Guoyin Wang, Li Yuan, Jingren Zhou &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22703" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper identifies the rigid clipping decision in GRPO-style RLVR as a key bottleneck and proposes a minimal stochastic fix (NSR) that recovers near-boundary signals to improve training stability and convergence.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文揭示了GRPO风格RLVR目标中硬裁剪决策的关键瓶颈，并提出了一种极简的随机修复方法（NSR），通过概率性地保留略超出边界的token来恢复近边界信号，从而提升训练稳定性和收敛效果。该方法在7B到30B模型规模及密集和MoE架构上均优于强基线（DAPO、GSPO）。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — nsr</h1>
+<p><strong>Key Takeaways</strong>
+- Hard clipping in GRPO-style RLVR objectives discards informative near-boundary signals, causing instability and suboptimal convergence.
+- Near-boundary Stochastic Rescue (NSR) stochastically retains slightly out-of-bound tokens, transforming rigid binary clipping into a probabilistic admission process.
+- NSR consistently outperforms deterministic soft-clipping baselines, showing that stochastic boundary-local rescue is key to optimization robustness.
+- NSR provides consistent gains over strong baselines (DAPO, GSPO) across model sizes from 7B to 30B and both dense and MoE architectures.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Clipping Bottleneck: Stabilizing RLVR via Stochastic Recovery of Near-Boundary Signals</li>
+<li><strong>Alias:</strong> nsr</li>
+<li><strong>Authors:</strong> Shuo Yang, Jinda Lu, Chiyu Ma, Kexin Huang, Haoming Meng, Qihui Zhang, Yuyang Liu, Bolin Ding, Guoyin Wang, Li Yuan, Jingren Zhou</li>
+<li><strong>arXiv ID:</strong> 2605.22703</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22703</li>
+<li>HTML: https://arxiv.org/html/2605.22703v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22703</li>
+<li><strong>Tags:</strong> reinforcement-learning, llm-reasoning, clipping-bottleneck, training-stability, grpo</li>
+<li><strong>Domains:</strong> ai_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper identifies the rigid clipping decision in GRPO-style RLVR as a key bottleneck and proposes a minimal stochastic fix (NSR) that recovers near-boundary signals to improve training stability and convergence.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Reinforcement Learning with Verifiable Rewards (RLVR) is a central paradigm for scaling LLM reasoning, often using clipping-based GRPO-style objectives. Despite their popularity, these methods suffer from instability, hyperparameter sensitivity, and suboptimal convergence.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>GRPO (Shao et al., 2024) eliminates value networks using group-based advantage estimation.</li>
+<li>DAPO (Yu et al., 2025) extends GRPO with asymmetric clipping and dynamic sampling.</li>
+<li>GSPO (Meng et al., 2026) proposes a generalized surrogate objective for RLVR.</li>
+<li>Prior work modulates exploration via token-level metrics (low-probability, high-entropy) or sample-level attributes (correctness, difficulty).</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing RLVR stabilization methods mostly act as external adjustments to training signals without addressing the internal clipping mechanism. The fundamental question of which internal mechanism creates a key bottleneck for stability and convergence remains unaddressed.</p>
+<h3>P — Proposal</h3>
+<p>The paper proposes Near-boundary Stochastic Rescue (NSR), a plug-and-play modification that stochastically retains tokens falling slightly outside the clipping threshold. NSR transforms the rigid binary clipping decision into a probabilistic admission process, preserving informative near-boundary signals while keeping policy updates conservative.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>NSR yields consistent gains over DAPO and GSPO across model sizes from 7B to 30B (dense and MoE architectures), consuming hundreds of thousands of GPU hours. Controlled interventions show training is robust to gradient magnitude but hypersensitive to the binary clipping decision.</p>
+<h3>Ablation</h3>
+<p>NSR's stochastic boundary-local rescue consistently outperforms deterministic soft-clipping baselines, indicating that the probabilistic admission mechanism is a key driver of optimization robustness beyond expectation-level smoothing.</p>
+<h3>Limitations</h3>
+<p>['The analysis is limited to GRPO-style clipping objectives; applicability to other RLVR frameworks is not explored.', 'NSR introduces an additional hyperparameter (rescue probability) that may require tuning.', 'The theoretical interpretation as implicit gradient decay is only in expectation; the stochastic advantage is empirically observed but not fully explained.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a principled diagnosis of a fundamental instability source in RLVR, directly relevant to improving LLM reasoning training.</li>
+<li>Offers a minimal, plug-and-play fix that can be integrated into existing GRPO-style pipelines with minimal overhead.</li>
+<li>Highlights the importance of boundary behavior in clipping-based optimization, which may generalize to other policy gradient methods.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Test NSR on other RLVR variants (e.g., PPO-based) to assess generality.</li>
+<li>[ ] Explore adaptive rescue probability schedules based on training dynamics.</li>
+<li>[ ] Investigate whether similar boundary-rescue mechanisms benefit other clipping-based algorithms (e.g., TRPO, IMPALA).</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>裁剪瓶颈：通过近边界信号的随机恢复稳定RLVR</h1>
+<p><strong>主要结论</strong>
+- GRPO风格RLVR目标中的硬裁剪会丢弃信息丰富的近边界信号，导致训练不稳定和次优收敛。
+- 近边界随机恢复（NSR）将刚性二元裁剪转化为概率性接纳过程，保留近边界信号。
+- NSR在确定性软裁剪基线上持续取得更好表现，表明随机边界恢复是优化鲁棒性的关键。
+- NSR在7B到30B模型规模及密集和MoE架构上均优于DAPO和GSPO等强基线。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文识别了GRPO风格RLVR中刚性裁剪决策的关键瓶颈，并提出一种极简随机修复（NSR），通过恢复近边界信号提升训练稳定性和收敛效果。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>上下文</strong>：基于可验证奖励的强化学习（RLVR）是扩展LLM推理的核心范式，常使用基于裁剪的GRPO风格目标，但这些方法存在不稳定、超参数敏感和次优收敛的问题。
+<strong>相关工作</strong>：GRPO（Shao等，2024）通过组基优势估计消除了价值网络；DAPO（Yu等，2025）扩展了GRPO，引入非对称裁剪和动态采样；GSPO（Meng等，2026）提出了RLVR的通用替代目标；先前工作通过token级指标（低概率、高熵）或样本级属性（正确性、难度）调节探索。
+<strong>差距</strong>：现有RLVR稳定方法大多作为训练信号的外部调整，未解决内部裁剪机制。内部机制中哪个环节造成稳定性和收敛的关键瓶颈这一根本问题尚未被解答。
+<strong>提议</strong>：本文提出近边界随机恢复（NSR），一种即插即用的修改，随机保留略超出裁剪阈值的token，将刚性二元裁剪转化为概率性接纳过程，在保持策略更新保守的同时保留信息丰富的近边界信号。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>NSR在7B到30B模型规模（密集和MoE架构）上对DAPO和GSPO均取得一致增益，消耗数十万GPU小时。受控干预实验表明，训练对梯度幅度鲁棒，但对二元裁剪决策高度敏感。</p>
+<h3>消融实验</h3>
+<p>NSR的随机边界恢复在确定性软裁剪基线上持续表现更好，表明概率性接纳机制是优化鲁棒性的关键驱动因素，超越了期望层面的平滑效果。</p>
+<h3>局限性</h3>
+<p>['分析仅限于GRPO风格裁剪目标，未探索在其他RLVR框架中的适用性。', 'NSR引入了一个额外的超参数（恢复概率），可能需要调优。', '作为隐式梯度衰减的理论解释仅在期望层面成立；随机优势是经验观察到的，尚未完全解释。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了RLVR中一个根本不稳定源的原则性诊断，直接相关于改进LLM推理训练。</li>
+<li>提供了一个极简、即插即用的修复，可集成到现有GRPO风格流水线中，开销极小。</li>
+<li>强调了裁剪优化中边界行为的重要性，这可能推广到其他策略梯度方法。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在其他RLVR变体（如基于PPO的）上测试NSR以评估通用性。</li>
+<li>[ ] 探索基于训练动态的自适应恢复概率调度。</li>
+<li>[ ] 研究类似的边界恢复机制是否有利于其他基于裁剪的算法（如TRPO、IMPALA）。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22703</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>
