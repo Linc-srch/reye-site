@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Reinforcement Learning for Flexible Job Shop Scheduling with Random Job Arrivals | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Deep Reinforcement Learning for Flexible Job Shop Scheduling with Random Job Arrivals</h2>
+    <h2 class="lang-zh">基于深度强化学习的随机到达柔性作业车间调度</h2>
+    <div class="meta">
+      Yu Tang, Muhammad Zakwan, Efe Balta, John Lygeros, Alisa Rupenyan &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22773" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper proposes an event-based deep reinforcement learning approach using PPO and lightweight MLPs to minimize makespan in flexible job shop scheduling with random job arrivals, showing strong performance on heterogeneous datasets against both dispatching rules and an arrival-triggered MILP baseline.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出了一种基于事件触发的深度强化学习方法，使用PPO和轻量级MLP网络来最小化随机作业到达场景下的最大完工时间。该方法在异构数据集上优于传统调度规则，并与到达触发的MILP基线取得了竞争性表现。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — drl-fjsp-random-arrivals</h1>
+<p><strong>Key Takeaways</strong>
+- Event-based DRL with PPO and lightweight MLPs effectively solves FJSP with random job arrivals.
+- The DRL agent selects from well-established dispatching rules, reducing action space complexity.
+- DRL outperforms individual dispatching rules across heterogeneous datasets and varying job arrival rates.
+- DRL achieves competitive performance against an arrival-triggered MILP baseline, especially on heterogeneous datasets.
+- Concise state representation uses directly accessible environment features, avoiding complex graph or attention networks.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Deep Reinforcement Learning for Flexible Job Shop Scheduling with Random Job Arrivals</li>
+<li><strong>Alias:</strong> drl-fjsp-random-arrivals</li>
+<li><strong>Authors:</strong> Yu Tang, Muhammad Zakwan, Efe Balta, John Lygeros, Alisa Rupenyan</li>
+<li><strong>arXiv ID:</strong> 2605.22773</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22773</li>
+<li>HTML: https://arxiv.org/html/2605.22773v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22773</li>
+<li><strong>Tags:</strong> deep-reinforcement-learning, flexible-job-shop-scheduling, dynamic-scheduling, ppo, dispatching-rules</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper proposes an event-based deep reinforcement learning approach using PPO and lightweight MLPs to minimize makespan in flexible job shop scheduling with random job arrivals, showing strong performance on heterogeneous datasets against both dispatching rules and an arrival-triggered MILP baseline.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Flexible Job Shop Scheduling (FJSP) is NP-hard and becomes more challenging with dynamic job arrivals. Traditional methods like MILP solvers are intractable for real-time rescheduling, while dispatching rules are fast but myopic. Deep reinforcement learning has emerged as a promising approach to balance scheduling quality and real-time decision-making.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Heuristic dispatching rules for dynamic FJSP are fast but myopic and dataset-dependent.</li>
+<li>Event-triggered rescheduling with metaheuristics or MILP produces high-quality schedules but is computationally expensive.</li>
+<li>Tabular Q-learning for FJSP scales poorly with state space size.</li>
+<li>Recent DRL methods use complex state representations (e.g., graph neural networks, attention) and assume constant job arrival rates.</li>
+<li>Prior DRL work often assumes homogeneous machines and jobs.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing DRL methods for FJSP with random job arrivals often rely on complex state representations and network architectures (e.g., graph neural networks, attention), increasing training difficulty. Many also assume constant job arrival rates and homogeneous machines/jobs, limiting real-world applicability. This paper addresses these limitations by using a concise state representation, lightweight MLPs, and evaluating on heterogeneous datasets with varying arrival rates.</p>
+<h3>P — Proposal</h3>
+<p>The authors propose an event-based DRL framework using PPO with lightweight MLP actor and critic networks. The agent selects from a set of well-established dispatching rules at each event (operation completion or new job arrival), using a state representation directly accessible from the environment. The approach minimizes makespan and is benchmarked against an arrival-triggered MILP (AT-MILP) baseline.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>The DRL approach outperforms all individual dispatching rules on datasets with varying heterogeneity and job arrival rates. Against AT-MILP, DRL achieves good performance especially on heterogeneous datasets (e.g., makespan reduction of up to 12% compared to best dispatching rule on heterogeneous data).</p>
+<h3>Ablation</h3>
+<p>The paper does not include explicit ablation studies on network architecture or state components, but the choice of lightweight MLPs is justified by the need for simplicity and fast inference.</p>
+<h3>Limitations</h3>
+<p>['The action space is limited to predefined dispatching rules, which may not capture optimal scheduling decisions beyond those heuristics.', 'The approach is evaluated only on synthetic datasets; real-world validation is missing.', 'The paper does not compare against other DRL architectures (e.g., graph neural networks) on the same benchmarks.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Demonstrates that simple MLP-based DRL can achieve strong results on dynamic FJSP without complex feature engineering.</li>
+<li>Provides a practical baseline for researchers working on DRL for scheduling under uncertainty.</li>
+<li>Highlights the importance of evaluating on heterogeneous datasets to reflect real-world variability.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Extend the approach to include more diverse dispatching rules or learn composite rules directly.</li>
+<li>[ ] Evaluate on real-world manufacturing datasets with machine breakdowns and other disturbances.</li>
+<li>[ ] Compare against state-of-the-art DRL methods using graph neural networks or attention mechanisms.</li>
+<li>[ ] Investigate multi-objective optimization (e.g., makespan + energy consumption).</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>基于深度强化学习的随机到达柔性作业车间调度</h1>
+<p><strong>主要结论</strong>
+- 基于事件的DRL（PPO+轻量MLP）能有效解决随机作业到达的FJSP问题。
+- DRL智能体从成熟的调度规则中选择动作，降低了动作空间复杂度。
+- DRL在异构数据集和不同到达率下均优于单一调度规则。
+- DRL与到达触发的MILP基线相比具有竞争力，尤其在异构数据集上表现突出。
+- 简洁的状态表示直接使用环境特征，避免了复杂的图网络或注意力网络。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文提出了一种基于事件触发的深度强化学习方法，使用PPO和轻量级MLP来最小化随机作业到达的柔性作业车间调度中的最大完工时间，在异构数据集上优于调度规则和到达触发的MILP基线。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：柔性作业车间调度（FJSP）是NP难问题，动态作业到达使其更具挑战性。传统MILP求解器难以实时重调度，调度规则虽快但目光短浅。深度强化学习在平衡调度质量和实时决策方面展现出潜力。</p>
+<p><strong>相关工作</strong>：启发式调度规则快速但依赖数据集且短视；事件触发的元启发式或MILP重调度能产生高质量调度但计算成本高；表格型Q-learning在FJSP中状态空间扩展性差；近期DRL方法使用复杂状态表示（如图神经网络、注意力机制）并假设恒定到达率；先前DRL工作常假设同质机器和作业。</p>
+<p><strong>差距</strong>：现有针对随机到达FJSP的DRL方法多依赖复杂状态表示和网络架构（如图神经网络、注意力），增加训练难度；许多方法假设恒定到达率和同质机器/作业，限制实际应用。本文通过使用简洁状态表示、轻量MLP以及在异构数据集和不同到达率下评估来弥补这些不足。</p>
+<p><strong>方案</strong>：作者提出基于事件的DRL框架，使用PPO和轻量MLP演员-评论家网络。智能体在每个事件（操作完成或新作业到达）时从一组成熟的调度规则中选择动作，状态表示直接来自环境。该方法最小化最大完工时间，并与到达触发的MILP（AT-MILP）基线进行对比。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>DRL方法在所有异构数据集和不同作业到达率下均优于所有单一调度规则。与AT-MILP相比，DRL表现良好，尤其在异构数据集上（例如，在异构数据上最大完工时间比最佳调度规则降低高达12%）。</p>
+<h3>消融实验</h3>
+<p>论文未包含对网络架构或状态组件的显式消融研究，但选择轻量MLP的理由是简单性和快速推理的需求。</p>
+<h3>局限性</h3>
+<p>['动作空间限于预定义的调度规则，可能无法捕捉超越这些启发式方法的最优调度决策。', '该方法仅在合成数据集上评估，缺乏真实世界验证。', '论文未在相同基准上与其他DRL架构（如图神经网络）进行比较。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>证明了基于简单MLP的DRL无需复杂特征工程即可在动态FJSP上取得强结果。</li>
+<li>为研究不确定性下调度问题的DRL研究者提供了实用基线。</li>
+<li>强调了在异构数据集上评估以反映真实世界变异性的重要性。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 扩展方法以包含更多样化的调度规则或直接学习复合规则。</li>
+<li>[ ] 在包含机器故障等干扰的真实制造数据集上评估。</li>
+<li>[ ] 与使用图神经网络或注意力机制的最新DRL方法进行比较。</li>
+<li>[ ] 研究多目标优化（如最大完工时间+能耗）。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22773</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

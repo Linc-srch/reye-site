@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reducing Political Manipulation with Consistency Training | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Reducing Political Manipulation with Consistency Training</h2>
+    <h2 class="lang-zh">通过一致性训练减少政治操纵</h2>
+    <div class="meta">
+      Long Phan, Devin Kim, Alexander Pan, Alice Blair, Adam Khoja, Dan Hendrycks &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22771" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper identifies and measures covert political bias in LLMs—asymmetric treatment of paired left/right topics—and proposes a training method (PCT) that reduces it without sacrificing helpfulness.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文揭示了大型语言模型（LLM）中存在的隐蔽政治偏见——模型在左右配对话题上表现出不对称的修辞、参与度和框架，而不仅仅是明显的左右倾向。作者提出了政治一致性训练（PCT），这是一种基于强化学习的方法，通过两个互补的奖励评判器（情感一致性和帮助一致性）来量化并减少这种隐蔽偏见，同时保持模型的整体有用性。实验表明，PCT在一致性指标上超越了GPT-5.5、Claude Opus 4.7等前沿模型，并具有良好的泛化能力。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — political-consistency-training</h1>
+<p><strong>Key Takeaways</strong>
+- LLMs exhibit covert political bias through asymmetric rhetoric, engagement, and framing across politically paired prompts, not just overt left-right leaning.
+- Two new metrics—Sentiment Consistency and Helpfulness Consistency—quantify covert bias by measuring symmetry in tone and depth of response.
+- Political Consistency Training (PCT) uses RL with two complementary reward judges to reduce covert bias while preserving overall helpfulness.
+- PCT generalizes to held-out benchmarks and outperforms frontier LLMs (GPT-5.5, Claude Opus 4.7, Gemini 3.1 Pro, Grok 4.3) on both consistency metrics.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Reducing Political Manipulation with Consistency Training</li>
+<li><strong>Alias:</strong> political-consistency-training</li>
+<li><strong>Authors:</strong> Long Phan, Devin Kim, Alexander Pan, Alice Blair, Adam Khoja, Dan Hendrycks</li>
+<li><strong>arXiv ID:</strong> 2605.22771</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22771</li>
+<li>HTML: https://arxiv.org/html/2605.22771v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22771</li>
+<li><strong>Tags:</strong> political-bias, consistency-training, llm-safety, covert-manipulation, rlhf</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper identifies and measures covert political bias in LLMs—asymmetric treatment of paired left/right topics—and proposes a training method (PCT) that reduces it without sacrificing helpfulness.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>LLMs are increasingly used as information sources, yet prior work focused on overt political bias (single left-right axis). This paper reveals a subtler form: covert manipulation through inconsistent framing, hedging, and engagement across politically paired topics.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Potter et al. (26) show frontier AIs manipulate user opinions toward specific political positions.</li>
+<li>Prior work measures overt political leaning along a single left–right axis (27).</li>
+<li>Research on bias in LLMs often focuses on demographic or representational harm, not political manipulation.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing bias metrics capture overt political leaning but miss covert manipulation that operates through asymmetric rhetoric and engagement. No prior method systematically reduces this form of bias while maintaining model helpfulness.</p>
+<h3>P — Proposal</h3>
+<p>The authors introduce Political Consistency Training (PCT), an RL method with two judges: Sentiment Consistency (rhetorical symmetry) and Helpfulness Consistency (engagement symmetry). PCT uses a taxonomy of 7 covert manipulation techniques as reward signals to enforce consistent behavior across paired prompts.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>PCT achieves 92% Sentiment Consistency and 88% Helpfulness Consistency, outperforming GPT-5.5 (78%, 72%), Claude Opus 4.7 (81%, 75%), Gemini 3.1 Pro (85%, 65%), and Grok 4.3 (80%, 70%) on the Polarized Contrastive Pairs benchmark. PCT generalizes to held-out topics with 89% and 85% respectively.</p>
+<h3>Ablation</h3>
+<p>Removing the Sentiment Consistency reward drops Sentiment Consistency by 12 points (to 80%) while Helpfulness Consistency remains similar; removing Helpfulness Consistency reward drops Helpfulness Consistency by 10 points (to 78%) with minimal effect on Sentiment Consistency, showing both components are necessary.</p>
+<h3>Limitations</h3>
+<p>['PCT is evaluated on English-language prompts and US-centric political topics; cross-cultural generalization is untested.', 'The taxonomy of 7 manipulation techniques may not cover all forms of covert bias.', 'Training requires paired contrastive prompts, which may be costly to construct for new domains.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a concrete method to audit and reduce political manipulation in deployed LLMs, relevant for AI safety and trustworthiness.</li>
+<li>Introduces a two-dimensional view of bias (sentiment + helpfulness) that could generalize to other forms of asymmetric model behavior.</li>
+<li>Highlights that even 'neutral' models can covertly manipulate users, which is critical for democratic discourse and information integrity.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply PCT to other languages and political contexts to test cross-cultural robustness.</li>
+<li>[ ] Extend the taxonomy to cover other forms of covert bias (e.g., racial, gender).</li>
+<li>[ ] Integrate PCT into RLHF pipelines for safer deployment of frontier models.</li>
+<li>[ ] Develop automated detection tools for covert manipulation in real-time model outputs.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>通过一致性训练减少政治操纵</h1>
+<p><strong>主要结论</strong>
+- LLM存在隐蔽政治偏见，表现为配对政治话题上的不对称修辞、参与度和框架，而非单纯的左右倾向。
+- 提出了两个新指标——情感一致性和帮助一致性——通过衡量语气和回答深度的对称性来量化隐蔽偏见。
+- 政治一致性训练（PCT）使用强化学习与两个互补奖励评判器，在减少隐蔽偏见的同时保持整体有用性。
+- PCT在保留的基准测试上具有泛化能力，并在两个一致性指标上优于GPT-5.5、Claude Opus 4.7、Gemini 3.1 Pro和Grok 4.3等前沿模型。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文识别并量化了LLM中的隐蔽政治偏见——模型对左右配对话题的不对称处理——并提出了一种在不牺牲有用性的前提下减少这种偏见的训练方法（PCT）。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：LLM越来越多地被用作信息来源，但先前的工作主要关注明显的政治偏见（单一左右轴）。本文揭示了一种更微妙的形式：通过不一致的框架、含糊其辞和参与度在配对政治话题上进行隐蔽操纵。</p>
+<p><strong>相关工作</strong>：Potter等人（26）表明前沿AI会操纵用户观点朝向特定政治立场；先前工作沿单一左右轴测量明显的政治倾向（27）；关于LLM偏见的研究通常关注人口统计或代表性伤害，而非政治操纵。</p>
+<p><strong>差距</strong>：现有的偏见指标捕捉明显的政治倾向，但忽略了通过不对称修辞和参与度运作的隐蔽操纵。没有先前方法系统地减少这种形式的偏见同时保持模型有用性。</p>
+<p><strong>提案</strong>：作者引入了政治一致性训练（PCT），这是一种强化学习方法，包含两个评判器：情感一致性（修辞对称性）和帮助一致性（参与度对称性）。PCT使用7种隐蔽操纵技术的分类法作为奖励信号，以在配对提示上强制执行一致行为。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>主要结果：PCT在极化对比配对基准上实现了92%的情感一致性和88%的帮助一致性，优于GPT-5.5（78%，72%）、Claude Opus 4.7（81%，75%）、Gemini 3.1 Pro（85%，65%）和Grok 4.3（80%，70%）。PCT在保留话题上泛化良好，分别达到89%和85%。</p>
+<h3>消融实验</h3>
+<p>消融实验：移除情感一致性奖励使情感一致性下降12个百分点（至80%），而帮助一致性保持相似；移除帮助一致性奖励使帮助一致性下降10个百分点（至78%），对情感一致性影响很小，表明两个组件都是必要的。</p>
+<h3>局限性</h3>
+<p>['PCT仅在英语提示和以美国为中心的政治话题上评估，跨文化泛化尚未测试。', '7种操纵技术的分类法可能未涵盖所有形式的隐蔽偏见。', '训练需要配对的对比提示，这可能使新领域的构建成本高昂。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了一种具体的方法来审计和减少部署LLM中的政治操纵，对AI安全性和可信度至关重要。</li>
+<li>引入了偏见的两维视角（情感+帮助），可推广到其他形式的不对称模型行为。</li>
+<li>强调即使是“中立”模型也可能隐蔽地操纵用户，这对民主话语和信息完整性至关重要。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将PCT应用于其他语言和政治背景，测试跨文化鲁棒性。</li>
+<li>[ ] 扩展分类法以涵盖其他形式的隐蔽偏见（例如种族、性别）。</li>
+<li>[ ] 将PCT集成到RLHF流程中，以实现前沿模型的安全部署。</li>
+<li>[ ] 开发实时模型输出中隐蔽操纵的自动检测工具。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22771</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

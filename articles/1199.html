@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remember to be Curious: Episodic Context and Persistent Worlds for 3D Exploration | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Remember to be Curious: Episodic Context and Persistent Worlds for 3D Exploration</h2>
+    <h2 class="lang-zh">记住好奇心：基于情景上下文与持久化世界的3D探索</h2>
+    <div class="meta">
+      Lily Goli, Justin Kerr, Daniele Reda, Alec Jacobson, Andrea Tagliasacchi, Angjoo Kanazawa &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22814" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper shows that coupling a persistent 3D world model with an episodic memory agent enables scalable curiosity-driven exploration in complex 3D environments, achieving zero-shot generalization and efficient downstream task adaptation.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出了一种结合持久化3D世界模型与情景记忆的深度强化学习框架，解决了好奇心驱动探索在逼真3D环境中因遗忘状态而陷入循环的难题。该方法仅通过RGB输入即可在HM3D数据集上超越基于显式地图的主动SLAM基线，并零样本泛化至Gibson及AI生成场景。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — recuriosity</h1>
+<p><strong>Key Takeaways</strong>
+- Curiosity-driven exploration fails in 3D photorealistic environments due to lack of spatial persistence and episodic context.
+- A persistent 3D reconstruction (3DGS) as a world model provides stable intrinsic rewards by avoiding false novelty from forgotten states.
+- A transformer-based policy with episodic RGB history enables the agent to backtrack and discover novel regions without explicit maps.
+- The agent trained purely via curiosity on HM3D outperforms RL-based active mapping baselines and generalizes zero-shot to Gibson and AI-generated worlds.
+- Fine-tuning the end-to-end policy for a few episodes on downstream tasks (apple picking, image-goal navigation) outperforms from-scratch baselines.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Remember to be Curious: Episodic Context and Persistent Worlds for 3D Exploration</li>
+<li><strong>Alias:</strong> recuriosity</li>
+<li><strong>Authors:</strong> Lily Goli, Justin Kerr, Daniele Reda, Alec Jacobson, Andrea Tagliasacchi, Angjoo Kanazawa</li>
+<li><strong>arXiv ID:</strong> 2605.22814</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22814</li>
+<li>HTML: https://arxiv.org/html/2605.22814v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22814</li>
+<li><strong>Tags:</strong> curiosity-driven-rl, 3d-exploration, persistent-world-model, episodic-memory, zero-shot-generalization</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper shows that coupling a persistent 3D world model with an episodic memory agent enables scalable curiosity-driven exploration in complex 3D environments, achieving zero-shot generalization and efficient downstream task adaptation.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Curiosity-driven RL uses prediction error of a world model as intrinsic reward to encourage exploration in sparse-reward tasks. However, scaling to photorealistic 3D environments has been challenging because agents get trapped in local loops, revisiting forgotten states and receiving spurious novelty rewards. Prior work often relies on explicit geometric maps or ground-truth depth to guide exploration, limiting flexibility and generalization.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Curiosity-driven RL (ICM, RND) uses prediction error of a learned world model as intrinsic reward.</li>
+<li>Active mapping methods (e.g., Active Neural SLAM) use explicit geometric maps for exploration.</li>
+<li>End-to-end navigation policies trained with RL or imitation learning for goal-conditioned tasks.</li>
+<li>Online 3D reconstruction (3DGS, NeRF) as a persistent scene representation.</li>
+<li>Transformers for long-horizon sequential decision making.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing curiosity-driven methods lack spatial persistence in the world model, causing false novelty rewards when agents revisit forgotten states. Additionally, agents without episodic context cannot learn to backtrack and discover novel regions, leading to cyclic exploration. This paper addresses both limitations by introducing a persistent 3D reconstruction as the world model and a transformer policy with episodic RGB history.</p>
+<h3>P — Proposal</h3>
+<p>The authors propose a curiosity-driven exploration framework with two key components: (1) a persistent 3D Gaussian Splatting (3DGS) model that is continuously updated online and provides stable intrinsic rewards based on rendering error, and (2) a transformer-based policy that processes a sequence of RGB observations to maintain episodic context, enabling backtracking and long-horizon exploration. The agent is trained purely via curiosity on HM3D and uses only RGB at test time.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On HM3D, the curiosity-driven agent outperforms RL-based active mapping baselines (e.g., Active Neural SLAM) in coverage and efficiency. It generalizes zero-shot to Gibson and AI-generated worlds. Fine-tuned for a few episodes on apple picking and image-goal navigation, it outperforms from-scratch baselines.</p>
+<h3>Ablation</h3>
+<p>Capping the persistent memory of the 3DGS model to a short-term window (e.g., last 50 frames) significantly degrades exploration performance, confirming that spatial persistence is critical for stable curiosity rewards.</p>
+<h3>Limitations</h3>
+<p>['The method requires privileged depth and pose information during training for 3DGS reconstruction.', 'The 3DGS forward model is computationally expensive and may not scale to very large or dynamic environments.', 'The approach assumes static scenes; dynamic objects could break the persistence assumption.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Demonstrates that curiosity-driven exploration can be scaled to photorealistic 3D environments with the right architectural choices (persistent world model + episodic memory).</li>
+<li>Provides a practical alternative to explicit mapping for exploration, enabling end-to-end learning and zero-shot generalization.</li>
+<li>Highlights the importance of spatial persistence in world models for stable intrinsic reward signals, a key insight for designing exploration algorithms.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Test the approach in dynamic or partially observable environments where the static scene assumption is violated.</li>
+<li>[ ] Explore more efficient persistent world models (e.g., neural radiance fields with faster updates) to reduce training cost.</li>
+<li>[ ] Investigate whether the episodic context from RGB history can be combined with explicit memory for even better long-horizon exploration.</li>
+<li>[ ] Apply the framework to real-world robotic exploration with onboard sensors.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>记住好奇心：基于情景上下文与持久化世界的3D探索</h1>
+<p><strong>主要结论</strong>
+- 好奇心驱动探索在3D逼真环境中失败的根本原因是缺乏空间持久性与情景上下文，导致智能体因遗忘状态而收到虚假新奇奖励。
+- 将持久化3D高斯溅射（3DGS）作为世界模型，通过渲染误差提供稳定的内在奖励，有效避免了虚假新奇信号。
+- 基于Transformer的策略利用历史RGB序列维持情景上下文，使智能体无需显式地图即可学会回溯并发现新区域。
+- 纯好奇心训练的智能体在HM3D上超越基于RL的主动建图基线，并零样本泛化至Gibson和AI生成世界。
+- 在下游任务（摘苹果、图像目标导航）上微调少量回合后，端到端策略显著优于从头训练的基线。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文的关键主张是：将持久化3D世界模型与情景记忆智能体相结合，能够使好奇心驱动探索在复杂3D环境中规模化，实现零样本泛化与高效下游任务适应。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：好奇心驱动强化学习利用世界模型的预测误差作为内在奖励，以鼓励稀疏奖励任务中的探索。然而，将其扩展到逼真3D环境面临挑战，因为智能体会陷入局部循环，反复访问已遗忘的状态并获得虚假新奇奖励。先前工作通常依赖显式几何地图或真实深度来引导探索，限制了灵活性与泛化能力。
+<strong>相关工作</strong>：好奇心驱动RL（ICM, RND）使用学习到的世界模型的预测误差作为内在奖励；主动建图方法（如Active Neural SLAM）使用显式几何地图进行探索；端到端导航策略通过RL或模仿学习训练以完成目标导向任务；在线3D重建（3DGS, NeRF）作为持久化场景表示；Transformer用于长时序序列决策。
+<strong>差距</strong>：现有好奇心驱动方法缺乏世界模型的空间持久性，导致智能体在重新访问遗忘状态时产生虚假新奇奖励。此外，没有情景上下文的智能体无法学会回溯并发现新区域，导致循环探索。本文通过引入持久化3D重建作为世界模型和具有情景RGB历史的Transformer策略，同时解决了这两个限制。
+<strong>方案</strong>：作者提出一个好奇心驱动探索框架，包含两个关键组件：（1）一个持续在线更新的持久化3D高斯溅射（3DGS）模型，基于渲染误差提供稳定的内在奖励；（2）一个基于Transformer的策略，处理RGB观测序列以维持情景上下文，实现回溯和长时序探索。智能体仅在HM3D上通过好奇心训练，测试时仅使用RGB输入。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在HM3D数据集上，好奇心驱动智能体在覆盖率和效率上均优于基于RL的主动建图基线（如Active Neural SLAM）。该智能体零样本泛化至Gibson和AI生成世界。在摘苹果和图像目标导航任务上微调少量回合后，其表现显著优于从头训练的基线。</p>
+<h3>消融实验</h3>
+<p>将3DGS模型的持久化记忆限制为短时间窗口（例如最近50帧）会显著降低探索性能，证实了空间持久性对于稳定好奇心奖励至关重要。</p>
+<h3>局限性</h3>
+<p>['该方法在训练时需要真实的深度和位姿信息用于3DGS重建。', '3DGS前向模型计算成本高，可能难以扩展到非常大或动态的环境。', '该方法假设场景是静态的；动态物体可能破坏持久性假设。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>证明了通过正确的架构选择（持久化世界模型+情景记忆），好奇心驱动探索可以扩展到逼真3D环境。</li>
+<li>为探索任务提供了显式建图的实用替代方案，支持端到端学习和零样本泛化。</li>
+<li>强调了世界模型中空间持久性对于稳定内在奖励信号的重要性，这是设计探索算法的关键见解。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在动态或部分可观测环境中测试该方法，以验证其对静态场景假设的鲁棒性。</li>
+<li>[ ] 探索更高效的持久化世界模型（例如更新更快的神经辐射场）以降低训练成本。</li>
+<li>[ ] 研究RGB历史中的情景上下文能否与显式记忆结合，以实现更好的长时序探索。</li>
+<li>[ ] 将该框架应用于搭载机载传感器的真实机器人探索任务。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22814</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

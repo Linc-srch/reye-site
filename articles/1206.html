@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advancing Mathematics Research with AI-Driven Formal Proof Search | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Advancing Mathematics Research with AI-Driven Formal Proof Search</h2>
+    <h2 class="lang-zh">Deep Note — alphaproof-nexus</h2>
+    <div class="meta">
+      George Tsoukalas, Anton Kovsharov, Sergey Shirobokov, Anja Surina, Moritz Firsching, Gergely Bérczi, Francisco J. R. Ruiz, Arun Suggala, Adam Zsolt Wagner, Eric Wieser, Lei Yu, Aja Huang, Miklós Z. Horváth, Andrew Ferrauiolo, Henryk Michalewski, Codrut Grosu, Thomas Hubert, Matej Balog, Pushmeet Kohli, Swarat Chaudhuri &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22763" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper demonstrates that LLM-powered formal proof search can autonomously solve open mathematics problems at low cost, with a basic agent loop already matching the success of more complex evolutionary designs.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文首次大规模评估了基于LLM的形式化证明搜索在开放研究问题上的表现，成功解决了9个开放了56年的Erdős问题，每个问题成本仅数百美元。研究表明，简单的智能体循环（LLM生成+Lean验证）即可复现所有成功，而更复杂的设计主要降低了最难问题的成本。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — alphaproof-nexus</h1>
+<p><strong>Key Takeaways</strong>
+- First large-scale evaluation of LLM-based formal proof search on open research problems, solving 9/353 open Erdős problems and 44/492 OEIS conjectures.
+- Full-featured agent autonomously resolved problems open for 56 years at a cost of a few hundred dollars per problem.
+- Basic agent (LLM generation + Lean verification) replicated all 9 Erdős successes, though at higher cost on hardest problems.
+- Agent designs include evolutionary coordination and AlphaProof as a focused proof tool, with ablation showing basic loop suffices for many problems.
+- Deployed across combinatorics, optimization, graph theory, algebraic geometry, and quantum optics.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Advancing Mathematics Research with AI-Driven Formal Proof Search</li>
+<li><strong>Alias:</strong> alphaproof-nexus</li>
+<li><strong>Authors:</strong> George Tsoukalas, Anton Kovsharov, Sergey Shirobokov, Anja Surina, Moritz Firsching, Gergely Bérczi, Francisco J. R. Ruiz, Arun Suggala, Adam Zsolt Wagner, Eric Wieser, Lei Yu, Aja Huang, Miklós Z. Horváth, Andrew Ferrauiolo, Henryk Michalewski, Codrut Grosu, Thomas Hubert, Matej Balog, Pushmeet Kohli, Swarat Chaudhuri</li>
+<li><strong>arXiv ID:</strong> 2605.22763</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22763</li>
+<li>HTML: https://arxiv.org/html/2605.22763v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22763</li>
+<li><strong>Tags:</strong> formal-proof-search, llm-theorem-proving, lean, erdos-problems, alphaproof-nexus</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper demonstrates that LLM-powered formal proof search can autonomously solve open mathematics problems at low cost, with a basic agent loop already matching the success of more complex evolutionary designs.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>LLMs show promise in mathematical reasoning but suffer from hallucinations, limiting their use in research. Formal proof assistants like Lean provide automatic verification, but prior work focused on competition math or human-aided formalization. This paper scales the approach to open research-level problems.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>LLM-based theorem proving in competition settings (e.g., AlphaProof, Olympiad-level Lean proving).</li>
+<li>Ralph loop and similar agentic loops for proof search.</li>
+<li>AlphaEvolve for evolutionary algorithm coordination of proof agents.</li>
+<li>Formalization of natural language proofs using AI (e.g., Hariharan et al.).</li>
+<li>OEIS conjecture proving with automated tools.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Prior work on AI-aided formal proof search was limited to competition mathematics or required human intervention. No large-scale evaluation existed on open research problems in pure mathematics, and the cost-effectiveness and agent design trade-offs were unexplored.</p>
+<h3>P — Proposal</h3>
+<p>The paper introduces AlphaProof Nexus, a framework for LLM-aided formal proof search, with a basic agent (LLM generation + Lean verification) and a full-featured agent that adds evolutionary coordination and AlphaProof as a tool. The key insight is that a simple agentic loop already solves open problems, and more complex designs mainly reduce cost on harder problems.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Full-featured agent solved 9/353 open Erdős problems (including two open for 56 years) at ~$200-400 per problem, proved 44/492 OEIS conjectures, resolved a 15-year-old question on Hilbert functions, improved a bound in convex optimization, and helped resolve a problem from Ben Green's list.</p>
+<h3>Ablation</h3>
+<p>Basic agent (no evolution, no AlphaProof) solved all 9 Erdős problems solved by the full-featured agent, but at higher cost on the hardest problems (e.g., requiring more episodes).</p>
+<h3>Limitations</h3>
+<p>['Success rate on Erdős problems is low (9/353), indicating many open problems remain out of reach.', 'Cost per problem, though low, may still be prohibitive for large-scale exploration.', 'Relies on the availability of formal problem statements in Lean, which is non-trivial for many open problems.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Demonstrates that AI can contribute to pure mathematics research autonomously, not just as a calculator or assistant.</li>
+<li>Shows that simple agentic loops (LLM + verifier) are surprisingly effective, suggesting a shift from specialized systems to general-purpose agents.</li>
+<li>Provides a concrete cost benchmark for AI-driven research, enabling comparison with human effort.</li>
+<li>Opens the door to automated exploration of conjectures and optimization of mathematical structures.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply the agent to a broader set of open problems in your domain (e.g., combinatorics, optimization).</li>
+<li>[ ] Investigate the failure modes on the 344 unsolved Erdős problems to guide future improvements.</li>
+<li>[ ] Explore integration with other formal proof assistants (e.g., Coq, Isabelle) for cross-verification.</li>
+<li>[ ] Develop automated generation of Lean problem statements from natural language conjectures.</li>
+<li>[ ] Analyze the cost-performance trade-off of different agent designs for your specific research questions.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>Deep Note — alphaproof-nexus</h1>
+<p><strong>主要结论</strong>
+- 首个大规模评估：LLM形式化证明搜索在开放研究问题上，解决了9/353个Erdős问题和44/492个OEIS猜想。
+- 全功能智能体以每个问题数百美元的成本，自主解决了开放56年的问题。
+- 基本智能体（LLM生成+Lean验证）复现了所有9个Erdős成功，但在最难问题上成本更高。
+- 智能体设计包括进化协调和AlphaProof作为聚焦证明工具，消融实验表明基本循环对许多问题已足够。
+- 部署领域涵盖组合学、优化、图论、代数几何和量子光学。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文证明LLM驱动的形式化证明搜索能以低成本自主解决开放数学问题，且基本智能体循环已能匹配更复杂进化设计的成功率。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>C — 背景</strong>：LLM在数学推理中展现出潜力，但存在幻觉问题，限制了其在研究中的应用。形式化证明助手如Lean提供自动验证，但先前工作集中于竞赛数学或人类辅助形式化。本文将该方法扩展到开放研究级问题。
+<strong>R — 相关工作</strong>：基于LLM的定理证明在竞赛场景（如AlphaProof、奥林匹克级Lean证明）、Ralph循环及类似智能体循环、用于协调证明智能体的进化算法AlphaEvolve、使用AI形式化自然语言证明（如Hariharan等人）、以及使用自动化工具证明OEIS猜想。
+<strong>G — 差距</strong>：先前AI辅助形式化证明搜索的工作局限于竞赛数学或需要人类干预。在纯数学开放研究问题上缺乏大规模评估，且成本效益和智能体设计权衡尚未探索。
+<strong>P — 提案</strong>：本文提出AlphaProof Nexus框架，用于LLM辅助的形式化证明搜索，包含基本智能体（LLM生成+Lean验证）和全功能智能体（增加进化协调和AlphaProof作为工具）。关键洞察是简单智能体循环已能解决开放问题，更复杂的设计主要降低最难问题的成本。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>全功能智能体解决了9/353个开放Erdős问题（包括两个开放56年的问题），每个问题成本约200-400美元；证明了44/492个OEIS猜想；解决了一个关于Hilbert函数的15年悬而未决的问题；改进了凸优化中的一个界；并帮助解决了Ben Green列表中的一个问题。</p>
+<h3>消融实验</h3>
+<p>基本智能体（无进化、无AlphaProof）解决了全功能智能体解决的所有9个Erdős问题，但在最难问题上成本更高（例如需要更多轮次）。</p>
+<h3>局限性</h3>
+<p>Erdős问题的成功率较低（9/353），表明许多开放问题仍无法解决。每个问题的成本虽低，但对大规模探索可能仍显昂贵。依赖于Lean中形式化问题陈述的可用性，这对许多开放问题而言并非易事。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>证明AI能够自主为纯数学研究做出贡献，而不仅仅是作为计算器或助手。</li>
+<li>表明简单的智能体循环（LLM+验证器）出人意料地有效，提示从专用系统向通用智能体的转变。</li>
+<li>为AI驱动的研究提供了具体的成本基准，便于与人类努力进行比较。</li>
+<li>为自动探索猜想和优化数学结构打开了大门。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将智能体应用于你所在领域更广泛的开放问题（如组合学、优化）。</li>
+<li>[ ] 研究344个未解决Erdős问题的失败模式，以指导未来改进。</li>
+<li>[ ] 探索与其他形式化证明助手（如Coq、Isabelle）的集成，以实现交叉验证。</li>
+<li>[ ] 开发从自然语言猜想自动生成Lean问题陈述的方法。</li>
+<li>[ ] 针对你的具体研究问题，分析不同智能体设计的成本-性能权衡。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22763</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

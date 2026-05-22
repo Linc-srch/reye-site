@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superhuman Safe and Agile Racing through Multi-Agent Reinforcement Learning | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Superhuman Safe and Agile Racing through Multi-Agent Reinforcement Learning</h2>
+    <h2 class="lang-zh">超级人类安全敏捷的多智能体强化学习竞速</h2>
+    <div class="meta">
+      Ismail Geles, Leonard Bauersfeld, Markus Wulfmeier, Davide Scaramuzza &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22748" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>Multi-agent RL, not isolated safety constraints, is the key to robust real-world coordination, demonstrated by superhuman safe quadrotor racing at 22 m/s with 50% fewer collisions.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文展示了多智能体强化学习如何实现超级人类水平的安全竞速，速度超过22米/秒且碰撞减少50%。通过联盟式自我对弈和排列不变注意力编码器，智能体学会了主动避让和超车等预期行为，并能零样本泛化到人类飞行员。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — marl-quadrotor-racing</h1>
+<p><strong>Key Takeaways</strong>
+- Multi-agent RL enables superhuman safe racing at speeds &gt;22 m/s with 50% fewer collisions than single-agent baselines.
+- League-based self-play with diverse opponents produces anticipatory behaviors like proactive collision avoidance and overtaking.
+- Zero-shot generalization to human pilots with &gt;90% race completion rates.
+- A permutation-invariant attention encoder handles variable numbers of opponents.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Superhuman Safe and Agile Racing through Multi-Agent Reinforcement Learning</li>
+<li><strong>Alias:</strong> marl-quadrotor-racing</li>
+<li><strong>Authors:</strong> Ismail Geles, Leonard Bauersfeld, Markus Wulfmeier, Davide Scaramuzza</li>
+<li><strong>arXiv ID:</strong> 2605.22748</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22748</li>
+<li>HTML: https://arxiv.org/html/2605.22748v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22748</li>
+<li><strong>Tags:</strong> multi-agent-rl, quadrotor-racing, safe-autonomy, league-self-play, sim-to-real</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Multi-agent RL, not isolated safety constraints, is the key to robust real-world coordination, demonstrated by superhuman safe quadrotor racing at 22 m/s with 50% fewer collisions.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Autonomous systems have achieved superhuman performance in isolation but fail in shared dynamic spaces due to the single-agent paradigm. Prior work in drone racing reached physical limits but only in solo or head-to-head settings, while multi-agent aerial systems operated at much lower speeds.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Single-agent quadrotor racing at physical limits (e.g., F1TENTH, Swift) but brittle in multi-agent settings.</li>
+<li>Multi-agent RL in simulated games (StarCraft II, Dota 2) and low-speed robotics (robot soccer, small-scale car racing).</li>
+<li>League training and fictitious self-play for robust policy generalization.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing autonomous racing systems optimize for solo or head-to-head performance, degrading sharply with more agents. Multi-agent coordination at high speeds with real safety constraints (collisions destroy hardware) remains unsolved.</p>
+<h3>P — Proposal</h3>
+<p>A multi-agent RL framework using league-based self-play with a diverse population of opponents, a permutation-invariant attention encoder (Perceiver) for variable opponent counts, and a particle-based downwash model for aerodynamic interactions. Agents learn anticipatory behaviors through competitive experience without explicit programming.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Real-world races up to 4 agents at 22 m/s and 7g; league-play policy achieves 100% race completion in time trials (best lap 5.54s vs human 6.627s), 50% fewer collisions than single-agent baselines, and &gt;90% race completion against human champion.</p>
+<h3>Ablation</h3>
+<p>League-play training reduces collisions by 50% compared to single-agent and independent multi-agent baselines while preserving competitive lap times.</p>
+<h3>Limitations</h3>
+<p>Real-world experiments limited to 4 agents due to hardware constraints; sim-to-real gap may affect transfer to different tracks or vehicle dynamics; reliance on motion-capture for state estimation limits outdoor deployment.</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Demonstrates that multi-agent interaction training is a viable path to safe robotic co-existence, relevant to your work on safe multi-robot systems.</li>
+<li>Provides a concrete example of zero-shot human-robot interaction from simulated self-play, applicable to human-robot collaboration scenarios.</li>
+<li>Shows that safety emerges from competitive co-adaptation rather than hand-crafted constraints, aligning with your interest in learning-based safety.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Test the framework on heterogeneous robot teams (e.g., ground + aerial) for warehouse logistics.</li>
+<li>[ ] Investigate transfer of learned anticipatory behaviors to other high-speed domains like autonomous car racing.</li>
+<li>[ ] Explore integration of formal safety guarantees (e.g., control barrier functions) with the learned policy for certification.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>超级人类安全敏捷的多智能体强化学习竞速</h1>
+<p><strong>主要结论</strong>
+- 多智能体RL在&gt;22 m/s速度下实现超级人类安全竞速，碰撞比单智能体基线减少50%。
+- 联盟式自我对弈产生主动避让和超车等预期行为。
+- 零样本泛化到人类飞行员，完成率&gt;90%。
+- 排列不变注意力编码器处理可变数量的对手。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>多智能体强化学习，而非孤立的安全约束，是实现鲁棒现实世界协调的关键，在22米/秒的超级人类安全四旋翼竞速中碰撞减少50%得到证明。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：自主系统在孤立环境中达到超级人类性能，但在共享动态空间中因单智能体范式而失败。先前无人机竞速工作达到物理极限，但仅限于单人或一对一场景，而多智能体空中系统运行速度低得多。相关工作：单智能体四旋翼竞速达到物理极限（如F1TENTH、Swift），但在多智能体环境中脆弱；多智能体RL在模拟游戏（星际争霸II、Dota 2）和低速机器人（机器人足球、小型赛车）中应用；联盟训练和虚构自我对弈用于鲁棒策略泛化。差距：现有自主竞速系统优化单人或一对一性能，随智能体数量增加性能急剧下降。高速下具有真实安全约束（碰撞损坏硬件）的多智能体协调仍未解决。提案：一个多智能体RL框架，使用联盟式自我对弈与多样化对手群体、排列不变注意力编码器（Perceiver）处理可变对手数量，以及基于粒子的下洗模型处理空气动力学交互。智能体通过竞争经验学习预期行为，无需显式编程。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>真实世界竞速最多4个智能体，速度22 m/s，加速度7g；联盟策略在计时赛中完成率100%（最佳圈速5.54秒 vs 人类6.627秒），碰撞比单智能体基线减少50%，对抗人类冠军完成率&gt;90%。</p>
+<h3>消融实验</h3>
+<p>联盟训练相比单智能体和独立多智能体基线减少50%碰撞，同时保持有竞争力的圈速。</p>
+<h3>局限性</h3>
+<p>由于硬件限制，真实实验仅限于4个智能体；仿真到现实的差距可能影响向不同赛道或车辆动力学的迁移；依赖运动捕捉进行状态估计限制了户外部署。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>证明多智能体交互训练是实现安全机器人共存的可行路径，与您的安全多机器人系统工作相关。</li>
+<li>提供从模拟自我对弈到零样本人机交互的具体实例，适用于人机协作场景。</li>
+<li>展示安全性源于竞争性共同适应而非手工约束，与您对基于学习的安全性的兴趣一致。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在异构机器人团队（如地面+空中）上测试该框架，用于仓库物流。</li>
+<li>[ ] 研究将学习到的预期行为迁移到其他高速领域，如自动驾驶赛车。</li>
+<li>[ ] 探索将形式化安全保证（如控制障碍函数）与学习策略集成以进行认证。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22748</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

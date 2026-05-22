@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback</h2>
+    <h2 class="lang-zh">DeltaBox：毫秒级沙箱检查点/回滚实现有状态AI智能体规模化</h2>
+    <div class="meta">
+      Yunpeng Dong, Jingkai He, Yuze Hou, Dong Du, Zhonghu Xu, Si Yu, Yubin Xia, Haibo Chen &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22781" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>DeltaBox proposes a change-based OS abstraction (DeltaState) that reduces sandbox checkpoint/rollback latency from hundreds of milliseconds to milliseconds, enabling scalable tree search and RL for LLM-powered AI agents.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文提出DeltaBox，一种基于变更的OS抽象（DeltaState），将AI智能体沙箱的检查点/回滚延迟从数百毫秒降至毫秒级。通过仅复制连续检查点间的变更，DeltaBox在SWE-bench MCTS上将状态管理开销从47-77%降至3-6%，使固定时间预算下可探索更多搜索节点。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — deltabox</h1>
+<p><strong>Key Takeaways</strong>
+- DeltaBox achieves millisecond-level checkpoint (14ms) and rollback (5ms) for AI agent sandboxes by only duplicating changes between consecutive checkpoints.
+- Two new OS mechanisms: DeltaFS (change-based filesystem C/R via hot layer switching) and DeltaCR (change-based process C/R via incremental dumps and template fork).
+- On SWE-bench MCTS, DeltaBox reduces state-management overhead from 47-77% to 3-6% of trajectory time, enabling substantially more search nodes under fixed time budgets.
+- Key insight: subsequent checkpoints in AI agent workloads are highly similar, so full state duplication is wasteful.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback</li>
+<li><strong>Alias:</strong> deltabox</li>
+<li><strong>Authors:</strong> Yunpeng Dong, Jingkai He, Yuze Hou, Dong Du, Zhonghu Xu, Si Yu, Yubin Xia, Haibo Chen</li>
+<li><strong>arXiv ID:</strong> 2605.22781</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22781</li>
+<li>HTML: https://arxiv.org/html/2605.22781v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22781</li>
+<li><strong>Tags:</strong> ai-agents, checkpoint-rollback, os-abstraction, sandbox, state-management</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>DeltaBox proposes a change-based OS abstraction (DeltaState) that reduces sandbox checkpoint/rollback latency from hundreds of milliseconds to milliseconds, enabling scalable tree search and RL for LLM-powered AI agents.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>LLM-powered AI agents require high-frequency state exploration (e.g., test-time tree search, RL) that relies on rapid checkpoint and rollback of complete sandbox state (files + process memory). Existing mechanisms (Docker commits, CRIU, VM snapshots) duplicate the entire state, causing hundreds of milliseconds to seconds of latency, bottlenecking deep search and large-scale fan-outs.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Serverless checkpoint/restore systems (e.g., Faasnap, Catalyzer, REAP) optimize restore but not checkpoint, assuming offline checkpointing.</li>
+<li>Agent sandboxes like E2B take ~4s to pause a sandbox per 1 GiB RAM; CRIU takes seconds for multi-GiB footprints.</li>
+<li>VM-level snapshots (Firecracker) incur hundreds of ms to seconds of latency.</li>
+<li>Git stash/branch and Docker commits are slow for filesystem state C/R.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing sandbox C/R mechanisms duplicate the entire state (filesystem + process memory) per checkpoint, causing high latency (hundreds of ms to seconds). This is prohibitive for AI agents that need frequent checkpoints on the critical path of tree search and RL. No prior work provides coupled, change-based C/R for both filesystem and process state at millisecond scale.</p>
+<h3>P — Proposal</h3>
+<p>DeltaBox introduces a new OS abstraction, DeltaState, that treats filesystem and process memory as a transactional, change-based state pair. It co-designs two mechanisms: DeltaFS (overlayfs with runtime hot layer switching for file CoW) and DeltaCR (incremental CRIU dumps + template fork for process state). Checkpoint freezes the writable layer and performs incremental dump; rollback is a simple layer switch or fork from a frozen template.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On SWE-bench MCTS, DeltaBox reduces state-management overhead from 47-77% to 3-6% of trajectory time. Checkpoint latency: ~14ms mean; rollback latency: ≤6ms P95. On RL fan-out micro-benchmarks, DeltaBox achieves millisecond-level fork latency, enabling substantially more nodes explored under fixed time budgets.</p>
+<h3>Ablation</h3>
+<p>The async-warm mechanism absorbs post-restore CoW faults off the critical path; the bounded template pool with LRU eviction keeps memory usage capped while falling back to CRIU slow path only for restore latency, never correctness.</p>
+<h3>Limitations</h3>
+<p>['DeltaBox currently targets single-machine sandboxes; distributed or multi-host scenarios are not addressed.', 'The incremental dump approach still incurs overhead for very large memory footprints (multi-GiB) during checkpoint.', 'Template pool eviction may cause occasional slow restores if templates are reused infrequently.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Directly addresses the infrastructure bottleneck for test-time compute scaling (tree search, RL) in LLM agents, a key trend in AI research.</li>
+<li>Demonstrates that OS-level co-design (filesystem + process state) can yield order-of-magnitude improvements over existing sandbox approaches.</li>
+<li>Provides a practical path to scale agent exploration depth and breadth without proportional latency cost.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Integrate DeltaBox with popular agent frameworks (e.g., LangChain, AutoGPT) to evaluate end-to-end gains on real tasks.</li>
+<li>[ ] Extend DeltaState to support distributed checkpoint/rollback across multiple sandbox instances.</li>
+<li>[ ] Explore adaptive checkpoint frequency based on agent state change rate to further reduce overhead.</li>
+<li>[ ] Benchmark DeltaBox on larger-scale RL training workloads (e.g., DeepSeek-R1 style) to quantify throughput improvements.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>DeltaBox：毫秒级沙箱检查点/回滚实现有状态AI智能体规模化</h1>
+<p><strong>主要结论</strong>
+- DeltaBox通过仅复制连续检查点间的变更，实现毫秒级检查点（14ms）和回滚（5ms）。
+- 提出两种新OS机制：DeltaFS（基于变更的文件系统C/R，通过热层切换）和DeltaCR（基于变更的进程C/R，通过增量转储和模板fork）。
+- 在SWE-bench MCTS上，DeltaBox将状态管理开销从轨迹时间的47-77%降至3-6%。
+- 核心洞察：AI智能体工作负载中后续检查点高度相似，全状态复制是浪费的。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>DeltaBox提出基于变更的OS抽象（DeltaState），将沙箱检查点/回滚延迟从数百毫秒降至毫秒级，使LLM驱动的AI智能体可扩展树搜索和强化学习。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>上下文</strong>：LLM驱动的AI智能体需要高频状态探索（如测试时树搜索、RL），依赖快速检查点和回滚完整沙箱状态（文件+进程内存）。现有机制（Docker提交、CRIU、VM快照）复制整个状态，导致数百毫秒到秒级延迟，成为深度搜索和大规模扇出的瓶颈。</p>
+<p><strong>相关工作</strong>：无服务器检查点/恢复系统（如Faasnap、Catalyzer、REAP）优化恢复而非检查点，假设离线检查点；E2B等智能体沙箱每1 GiB RAM暂停沙箱约需4秒；CRIU对多GiB足迹需数秒；VM级快照（Firecracker）产生数百毫秒到秒级延迟；Git stash/branch和Docker提交对文件系统状态C/R缓慢。</p>
+<p><strong>差距</strong>：现有沙箱C/R机制每次检查点复制整个状态（文件系统+进程内存），导致高延迟（数百毫秒到秒级），对需要频繁检查点的AI智能体（树搜索和RL关键路径）不可行。尚无工作提供耦合的、基于变更的文件系统和进程状态毫秒级C/R。</p>
+<p><strong>提案</strong>：DeltaBox引入新OS抽象DeltaState，将文件系统和进程内存视为事务性、基于变更的状态对。协同设计两种机制：DeltaFS（带运行时热层切换的overlayfs，用于文件CoW）和DeltaCR（增量CRIU转储+模板fork，用于进程状态）。检查点冻结可写层并执行增量转储；回滚是简单的层切换或从冻结模板fork。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在SWE-bench MCTS上，DeltaBox将状态管理开销从轨迹时间的47-77%降至3-6%。检查点延迟：均值约14ms；回滚延迟：P95 ≤6ms。在RL扇出微基准测试中，DeltaBox实现毫秒级fork延迟，使固定时间预算下可探索更多节点。</p>
+<h3>消融实验</h3>
+<p>异步预热机制将恢复后的CoW故障吸收到非关键路径；带LRU淘汰的有界模板池在保持内存使用上限的同时，仅对恢复延迟（而非正确性）回退到CRIU慢路径。</p>
+<h3>局限性</h3>
+<p>['DeltaBox当前针对单机沙箱，未解决分布式或多主机场景。', '增量转储方法在检查点期间对非常大的内存足迹（多GiB）仍会产生开销。', '模板池淘汰可能导致偶尔的慢恢复（如果模板重用不频繁）。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>直接解决了LLM智能体中测试时计算扩展（树搜索、RL）的基础设施瓶颈，这是AI研究的关键趋势。</li>
+<li>展示了OS级协同设计（文件系统+进程状态）可带来比现有沙箱方法数量级的改进。</li>
+<li>提供了在不按比例增加延迟成本的情况下扩展智能体探索深度和广度的实用路径。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将DeltaBox与主流智能体框架（如LangChain、AutoGPT）集成，评估真实任务上的端到端收益。</li>
+<li>[ ] 扩展DeltaState以支持跨多个沙箱实例的分布式检查点/回滚。</li>
+<li>[ ] 探索基于智能体状态变化率的自适应检查点频率，以进一步降低开销。</li>
+<li>[ ] 在更大规模的RL训练工作负载（如DeepSeek-R1风格）上基准测试DeltaBox，量化吞吐量改进。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22781</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

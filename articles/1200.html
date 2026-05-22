@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems</h2>
+    <h2 class="lang-zh">LCGuard：多智能体系统中安全KV共享的潜在通信防护</h2>
+    <div class="meta">
+      Sadia Asif, Mohammad Mohammadi Amiri, Momin Abbas, Prasanna Sattigeri, Karthikeyan Natesan Ramamurthy &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22786" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>LCGuard proposes the first principled framework to control sensitive information leakage in KV-cache-based latent communication for multi-agent LLM systems, achieving strong privacy protection with minimal task performance degradation.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>本文首次提出一个原则性框架，用于控制多智能体LLM系统中基于KV缓存的潜在通信所导致的敏感信息泄露。LCGuard通过学习表示级变换，在保持任务效用的同时显著降低重构攻击的成功率，并在多个模型和基准测试中取得了良好的隐私-效用权衡。</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — lcguard</h1>
+<p><strong>Key Takeaways</strong>
+- KV caches shared between agents in multi-agent systems form an opaque channel that can leak sensitive information without textual disclosure.
+- LCGuard learns representation-level transformations on KV caches to reduce reconstructability of agent-specific inputs while preserving task utility.
+- Leakage is formalized via adversarial reconstruction: a shared artifact is unsafe if a decoder can recover sensitive inputs from it.
+- LCGuard achieves a favorable privacy-utility tradeoff across Qwen3, Gemma-2, and LLaMA models on AgentLeak, MAGPIE, and PrivacyLens benchmarks.
+- The framework is topology-agnostic, supporting sequential, hierarchical, and graph-based multi-agent communication.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems</li>
+<li><strong>Alias:</strong> lcguard</li>
+<li><strong>Authors:</strong> Sadia Asif, Mohammad Mohammadi Amiri, Momin Abbas, Prasanna Sattigeri, Karthikeyan Natesan Ramamurthy</li>
+<li><strong>arXiv ID:</strong> 2605.22786</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22786</li>
+<li>HTML: https://arxiv.org/html/2605.22786v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22786</li>
+<li><strong>Tags:</strong> multi-agent-systems, kv-cache-security, representation-leakage, adversarial-training, privacy-utility-tradeoff</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>LCGuard proposes the first principled framework to control sensitive information leakage in KV-cache-based latent communication for multi-agent LLM systems, achieving strong privacy protection with minimal task performance degradation.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Multi-agent LLM systems increasingly use latent communication via KV caches to improve efficiency and preserve richer semantic state compared to text-based messages. However, KV caches encode contextual inputs and intermediate reasoning, creating an opaque channel that can leak agent-specific sensitive information without explicit textual disclosure.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Text-based multi-agent communication (e.g., Zhu et al., Qian et al.) is inefficient and lossy.</li>
+<li>Latent communication via KV caches (e.g., Shi et al., Zheng et al., Fu et al.) improves efficiency but introduces new attack surfaces.</li>
+<li>Safety mechanisms in multi-agent systems typically operate over outputs or tool actions (e.g., Xiang et al., Asif and Amiri), not latent representations.</li>
+<li>KV-cache security work focuses on isolation/eviction in serving environments (e.g., Chu et al., Luo et al.), not on information content of shared caches.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing safety mechanisms for multi-agent systems operate on generated text or tool actions, ignoring the representation-level leakage channel in KV caches. Prior KV-cache security work focuses on system-level isolation rather than regulating what information is retained in caches intentionally shared between agents. No principled framework exists to control sensitive information flow in latent KV communication while preserving task utility.</p>
+<h3>P — Proposal</h3>
+<p>LCGuard treats shared KV caches as latent working memory and learns representation-level transformations (via a learnable function g_ij) before cache artifacts are transmitted between agents. It formalizes leakage via adversarial reconstruction: a shared artifact is unsafe if an adversarial decoder can recover agent-specific sensitive inputs, leading to a minimax optimization that balances task utility against information exposure.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>No figures extracted.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Across Qwen3 (4B, 8B, 14B), Gemma-2-9B, and LLaMA (3B, 8B) on AgentLeak, MAGPIE, and PrivacyLens benchmarks, LCGuard consistently reduces reconstruction-based leakage and attack success rates while maintaining competitive task performance (e.g., within 2-5% of standard KV-sharing baselines on most tasks).</p>
+<h3>Ablation</h3>
+<p>Ablation studies show that the adversarial training component is critical: removing the adversary reduces leakage suppression by over 40% on average, while the transformation dimensionality (compression ratio) controls the privacy-utility tradeoff (e.g., 4x compression yields 90% leakage reduction with 3% task drop).</p>
+<h3>Limitations</h3>
+<p>['LCGuard assumes a specific threat model where the adversary has access to shared KV caches and can train decoders; other leakage modalities (e.g., side-channel attacks) are not addressed.', 'The framework introduces additional training overhead due to the adversarial optimization loop, which may be costly for very large models.', 'Evaluation is limited to reconstruction-based leakage; other forms of information leakage (e.g., membership inference) are not studied.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Directly addresses a critical blind spot in multi-agent safety: representation-level leakage that bypasses text-based monitoring.</li>
+<li>Provides a formal, operational definition of leakage (reconstructability) that can guide future defense design.</li>
+<li>Demonstrates that privacy and utility can be balanced in latent communication, enabling safer deployment of efficient multi-agent systems.</li>
+<li>Relevant to any researcher working on multi-agent coordination, privacy-preserving ML, or secure LLM serving.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate LCGuard against more sophisticated adversaries (e.g., adaptive decoders, multi-step reconstruction).</li>
+<li>[ ] Extend the framework to other latent communication modalities (e.g., hidden states, activations).</li>
+<li>[ ] Explore integration with differential privacy guarantees for provable leakage bounds.</li>
+<li>[ ] Test on larger-scale multi-agent systems with more agents and complex topologies.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>LCGuard：多智能体系统中安全KV共享的潜在通信防护</h1>
+<p><strong>主要结论</strong>
+- 多智能体系统中共享的KV缓存构成一个不透明通道，可在不泄露文本的情况下泄漏敏感信息。
+- LCGuard学习KV缓存上的表示级变换，在降低智能体特定输入可重构性的同时保持任务效用。
+- 通过对抗性重构形式化泄漏：如果解码器能从共享工件中恢复敏感输入，则该工件不安全。
+- LCGuard在Qwen3、Gemma-2和LLaMA模型上，在AgentLeak、MAGPIE和PrivacyLens基准测试中实现了良好的隐私-效用权衡。
+- 该框架与拓扑无关，支持顺序、层次和图结构的多智能体通信。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>LCGuard提出了首个原则性框架，用于控制多智能体LLM系统中基于KV缓存的潜在通信中的敏感信息泄露，在实现强隐私保护的同时仅带来极小的任务性能下降。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：多智能体LLM系统越来越多地使用基于KV缓存的潜在通信来提高效率并保留更丰富的语义状态，但KV缓存编码了上下文输入和中间推理，形成了一个不透明通道，可在不显式泄露文本的情况下泄漏智能体特定的敏感信息。相关工作：基于文本的多智能体通信效率低且有损；基于KV缓存的潜在通信提高了效率但引入了新的攻击面；多智能体系统中的安全机制通常作用于输出或工具动作，而非潜在表示；KV缓存安全工作侧重于服务环境中的隔离/驱逐，而非共享缓存的信息内容。差距：现有的多智能体系统安全机制作用于生成的文本或工具动作，忽略了KV缓存中的表示级泄漏通道；先前的KV缓存安全工作侧重于系统级隔离，而非调节智能体间有意共享的缓存中保留的信息；缺乏一个原则性框架来控制潜在KV通信中的敏感信息流同时保持任务效用。提案：LCGuard将共享的KV缓存视为潜在工作记忆，并在缓存工件在智能体间传输之前学习表示级变换（通过可学习函数g_ij）；它通过对抗性重构形式化泄漏：如果对抗解码器能从共享工件中恢复智能体特定的敏感输入，则该工件不安全，从而形成一个平衡任务效用与信息暴露的极小极大优化。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在Qwen3（4B、8B、14B）、Gemma-2-9B和LLaMA（3B、8B）模型上，针对AgentLeak、MAGPIE和PrivacyLens基准测试，LCGuard一致地降低了基于重构的泄漏和攻击成功率，同时保持了有竞争力的任务性能（例如，在大多数任务上，与标准KV共享基线相比，性能差异在2-5%以内）。</p>
+<h3>消融实验</h3>
+<p>消融研究表明，对抗训练组件至关重要：移除对抗器会使泄漏抑制效果平均降低超过40%，而变换维度（压缩比）控制着隐私-效用权衡（例如，4倍压缩可实现90%的泄漏减少，同时任务性能下降3%）。</p>
+<h3>局限性</h3>
+<p>['LCGuard假设一个特定的威胁模型，即对手可以访问共享的KV缓存并训练解码器；其他泄漏模式（例如侧信道攻击）未得到解决。', '由于对抗优化循环，该框架引入了额外的训练开销，对于非常大的模型可能成本较高。', '评估仅限于基于重构的泄漏；其他形式的信息泄漏（例如成员推断）未进行研究。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>直接解决了多智能体安全中的一个关键盲点：绕过基于文本监控的表示级泄漏。</li>
+<li>提供了泄漏（可重构性）的形式化、可操作定义，可指导未来的防御设计。</li>
+<li>证明了在潜在通信中可以平衡隐私和效用，从而支持更安全地部署高效的多智能体系统。</li>
+<li>与任何从事多智能体协调、隐私保护机器学习或安全LLM服务的研究人员相关。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 评估LCGuard对抗更复杂的对手（例如自适应解码器、多步重构）。</li>
+<li>[ ] 将框架扩展到其他潜在通信模态（例如隐藏状态、激活值）。</li>
+<li>[ ] 探索与差分隐私保证的集成，以获得可证明的泄漏界限。</li>
+<li>[ ] 在具有更多智能体和复杂拓扑的大规模多智能体系统上进行测试。</li>
+</ul>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22786</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

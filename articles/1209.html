@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post-Training is About States, Not Tokens: A State Distribution View of SFT, RL, and On-Policy Distillation | 数字信任研究之眼</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+
+  <article class="glass-card article-detail">
+    <h2 class="lang-en">Post-Training is About States, Not Tokens: A State Distribution View of SFT, RL, and On-Policy Distillation</h2>
+    <h2 class="lang-zh">Post-Training is About States, Not Tokens: A State Distribution View of SFT, RL, and On-Policy Distillation</h2>
+    <div class="meta">
+      Dong Nie &nbsp;·&nbsp; 
+      2026-05-22 &nbsp;·&nbsp; 
+      arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22731" target="_blank" class="dim-link">Original →</a>
+    </div>
+
+    <div class="lang-en">
+      <h3>Summary</h3>
+      <p>This paper argues that the state distribution on which supervision is applied (on-policy vs off-policy) is as important as the loss function for understanding post-training phenomena like catastrophic forgetting and teacher-student reversal.</p>
+    </div>
+    <div class="lang-zh">
+      <h3>摘要</h3>
+      <p>This paper argues that the state distribution on which supervision is applied (on-policy vs off-policy) is as important as the loss function for understanding post-training phenomena like catastrophic forgetting and teacher-student reversal.</p>
+    </div>
+
+    
+    <div class="lang-en">
+      <h3>Deep Note</h3>
+      <h1>Deep Note — state-distribution-post-training</h1>
+<p><strong>Key Takeaways</strong>
+- Post-training behavior is governed by the interaction between supervision signal and training state distribution, not just the loss function.
+- On-policy state supervision (RL, OPD) preserves locality and can allow students to improve beyond degraded teachers.
+- SFT's off-policy nature can cause catastrophic forgetting when dataset states diverge from the learner's induced states.
+- OPD from a degraded SFT teacher surpasses that teacher on target and retention tasks, despite using the teacher as the only supervision source.
+- Lightweight on-policy RL improves target performance while preserving retention, unlike aggressive SFT.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Post-Training is About States, Not Tokens: A State Distribution View of SFT, RL, and On-Policy Distillation</li>
+<li><strong>Alias:</strong> state-distribution-post-training</li>
+<li><strong>Authors:</strong> Dong Nie</li>
+<li><strong>arXiv ID:</strong> 2605.22731</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22731</li>
+<li>HTML: https://arxiv.org/html/2605.22731v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22731</li>
+<li><strong>Tags:</strong> post-training, state-distribution, sft, reinforcement-learning, distillation</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper argues that the state distribution on which supervision is applied (on-policy vs off-policy) is as important as the loss function for understanding post-training phenomena like catastrophic forgetting and teacher-student reversal.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Large language model post-training methods (SFT, RL, distillation) are typically analyzed through their loss functions (maximum likelihood, policy gradients, KL divergences). However, these analyses overlook the role of the state distribution—the prompt plus generated prefix—on which the supervision is applied. The paper proposes a unified state-distribution view to explain why methods with similar objectives can behave differently.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Standard SFT analysis focuses on maximum likelihood and exposure bias.</li>
+<li>RL for LLMs often emphasizes reward modeling and KL penalties.</li>
+<li>Distillation literature compares forward and reverse KL divergences.</li>
+<li>Catastrophic forgetting in LLMs is typically attributed to objective-level factors.</li>
+<li>On-policy vs off-policy distinctions are common in RL but underexplored in LLM post-training.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing analyses of post-training methods focus on loss functions (e.g., forward KL, reverse KL, policy gradients) but neglect the complementary factor of the state distribution on which supervision is applied. This oversight makes it difficult to explain phenomena like catastrophic forgetting under aggressive SFT, stability of RL with sparse rewards, and students outperforming teachers in distillation.</p>
+<h3>P — Proposal</h3>
+<p>The paper formalizes post-training as state-distribution shaping, decomposing methods into state source (off-policy dataset vs on-policy learner) and signal source (labels, rewards, teacher logits). It conducts controlled experiments with Qwen3-0.6B-Base on GSM8K, using TruthfulQA and MMLU for retention, to demonstrate that on-policy state supervision (RL, OPD) preserves locality and enables improvement beyond degraded teachers.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On GSM8K, mild SFT improved accuracy from ~18% to ~42% with little forgetting on TruthfulQA and MMLU. Stress SFT degraded GSM8K to ~30% and caused substantial retention loss. OPD from the stress SFT teacher recovered GSM8K to ~40% and surpassed the teacher on TruthfulQA and MMLU. Lightweight on-policy RL improved GSM8K to ~38% while preserving retention.</p>
+<h3>Ablation</h3>
+<p>Comparing mild vs stress SFT shows that aggressive off-policy updates cause retention loss, while on-policy methods (OPD, RL) maintain retention even when improving target performance.</p>
+<h3>Limitations</h3>
+<p>['Experiments are small-scale (Qwen3-0.6B-Base, single GPU) and may not generalize to larger models or diverse tasks.', 'The study does not explore multi-turn interactions or long-context scenarios where state distribution effects may differ.', 'The paper does not provide a theoretical guarantee for why on-policy methods preserve retention beyond empirical observation.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a unified framework to compare SFT, RL, and distillation, helping researchers choose methods based on state distribution properties.</li>
+<li>Explains why on-policy methods (RL, OPD) can be more robust to forgetting, relevant for safety-critical fine-tuning.</li>
+<li>Suggests that distillation success depends on state source, not just teacher quality, informing knowledge transfer strategies.</li>
+<li>Highlights the importance of state distribution in post-training, which may impact alignment and capability preservation.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Validate findings on larger models (e.g., 7B, 70B) and more diverse tasks (coding, instruction following).</li>
+<li>[ ] Explore hybrid approaches that combine off-policy efficiency with on-policy locality.</li>
+<li>[ ] Investigate theoretical bounds on state distribution drift and its relation to forgetting.</li>
+<li>[ ] Apply state-distribution view to multi-turn RL and long-context scenarios.</li>
+<li>[ ] Develop practical guidelines for selecting state source based on task and retention requirements.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+    </div>
+    <div class="lang-zh">
+      <h3>深度笔记</h3>
+      <h1>Deep Note — state-distribution-post-training</h1>
+<p><strong>Key Takeaways</strong>
+- Post-training behavior is governed by the interaction between supervision signal and training state distribution, not just the loss function.
+- On-policy state supervision (RL, OPD) preserves locality and can allow students to improve beyond degraded teachers.
+- SFT's off-policy nature can cause catastrophic forgetting when dataset states diverge from the learner's induced states.
+- OPD from a degraded SFT teacher surpasses that teacher on target and retention tasks, despite using the teacher as the only supervision source.
+- Lightweight on-policy RL improves target performance while preserving retention, unlike aggressive SFT.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Post-Training is About States, Not Tokens: A State Distribution View of SFT, RL, and On-Policy Distillation</li>
+<li><strong>Alias:</strong> state-distribution-post-training</li>
+<li><strong>Authors:</strong> Dong Nie</li>
+<li><strong>arXiv ID:</strong> 2605.22731</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.22731</li>
+<li>HTML: https://arxiv.org/html/2605.22731v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.22731</li>
+<li><strong>Tags:</strong> post-training, state-distribution, sft, reinforcement-learning, distillation</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper argues that the state distribution on which supervision is applied (on-policy vs off-policy) is as important as the loss function for understanding post-training phenomena like catastrophic forgetting and teacher-student reversal.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Large language model post-training methods (SFT, RL, distillation) are typically analyzed through their loss functions (maximum likelihood, policy gradients, KL divergences). However, these analyses overlook the role of the state distribution—the prompt plus generated prefix—on which the supervision is applied. The paper proposes a unified state-distribution view to explain why methods with similar objectives can behave differently.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Standard SFT analysis focuses on maximum likelihood and exposure bias.</li>
+<li>RL for LLMs often emphasizes reward modeling and KL penalties.</li>
+<li>Distillation literature compares forward and reverse KL divergences.</li>
+<li>Catastrophic forgetting in LLMs is typically attributed to objective-level factors.</li>
+<li>On-policy vs off-policy distinctions are common in RL but underexplored in LLM post-training.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing analyses of post-training methods focus on loss functions (e.g., forward KL, reverse KL, policy gradients) but neglect the complementary factor of the state distribution on which supervision is applied. This oversight makes it difficult to explain phenomena like catastrophic forgetting under aggressive SFT, stability of RL with sparse rewards, and students outperforming teachers in distillation.</p>
+<h3>P — Proposal</h3>
+<p>The paper formalizes post-training as state-distribution shaping, decomposing methods into state source (off-policy dataset vs on-policy learner) and signal source (labels, rewards, teacher logits). It conducts controlled experiments with Qwen3-0.6B-Base on GSM8K, using TruthfulQA and MMLU for retention, to demonstrate that on-policy state supervision (RL, OPD) preserves locality and enables improvement beyond degraded teachers.</p>
+<hr />
+<h2>3) Figures</h2>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
+<hr />
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On GSM8K, mild SFT improved accuracy from ~18% to ~42% with little forgetting on TruthfulQA and MMLU. Stress SFT degraded GSM8K to ~30% and caused substantial retention loss. OPD from the stress SFT teacher recovered GSM8K to ~40% and surpassed the teacher on TruthfulQA and MMLU. Lightweight on-policy RL improved GSM8K to ~38% while preserving retention.</p>
+<h3>Ablation</h3>
+<p>Comparing mild vs stress SFT shows that aggressive off-policy updates cause retention loss, while on-policy methods (OPD, RL) maintain retention even when improving target performance.</p>
+<h3>Limitations</h3>
+<p>['Experiments are small-scale (Qwen3-0.6B-Base, single GPU) and may not generalize to larger models or diverse tasks.', 'The study does not explore multi-turn interactions or long-context scenarios where state distribution effects may differ.', 'The paper does not provide a theoretical guarantee for why on-policy methods preserve retention beyond empirical observation.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a unified framework to compare SFT, RL, and distillation, helping researchers choose methods based on state distribution properties.</li>
+<li>Explains why on-policy methods (RL, OPD) can be more robust to forgetting, relevant for safety-critical fine-tuning.</li>
+<li>Suggests that distillation success depends on state source, not just teacher quality, informing knowledge transfer strategies.</li>
+<li>Highlights the importance of state distribution in post-training, which may impact alignment and capability preservation.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Validate findings on larger models (e.g., 7B, 70B) and more diverse tasks (coding, instruction following).</li>
+<li>[ ] Explore hybrid approaches that combine off-policy efficiency with on-policy locality.</li>
+<li>[ ] Investigate theoretical bounds on state distribution drift and its relation to forgetting.</li>
+<li>[ ] Apply state-distribution view to multi-turn RL and long-context scenarios.</li>
+<li>[ ] Develop practical guidelines for selecting state source based on task and retention requirements.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+    </div>
+    
+
+    
+    <div class="tags">
+      <span class="tag">2605.22731</span>
+    </div>
+    
+  </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>
