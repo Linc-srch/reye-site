@@ -4,15 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>数字信任研究之眼 | Reye</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header>
-    <span class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></span>
+
+<div class="flame-beam-stage">
+  <div class="flame-beam"></div>
+  <div class="flame-beam flame-beam-2"></div>
+</div>
+
+<div class="reye-app">
+  <header class="reye-header">
+    <span class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+      <span class="sep">·</span>
+      <span class="zh-mark">数字信任研究之眼</span>
+    </span>
     <nav>
-      <a href="search.html">Search</a>
-      <a href="insights.html">Insights</a>
-      <a href="about.html">About</a>
+      <a href="search.html"><span class="lang-en">Search</span><span class="lang-zh">搜索</span></a>
+      <a href="insights.html"><span class="lang-en">Insights</span><span class="lang-zh">洞察</span></a>
+      <a href="about.html"><span class="lang-en">About</span><span class="lang-zh">关于</span></a>
       <div class="lang-toggle">
         <button data-lang="en">EN</button>
         <button data-lang="zh">中</button>
@@ -20,116 +49,340 @@
     </nav>
   </header>
 
-  <section class="glass-card hero-stats">
-    <div class="lang-en">
-      <div class="stats-row">
-        <div class="stat">
-          <div class="num">135</div>
-          <div class="lbl">analysed</div>
-        </div>
-        <div class="stat">
-          <div class="num">139</div>
-          <div class="lbl">tracked</div>
-        </div>
-        <div class="stat">
-          <div class="num">2026-05-23</div>
-          <div class="lbl">last updated</div>
-        </div>
-      </div>
-    </div>
-    <div class="lang-zh">
-      <div class="stats-row">
-        <div class="stat">
-          <div class="num">135</div>
-          <div class="lbl">篇已分析</div>
-        </div>
-        <div class="stat">
-          <div class="num">139</div>
-          <div class="lbl">篇已追踪</div>
-        </div>
-        <div class="stat">
-          <div class="num">2026-05-23</div>
-          <div class="lbl">最后更新</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main>
+    <section class="reye-hero">
+      <div class="orb orb-blue"></div>
+      <div class="orb orb-violet"></div>
 
-  <section class="domain-grid">
-    
-    <a href="domains/ai_safety/" class="domain-card">
-      <div class="count">124</div>
-      <h2 class="lang-en">AI Safety</h2>
-      <h2 class="lang-zh">AI 安全</h2>
-      <div class="meta">
-        <div>
-          <span class="lang-en">26 today</span>
-          <span class="lang-zh">今日新增 26</span>
+      <div class="hero-inner">
+        <!-- ReyeFlame centerpiece — rays + drift injected by inline script below -->
+        <div class="flame-stage fade-up" style="--d:0ms">
+          <div class="flame-wrap" id="flame-wrap">
+            <svg class="flame-svg" width="280" height="280" viewBox="0 0 80 88" style="overflow:visible">
+              <defs>
+                <radialGradient id="fl-iris" cx="0.5" cy="0.5" r="0.65">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="8%" stop-color="#e8f4ff"/>
+                  <stop offset="22%" stop-color="#9bcaff"/>
+                  <stop offset="42%" stop-color="#4f7be8"/>
+                  <stop offset="65%" stop-color="#5532b8"/>
+                  <stop offset="85%" stop-color="#2a1255"/>
+                  <stop offset="100%" stop-color="#0a0418" stop-opacity="0.85"/>
+                </radialGradient>
+                <radialGradient id="fl-core" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+                  <stop offset="35%" stop-color="#cfe6ff" stop-opacity="0.75"/>
+                  <stop offset="100%" stop-color="#7ec3ff" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="fl-haze" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0%" stop-color="#6d9eff" stop-opacity="0.4"/>
+                  <stop offset="50%" stop-color="#5a32c8" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#0a0418" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="fl-halo" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0%" stop-color="#7e6dff" stop-opacity="0.32"/>
+                  <stop offset="55%" stop-color="#4528a0" stop-opacity="0.10"/>
+                  <stop offset="100%" stop-color="#0a0418" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="fl-ray-h" x1="0" y1="0.5" x2="1" y2="0.5">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+                  <stop offset="20%" stop-color="#a8c8ff" stop-opacity="0.85"/>
+                  <stop offset="55%" stop-color="#6d6dff" stop-opacity="0.45"/>
+                  <stop offset="100%" stop-color="#5a32c8" stop-opacity="0"/>
+                </linearGradient>
+                <filter id="fl-iris-shimmer" x="-30%" y="-30%" width="160%" height="160%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="9">
+                    <animate attributeName="baseFrequency" dur="4s" values="0.6;0.95;0.6" repeatCount="indefinite"/>
+                  </feTurbulence>
+                  <feDisplacementMap in="SourceGraphic" scale="2.8"/>
+                </filter>
+                <linearGradient id="fl-tower" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#3a2870" stop-opacity="0.95"/>
+                  <stop offset="25%" stop-color="#0d0822"/>
+                  <stop offset="50%" stop-color="#04020e"/>
+                  <stop offset="75%" stop-color="#0d0822"/>
+                  <stop offset="100%" stop-color="#3a2870" stop-opacity="0.95"/>
+                </linearGradient>
+                <filter id="fl-bigGlow" x="-80%" y="-80%" width="260%" height="260%">
+                  <feGaussianBlur stdDeviation="0.7" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="fl-rayGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="0.35"/>
+                </filter>
+              </defs>
+              <!-- Far atmospheric halo -->
+              <ellipse cx="40" cy="44" rx="42" ry="36" fill="url(#fl-halo)" class="flame-halo"/>
+              <!-- Lightning rays — injected by inline script -->
+              <g class="flame-rays" id="flame-rays-g" filter="url(#fl-rayGlow)"></g>
+              <!-- Cool haze envelope -->
+              <ellipse cx="40" cy="44" rx="20" ry="30" fill="url(#fl-haze)" class="flame-haze"/>
+              <g filter="url(#fl-bigGlow)">
+                <g filter="url(#fl-iris-shimmer)">
+                  <ellipse cx="40" cy="44" rx="13" ry="22" fill="url(#fl-iris)" class="flame-iris"/>
+                  <ellipse cx="40" cy="44" rx="5" ry="11" fill="url(#fl-core)" class="flame-core"/>
+                </g>
+                <!-- Tower pupil — drifts via requestAnimationFrame -->
+                <g class="flame-pupil">
+                  <path d="M 38.3 58 L 38.3 30 L 37.6 28.5 L 37.6 27.2 L 38.4 27 L 38.6 22 L 39.0 27 L 39.4 27 L 39.7 18.5 L 40.0 27 L 40.3 18.5 L 40.6 27 L 41.0 27 L 41.4 22 L 41.6 27 L 42.4 27.2 L 42.4 28.5 L 41.7 30 L 41.7 58 L 42.6 61 L 37.4 61 Z" fill="url(#fl-tower)"/>
+                  <path d="M 38.5 22.5 L 38.6 22 L 38.7 23 Z" fill="#9b7eff" opacity="0.85"/>
+                  <path d="M 39.85 19 L 40.0 18.5 L 40.15 19 Z" fill="#bca8ff" opacity="0.95"/>
+                  <path d="M 41.3 22.5 L 41.4 22 L 41.5 23 Z" fill="#9b7eff" opacity="0.85"/>
+                  <path d="M 40 28 L 40 56" stroke="#3a1e7a" stroke-width="0.25" opacity="0.6"/>
+                </g>
+              </g>
+            </svg>
+          </div>
         </div>
-        <span class="arrow">→</span>
-      </div>
-    </a>
-    
-    <a href="domains/system_safety/" class="domain-card">
-      <div class="count">106</div>
-      <h2 class="lang-en">System Safety</h2>
-      <h2 class="lang-zh">系统安全</h2>
-      <div class="meta">
-        <div>
-          <span class="lang-en">27 today</span>
-          <span class="lang-zh">今日新增 27</span>
-        </div>
-        <span class="arrow">→</span>
-      </div>
-    </a>
-    
-    <a href="domains/cryptography/" class="domain-card">
-      <div class="count">75</div>
-      <h2 class="lang-en">Cryptography</h2>
-      <h2 class="lang-zh">密码学</h2>
-      <div class="meta">
-        <div>
-          <span class="lang-en">25 today</span>
-          <span class="lang-zh">今日新增 25</span>
-        </div>
-        <span class="arrow">→</span>
-      </div>
-    </a>
-    
-    <a href="domains/digital_identity/" class="domain-card">
-      <div class="count">77</div>
-      <h2 class="lang-en">Digital Identity & Trust</h2>
-      <h2 class="lang-zh">数字身份与信任</h2>
-      <div class="meta">
-        <div>
-          <span class="lang-en">25 today</span>
-          <span class="lang-zh">今日新增 25</span>
-        </div>
-        <span class="arrow">→</span>
-      </div>
-    </a>
-    
-    <a href="domains/general/" class="domain-card">
-      <div class="count">139</div>
-      <h2 class="lang-en">General (All)</h2>
-      <h2 class="lang-zh">全部</h2>
-      <div class="meta">
-        <div>
-          <span class="lang-en">28 today</span>
-          <span class="lang-zh">今日新增 28</span>
-        </div>
-        <span class="arrow">→</span>
-      </div>
-    </a>
-    
-  </section>
 
-  <footer class="site-footer">
-    <span class="footer-brand">🔭 Reye</span>
-    <span class="lang-en">数字信任研究之眼 · Updated 2026-05-23</span>
-    <span class="lang-zh">数字信任研究之眼 · 更新于 2026-05-23</span>
+        <a class="lab-badge fade-up" href="#" onclick="return false" style="--d:100ms">
+          <svg class="eye-mark" width="14" height="14" viewBox="0 0 32 32" aria-hidden="true">
+            <defs>
+              <radialGradient id="bdg-iris" cx="0.5" cy="0.5" r="0.6">
+                <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+                <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+                <stop offset="100%" stop-color="#0a0418"/>
+              </radialGradient>
+              <filter id="bdg-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="0.8" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <g filter="url(#bdg-glow)">
+              <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#bdg-iris)"/>
+              <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+            </g>
+          </svg>
+          <span class="lang-en">Singapore Digital Trust</span>
+          <span class="lang-zh">新加坡数字信任实验室</span>
+          <span class="lab-badge-arrow">→</span>
+        </a>
+
+        <p class="eyebrow fade-up" style="--d:180ms">
+          <span class="lang-en">A daily research feed</span>
+          <span class="lang-zh">每日研究订阅</span>
+        </p>
+
+        <h1 class="display">
+          <span class="fade-up" style="--d:120ms">
+            <span class="lang-en">A research eye,</span>
+            <span class="lang-zh">数字信任之眼，</span>
+          </span>
+          <span class="fade-up" style="--d:240ms">
+            <span class="lang-en">exploring the frontiers</span>
+            <span class="lang-zh">探索研究的</span>
+          </span>
+          <span class="fade-up accent" style="--d:360ms">
+            <span class="lang-en">of digital trust.</span>
+            <span class="lang-zh">前沿。</span>
+          </span>
+        </h1>
+
+        <p class="lede fade-up" style="--d:520ms">
+          <span class="lang-en">Reye tracks the moving frontier of LLM safety, system security, cryptography and digital identity. Every paper, every blog. Summarised, scored, refreshed daily.</span>
+          <span class="lang-zh">Reye 持续追踪 LLM 安全、系统安全、密码学与数字身份的前沿。每篇论文、每条博客，自动摘要、自动评分，每日更新。</span>
+        </p>
+
+        <div class="cta-row fade-up" style="--d:680ms">
+          <a href="search.html" class="btn btn-primary">
+            <span class="lang-en">Browse the feed</span>
+            <span class="lang-zh">浏览订阅</span>
+            <span>→</span>
+          </a>
+          <a href="about.html" class="btn btn-ghost">
+            <span class="lang-en">How it works</span>
+            <span class="lang-zh">工作原理</span>
+          </a>
+        </div>
+
+        <div class="stats fade-up" style="--d:860ms">
+          <div class="stat">
+            <div class="num">135</div>
+            <div class="lbl">
+              <span class="lang-en">papers analysed</span>
+              <span class="lang-zh">篇已分析</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="num">139</div>
+            <div class="lbl">
+              <span class="lang-en">total tracked</span>
+              <span class="lang-zh">篇已追踪</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="num">5</div>
+            <div class="lbl">
+              <span class="lang-en">domains</span>
+              <span class="lang-zh">研究领域</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="num">2026-05-23</div>
+            <div class="lbl">
+              <span class="lang-en">updated</span>
+              <span class="lang-zh">最后更新</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-cue">
+          <span class="lang-en">Scroll</span>
+          <span class="lang-zh">向下浏览</span>
+          <div class="cue-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reye-section">
+      <div class="section-head fade-up">
+        <p class="eyebrow">
+          <span class="lang-en">Research domains</span>
+          <span class="lang-zh">研究领域</span>
+        </p>
+        <h2 class="section-h2">
+          <span class="lang-en">Five hubs. <span class="accent">One feed.</span></span>
+          <span class="lang-zh">五个领域。<span class="accent">一条订阅。</span></span>
+        </h2>
+      </div>
+
+      <div class="domain-grid">
+        <a href="domains/ai_safety/" class="domain-card fade-up" style="--d:0ms">
+          <div class="count">124</div>
+          <h3 class="lang-en">AI Safety</h3>
+          <h3 class="lang-zh">AI 安全</h3>
+          <div class="meta">
+            <span>
+              <span class="lang-en">26 today</span>
+              <span class="lang-zh">今日新增 26</span>
+            </span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+        <a href="domains/system_safety/" class="domain-card fade-up" style="--d:80ms">
+          <div class="count">106</div>
+          <h3 class="lang-en">System Safety</h3>
+          <h3 class="lang-zh">系统安全</h3>
+          <div class="meta">
+            <span>
+              <span class="lang-en">27 today</span>
+              <span class="lang-zh">今日新增 27</span>
+            </span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+        <a href="domains/cryptography/" class="domain-card fade-up" style="--d:160ms">
+          <div class="count">75</div>
+          <h3 class="lang-en">Cryptography</h3>
+          <h3 class="lang-zh">密码学</h3>
+          <div class="meta">
+            <span>
+              <span class="lang-en">25 today</span>
+              <span class="lang-zh">今日新增 25</span>
+            </span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+        <a href="domains/digital_identity/" class="domain-card fade-up" style="--d:240ms">
+          <div class="count">77</div>
+          <h3 class="lang-en">Digital Identity &amp; Trust</h3>
+          <h3 class="lang-zh">数字身份与信任</h3>
+          <div class="meta">
+            <span>
+              <span class="lang-en">25 today</span>
+              <span class="lang-zh">今日新增 25</span>
+            </span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+        <a href="domains/general/" class="domain-card fade-up" style="--d:320ms">
+          <div class="count">139</div>
+          <h3 class="lang-en">General (All)</h3>
+          <h3 class="lang-zh">全部</h3>
+          <div class="meta">
+            <span>
+              <span class="lang-en">28 today</span>
+              <span class="lang-zh">今日新增 28</span>
+            </span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+    <p class="footer-meta">
+      <span class="lang-en"><strong>135</strong> analysed · <strong>139</strong> tracked · Updated 2026-05-23</span>
+      <span class="lang-zh"><strong>135</strong> 篇已分析 · <strong>139</strong> 篇已追踪 · 更新于 2026-05-23</span>
+    </p>
+    <p class="footer-lede">
+      <span class="lang-en">A daily research eye on digital trust.</span>
+      <span class="lang-zh">数字信任研究之眼，每日更新。</span>
+    </p>
   </footer>
+</div><!-- .reye-app -->
 
-  <script src="assets/app.js"></script>
+<script src="assets/app.js"></script>
+<script>
+/* ReyeFlame — ray injection + pupil drift (mirrors EyeMark.jsx logic exactly) */
+(function(){
+  function buildRay(angle,length,seed){
+    var s=seed;
+    function rng(){s=(s*9301+49297)%233280;return s/233280;}
+    var cx=40,cy=44,startR=14+rng()*2,stepR=1.5+rng()*1.2,pts=[],r=startR,pj=0;
+    while(r<startR+length){
+      pj+=(rng()-0.5)*1.4;pj*=0.78;
+      pts.push((cx+Math.cos(angle)*r+Math.cos(angle+Math.PI/2)*pj).toFixed(2)+','+(cy+Math.sin(angle)*r+Math.sin(angle+Math.PI/2)*pj).toFixed(2));
+      r+=stepR+rng()*1.4;
+    }
+    return pts.join(' ');
+  }
+  var NS='http://www.w3.org/2000/svg',g=document.getElementById('flame-rays-g');
+  if(g){
+    for(var i=0;i<36;i++){
+      var ba=(i/36)*Math.PI*2,h=Math.abs(Math.cos(ba));
+      var len=10+h*26+((i*53)%11),angle=ba+((i*7)%5-2)*0.06;
+      var pl=document.createElementNS(NS,'polyline');
+      pl.setAttribute('points',buildRay(angle,len,i*137+23));
+      pl.setAttribute('stroke','url(#fl-ray-h)');
+      pl.setAttribute('stroke-width',String(0.35+((i*3)%5)*0.22));
+      pl.setAttribute('stroke-linecap','round');pl.setAttribute('stroke-linejoin','round');
+      pl.setAttribute('fill','none');pl.setAttribute('opacity',String(0.45+(i%6)*0.10));
+      pl.style.setProperty('--d',((i*137)%1000)+'ms');pl.classList.add('ray');
+      g.appendChild(pl);
+    }
+  }
+  var t0=performance.now(),pupil=document.querySelector('.flame-pupil');
+  if(pupil)(function tick(now){
+    var t=(now-t0)/1000;
+    pupil.setAttribute('transform','translate('+(Math.sin(t*0.55)*0.8)+' '+(Math.sin(t*0.41+1.2)*2.0)+')');
+    requestAnimationFrame(tick);
+  })(t0);
+})();
+</script>
 </body>
 </html>
