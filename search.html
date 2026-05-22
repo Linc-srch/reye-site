@@ -8,21 +8,31 @@
 </head>
 <body>
   <header>
-    <h1><a href="index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
-    <div class="lang-toggle">
-      <button data-lang="en">EN</button>
-      <button data-lang="zh">中</button>
-    </div>
+    <a href="index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <nav>
+      <a href="index.html">
+        <span class="lang-en">Home</span>
+        <span class="lang-zh">首页</span>
+      </a>
+      <div class="lang-toggle">
+        <button data-lang="en">EN</button>
+        <button data-lang="zh">中</button>
+      </div>
+    </nav>
   </header>
 
-  <section class="glass-card">
-    <input type="text" id="search-input" placeholder="Search titles, summaries, tags…"
-           style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05);
-                  border: 1px solid var(--border); border-radius: 12px; color: var(--text);
-                  font-size: 1rem; outline: none;">
-  </section>
+  <div class="search-wrap">
+    <input type="text" id="search-input" class="search-input-pill"
+           placeholder="Search titles, summaries, tags…">
+  </div>
 
   <section id="search-results"></section>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <a href="index.html" class="lang-en">← Home</a>
+    <a href="index.html" class="lang-zh">← 首页</a>
+  </footer>
 
   <script src="assets/app.js"></script>
 </body>

@@ -8,29 +8,45 @@
 </head>
 <body>
   <header>
-    <h1><a href="index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
-    <div class="lang-toggle">
-      <button data-lang="en">EN</button>
-      <button data-lang="zh">中</button>
-    </div>
+    <a href="index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+    <nav>
+      <a href="index.html">
+        <span class="lang-en">Home</span>
+        <span class="lang-zh">首页</span>
+      </a>
+      <div class="lang-toggle">
+        <button data-lang="en">EN</button>
+        <button data-lang="zh">中</button>
+      </div>
+    </nav>
   </header>
 
-  <section class="glass-card">
-    <h2 class="lang-en">About this feed</h2>
-    <h2 class="lang-zh">关于此订阅</h2>
-    <p class="lang-en">Large language models, reinforcement learning, agentic AI, AI system security, Sandboxing, cryptography, post-quantum cryptography, digital identity, 3gpp, AI Safety, Deepfakes, prompt injections, jailbreaking</p>
-    <p class="lang-zh">Large language models, reinforcement learning, agentic AI, AI system security, Sandboxing, cryptography, post-quantum cryptography, digital identity, 3gpp, AI Safety, Deepfakes, prompt injections, jailbreaking</p>
-  </section>
+  <h2 class="lang-en" style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;letter-spacing:-0.02em">About this feed</h2>
+  <h2 class="lang-zh" style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;letter-spacing:-0.02em">关于此订阅</h2>
 
-  <section class="glass-card">
-    <h3 class="lang-en">Tracked keywords</h3>
-    <h3 class="lang-zh">追踪的关键词</h3>
-    <div class="tags">
-      <span class="tag">large language models</span><span class="tag">reinforcement learning</span><span class="tag">agentic AI / AI agents</span><span class="tag">retrieval-augmented generation</span><span class="tag">multimodal models</span><span class="tag">AI safety</span><span class="tag">post-quantum cryptography</span><span class="tag">digital identity</span><span class="tag">3GPP</span>
-    </div>
-  </section>
+  <div class="about-grid">
+    <section class="glass-card">
+      <h3 class="lang-en" style="font-size:1rem;font-weight:600;margin-bottom:0.75rem;color:var(--text)">Research focus</h3>
+      <h3 class="lang-zh" style="font-size:1rem;font-weight:600;margin-bottom:0.75rem;color:var(--text)">研究方向</h3>
+      <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.7">Large language models, reinforcement learning, agentic AI, AI system security, Sandboxing, cryptography, post-quantum cryptography, digital identity, 3gpp, AI Safety, Deepfakes, prompt injections, jailbreaking</p>
+    </section>
 
-  
+    <section class="glass-card">
+      <h3 class="lang-en" style="font-size:1rem;font-weight:600;margin-bottom:0.75rem;color:var(--text)">Tracked keywords</h3>
+      <h3 class="lang-zh" style="font-size:1rem;font-weight:600;margin-bottom:0.75rem;color:var(--text)">追踪的关键词</h3>
+      <div class="tags">
+        <span class="tag">large language models</span><span class="tag">reinforcement learning</span><span class="tag">agentic AI / AI agents</span><span class="tag">retrieval-augmented generation</span><span class="tag">multimodal models</span><span class="tag">AI safety</span><span class="tag">post-quantum cryptography</span><span class="tag">digital identity</span><span class="tag">3GPP</span>
+      </div>
+    </section>
+
+    
+  </div>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <a href="index.html" class="lang-en">← Home</a>
+    <a href="index.html" class="lang-zh">← 首页</a>
+  </footer>
 
   <script src="assets/app.js"></script>
 </body>

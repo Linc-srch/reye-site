@@ -8,39 +8,34 @@
 </head>
 <body>
   <header>
-    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
     <div class="lang-toggle">
       <button data-lang="en">EN</button>
       <button data-lang="zh">中</button>
     </div>
   </header>
 
-  <p class="breadcrumb">
-    <a href="../assets/../index.html">Home</a>
-    <span>›</span>
-    <span class="lang-en">Analysis</span>
-    <span class="lang-zh">分析</span>
-  </p>
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
 
   <article class="glass-card article-detail">
     <h2 class="lang-en">Text-to-SPARQL Generation with Reinforcement Learning: A GRPO-based Approach on DBLP</h2>
     <h2 class="lang-zh">Deep Note — text2sparql-grpo</h2>
     <div class="meta">
-      Jann Pfeifer, Debayan Banerjee, Ricardo Usbeck · 
-      2026-05-20 · 
+      Jann Pfeifer, Debayan Banerjee, Ricardo Usbeck &nbsp;·&nbsp; 
+      2026-05-20 &nbsp;·&nbsp; 
       arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.20066" target="_blank" class="dim-link">Original →</a>
     </div>
 
     <div class="lang-en">
       <h3>Summary</h3>
       <p>This paper demonstrates that reinforcement learning with outcome-based rewards can train a small 1.7B language model to generate SPARQL queries zero-shot, achieving competitive results without gold query supervision.</p>
     </div>
-    
     <div class="lang-zh">
       <h3>摘要</h3>
       <p>本文展示了如何通过基于结果奖励的强化学习（GRPO）训练一个1.7B的小语言模型，在无需金标准查询标注的情况下，实现零样本Text-to-SPARQL生成，并在DBLP-QuAD基准上取得38.4%的准确率。与需要金标准查询的监督微调（DoRA）相比，该方法虽然准确率略低（47.2% vs 38.4%），但在标注稀缺的实际场景中更具可行性。</p>
     </div>
-    
 
     
     <div class="lang-en">
@@ -157,16 +152,18 @@
     </div>
     
 
+    
     <div class="tags">
       <span class="tag">2605.20066</span>
     </div>
-
-    
-    <p style="margin-top: 1rem;">
-      <a href="https://arxiv.org/abs/2605.20066" target="_blank" class="dim-link">Original source →</a>
-    </p>
     
   </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
 
   <script src="../assets/app.js"></script>
 </body>

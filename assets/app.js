@@ -6,7 +6,7 @@
   const setLang = (lang) => {
     document.body.classList.toggle('lang-zh', lang === 'zh');
     document.querySelectorAll('.lang-toggle button').forEach(b => {
-      b.classList.toggle('active', b.dataset.lang === lang);
+      b.classList.toggle('is-active', b.dataset.lang === lang);
     });
     localStorage.setItem('reye-lang', lang);
   };
@@ -24,7 +24,7 @@
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.dataset.target;
-        buttons.forEach(b => b.classList.toggle('active', b === btn));
+        buttons.forEach(b => b.classList.toggle('is-active', b === btn));
         document.querySelectorAll(`[data-tab]`).forEach(panel => {
           panel.style.display = panel.dataset.tab === target ? '' : 'none';
         });

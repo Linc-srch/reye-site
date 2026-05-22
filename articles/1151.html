@@ -8,39 +8,34 @@
 </head>
 <body>
   <header>
-    <h1><a href="../assets/../index.html" style="color: inherit">🔭 Reye · <span style="font-weight:400;font-size:0.82em">数字信任研究之眼</span></a></h1>
+    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
     <div class="lang-toggle">
       <button data-lang="en">EN</button>
       <button data-lang="zh">中</button>
     </div>
   </header>
 
-  <p class="breadcrumb">
-    <a href="../assets/../index.html">Home</a>
-    <span>›</span>
-    <span class="lang-en">Analysis</span>
-    <span class="lang-zh">分析</span>
-  </p>
+  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
+  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
 
   <article class="glass-card article-detail">
     <h2 class="lang-en">TIDE: Efficient and Lossless MoE Diffusion LLM Inference with I/O-aware Expert Offload</h2>
     <h2 class="lang-zh">TIDE：面向MoE扩散大语言模型的高效无损推理系统</h2>
     <div class="meta">
-      Zhiben Chen, Youpeng Zhao, Yang Sui, Jun Wang, Yuzhang Shang · 
-      2026-05-20 · 
+      Zhiben Chen, Youpeng Zhao, Yang Sui, Jun Wang, Yuzhang Shang &nbsp;·&nbsp; 
+      2026-05-20 &nbsp;·&nbsp; 
       arxiv
+       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.20179" target="_blank" class="dim-link">Original →</a>
     </div>
 
     <div class="lang-en">
       <h3>Summary</h3>
       <p>TIDE proposes a lossless, training-free inference system that exploits temporal stability of expert activations to achieve up to 1.5x throughput improvement for MoE diffusion LLMs on resource-constrained devices.</p>
     </div>
-    
     <div class="lang-zh">
       <h3>摘要</h3>
       <p>本文提出TIDE，一种面向混合专家扩散大语言模型（MoE-dLLM）的无损、免训练推理加速系统。通过利用相邻去噪步骤中专家激活的时间稳定性，TIDE采用基于间隔的专家刷新策略，将推理调度建模为数学规划问题，在资源受限的单GPU-CPU系统上实现高达1.5倍的吞吐量提升。</p>
     </div>
-    
 
     
     <div class="lang-en">
@@ -155,16 +150,18 @@
     </div>
     
 
+    
     <div class="tags">
       <span class="tag">2605.20179</span>
     </div>
-
-    
-    <p style="margin-top: 1rem;">
-      <a href="https://arxiv.org/abs/2605.20179" target="_blank" class="dim-link">Original source →</a>
-    </p>
     
   </article>
+
+  <footer class="site-footer">
+    <span class="footer-brand">🔭 Reye</span>
+    <span class="lang-en">数字信任研究之眼</span>
+    <span class="lang-zh">数字信任研究之眼</span>
+  </footer>
 
   <script src="../assets/app.js"></script>
 </body>
