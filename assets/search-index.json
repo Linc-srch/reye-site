@@ -1,5 +1,33 @@
 [
   {
+    "id": 1197,
+    "type": "article",
+    "title": "AdventHealth advances whole-person care with OpenAI",
+    "summary_en": "AdventHealth is leveraging OpenAI's technology to enhance whole-person care by integrating AI into clinical workflows, patient engagement, and operational efficiency. The partnership aims to use large language models to assist healthcare providers with administrative tasks, improve patient communication, and support clinical decision-making while maintaining data privacy and security standards. This initiative represents a significant step in applying advanced AI to holistic healthcare delivery.",
+    "summary_zh": "AdventHealth 与 OpenAI 合作，利用大型语言模型（LLM）推进全人护理，通过将 AI 整合到临床工作流、患者沟通和运营管理中，提升效率并支持临床决策，同时确保数据隐私与安全。此举标志着先进 AI 在整体医疗中的关键应用。",
+    "url": "https://openai.com/index/adventhealth",
+    "article_page": "articles/1197.html",
+    "score": 0.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-22 07:07:03"
+  },
+  {
+    "id": 1196,
+    "type": "article",
+    "title": "We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks",
+    "summary_en": "Google DeepMind is launching an inaugural Accelerator program in Asia Pacific focused on 'AI for the Planet' to address environmental risks. The three-month program targets startups, research teams, and nonprofits, offering mentorship, tailored support, and integration of frontier AI and science AI models from Google AI experts. It aims to scale green technologies in nature, climate, agriculture, and energy sectors, starting with an in-person bootcamp in Singapore.",
+    "summary_zh": "Google DeepMind在亚太地区启动首届Accelerator项目，聚焦“AI for the Planet”以应对环境风险。该项目为期三个月，面向初创企业、研究团队和非营利组织，提供专家指导、定制支持以及来自Google AI专家的前沿AI和科学AI模型集成，旨在加速自然、气候、农业和能源领域的绿色技术规模化，首站于新加坡举办线下训练营。",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/accelerator-ai-for-the-planet/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+    "article_page": "articles/1196.html",
+    "score": 0.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-22 07:07:01"
+  },
+  {
     "id": 1193,
     "type": "article",
     "title": "The next phase of OpenAI’s Education for Countries",
