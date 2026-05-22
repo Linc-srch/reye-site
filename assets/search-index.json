@@ -1,5 +1,20 @@
 [
   {
+    "id": 1198,
+    "type": "article",
+    "title": "Research",
+    "title_zh": "",
+    "summary_en": "This paper provides an overview of alignment research aimed at ensuring future AI systems remain helpful, honest, and harmless. It covers key challenges such as alignment faking, reward tampering, and hidden objectives, and presents methods for stress-testing safeguards, auditing models, and developing scalable oversight. The research spans interpretability, societal impacts, and evaluation protocols to prepare for increasingly capable systems.",
+    "summary_zh": "本文概述了Alignment研究，旨在确保未来AI系统保持helpful、honest和harmless。内容涵盖alignment faking、reward tampering和hidden objectives等关键挑战，并提出了压力测试safeguards、审计模型以及开发scalable oversight的方法。研究涉及interpretability、societal impacts和评估协议，为日益强大的系统做准备。",
+    "url": "https://www.anthropic.com/research/team/alignment",
+    "article_page": "articles/1198.html",
+    "score": 0.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-22 09:19:18"
+  },
+  {
     "id": 1197,
     "type": "article",
     "title": "AdventHealth advances whole-person care with OpenAI",
