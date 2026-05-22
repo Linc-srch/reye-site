@@ -4,43 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header>
-    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
     <div class="lang-toggle">
       <button data-lang="en">EN</button>
       <button data-lang="zh">中</button>
     </div>
   </header>
 
-  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
-  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
 
-  <article class="glass-card article-detail">
-    <h2 class="lang-en">DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback</h2>
-    <h2 class="lang-zh">DeltaBox：毫秒级沙箱检查点/回滚实现有状态AI智能体规模化</h2>
-    <div class="meta">
-      Yunpeng Dong, Jingkai He, Yuze Hou, Dong Du, Zhonghu Xu, Si Yu, Yubin Xia, Haibo Chen &nbsp;·&nbsp; 
-      2026-05-22 &nbsp;·&nbsp; 
-      arxiv
-       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22781" target="_blank" class="dim-link">Original →</a>
-    </div>
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-22</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.22781" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+        </div>
+        <h1 class="article-title lang-en">DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback</h1>
+        <h1 class="article-title lang-zh">DeltaBox：毫秒级沙箱检查点/回滚实现有状态AI智能体规模化</h1>
+        
+        <p class="article-authors">Yunpeng Dong, Jingkai He, Yuze Hou, Dong Du, Zhonghu Xu, Si Yu, Yubin Xia, Haibo Chen</p>
+        
+      </header>
 
-    <div class="lang-en">
-      <h3>Summary</h3>
-      <p>DeltaBox proposes a change-based OS abstraction (DeltaState) that reduces sandbox checkpoint/rollback latency from hundreds of milliseconds to milliseconds, enabling scalable tree search and RL for LLM-powered AI agents.</p>
-    </div>
-    <div class="lang-zh">
-      <h3>摘要</h3>
-      <p>本文提出DeltaBox，一种基于变更的OS抽象（DeltaState），将AI智能体沙箱的检查点/回滚延迟从数百毫秒降至毫秒级。通过仅复制连续检查点间的变更，DeltaBox在SWE-bench MCTS上将状态管理开销从47-77%降至3-6%，使固定时间预算下可探索更多搜索节点。</p>
-    </div>
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>DeltaBox proposes a change-based OS abstraction (DeltaState) that reduces sandbox checkpoint/rollback latency from hundreds of milliseconds to milliseconds, enabling scalable tree search and RL for LLM-powered AI agents.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出DeltaBox，一种基于变更的OS抽象（DeltaState），将AI智能体沙箱的检查点/回滚延迟从数百毫秒降至毫秒级。通过仅复制连续检查点间的变更，DeltaBox在SWE-bench MCTS上将状态管理开销从47-77%降至3-6%，使固定时间预算下可探索更多搜索节点。</p></div>
+        </div>
 
-    
-    <div class="lang-en">
-      <h3>Deep Note</h3>
-      <h1>Deep Note — deltabox</h1>
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — deltabox</h1>
 <p><strong>Key Takeaways</strong>
 - DeltaBox achieves millisecond-level checkpoint (14ms) and rollback (5ms) for AI agent sandboxes by only duplicating changes between consecutive checkpoints.
 - Two new OS mechanisms: DeltaFS (change-based filesystem C/R via hot layer switching) and DeltaCR (change-based process C/R via incremental dumps and template fork).
@@ -108,10 +140,10 @@
 <hr />
 <h2>7) Scoring</h2>
 <p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
-    </div>
-    <div class="lang-zh">
-      <h3>深度笔记</h3>
-      <h1>DeltaBox：毫秒级沙箱检查点/回滚实现有状态AI智能体规模化</h1>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>DeltaBox：毫秒级沙箱检查点/回滚实现有状态AI智能体规模化</h1>
 <p><strong>主要结论</strong>
 - DeltaBox通过仅复制连续检查点间的变更，实现毫秒级检查点（14ms）和回滚（5ms）。
 - 提出两种新OS机制：DeltaFS（基于变更的文件系统C/R，通过热层切换）和DeltaCR（基于变更的进程C/R，通过增量转储和模板fork）。
@@ -148,22 +180,53 @@
 <li>[ ] 探索基于智能体状态变化率的自适应检查点频率，以进一步降低开销。</li>
 <li>[ ] 在更大规模的RL训练工作负载（如DeepSeek-R1风格）上基准测试DeltaBox，量化吞吐量改进。</li>
 </ul>
-    </div>
-    
+        </div>
+        
+      </div>
 
-    
-    <div class="tags">
-      <span class="tag">2605.22781</span>
-    </div>
-    
-  </article>
+      
+      <div class="tags">
+        <span class="tag">2605.22781</span>
+      </div>
+      
 
-  <footer class="site-footer">
-    <span class="footer-brand">🔭 Reye</span>
-    <span class="lang-en">数字信任研究之眼</span>
-    <span class="lang-zh">数字信任研究之眼</span>
+      
+      <a href="https://arxiv.org/abs/2605.22781" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
   </footer>
+</div><!-- .reye-app -->
 
-  <script src="../assets/app.js"></script>
+<script src="../assets/app.js"></script>
 </body>
 </html>

@@ -4,43 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Semantic Generative Tuning for Unified Multimodal Models | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header>
-    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
     <div class="lang-toggle">
       <button data-lang="en">EN</button>
       <button data-lang="zh">中</button>
     </div>
   </header>
 
-  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
-  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
 
-  <article class="glass-card article-detail">
-    <h2 class="lang-en">Semantic Generative Tuning for Unified Multimodal Models</h2>
-    <h2 class="lang-zh">语义生成调优：面向统一多模态模型的生成式对齐方法</h2>
-    <div class="meta">
-      Songsong Yu, Yuxin Chen, Ying Shan, Yanwei Li &nbsp;·&nbsp; 
-      2026-05-19 &nbsp;·&nbsp; 
-      arxiv
-       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.18714" target="_blank" class="dim-link">Original →</a>
-    </div>
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-19</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.18714" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+        </div>
+        <h1 class="article-title lang-en">Semantic Generative Tuning for Unified Multimodal Models</h1>
+        <h1 class="article-title lang-zh">语义生成调优：面向统一多模态模型的生成式对齐方法</h1>
+        
+        <p class="article-authors">Songsong Yu, Yuxin Chen, Ying Shan, Yanwei Li</p>
+        
+      </header>
 
-    <div class="lang-en">
-      <h3>Summary</h3>
-      <p>SGT shows that using image segmentation as a generative proxy significantly improves both visual understanding and generation in unified multimodal models, achieving a 6.02% gain on CV-Bench and 90.0% on GenEval.</p>
-    </div>
-    <div class="lang-zh">
-      <h3>摘要</h3>
-      <p>本文提出语义生成调优（SGT），通过将图像分割作为生成代理任务，有效对齐统一多模态模型中的视觉理解与生成能力。实验表明，SGT在CV-Bench上提升6.02%，在GenEval上达到90.0%，显著优于现有方法。该工作挑战了像素级重建对齐的常见做法，为构建通用多模态系统提供了新思路。</p>
-    </div>
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>SGT shows that using image segmentation as a generative proxy significantly improves both visual understanding and generation in unified multimodal models, achieving a 6.02% gain on CV-Bench and 90.0% on GenEval.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出语义生成调优（SGT），通过将图像分割作为生成代理任务，有效对齐统一多模态模型中的视觉理解与生成能力。实验表明，SGT在CV-Bench上提升6.02%，在GenEval上达到90.0%，显著优于现有方法。该工作挑战了像素级重建对齐的常见做法，为构建通用多模态系统提供了新思路。</p></div>
+        </div>
 
-    
-    <div class="lang-en">
-      <h3>Deep Note</h3>
-      <h1>Deep Note — sgt</h1>
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — sgt</h1>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> Semantic Generative Tuning for Unified Multimodal Models</li>
@@ -102,10 +134,10 @@
 <hr />
 <h2>7) Scoring</h2>
 <p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
-    </div>
-    <div class="lang-zh">
-      <h3>深度笔记</h3>
-      <h1>语义生成调优：面向统一多模态模型的生成式对齐方法</h1>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>语义生成调优：面向统一多模态模型的生成式对齐方法</h1>
 <p><strong>主要结论</strong>
 - SGT利用图像分割作为生成代理，统一了多模态模型的理解与生成表征空间。
 - 高层语义任务（分割）优于中层（深度估计）和低层（像素重建）代理，带来最佳协同效果。
@@ -139,22 +171,53 @@
 <li>[ ] 研究SGT对下游任务（如交错图文生成、上下文编辑）的影响。</li>
 <li>[ ] 发展理论框架解释分割为何提供最优对齐。</li>
 </ul>
-    </div>
-    
+        </div>
+        
+      </div>
 
-    
-    <div class="tags">
-      <span class="tag">2605.18714</span>
-    </div>
-    
-  </article>
+      
+      <div class="tags">
+        <span class="tag">2605.18714</span>
+      </div>
+      
 
-  <footer class="site-footer">
-    <span class="footer-brand">🔭 Reye</span>
-    <span class="lang-en">数字信任研究之眼</span>
-    <span class="lang-zh">数字信任研究之眼</span>
+      
+      <a href="https://arxiv.org/abs/2605.18714" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
   </footer>
+</div><!-- .reye-app -->
 
-  <script src="../assets/app.js"></script>
+<script src="../assets/app.js"></script>
 </body>
 </html>

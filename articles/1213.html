@@ -4,43 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Self-Policy Distillation via Capability-Selective Subspace Projection | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header>
-    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
     <div class="lang-toggle">
       <button data-lang="en">EN</button>
       <button data-lang="zh">中</button>
     </div>
   </header>
 
-  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
-  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
 
-  <article class="glass-card article-detail">
-    <h2 class="lang-en">Self-Policy Distillation via Capability-Selective Subspace Projection</h2>
-    <h2 class="lang-zh">Deep Note — 自我策略蒸馏</h2>
-    <div class="meta">
-      Guangya Hao, Yitong Shang, Yunbo Long, Zhuokai Zhao, Hanxue Liang &nbsp;·&nbsp; 
-      2026-05-22 &nbsp;·&nbsp; 
-      arxiv
-       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22675" target="_blank" class="dim-link">Original →</a>
-    </div>
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-22</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.22675" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+        </div>
+        <h1 class="article-title lang-en">Self-Policy Distillation via Capability-Selective Subspace Projection</h1>
+        <h1 class="article-title lang-zh">Deep Note — 自我策略蒸馏</h1>
+        
+        <p class="article-authors">Guangya Hao, Yitong Shang, Yunbo Long, Zhuokai Zhao, Hanxue Liang</p>
+        
+      </header>
 
-    <div class="lang-en">
-      <h3>Summary</h3>
-      <p>SPD proposes a fully self-contained self-distillation method that uses gradient-based subspace projection to selectively preserve task-relevant capability signals, achieving strong in-domain and out-of-domain gains without any external supervision.</p>
-    </div>
-    <div class="lang-zh">
-      <h3>摘要</h3>
-      <p>本文提出了一种完全自包含的自我蒸馏方法SPD，通过梯度驱动的子空间投影，在无需任何外部监督信号的情况下，选择性地保留任务相关的能力信号。该方法在代码生成、数学推理和多项选择问答等多个领域均取得了显著提升，并展现出强大的跨域泛化能力。</p>
-    </div>
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>SPD proposes a fully self-contained self-distillation method that uses gradient-based subspace projection to selectively preserve task-relevant capability signals, achieving strong in-domain and out-of-domain gains without any external supervision.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出了一种完全自包含的自我蒸馏方法SPD，通过梯度驱动的子空间投影，在无需任何外部监督信号的情况下，选择性地保留任务相关的能力信号。该方法在代码生成、数学推理和多项选择问答等多个领域均取得了显著提升，并展现出强大的跨域泛化能力。</p></div>
+        </div>
 
-    
-    <div class="lang-en">
-      <h3>Deep Note</h3>
-      <h1>Deep Note — self-policy-distillation</h1>
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — self-policy-distillation</h1>
 <p><strong>Key Takeaways</strong>
 - SPD extracts a low-rank capability subspace from the model's own gradients on correctness-defining tokens, enabling capability-selective self-distillation without external signals.
 - SPD projects KV activations into this subspace during self-generation to filter out task-irrelevant noise (e.g., stylistic patterns, formatting artifacts).
@@ -110,10 +142,10 @@
 <hr />
 <h2>7) Scoring</h2>
 <p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
-    </div>
-    <div class="lang-zh">
-      <h3>深度笔记</h3>
-      <h1>Deep Note — 自我策略蒸馏</h1>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>Deep Note — 自我策略蒸馏</h1>
 <p><strong>主要结论</strong>
 - SPD从模型自身在正确性定义token上的梯度中提取低秩能力子空间，无需外部信号即可实现能力选择性的自我蒸馏。
 - SPD在自生成过程中将KV激活投影到该子空间，以滤除任务无关的噪声（如风格模式、格式伪影）。
@@ -152,22 +184,53 @@
 <li>[ ] 探索将SPD与其他自监督目标（如对比学习）结合以进一步提升性能。</li>
 <li>[ ] 分析学习到的子空间，以理解捕获了哪些能力特征（机械可解释性）。</li>
 </ul>
-    </div>
-    
+        </div>
+        
+      </div>
 
-    
-    <div class="tags">
-      <span class="tag">2605.22675</span>
-    </div>
-    
-  </article>
+      
+      <div class="tags">
+        <span class="tag">2605.22675</span>
+      </div>
+      
 
-  <footer class="site-footer">
-    <span class="footer-brand">🔭 Reye</span>
-    <span class="lang-en">数字信任研究之眼</span>
-    <span class="lang-zh">数字信任研究之眼</span>
+      
+      <a href="https://arxiv.org/abs/2605.22675" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
   </footer>
+</div><!-- .reye-app -->
 
-  <script src="../assets/app.js"></script>
+<script src="../assets/app.js"></script>
 </body>
 </html>

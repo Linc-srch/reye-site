@@ -4,43 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Not Every Rubric Teaches Equally: Policy-Aware Rubric Rewards for RLVR | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header>
-    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
     <div class="lang-toggle">
       <button data-lang="en">EN</button>
       <button data-lang="zh">中</button>
     </div>
   </header>
 
-  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
-  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
 
-  <article class="glass-card article-detail">
-    <h2 class="lang-en">Not Every Rubric Teaches Equally: Policy-Aware Rubric Rewards for RLVR</h2>
-    <h2 class="lang-zh">并非每条评分标准都同样有效：面向策略感知的评分奖励用于RLVR</h2>
-    <div class="meta">
-      Utkarsh Tyagi, Xingang Guo, MohammadHossein Rezaei, Daniel George, Anas Mahmoud, Jackson Lee, Bing Liu, Yunzhong He &nbsp;·&nbsp; 
-      2026-05-20 &nbsp;·&nbsp; 
-      arxiv
-       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.20164" target="_blank" class="dim-link">Original →</a>
-    </div>
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-20</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.20164" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+        </div>
+        <h1 class="article-title lang-en">Not Every Rubric Teaches Equally: Policy-Aware Rubric Rewards for RLVR</h1>
+        <h1 class="article-title lang-zh">并非每条评分标准都同样有效：面向策略感知的评分奖励用于RLVR</h1>
+        
+        <p class="article-authors">Utkarsh Tyagi, Xingang Guo, MohammadHossein Rezaei, Daniel George, Anas Mahmoud, Jackson Lee, Bing Liu, Yunzhong He</p>
+        
+      </header>
 
-    <div class="lang-en">
-      <h3>Summary</h3>
-      <p>POW3R introduces a policy-aware rubric reward framework that dynamically reweights criteria based on their current contrastiveness, significantly improving training efficiency and final performance in multi-criteria RLVR.</p>
-    </div>
-    <div class="lang-zh">
-      <h3>摘要</h3>
-      <p>本文提出POW3R框架，通过动态重加权评分标准，解决了静态聚合中训练压力浪费在饱和或无效标准上的问题。实验表明，POW3R在30项比较中赢得24项，并将训练步数减少2.5-4倍。</p>
-    </div>
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>POW3R introduces a policy-aware rubric reward framework that dynamically reweights criteria based on their current contrastiveness, significantly improving training efficiency and final performance in multi-criteria RLVR.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出POW3R框架，通过动态重加权评分标准，解决了静态聚合中训练压力浪费在饱和或无效标准上的问题。实验表明，POW3R在30项比较中赢得24项，并将训练步数减少2.5-4倍。</p></div>
+        </div>
 
-    
-    <div class="lang-en">
-      <h3>Deep Note</h3>
-      <h1>Deep Note — pow3r</h1>
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — pow3r</h1>
 <p><strong>Key Takeaways</strong>
 - Static rubric reward aggregation conflates human-assigned importance with current optimization signal, leading to wasted training pressure on saturated or dead criteria.
 - POW3R dynamically reweights rubric criteria based on rollout-level contrastiveness, preserving human weights and category balance while focusing training on informative criteria.
@@ -106,10 +138,10 @@
 <hr />
 <h2>7) Scoring</h2>
 <p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
-    </div>
-    <div class="lang-zh">
-      <h3>深度笔记</h3>
-      <h1>并非每条评分标准都同样有效：面向策略感知的评分奖励用于RLVR</h1>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>并非每条评分标准都同样有效：面向策略感知的评分奖励用于RLVR</h1>
 <p><strong>主要结论</strong>
 - 静态评分奖励聚合将人为分配的重要性与当前优化信号混为一谈，导致训练压力浪费在饱和或无效标准上。
 - POW3R基于rollout级别的对比性动态重加权评分标准，保留人为权重和类别平衡，同时聚焦于信息量大的标准。
@@ -142,22 +174,53 @@
 <li>[ ] 研究LLM裁判质量对POW3R对比性估计的影响，并探索鲁棒的聚合方法。</li>
 <li>[ ] 扩展框架以处理相关或层次化的评分标准，超越简单的加性结构。</li>
 </ul>
-    </div>
-    
+        </div>
+        
+      </div>
 
-    
-    <div class="tags">
-      <span class="tag">2605.20164</span>
-    </div>
-    
-  </article>
+      
+      <div class="tags">
+        <span class="tag">2605.20164</span>
+      </div>
+      
 
-  <footer class="site-footer">
-    <span class="footer-brand">🔭 Reye</span>
-    <span class="lang-en">数字信任研究之眼</span>
-    <span class="lang-zh">数字信任研究之眼</span>
+      
+      <a href="https://arxiv.org/abs/2605.20164" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
   </footer>
+</div><!-- .reye-app -->
 
-  <script src="../assets/app.js"></script>
+<script src="../assets/app.js"></script>
 </body>
 </html>

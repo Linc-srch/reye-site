@@ -4,43 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COOPO: Cyclic Offline-Online Policy Optimization Algorithm | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header>
-    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
     <div class="lang-toggle">
       <button data-lang="en">EN</button>
       <button data-lang="zh">中</button>
     </div>
   </header>
 
-  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
-  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
 
-  <article class="glass-card article-detail">
-    <h2 class="lang-en">COOPO: Cyclic Offline-Online Policy Optimization Algorithm</h2>
-    <h2 class="lang-zh">COOPO：循环离线-在线策略优化算法</h2>
-    <div class="meta">
-      Qisai Liu, Zhanhong Jiang, Joshua Russell Waite, Aditya Balu, Cody Fleming, Soumik Sarkar &nbsp;·&nbsp; 
-      2026-05-19 &nbsp;·&nbsp; 
-      arxiv
-       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.18675" target="_blank" class="dim-link">Original →</a>
-    </div>
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-19</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.18675" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+        </div>
+        <h1 class="article-title lang-en">COOPO: Cyclic Offline-Online Policy Optimization Algorithm</h1>
+        <h1 class="article-title lang-zh">COOPO：循环离线-在线策略优化算法</h1>
+        
+        <p class="article-authors">Qisai Liu, Zhanhong Jiang, Joshua Russell Waite, Aditya Balu, Cody Fleming, Soumik Sarkar</p>
+        
+      </header>
 
-    <div class="lang-en">
-      <h3>Summary</h3>
-      <p>COOPO proposes a cyclic offline-online RL framework that repeatedly anchors the policy to a static dataset via KL-regularized updates to eliminate catastrophic forgetting and distributional shift, achieving better sample efficiency and final returns than state-of-the-art hybrid methods.</p>
-    </div>
-    <div class="lang-zh">
-      <h3>摘要</h3>
-      <p>本文提出COOPO，一种循环离线-在线强化学习框架，通过KL正则化更新将策略反复锚定到静态数据集，从而消除灾难性遗忘和分布偏移。实验表明，该方法在D4RL基准上以更少的在线交互步数取得了优于现有混合方法的最终回报。</p>
-    </div>
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>COOPO proposes a cyclic offline-online RL framework that repeatedly anchors the policy to a static dataset via KL-regularized updates to eliminate catastrophic forgetting and distributional shift, achieving better sample efficiency and final returns than state-of-the-art hybrid methods.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出COOPO，一种循环离线-在线强化学习框架，通过KL正则化更新将策略反复锚定到静态数据集，从而消除灾难性遗忘和分布偏移。实验表明，该方法在D4RL基准上以更少的在线交互步数取得了优于现有混合方法的最终回报。</p></div>
+        </div>
 
-    
-    <div class="lang-en">
-      <h3>Deep Note</h3>
-      <h1>Deep Note — coopo</h1>
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — coopo</h1>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> COOPO: Cyclic Offline-Online Policy Optimization Algorithm</li>
@@ -101,10 +133,10 @@
 <hr />
 <h2>7) Scoring</h2>
 <p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
-    </div>
-    <div class="lang-zh">
-      <h3>深度笔记</h3>
-      <h1>COOPO：循环离线-在线策略优化算法</h1>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>COOPO：循环离线-在线策略优化算法</h1>
 <p><strong>主要结论</strong>
 - COOPO通过循环交替离线训练和在线微调，有效防止了灾难性遗忘和分布偏移。
 - 在D4RL任务上，COOPO仅用50k在线步数即达到或超越基线方法100k步的性能。
@@ -137,22 +169,53 @@
 <li>[ ] 扩展COOPO以处理多个不同质量的离线数据集，可能采用元学习方法为每个循环选择最佳锚定数据集。</li>
 <li>[ ] 研究循环长度和数量对性能权衡的影响，并开发自适应调度以最小化计算开销。</li>
 </ul>
-    </div>
-    
+        </div>
+        
+      </div>
 
-    
-    <div class="tags">
-      <span class="tag">2605.18675</span>
-    </div>
-    
-  </article>
+      
+      <div class="tags">
+        <span class="tag">2605.18675</span>
+      </div>
+      
 
-  <footer class="site-footer">
-    <span class="footer-brand">🔭 Reye</span>
-    <span class="lang-en">数字信任研究之眼</span>
-    <span class="lang-zh">数字信任研究之眼</span>
+      
+      <a href="https://arxiv.org/abs/2605.18675" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
   </footer>
+</div><!-- .reye-app -->
 
-  <script src="../assets/app.js"></script>
+<script src="../assets/app.js"></script>
 </body>
 </html>

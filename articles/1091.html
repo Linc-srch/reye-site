@@ -4,43 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header>
-    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
     <div class="lang-toggle">
       <button data-lang="en">EN</button>
       <button data-lang="zh">中</button>
     </div>
   </header>
 
-  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
-  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
 
-  <article class="glass-card article-detail">
-    <h2 class="lang-en">Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency</h2>
-    <h2 class="lang-zh">可预测的虚构：LLM的事实回忆能力随模型规模与主题频率缩放</h2>
-    <div class="meta">
-      Matthew L. Smith, Jonathan P. Shock, Samuel T. Segun, Iyiola E. Olatunji, Tegawendé F. Bissyandé &nbsp;·&nbsp; 
-      2026-05-19 &nbsp;·&nbsp; 
-      arxiv
-       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.18732" target="_blank" class="dim-link">Original →</a>
-    </div>
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-19</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.18732" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+        </div>
+        <h1 class="article-title lang-en">Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency</h1>
+        <h1 class="article-title lang-zh">可预测的虚构：LLM的事实回忆能力随模型规模与主题频率缩放</h1>
+        
+        <p class="article-authors">Matthew L. Smith, Jonathan P. Shock, Samuel T. Segun, Iyiola E. Olatunji, Tegawendé F. Bissyandé</p>
+        
+      </header>
 
-    <div class="lang-en">
-      <h3>Summary</h3>
-      <p>This paper shows that factual recall quality in LLMs follows a sigmoid scaling law in the log-linear combination of model size and topic frequency in training data, explaining up to 94% of variance within model families.</p>
-    </div>
-    <div class="lang-zh">
-      <h3>摘要</h3>
-      <p>本文提出一个统一的S形缩放定律，将模型参数规模与训练数据中主题频率结合，可解释LLM事实回忆质量高达94%的方差。该工作为预测模型在特定主题上的知识盲区提供了定量工具，对构建可靠AI系统具有直接指导意义。</p>
-    </div>
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>This paper shows that factual recall quality in LLMs follows a sigmoid scaling law in the log-linear combination of model size and topic frequency in training data, explaining up to 94% of variance within model families.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出一个统一的S形缩放定律，将模型参数规模与训练数据中主题频率结合，可解释LLM事实回忆质量高达94%的方差。该工作为预测模型在特定主题上的知识盲区提供了定量工具，对构建可靠AI系统具有直接指导意义。</p></div>
+        </div>
 
-    
-    <div class="lang-en">
-      <h3>Deep Note</h3>
-      <h1>Deep Note — predictable-confabulations</h1>
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — predictable-confabulations</h1>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency</li>
@@ -105,10 +137,10 @@
 <hr />
 <h2>7) Scoring</h2>
 <p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
-    </div>
-    <div class="lang-zh">
-      <h3>深度笔记</h3>
-      <h1>可预测的虚构：LLM的事实回忆能力随模型规模与主题频率缩放</h1>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>可预测的虚构：LLM的事实回忆能力随模型规模与主题频率缩放</h1>
 <p><strong>主要结论</strong>
 - LLM的事实回忆质量遵循S形缩放定律：回忆质量 = σ(α log₁₀ 参数量 + β log₁₀ 主题频率 + γ)。
 - 该模型在单个模型家族内可解释74%-94%的方差，跨家族解释60%的方差。
@@ -141,22 +173,53 @@
 <li>[ ] 使用模型预测目标LLM在特定主题上的回忆质量，设计针对性微调或检索增强。</li>
 <li>[ ] 研究S形形式是否适用于其他能力（如推理、翻译），以构建统一缩放理论。</li>
 </ul>
-    </div>
-    
+        </div>
+        
+      </div>
 
-    
-    <div class="tags">
-      <span class="tag">2605.18732</span>
-    </div>
-    
-  </article>
+      
+      <div class="tags">
+        <span class="tag">2605.18732</span>
+      </div>
+      
 
-  <footer class="site-footer">
-    <span class="footer-brand">🔭 Reye</span>
-    <span class="lang-en">数字信任研究之眼</span>
-    <span class="lang-zh">数字信任研究之眼</span>
+      
+      <a href="https://arxiv.org/abs/2605.18732" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
   </footer>
+</div><!-- .reye-app -->
 
-  <script src="../assets/app.js"></script>
+<script src="../assets/app.js"></script>
 </body>
 </html>

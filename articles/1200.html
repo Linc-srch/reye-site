@@ -4,43 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header>
-    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
     <div class="lang-toggle">
       <button data-lang="en">EN</button>
       <button data-lang="zh">中</button>
     </div>
   </header>
 
-  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
-  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
 
-  <article class="glass-card article-detail">
-    <h2 class="lang-en">LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems</h2>
-    <h2 class="lang-zh">LCGuard：多智能体系统中安全KV共享的潜在通信防护</h2>
-    <div class="meta">
-      Sadia Asif, Mohammad Mohammadi Amiri, Momin Abbas, Prasanna Sattigeri, Karthikeyan Natesan Ramamurthy &nbsp;·&nbsp; 
-      2026-05-22 &nbsp;·&nbsp; 
-      arxiv
-       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22786" target="_blank" class="dim-link">Original →</a>
-    </div>
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-22</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.22786" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+        </div>
+        <h1 class="article-title lang-en">LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems</h1>
+        <h1 class="article-title lang-zh">LCGuard：多智能体系统中安全KV共享的潜在通信防护</h1>
+        
+        <p class="article-authors">Sadia Asif, Mohammad Mohammadi Amiri, Momin Abbas, Prasanna Sattigeri, Karthikeyan Natesan Ramamurthy</p>
+        
+      </header>
 
-    <div class="lang-en">
-      <h3>Summary</h3>
-      <p>LCGuard proposes the first principled framework to control sensitive information leakage in KV-cache-based latent communication for multi-agent LLM systems, achieving strong privacy protection with minimal task performance degradation.</p>
-    </div>
-    <div class="lang-zh">
-      <h3>摘要</h3>
-      <p>本文首次提出一个原则性框架，用于控制多智能体LLM系统中基于KV缓存的潜在通信所导致的敏感信息泄露。LCGuard通过学习表示级变换，在保持任务效用的同时显著降低重构攻击的成功率，并在多个模型和基准测试中取得了良好的隐私-效用权衡。</p>
-    </div>
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>LCGuard proposes the first principled framework to control sensitive information leakage in KV-cache-based latent communication for multi-agent LLM systems, achieving strong privacy protection with minimal task performance degradation.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文首次提出一个原则性框架，用于控制多智能体LLM系统中基于KV缓存的潜在通信所导致的敏感信息泄露。LCGuard通过学习表示级变换，在保持任务效用的同时显著降低重构攻击的成功率，并在多个模型和基准测试中取得了良好的隐私-效用权衡。</p></div>
+        </div>
 
-    
-    <div class="lang-en">
-      <h3>Deep Note</h3>
-      <h1>Deep Note — lcguard</h1>
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — lcguard</h1>
 <p><strong>Key Takeaways</strong>
 - KV caches shared between agents in multi-agent systems form an opaque channel that can leak sensitive information without textual disclosure.
 - LCGuard learns representation-level transformations on KV caches to reduce reconstructability of agent-specific inputs while preserving task utility.
@@ -110,10 +142,10 @@
 <hr />
 <h2>7) Scoring</h2>
 <p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
-    </div>
-    <div class="lang-zh">
-      <h3>深度笔记</h3>
-      <h1>LCGuard：多智能体系统中安全KV共享的潜在通信防护</h1>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>LCGuard：多智能体系统中安全KV共享的潜在通信防护</h1>
 <p><strong>主要结论</strong>
 - 多智能体系统中共享的KV缓存构成一个不透明通道，可在不泄露文本的情况下泄漏敏感信息。
 - LCGuard学习KV缓存上的表示级变换，在降低智能体特定输入可重构性的同时保持任务效用。
@@ -149,22 +181,53 @@
 <li>[ ] 探索与差分隐私保证的集成，以获得可证明的泄漏界限。</li>
 <li>[ ] 在具有更多智能体和复杂拓扑的大规模多智能体系统上进行测试。</li>
 </ul>
-    </div>
-    
+        </div>
+        
+      </div>
 
-    
-    <div class="tags">
-      <span class="tag">2605.22786</span>
-    </div>
-    
-  </article>
+      
+      <div class="tags">
+        <span class="tag">2605.22786</span>
+      </div>
+      
 
-  <footer class="site-footer">
-    <span class="footer-brand">🔭 Reye</span>
-    <span class="lang-en">数字信任研究之眼</span>
-    <span class="lang-zh">数字信任研究之眼</span>
+      
+      <a href="https://arxiv.org/abs/2605.22786" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
   </footer>
+</div><!-- .reye-app -->
 
-  <script src="../assets/app.js"></script>
+<script src="../assets/app.js"></script>
 </body>
 </html>

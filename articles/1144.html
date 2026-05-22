@@ -4,50 +4,111 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How NVIDIA engineers and researchers build with Codex | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header>
-    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
     <div class="lang-toggle">
       <button data-lang="en">EN</button>
       <button data-lang="zh">中</button>
     </div>
   </header>
 
-  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
-  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
 
-  <article class="glass-card article-detail">
-    <h2 class="lang-en">How NVIDIA engineers and researchers build with Codex</h2>
-    <h2 class="lang-zh">How NVIDIA engineers and researchers build with Codex</h2>
-    <div class="meta">
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">openai_rss</span>
+          <span>·</span><span>2026-05-19</span>
+          <span>·</span><a href="https://openai.com/index/nvidia" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+        </div>
+        <h1 class="article-title lang-en">How NVIDIA engineers and researchers build with Codex</h1>
+        <h1 class="article-title lang-zh">How NVIDIA engineers and researchers build with Codex</h1>
+        
+      </header>
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>NVIDIA engineers and researchers use OpenAI's Codex, powered by GPT-5.5, to accelerate complex engineering tasks and end-to-end machine learning research workflows. Codex runs on NVIDIA GB200 and GB300 infrastructure, enabling autonomous long sessions with high accuracy. Senior software engineer Dennis Hannusch reports 10x speed improvements in research workflows and uses Codex to evolve internal platforms from MVP to production, including building a podcast recording app in hours. AI researcher Shaunak Joshi leverages Codex as a creative research agent for literature review, hypothesis generation, and remote experiment execution via SSH. Codex also excels at translating Python code to Rust, achieving 20x efficiency gains.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>NVIDIA工程师和研究人员使用基于GPT-5.5的Codex加速复杂工程任务和端到端机器学习研究流程。Codex运行在NVIDIA GB200和GB300基础设施上，支持长时间自主会话并保持高精度。高级软件工程师Dennis Hannusch报告研究流程速度提升10倍，利用Codex将内部平台从MVP演进到生产环境，并在数小时内构建了播客录制应用。AI研究员Shaunak Joshi将Codex作为创意研究代理，用于文献综述、假设生成和通过SSH远程执行实验。Codex还能将Python代码翻译为Rust，实现20倍效率提升。</p></div>
+        </div>
+
+        
+      </div>
+
       
-      2026-05-19 &nbsp;·&nbsp; 
-      openai_rss
-       &nbsp;·&nbsp; <a href="https://openai.com/index/nvidia" target="_blank" class="dim-link">Original →</a>
+
+      
+      <a href="https://openai.com/index/nvidia" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
     </div>
+  </main>
 
-    <div class="lang-en">
-      <h3>Summary</h3>
-      <p>NVIDIA engineers and researchers use OpenAI's Codex, powered by GPT-5.5, to accelerate complex engineering tasks and end-to-end machine learning research workflows. Codex runs on NVIDIA GB200 and GB300 infrastructure, enabling autonomous long sessions with high accuracy. Senior software engineer Dennis Hannusch reports 10x speed improvements in research workflows and uses Codex to evolve internal platforms from MVP to production, including building a podcast recording app in hours. AI researcher Shaunak Joshi leverages Codex as a creative research agent for literature review, hypothesis generation, and remote experiment execution via SSH. Codex also excels at translating Python code to Rust, achieving 20x efficiency gains.</p>
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
     </div>
-    <div class="lang-zh">
-      <h3>摘要</h3>
-      <p>NVIDIA工程师和研究人员使用基于GPT-5.5的Codex加速复杂工程任务和端到端机器学习研究流程。Codex运行在NVIDIA GB200和GB300基础设施上，支持长时间自主会话并保持高精度。高级软件工程师Dennis Hannusch报告研究流程速度提升10倍，利用Codex将内部平台从MVP演进到生产环境，并在数小时内构建了播客录制应用。AI研究员Shaunak Joshi将Codex作为创意研究代理，用于文献综述、假设生成和通过SSH远程执行实验。Codex还能将Python代码翻译为Rust，实现20倍效率提升。</p>
-    </div>
-
-    
-
-    
-  </article>
-
-  <footer class="site-footer">
-    <span class="footer-brand">🔭 Reye</span>
-    <span class="lang-en">数字信任研究之眼</span>
-    <span class="lang-zh">数字信任研究之眼</span>
   </footer>
+</div><!-- .reye-app -->
 
-  <script src="../assets/app.js"></script>
+<script src="../assets/app.js"></script>
 </body>
 </html>

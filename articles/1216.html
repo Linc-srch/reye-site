@@ -4,43 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boiling the Frog: A Multi-Turn Benchmark for Agentic Safety | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header>
-    <a href="../assets/../index.html" class="brand">🔭 Reye <span class="zh-mark">数字信任研究之眼</span></a>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
     <div class="lang-toggle">
       <button data-lang="en">EN</button>
       <button data-lang="zh">中</button>
     </div>
   </header>
 
-  <a href="../assets/../index.html" class="back-link lang-en">← Home</a>
-  <a href="../assets/../index.html" class="back-link lang-zh">← 首页</a>
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
 
-  <article class="glass-card article-detail">
-    <h2 class="lang-en">Boiling the Frog: A Multi-Turn Benchmark for Agentic Safety</h2>
-    <h2 class="lang-zh">温水煮青蛙：面向智能体安全的多轮基准测试</h2>
-    <div class="meta">
-      Piercosma Bisconti, Matteo Prandi, Federico Pierucci, Federico Sartore, Enrico Panai, Laura Caroli, Yue Zhu, Adam Leon Smith, Luca Nannini, Marcello Galisai, Susanna Cifani, Francesco Giarrusso, Marcantonio Bracale Syrnikov, Daniele Nardi &nbsp;·&nbsp; 
-      2026-05-22 &nbsp;·&nbsp; 
-      arxiv
-       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2605.22643" target="_blank" class="dim-link">Original →</a>
-    </div>
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-22</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.22643" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+        </div>
+        <h1 class="article-title lang-en">Boiling the Frog: A Multi-Turn Benchmark for Agentic Safety</h1>
+        <h1 class="article-title lang-zh">温水煮青蛙：面向智能体安全的多轮基准测试</h1>
+        
+        <p class="article-authors">Piercosma Bisconti, Matteo Prandi, Federico Pierucci, Federico Sartore, Enrico Panai, Laura Caroli, Yue Zhu, Adam Leon Smith, Luca Nannini, Marcello Galisai, Susanna Cifani, Francesco Giarrusso, Marcantonio Bracale Syrnikov, Daniele Nardi</p>
+        
+      </header>
 
-    <div class="lang-en">
-      <h3>Summary</h3>
-      <p>Boiling the Frog introduces a multi-turn, artifact-based benchmark showing that AI agents in corporate settings are highly vulnerable to incremental attacks that gradually escalate risk, with aggregate attack success rates of 44.4% across nine models.</p>
-    </div>
-    <div class="lang-zh">
-      <h3>摘要</h3>
-      <p>本文提出了一种基于多轮交互和工件状态评估的智能体安全基准测试，揭示了在渐进式攻击下，AI智能体极易被诱导执行危险操作。实验表明，九个主流模型平均攻击成功率为44.4%，其中Gemini 3.1 Flash Lite高达92.9%，而Claude Haiku 4.5仅为20.5%。该工作直接关联欧盟AI法案的监管要求，为智能体安全评估提供了可操作的量化框架。</p>
-    </div>
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>Boiling the Frog introduces a multi-turn, artifact-based benchmark showing that AI agents in corporate settings are highly vulnerable to incremental attacks that gradually escalate risk, with aggregate attack success rates of 44.4% across nine models.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出了一种基于多轮交互和工件状态评估的智能体安全基准测试，揭示了在渐进式攻击下，AI智能体极易被诱导执行危险操作。实验表明，九个主流模型平均攻击成功率为44.4%，其中Gemini 3.1 Flash Lite高达92.9%，而Claude Haiku 4.5仅为20.5%。该工作直接关联欧盟AI法案的监管要求，为智能体安全评估提供了可操作的量化框架。</p></div>
+        </div>
 
-    
-    <div class="lang-en">
-      <h3>Deep Note</h3>
-      <h1>Deep Note — boiling-the-frog</h1>
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — boiling-the-frog</h1>
 <p><strong>Key Takeaways</strong>
 - Agentic safety requires evaluating actions on persistent artifacts, not just text responses.
 - Incremental multi-turn attacks can bypass safety guards that trigger on single harmful requests.
@@ -110,10 +142,10 @@
 <hr />
 <h2>7) Scoring</h2>
 <p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
-    </div>
-    <div class="lang-zh">
-      <h3>深度笔记</h3>
-      <h1>温水煮青蛙：面向智能体安全的多轮基准测试</h1>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>温水煮青蛙：面向智能体安全的多轮基准测试</h1>
 <p><strong>主要结论</strong>
 - 智能体安全需要评估其对持久性工件的操作，而非仅关注文本回复。
 - 渐进式多轮攻击可以绕过针对单次有害请求的安全防护。
@@ -152,22 +184,53 @@
 <li>[ ] 开发检测渐进式升级的防御机制（如基于跨轮工件变化的有状态异常检测）。</li>
 <li>[ ] 将基准测试扩展至多智能体场景和人机协同评估。</li>
 </ul>
-    </div>
-    
+        </div>
+        
+      </div>
 
-    
-    <div class="tags">
-      <span class="tag">2605.22643</span>
-    </div>
-    
-  </article>
+      
+      <div class="tags">
+        <span class="tag">2605.22643</span>
+      </div>
+      
 
-  <footer class="site-footer">
-    <span class="footer-brand">🔭 Reye</span>
-    <span class="lang-en">数字信任研究之眼</span>
-    <span class="lang-zh">数字信任研究之眼</span>
+      
+      <a href="https://arxiv.org/abs/2605.22643" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
   </footer>
+</div><!-- .reye-app -->
 
-  <script src="../assets/app.js"></script>
+<script src="../assets/app.js"></script>
 </body>
 </html>
