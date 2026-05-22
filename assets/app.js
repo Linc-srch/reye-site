@@ -42,7 +42,7 @@
       const q = query.trim().toLowerCase();
       const hits = !q ? index : index.filter(entry => {
         const hay = [
-          entry.title, entry.summary_en, entry.summary_zh,
+          entry.title, entry.title_zh, entry.summary_en, entry.summary_zh,
           (entry.domains || []).join(' '),
         ].join(' ').toLowerCase();
         return hay.includes(q);
@@ -53,7 +53,7 @@
           ? `<a href="${escapeAttr(e.url)}" target="_blank" class="dim-link">Original →</a>`
           : '';
         return `<article class="glass-card">
-          <h2><a href="${escapeAttr(pageUrl)}">${escapeHtml(e.title)}</a></h2>
+          <h2><a href="${escapeAttr(pageUrl)}"><span class="lang-en">${escapeHtml(e.title)}</span><span class="lang-zh">${escapeHtml(e.title_zh || e.title)}</span></a></h2>
           <div class="meta">${escapeHtml(e.type)} · ${escapeHtml((e.domains || []).join(', '))} ${origLink}</div>
           <div class="lang-en">${escapeHtml(e.summary_en || '')}</div>
           <div class="lang-zh">${escapeHtml(e.summary_zh || e.summary_en || '')}</div>
