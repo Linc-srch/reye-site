@@ -479,3 +479,33 @@ body:not(:has(.reye-app)) header nav a:hover { color: var(--color-fg-1); backgro
   .hero-inner   { max-width: 1600px; }
   .hero-inner .lede { max-width: 860px; }
 }
+
+/* ── Article figures gallery ── */
+.article-figures { margin-top: 2.5rem; }
+.article-figures .eyebrow { display: block; margin-bottom: 1rem; }
+.figures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.article-figure {
+  margin: 0;
+  background: var(--color-bg-2, #0d0d1a);
+  border: 1px solid var(--color-border, #1e1e3a);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.article-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 360px;
+  object-fit: contain;
+  background: #000;
+}
+.article-figure figcaption {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.78rem;
+  color: var(--color-fg-2, #8888aa);
+  line-height: 1.4;
+}
