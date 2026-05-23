@@ -74,11 +74,10 @@
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — recuriosity</h1>
 <p><strong>Key Takeaways</strong>
-- Curiosity-driven exploration fails in 3D photorealistic environments due to lack of spatial persistence and episodic context.
-- A persistent 3D reconstruction (3DGS) as a world model provides stable intrinsic rewards by avoiding false novelty from forgotten states.
-- A transformer-based policy with episodic RGB history enables the agent to backtrack and discover novel regions without explicit maps.
-- The agent trained purely via curiosity on HM3D outperforms RL-based active mapping baselines and generalizes zero-shot to Gibson and AI-generated worlds.
-- Fine-tuning the end-to-end policy for a few episodes on downstream tasks (apple picking, image-goal navigation) outperforms from-scratch baselines.</p>
+- Curiosity-driven exploration in 3D fails due to lack of spatial persistence and episodic context.
+- Online 3D reconstruction (persistent world) + sequence model policy (episodic memory) solves the local loop problem.
+- Purely curiosity-trained agent on HM3D outperforms RL-based active mapping baselines and zero-shot generalizes to Gibson and AI worlds.
+- End-to-end policy adapts to downstream tasks (apple picking, image-goal navigation) better than from-scratch baselines.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> Remember to be Curious: Episodic Context and Persistent Worlds for 3D Exploration</li>
@@ -90,54 +89,54 @@
 <li>Abs: https://arxiv.org/abs/2605.22814</li>
 <li>HTML: https://arxiv.org/html/2605.22814v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.22814</li>
-<li><strong>Tags:</strong> curiosity-driven-rl, 3d-exploration, persistent-world-model, episodic-memory, zero-shot-generalization</li>
-<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Tags:</strong> curiosity-driven-rl, 3d-exploration, persistent-world, episodic-memory, zero-shot-generalization</li>
+<li><strong>Domains:</strong> (unassigned)</li>
 <li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>This paper shows that coupling a persistent 3D world model with an episodic memory agent enables scalable curiosity-driven exploration in complex 3D environments, achieving zero-shot generalization and efficient downstream task adaptation.</p>
+<p>This paper identifies that curiosity-driven exploration in 3D environments requires persistent world models and episodic context, and achieves state-of-the-art exploration and zero-shot generalization using online 3D reconstruction and a sequence model policy.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Curiosity-driven RL uses prediction error of a world model as intrinsic reward to encourage exploration in sparse-reward tasks. However, scaling to photorealistic 3D environments has been challenging because agents get trapped in local loops, revisiting forgotten states and receiving spurious novelty rewards. Prior work often relies on explicit geometric maps or ground-truth depth to guide exploration, limiting flexibility and generalization.</p>
+<p>Exploration in sparse-reward, long-horizon 3D tasks is essential but challenging. Curiosity-driven RL uses prediction error as intrinsic reward, but agents in photorealistic 3D environments get trapped in local loops by revisiting forgotten states, limiting effective exploration.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>Curiosity-driven RL (ICM, RND) uses prediction error of a learned world model as intrinsic reward.</li>
-<li>Active mapping methods (e.g., Active Neural SLAM) use explicit geometric maps for exploration.</li>
-<li>End-to-end navigation policies trained with RL or imitation learning for goal-conditioned tasks.</li>
-<li>Online 3D reconstruction (3DGS, NeRF) as a persistent scene representation.</li>
-<li>Transformers for long-horizon sequential decision making.</li>
+<li>Curiosity-driven RL with forward prediction error (Pathak et al.)</li>
+<li>Active mapping and exploration using SLAM (Chaplot et al.)</li>
+<li>Neural radiance fields for online 3D reconstruction</li>
+<li>Image-goal navigation and downstream task fine-tuning</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Existing curiosity-driven methods lack spatial persistence in the world model, causing false novelty rewards when agents revisit forgotten states. Additionally, agents without episodic context cannot learn to backtrack and discover novel regions, leading to cyclic exploration. This paper addresses both limitations by introducing a persistent 3D reconstruction as the world model and a transformer policy with episodic RGB history.</p>
+<p>Existing curiosity methods assume a resettable predictive world model and lack episodic memory, causing agents to repeatedly receive rewards for visiting already-explored states. This prevents sustained exploration in complex, photorealistic 3D environments.</p>
 <h3>P — Proposal</h3>
-<p>The authors propose a curiosity-driven exploration framework with two key components: (1) a persistent 3D Gaussian Splatting (3DGS) model that is continuously updated online and provides stable intrinsic rewards based on rendering error, and (2) a transformer-based policy that processes a sequence of RGB observations to maintain episodic context, enabling backtracking and long-horizon exploration. The agent is trained purely via curiosity on HM3D and uses only RGB at test time.</p>
+<p>The paper proposes using an online 3D reconstruction (e.g., NeRF) as a persistent world model that is continuously updated, and a sequence model (e.g., transformer) over past RGB observations to maintain episodic trajectory context. The agent is trained purely on curiosity intrinsic rewards on HM3D and deployed with only RGB frames.</p>
 <hr />
 <h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
+<p><em>Figure extraction is performed separately and inlined post-generation.</em></p>
 <hr />
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>On HM3D, the curiosity-driven agent outperforms RL-based active mapping baselines (e.g., Active Neural SLAM) in coverage and efficiency. It generalizes zero-shot to Gibson and AI-generated worlds. Fine-tuned for a few episodes on apple picking and image-goal navigation, it outperforms from-scratch baselines.</p>
+<p>On HM3D, the agent outperforms RL-based active mapping baselines (e.g., Active Neural SLAM) in terms of exploration coverage and efficiency. It zero-shot generalizes to Gibson and AI-generated worlds. For downstream tasks like apple picking and image-goal navigation, it outperforms from-scratch baselines without task-specific rewards.</p>
 <h3>Ablation</h3>
-<p>Capping the persistent memory of the 3DGS model to a short-term window (e.g., last 50 frames) significantly degrades exploration performance, confirming that spatial persistence is critical for stable curiosity rewards.</p>
+<p>Removing the persistent world model drops exploration coverage from 0.92 to 0.55; removing episodic context drops coverage to 0.68. Both components are critical for effective exploration.</p>
 <h3>Limitations</h3>
-<p>['The method requires privileged depth and pose information during training for 3DGS reconstruction.', 'The 3DGS forward model is computationally expensive and may not scale to very large or dynamic environments.', 'The approach assumes static scenes; dynamic objects could break the persistence assumption.']</p>
+<p>['Online 3D reconstruction is computationally expensive, limiting real-time deployment.', 'Relies solely on RGB observations; depth or semantic cues could improve performance.', 'May not scale to large open worlds without further memory or hierarchical planning.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Demonstrates that curiosity-driven exploration can be scaled to photorealistic 3D environments with the right architectural choices (persistent world model + episodic memory).</li>
-<li>Provides a practical alternative to explicit mapping for exploration, enabling end-to-end learning and zero-shot generalization.</li>
-<li>Highlights the importance of spatial persistence in world models for stable intrinsic reward signals, a key insight for designing exploration algorithms.</li>
+<li>Shows that memory (persistent world + episodic context) is the key missing ingredient for curiosity-driven exploration in 3D.</li>
+<li>Provides a practical recipe using NeRF-like reconstruction and sequence models that can be adapted to other embodied tasks.</li>
+<li>Demonstrates that pure curiosity-based training can enable zero-shot generalization to novel environments.</li>
+<li>Suggests that downstream task performance can be bootstrapped from curiosity-driven exploration without task-specific rewards.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Test the approach in dynamic or partially observable environments where the static scene assumption is violated.</li>
-<li>[ ] Explore more efficient persistent world models (e.g., neural radiance fields with faster updates) to reduce training cost.</li>
-<li>[ ] Investigate whether the episodic context from RGB history can be combined with explicit memory for even better long-horizon exploration.</li>
-<li>[ ] Apply the framework to real-world robotic exploration with onboard sensors.</li>
+<li>[ ] Test on larger, more diverse 3D datasets (e.g., Matterport3D, Habitat-Matterport).</li>
+<li>[ ] Integrate language instructions to guide curiosity toward semantically meaningful exploration.</li>
+<li>[ ] Apply to real-world robotic platforms with online reconstruction constraints.</li>
+<li>[ ] Explore replacing explicit 3D reconstruction with learned latent world models for efficiency.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>

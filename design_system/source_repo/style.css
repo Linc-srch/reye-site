@@ -140,12 +140,12 @@ pre, code {
 pre { padding: 1rem; overflow-x: auto; }
 /* ── Language switching ── */
 .lang-zh { display: none; }
-body.lang-zh .lang-en { display: none; }
-body.lang-zh .lang-zh { display: block; }
+body.lang-zh .lang-en { display: none !important; }
+body.lang-zh .lang-zh { display: block !important; }
 /* Inline elements (spans in breadcrumbs, etc.) */
 span.lang-zh { display: none; }
-body.lang-zh span.lang-en { display: none; }
-body.lang-zh span.lang-zh { display: inline; }
+body.lang-zh span.lang-en { display: none !important; }
+body.lang-zh span.lang-zh { display: inline !important; }
 /* ── Responsive ── */
 @media (max-width: 640px) {
   body { padding: 0.9rem; }

@@ -138,11 +138,11 @@ pre { padding: 1rem; overflow-x: auto; }
 
 /* ── Bilingual switching ── */
 .lang-zh { display: none; }
-body.lang-zh .lang-en { display: none; }
-body.lang-zh .lang-zh { display: block; }
+body.lang-zh .lang-en { display: none !important; }
+body.lang-zh .lang-zh { display: block !important; }
 span.lang-zh { display: none; }
-body.lang-zh span.lang-en { display: none; }
-body.lang-zh span.lang-zh { display: inline; }
+body.lang-zh span.lang-en { display: none !important; }
+body.lang-zh span.lang-zh { display: inline !important; }
 
 /* ── App shell ── */
 .reye-app { position: relative; min-height: 100vh; }

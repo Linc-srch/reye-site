@@ -4,11 +4,17 @@
 (function () {
   // ── Language toggle ──────────────────────────────────────────────────────
   const setLang = (lang) => {
-    document.body.classList.toggle('lang-zh', lang === 'zh');
+    if (lang === 'zh') {
+      document.body.classList.add('lang-zh');
+      // Remove fade-up animation hold so Chinese content isn't hidden by opacity:0
+      document.querySelectorAll('.fade-up.pre-anim').forEach(el => el.classList.remove('pre-anim'));
+    } else {
+      document.body.classList.remove('lang-zh');
+    }
     document.querySelectorAll('.lang-toggle button').forEach(b => {
       b.classList.toggle('active', b.dataset.lang === lang);
     });
-    localStorage.setItem('reye-lang', lang);
+    try { localStorage.setItem('reye-lang', lang); } catch (_) {}
   };
 
   document.querySelectorAll('.lang-toggle button').forEach(b => {
