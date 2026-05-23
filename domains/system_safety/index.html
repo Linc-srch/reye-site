@@ -69,6 +69,17 @@
     <div class="reye-section" style="padding-top:0">
 
       
+      <div class="overview-card">
+        <p class="eyebrow">
+          
+          <span class="lang-en">Overview — 22 May 2026</span>
+          <span class="lang-zh">概览 — 22 May 2026</span>
+          
+        </p>
+        <div class="lang-en">Today's system safety research reveals a strong emphasis on multi-agent and incremental attack surfaces, with 'Boiling the Frog' (a multi-turn benchmark) standing out as the highest-scoring paper for demonstrating that AI agents in corporate settings are highly vulnerable to gradual, escalating attacks. Recurring themes include the fragility of LLM evaluators (AMEL shows bias from prior conversation history), privacy leakage in RAG systems under account collusion (auditing reveals a Θ(√k·ε_acc) degradation rate), and the need for interpretable safety mechanisms (SegCompass uses sparse autoencoders for white-box reasoning). Noteworthy announcements include LCGuard, the first principled framework for controlling sensitive information leakage in KV-cache-based latent communication, and DeltaBox, which reduces sandbox checkpoint latency to milliseconds for safe agent scaling. The Clipping Bottleneck paper identifies a key stability issue in GRPO-style RLVR and proposes a minimal stochastic fix. Overall, the field is moving toward proactive, multi-turn, and collusion-aware safety evaluation rather than single-turn static benchmarks.</div>
+        <div class="lang-zh">今日的系统安全研究高度关注多智能体与渐进式攻击面，其中'Boiling the Frog'（多轮基准测试）作为最高分论文脱颖而出，展示了企业环境中的AI智能体极易受到逐步升级的渐进式攻击。反复出现的主题包括：LLM评估器的脆弱性（AMEL显示先前的对话历史极性会导致系统性偏差）、RAG系统在账户共谋下的隐私泄露（审计揭示了Θ(√k·ε_acc)的退化率），以及可解释安全机制的需求（SegCompass利用稀疏自编码器实现白盒推理）。值得注意的公告包括：LCGuard，首个用于控制基于KV缓存潜在通信中敏感信息泄露的原则性框架；以及DeltaBox，将沙箱检查点延迟降至毫秒级以支持安全的智能体扩展。'Clipping Bottleneck'论文指出了GRPO风格RLVR中的关键稳定性问题，并提出了一个最小随机修复方案。总体而言，该领域正从单轮静态基准测试转向主动、多轮且考虑共谋的安全评估。</div>
+      </div>
+      
 
       <div class="past-overviews" id="past-overviews">
         <button class="past-overviews-toggle" onclick="this.closest('.past-overviews').classList.toggle('is-open')" aria-expanded="false">
