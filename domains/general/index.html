@@ -1527,6 +1527,63 @@
             <span>·</span>
             <span>2026-05-23</span>
           </div>
+          <h4 class="lang-en"><a href="../../articles/1260.html">npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1260.html">npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks</a></h4>
+          <p class="lang-en">GitHub has introduced staged publishing for npm, requiring maintainers to pass a two-factor authentication (2FA) challenge before a package is publicly released. This feature ensures human approval for every publish, even from automated CI/CD pipelines. Additionally, npm now supports install source flags—--allow-file, --allow-remote, and --allow-directory—giving developers explicit control over non-registry package installations. These measures counter the surge in software supply chain attacks targeting open-source ecosystems, such as those by the TeamPCP group. GitHub recommends pairing staged publishing with trusted publishing via OIDC for maximum security.</p>
+          <p class="lang-zh">GitHub为npm推出了分阶段发布功能，要求维护者通过two-factor authentication (2FA)验证后才能公开发布包。此功能确保每次发布都有“人为在场”批准，包括来自CI/CD工作流的发布。同时，npm新增了--allow-file、--allow-remote和--allow-directory等安装源标志，让开发者对非注册表安装源进行显式控制。这些措施旨在应对针对开源生态系统的软件供应链攻击激增。</p>
+          
+          <a href="https://thehackernews.com/2026/05/npm-adds-2fa-gated-publishing-and.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1261.html">Packagist Supply Chain Attack Infects 8 Packages Using GitHub-Hosted Linux Malware</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1261.html">Packagist Supply Chain Attack Infects 8 Packages Using GitHub-Hosted Linux Malware</a></h4>
+          <p class="lang-en">A coordinated supply chain attack compromised eight packages on Packagist by injecting malicious code into package.json instead of composer.json, targeting projects that use JavaScript build tooling alongside PHP. The code downloads a Linux binary from a GitHub Releases URL, saves it to /tmp/.sshd, and executes it in the background. The same payload was found in 777 GitHub files, including workflow files, suggesting a broader campaign. The second-stage payload's purpose is unknown as the associated GitHub account is no longer available. This cross-ecosystem placement allows the attack to bypass traditional PHP dependency scans, highlighting the need for comprehensive security checks across all build artifacts.</p>
+          <p class="lang-zh">Packagist供应链攻击入侵了8个包，通过将恶意代码注入package.json而非composer.json，利用JavaScript构建工具链下载并执行GitHub上的Linux二进制文件。该跨生态系统攻击绕过了PHP依赖扫描，相同载荷出现在777个GitHub文件中，表明这是一次大规模活动。由于托管仓库的GitHub账户已不可用，第二阶段载荷的性质不明。此事件凸显了软件供应链安全中跨平台检查的重要性。</p>
+          
+          <a href="https://thehackernews.com/2026/05/packagist-supply-chain-attack-infects-8.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1262.html">Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1262.html">Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software</a></h4>
+          <p class="lang-en">Anthropic's Project Glasswing, leveraging its Claude Mythos Preview AI model, has uncovered over 10,000 high-severity vulnerabilities in widely used open-source software within the first month of the initiative. Of 1,726 confirmed true positives, 1,094 were rated high or critical, including a critical flaw in WolfSSL (CVE-2026-5194, CVSS 9.1) enabling certificate forgery. The model, provided exclusively to 50 partner organizations, also prevented a $1.5 million fraudulent wire transfer. Anthropic urges faster patch cycles and warns that similar capabilities may soon become broadly available, posing both defensive opportunities and misuse risks. The company has launched a Cyber Verification Program for legitimate security research.</p>
+          <p class="lang-zh">Anthropic的Project Glasswing利用其Claude Mythos Preview AI模型，在一个月内发现了超过10,000个广泛使用的开源软件中的高危漏洞。在1,726个确认的真实阳性中，1,094个被评为高危或严重，包括WolfSSL中的一个关键漏洞（CVE-2026-5194，CVSS 9.1），可导致证书伪造。该模型仅提供给50个合作伙伴，还阻止了一笔150万美元的欺诈电汇。Anthropic敦促加快补丁周期，并警告类似能力可能很快广泛可用，带来防御机会和滥用风险。公司还推出了Cyber Verification Program以支持合法的安全研究。</p>
+          
+          <a href="https://thehackernews.com/2026/05/claude-mythos-ai-finds-10000-high.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
           <h4 class="lang-en"><a href="../../articles/1240.html">Laravel-Lang PHP Packages Compromised to Deliver Cross-Platform Credential Stealer</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1240.html">Laravel-Lang PHP Packages Compromised to Deliver Cross-Platform Credential Stealer</a></h4>
           <p class="lang-en">Cybersecurity researchers have identified a supply chain attack targeting multiple Laravel-Lang PHP packages. The compromised packages include laravel-lang/lang, http-statuses, attributes, and actions. Over 700 malicious versions were published via automated mass tagging, likely due to compromised organization-level credentials. The attack embeds a backdoor in 'src/helpers.php' that fetches a cross-platform PHP credential stealer from an external server. The stealer collects cloud IAM roles, access tokens, crypto wallet keys, browser credentials, session tokens, and configuration files. It encrypts exfiltrated data with AES-256 and self-deletes. The campaign affects Windows, Linux, and macOS and highlights risks in open-source software supply chains.</p>

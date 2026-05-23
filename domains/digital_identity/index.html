@@ -72,12 +72,12 @@
       <div class="overview-card">
         <p class="eyebrow">
           
-          <span class="lang-en">Overview — 23 May 2026</span>
-          <span class="lang-zh">概览 — 23 May 2026</span>
+          <span class="lang-en">Overview — 24 May 2026</span>
+          <span class="lang-zh">概览 — 24 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's digital identity coverage underscores a systemic shift: identity itself is now the primary attack path in hybrid environments, as argued in a standout piece showing how a single cached AWS key can expose 98% of cloud resources. Recurring themes include supply chain compromises—Microsoft's takedown of the Fox Tempest MSaaS operation, the Megalodon campaign that injected malicious CI/CD workflows into 5,561 GitHub repos using forged identities, and the Laravel-Lang PHP package compromise delivering credential stealers. GitHub also confirmed a breach of internal repositories via a malicious VS Code extension. On the AI safety front, the "Boiling the Frog" benchmark reveals that agents are highly vulnerable to incremental multi-turn attacks that gradually escalate risk, while AMEL shows LLM evaluators are biased by prior conversation polarity. Noteworthy announcements include Virgin Atlantic's successful use of Codex to ship a revamped app with zero defects, and new benchmarks like VGenST-Bench for spatio-temporal reasoning and MixRea for explicit-implicit reasoning. Several papers explore RLVR stability (Clipping Bottleneck) and policy-aware rewards (POW3R).</div>
-        <div class="lang-zh">今日的数字身份领域报道突出了一个系统性转变：身份本身已成为混合环境中的主要攻击路径，一篇突出文章论证了单个缓存的 AWS 密钥如何能暴露 98% 的云资源。反复出现的主题包括供应链攻击——微软取缔了 Fox Tempest MSaaS 运营，Megalodon 活动利用伪造身份向 5,561 个 GitHub 仓库注入了恶意 CI/CD 工作流，以及 Laravel-Lang PHP 包被攻陷传播凭证窃取器。GitHub 还确认因恶意 VS Code 扩展导致内部仓库被入侵。在 AI 安全方面，"Boiling the Frog" 基准测试揭示了智能体极易受到渐进式多轮攻击，而 AMEL 显示了 LLM 评估者受先前对话极性的影响。值得注意的公告包括 Virgin Atlantic 成功利用 Codex 以零缺陷交付了改版移动应用，以及新的基准测试如 VGenST-Bench（时空推理）和 MixRea（显式-隐式推理）。多篇论文探讨了 RLVR 稳定性（Clipping Bottleneck）和策略感知奖励（POW3R）。</div>
+        <div class="lang-en">Today's digital identity landscape is dominated by supply chain attacks and the weaponization of trusted infrastructure. A recurring theme is that identity itself has become the primary attack surface, as argued in the article 'When Identity is the Attack Path,' which demonstrates how a single cached AWS key can expose 98% of cloud resources. Standout papers include 'Auditing Privacy in Multi-Tenant RAG under Account Collusion,' which reveals that per-account DP guarantees degrade under collusion (Θ(√k·ε_acc)), and 'LCGuard,' a principled framework for controlling sensitive information leakage in KV-cache-based multi-agent communication. Noteworthy announcements include npm's introduction of 2FA-gated publishing to prevent unauthorized releases, Microsoft's takedown of the Fox Tempest malware-signing service, and two massive GitHub attacks: one exploiting a malicious Nx Console VS Code extension to breach internal repos, and the Megalodon campaign pushing 5,718 malicious commits in six hours. Additionally, the compromise of Laravel-Lang PHP packages to deliver credential stealers underscores the persistent threat to open-source ecosystems.</div>
+        <div class="lang-zh">今天数字身份领域的焦点是供应链攻击和对可信基础设施的武器化。一个反复出现的主题是：身份本身已成为主要攻击面——文章《When Identity is the Attack Path》论证了单个缓存的 AWS 密钥如何暴露 98% 的云资源。突出论文包括：《Auditing Privacy in Multi-Tenant RAG under Account Collusion》，揭示了每个账户的 DP 保证在账户串通下会退化（Θ(√k·ε_acc)）；以及《LCGuard》，一个在基于 KV-cache 的多智能体通信中控制敏感信息泄露的原则性框架。值得注意的公告包括：npm 引入 2FA 门控发布以防止未授权分发；微软摧毁了 Fox Tempest 恶意软件签名服务；两起大规模 GitHub 攻击——一起利用恶意的 Nx Console VS Code 扩展入侵内部仓库，另一起 Megalodon 活动在六小时内推送了 5,718 个恶意提交。此外，Laravel-Lang PHP 包被篡改以投放凭证窃取器，突显了开源生态系统面临的持续威胁。</div>
       </div>
       
 
@@ -1531,6 +1531,25 @@
       </section>
 
       <section data-tab="news">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1260.html">npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1260.html">npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks</a></h4>
+          <p class="lang-en">GitHub has introduced staged publishing for npm, requiring maintainers to pass a two-factor authentication (2FA) challenge before a package is publicly released. This feature ensures human approval for every publish, even from automated CI/CD pipelines. Additionally, npm now supports install source flags—--allow-file, --allow-remote, and --allow-directory—giving developers explicit control over non-registry package installations. These measures counter the surge in software supply chain attacks targeting open-source ecosystems, such as those by the TeamPCP group. GitHub recommends pairing staged publishing with trusted publishing via OIDC for maximum security.</p>
+          <p class="lang-zh">GitHub为npm推出了分阶段发布功能，要求维护者通过two-factor authentication (2FA)验证后才能公开发布包。此功能确保每次发布都有“人为在场”批准，包括来自CI/CD工作流的发布。同时，npm新增了--allow-file、--allow-remote和--allow-directory等安装源标志，让开发者对非注册表安装源进行显式控制。这些措施旨在应对针对开源生态系统的软件供应链攻击激增。</p>
+          
+          <a href="https://thehackernews.com/2026/05/npm-adds-2fa-gated-publishing-and.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">

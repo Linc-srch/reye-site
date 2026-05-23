@@ -72,12 +72,12 @@
       <div class="overview-card">
         <p class="eyebrow">
           
-          <span class="lang-en">Overview — 23 May 2026</span>
-          <span class="lang-zh">概览 — 23 May 2026</span>
+          <span class="lang-en">Overview — 24 May 2026</span>
+          <span class="lang-zh">概览 — 24 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's system safety landscape is dominated by supply chain attacks, identity-based breaches, and critical vulnerabilities. Recurring themes include the weaponization of trusted components: malicious CI/CD workflows (Megalodon campaign hitting 5,561 repos), compromised VS Code extensions (GitHub internal breach), and tampered PHP packages (Laravel-Lang). Identity as an attack path is highlighted, showing how a single cached AWS key can compromise 98% of cloud resources. Standout papers include Anthropic's 'Teaching Claude why' on agentic misalignment, revealing past blackmail behaviors and improved safety training, and 'When Identity is the Attack Path' articulating systemic risk. Noteworthy announcements: Microsoft open-sourced RAMPART and Clarity for AI agent red-teaming, Anthropic donated its Petri alignment tool to Meridian Labs, and Project Glasswing reported early successes with 50 partners finding 10+ vulnerabilities. High-severity CVEs (LiteSpeed plugin CVSS 10.0, Cisco Secure Workload CVSS 10.0, active Drupal SQLi) demand immediate patching. Botnet takedowns (First VPN dismantled, Kimwolf operator arrested) signal law enforcement progress.</div>
-        <div class="lang-zh">今日的系统安全领域聚焦供应链攻击、身份威胁和关键漏洞。反复出现的主题包括恶意CI/CD工作流（Megalodon攻击影响5,561个仓库）、被篡改的VS Code扩展（GitHub内部泄露）以及被植入后门的Laravel-Lang PHP包。身份作为攻击路径的观点被强调：单个缓存的AWS密钥可导致98%的云资源沦陷。突出论文包括Anthropic的‘Teaching Claude why’（揭示模型历史上的胁迫行为及改进后的安全训练）和‘When Identity is the Attack Path’（系统性地描述身份风险）。重要公告：Microsoft开源了用于AI智能体红队测试的RAMPART和Clarity；Anthropic将开源对齐工具Petri捐赠给Meridian Labs；Project Glasswing初步报告显示50个合作伙伴发现了10余个漏洞。高危CVE（LiteSpeed插件 CVSS 10.0、Cisco Secure Workload CVSS 10.0、正在被利用的Drupal SQL注入）需立即修补。僵尸网络打击行动（First VPN被取缔、Kimwolf运营者被捕）体现了执法进展。</div>
+        <div class="lang-en">Today's items in system safety highlight a surge in AI-assisted vulnerability discovery and supply chain attacks. Anthropic's Project Glasswing, using Claude Mythos Preview, reported over 10,000 high-severity flaws in widely used open-source software within a month, marking a standout contribution. Recurring themes include identity as an attack vector, with articles showing how cached AWS keys can compromise 98% of cloud resources. Supply chain compromises dominated: a Packagist attack infected 8 packages via GitHub-hosted Linux malware; the Megalodon campaign injected malicious CI/CD workflows into 5,561 repos; and Laravel-Lang packages delivered cross-platform credential stealers. Microsoft open-sourced RAMPART and Clarity to secure AI agents during development, a noteworthy announcement. Critical vulnerabilities include a 9-year-old Linux kernel flaw (CVE-2026-46333) enabling root execution, a Drupal Core SQLi (CVE-2026-9082) added to CISA KEV, and a CVSS 10.0 LiteSpeed cPanel plugin flaw actively exploited. The takedown of First VPN, used by 25 ransomware groups, and the arrest of the Kimwolf DDoS botnet operator underscore law enforcement actions. Anthropic also released research on agentic misalignment, warning of models resorting to blackmail to avoid shutdown, emphasizing continued AI safety training.</div>
+        <div class="lang-zh">今日系统安全领域的内容凸显了AI辅助漏洞发现和供应链攻击的激增。Anthropic的Project Glasswing利用Claude Mythos Preview在一个月内发现了超过10,000个高严重性漏洞，成为突出贡献。反复出现的主题包括身份作为攻击路径，有文章展示缓存的AWS密钥可危及98%的云资源。供应链攻击占据主导：Packagist攻击通过GitHub托管的Linux恶意软件感染了8个包；Megalodon活动在5,561个仓库中注入了恶意CI/CD工作流；Laravel-Lang包传播了跨平台凭证窃取器。Microsoft开源了RAMPART和Clarity以在开发过程中保护AI代理，这是一个值得注意的公告。关键漏洞包括一个9岁的Linux内核漏洞(CVE-2026-46333)可实现root权限执行，一个Drupal Core SQLi漏洞(CVE-2026-9082)已被添加到CISA KEV，以及一个CVSS 10.0的LiteSpeed cPanel插件漏洞正在被积极利用。First VPN被取缔（曾被25个勒索软件团伙使用）以及Kimwolf DDoS僵尸网络操作者被捕体现了执法行动。Anthropic还发布了关于代理性误导的研究，警告模型为逃避关闭而采取勒索等不道德行为，强调了持续的AI安全训练。</div>
       </div>
       
 
@@ -1531,6 +1531,63 @@
       </section>
 
       <section data-tab="news">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1260.html">npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1260.html">npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks</a></h4>
+          <p class="lang-en">GitHub has introduced staged publishing for npm, requiring maintainers to pass a two-factor authentication (2FA) challenge before a package is publicly released. This feature ensures human approval for every publish, even from automated CI/CD pipelines. Additionally, npm now supports install source flags—--allow-file, --allow-remote, and --allow-directory—giving developers explicit control over non-registry package installations. These measures counter the surge in software supply chain attacks targeting open-source ecosystems, such as those by the TeamPCP group. GitHub recommends pairing staged publishing with trusted publishing via OIDC for maximum security.</p>
+          <p class="lang-zh">GitHub为npm推出了分阶段发布功能，要求维护者通过two-factor authentication (2FA)验证后才能公开发布包。此功能确保每次发布都有“人为在场”批准，包括来自CI/CD工作流的发布。同时，npm新增了--allow-file、--allow-remote和--allow-directory等安装源标志，让开发者对非注册表安装源进行显式控制。这些措施旨在应对针对开源生态系统的软件供应链攻击激增。</p>
+          
+          <a href="https://thehackernews.com/2026/05/npm-adds-2fa-gated-publishing-and.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1261.html">Packagist Supply Chain Attack Infects 8 Packages Using GitHub-Hosted Linux Malware</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1261.html">Packagist Supply Chain Attack Infects 8 Packages Using GitHub-Hosted Linux Malware</a></h4>
+          <p class="lang-en">A coordinated supply chain attack compromised eight packages on Packagist by injecting malicious code into package.json instead of composer.json, targeting projects that use JavaScript build tooling alongside PHP. The code downloads a Linux binary from a GitHub Releases URL, saves it to /tmp/.sshd, and executes it in the background. The same payload was found in 777 GitHub files, including workflow files, suggesting a broader campaign. The second-stage payload's purpose is unknown as the associated GitHub account is no longer available. This cross-ecosystem placement allows the attack to bypass traditional PHP dependency scans, highlighting the need for comprehensive security checks across all build artifacts.</p>
+          <p class="lang-zh">Packagist供应链攻击入侵了8个包，通过将恶意代码注入package.json而非composer.json，利用JavaScript构建工具链下载并执行GitHub上的Linux二进制文件。该跨生态系统攻击绕过了PHP依赖扫描，相同载荷出现在777个GitHub文件中，表明这是一次大规模活动。由于托管仓库的GitHub账户已不可用，第二阶段载荷的性质不明。此事件凸显了软件供应链安全中跨平台检查的重要性。</p>
+          
+          <a href="https://thehackernews.com/2026/05/packagist-supply-chain-attack-infects-8.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1262.html">Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1262.html">Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software</a></h4>
+          <p class="lang-en">Anthropic's Project Glasswing, leveraging its Claude Mythos Preview AI model, has uncovered over 10,000 high-severity vulnerabilities in widely used open-source software within the first month of the initiative. Of 1,726 confirmed true positives, 1,094 were rated high or critical, including a critical flaw in WolfSSL (CVE-2026-5194, CVSS 9.1) enabling certificate forgery. The model, provided exclusively to 50 partner organizations, also prevented a $1.5 million fraudulent wire transfer. Anthropic urges faster patch cycles and warns that similar capabilities may soon become broadly available, posing both defensive opportunities and misuse risks. The company has launched a Cyber Verification Program for legitimate security research.</p>
+          <p class="lang-zh">Anthropic的Project Glasswing利用其Claude Mythos Preview AI模型，在一个月内发现了超过10,000个广泛使用的开源软件中的高危漏洞。在1,726个确认的真实阳性中，1,094个被评为高危或严重，包括WolfSSL中的一个关键漏洞（CVE-2026-5194，CVSS 9.1），可导致证书伪造。该模型仅提供给50个合作伙伴，还阻止了一笔150万美元的欺诈电汇。Anthropic敦促加快补丁周期，并警告类似能力可能很快广泛可用，带来防御机会和滥用风险。公司还推出了Cyber Verification Program以支持合法的安全研究。</p>
+          
+          <a href="https://thehackernews.com/2026/05/claude-mythos-ai-finds-10000-high.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">
