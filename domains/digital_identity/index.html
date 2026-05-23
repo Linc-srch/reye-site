@@ -72,12 +72,12 @@
       <div class="overview-card">
         <p class="eyebrow">
           
-          <span class="lang-en">Overview — 22 May 2026</span>
-          <span class="lang-zh">概览 — 22 May 2026</span>
+          <span class="lang-en">Overview — 23 May 2026</span>
+          <span class="lang-zh">概览 — 23 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's digital identity research reveals a strong focus on agentic safety and privacy in multi-agent systems. A standout paper, 'Boiling the Frog,' introduces a multi-turn benchmark demonstrating that AI agents in corporate settings are highly vulnerable to incremental attacks, with aggregated risk escalating gradually—a critical finding for identity governance. Another key work, 'LCGuard,' proposes the first principled framework for controlling sensitive information leakage in KV-cache-based latent communication, addressing a novel privacy vector in multi-agent LLM systems. 'Auditing Privacy in Multi-Tenant RAG under Account Collusion' structurally demonstrates that per-account DP guarantees understate joint leakage under collusion, with a degradation rate of Θ(√k·ε_acc). Noteworthy announcements include 'DeltaBox,' which reduces sandbox checkpoint/rollback latency to milliseconds, enabling scalable tree search and RL for LLM agents, and 'GraphFlow,' a graph-based workflow management that reduces KV cache memory by ~4x. Recurring themes include the tension between utility and privacy, the need for interpretable alignment (e.g., 'SegCompass' using sparse autoencoders), and the growing emphasis on multi-agent coordination safety.</div>
-        <div class="lang-zh">今日的数字身份研究重点关注多智能体系统中的代理安全与隐私。突出论文《Boiling the Frog》引入了一个多轮基准测试，表明企业环境中的AI代理极易受到渐进式攻击，风险逐步累积——这对身份治理至关重要。另一项关键工作《LCGuard》提出了首个基于原则的框架，用于控制KV缓存潜在通信中的敏感信息泄露，解决了多智能体LLM系统中的新型隐私向量。《Auditing Privacy in Multi-Tenant RAG under Account Collusion》从结构上证明，每账户DP保证在共谋情况下低估了联合泄露，退化率为Θ(√k·ε_acc)。值得注意的公告包括《DeltaBox》，它将沙箱检查点/回滚延迟降至毫秒级，支持LLM代理的可扩展树搜索和RL；以及《GraphFlow》，一种基于图的工作流管理，可将KV缓存内存减少约4倍。反复出现的主题包括效用与隐私之间的张力、可解释对齐的需求（例如《SegCompass》使用稀疏自编码器），以及对多智能体协调安全的日益重视。</div>
+        <div class="lang-en">Today's research in digital identity and AI agency reveals strong cross-cutting themes: evaluation benchmarks, agentic safety, and reinforcement learning for reasoning. Multiple benchmarks challenge existing paradigms—VGenST-Bench proposes active video synthesis for spatio-temporal reasoning, MixRea exposes LLMs' inattentional blindness to implicit cues, and AtelierEval systematically measures prompting proficiency. Safety receives renewed attention: Boiling the Frog demonstrates that multi-turn incremental attacks on corporate AI agents are alarmingly effective, while LCGuard introduces a principled framework for protecting latent communication in multi-agent systems. On the reasoning front, CopT reverses the thinking pipeline by drafting before reasoning, and several papers (POW3R, LANG, Spreadsheet-RL) apply RL to improve multilingual reasoning, rubric alignment, and spreadsheet task performance. Standout contributions include DeltaBox, which reduces sandbox checkpoint latency to milliseconds for stateful agents, and a probing study showing that higher observation fidelity paradoxically hurts embodied LLM problem-solving. Noteworthy is Virgin Atlantic's production deployment of OpenAI's Codex for legacy code refactoring and mobile app testing, achieving zero critical defects during Christmas travel.</div>
+        <div class="lang-zh">今日数字身份与AI代理领域的研究呈现几个交叉主题：评估基准、代理安全性和推理强化学习。多个基准挑战现有范式——VGenST-Bench提出通过主动视频合成进行时空推理评估，MixRea揭露LLM在显式指令下对隐含线索的注意力盲区，AtelierEval系统衡量提示工程能力。安全性受到重视：Boiling the Frog表明对公司AI代理的多轮增量攻击效果惊人，LCGuard则为多代理系统中的潜在通信引入隐私保护框架。推理方面，CopT反转思维流程（先草拟答案再推理），多篇论文（POW3R、LANG、Spreadsheet-RL）应用RL提升多语言推理、评分标准对齐和电子表格任务表现。突出贡献包括DeltaBox将状态代理的沙箱检查点延迟降至毫秒级，以及一项探测研究揭示更高观察保真度反而损害具身LLM问题解决能力。值得关注的还有维珍大西洋在生产中部署OpenAI的Codex进行遗留代码重构和移动应用测试，在圣诞旅行高风险期实现零关键缺陷。</div>
       </div>
       
 
@@ -1534,6 +1534,25 @@
         
         <div class="feed-item">
           <div class="feed-meta">
+            <span class="domain-tag">openai_rss</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1239.html">How Virgin Atlantic ships faster with Codex</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1239.html">How Virgin Atlantic ships faster with Codex</a></h4>
+          <p class="lang-en">Virgin Atlantic leveraged OpenAI's Codex to enhance test coverage, accelerate legacy code refactoring, and ship a revamped mobile app with zero critical defects during the high-risk Christmas travel period. Codex reduced legacy codebase sizes by 78-80% and cut refactoring time from two weeks to 30 minutes. The tool also enabled non-engineering teams to prototype internal applications directly against the data warehouse. The case demonstrates how AI-assisted coding can improve software quality and delivery velocity in enterprise settings, though challenges remain in scaling adoption across the full software development lifecycle.</p>
+          <p class="lang-zh">Virgin Atlantic利用OpenAI的Codex提升了测试覆盖率，加速了遗留代码重构，并在高风险的圣诞旅行期间交付了零关键缺陷的移动应用。Codex将遗留代码库规模减少78-80%，重构时间从两周缩短至30分钟。非工程团队也可直接基于数据仓库构建内部应用原型。该案例展示了AI辅助编码如何提升企业软件质量和交付速度，但跨全生命周期规模化的挑战依然存在。</p>
+          
+          <a href="https://openai.com/index/virgin-atlantic" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
             <span class="domain-tag">anthropic_research</span>
             <span>·</span>
             <span>2026-05-23</span>
@@ -1544,6 +1563,25 @@
           <p class="lang-zh">Anthropic经济研究团队通过Anthropic Economic Index追踪AI在全球各行业的实际应用，发现收入与AI采纳率强相关，且指令自动化比例从2024年12月的27%升至39%。他们发布关于经济基元、学习曲线和劳动力市场影响的报告，旨在为政策制定者、企业和工人提供应对AI经济转型的实证基础。</p>
           
           <a href="https://www.anthropic.com/research/team/economic-research" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">anthropic_research</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1236.html">Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1236.html">Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey</a></h4>
+          <p class="lang-en">Anthropic has launched the Anthropic Economic Index Survey, a monthly qualitative study conducted via Anthropic Interviewer. The survey targets a random sample of Claude users to capture first-hand accounts of how AI is affecting work, productivity, hiring, and role expectations. By collecting these insights monthly, Anthropic aims to detect changes earlier than traditional labor market indicators. The data will be combined with privacy-preserving Claude usage data to inform economic research and future model improvements. The survey begins immediately, with a new set of users invited each month.</p>
+          <p class="lang-zh">Anthropic推出了Anthropic Economic Index Survey，这是一项通过Anthropic Interviewer进行的月度定性调查。调查随机邀请Claude用户，收集AI对工作、生产力、招聘和角色期望影响的真实反馈。通过每月采集数据，目的是比传统劳动力指标更早发现变化。这些数据将与隐私保护的Claude使用数据结合，用于经济研究和模型改进。调查已启动，每月更换受邀用户。</p>
+          
+          <a href="https://www.anthropic.com/research/economic-index-survey-announcement" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
             <span class="lang-zh">原始来源</span>
             →

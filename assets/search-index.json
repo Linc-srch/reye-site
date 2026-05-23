@@ -1,5 +1,39 @@
 [
   {
+    "id": 1238,
+    "type": "article",
+    "title": "OpenAI named a Leader in enterprise coding agents by Gartner",
+    "title_zh": "",
+    "summary_en": "OpenAI has been named a Leader in the Gartner Magic Quadrant for Enterprise AI Coding Agents, reflecting the progress of its Codex product. Codex is used by over 4 million people weekly and by companies such as Cisco, Datadog, Dell, and NVIDIA. The report highlights Codex's strengths in agentic software development, enterprise governance, sandboxing, and flexible deployment. OpenAI has since improved Codex with GPT-5.5, stronger tool use, faster performance, and deeper enterprise workflow support. Cisco used Codex to build most of its AI Defense platform, shortening delivery from quarters to weeks. The recognition underscores the shift from autocomplete to delegating complex tasks to AI agents.",
+    "summary_zh": "OpenAI被Gartner评为企业AI编码代理领域的领导者，反映了其Codex产品的进展。Codex每周有超过400万用户，包括Cisco、Datadog、Dell和NVIDIA等企业。Gartner报告认可Codex在代理软件开发、企业治理、沙箱和灵活部署方面的优势。OpenAI随后通过GPT-5.5增强了Codex的工具使用、性能和流程支持。Cisco使用Codex构建了其AI Defense平台的大部分，将交付时间从几个季度缩短到几周。",
+    "url": "https://openai.com/index/gartner-2026-agentic-coding-leader",
+    "article_page": "articles/1238.html",
+    "score": 6.0,
+    "domains": [
+      "ai_safety",
+      "system_safety"
+    ],
+    "created_at": "2026-05-23 08:51:59"
+  },
+  {
+    "id": 1239,
+    "type": "article",
+    "title": "How Virgin Atlantic ships faster with Codex",
+    "title_zh": "",
+    "summary_en": "Virgin Atlantic leveraged OpenAI's Codex to enhance test coverage, accelerate legacy code refactoring, and ship a revamped mobile app with zero critical defects during the high-risk Christmas travel period. Codex reduced legacy codebase sizes by 78-80% and cut refactoring time from two weeks to 30 minutes. The tool also enabled non-engineering teams to prototype internal applications directly against the data warehouse. The case demonstrates how AI-assisted coding can improve software quality and delivery velocity in enterprise settings, though challenges remain in scaling adoption across the full software development lifecycle.",
+    "summary_zh": "Virgin Atlantic利用OpenAI的Codex提升了测试覆盖率，加速了遗留代码重构，并在高风险的圣诞旅行期间交付了零关键缺陷的移动应用。Codex将遗留代码库规模减少78-80%，重构时间从两周缩短至30分钟。非工程团队也可直接基于数据仓库构建内部应用原型。该案例展示了AI辅助编码如何提升企业软件质量和交付速度，但跨全生命周期规模化的挑战依然存在。",
+    "url": "https://openai.com/index/virgin-atlantic",
+    "article_page": "articles/1239.html",
+    "score": 6.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-23 08:51:59"
+  },
+  {
     "id": 1224,
     "type": "article",
     "title": "Economic Research",
@@ -172,6 +206,54 @@
     "domains": [
       "ai_safety",
       "system_safety"
+    ],
+    "created_at": "2026-05-23 08:51:56"
+  },
+  {
+    "id": 1235,
+    "type": "article",
+    "title": "Apr 29, 2026ScienceEvaluating Claude’s bioinformatics research capabilities with BioMysteryBench",
+    "title_zh": "",
+    "summary_en": "This post describes BioMysteryBench, a benchmark developed by Anthropic to evaluate Claude's capabilities in bioinformatics research. It tests models on real-world, messy biological datasets, requiring them to perform analyses similar to human experts. The benchmark addresses challenges such as multiple valid approaches, subjective decisions in noisy data, and questions that humans cannot yet answer. Results show that Claude's scientific capabilities are improving rapidly, with current models performing on par with or exceeding human experts on many tasks, sometimes using different strategies. The work highlights the need for benchmarks that capture the complexity of scientific discovery beyond standard knowledge tests.",
+    "summary_zh": "本文介绍了Anthropic开发的BioMysteryBench基准，用于评估Claude在生物信息学研究中的能力。该基准使用真实且复杂的生物数据集，要求模型像人类专家一样进行分析。它解决了多个有效方法、噪声数据中的主观决策以及人类尚未解答的问题等挑战。结果显示，Claude的科学能力快速提升，当前模型在许多任务上与人类专家相当甚至超越，有时采用不同策略。这项工作强调了需要能够捕捉科学发现复杂性的基准，而非仅仅知识测试。",
+    "url": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
+    "article_page": "articles/1235.html",
+    "score": 6.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-23 08:51:56"
+  },
+  {
+    "id": 1236,
+    "type": "article",
+    "title": "Apr 22, 2026Economic ResearchAnnouncing the Anthropic Economic Index Survey",
+    "title_zh": "",
+    "summary_en": "Anthropic has launched the Anthropic Economic Index Survey, a monthly qualitative study conducted via Anthropic Interviewer. The survey targets a random sample of Claude users to capture first-hand accounts of how AI is affecting work, productivity, hiring, and role expectations. By collecting these insights monthly, Anthropic aims to detect changes earlier than traditional labor market indicators. The data will be combined with privacy-preserving Claude usage data to inform economic research and future model improvements. The survey begins immediately, with a new set of users invited each month.",
+    "summary_zh": "Anthropic推出了Anthropic Economic Index Survey，这是一项通过Anthropic Interviewer进行的月度定性调查。调查随机邀请Claude用户，收集AI对工作、生产力、招聘和角色期望影响的真实反馈。通过每月采集数据，目的是比传统劳动力指标更早发现变化。这些数据将与隐私保护的Claude使用数据结合，用于经济研究和模型改进。调查已启动，每月更换受邀用户。",
+    "url": "https://www.anthropic.com/research/economic-index-survey-announcement",
+    "article_page": "articles/1236.html",
+    "score": 3.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-23 08:51:56"
+  },
+  {
+    "id": 1237,
+    "type": "article",
+    "title": "Apr 22, 2026Economic ResearchWhat 81,000 people told us about the economics of AI",
+    "title_zh": "",
+    "summary_en": "A survey of 81,000 Claude users reveals that workers in roles more exposed to AI express greater concerns about job displacement, particularly early-career respondents. Productivity gains from AI are reported across income levels, with the highest- and lowest-paid occupations experiencing the largest benefits, often from new task capabilities. The study links observed AI usage patterns with worker perceptions, showing that perceived job threat correlates with AI exposure. While some fear automation, others feel empowered. The findings highlight economic anxieties and benefits, providing insights into AI's labor market impact.",
+    "summary_zh": "一项对81,000名Claude用户的调查显示，AI暴露程度与工作替代担忧正相关，尤其是早期职业者。高收入和低收入职业均报告显著生产力提升，但担忧也更高。研究将AI使用模式与工人经济感受联系起来，发现感知到的失业威胁与AI暴露相关。一些人担忧自动化，另一些人则感到赋能。这些发现揭示了AI对劳动力市场的经济焦虑与收益。",
+    "url": "https://www.anthropic.com/research/81k-economics",
+    "article_page": "articles/1237.html",
+    "score": 6.0,
+    "domains": [
+      "ai_safety"
     ],
     "created_at": "2026-05-23 08:51:56"
   },
