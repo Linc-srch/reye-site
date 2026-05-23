@@ -51,6 +51,7 @@
           <span class="domain-tag">openai_rss</span>
           <span>·</span><span>2026-05-21</span>
           <span>·</span><a href="https://openai.com/index/the-next-phase-of-education-for-countries" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="" aria-label="Favourite">☆</button>
         </div>
         <h1 class="article-title lang-en">The next phase of OpenAI’s Education for Countries</h1>
         <h1 class="article-title lang-zh">The next phase of OpenAI’s Education for Countries</h1>
@@ -110,5 +111,20 @@
 </div><!-- .reye-app -->
 
 <script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '';
+  var title = "The next phase of OpenAI\u2019s Education for Countries";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
 </body>
 </html>

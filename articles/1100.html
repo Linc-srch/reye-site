@@ -51,6 +51,7 @@
           <span class="domain-tag">arxiv</span>
           <span>·</span><span>2026-05-19</span>
           <span>·</span><a href="https://arxiv.org/abs/2605.18621" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="" aria-label="Favourite">☆</button>
         </div>
         <h1 class="article-title lang-en">CrossView Suite: Harnessing Cross-view Spatial Intelligence of MLLMs with Dataset, Model and Benchmark</h1>
         <h1 class="article-title lang-zh">CrossView Suite：利用数据集、模型和基准测试增强多模态大语言模型的跨视角空间智能</h1>
@@ -228,5 +229,20 @@
 </div><!-- .reye-app -->
 
 <script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '';
+  var title = "CrossView Suite: Harnessing Cross-view Spatial Intelligence of MLLMs with Dataset, Model and Benchmark";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
 </body>
 </html>

@@ -51,6 +51,7 @@
           <span class="domain-tag">arxiv</span>
           <span>·</span><span>2026-05-20</span>
           <span>·</span><a href="https://arxiv.org/abs/2605.19966" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="" aria-label="Favourite">☆</button>
         </div>
         <h1 class="article-title lang-en">Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes</h1>
         <h1 class="article-title lang-zh">通过序列熵变化检测流畅的优化型对抗提示</h1>
@@ -227,5 +228,20 @@
 </div><!-- .reye-app -->
 
 <script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '';
+  var title = "Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
 </body>
 </html>

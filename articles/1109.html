@@ -51,6 +51,7 @@
           <span class="domain-tag">arxiv</span>
           <span>·</span><span>2026-05-19</span>
           <span>·</span><a href="https://arxiv.org/abs/2605.18548" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="" aria-label="Favourite">☆</button>
         </div>
         <h1 class="article-title lang-en">STT-Arena: A More Realistic Environment for Tool-Using with Spatio-Temporal Dynamics</h1>
         <h1 class="article-title lang-zh">STT-Arena：一个更真实的时空动态工具使用环境</h1>
@@ -221,5 +222,20 @@
 </div><!-- .reye-app -->
 
 <script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '';
+  var title = "STT-Arena: A More Realistic Environment for Tool-Using with Spatio-Temporal Dynamics";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
 </body>
 </html>
