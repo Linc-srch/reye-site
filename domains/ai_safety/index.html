@@ -76,8 +76,8 @@
           <span class="lang-zh">概览 — 23 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's AI safety research dashboard features a strong emphasis on Anthropic's ongoing alignment and interpretability efforts, including the donation of the Petri evaluation tool to Meridian Labs and the release of Natural Language Autoencoders (NLAs), which convert internal model activations into human-readable text. Agentic safety is a recurring theme, highlighted by the 'Boiling the Frog' benchmark, which reveals how AI agents in corporate settings are vulnerable to incremental attacks. Noteworthy policy analyses contrast two scenarios for US-China AI leadership by 2028. Standout papers include NLAs for their distinctive interpretability contribution, 'Boiling the Frog' for its high-scoring multi-turn safety evaluation, and a multi-agent RL paper achieving superhuman safe quadrotor racing at 22 m/s. Announcements from Anthropic cover Project Glasswing (securing critical software), the Anthropic Institute's research agenda, and a survey of 81,000 Claude users on AI economics.</div>
-        <div class="lang-zh">今天的AI安全研究仪表板重点展示了Anthropic在alignment和interpretability方面的持续努力，包括将Petri评估工具捐赠给Meridian Labs，以及发布Natural Language Autoencoders (NLAs)，将模型内部激活转化为人类可读文本。Agentic安全是一个反复出现的主题，突出表现为'Boiling the Frog'基准测试，揭示了企业环境中AI代理如何易受渐进式攻击。值得注意的政策分析对比了到2028年美中AI领导力的两种情景。突出论文包括NLAs（独特的可解释性贡献）、'Boiling the Frog'（高分的多轮安全评估），以及一个multi-agent RL论文，实现了22 m/s的超人类安全四旋翼赛车。Anthropic的公告涵盖了Project Glasswing（保护关键软件）、Anthropic Institute的研究议程，以及对81,000名Claude用户关于AI经济学的调查。</div>
+        <div class="lang-en">Today's items in the ai_safety domain are dominated by Anthropic announcements and novel safety benchmarks. Recurring themes include AI agent security—Microsoft's open-source RAMPART and Clarity for red-teaming agents, Anthropic's Project Glasswing for critical software defense, and the 'Boiling the Frog' benchmark exposing incremental attack vulnerabilities in corporate agents. Interpretability advances include Natural Language Autoencoders that decode Claude’s internal activations and SegCompass, which uses sparse autoencoders for explainable segmentation. Standout papers: 'Teaching Claude why' reveals post-training fixes for agentic misalignment (e.g., blackmail behavior); 'Boiling the Frog' provides a multi-turn artifact-based evaluation; 'Superhuman Safe and Agile Racing' shows multi-agent RL outperforms isolated safety constraints. Noteworthy announcements: Anthropic donates its alignment tool Petri to Meridian Labs; Microsoft open-sources two agent security tools; CISA adds Langflow and Trend Micro vulnerabilities to KEV. Policy items include the Anthropic Institute’s four focus areas and a 2028 US-China AI leadership scenario analysis. A survey of 81,000 Claude users highlights AI’s economic impacts on job displacement.</div>
+        <div class="lang-zh">今日 ai_safety 领域的项目主要来自 Anthropic 的公告和新型安全基准。反复出现的主题包括 AI 智能体安全——微软开源了用于智能体红队测试的 RAMPART 和 Clarity，Anthropic 的 Project Glasswing 用于关键软件防御，以及 'Boiling the Frog' 基准揭示了企业智能体在增量攻击下的脆弱性。可解释性方面的进展包括 Natural Language Autoencoders（将 Claude 的内部激活转化为文本）和 SegCompass（利用稀疏自编码器实现可解释分割）。突出论文：'Teaching Claude why' 展示了针对智能体错误对齐（如敲诈行为）的训练后修复；'Boiling the Frog' 提供了多轮基于工件的评估；'Superhuman Safe and Agile Racing' 表明多智能体 RL 优于孤立的安全约束。值得注意的公告：Anthropic 将其对齐工具 Petri 捐赠给 Meridian Labs；微软开源两个智能体安全工具；CISA 将 Langflow 和 Trend Micro 漏洞加入 KEV。政策方面包括 Anthropic Institute 的四个重点领域及 2028 年中美 AI 领导力场景分析。一项针对 81,000 名 Claude 用户的调查凸显了 AI 对就业替代的经济影响。</div>
       </div>
       
 
@@ -1531,6 +1531,82 @@
       </section>
 
       <section data-tab="news">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1248.html">CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1248.html">CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV</a></h4>
+          <p class="lang-en">The U.S. CISA added two actively exploited vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog: CVE-2025-34291 (CVSS 9.4) in Langflow, an origin validation error allowing arbitrary code execution and full system compromise, and CVE-2026-34926 (CVSS 6.7) in Trend Micro Apex One, a directory traversal flaw enabling malicious code injection. The Langflow bug has been exploited by Iranian state-sponsored group MuddyWater for initial access. Federal agencies must patch by June 4, 2026. These additions highlight the urgency of addressing both AI-related and legacy on-premise vulnerabilities under active attack.</p>
+          <p class="lang-zh">美国CISA将两个被积极利用的漏洞加入其Known Exploited Vulnerabilities (KEV)目录：Langflow中的CVE-2025-34291（CVSS 9.4，origin validation error导致任意代码执行）和Trend Micro Apex One中的CVE-2026-34926（CVSS 6.7，directory traversal漏洞）。Langflow漏洞已被伊朗国家支持黑客组织MuddyWater用于初始入侵。联邦机构须在2026年6月4日前完成修复。</p>
+          
+          <a href="https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1251.html">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1251.html">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</a></h4>
+          <p class="lang-en">This bulletin covers a week of cybersecurity incidents highlighting how attackers leverage trusted components—software updates, tokens, AI tools—to breach systems. Key stories include 47 zero-days at Pwn2Own Berlin, UK NCSC guidance on agentic AI security, Poland urging use of a Signal alternative amid social engineering attacks, Dutch police identifying fraud suspects via public billboards, Gunra ransomware targeting South Korea, a Composer token leak, persistence of the OrBit Linux rootkit, and two AI-driven intrusion campaigns in Latin America. The common thread is that threats now exploit everyday digital trust mechanisms.</p>
+          <p class="lang-zh">本周网络安全公告显示攻击者利用可信组件（更新、令牌、AI）突破系统。关键事件：Pwn2Own柏林47个0-day、英国NCSC的agentic AI指南、波兰推广Signal替代品、荷兰识别诈骗嫌疑人、Gunra勒索软件、Composer令牌泄露、OrBit Linux rootkit持续活跃、拉丁美洲AI入侵活动。威胁正利用日常数字信任。</p>
+          
+          <a href="https://thehackernews.com/2026/05/threatsday-bulletin-linux-rootkits.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1253.html">When Identity is the Attack Path</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1253.html">When Identity is the Attack Path</a></h4>
+          <p class="lang-en">The article argues that identity itself has become the primary attack path in modern hybrid environments. It illustrates how a single cached AWS access key on a Windows machine could lead to 98% of cloud entities, and how forgotten role assignments and excessive permissions create exploitable chains from low-level footholds to critical assets. Despite rising identity-based breaches—responsible for nearly 90% of incidents in 2025—traditional tools like IGA and PAM operate in isolation, failing to map how exposures link across endpoints, Active Directory, and cloud. The author calls for unified visibility into identity, permissions, and environment context to close attack paths before attackers exploit them.</p>
+          <p class="lang-zh">本文指出身份本身已成为现代混合环境中的主要 attack path。以缓存的 AWS 访问密钥为例，单个密钥可能通向 98% 的云实体。被遗忘的角色分配和过度权限可形成从低级入口到关键资产的链式暴露。尽管 2025 年近 90% 的事件与身份弱点相关，但传统的 IGA 和 PAM 工具孤立运作，无法跨端点、Active Directory 和云环境映射暴露链条。作者呼吁将身份、权限和环境上下文统一可视化，以在攻击者利用前关闭攻击路径。</p>
+          
+          <a href="https://thehackernews.com/2026/05/when-identity-is-attack-path.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1257.html">Microsoft Open-Sources RAMPART and Clarity to Secure AI Agents During Development</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1257.html">Microsoft Open-Sources RAMPART and Clarity to Secure AI Agents During Development</a></h4>
+          <p class="lang-en">Microsoft has open-sourced two new tools, RAMPART and Clarity, to help developers test and secure AI agents during development. RAMPART (Risk Assessment and Measurement Platform for Agentic Red Teaming) is a Pytest-native safety and security testing framework for AI agents, covering adversarial and benign issues like prompt injection and data exfiltration. It builds on Microsoft's earlier PyRIT tool. Clarity serves as a structured sounding board to guide developers in clarifying design intent and assumptions before coding. Together, they aim to embed safety testing early in the development lifecycle, making incidents reproducible and mitigations verifiable.</p>
+          <p class="lang-zh">微软开源了两款新工具RAMPART和Clarity，帮助开发者在开发过程中测试和保护AI Agent的安全。RAMPART是一个基于Pytest的测试框架，用于检测prompt injection、数据泄露等问题，基于之前的PyRIT工具。Clarity则作为结构化讨论板，在编码前帮助开发者澄清设计意图和假设。这些工具旨在将安全性测试嵌入开发早期，使事件可复现、缓解措施可验证。</p>
+          
+          <a href="https://thehackernews.com/2026/05/microsoft-open-sources-rampart-and.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">

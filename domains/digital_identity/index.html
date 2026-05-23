@@ -76,8 +76,8 @@
           <span class="lang-zh">概览 — 23 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's research in digital identity and AI agency reveals strong cross-cutting themes: evaluation benchmarks, agentic safety, and reinforcement learning for reasoning. Multiple benchmarks challenge existing paradigms—VGenST-Bench proposes active video synthesis for spatio-temporal reasoning, MixRea exposes LLMs' inattentional blindness to implicit cues, and AtelierEval systematically measures prompting proficiency. Safety receives renewed attention: Boiling the Frog demonstrates that multi-turn incremental attacks on corporate AI agents are alarmingly effective, while LCGuard introduces a principled framework for protecting latent communication in multi-agent systems. On the reasoning front, CopT reverses the thinking pipeline by drafting before reasoning, and several papers (POW3R, LANG, Spreadsheet-RL) apply RL to improve multilingual reasoning, rubric alignment, and spreadsheet task performance. Standout contributions include DeltaBox, which reduces sandbox checkpoint latency to milliseconds for stateful agents, and a probing study showing that higher observation fidelity paradoxically hurts embodied LLM problem-solving. Noteworthy is Virgin Atlantic's production deployment of OpenAI's Codex for legacy code refactoring and mobile app testing, achieving zero critical defects during Christmas travel.</div>
-        <div class="lang-zh">今日数字身份与AI代理领域的研究呈现几个交叉主题：评估基准、代理安全性和推理强化学习。多个基准挑战现有范式——VGenST-Bench提出通过主动视频合成进行时空推理评估，MixRea揭露LLM在显式指令下对隐含线索的注意力盲区，AtelierEval系统衡量提示工程能力。安全性受到重视：Boiling the Frog表明对公司AI代理的多轮增量攻击效果惊人，LCGuard则为多代理系统中的潜在通信引入隐私保护框架。推理方面，CopT反转思维流程（先草拟答案再推理），多篇论文（POW3R、LANG、Spreadsheet-RL）应用RL提升多语言推理、评分标准对齐和电子表格任务表现。突出贡献包括DeltaBox将状态代理的沙箱检查点延迟降至毫秒级，以及一项探测研究揭示更高观察保真度反而损害具身LLM问题解决能力。值得关注的还有维珍大西洋在生产中部署OpenAI的Codex进行遗留代码重构和移动应用测试，在圣诞旅行高风险期实现零关键缺陷。</div>
+        <div class="lang-en">Today's digital identity coverage underscores a systemic shift: identity itself is now the primary attack path in hybrid environments, as argued in a standout piece showing how a single cached AWS key can expose 98% of cloud resources. Recurring themes include supply chain compromises—Microsoft's takedown of the Fox Tempest MSaaS operation, the Megalodon campaign that injected malicious CI/CD workflows into 5,561 GitHub repos using forged identities, and the Laravel-Lang PHP package compromise delivering credential stealers. GitHub also confirmed a breach of internal repositories via a malicious VS Code extension. On the AI safety front, the "Boiling the Frog" benchmark reveals that agents are highly vulnerable to incremental multi-turn attacks that gradually escalate risk, while AMEL shows LLM evaluators are biased by prior conversation polarity. Noteworthy announcements include Virgin Atlantic's successful use of Codex to ship a revamped app with zero defects, and new benchmarks like VGenST-Bench for spatio-temporal reasoning and MixRea for explicit-implicit reasoning. Several papers explore RLVR stability (Clipping Bottleneck) and policy-aware rewards (POW3R).</div>
+        <div class="lang-zh">今日的数字身份领域报道突出了一个系统性转变：身份本身已成为混合环境中的主要攻击路径，一篇突出文章论证了单个缓存的 AWS 密钥如何能暴露 98% 的云资源。反复出现的主题包括供应链攻击——微软取缔了 Fox Tempest MSaaS 运营，Megalodon 活动利用伪造身份向 5,561 个 GitHub 仓库注入了恶意 CI/CD 工作流，以及 Laravel-Lang PHP 包被攻陷传播凭证窃取器。GitHub 还确认因恶意 VS Code 扩展导致内部仓库被入侵。在 AI 安全方面，"Boiling the Frog" 基准测试揭示了智能体极易受到渐进式多轮攻击，而 AMEL 显示了 LLM 评估者受先前对话极性的影响。值得注意的公告包括 Virgin Atlantic 成功利用 Codex 以零缺陷交付了改版移动应用，以及新的基准测试如 VGenST-Bench（时空推理）和 MixRea（显式-隐式推理）。多篇论文探讨了 RLVR 稳定性（Clipping Bottleneck）和策略感知奖励（POW3R）。</div>
       </div>
       
 
@@ -1531,6 +1531,120 @@
       </section>
 
       <section data-tab="news">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1240.html">Laravel-Lang PHP Packages Compromised to Deliver Cross-Platform Credential Stealer</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1240.html">Laravel-Lang PHP Packages Compromised to Deliver Cross-Platform Credential Stealer</a></h4>
+          <p class="lang-en">Cybersecurity researchers have identified a supply chain attack targeting multiple Laravel-Lang PHP packages. The compromised packages include laravel-lang/lang, http-statuses, attributes, and actions. Over 700 malicious versions were published via automated mass tagging, likely due to compromised organization-level credentials. The attack embeds a backdoor in 'src/helpers.php' that fetches a cross-platform PHP credential stealer from an external server. The stealer collects cloud IAM roles, access tokens, crypto wallet keys, browser credentials, session tokens, and configuration files. It encrypts exfiltrated data with AES-256 and self-deletes. The campaign affects Windows, Linux, and macOS and highlights risks in open-source software supply chains.</p>
+          <p class="lang-zh">网络安全研究人员发现了一起针对多个 Laravel-Lang PHP 包的软件供应链攻击。受影响的包包括 laravel-lang/lang、http-statuses、attributes 和 actions。攻击者通过自动化批量标记发布了超过700个恶意版本，疑似获取了组织级凭证。后门代码嵌入在 'src/helpers.php' 中，可获取跨平台的 PHP 凭据窃取器，窃取云 IAM 角色、访问令牌、加密货币钱包密钥、浏览器凭据、会话令牌及配置文件等。数据经 AES-256 加密后外传，并自删除以掩盖痕迹。此攻击影响 Windows、Linux 和 macOS，凸显了开源供应链的风险。</p>
+          
+          <a href="https://thehackernews.com/2026/05/laravel-lang-php-packages-compromised.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1245.html">Megalodon GitHub Attack Targets 5,561 Repos with Malicious CI/CD Workflows</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1245.html">Megalodon GitHub Attack Targets 5,561 Repos with Malicious CI/CD Workflows</a></h4>
+          <p class="lang-en">A new automated campaign dubbed 'Megalodon' pushed 5,718 malicious commits to 5,561 GitHub repositories within six hours using throwaway accounts and forged author identities. The attacker injected GitHub Actions workflows containing base64-encoded bash payloads that exfiltrate CI secrets, cloud credentials, SSH keys, OIDC tokens, and source code secrets to a command-and-control server. The attack is linked to the TeamPCP group, which has been compromising open-source projects in a worm-like fashion. This incident highlights the escalating threat of supply chain attacks targeting CI/CD pipelines and credential theft at scale.</p>
+          <p class="lang-zh">一项名为'Megalodon'的自动化攻击活动在六小时内向5,561个GitHub仓库推送了5,718个恶意提交，使用一次性账户和伪造的作者身份（如build-bot、auto-ci）注入GitHub Actions工作流，其中包含base64编码的bash载荷，用于窃取CI secret、云凭证、SSH密钥、OIDC token等敏感数据，并发送至C2服务器。该攻击与TeamPCP组织相关，其通过供应链攻击大规模传播恶意软件，凸显了CI/CD管道安全面临的严峻挑战。</p>
+          
+          <a href="https://thehackernews.com/2026/05/megalodon-github-attack-targets-5561.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1251.html">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1251.html">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</a></h4>
+          <p class="lang-en">This bulletin covers a week of cybersecurity incidents highlighting how attackers leverage trusted components—software updates, tokens, AI tools—to breach systems. Key stories include 47 zero-days at Pwn2Own Berlin, UK NCSC guidance on agentic AI security, Poland urging use of a Signal alternative amid social engineering attacks, Dutch police identifying fraud suspects via public billboards, Gunra ransomware targeting South Korea, a Composer token leak, persistence of the OrBit Linux rootkit, and two AI-driven intrusion campaigns in Latin America. The common thread is that threats now exploit everyday digital trust mechanisms.</p>
+          <p class="lang-zh">本周网络安全公告显示攻击者利用可信组件（更新、令牌、AI）突破系统。关键事件：Pwn2Own柏林47个0-day、英国NCSC的agentic AI指南、波兰推广Signal替代品、荷兰识别诈骗嫌疑人、Gunra勒索软件、Composer令牌泄露、OrBit Linux rootkit持续活跃、拉丁美洲AI入侵活动。威胁正利用日常数字信任。</p>
+          
+          <a href="https://thehackernews.com/2026/05/threatsday-bulletin-linux-rootkits.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1253.html">When Identity is the Attack Path</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1253.html">When Identity is the Attack Path</a></h4>
+          <p class="lang-en">The article argues that identity itself has become the primary attack path in modern hybrid environments. It illustrates how a single cached AWS access key on a Windows machine could lead to 98% of cloud entities, and how forgotten role assignments and excessive permissions create exploitable chains from low-level footholds to critical assets. Despite rising identity-based breaches—responsible for nearly 90% of incidents in 2025—traditional tools like IGA and PAM operate in isolation, failing to map how exposures link across endpoints, Active Directory, and cloud. The author calls for unified visibility into identity, permissions, and environment context to close attack paths before attackers exploit them.</p>
+          <p class="lang-zh">本文指出身份本身已成为现代混合环境中的主要 attack path。以缓存的 AWS 访问密钥为例，单个密钥可能通向 98% 的云实体。被遗忘的角色分配和过度权限可形成从低级入口到关键资产的链式暴露。尽管 2025 年近 90% 的事件与身份弱点相关，但传统的 IGA 和 PAM 工具孤立运作，无法跨端点、Active Directory 和云环境映射暴露链条。作者呼吁将身份、权限和环境上下文统一可视化，以在攻击者利用前关闭攻击路径。</p>
+          
+          <a href="https://thehackernews.com/2026/05/when-identity-is-attack-path.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1255.html">GitHub Internal Repositories Breached via Malicious Nx Console VS Code Extension</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1255.html">GitHub Internal Repositories Breached via Malicious Nx Console VS Code Extension</a></h4>
+          <p class="lang-en">GitHub confirmed that a breach of its internal repositories was caused by a malicious version of the Nx Console VS Code extension, which was deployed after an attacker compromised a developer's system. The tampered extension was live on the Visual Studio Marketplace for only 18 minutes but installed a credential stealer that harvested sensitive data from password managers and cloud services. The attack, attributed to the TeamPCP group, exfiltrated approximately 3,800 repositories. GitHub stated that customer data may have been exposed in limited form and rotated critical secrets. The incident underscores the dangers of auto-updating extension marketplaces and the interconnected nature of software supply chain attacks.</p>
+          <p class="lang-zh">GitHub 确认其内部仓库被入侵源于一个恶意的 Nx Console VS Code 扩展，该扩展在攻击者攻陷开发者系统后被发布。篡改后的扩展仅在 Visual Studio Marketplace 上存活了 18 分钟，但植入了凭据窃取器，能收集来自密码管理器、AWS 和 GitHub 等服务的敏感数据。攻击者 TeamPCP 组织窃取了约 3800 个仓库。GitHub 表示客户数据可能以有限形式暴露，并轮换了关键密钥。此事件凸显了扩展市场自动更新机制的风险及软件供应链安全的连锁效应。</p>
+          
+          <a href="https://thehackernews.com/2026/05/github-internal-repositories-breached.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1258.html">Microsoft Takes Down Malware-Signing Service Behind Ransomware Attacks</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1258.html">Microsoft Takes Down Malware-Signing Service Behind Ransomware Attacks</a></h4>
+          <p class="lang-en">Microsoft disrupted a malware-signing-as-a-service (MSaaS) operation, dubbed Fox Tempest, which abused the company's Artifact Signing system to generate fraudulent code-signing certificates for signing malware. The service enabled ransomware attacks, including Rhysida, and distributed malware like Oyster, Lumma Stealer, and Vidar. Fox Tempest used stolen identities from the US and Canada to obtain legitimate certificates and offered the service for $5,000–$9,000. The takedown, OpFauxSign, seized the website, virtual machines, and hosting infrastructure. The operation targeted healthcare, education, government, and financial sectors globally. Microsoft emphasized that such abuse undermines trust in software legitimacy and security controls.</p>
+          <p class="lang-zh">微软捣毁了一个名为Fox Tempest的恶意签名服务平台，该平台滥用微软的Artifact Signing系统生成伪造的代码签名证书，为勒索软件（如Rhysida）及其他恶意软件签名。该服务使用美国与加拿大的被盗身份获取合法证书，收费5000-9000美元，并通过Cloudzy虚拟机分发。行动代号OpFauxSign，查封了网站和基础设施。此举突显了代码签名信任机制被武器化的风险。</p>
+          
+          <a href="https://thehackernews.com/2026/05/microsoft-takes-down-malware-signing.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">

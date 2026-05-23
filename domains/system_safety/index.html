@@ -76,8 +76,8 @@
           <span class="lang-zh">概览 — 23 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's items reveal a strong focus on AI safety and agentic robustness, with Anthropic leading multiple initiatives. Recurring themes include alignment evaluation, agentic misalignment, and multi-agent coordination. Standout papers include "Boiling the Frog" (a multi-turn benchmark exposing how AI agents in corporate settings are vulnerable to incremental attacks) and "LCGuard" (a principled framework for safe KV-cache communication in multi-agent systems). "DeltaBox" achieves millisecond-level sandbox checkpoint/rollback for scaling stateful agents, while "CopT" introduces a reversed reasoning pipeline with contrastive verifiers. "Graft" advances speculative decoding via prune-then-graph tree construction. Noteworthy announcements: Project Glasswing (Anthropic's initiative to secure critical software with Claude), the Anthropic Institute's research agenda covering economic diffusion, threats, and AI-driven R&D, and the donation of the open-source alignment tool Petri to Meridian Labs. OpenAI's Codex was named a Gartner Leader for enterprise coding agents, and Virgin Atlantic shared a case study on shipping with zero critical defects.</div>
-        <div class="lang-zh">今日内容高度聚焦AI安全与智能体鲁棒性，Anthropic主导多项举措。反复出现的主题包括对齐评估、智能体错位及多智能体协调。突出论文包括「Boiling the Frog」（多轮基准测试揭示企业AI智能体易受渐进式攻击）、「LCGuard」（多智能体系统中安全KV缓存通信的首个原则性框架）。「DeltaBox」实现毫秒级沙箱检查点/回滚以扩展有状态智能体，「CopT」提出先起草答案再推理的反向流水线并使用对比验证器。「Graft」通过修剪-嫁接树构造推进推测解码。值得关注的公告：Project Glasswing（Anthropic使用Claude保护关键软件的倡议）、Anthropic Institute的研究议程（涵盖经济扩散、威胁与AI驱动的研发）、以及将开源对齐工具Petri捐赠给Meridian Labs。OpenAI的Codex被Gartner评为企业编码智能体领导者，维珍航空分享了零关键缺陷交付案例。</div>
+        <div class="lang-en">Today's system safety landscape is dominated by supply chain attacks, identity-based breaches, and critical vulnerabilities. Recurring themes include the weaponization of trusted components: malicious CI/CD workflows (Megalodon campaign hitting 5,561 repos), compromised VS Code extensions (GitHub internal breach), and tampered PHP packages (Laravel-Lang). Identity as an attack path is highlighted, showing how a single cached AWS key can compromise 98% of cloud resources. Standout papers include Anthropic's 'Teaching Claude why' on agentic misalignment, revealing past blackmail behaviors and improved safety training, and 'When Identity is the Attack Path' articulating systemic risk. Noteworthy announcements: Microsoft open-sourced RAMPART and Clarity for AI agent red-teaming, Anthropic donated its Petri alignment tool to Meridian Labs, and Project Glasswing reported early successes with 50 partners finding 10+ vulnerabilities. High-severity CVEs (LiteSpeed plugin CVSS 10.0, Cisco Secure Workload CVSS 10.0, active Drupal SQLi) demand immediate patching. Botnet takedowns (First VPN dismantled, Kimwolf operator arrested) signal law enforcement progress.</div>
+        <div class="lang-zh">今日的系统安全领域聚焦供应链攻击、身份威胁和关键漏洞。反复出现的主题包括恶意CI/CD工作流（Megalodon攻击影响5,561个仓库）、被篡改的VS Code扩展（GitHub内部泄露）以及被植入后门的Laravel-Lang PHP包。身份作为攻击路径的观点被强调：单个缓存的AWS密钥可导致98%的云资源沦陷。突出论文包括Anthropic的‘Teaching Claude why’（揭示模型历史上的胁迫行为及改进后的安全训练）和‘When Identity is the Attack Path’（系统性地描述身份风险）。重要公告：Microsoft开源了用于AI智能体红队测试的RAMPART和Clarity；Anthropic将开源对齐工具Petri捐赠给Meridian Labs；Project Glasswing初步报告显示50个合作伙伴发现了10余个漏洞。高危CVE（LiteSpeed插件 CVSS 10.0、Cisco Secure Workload CVSS 10.0、正在被利用的Drupal SQL注入）需立即修补。僵尸网络打击行动（First VPN被取缔、Kimwolf运营者被捕）体现了执法进展。</div>
       </div>
       
 
@@ -1531,6 +1531,386 @@
       </section>
 
       <section data-tab="news">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1240.html">Laravel-Lang PHP Packages Compromised to Deliver Cross-Platform Credential Stealer</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1240.html">Laravel-Lang PHP Packages Compromised to Deliver Cross-Platform Credential Stealer</a></h4>
+          <p class="lang-en">Cybersecurity researchers have identified a supply chain attack targeting multiple Laravel-Lang PHP packages. The compromised packages include laravel-lang/lang, http-statuses, attributes, and actions. Over 700 malicious versions were published via automated mass tagging, likely due to compromised organization-level credentials. The attack embeds a backdoor in 'src/helpers.php' that fetches a cross-platform PHP credential stealer from an external server. The stealer collects cloud IAM roles, access tokens, crypto wallet keys, browser credentials, session tokens, and configuration files. It encrypts exfiltrated data with AES-256 and self-deletes. The campaign affects Windows, Linux, and macOS and highlights risks in open-source software supply chains.</p>
+          <p class="lang-zh">网络安全研究人员发现了一起针对多个 Laravel-Lang PHP 包的软件供应链攻击。受影响的包包括 laravel-lang/lang、http-statuses、attributes 和 actions。攻击者通过自动化批量标记发布了超过700个恶意版本，疑似获取了组织级凭证。后门代码嵌入在 'src/helpers.php' 中，可获取跨平台的 PHP 凭据窃取器，窃取云 IAM 角色、访问令牌、加密货币钱包密钥、浏览器凭据、会话令牌及配置文件等。数据经 AES-256 加密后外传，并自删除以掩盖痕迹。此攻击影响 Windows、Linux 和 macOS，凸显了开源供应链的风险。</p>
+          
+          <a href="https://thehackernews.com/2026/05/laravel-lang-php-packages-compromised.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1241.html">LiteSpeed cPanel Plugin CVE-2026-48172 Exploited to Run Scripts as Root</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1241.html">LiteSpeed cPanel Plugin CVE-2026-48172 Exploited to Run Scripts as Root</a></h4>
+          <p class="lang-en">A critical privilege escalation vulnerability (CVE-2026-48172, CVSS 10.0) in the LiteSpeed User-End cPanel Plugin is being actively exploited in the wild. The flaw allows any cPanel user, including an attacker or compromised account, to execute arbitrary scripts as root via the lsws.redisAble function. Affecting plugin versions 2.3 to 2.4.4, the issue is patched in version 2.4.5. LiteSpeed has released a bundled update (WHM plugin 5.3.1.0 with cPanel plugin 2.4.7) and provided an indicator of compromise using grep. Users unable to patch immediately are advised to uninstall the plugin. This disclosure follows the active exploitation of another critical cPanel vulnerability (CVE-2026-41940) for deploying Mirai botnet and Sorry ransomware.</p>
+          <p class="lang-zh">LiteSpeed cPanel插件中存在一个严重权限提升漏洞CVE-2026-48172（CVSS 10.0），正在被积极利用。攻击者可利用lsws.redisAble函数以root权限执行任意脚本。影响版本2.3至2.4.4，已在2.4.5中修复。LiteSpeed发布了包含修复的WHM插件5.3.1.0。建议用户立即升级或卸载插件。此前另一关键cPanel漏洞CVE-2026-41940也被用于部署Mirai僵尸网络和Sorry勒索软件。</p>
+          
+          <a href="https://thehackernews.com/2026/05/litespeed-cpanel-plugin-cve-2026-48172.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1242.html">Drupal Core SQL Injection Bug Actively Exploited, Added to CISA KEV</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1242.html">Drupal Core SQL Injection Bug Actively Exploited, Added to CISA KEV</a></h4>
+          <p class="lang-en">The U.S. CISA has added a critical Drupal Core SQL injection vulnerability (CVE-2026-9082, CVSS 6.5) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation. The bug affects all supported Drupal versions and can lead to privilege escalation and remote code execution. Over 15,000 attack attempts have been observed targeting nearly 6,000 sites across 65 countries, primarily gaming and financial services. While most activity appears to be probing, the risk of data extraction or privilege escalation is high. Patches are available, and U.S. federal agencies must apply fixes by May 27, 2026.</p>
+          <p class="lang-zh">美国CISA将Drupal Core的一个严重SQL注入漏洞（CVE-2026-9082，CVSS评分6.5）列入已知被利用漏洞目录，因发现活跃利用。该漏洞影响所有受支持的Drupal版本，可导致权限提升和远程代码执行。已观察到超过15000次攻击尝试，针对65个国家近6000个网站，主要攻击游戏和金融服务行业。目前多数活动为探测，但数据窃取或权限提升风险很高。补丁已发布，美国联邦机构须在2026年5月27日前完成修复。</p>
+          
+          <a href="https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1243.html">First VPN Dismantled in Global Takedown Over Use by 25 Ransomware Groups</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1243.html">First VPN Dismantled in Global Takedown Over Use by 25 Ransomware Groups</a></h4>
+          <p class="lang-en">In a coordinated international operation codenamed Operation Saffron, law enforcement agencies across Europe and North America dismantled First VPN, a criminal virtual private network service that had been used by at least 25 ransomware groups since 2014. The service, advertised on Russian-language cybercrime forums, allowed anonymous payments and hidden infrastructure to obfuscate attacks including ransomware, data theft, and DDoS. Authorities interviewed the administrator in Ukraine, seized 33 servers, and took down domains. The FBI confirmed the service provided exit nodes in 27 countries, including Singapore. The takedown raises the operational cost for cybercriminals and proves that even specialized anonymization services can be disrupted.</p>
+          <p class="lang-zh">代号为'Operation Saffron'的国际执法行动成功捣毁了First VPN，这是一项被至少25个勒索软件组织使用的犯罪虚拟专用网络服务。该服务自2014年起运作，通过俄语网络犯罪论坛推广，提供匿名支付和隐藏基础设施以掩护勒索软件、数据窃取和DDoS攻击。当局在乌克兰约谈管理员、查封33台服务器并关闭相关域名。FBI确认其出口节点遍布27国，包括新加坡。此次行动提高了网络犯罪生态系统的运营成本。</p>
+          
+          <a href="https://thehackernews.com/2026/05/first-vpn-dismantled-in-global-takedown.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1244.html">Ghostwriter Targets Ukraine Government Entities with Prometheus Phishing Malware</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1244.html">Ghostwriter Targets Ukraine Government Entities with Prometheus Phishing Malware</a></h4>
+          <p class="lang-en">The Belarus-linked threat actor Ghostwriter (UAC-0057) is targeting Ukrainian government entities with phishing emails disguised as notifications from the Prometheus online learning platform. The campaign, active since spring 2026, uses compromised accounts to deliver a PDF with a link to a ZIP archive containing a JavaScript file (OYSTERFRESH). This file drops an obfuscated payload (OYSTERBLUES) into the Windows Registry, which harvests system information and communicates with a C2 server. The final payload is Cobalt Strike, used for post-exploitation. CERT-UA advises restricting wscript.exe execution for standard users to mitigate the threat.</p>
+          <p class="lang-zh">与白俄罗斯相关的威胁组织Ghostwriter（UAC-0057）利用乌克兰在线学习平台Prometheus相关的诱饵，通过钓鱼邮件攻击乌克兰政府实体。该活动自2026年春活跃，使用被攻陷的账户发送包含PDF附件的邮件，附件链接指向ZIP压缩包内的JavaScript文件（OYSTERFRESH）。该文件将混淆加密的有效载荷OYSTERBLUES写入Windows注册表，用于收集系统信息并通过HTTP POST发送至C2服务器。最终载荷为Cobalt Strike，用于后渗透活动。CERT-UA建议限制标准用户运行wscript.exe以降低风险。</p>
+          
+          <a href="https://thehackernews.com/2026/05/ghostwriter-targets-ukraine-government.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1245.html">Megalodon GitHub Attack Targets 5,561 Repos with Malicious CI/CD Workflows</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1245.html">Megalodon GitHub Attack Targets 5,561 Repos with Malicious CI/CD Workflows</a></h4>
+          <p class="lang-en">A new automated campaign dubbed 'Megalodon' pushed 5,718 malicious commits to 5,561 GitHub repositories within six hours using throwaway accounts and forged author identities. The attacker injected GitHub Actions workflows containing base64-encoded bash payloads that exfiltrate CI secrets, cloud credentials, SSH keys, OIDC tokens, and source code secrets to a command-and-control server. The attack is linked to the TeamPCP group, which has been compromising open-source projects in a worm-like fashion. This incident highlights the escalating threat of supply chain attacks targeting CI/CD pipelines and credential theft at scale.</p>
+          <p class="lang-zh">一项名为'Megalodon'的自动化攻击活动在六小时内向5,561个GitHub仓库推送了5,718个恶意提交，使用一次性账户和伪造的作者身份（如build-bot、auto-ci）注入GitHub Actions工作流，其中包含base64编码的bash载荷，用于窃取CI secret、云凭证、SSH密钥、OIDC token等敏感数据，并发送至C2服务器。该攻击与TeamPCP组织相关，其通过供应链攻击大规模传播恶意软件，凸显了CI/CD管道安全面临的严峻挑战。</p>
+          
+          <a href="https://thehackernews.com/2026/05/megalodon-github-attack-targets-5561.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1246.html">Making Vulnerable Drivers Exploitable Without Hardware - The BYOVD Perspective</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1246.html">Making Vulnerable Drivers Exploitable Without Hardware - The BYOVD Perspective</a></h4>
+          <p class="lang-en">The article explores how vulnerable Windows kernel drivers can be exploited without the required hardware, focusing on the Bring Your Own Vulnerable Driver (BYOVD) attack technique. It analyzes device object creation patterns in drivers, distinguishing between unconditional creation upon load and conditional creation tied to hardware presence or registry keys. The author demonstrates that many PnP-compatible drivers require specific setup to trigger AddDevice and other initialization routines, making hardware-gating a key obstacle. Techniques to bypass hardware dependencies solely from userland are discussed, emphasizing the relevance for post-exploitation attacks that aim to disable security components like EDR. The work provides a methodology for evaluating driver vulnerability reachability.</p>
+          <p class="lang-zh">本文探讨了如何在没有所需硬件的情况下利用有漏洞的Windows内核驱动程序，重点介绍了BYOVD（Bring Your Own Vulnerable Driver）攻击技术。分析了驱动程序中设备对象的创建模式，区分了加载时的无条件创建和与硬件存在或注册表键相关的条件创建。作者证明了许多PnP兼容驱动程序需要特定设置才能触发AddDevice等初始化例程，使得硬件门控成为关键障碍。讨论了仅从用户态绕过硬件依赖的方法，强调了对后利用攻击（如禁用EDR安全组件）的相关性。该工作提供了一种评估驱动程序漏洞可达性的方法论。</p>
+          
+          <a href="https://thehackernews.com/2026/05/making-vulnerable-drivers-exploitable.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1247.html">Kimwolf DDoS Botnet Operator Arrested in Canada Over DDoS-for-Hire Attacks</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1247.html">Kimwolf DDoS Botnet Operator Arrested in Canada Over DDoS-for-Hire Attacks</a></h4>
+          <p class="lang-en">Canadian national Jacob Butler (aka Dort) was arrested for operating the Kimwolf DDoS botnet, a variant of AISURU that infected Android devices via exposed Android Debug Bridge (ADB) services. The botnet enslaved IoT devices like digital photo frames and webcams to launch distributed denial-of-service attacks, including against U.S. Department of Defense networks. Kimwolf issued over 25,000 attack commands and was part of record-setting DDoS events reaching 31.4 Tbps. The arrest follows a joint international takedown of the botnet's command-and-control infrastructure by the U.S., Canada, and Germany. Butler faces up to 10 years in prison for aiding and abetting computer intrusion.</p>
+          <p class="lang-zh">加拿大男子Jacob Butler（化名Dort）因运营Kimwolf DDoS僵尸网络被捕。Kimwolf是AISURU的变种，通过暴露的Android Debug Bridge (ADB)服务感染Android设备，将数字相框、网络摄像头等IoT设备沦为肉鸡，用于发起分布式拒绝服务（DDoS）攻击，目标包括美国国防部网络。该僵尸网络发布了超过25,000条攻击指令，并参与了峰值达31.4 Tbps的创纪录攻击。此次逮捕是美国、加拿大和德国联合执法行动的一部分。Butler被控协助和教唆计算机入侵，最高面临10年监禁。</p>
+          
+          <a href="https://thehackernews.com/2026/05/kimwolf-ddos-botnet-operator-arrested.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1248.html">CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1248.html">CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV</a></h4>
+          <p class="lang-en">The U.S. CISA added two actively exploited vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog: CVE-2025-34291 (CVSS 9.4) in Langflow, an origin validation error allowing arbitrary code execution and full system compromise, and CVE-2026-34926 (CVSS 6.7) in Trend Micro Apex One, a directory traversal flaw enabling malicious code injection. The Langflow bug has been exploited by Iranian state-sponsored group MuddyWater for initial access. Federal agencies must patch by June 4, 2026. These additions highlight the urgency of addressing both AI-related and legacy on-premise vulnerabilities under active attack.</p>
+          <p class="lang-zh">美国CISA将两个被积极利用的漏洞加入其Known Exploited Vulnerabilities (KEV)目录：Langflow中的CVE-2025-34291（CVSS 9.4，origin validation error导致任意代码执行）和Trend Micro Apex One中的CVE-2026-34926（CVSS 6.7，directory traversal漏洞）。Langflow漏洞已被伊朗国家支持黑客组织MuddyWater用于初始入侵。联邦机构须在2026年6月4日前完成修复。</p>
+          
+          <a href="https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1249.html">Cisco Patches CVSS 10.0 Secure Workload REST API Flaw Enabling Data Access</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1249.html">Cisco Patches CVSS 10.0 Secure Workload REST API Flaw Enabling Data Access</a></h4>
+          <p class="lang-en">Cisco has released updates to address a maximum-severity vulnerability (CVE-2026-20223, CVSS 10.0) in its Secure Workload product. The flaw stems from insufficient validation and authentication in REST API endpoints, allowing an unauthenticated remote attacker to read sensitive data and make configuration changes across tenant boundaries with Site Admin privileges. The issue affects both SaaS and on-prem deployments. Cisco discovered the flaw during internal testing and reports no evidence of exploitation in the wild. Patches are available for affected releases. This disclosure follows another actively exploited Cisco flaw in Catalyst SD-WAN Controller.</p>
+          <p class="lang-zh">思科发布了补丁，修复了Secure Workload中的一个最高严重性漏洞（CVE-2026-20223，CVSS 10.0）。该漏洞源于REST API端点的验证和认证不足，未认证的远程攻击者可跨租户边界读取敏感数据并以Site Admin权限进行配置更改。影响SaaS和本地部署。思科在内部测试中发现此漏洞，尚未发现野外利用。补丁已发布。此前思科还披露了Catalyst SD-WAN Controller中另一个被积极利用的漏洞。</p>
+          
+          <a href="https://thehackernews.com/2026/05/cisco-patches-cvss-100-secure-workload.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1250.html">Showboat Linux Malware Hits Middle East Telecom with SOCKS5 Proxy Backdoor</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1250.html">Showboat Linux Malware Hits Middle East Telecom with SOCKS5 Proxy Backdoor</a></h4>
+          <p class="lang-en">Showboat is a modular Linux post-exploitation framework used since mid-2022 against a Middle Eastern telecom provider. It enables remote shell access, file transfer, and SOCKS5 proxy capabilities to pivot within internal networks. The malware, linked to Chinese threat actors including Calypso (Red Lamassu), shares code and infrastructure with other known backdoors like PlugX and ShadowPad. The initial access vector remains unknown, but past campaigns used ProxyLogon exploits or ASPX webshells. The findings underscore sustained cyber-espionage targeting critical telecommunications infrastructure, leveraging shared tooling to maintain persistent covert access.</p>
+          <p class="lang-zh">Showboat是一个模块化Linux后渗透框架，自2022年中旬以来针对中东电信运营商使用，提供远程shell、文件传输及SOCKS5代理功能以在内网横向移动。该恶意软件关联中国APT组织（包括Calypso/Red Lamassu），与PlugX、ShadowPad等共享工具池。初始入侵向量未知，但过往活动使用ProxyLogon或ASPX webshell。研究凸显电信基础设施面临的持续间谍威胁。</p>
+          
+          <a href="https://thehackernews.com/2026/05/showboat-linux-malware-hits-middle-east.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1251.html">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1251.html">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</a></h4>
+          <p class="lang-en">This bulletin covers a week of cybersecurity incidents highlighting how attackers leverage trusted components—software updates, tokens, AI tools—to breach systems. Key stories include 47 zero-days at Pwn2Own Berlin, UK NCSC guidance on agentic AI security, Poland urging use of a Signal alternative amid social engineering attacks, Dutch police identifying fraud suspects via public billboards, Gunra ransomware targeting South Korea, a Composer token leak, persistence of the OrBit Linux rootkit, and two AI-driven intrusion campaigns in Latin America. The common thread is that threats now exploit everyday digital trust mechanisms.</p>
+          <p class="lang-zh">本周网络安全公告显示攻击者利用可信组件（更新、令牌、AI）突破系统。关键事件：Pwn2Own柏林47个0-day、英国NCSC的agentic AI指南、波兰推广Signal替代品、荷兰识别诈骗嫌疑人、Gunra勒索软件、Composer令牌泄露、OrBit Linux rootkit持续活跃、拉丁美洲AI入侵活动。威胁正利用日常数字信任。</p>
+          
+          <a href="https://thehackernews.com/2026/05/threatsday-bulletin-linux-rootkits.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1252.html">Microsoft Warns of Two Actively Exploited Defender Vulnerabilities</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1252.html">Microsoft Warns of Two Actively Exploited Defender Vulnerabilities</a></h4>
+          <p class="lang-en">Microsoft disclosed two actively exploited vulnerabilities in Microsoft Defender: a privilege escalation flaw (CVE-2026-41091, CVSS 7.8) allowing SYSTEM privileges via improper link resolution, and a denial-of-service bug (CVE-2026-45498, CVSS 4.0). A third heap-based buffer overflow (CVE-2026-45584, CVSS 8.1) enabling remote code execution was patched but not exploited. The U.S. CISA added both exploited flaws to its Known Exploited Vulnerabilities catalog. Defender auto-updates address these issues; systems with Defender disabled are unaffected.</p>
+          <p class="lang-zh">Microsoft披露了Defender中两个正被活跃利用的漏洞：权限提升漏洞CVE-2026-41091（CVSS 7.8）和拒绝服务漏洞CVE-2026-45498（CVSS 4.0）。第三个堆缓冲区溢出漏洞CVE-2026-45584（CVSS 8.1）虽已修补但未被利用。美国CISA已将前两个漏洞加入其Known Exploited Vulnerabilities（KEV）目录。Defender自动更新已修复这些问题，禁用Defender的系统不受影响。</p>
+          
+          <a href="https://thehackernews.com/2026/05/microsoft-warns-of-two-actively.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1253.html">When Identity is the Attack Path</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1253.html">When Identity is the Attack Path</a></h4>
+          <p class="lang-en">The article argues that identity itself has become the primary attack path in modern hybrid environments. It illustrates how a single cached AWS access key on a Windows machine could lead to 98% of cloud entities, and how forgotten role assignments and excessive permissions create exploitable chains from low-level footholds to critical assets. Despite rising identity-based breaches—responsible for nearly 90% of incidents in 2025—traditional tools like IGA and PAM operate in isolation, failing to map how exposures link across endpoints, Active Directory, and cloud. The author calls for unified visibility into identity, permissions, and environment context to close attack paths before attackers exploit them.</p>
+          <p class="lang-zh">本文指出身份本身已成为现代混合环境中的主要 attack path。以缓存的 AWS 访问密钥为例，单个密钥可能通向 98% 的云实体。被遗忘的角色分配和过度权限可形成从低级入口到关键资产的链式暴露。尽管 2025 年近 90% 的事件与身份弱点相关，但传统的 IGA 和 PAM 工具孤立运作，无法跨端点、Active Directory 和云环境映射暴露链条。作者呼吁将身份、权限和环境上下文统一可视化，以在攻击者利用前关闭攻击路径。</p>
+          
+          <a href="https://thehackernews.com/2026/05/when-identity-is-attack-path.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1254.html">9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1254.html">9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros</a></h4>
+          <p class="lang-en">Cybersecurity researchers at Qualys have disclosed a nine-year-old Linux kernel vulnerability, CVE-2026-46333, that enables unprivileged local users to execute arbitrary commands as root on major distributions including Debian, Fedora, and Ubuntu. The flaw resides in the __ptrace_may_access() function, introduced in November 2016. Exploitation allows disclosure of sensitive files like /etc/shadow and SSH private keys, as well as root execution via chage, ssh-keysign, pkexec, or accounts-daemon. A proof-of-concept exploit has been released. The article also covers a separate local privilege escalation vulnerability called PinTheft affecting Arch Linux. Users are advised to apply kernel updates immediately.</p>
+          <p class="lang-zh">Qualys披露了一个存在九年的Linux内核漏洞CVE-2026-46333，允许本地非特权用户在Debian、Fedora、Ubuntu等主流发行版上以root权限执行任意命令。漏洞位于__ptrace_may_access()函数，自2016年引入，可泄露/etc/shadow和SSH私钥等敏感文件，并通过chage、ssh-keysign、pkexec或accounts-daemon实现root提权。概念验证漏洞已发布。文章还提及影响Arch Linux的PinTheft提权漏洞。建议立即更新内核。</p>
+          
+          <a href="https://thehackernews.com/2026/05/9-year-old-linux-kernel-flaw-enables.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1255.html">GitHub Internal Repositories Breached via Malicious Nx Console VS Code Extension</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1255.html">GitHub Internal Repositories Breached via Malicious Nx Console VS Code Extension</a></h4>
+          <p class="lang-en">GitHub confirmed that a breach of its internal repositories was caused by a malicious version of the Nx Console VS Code extension, which was deployed after an attacker compromised a developer's system. The tampered extension was live on the Visual Studio Marketplace for only 18 minutes but installed a credential stealer that harvested sensitive data from password managers and cloud services. The attack, attributed to the TeamPCP group, exfiltrated approximately 3,800 repositories. GitHub stated that customer data may have been exposed in limited form and rotated critical secrets. The incident underscores the dangers of auto-updating extension marketplaces and the interconnected nature of software supply chain attacks.</p>
+          <p class="lang-zh">GitHub 确认其内部仓库被入侵源于一个恶意的 Nx Console VS Code 扩展，该扩展在攻击者攻陷开发者系统后被发布。篡改后的扩展仅在 Visual Studio Marketplace 上存活了 18 分钟，但植入了凭据窃取器，能收集来自密码管理器、AWS 和 GitHub 等服务的敏感数据。攻击者 TeamPCP 组织窃取了约 3800 个仓库。GitHub 表示客户数据可能以有限形式暴露，并轮换了关键密钥。此事件凸显了扩展市场自动更新机制的风险及软件供应链安全的连锁效应。</p>
+          
+          <a href="https://thehackernews.com/2026/05/github-internal-repositories-breached.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1256.html">Highly Critical Drupal Core Flaw Exposes PostgreSQL Sites to RCE Attacks</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1256.html">Highly Critical Drupal Core Flaw Exposes PostgreSQL Sites to RCE Attacks</a></h4>
+          <p class="lang-en">Drupal released security updates for a highly critical vulnerability (CVE-2026-9082) affecting its database abstraction API, which can lead to SQL injection on PostgreSQL-based sites. Anonymous users can exploit this flaw to achieve remote code execution, privilege escalation, or information disclosure. The vulnerability has a CVSS score of 6.5. Fixed versions include Drupal 11.3.10, 11.2.12, 11.1.10, 10.6.9, 10.5.10, and 10.4.10. Proof-of-concept exploits have been published by Searchlight Cyber. Only sites using PostgreSQL are impacted; MySQL and SQLite installations are not vulnerable, but upgrades are recommended due to bundled security updates for Symfony and Twig.</p>
+          <p class="lang-zh">Drupal 发布安全更新修复了一个严重漏洞 CVE-2026-9082，该漏洞位于数据库抽象 API 中，可导致针对使用 PostgreSQL 的站点进行 SQL 注入攻击，进而实现远程代码执行、权限提升或信息泄露。匿名用户可利用此漏洞，CVSS 评分为 6.5。已修复版本包括 Drupal 11.3.10、11.2.12 等。Searchlight Cyber 已发布 PoC 代码。该漏洞仅影响使用 PostgreSQL 的部署，但建议所有用户升级以获取 Symfony 和 Twig 的 bundled 安全更新。</p>
+          
+          <a href="https://thehackernews.com/2026/05/highly-critical-drupal-core-flaw.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1257.html">Microsoft Open-Sources RAMPART and Clarity to Secure AI Agents During Development</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1257.html">Microsoft Open-Sources RAMPART and Clarity to Secure AI Agents During Development</a></h4>
+          <p class="lang-en">Microsoft has open-sourced two new tools, RAMPART and Clarity, to help developers test and secure AI agents during development. RAMPART (Risk Assessment and Measurement Platform for Agentic Red Teaming) is a Pytest-native safety and security testing framework for AI agents, covering adversarial and benign issues like prompt injection and data exfiltration. It builds on Microsoft's earlier PyRIT tool. Clarity serves as a structured sounding board to guide developers in clarifying design intent and assumptions before coding. Together, they aim to embed safety testing early in the development lifecycle, making incidents reproducible and mitigations verifiable.</p>
+          <p class="lang-zh">微软开源了两款新工具RAMPART和Clarity，帮助开发者在开发过程中测试和保护AI Agent的安全。RAMPART是一个基于Pytest的测试框架，用于检测prompt injection、数据泄露等问题，基于之前的PyRIT工具。Clarity则作为结构化讨论板，在编码前帮助开发者澄清设计意图和假设。这些工具旨在将安全性测试嵌入开发早期，使事件可复现、缓解措施可验证。</p>
+          
+          <a href="https://thehackernews.com/2026/05/microsoft-open-sources-rampart-and.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1258.html">Microsoft Takes Down Malware-Signing Service Behind Ransomware Attacks</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1258.html">Microsoft Takes Down Malware-Signing Service Behind Ransomware Attacks</a></h4>
+          <p class="lang-en">Microsoft disrupted a malware-signing-as-a-service (MSaaS) operation, dubbed Fox Tempest, which abused the company's Artifact Signing system to generate fraudulent code-signing certificates for signing malware. The service enabled ransomware attacks, including Rhysida, and distributed malware like Oyster, Lumma Stealer, and Vidar. Fox Tempest used stolen identities from the US and Canada to obtain legitimate certificates and offered the service for $5,000–$9,000. The takedown, OpFauxSign, seized the website, virtual machines, and hosting infrastructure. The operation targeted healthcare, education, government, and financial sectors globally. Microsoft emphasized that such abuse undermines trust in software legitimacy and security controls.</p>
+          <p class="lang-zh">微软捣毁了一个名为Fox Tempest的恶意签名服务平台，该平台滥用微软的Artifact Signing系统生成伪造的代码签名证书，为勒索软件（如Rhysida）及其他恶意软件签名。该服务使用美国与加拿大的被盗身份获取合法证书，收费5000-9000美元，并通过Cloudzy虚拟机分发。行动代号OpFauxSign，查封了网站和基础设施。此举突显了代码签名信任机制被武器化的风险。</p>
+          
+          <a href="https://thehackernews.com/2026/05/microsoft-takes-down-malware-signing.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-23</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1259.html">Webworm Deploys EchoCreep and GraphWorm Backdoors Using Discord and MS Graph API</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1259.html">Webworm Deploys EchoCreep and GraphWorm Backdoors Using Discord and MS Graph API</a></h4>
+          <p class="lang-en">Cybersecurity researchers have identified new activity from the China-aligned threat actor Webworm in 2025, deploying two custom backdoors: EchoCreep, which uses Discord for command-and-control (C2), and GraphWorm, which leverages Microsoft Graph API. Webworm targets government agencies and enterprises in IT, aerospace, and electric power sectors across Russia, Georgia, Mongolia, and other Asian nations, increasingly focusing on European countries. The group employs stealthy proxy tools and abuses a fake WordPress GitHub repository to host malware. The discovery marks a shift away from traditional RATs toward legitimate services for C2, highlighting the adversary's evolving tactics.</p>
+          <p class="lang-zh">网络安全研究人员发现，2025年与China关联的威胁组织Webworm部署了两个自定义后门：EchoCreep使用Discord进行C2通信，GraphWorm则利用Microsoft Graph API。Webworm主要针对俄罗斯、格鲁吉亚、蒙古及多个亚洲国家的政府机构和IT、航空航天、电力行业，并逐渐将目标扩展至欧洲。该组织采用更隐蔽的代理工具，并滥用伪造的WordPress GitHub仓库托管恶意软件。这一发现表明其从传统RAT转向利用合法服务进行C2，反映了对手战术的演进。</p>
+          
+          <a href="https://thehackernews.com/2026/05/webworm-deploys-echocreep-and-graphworm.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">
