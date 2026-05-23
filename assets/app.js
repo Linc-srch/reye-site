@@ -21,7 +21,8 @@
     b.addEventListener('click', () => setLang(b.dataset.lang));
   });
 
-  const saved = localStorage.getItem('reye-lang') || 'en';
+  let saved = 'en';
+  try { saved = localStorage.getItem('reye-lang') || 'en'; } catch (_) {}
   setLang(saved);
 
   // Sync when parent frame (e.g. dashboard) changes the stored language
@@ -54,14 +55,13 @@
         }
       });
     }, { threshold: 0.08 });
-    // Skip animation when already in Chinese to avoid opacity:0 blank flash
-    let initLang;
-    try { initLang = localStorage.getItem('reye-lang'); } catch (_) {}
+    // Skip animation for Chinese-content elements when loading in Chinese mode
+    // (they're already visible — adding pre-anim opacity:0 would cause a flash)
+    const isChinese = saved === 'zh';
     document.querySelectorAll('.fade-up').forEach(el => {
-      if (initLang !== 'zh') {
-        el.classList.add('pre-anim');
-        obs.observe(el);
-      }
+      if (isChinese && el.closest('.lang-zh')) return;
+      el.classList.add('pre-anim');
+      obs.observe(el);
     });
   }
 

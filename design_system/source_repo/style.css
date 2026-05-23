@@ -139,13 +139,12 @@ pre, code {
 }
 pre { padding: 1rem; overflow-x: auto; }
 /* ── Language switching ── */
-.lang-zh { display: none; }
-body.lang-zh .lang-en { display: none !important; }
-body.lang-zh .lang-zh { display: block !important; }
-/* Inline elements (spans in breadcrumbs, etc.) */
-span.lang-zh { display: none; }
-body.lang-zh span.lang-en { display: none !important; }
-body.lang-zh span.lang-zh { display: inline !important; }
+/* Hide Chinese elements only when NOT in Chinese mode — avoids hiding <body> itself */
+body:not(.lang-zh) .lang-zh { display: none; }
+/* Explicitly restore Chinese elements in Chinese mode (revert to each element's browser default) */
+body.lang-zh .lang-zh { display: revert; }
+/* Hide English elements in Chinese mode */
+body.lang-zh .lang-en { display: none; }
 /* ── Responsive ── */
 @media (max-width: 640px) {
   body { padding: 0.9rem; }
