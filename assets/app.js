@@ -18,6 +18,11 @@
   const saved = localStorage.getItem('reye-lang') || 'en';
   setLang(saved);
 
+  // Sync when parent frame (e.g. dashboard) changes the stored language
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'reye-lang' && e.newValue) setLang(e.newValue);
+  });
+
   // ── Tabs (Papers / News & Blogs on domain pages) ─────────────────────────
   document.querySelectorAll('.tabs').forEach(tabs => {
     const buttons = tabs.querySelectorAll('button');
