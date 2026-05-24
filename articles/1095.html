@@ -107,10 +107,7 @@
 <p>Existing LLM-based approaches treat re-optimization as pure code generation or black-box repair, ignoring the mathematical structure and feasibility implications of edits in large-scale MIPs. This leaves a fundamental interpretability bottleneck: understanding what to change in a large-scale model is often harder than solving it, especially under tight time constraints.</p>
 <h3>P — Proposal</h3>
 <p>The paper proposes ReOpt-LLM, an agentic framework where an LLM acts as an OR expert, translating user natural-language prompts into structured patch-based model updates. The LLM selects re-optimization techniques from a toolbox (historical solutions, valid inequalities, solver configs, metaheuristics) to accelerate solving while preserving quality. The key insight is that the LLM operationalizes OR expertise by orchestrating solver-aware actions, not replacing it.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On the OCP Group online supply chain case, the framework achieved a 100% success rate in re-optimization with a median runtime of 2.3 seconds per prompt. On the Cornell exam scheduling offline case, it achieved a 95% success rate with a median runtime of 12.1 seconds, and solutions were within 0.5% of the optimal objective value.</p>

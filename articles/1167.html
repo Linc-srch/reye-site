@@ -113,10 +113,7 @@
 <p>Existing statistical detectors (PP, WPP) assume adversarial suffixes are statistically unlikely and disfluent, but optimization-based attacks can produce fluent suffixes with perplexity within benign range. Safety classifiers like LLaMA Guard are expensive and can be attacked. No prior work applies online change-point detection within a single request at the token level to detect and localize adversarial suffixes.</p>
 <h3>P — Proposal</h3>
 <p>CPD Online formulates adversarial suffix detection as an online change-point detection problem on the token-level next-token entropy stream. It uses the LLM system prompt to estimate a robust baseline (median and MAD), standardizes user-token entropies, and applies a one-sided Page CUSUM statistic to detect sustained upward shifts. The method is model-agnostic, training-free, and runs online, providing both prompt-level decisions and token-level localization of the suffix onset.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On a benchmark of 1,012 optimization-based suffix attacks (GCG, AutoDAN, AdvPrompter, BEAST, AutoDAN-HGA) and 1,012 perplexity-controlled benign prompts, CPD improves F1 over the strongest windowed-perplexity baseline on all six open-weight chat models (LLaMA-2-7B/13B, Vicuna-7B/13B, Qwen2.5-7B/14B). On LLaMA-2-7B at k=0, CPD achieves AUROC 0.88 and F1 0.82 (vs. PP AUROC 0.46 and best WPP F1 0.74). CPD concentrates 79.6% of its triggers inside the adversarial suffix, versus 17-46% for WPP. As a gate for LLaMA Guard, CPD reduces guard calls by 17-22% on benign-dominated deployment while preserving detection quality.</p>

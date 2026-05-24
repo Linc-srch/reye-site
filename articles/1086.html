@@ -108,10 +108,7 @@
 <p>Existing hierarchical attention methods use a fixed top-k budget for block selection, which assumes all queries require the same number of relevant blocks and prevents gradient flow between the coarse routing stage and fine-grained attention. This limits adaptability to varying information density across queries and heads, and hinders end-to-end optimization of the routing mechanism.</p>
 <h3>P — Proposal</h3>
 <p>DashAttention introduces a three-stage differentiable hierarchical attention: (Stage 0) local attention with a learned query vector summarizes each KV chunk; (Stage 1) α-entmax produces an adaptively sparse routing distribution over chunks, with variable support per query; (Stage 2) only the routed chunks are expanded and refined with softmax attention, using a differentiable prior from the router. The entire pipeline is end-to-end trainable and non-dispersive, improving long-context modeling.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>DashAttention achieves comparable accuracy to full attention with 75% sparsity on long-context tasks. It outperforms NSA and InfLLMv2 on the Pareto frontier of accuracy vs. sparsity, especially in high-sparsity regimes. The Triton implementation achieves up to 3.36× speedup over FlashAttention-3 and 1.35× over InfLLMv2 at inference time.</p>

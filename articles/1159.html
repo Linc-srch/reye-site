@@ -112,10 +112,7 @@
 <p>Existing cascaded RAG systems calibrate thresholds stage by stage, which is overly conservative because the final utility depends on the joint threshold pair. There is no prior work providing finite-sample risk control for the combined LLM-only/RAG routing decision, leaving a gap in statistically certified adaptive retrieval.</p>
 <h3>P — Proposal</h3>
 <p>BalanceRAG frames joint threshold calibration as a multiple testing problem over a two-dimensional lattice of threshold pairs. It uses Sequential Graphical Testing (SGT) to propagate significance budget across the lattice, certifying safe operating points that control the selection-conditioned error rate at a user-specified level while maximizing acceptance rate. The method is training-free and extends to multi-risk calibration for controlling both answer error and retrieval usage.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On three open-domain QA benchmarks (Natural Questions, TriviaQA, WebQuestions) with multiple LLM backbones (LLaMA-2-7B, LLaMA-2-13B, Mistral-7B), BalanceRAG meets prescribed risk levels (e.g., α=0.1) with coverage up to 85-92%, compared to always-on RAG coverage of 100% but with higher retrieval cost. BalanceRAG reduces retrieval calls by 30-50% while maintaining comparable or better accuracy on accepted examples.</p>

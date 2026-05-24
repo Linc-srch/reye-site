@@ -114,10 +114,7 @@
 <p>Current reasoning segmentation pipelines fail to transparently connect compositional reasoning to visual perception. Latent query alignment is end-to-end but opaque, while textual localization readout is merely readable and often an unconstrained post-hoc step, lacking a truly interpretable and verifiable connection from reasoning to mask prediction.</p>
 <h3>P — Proposal</h3>
 <p>SegCompass leverages a Sparse Autoencoder (SAE) to map both chain-of-thought (CoT) tokens and visual tokens into a shared high-dimensional sparse concept space. A query codebook selects salient concepts, which are then spatially grounded by a slot mapper into a multi-slot heatmap that guides the final mask decoder, all trained end-to-end with reinforcement learning for reasoning and supervised segmentation loss.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>SegCompass matches or surpasses state-of-the-art on gRefCOCO, RefCOCO, RefCOCO+, RefCOCOg, and ReasonSeg. For example, on ReasonSeg (val), it achieves 56.3 mIoU, outperforming LISA (52.9), PerceptionGPT (53.8), and LIRA (55.1). On gRefCOCO (testA), it achieves 68.2 mIoU, surpassing prior best 67.4.</p>

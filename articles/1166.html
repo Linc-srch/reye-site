@@ -113,10 +113,7 @@
 <p>Existing data-oblivious methods suppress high-loss tokens to reduce forgetting, but this harms performance on tasks where those tokens are critical for learning new capabilities. No prior work controls forgetting purely through learning rate adaptation without modifying the fine-tuning objective.</p>
 <h3>P — Proposal</h3>
 <p>FINCH (Forgetting-aware Inverse loss schedule) sets the learning rate inversely proportional to the square root of the mini-batch loss, derived from a theoretical bound showing per-step forgetting ≤ η * sqrt(loss). This keeps the forgetting bound uniform across training, allowing high-loss tokens to contribute while reducing forgetting. The method requires no access to pretraining data and leaves the fine-tuning objective unchanged.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Across knowledge acquisition, science, and low-resource language adaptation benchmarks, FINCH reduces forgetting by 93% on average while matching standard SFT task accuracy. On Qwen3-4B knowledge acquisition, TruthfulQA degradation drops from -13.9 to -2.6 (5x improvement), and HaluEval changes from -9.8 to +3.3.</p>

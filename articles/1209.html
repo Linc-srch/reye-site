@@ -114,10 +114,7 @@
 <p>Existing analyses of post-training methods focus on loss functions (e.g., forward KL, reverse KL, policy gradients) but neglect the complementary factor of the state distribution on which supervision is applied. This oversight makes it difficult to explain phenomena like catastrophic forgetting under aggressive SFT, stability of RL with sparse rewards, and students outperforming teachers in distillation.</p>
 <h3>P — Proposal</h3>
 <p>The paper formalizes post-training as state-distribution shaping, decomposing methods into state source (off-policy dataset vs on-policy learner) and signal source (labels, rewards, teacher logits). It conducts controlled experiments with Qwen3-0.6B-Base on GSM8K, using TruthfulQA and MMLU for retention, to demonstrate that on-policy state supervision (RL, OPD) preserves locality and enables improvement beyond degraded teachers.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On GSM8K, mild SFT improved accuracy from ~18% to ~42% with little forgetting on TruthfulQA and MMLU. Stress SFT degraded GSM8K to ~30% and caused substantial retention loss. OPD from the stress SFT teacher recovered GSM8K to ~40% and surpassed the teacher on TruthfulQA and MMLU. Lightweight on-policy RL improved GSM8K to ~38% while preserving retention.</p>

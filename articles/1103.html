@@ -113,10 +113,7 @@
 <p>Existing adaptive rubric methods rely solely on local or recent signals, discarding diagnostic history after immediate use. This prevents the system from detecting recurring suboptimal behaviors, deriving curriculum-like progression, and making precise rubric weight adjustments informed by long-term evidence.</p>
 <h3>P — Proposal</h3>
 <p>AMARIS introduces a persistent evaluation memory that stores structured rollout analyses, step-level summaries, and rubric update records. At each step, it retrieves both static (recent steps) and dynamic (semantically matched) historical context to ground rubric modifications, operating asynchronously outside the RL loop to keep overhead low.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>AMARIS achieves +1.6 points on GPQA-Diamond and +1.0 points on IFBench over the strongest baselines. On HealthBench, AMARIS with per-instance rubrics scores 34.0, +1.0 over the baseline. It also outperforms baselines on science, medicine, instruction following, and creative writing benchmarks.</p>

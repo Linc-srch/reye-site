@@ -113,10 +113,7 @@
 <p>Existing defenses focus solely on semantic content relevance, ignoring the retrieval context defined by ranking structures. This leads to a trade-off between computational cost and robustness, especially under strong poisoning attacks.</p>
 <h3>P — Proposal</h3>
 <p>BiRD is a bidirectional ranking defense that uses forward ranking to assess semantic relevance and backward ranking to quantify ranking context consistency. It filters poisoned documents by detecting strong alignment between backward and forward rankings, a discriminative pattern of poisoned documents.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On HotpotQA with ANCE retriever, BiRD reduces PoisonedRAG attack success rate by 54% and improves task accuracy by 56%. Average additional latency is under 1 second across all settings.</p>

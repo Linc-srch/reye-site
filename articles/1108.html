@@ -107,10 +107,7 @@
 <p>Existing federated Bayesian methods require specifying a prior and likelihood, which is challenging for modern overparameterized models. A naive distributed martingale posterior would require clients to share entire local datasets, violating privacy and communication constraints.</p>
 <h3>P — Proposal</h3>
 <p>FMP proposes a one-shot protocol where each client compresses its local dataset into a small set of trainable embeddings via an attention-based pooling block, uploads only these embeddings, and the server aggregates them to run the centralized predictive sampler. A meta-training procedure aligns FMP samples with centralized MP samples across related tasks.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On MNIST, CIFAR-10, and CIFAR-100 under both homogeneous and heterogeneous client partitions, FMP closely matches centralized MP in accuracy and expected calibration error (ECE), and significantly improves calibration over consensus-style baselines (CFMP). For example, on CIFAR-10 with 10 clients, FMP achieves ECE of 0.032 vs CFMP 0.089 and centralized MP 0.028.</p>

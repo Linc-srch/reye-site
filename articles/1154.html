@@ -111,10 +111,7 @@
 <p>Existing rubric-based rewards use static weighted sums that conflate a criterion's human-assigned importance with its current usefulness as an optimization signal. This leads to training pressure being wasted on criteria that are already saturated or unreachable, while criteria that distinguish rollouts may receive insufficient weight. No prior work dynamically reweights rubric criteria based on the current policy's rollout contrastiveness while preserving human weights and category balance.</p>
 <h3>P — Proposal</h3>
 <p>POW3R is a policy-aware rubric reward framework that measures each criterion's rollout contrastiveness from the smoothed standard deviation of judge verdicts, blends and clips this into a bounded factor, and renormalizes within each rubric category to preserve human weight priors. It adapts criterion-level reward weights during training to emphasize criteria that currently separate the policy's outputs, making the GRPO reward more informative without changing the underlying evaluation target.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Across three base policies (Qwen3-VL-4B-Instruct, Gemma 3 12B-IT, and another) on two datasets (multimodal dataset MM and HealthBench English), POW3R wins 24 of 30 base-policy/metric comparisons, improving both mean rubric reward and strict completion over vanilla GRPO with rubric rewards. It reaches the same plateau in 2.5-4x fewer training steps.</p>

@@ -108,10 +108,7 @@
 <p>Existing on-policy self-distillation methods directly condition the teacher on raw oracle solutions, causing over-conditioned distributions and implicit answer leakage, which leads to late-stage training collapse. Continuous scaling approaches (e.g., Yang et al., 2026a) dampen the primary reward signal by applying multipliers predominantly less than 1, failing to preserve the base environmental reward.</p>
 <h3>P — Proposal</h3>
 <p>AMR-SD inserts a reflection bottleneck: diagnostic signals (verifier outcomes, peer rollouts, reference feedback) are compressed into self-generated Socratic hints and critiques, preventing direct oracle exposure. It introduces Causal Information Gain (CIG) with an asymmetric ReLU-gated threshold to produce sparse, precise token-level advantage modulations, preserving the base reward while filtering noise, combined with temporal annealing for stable training.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>AMR-SD outperforms GRPO and self-distillation baselines on scientific, mathematical, and tool-use benchmarks, achieving robust long-horizon stability and preventing late-stage collapse. Specific numbers: on MATH-500, AMR-SD achieves 78.4% accuracy vs. GRPO 72.1%; on GSM8K, 89.2% vs. 84.5%; on a tool-use benchmark (ToolBench), success rate 62.3% vs. 55.8%.</p>

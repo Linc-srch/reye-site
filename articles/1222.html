@@ -111,10 +111,7 @@
 <p>Existing hint-guided RL methods for multilingual reasoning suffer from a severe training-inference discrepancy: models rely on hints during training but must reason autonomously at test time, leading to performance drops and repetitive generation. Furthermore, language difficulty varies, but prior work does not adapt hint scheduling per language, causing suboptimal learning for both easy and hard languages.</p>
 <h3>P — Proposal</h3>
 <p>LANG introduces language-conditioned hints as scaffolding for RL exploration in non-English reasoning, combined with a progressive hint-decay schedule that gradually reduces hint exposure over training. A language-adaptive switch sets language-specific horizons for turning off hints, tailoring the learning process to each language's difficulty and preventing dependency while improving autonomous reasoning.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On MMATH, LANG improves accuracy over vanilla GRPO by 24.1%; on PolyMath, by 18.7%. Experiments use Qwen2.5-7B-Instruct and another LLM across two multilingual math benchmarks. LANG also generalizes to non-mathematical multilingual tasks, showing consistent language alignment across layers.</p>

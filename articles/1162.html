@@ -113,10 +113,7 @@
 <p>Existing approaches for Text-to-SPARQL either require large models, gold query annotations, or complex agentic pipelines. There is limited evidence on whether a small open-weight model can be trained via outcome-driven RL for single-step scholarly Text-to-SPARQL, and how such training compares to supervised fine-tuning at the same scale.</p>
 <h3>P — Proposal</h3>
 <p>The authors apply Group-Relative Policy Optimization (GRPO) to the Qwen3-1.7B model on DBLP-QuAD, using prompts with symbolic hints (entity/relation URIs and schema info). The reward combines execution feedback (F1 score), structural coverage, format compliance, and length penalties. They compare two GRPO variants (with and without gold-query shaping) against zero-shot and supervised DoRA baselines.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>GRPO improves answer-level accuracy from 0.0% (zero-shot) to 38.4% on DBLP-QuAD. Supervised DoRA achieves 47.2%. Execution accuracy reaches 42.1% for GRPO vs 51.8% for DoRA. On held-out templates, GRPO generalizes competitively (e.g., 34.7% vs 41.2% for DoRA).</p>

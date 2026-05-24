@@ -107,10 +107,7 @@
 <p>Existing methods either model dynamics implicitly (generation) or via dense warps/primitive trajectories (reconstruction), lacking a unified, controllable representation that explicitly captures object deformation across articulated, skinned, and soft regimes. No prior work provides a fully differentiable architecture that learns state-conditioned deformations directly from real-world data while enabling integration with policy learning.</p>
 <h3>P — Proposal</h3>
 <p>WorldString learns a canonical point cloud and a state-conditioned deformation field via a fully differentiable neural network. It models articulated objects with forward kinematics, skinned objects with linear blend skinning, and soft objects with a learned Jacobian approximation. The architecture is trained end-to-end from point clouds or RGB-D video and outputs a 3D point cloud conditioned on a state vector.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>WorldString achieves state-of-the-art reconstruction accuracy on articulated objects (Chamfer distance 0.0032 vs. 0.0041 for baseline), skinned objects (CD 0.0045 vs. 0.0053), and soft objects (CD 0.0061 vs. 0.0078). On the Dr.Robot baseline for articulated objects, WorldString reduces CD by 22%. Qualitative results show faithful deformation for unseen joint configurations.</p>
@@ -177,6 +174,64 @@
         </div>
         
 
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1088/fig_001.png" alt="Figure 1: Our method W o r l d S t r i n g is a Neural based Interactive Digital Twin of Skinning, Articulable, and Soft objects with state as the prompt input and 3D point cloud as output." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Our method W o r l d S t r i n g is a Neural based Interactive Digital Twin of Skinning, Articulable, and Soft objects with state as the prompt input and 3D point cloud as output.</span>
+                <span class="lang-zh">图1：我们的方法WorldString是一个基于神经网络的交互式数字孪生，用于蒙皮、可关节和软体对象，以状态作为提示输入，以3D点云作为输出。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1088/fig_002.png" alt="Figure 2: Position of object representation under the scope of physical world model. We position object representation" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Position of object representation under the scope of physical world model. We position object representation</span>
+                <span class="lang-zh">图2：物理世界模型范围内对象表示的位置。我们定位对象表示</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1088/fig_004.png" alt="Figure 4: Visualization of object categories. This figure illustrates the different types of objects modeled in our framework, displaying the ground-truth point clouds and corresponding keypoints selected for each category." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: Visualization of object categories. This figure illustrates the different types of objects modeled in our framework, displaying the ground-truth point clouds and corresponding keypoints selected for each category.</span>
+                <span class="lang-zh">图4：对象类别的可视化。该图展示了我们框架中建模的不同类型的对象，显示了每个类别的真实点云和对应的选定关键点。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1088/fig_005.png" alt="Figure 5: WorldString model pipeline. Our fully differentiable architecture learns an actionable world representation by optimizing canonical embeddings and cascaded transformers to reconstruct the target object state." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5: WorldString model pipeline. Our fully differentiable architecture learns an actionable world representation by optimizing canonical embeddings and cascaded transformers to reconstruct the target object state.</span>
+                <span class="lang-zh">图5：WorldString模型流程。我们完全可微的架构通过优化规范嵌入和级联变换器来学习可操作的世界表示，以重建目标对象状态。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1088/fig_006.png" alt="Figure 6: WorldString model learning from RGB-D video data. The figure shows the processed data from PhysTwin [ 24 ] , including the raw video frames, depth maps, and masked object correspondences." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6: WorldString model learning from RGB-D video data. The figure shows the processed data from PhysTwin [ 24 ] , including the raw video frames, depth maps, and masked object correspondences.</span>
+                <span class="lang-zh">图6：WorldString模型从RGB-D视频数据中学习。该图显示了来自PhysTwin [24]的处理后数据，包括原始视频帧、深度图和掩码对象对应关系。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
         
       </div>
 

@@ -106,10 +106,7 @@
 <p>Existing hybrid offline-to-online RL methods suffer from catastrophic forgetting of offline knowledge and distributional shift during the transition, and they do not adequately address sample efficiency in the online fine-tuning phase. There is no unified framework that systematically reuses offline data to prevent forgetting while reducing online interactions.</p>
 <h3>P — Proposal</h3>
 <p>COOPO introduces a cyclic framework that alternates between KL-regularized advantage-weighted offline training (anchoring the policy to the static dataset) and online fine-tuning with any policy optimization. The key insight is that periodically returning to offline training eliminates forgetting and drift, maximizes dataset reuse, and reduces total online environment interactions, with theoretical guarantees of monotonic improvement.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On D4RL benchmarks, COOPO reduces online interactions compared to state-of-the-art hybrid methods while improving final returns. For example, on the halfcheetah-medium-expert-v2 task, COOPO achieves a final return of 105.3 compared to 98.2 for the best baseline (AWAC+finetune), using only 50k online steps versus 100k. On walker2d-medium-replay-v2, COOPO reaches 82.1 vs 75.6 with 50k steps.</p>

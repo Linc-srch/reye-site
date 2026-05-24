@@ -109,10 +109,7 @@
 <p>Current MLLMs lack large-scale mask-grounded cross-view instruction data, a unified multi-dimensional benchmark, and an object-centric framework for explicit cross-view alignment. Existing datasets do not provide scalable supervision for object-level reasoning, benchmarks cover only partial tasks, and models rely on implicit fusion rather than explicit object correspondence.</p>
 <h3>P — Proposal</h3>
 <p>CrossView Suite introduces CrossViewSet (1.6M samples, 17 task types) via a multi-agent data engine, CrossViewBench (17,000 questions, scene-disjoint) for systematic evaluation, and CrossViewer, a three-stage framework (Perception -&gt; Alignment -&gt; Reasoning) with an Adaptive Region Tokenizer (ART) and Object-Centric Cross-View Aligner (OCVA) for explicit object-level alignment. The key insight is that explicit cross-view object alignment, large-scale training data, and systematic evaluation are critical for advancing MLLMs toward spatial intelligence.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>CrossViewer achieves 83.4% accuracy on CrossViewBench, outperforming Qwen2-VL-72B (79.2%), InternVL2-76B (78.5%), and LLaVA-NeXT-72B (72.1%). On MMVM benchmark, CrossViewer reaches 82.1% vs. Qwen2-VL-72B (78.5%). On All-Angles Bench, it scores 79.8% vs. Qwen2-VL-72B (76.3%). On MV-ScanQA, it achieves 81.2% vs. Qwen2-VL-72B (77.9%).</p>

@@ -107,10 +107,7 @@
 <p>Existing synthetic environment methods either depend on pre-collected documents or existing task sets, limiting generalization to unseen tool ecosystems. Synthetic trajectories are often over-specified, enumerating explicit steps rather than reflecting natural human intents with implicit reasoning, which reduces their effectiveness for RL training.</p>
 <h3>P — Proposal</h3>
 <p>EnvFactory autonomously proposes tool-use scenarios, explores authentic online resources, and constructs stateful databases with executable tool interfaces via a three-agent pipeline (Search, Code, Test). It introduces topology-aware sampling that recursively resolves logical dependencies and a calibrated refinement stage that injects implicit intents and ambiguity into queries, producing natural multi-turn trajectories for both SFT and RL.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Using 85 verified environments across 7 domains, EnvFactory generates 2,575 trajectories (1,622 SFT + 953 RL). It improves Qwen3-series models by up to +15% on BFCLv3, +8.6% on MCP-Atlas, and +6% on conversational benchmarks (τ²-Bench and VitaBench), outperforming prior work that uses 5x more environments.</p>

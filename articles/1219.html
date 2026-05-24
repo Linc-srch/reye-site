@@ -115,10 +115,7 @@
 <p>Existing RLIF methods rely on a single internal reward signal (e.g., self-certainty or majority voting), which incentivizes entropy reduction and brevity, leading to reward hacking, entropy collapse, and degraded reasoning structure over extended training. No prior work combines multiple complementary internal rewards with targeted regularization to prevent collapse in unsupervised RL for LLMs.</p>
 <h3>P — Proposal</h3>
 <p>The authors propose a multi-reward RLIF framework that decomposes the training signal into an answer-level reward (based on cluster voting of final answers) and a completion-level reward (based on token-wise self-certainty). They apply GDPO-based normalization to balance the two rewards and introduce KL-Cov regularization that penalizes low-entropy, high-covariance tokens responsible for disproportionate entropy reduction, preserving exploration and preventing late-stage collapse.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On five mathematical reasoning benchmarks (GSM8K, MATH, etc.) and two code-generation benchmarks, the method outperforms single-reward RLIF baselines (self-certainty, majority voting) and achieves performance close to supervised RLVR methods. For example, on GSM8K, the method achieves 82.3% accuracy vs. 79.1% for self-certainty and 80.5% for majority voting, while supervised RLVR achieves 83.1%. Training remains stable over extended steps without degradation.</p>

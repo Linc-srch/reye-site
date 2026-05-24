@@ -112,10 +112,7 @@
 <p>The specific limitation addressed is that current pre-training pipelines treat data as a timeless pool, shuffling all temporal contexts together. This obscures how data ordering affects the temporal distribution of factual knowledge in LLMs, leaving the impact of pre-training dynamics on time-sensitive knowledge poorly understood.</p>
 <h3>P — Proposal</h3>
 <p>The authors propose pre-training 6B-parameter Transformer models on temporally ordered Common Crawl snapshots (2018–2025) and compare them to a shuffled baseline (2020–2024). The key insight is that sequential training allows the model to establish linguistic and world knowledge in original temporal context, leading to more up-to-date and temporally precise factual knowledge.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Sequential models matched shuffled baselines on OLMES benchmark for general language understanding. On KairosQA, sequential models achieved higher F1 on recent facts (2023–2024) while shuffled models peaked on older data (2020–2021). Relative F1 gains for sequential vs. shuffled on 2023–2024 period were positive across multiple open-source base models.</p>

@@ -113,10 +113,7 @@
 <p>Existing methods for MoE inference either incur prohibitive I/O overhead by swapping experts every step or become CPU-bound by routing tokens to CPU experts. No prior work addresses the unique execution pattern of MoE-dLLMs, where each denoising step activates a wide, fragmented expert footprint for all tokens in a block.</p>
 <h3>P — Proposal</h3>
 <p>TIDE introduces an interval-based expert refresh strategy that exploits the temporal stability of expert activations across adjacent denoising steps. It formulates inference scheduling as a mathematical programming problem to find the optimal refresh interval that minimizes I/O traffic and CPU computation, achieving lossless acceleration without model training.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On a single GPU-CPU system, TIDE achieves up to 1.4x throughput improvement over baselines on LLaDA2.0-mini and 1.5x on LLaDA2.0-flash, evaluated on NVIDIA A100 and H100 GPUs.</p>

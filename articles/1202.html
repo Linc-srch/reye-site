@@ -112,10 +112,7 @@
 <p>Existing methods either operate at coarse granularity (session/window), fail to handle template ambiguity, or require expensive per-line LLM inference. No prior work combines message-level detection with minimal labeling, heterogeneous failure mode handling, and fully on-premise deployment.</p>
 <h3>P — Proposal</h3>
 <p>FAME uses a single offline LLM to partition event templates into semantically coherent failure domains, then trains a lightweight router and domain experts that run on-premise. The asymmetric MoE design exploits the statistical asymmetry of K-shot sampling: pure-anomaly domains are resolved by routing alone, while mixed domains use per-message BERT classifiers.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On BGL, FAME achieves F1=98.16 at K=100, reducing annotation effort by 76x, and detects 86.3% of anomalies from unseen EventIDs. On Thunderbird, FAME reaches F1=99.95 with perfect recall. Processing speed: up to 1.20M lines/hour on a single 4-GPU node at a one-time cost of $10.23 vs $6,698–$10,047 per run for frontier-LLM inference.</p>

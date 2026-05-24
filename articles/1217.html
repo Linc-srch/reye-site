@@ -113,10 +113,7 @@
 <p>Existing spreadsheet agents rely on prompting general LLMs and lack model-side training for complex multi-step workflows. No open-source framework provides scalable data collection, realistic environment, and RL fine-tuning for spreadsheet automation.</p>
 <h3>P — Proposal</h3>
 <p>Spreadsheet-RL introduces an automated pipeline to collect paired start-goal spreadsheets from online forums, a Spreadsheet Gym environment with Python sandbox and tool-routing rules, and uses GRPO to fine-tune Qwen3 models on outcome-based rewards. The key insight is that RL with verifiable final spreadsheet rewards can improve agentic behavior without step-by-step supervision.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On SpreadsheetBench, Qwen3-4B-Thinking-2507 Pass@1 improves from 12.0% to 23.4% after Spreadsheet-RL. On Domain-Spreadsheet (finance, supply chain), Pass@1 rises from 8.4% to 17.2%. GPT-4o achieves 45.5% on SpreadsheetBench as reference.</p>

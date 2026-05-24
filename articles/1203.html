@@ -114,10 +114,7 @@
 <p>Existing DRL methods for FJSP with random job arrivals often rely on complex state representations and network architectures (e.g., graph neural networks, attention), increasing training difficulty. Many also assume constant job arrival rates and homogeneous machines/jobs, limiting real-world applicability. This paper addresses these limitations by using a concise state representation, lightweight MLPs, and evaluating on heterogeneous datasets with varying arrival rates.</p>
 <h3>P — Proposal</h3>
 <p>The authors propose an event-based DRL framework using PPO with lightweight MLP actor and critic networks. The agent selects from a set of well-established dispatching rules at each event (operation completion or new job arrival), using a state representation directly accessible from the environment. The approach minimizes makespan and is benchmarked against an arrival-triggered MILP (AT-MILP) baseline.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>The DRL approach outperforms all individual dispatching rules on datasets with varying heterogeneity and job arrival rates. Against AT-MILP, DRL achieves good performance especially on heterogeneous datasets (e.g., makespan reduction of up to 12% compared to best dispatching rule on heterogeneous data).</p>

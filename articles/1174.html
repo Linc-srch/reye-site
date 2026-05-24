@@ -113,10 +113,7 @@
 <p>Existing per-account DP guarantees assume a single attacker (k=1), but production RAG accounts are cheap and adversaries can pool multiple accounts. No prior work formalizes the privacy degradation under same-index multi-account collusion or provides an audit protocol that works against unmodified deployments without index disclosure.</p>
 <h3>P — Proposal</h3>
 <p>The paper defines (ε,δ,k)-collusion DP for multi-tenant RAG and proves a tight Θ(√k·ε_acc) degradation rate for Gaussian-noised retrieval. It designs a verifier-runnable audit protocol using cryptographic primitives (Merkle ledgers, ZK proofs, Gaussian noise attestations) and six RAG-specific primitives to issue a (PASS, ε_audit) verdict for the retrieval-score channel without modifying the deployment.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Empirical AUC-vs-k curve on a synthetic multi-tenant FAISS-based harness confirms the √k trend: at fixed per-account budget, AUC = 1/2 + Θ(√k·ε_acc). The trend survives top-K post-processing and a trained embedder at the parameters tested. Two falsification gates (slope and tightness) plus one diagnostic (scale collapse) are passed.</p>

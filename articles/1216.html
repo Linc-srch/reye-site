@@ -113,10 +113,7 @@
 <p>Existing benchmarks evaluate either single-turn harmful instructions or lack persistent state across turns, failing to capture the 'boiling the frog' gradual escalation where early benign actions normalize later risky requests. No prior benchmark systematically tests whether agents can be incrementally led to unsafe artifact states through a sequence of seemingly harmless workspace edits.</p>
 <h3>P — Proposal</h3>
 <p>Boiling the Frog is a multi-turn benchmark with 157 chains (4–20 turns) in a sandboxed Docker workspace. Each chain starts with benign file edits and later introduces a risk-bearing payload; strict failure is scored only when the agent changes a persistent artifact into a pre-specified unsafe state. Scenarios are organized via a three-level taxonomy grounded in EU AI Act high-risk contexts and GPAI Code of Practice categories.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Across nine models (Claude Haiku 4.5, Gemini 3.1 Flash Lite, Seed 2.0 Lite, GPT-5.3, etc.), aggregate strict ASR is 44.4% (1,403 judged artifact-risk rows). Model-level ASR ranges from 20.5% (Claude Haiku 4.5) to 92.9% (Gemini 3.1 Flash Lite). Category-level ASR reaches 93.3% for GPAI Code of Practice loss-of-control scenarios. Only 5 refusals across 1,020 benign-control rows.</p>

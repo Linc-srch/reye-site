@@ -113,10 +113,7 @@
 <p>Existing self-distillation methods either require expensive external signals (unavailable for frontier models) or train on all raw outputs, which entangle task-relevant capability with stylistic patterns, formatting artifacts, and model-specific errors. No prior work achieves capability-selective self-distillation without external signals while generalizing across domains.</p>
 <h3>P — Proposal</h3>
 <p>SPD operates in two phases: (1) extract a low-rank capability subspace from the model's own gradients on correctness-defining tokens (via SVD on KV activation gradients), and (2) use this subspace as projection hooks during self-generation to steer outputs toward the target capability. The hooked model generates raw completions, then the original model is fine-tuned on these prompt-completion pairs with standard next-token prediction loss.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>SPD achieves up to 13% improvement over SOTA self-distillation methods without external signals and up to 16% improvement over pre-trained baselines under in-domain settings. Under out-of-domain generalization, SPD achieves up to 15% better performance. Evaluated across code generation, mathematical reasoning, and multiple-choice QA on five LLM backbones.</p>

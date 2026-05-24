@@ -113,10 +113,7 @@
 <p>Existing spatio-temporal reasoning benchmarks are built on passively curated video data, leading to data contamination, shortcut exploitation, and limited scenario diversity. They lack the controllability and scalability needed for fine-grained diagnosis of MLLM spatio-temporal understanding. No prior benchmark leverages actively synthesized photorealistic videos specifically for this purpose.</p>
 <h3>P — Proposal</h3>
 <p>VGenST-Bench uses video generative models to actively synthesize 1,200 videos with controlled scenarios, organized by a 3x2x2 taxonomy (Spatial Scale, Perspective, Scene Dynamics) into 12 task categories. A multi-agent pipeline generates scene graphs, videos, and QA pairs with a three-level hierarchy (L1 visual perception, L2 scene understanding, L3 spatio-temporal reasoning), followed by human quality control.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Evaluated 10+ MLLMs (proprietary and open-source). Best model (GPT-4o) achieves 72.3% accuracy on L1, 58.1% on L2, 41.2% on L3, vs human 95.0%, 92.0%, 88.0%. Performance drops sharply with task complexity; egocentric and dynamic scenes are hardest.</p>

@@ -114,10 +114,7 @@
 <p>The JAX RL ecosystem lacks benchmarks for visual first-person tasks, which are essential for evaluating exploration and partial observability. Existing first-person benchmarks are not implemented in JAX, preventing researchers from leveraging JIT compilation and vmap for fast, scalable experimentation.</p>
 <h3>P — Proposal</h3>
 <p>JAXenstein implements a lightweight Wolfenstein 3D ray-casting engine entirely in JAX, supporting JIT and vmap for massive parallelization. It ports existing first-person environments (ViZDoom, DeepMind Lab, MiniGrid) and new ASCII-maze-based tasks, achieving ~6x speedup over ViZDoom on CPU and enabling GPU-accelerated end-to-end training.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>JAXenstein achieves ~6x steps-per-second over ViZDoom and MiniWorld on a single CPU core. In training with recurrent PPO over 1M steps, JAXenstein with pure JAX pipeline achieves much higher environment steps per second than ViZDoom with Stable Baselines3, and ViZDoom crashes when parallelizing &gt;64 environments while JAXenstein scales further.</p>

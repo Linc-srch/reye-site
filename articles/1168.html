@@ -113,10 +113,7 @@
 <p>TRM's deterministic inference cannot escape bad latent basins, leading to suboptimal solutions. Existing workarounds rely on task-specific input perturbations and voting, which are not generalizable. There is no task-agnostic method to leverage stochastic exploration at test time without retraining.</p>
 <h3>P — Proposal</h3>
 <p>PTRM runs K parallel rollouts per input, injecting Gaussian noise into the latent at each recursion step to explore diverse basins. It then selects the answer with the highest Q head logit, which was originally trained for early stopping and reliably indicates trajectory quality. This requires no retraining or task-specific augmentations.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On Sudoku-Extreme, PTRM improves accuracy from 87.4% to 98.75%. On Pencil Puzzle Bench, accuracy rises from 62.6% to 91.2%, outperforming frontier LLMs (55.1%) by 36 points at less than 0.0001x the cost with only 7M parameters.</p>

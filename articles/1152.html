@@ -112,10 +112,7 @@
 <p>Existing medical-agent settings rely on fixed evidence packages prepared before inference, deviating from real-world workflows where evidence must be actively sought. There is a need for a general agentic framework that automates evidence search across multimodal sources rather than assuming evidence is already surfaced.</p>
 <h3>P — Proposal</h3>
 <p>ClinSeekAgent is an automated agentic framework that, given a clinical query and raw data access, gathers evidence via web search, raw EHR retrieval, and medical imaging tools, iteratively refining hypotheses. It serves both as an inference-time agent for frontier LLMs and as a training-time pipeline to distill high-quality trajectories into compact open-source models.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On text-only EHR tasks, ClinSeekAgent improves Claude Opus 4.6 from 60.0 to 63.2 overall F1 and MiniMax M2.5 from 43.1 to 47.3. On multimodal tasks, it improves Claude Opus 4.6 from 47.5 to 62.6 (+15.1). Distilled ClinSeek-35B-A3B achieves 34.0 average F1 on AgentEHR-Bench, improving over its Qwen3.5-35B-A3B baseline by +11.9 points and approaching Claude Opus 4.6 at 36.0.</p>

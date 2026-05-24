@@ -108,10 +108,7 @@
 <p>Scalar reward models used in online RL for open-ended tasks are incomplete proxies for multi-dimensional quality, causing reward hacking as the policy exploits whichever axis the RM is most sensitive to. Existing preference optimization methods lack continuous exploration, while online RL with scalar RMs cannot maintain balanced improvement across quality dimensions.</p>
 <h3>P — Proposal</h3>
 <p>GPRL treats the General Preference Model (GPM) as a structured, multi-dimensional reward source for GRPO-style online RL. It computes per-dimension group-relative advantages across GPM's k subspaces, normalizes each on its own scale, and aggregates them with context-dependent eigenvalues, preventing any single axis from dominating. A closed-loop drift monitor detects and corrects single-axis exploitation by reweighting dimensions and tightening the KL trust region during training.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Starting from Llama-3-8B-Instruct, GPRL achieves 56.51% length-controlled win rate on AlpacaEval 2.0, outperforming GRPO+BT by 14.59 points. It also beats SimPO and SPPO on Arena-Hard, MT-Bench, and WildBench, and resists reward hacking across extended training runs.</p>

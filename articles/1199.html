@@ -112,10 +112,7 @@
 <p>Existing curiosity methods assume a resettable predictive world model and lack episodic memory, causing agents to repeatedly receive rewards for visiting already-explored states. This prevents sustained exploration in complex, photorealistic 3D environments.</p>
 <h3>P — Proposal</h3>
 <p>The paper proposes using an online 3D reconstruction (e.g., NeRF) as a persistent world model that is continuously updated, and a sequence model (e.g., transformer) over past RGB observations to maintain episodic trajectory context. The agent is trained purely on curiosity intrinsic rewards on HM3D and deployed with only RGB frames.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On HM3D, the agent outperforms RL-based active mapping baselines (e.g., Active Neural SLAM) in terms of exploration coverage and efficiency. It zero-shot generalizes to Gibson and AI-generated worlds. For downstream tasks like apple picking and image-goal navigation, it outperforms from-scratch baselines without task-specific rewards.</p>

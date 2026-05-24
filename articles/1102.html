@@ -113,10 +113,7 @@
 <p>Existing efficiency methods operate at the token or memory level, leaving the fundamental decision horizon dictated by token-level actions. There is no learned abstraction that collapses multi-step behaviors into a single latent action while preserving executability and expressiveness.</p>
 <h3>P — Proposal</h3>
 <p>LAR learns a compact latent action space via reparameterization of agent trajectories. Each latent action encodes a multi-step semantic behavior, and the model is trained to predict and execute these latent actions. Low-entropy structural components (e.g., prompt templates) are abstracted, while high-entropy parameters remain explicit to maintain executability.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Across multiple LLM agent benchmarks (including SWE-bench and others referenced in Table 1 &amp; 8), LAR reduces action tokens by 30-50% and wall-clock inference time by 20-40% while maintaining or improving task success rates. The approach transfers to held-out benchmarks without retraining.</p>

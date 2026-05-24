@@ -112,10 +112,7 @@
 <p>Existing RLVR stabilization methods mostly act as external adjustments to training signals without addressing the internal clipping mechanism. The fundamental question of which internal mechanism creates a key bottleneck for stability and convergence remains unaddressed.</p>
 <h3>P — Proposal</h3>
 <p>The paper proposes Near-boundary Stochastic Rescue (NSR), a plug-and-play modification that stochastically retains tokens falling slightly outside the clipping threshold. NSR transforms the rigid binary clipping decision into a probabilistic admission process, preserving informative near-boundary signals while keeping policy updates conservative.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>NSR yields consistent gains over DAPO and GSPO across model sizes from 7B to 30B (dense and MoE architectures), consuming hundreds of thousands of GPU hours. Controlled interventions show training is robust to gradient magnitude but hypersensitive to the binary clipping decision.</p>

@@ -113,10 +113,7 @@
 <p>Existing methods for long-context LLM agents preserve either the agent's trajectory, passive access to raw material, or task-level strategies. None preserves reusable orientation knowledge (e.g., what the context contains, how it is organized, useful entities/schemas) about the recurring context itself, which is most needed for repeated same-context workloads.</p>
 <h3>P — Proposal</h3>
 <p>PEEK introduces a context map: a small, constant-sized artifact in the agent's prompt that stores reusable orientation knowledge about the external context. The map is maintained by a programmable cache policy with three modules: a Distiller that extracts transferable knowledge from inference-time signals, a Cartographer that translates it into structured edits, and a priority-based Evictor that enforces a fixed token budget.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On OOLONG (long-context reasoning/aggregation), PEEK improves over baselines by 6.3-34.0%, uses 93-145 fewer iterations than ACE, and costs 1.7-5.8x less than ACE. On CL-bench (context learning), PEEK improves solving rate by 6.0-14.0% and rubric accuracy by 7.8-12.1% at 1.4x lower cost than ACE. Gains hold with GPT-5.5, Qwen3-Coder-Next-FP8, and OpenAI Codex.</p>

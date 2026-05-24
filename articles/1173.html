@@ -113,10 +113,7 @@
 <p>Existing tool-augmented reasoning methods for MLLMs assume tool invocation is always beneficial, leading to redundant or inappropriate tool use that increases reasoning overhead and can mislead predictions. They lack a mechanism to adaptively decide when tool assistance is truly necessary based on query characteristics.</p>
 <h3>P — Proposal</h3>
 <p>AutoTool introduces a dual-mode reasoning strategy within a reinforcement learning framework, using special tokens <tool_on> and <tool_off> to adaptively decide tool invocation. Mode-Specific Policy Optimization (MSPO) applies distinct reward functions for each mode, and Adaptive Mode Balancing (AMB) dynamically adjusts reward coefficients to ensure balanced exploration of both reasoning modes during training.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>AutoTool achieves a 21.8% accuracy gain on V* benchmark compared to the base model, and a 44.9% improvement in efficiency over existing tool-augmented methods on POPE benchmark. DeepEyes requires 44.9 training hours, 20.3% more than AutoTool's adaptive invocation.</p>

@@ -106,10 +106,7 @@
 <p>Existing unified models suffer from two key limitations: (1) visual-representation mismatch between understanding (high-level semantic features) and generation (low-level continuous representations), and (2) limited task coverage, with most methods confined to text-image domains or partial task combinations, leaving full image-video understanding, generation, and editing insufficiently explored. Diverse generation tasks like editing and subject-driven generation are often added as downstream fine-tuning rather than systematically optimized in multi-task training.</p>
 <h3>P — Proposal</h3>
 <p>Lance introduces a dual-stream mixture-of-experts (MoE) architecture on shared interleaved multimodal sequences, enabling joint context learning while decoupling pathways for understanding and generation. It uses modality-aware rotary positional encoding (MaPE) to mitigate interference among heterogeneous visual tokens and boost cross-task alignment. Training follows a staged multi-task paradigm with capability-oriented objectives and adaptive data scheduling to strengthen both semantic comprehension and visual generation.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Lance with 3B activated parameters substantially outperforms existing open-source unified models on image and video generation tasks (e.g., T2I, T2V, I2V) while maintaining competitive multimodal understanding performance. All results are achieved within a 128-GPU training budget. Detailed benchmark numbers are referenced in the paper's experimental section.</p>

@@ -112,10 +112,7 @@
 <p>Existing sandbox C/R mechanisms duplicate the entire state (filesystem + process memory) per checkpoint, causing high latency (hundreds of ms to seconds). This is prohibitive for AI agents that need frequent checkpoints on the critical path of tree search and RL. No prior work provides coupled, change-based C/R for both filesystem and process state at millisecond scale.</p>
 <h3>P — Proposal</h3>
 <p>DeltaBox introduces a new OS abstraction, DeltaState, that treats filesystem and process memory as a transactional, change-based state pair. It co-designs two mechanisms: DeltaFS (overlayfs with runtime hot layer switching for file CoW) and DeltaCR (incremental CRIU dumps + template fork for process state). Checkpoint freezes the writable layer and performs incremental dump; rollback is a simple layer switch or fork from a frozen template.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On SWE-bench MCTS, DeltaBox reduces state-management overhead from 47-77% to 3-6% of trajectory time. Checkpoint latency: ~14ms mean; rollback latency: ≤6ms P95. On RL fan-out micro-benchmarks, DeltaBox achieves millisecond-level fork latency, enabling substantially more nodes explored under fixed time budgets.</p>

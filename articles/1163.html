@@ -112,10 +112,7 @@
 <p>Existing RLVR methods rely on terminal rewards or assume near-complete observability, making them vulnerable to severe credit assignment challenges in partially observable long-horizon tasks. Step-wise supervision or external verifiers are costly and often unavailable, and observation-conditioned grouping fails to reflect the agent's latent state, leading to degraded grouping quality and unstable advantage normalization.</p>
 <h3>P — Proposal</h3>
 <p>ReBel explicitly models structured belief states to summarize interaction history and guide policy learning. It introduces belief-consistency supervision, converting discrepancies between predicted beliefs and observed feedback into dense self-supervised signals, and employs belief-aware grouping to compare trajectories under similar belief states for more robust advantage estimates.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On ALFWorld, ReBel achieves 93.2 ± 4.1% success rate, improving over GRPO by 20.4 percentage points and over GiGPO w/o std by 7.1 percentage points. On WebShop, ReBel achieves 75.1 ± 2.7% success rate, improving over GRPO by 20.4 percentage points and over GiGPO w/o std by 7.7 percentage points. ReBel reaches GRPO's final performance in ~35 training iterations, yielding a 2.1x sample-efficiency gain.</p>

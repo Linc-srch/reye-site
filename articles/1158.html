@@ -113,10 +113,7 @@
 <p>Existing dynamic pruning methods strictly produce subtrees of the original dense tree, so confidence misjudgments inevitably reduce the mean accepted length below the dense-tree upper bound. This creates an unsolved Pareto tradeoff between speed and MAT that pruning alone cannot overcome.</p>
 <h3>P — Proposal</h3>
 <p>Graft couples pruning and retrieval in a sequential prune-then-graft mechanism: first prune low-confidence branches to release budget, then graft highly predictive retrieved tokens into the vacated slots. Retrieval is rooted at the current token, prepared in parallel with drafting, and uses a GPU-resident adjacency matrix with online updates, keeping overhead near zero and preserving lossless verification.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On short-context benchmarks, Graft achieves up to 5.41x speedup and improves average speedup over EAGLE-3 by 21.8% on Qwen3-235B. On long-context LLaMA3.1-8B, it reaches 3.22x average speedup; on Qwen3-14B, it outperforms EAGLE3-64K by 16.6%.</p>

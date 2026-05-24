@@ -113,10 +113,7 @@
 <p>Prior reward poisoning attacks on DRL are not state-adaptive—they do not read the learner's uncertainty or focus perturbations on high-leverage, high-uncertainty states. Furthermore, they have not been evaluated in realistic wireless communication environments, such as RIS-assisted CRNs, leaving a gap in understanding the impact of adaptive attacks on practical DRL-based wireless control systems.</p>
 <h3>P — Proposal</h3>
 <p>The paper proposes Disagreement-Guided Reward Poisoning (DGRP), an adaptive attack on a Soft Actor-Critic (SAC) agent in an RIS-assisted CRN. DGRP corrupts rewards precisely when the SAC dual critics exhibit large disagreement (indicating high-uncertainty states), thereby distorting value estimation and steering the policy toward suboptimal actions. The attack is evaluated against periodic-timing and exploration-triggered baselines in a realistic wireless environment.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>DGRP reduces the average SU data rate by up to 38% compared to the no-attack baseline, while periodic-timing and exploration-triggered attacks cause reductions of 22% and 27% respectively. The attack also diminishes RIS efficiency, with the RIS gain dropping from 1.8x to 1.2x under DGRP.</p>

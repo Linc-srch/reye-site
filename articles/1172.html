@@ -113,10 +113,7 @@
 <p>Existing automated streamliner-synthesis methods either rely on a hand-crafted constraint grammar (limiting discoverable shapes) or prompt an LLM solely on the problem model text, without access to actual solution structure. Moreover, prior evaluations often use unhardened models, conflating recovery of missing standard constraints with genuine streamliner discovery.</p>
 <h3>P — Proposal</h3>
 <p>The pipeline enumerates feasible solutions, trains a CNN contrastively against perturbed non-solutions to detect structural patterns, then translates the CNN's discriminative signal into candidate MiniZinc streamliners via LLM-driven synthesis. Two complementary prompting paths are used: filter-property correlation and direct filter-contrast between high- and low-activation solutions.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Pipeline achieves 98.8% portfolio time reduction on hardened Vessel Loading, 98.6% on hardened Social Golfers, and 89.4% on Black Hole. Best-single streamliners yield geometric-mean speedups of 932x, 356x, and 1103x respectively. On Black Hole, the pipeline matches StreamLLM's realtime result with simple-top-3 and exceeds it with family-budget allocation.</p>

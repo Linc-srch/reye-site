@@ -114,10 +114,7 @@
 <p>While individual biases like sycophancy, position bias, and majority label bias have been studied, the cumulative effect of a conversation's prevailing polarity on subsequent LLM judgments had not been empirically characterized across multiple models, domains, and context lengths. The interaction between baseline uncertainty and bias magnitude was also unexplored.</p>
 <h3>P — Proposal</h3>
 <p>The paper introduces AMEL (Accumulated Message Effects on LLM Judgments) and systematically measures it across 75,898 API calls to 11 models from 4 providers. The key insight is that presenting identical test items after histories saturated with positive or negative evaluations shifts model responses toward the conversation's prevailing polarity, with the effect concentrated on items where the model is uncertain at baseline.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>Across 75,898 API calls to 11 models, the overall effect size was d=-0.17 (p&lt;10^-46). For high-entropy items, d=-0.34 vs d=-0.15 for deterministic items. Negative history induced 1.62x more bias than positive (t=13.46, p&lt;10^-39, n=2,481 pairs). Bias saturated at 5 turns (Spearman |r|&lt;0.01, p&gt;0.94). Domain effects: code review d=-0.24, meals d=-0.13, content moderation d=-0.12.</p>

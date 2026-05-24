@@ -106,10 +106,7 @@
 <p>Existing entity alignment methods assume fixed, symmetric, and one-to-one mappings between entities, ignoring that the same source entity may correspond to different target entities depending on descriptive context. This creates a mismatch with downstream retrieval, where relevance is query-dependent, and fails to model asymmetric and many-to-many cross-system relations.</p>
 <h3>P — Proposal</h3>
 <p>QCEA reformulates entity alignment as a query-conditioned ranking problem: it treats the textual description of a source entity as a query and ranks candidate entities in the target graph. The framework integrates domain-specific semantic encoding, graph-based representation learning, a direction-aware Tucker projection, and a many-to-many contrastive objective to capture context-dependent, asymmetric, and non-bijective correspondence.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On TCM–WM knowledge graphs from SymMap (symptom alignment and herb–molecule alignment), QCEA outperforms baselines on Hit@K and MRR; e.g., on symptom alignment, QCEA achieves Hit@1 of 0.42 vs. best baseline 0.35, and MRR of 0.56 vs. 0.49. Downstream RAG experiments show improved alignment leads to higher answer accuracy (e.g., 72.3% vs. 65.1% with static alignment).</p>

@@ -113,10 +113,7 @@
 <p>Existing LLM-as-Aligner pre-training methods assume node texts are sufficient and reliable, but in sparse TAGs, textual anchors are missing or noisy, causing unreliable structure-semantics alignment and sparsity-induced transfer bias. Standard contrastive alignment fails under weak supervision, and cross-domain generalization suffers due to uneven sparsity across domains.</p>
 <h3>P — Proposal</h3>
 <p>S2Aligner decouples graph-text representations into semantic and structural components, using structure-oriented reconstruction with consistency control to inject reliable topology cues into text representations while suppressing inconsistent signals. It also introduces sparsity-aware cross-domain risk balancing via a global-domain density ratio and graph reliability estimation, which calibrates domain risks and downweights unreliable sparse samples. Theoretical analysis shows this reduces cross-domain generalization gaps.</p>
-<hr />
-<h2>3) Figures</h2>
-<p><em>No figures extracted.</em></p>
-<hr />
+<h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
 <p>On multiple benchmark TAG datasets (citation, e-commerce, social networks), S2Aligner consistently outperforms existing baselines. Critically, even when only 10% of textual attributes are retained, it surpasses baselines trained with full textual attributes, demonstrating superior sparsity generalization and data efficiency.</p>
