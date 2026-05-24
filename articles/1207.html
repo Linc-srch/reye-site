@@ -176,6 +176,67 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1207/fig_001.png" alt="Figure 1 : A , Long-exposure photograph of real-world deployment with four agents competing simultaneously. B , Large-scale evaluation of over 64,000 simulated four-player races comparing average lap time against race completion rate. Real-world data points indicate median lap times from all four-player races for our policy and the expert human pilot. C , Crash rates from the large-scale evaluation in B, classified by collision type: gate, wall, or opponent. D , Sample race from the evaluation in B illustrating typical failure modes: two single-agent policies (blue) collide before the first gate, while league-play (orange) and self-play (yellow) continue racing. E , Distribution of finishing positions per method across all races from the large-scale evaluation in B." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 : A , Long-exposure photograph of real-world deployment with four agents competing simultaneously. B , Large-scale evaluation of over 64,000 simulated four-player races comparing average lap time against race completion rate. Real-world data points indicate median lap times from all four-player races for our policy and the expert human pilot. C , Crash rates from the large-scale evaluation in B, classified by collision type: gate, wall, or opponent. D , Sample race from the evaluation in B illustrating typical failure modes: two single-agent policies (blue) collide before the first gate, while league-play (orange) and self-play (yellow) continue racing. E , Distribution of finishing positions per method across all races from the large-scale evaluation in B.</span>
+                <span class="lang-zh">图1：A，真实世界部署的长曝光照片，四个智能体同时竞争。B，大规模评估超过64,000场模拟四玩家比赛，比较平均圈速与完赛率。真实数据点表示我们策略和专家人类飞行员所有四玩家比赛的中位圈速。C，来自B中大规模评估的碰撞率，按碰撞类型分类：门、墙或对手。D，来自B评估的示例比赛，展示典型失败模式：两个单智能体策略（蓝色）在第一个门前碰撞，而联盟训练（橙色）和自博弈（黄色）继续比赛。E，B中大规模评估所有比赛中每种方法的最终排名分布。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1207/fig_002.png" alt="Figure 2 : A , Average race completion through self-evaluation with identical policies from solo to 8-player races. Each data point represents four policies per method, each completing 64 races with varied starting positions. Shaded regions indicate the average of standard deviations per policy. B , Crash rates by collision type (gate, wall, opponent) from the races completed in A. C , Sample races illustrating behavioral differences. Single-agent policies collide with 85% probability at the first gate in four-player races. The independent PPO example shows agents from the same training run achieving collision-free racing through implicit coordination; this behavior does not generalize, dropping to approximately 60% race completion in self-evaluation. League-play trains against diverse opponents, producing strategies that remain robust across agent configurations." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2 : A , Average race completion through self-evaluation with identical policies from solo to 8-player races. Each data point represents four policies per method, each completing 64 races with varied starting positions. Shaded regions indicate the average of standard deviations per policy. B , Crash rates by collision type (gate, wall, opponent) from the races completed in A. C , Sample races illustrating behavioral differences. Single-agent policies collide with 85% probability at the first gate in four-player races. The independent PPO example shows agents from the same training run achieving collision-free racing through implicit coordination; this behavior does not generalize, dropping to approximately 60% race completion in self-evaluation. League-play trains against diverse opponents, producing strategies that remain robust across agent configurations.</span>
+                <span class="lang-zh">图2：A，从单人赛到8人赛中使用相同策略进行自我评估的平均完赛率。每个数据点代表每种方法的四个策略，每个策略完成64场比赛，起始位置各不相同。阴影区域表示每个策略标准差的平均值。B，来自A中完成比赛的碰撞率，按碰撞类型（门、墙、对手）分类。C，展示行为差异的示例比赛。在四玩家比赛中，单智能体策略在第一个门处有85%的碰撞概率。独立PPO示例显示来自同一训练运行的智能体通过隐式协调实现了无碰撞比赛；但这种行为不能泛化，在自我评估中完赛率下降到约60%。联盟训练针对多样化的对手进行训练，产生的策略在智能体配置中保持鲁棒。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1207/fig_003.png" alt="Figure 3 : A , Learned value function visualized by varying the ego agent position in the ( X , Z ) (X,Z) plane while fixing opponent positions. Trajectories are from a real-world overtaking maneuver at the Split-S gate, where competitors pass through an upper gate followed by a lower gate. The ego agent (orange) overtakes opponent 2 (red) across the four time steps shown.
+Low-value regions near opponents reflect learned collision avoidance, while high values indicate regions of greater expected reward. For positions beyond the next gate, the visualization assumes the gate has been passed to avoid artificially low values from the agent seeking to return. B , Corresponding real-world trajectories showing the ego agent overtaking opponent 2 while avoiding opponent 1. C , Particle-based downwash simulation for a quadrotor moving in the positive X X direction. This aerodynamic interaction model is integrated into the training simulator, allowing agents to experience the physical effects of nearby competitors." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3 : A , Learned value function visualized by varying the ego agent position in the ( X , Z ) (X,Z) plane while fixing opponent positions. Trajectories are from a real-world overtaking maneuver at the Split-S gate, where competitors pass through an upper gate followed by a lower gate. The ego agent (orange) overtakes opponent 2 (red) across the four time steps shown.
+Low-value regions near opponents reflect learned collision avoidance, while high values indicate regions of greater expected reward. For positions beyond the next gate, the visualization assumes the gate has been passed to avoid artificially low values from the agent seeking to return. B , Corresponding real-world trajectories showing the ego agent overtaking opponent 2 while avoiding opponent 1. C , Particle-based downwash simulation for a quadrotor moving in the positive X X direction. This aerodynamic interaction model is integrated into the training simulator, allowing agents to experience the physical effects of nearby competitors.</span>
+                <span class="lang-zh">图3：A，通过固定对手位置并改变自身智能体在(X,Z)平面中的位置来可视化的学习价值函数。轨迹来自Split-S门的真实超车机动，竞争选手先通过一个上方的门，然后通过一个下方的门。自身智能体（橙色）在所示四个时间步中超越对手2（红色）。
+对手附近的低值区域反映了学习到的碰撞规避，而高值区域表示预期奖励更大的区域。对于超出下一个门的位置，可视化假设门已通过，以避免智能体试图返回时产生人为的低值。B，相应的真实世界轨迹，显示自身智能体在避开对手1的同时超越对手2。C，四旋翼飞行器沿正X方向移动的基于粒子的下洗流模拟。该气动相互作用模型集成到训练模拟器中，使智能体能够体验附近竞争者的物理效应。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1207/fig_005.png" alt="Figure S2 : Multi-agent training framework. Each agent observes its own state s ego s_{\text{ego}} and the states of other agents s other s_{\text{other}} . Opponent observations serve as keys and values within a Perceiver-based attention encoder, which queries them with learned latent arrays to produce a compact representation regardless of the number of competitors. The encoded opponent representation is concatenated with the ego state and passed to recurrent actor and critic networks comprising LSTM and MLP layers. During training, opponent policies are sampled from an opponent pool that includes historical checkpoints of the agent’s own policy alongside the league opponents, which comprise single-agent and independent PPO policies, providing diverse competitive behaviors." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure S2 : Multi-agent training framework. Each agent observes its own state s ego s_{\text{ego}} and the states of other agents s other s_{\text{other}} . Opponent observations serve as keys and values within a Perceiver-based attention encoder, which queries them with learned latent arrays to produce a compact representation regardless of the number of competitors. The encoded opponent representation is concatenated with the ego state and passed to recurrent actor and critic networks comprising LSTM and MLP layers. During training, opponent policies are sampled from an opponent pool that includes historical checkpoints of the agent’s own policy alongside the league opponents, which comprise single-agent and independent PPO policies, providing diverse competitive behaviors.</span>
+                <span class="lang-zh">图S2：多智能体训练框架。每个智能体观察自身状态 s_ego 和其他智能体的状态 s_other。对手观测作为基于Perceiver的注意力编码器中的键和值，该编码器使用学习到的潜在数组对其进行查询，以产生紧凑表示，无论竞争者数量如何。编码后的对手表示与自身状态拼接，并传递给由LSTM和MLP层组成的循环演员-评论家网络。训练过程中，对手策略从对手池中采样，该池包括智能体自身策略的历史检查点以及联盟对手（包括单智能体和独立PPO策略），提供多样化的竞争行为。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1207/fig_006.png" alt="Figure S3 : Effect of downwash modeling on learned behavior. Two quadrotors fly concentric circles ( 3 ​ m 3\,\mathrm{m} radius, 0.5 ​ m 0.5\,\mathrm{m} vertical separation). (A) Altitude profiles for policies trained without (left) and with (right) downwash across solo flight, 0.1 ​ s 0.1\,\mathrm{s} delay, and 0.5 ​ s 0.5\,\mathrm{s} delay conditions. (B) Angular difference between upper and lower agent over time for 0.1 ​ s 0.1\,\mathrm{s} (left) and 0.5 ​ s 0.5\,\mathrm{s} (right) initial delay, comparing policies trained with and without downwash. Negative values indicate the lower agent leads. Interaction-aware policies maintain consistent altitude and converge to leading positions, while policies without downwash exhibit condition-dependent drift. Shaded regions denote variance across 15 15 flights." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure S3 : Effect of downwash modeling on learned behavior. Two quadrotors fly concentric circles ( 3 ​ m 3\,\mathrm{m} radius, 0.5 ​ m 0.5\,\mathrm{m} vertical separation). (A) Altitude profiles for policies trained without (left) and with (right) downwash across solo flight, 0.1 ​ s 0.1\,\mathrm{s} delay, and 0.5 ​ s 0.5\,\mathrm{s} delay conditions. (B) Angular difference between upper and lower agent over time for 0.1 ​ s 0.1\,\mathrm{s} (left) and 0.5 ​ s 0.5\,\mathrm{s} (right) initial delay, comparing policies trained with and without downwash. Negative values indicate the lower agent leads. Interaction-aware policies maintain consistent altitude and converge to leading positions, while policies without downwash exhibit condition-dependent drift. Shaded regions denote variance across 15 15 flights.</span>
+                <span class="lang-zh">图S3：下洗流建模对学习行为的影响。两架四旋翼飞行器飞同心圆（半径3 m，垂直间隔0.5 m）。(A) 在单独飞行、0.1 s延迟和0.5 s延迟条件下，未训练（左）和训练（右）下洗流的策略的高度曲线。(B) 上下智能体之间的角度差随时间变化，初始延迟为0.1 s（左）和0.5 s（右），比较训练有和无下洗流的策略。负值表示下方智能体领先。考虑相互作用的策略保持恒定高度并收敛到领先位置，而无下洗流的策略表现出条件依赖的漂移。阴影区域表示15次飞行的方差。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

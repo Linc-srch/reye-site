@@ -185,6 +185,82 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1101/fig_001.png" alt="Figure 2 : Overview of the soft arm modeling in our Simulator. The soft body is modeled as a Cosserat rod that moves under the influence of an external torque 𝝉 e \boldsymbol{\tau}_{e} . Interaction between soft body and EEF is represented via an an elastic force constraint. Relative displacement Δ ​ 𝐱 \Delta\mathbf{x} or relative rotation Δ ​ θ \Delta{\mathbf{\theta}} between them induces corresponding restoring forces and torques." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2 : Overview of the soft arm modeling in our Simulator. The soft body is modeled as a Cosserat rod that moves under the influence of an external torque 𝝉 e \boldsymbol{\tau}_{e} . Interaction between soft body and EEF is represented via an an elastic force constraint. Relative displacement Δ ​ 𝐱 \Delta\mathbf{x} or relative rotation Δ ​ θ \Delta{\mathbf{\theta}} between them induces corresponding restoring forces and torques.</span>
+                <span class="lang-zh">图2：我们模拟器中软臂建模的概览。软体被建模为受外部力矩 𝝉 e \boldsymbol{\tau}_{e} 影响的Cosserat rod。软体与EEF之间的相互作用通过一个弹性力约束表示。它们之间的相对位移 Δ ​ 𝐱 \Delta\mathbf{x} 或相对旋转 Δ ​ θ \Delta{\mathbf{\theta}} 会产生相应的恢复力和力矩。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1101/fig_003.png" alt="Figure 4 : Trajectory generation pipeline in ManiSoft . (a) An executor is trained via RL policy to transform waypoint (6-DoF pose) into torques.
+(b) RL rewards are designed to balance accuracy and stability, consisting of a pose difference reward R d R_{d} negatively correlated with the pose difference, and a stability reward R s R_{s} that penalizes or rewards changes in pose difference.
+(c) Task-specific rules are predefined to produce high-level planning (trajectory waypoints) for each case, which are then converted into low-level actions (torque commands) by the executor to generate complete trajectories." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4 : Trajectory generation pipeline in ManiSoft . (a) An executor is trained via RL policy to transform waypoint (6-DoF pose) into torques.
+(b) RL rewards are designed to balance accuracy and stability, consisting of a pose difference reward R d R_{d} negatively correlated with the pose difference, and a stability reward R s R_{s} that penalizes or rewards changes in pose difference.
+(c) Task-specific rules are predefined to produce high-level planning (trajectory waypoints) for each case, which are then converted into low-level actions (torque commands) by the executor to generate complete trajectories.</span>
+                <span class="lang-zh">图4：ManiSoft中的轨迹生成流程。(a) 执行器通过RL策略训练，将路径点（6-DoF姿态）转换为力矩。
+(b) RL奖励旨在平衡精度和稳定性，包括与姿态差负相关的姿态差奖励 R d R_{d}，以及惩罚或奖励姿态差变化的稳定性奖励 R s R_{s}。
+(c) 预定义任务特定规则，为每种情况生成高层规划（轨迹路径点），然后由执行器将其转换为底层动作（力矩指令），以生成完整轨迹。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1101/fig_004.png" alt="Figure 5 : Statistical analysis of the ManiSoft Benchmark. (a) Distribution of trajectory lengths. Tasks in ManiSoft generally involve long trajectories, with the STK task exhibiting notably longer trajectories than the others.
+(b) Frequency distribution of target object categories, highlighting the diversity of manipulable objects in ManiSoft .
+(c) Spatial distribution of initial target object positions on the tabletop, showing that graspable targets are broadly and evenly distributed across the workspace." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5 : Statistical analysis of the ManiSoft Benchmark. (a) Distribution of trajectory lengths. Tasks in ManiSoft generally involve long trajectories, with the STK task exhibiting notably longer trajectories than the others.
+(b) Frequency distribution of target object categories, highlighting the diversity of manipulable objects in ManiSoft .
+(c) Spatial distribution of initial target object positions on the tabletop, showing that graspable targets are broadly and evenly distributed across the workspace.</span>
+                <span class="lang-zh">图5：ManiSoft基准的统计分析。(a) 轨迹长度分布。ManiSoft中的任务通常涉及长轨迹，其中STK任务表现出明显更长的轨迹。
+(b) 目标物体类别的频率分布，突显了ManiSoft中可操作物体的多样性。
+(c) 桌面上初始目标物体位置的空间分布，显示可抓取目标广泛且均匀分布在操作空间中。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1101/fig_007.png" alt="Figure 8 : Visualization of typical failure cases of OpenVLA-OFT in ManiSoft .
+(a) The robot exhibits unexpected torsion and internal forces, resulting in inaccurate action prediction.
+(b) The robot fails to reach behind the obstacle." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 8 : Visualization of typical failure cases of OpenVLA-OFT in ManiSoft .
+(a) The robot exhibits unexpected torsion and internal forces, resulting in inaccurate action prediction.
+(b) The robot fails to reach behind the obstacle.</span>
+                <span class="lang-zh">图8：ManiSoft中OpenVLA-OFT典型失败案例的可视化。
+(a) 机器人表现出意外扭转和内力，导致动作预测不准确。
+(b) 机器人未能到达障碍物后面。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1101/fig_008.png" alt="Figure 9 : Comparison of DP and OpenVLA-OFT on the same task: (a) DP successfully completes the task; (b) OpenVLA-OFT exhibits the “stop-moving” behavior." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 9 : Comparison of DP and OpenVLA-OFT on the same task: (a) DP successfully completes the task; (b) OpenVLA-OFT exhibits the “stop-moving” behavior.</span>
+                <span class="lang-zh">图9：相同任务下DP与OpenVLA-OFT的比较：(a) DP成功完成任务；(b) OpenVLA-OFT表现出“停止移动”行为。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

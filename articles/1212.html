@@ -180,6 +180,70 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1212/fig_001.png" alt="Figure 1: Overview of Diagnosis and the NSR Solution. Left (Diagnosis): Controlled interventions reveal that training is robust to gradient magnitude (red) but hypersensitive to the binary clipping decision (blue), identifying the rigid discarding of boundary signals as a key bottleneck in the studied clipping-based setup. Right (Mechanism): NSR mitigates this by stochastically rescuing tokens that fall slightly outside the trust region, transforming the rigid binary decision into a probabilistic admission process that retains informative near-boundary signals." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Overview of Diagnosis and the NSR Solution. Left (Diagnosis): Controlled interventions reveal that training is robust to gradient magnitude (red) but hypersensitive to the binary clipping decision (blue), identifying the rigid discarding of boundary signals as a key bottleneck in the studied clipping-based setup. Right (Mechanism): NSR mitigates this by stochastically rescuing tokens that fall slightly outside the trust region, transforming the rigid binary decision into a probabilistic admission process that retains informative near-boundary signals.</span>
+                <span class="lang-zh">图1：诊断与NSR方案概述。左侧（诊断）：受控干预表明，训练对梯度幅度（红色）具有鲁棒性，但对二元裁剪决策（蓝色）过度敏感，这识别出刚性丢弃边界信号是所研究基于裁剪设置中的关键瓶颈。右侧（机制）：NSR通过随机拯救略微超出信任区域的令牌来缓解这一问题，将刚性二元决策转变为概率性准入过程，从而保留信息丰富的近边界信号。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1212/fig_005.png" alt="Figure 5: Targeted Ablation: Rescue is the Driver. Left: Only-Rescue (Yellow) replicates the performance gains of the full decoupled method, significantly outperforming the Baseline, while Only-Push-out (Purple) yields no gain. Right: Only-Rescue maintains stable policy entropy, whereas Only-Push-out triggers a substantial entropy increase." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5: Targeted Ablation: Rescue is the Driver. Left: Only-Rescue (Yellow) replicates the performance gains of the full decoupled method, significantly outperforming the Baseline, while Only-Push-out (Purple) yields no gain. Right: Only-Rescue maintains stable policy entropy, whereas Only-Push-out triggers a substantial entropy increase.</span>
+                <span class="lang-zh">图5：针对性消融：救援是驱动力。左侧：仅救援（黄色）复制了完整解耦方法的性能提升，显著优于基线，而仅推出（紫色）未带来任何增益。右侧：仅救援保持了稳定的策略熵，而仅推出则引发了熵的显著增加。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1212/fig_006.png" alt="Figure 6: Training dynamics across three model scales. Each row corresponds to a model scale— (a) Qwen2.5-Math-7B, (b) Qwen3-8B, (c) Qwen3-30B-A3B—with columns showing validation performance on AIME24 (left), policy entropy (center), and average response length (right). Across all scales, NSR converges faster and reaches higher peak performance than the corresponding baselines (DAPO for 7B/8B, GSPO for 30B). Policy entropy under NSR remains more stable, notably avoiding the entropy spike observed in the Qwen3-8B baseline. Response length increases steadily, consistent with rescued near-boundary gradients promoting longer reasoning chains." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6: Training dynamics across three model scales. Each row corresponds to a model scale— (a) Qwen2.5-Math-7B, (b) Qwen3-8B, (c) Qwen3-30B-A3B—with columns showing validation performance on AIME24 (left), policy entropy (center), and average response length (right). Across all scales, NSR converges faster and reaches higher peak performance than the corresponding baselines (DAPO for 7B/8B, GSPO for 30B). Policy entropy under NSR remains more stable, notably avoiding the entropy spike observed in the Qwen3-8B baseline. Response length increases steadily, consistent with rescued near-boundary gradients promoting longer reasoning chains.</span>
+                <span class="lang-zh">图6：三种模型尺度下的训练动态。每一行对应一个模型尺度——(a) Qwen2.5-Math-7B、(b) Qwen3-8B、(c) Qwen3-30B-A3B——列显示AIME24上的验证性能（左）、策略熵（中）和平均响应长度（右）。在所有尺度上，NSR比相应的基线（7B/8B使用DAPO，30B使用GSPO）收敛更快，达到更高峰值性能。NSR下的策略熵保持更稳定，尤其避免了Qwen3-8B基线中观察到的熵尖峰。响应长度稳步增加，与救援的近边界梯度促进更长推理链的结论一致。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1212/fig_010.png" alt="Figure 10: Clip Fraction Analysis. We monitor the fraction of clipped gradients throughout training across different model scales. NSR (blue) consistently maintains a significantly lower clip fraction compared to baselines (red).
+This reduction confirms that NSR effectively rescues valid near-boundary signals that would otherwise be discarded, thereby enhancing sample utilization.
+Crucially, this benefit validates the method’s plug-and-play versatility: it reduces clipping not only in token-level objectives (DAPO, left and center) but also adapts to rescue entire sequences in sequence-level objectives (GSPO, right)." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 10: Clip Fraction Analysis. We monitor the fraction of clipped gradients throughout training across different model scales. NSR (blue) consistently maintains a significantly lower clip fraction compared to baselines (red).
+This reduction confirms that NSR effectively rescues valid near-boundary signals that would otherwise be discarded, thereby enhancing sample utilization.
+Crucially, this benefit validates the method’s plug-and-play versatility: it reduces clipping not only in token-level objectives (DAPO, left and center) but also adapts to rescue entire sequences in sequence-level objectives (GSPO, right).</span>
+                <span class="lang-zh">图10：Clip Fraction分析。我们监控不同模型尺度训练过程中裁剪梯度的比例。NSR（蓝色）始终维持显著低于基线（红色）的裁剪比例。
+这一减少证实NSR有效救援了原本会被丢弃的有效近边界信号，从而提升了样本利用率。
+关键的是，这一优势验证了该方法的即插即用灵活性：它不仅减少了令牌级目标（DAPO，左和中）中的裁剪，还能适应救援序列级目标（GSPO，右）中的完整序列。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1212/fig_002.png" alt="Figure 2: Magnitude Insensitivity. Comparisons between standard DAPO and magnitude-focused interventions on AIME24. Neither removing advantage normalization ( w/o Norm ) nor applying scalar multiplicative perturbation to the advantage ( + Adv. Noise ) significantly deviates from the baseline trajectory." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Magnitude Insensitivity. Comparisons between standard DAPO and magnitude-focused interventions on AIME24. Neither removing advantage normalization ( w/o Norm ) nor applying scalar multiplicative perturbation to the advantage ( + Adv. Noise ) significantly deviates from the baseline trajectory.</span>
+                <span class="lang-zh">图2：幅度不敏感性。标准DAPO与幅度聚焦干预在AIME24上的比较。去除优势归一化（w/o Norm）或对优势施加标量乘法扰动（+ Adv. Noise）均未显著偏离基线轨迹。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

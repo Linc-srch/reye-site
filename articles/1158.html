@@ -183,6 +183,76 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1158/fig_001.png" alt="Figure 1 : Speed-accepted-length tradeoff on Qwen3-32B HumanEval. Each point reports wall-time speedup and mean accepted length.
+Dense EAGLE3 gives the accepted-length upper point for pruning-only subtrees.
+Dynamic pruning methods such as DDD, SVIP, and ECHO move rightward by reducing draft cost, but their accepted length falls below the dense-tree bound. Graft uses retrieval to fill the slots released by pruning, introducing candidates beyond the original subtree and breaking this pruning trade-off under the same verification budget." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 : Speed-accepted-length tradeoff on Qwen3-32B HumanEval. Each point reports wall-time speedup and mean accepted length.
+Dense EAGLE3 gives the accepted-length upper point for pruning-only subtrees.
+Dynamic pruning methods such as DDD, SVIP, and ECHO move rightward by reducing draft cost, but their accepted length falls below the dense-tree bound. Graft uses retrieval to fill the slots released by pruning, introducing candidates beyond the original subtree and breaking this pruning trade-off under the same verification budget.</span>
+                <span class="lang-zh">图1：Qwen3-32B HumanEval上的速度-接受长度权衡。每个点报告实际时间加速比和平均接受长度。
+密集EAGLE3为仅剪枝的子树提供了接受长度上限点。
+动态剪枝方法如DDD、SVIP和ECHO通过降低草稿成本向右移动，但其接受长度低于密集树界限。Graft利用检索填补剪枝释放的槽位，引入原始子树之外的候选，在相同验证预算下打破了这种剪枝权衡。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1158/fig_002.png" alt="Figure 2 : Motivation of Graft . Speedup comparison on LLaMA3.1-8B across five benchmarks and their average.
+Traditional self-SD retrieval methods such as PLD and TR are lightweight but remain far below EAGLE3.
+Under the same total candidate budget, direct grafting variants are also limited. Graft(ROOT) competes with original candidates, while Graft(TAIL) depends on a fully accepted draft prefix. Graft couples pruning and retrieval. Pruning releases enough budget for retrieval, and retrieval repairs the coverage loss caused by pruning, achieving the best average speedup." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2 : Motivation of Graft . Speedup comparison on LLaMA3.1-8B across five benchmarks and their average.
+Traditional self-SD retrieval methods such as PLD and TR are lightweight but remain far below EAGLE3.
+Under the same total candidate budget, direct grafting variants are also limited. Graft(ROOT) competes with original candidates, while Graft(TAIL) depends on a fully accepted draft prefix. Graft couples pruning and retrieval. Pruning releases enough budget for retrieval, and retrieval repairs the coverage loss caused by pruning, achieving the best average speedup.</span>
+                <span class="lang-zh">图2：Graft的动机。LLaMA3.1-8B在五个基准测试及其平均值上的加速比比较。
+传统的自SD检索方法如PLD和TR虽然轻量，但仍远低于EAGLE3。
+在相同总候选预算下，直接嫁接变体也受限。Graft(ROOT)与原始候选竞争，而Graft(TAIL)依赖于完全接受的草稿前缀。Graft将剪枝与检索耦合。剪枝释放足够的预算用于检索，检索修复由剪枝造成的覆盖损失，实现了最佳平均加速比。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1158/fig_004.png" alt="Figure 4 : Overview of Graft . (a) Budget release: dynamic-depth pruning removes unreliable draft-tree nodes and frees candidate slots under the same verification budget. (b) Retrieval grafting: root-centered retrieval runs in parallel with drafting, selects a stage-adaptive template, and fills the released slots with retrieved candidates. (c) Verification and update: retained draft nodes and grafted retrieval nodes are flattened into one hybrid tree for a single target-model verification pass, after which verified nodes refresh the GPU-resident retrieval matrix." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4 : Overview of Graft . (a) Budget release: dynamic-depth pruning removes unreliable draft-tree nodes and frees candidate slots under the same verification budget. (b) Retrieval grafting: root-centered retrieval runs in parallel with drafting, selects a stage-adaptive template, and fills the released slots with retrieved candidates. (c) Verification and update: retained draft nodes and grafted retrieval nodes are flattened into one hybrid tree for a single target-model verification pass, after which verified nodes refresh the GPU-resident retrieval matrix.</span>
+                <span class="lang-zh">图3：三种检索插入策略的比较。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1158/fig_003.png" alt="Figure 3 : Comparison of three retrieval insertion strategies." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3 : Comparison of three retrieval insertion strategies.</span>
+                <span class="lang-zh">图4：Graft概览。(a) 预算释放：动态深度剪枝移除不可靠的草稿树节点，并在相同验证预算下释放候选槽位。(b) 检索嫁接：以根为中心的检索与草稿并行运行，选择阶段自适应模板，并用检索到的候选填充释放的槽位。(c) 验证与更新：保留的草稿节点和嫁接的检索节点被平展成一个混合树，用于一次目标模型验证，之后验证通过的节点刷新驻留在GPU上的检索矩阵。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1158/fig_007.png" alt="Figure 6 : Retrieval template depth and width ablation. Bars report speedup and lines report MAT on Qwen3-32B when varying the maximum retrieval depth d d or maximum retrieval width w w . The default setting follows the base-tree envelope and balances long-chain continuation with sibling coverage." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6 : Retrieval template depth and width ablation. Bars report speedup and lines report MAT on Qwen3-32B when varying the maximum retrieval depth d d or maximum retrieval width w w . The default setting follows the base-tree envelope and balances long-chain continuation with sibling coverage.</span>
+                <span class="lang-zh">图6：检索模板深度和宽度消融实验。条形图报告加速比，折线图报告Qwen3-32B上的MAT，变化最大检索深度d d或最大检索宽度w w。默认设置遵循基础树包络，并平衡长链延续与兄弟覆盖。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

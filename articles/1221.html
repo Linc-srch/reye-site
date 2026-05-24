@@ -186,6 +186,70 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1221/fig_002.png" alt="Figure 2 : Overview of VGenST-Bench. A) Dataset generation. Given input video themes, our multi-agent pipeline jointly synthesizes videos paired with scene graphs, scenarios, and QA sets. B) Task & level design. Videos are organized along a 3 × 2 × 2 3\times 2\times 2 taxonomy over Spatial scale , Perspective , and Scene dynamics , with one spatio-temporal task assigned per cell. QA pairs follow a three-level hierarchy: (L1) Visual perception, (L2) Scene understanding, and (L3) Spatio-temporal reasoning. C) Benchmark statistics. VGenST-Bench comprises 1,200 videos and 33K QA pairs spanning 12 task types and 12 QA types." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2 : Overview of VGenST-Bench. A) Dataset generation. Given input video themes, our multi-agent pipeline jointly synthesizes videos paired with scene graphs, scenarios, and QA sets. B) Task & level design. Videos are organized along a 3 × 2 × 2 3\times 2\times 2 taxonomy over Spatial scale , Perspective , and Scene dynamics , with one spatio-temporal task assigned per cell. QA pairs follow a three-level hierarchy: (L1) Visual perception, (L2) Scene understanding, and (L3) Spatio-temporal reasoning. C) Benchmark statistics. VGenST-Bench comprises 1,200 videos and 33K QA pairs spanning 12 task types and 12 QA types.</span>
+                <span class="lang-zh">图2：VGenST-Bench概述。A) 数据集生成。给定输入视频主题，我们的多智能体流水线联合合成视频，并配以场景图、场景描述和问答集。B) 任务与级别设计。视频按空间尺度、视角和场景动态的三维分类法（3×2×2）组织，每个单元格分配一个时空任务。问答对遵循三级层次结构：（L1）视觉感知，（L2）场景理解，（L3）时空推理。C) 基准统计。VGenST-Bench包含1,200个视频和33K个问答对，涵盖12种任务类型和12种问答类型。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1221/fig_005.png" alt="Figure 4 : VGenST-Bench construction pipeline. Starting from a theme, four agents operate in sequence. The Scene Graph Agent produces a structured scene graph specifying objects and spatial composition; the Scenario Agent expands it into a temporally grounded scenario with reasoning goal and timeline; the Video Agent synthesizes the corresponding image and video through generative models; and the QA Agent generates base MCQs from a task–QA applicability matrix and reformats each into three variants." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4 : VGenST-Bench construction pipeline. Starting from a theme, four agents operate in sequence. The Scene Graph Agent produces a structured scene graph specifying objects and spatial composition; the Scenario Agent expands it into a temporally grounded scenario with reasoning goal and timeline; the Video Agent synthesizes the corresponding image and video through generative models; and the QA Agent generates base MCQs from a task–QA applicability matrix and reformats each into three variants.</span>
+                <span class="lang-zh">图4：VGenST-Bench构建流水线。从一个主题开始，四个智能体依次运作。场景图智能体生成结构化的场景图，指定物体和空间组成；场景描述智能体将其扩展为基于时间的场景描述，包含推理目标和时间线；视频智能体通过生成模型合成相应的图像和视频；问答智能体从任务-问答适用性矩阵生成基础多选题，并将每个问题重新格式化为三种变体。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1221/fig_006.png" alt="Figure 6 : Robustness Analysis. (a) None-of-these variants show a clear asymmetry: V1 maintains base accuracy, while V2 produces dramatic drops across all models.
+(b) Open-ended evaluation by question level reveals large drop on L3 for all models.
+Together, these reveal that closed-form MCQ accuracy may overestimate spatio-temporal reasoning capability." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6 : Robustness Analysis. (a) None-of-these variants show a clear asymmetry: V1 maintains base accuracy, while V2 produces dramatic drops across all models.
+(b) Open-ended evaluation by question level reveals large drop on L3 for all models.
+Together, these reveal that closed-form MCQ accuracy may overestimate spatio-temporal reasoning capability.</span>
+                <span class="lang-zh">图6：鲁棒性分析。(a) 无正确选项变体显示出明显的不对称性：V1保持基础准确率，而V2在所有模型上导致显著下降。
+(b) 按问题级别的开放式评估显示，所有模型在L3上的下降较大。
+这些共同表明，封闭式多选题的准确率可能高估了时空推理能力。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1221/fig_007.png" alt="Figure 7 : Reasoning failure of Direction Estimation task. The model’s reasoning trace correctly identifies the initial orientation, the leftward camera turn, and the final view, but inverts the resulting egocentric direction at the final step, concluding with the wrong answer." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 7 : Reasoning failure of Direction Estimation task. The model’s reasoning trace correctly identifies the initial orientation, the leftward camera turn, and the final view, but inverts the resulting egocentric direction at the final step, concluding with the wrong answer.</span>
+                <span class="lang-zh">图7：方向估计任务的推理失败。模型的推理轨迹正确识别了初始方向、向左的摄像机转动和最终视图，但在最后一步颠倒了最终的自我中心方向，得出错误答案。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1221/fig_009.png" alt="Figure 9 : Construction Pipeline of VGenST-Bench." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 9 : Construction Pipeline of VGenST-Bench.</span>
+                <span class="lang-zh">图9：VGenST-Bench的构建流水线。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

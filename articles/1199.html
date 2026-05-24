@@ -184,6 +184,67 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1199/fig_001.png" alt="Figure 1: Remember to be Curious. Test-time trajectories of our curiosity-driven policy trained with episodic context and a persistent world model. Left: Our agent explores an indoor scene purely from an image stream; waypoints show the agent’s views along the path. Right: Our end-to-end design enables fine-tuning to downstream sparse-reward tasks and zero-shot generalization to AI-generated worlds. Note: the model requires no explicit mapping at test time; trajectories are overlaid on bird’s-eye-view for visualization only." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Remember to be Curious. Test-time trajectories of our curiosity-driven policy trained with episodic context and a persistent world model. Left: Our agent explores an indoor scene purely from an image stream; waypoints show the agent’s views along the path. Right: Our end-to-end design enables fine-tuning to downstream sparse-reward tasks and zero-shot generalization to AI-generated worlds. Note: the model requires no explicit mapping at test time; trajectories are overlaid on bird’s-eye-view for visualization only.</span>
+                <span class="lang-zh">图1：请保持好奇心。基于情景上下文和持久世界模型训练的好奇心驱动策略的测试时轨迹。左图：我们的智能体仅从图像流中探索室内场景；路径点显示了智能体沿路径的视角。右图：我们的端到端设计使得能够针对下游稀疏奖励任务进行微调，并零样本泛化到AI生成的世界。注意：模型在测试时无需显式建图；轨迹叠加在鸟瞰视图上仅为可视化目的。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1199/fig_002.png" alt="Figure 2: Method overview. The agent (left) encodes each RGB frame into a per-frame token by fusing patch embeddings and DINOv2 features via a learnable query. Tokens are processed by causal temporal self-attention and a linear-attention module with a global hidden state, before an actor-critic head emits the next action and value estimate.
+The environment (right) executes the action and returns the next observation; in parallel, a persistent 3DGS forward model renders the same view from accumulated past experience, and the discrepancy with the observed view defines the curiosity reward . The forward model is used only at training time ( blue path ); at deployment the agent acts from RGB stream alone." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Method overview. The agent (left) encodes each RGB frame into a per-frame token by fusing patch embeddings and DINOv2 features via a learnable query. Tokens are processed by causal temporal self-attention and a linear-attention module with a global hidden state, before an actor-critic head emits the next action and value estimate.
+The environment (right) executes the action and returns the next observation; in parallel, a persistent 3DGS forward model renders the same view from accumulated past experience, and the discrepancy with the observed view defines the curiosity reward . The forward model is used only at training time ( blue path ); at deployment the agent acts from RGB stream alone.</span>
+                <span class="lang-zh">图2：方法概述。智能体（左图）通过可学习查询融合patch嵌入和DINOv2特征，将每个RGB帧编码为逐帧令牌。令牌经过因果时序自注意力和带有全局隐藏状态的线性注意力模块处理后，由演员-评论家网络输出下一个动作及价值估计。
+环境（右图）执行动作并返回下一观测；同时，持久的3DGS前向模型根据累积的过去经验渲染相同视角，与观测视角之间的差异定义了好奇心奖励。前向模型仅在训练时使用（蓝色路径）；部署时智能体仅根据RGB流决策。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1199/fig_004.png" alt="Figure 4: Ablations on the memory capacity of the forward model and the policy network on HM3D [ 12 ] , show that a persistent forward model is necessary for effective exploration. Further, the agents equipped with memory capacity can achieve higher 3D scene coverage with less concentrated local loops in its trajectory." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: Ablations on the memory capacity of the forward model and the policy network on HM3D [ 12 ] , show that a persistent forward model is necessary for effective exploration. Further, the agents equipped with memory capacity can achieve higher 3D scene coverage with less concentrated local loops in its trajectory.</span>
+                <span class="lang-zh">图4：关于HM3D [12] 上前向模型记忆容量和策略网络的消融实验表明，持久的的前向模型对于有效探索是必要的。此外，具备记忆容量的智能体能够实现更高的3D场景覆盖率，且其轨迹中局部循环更为分散。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1199/fig_003.png" alt="Figure 3: Our agent explores the scenes more thoroughly leading to a higher completeness in 3D scene coverage in HM3D [ 12 ] and Gibson [ 13 ] datasets. Figure shows agents trajectories and top-down projection of 3D points as seen or unseen by the agents." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: Our agent explores the scenes more thoroughly leading to a higher completeness in 3D scene coverage in HM3D [ 12 ] and Gibson [ 13 ] datasets. Figure shows agents trajectories and top-down projection of 3D points as seen or unseen by the agents.</span>
+                <span class="lang-zh">图3：我们的智能体更彻底地探索场景，在HM3D [12] 和Gibson [13] 数据集中实现了更高的3D场景覆盖完整度。图中展示了智能体的轨迹以及智能体已见或未见3D点的俯视投影。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1199/fig_005.png" alt="Figure 5: After a few fine-tuning episodes on the apple-picking reward, our exploration agent achieves higher task success than an agent trained from scratch using only the external task reward with the same total number of episodes. This advantage is larger when fewer apples are available per training scene, where rewards are sparser, and more reward-less exploration is needed." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5: After a few fine-tuning episodes on the apple-picking reward, our exploration agent achieves higher task success than an agent trained from scratch using only the external task reward with the same total number of episodes. This advantage is larger when fewer apples are available per training scene, where rewards are sparser, and more reward-less exploration is needed.</span>
+                <span class="lang-zh">图5：在经过少量关于摘苹果奖励的微调回合后，我们的探索智能体相比使用相同总数回合但仅依靠外部任务奖励从头训练的智能体取得了更高的任务成功率。当每个训练场景中苹果数量较少时，这一优势更大，因为奖励更加稀疏，需要更多的无奖励探索。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

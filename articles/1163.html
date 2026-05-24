@@ -182,6 +182,66 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1163/fig_001.png" alt="Figure 1 : Overview of ReBel. ReBel learns belief-aware policies for partially observable long-horizon tasks by making latent belief explicit and decomposing policy generation into belief, think, and action. It turns sparse terminal rewards into step-wise belief consistency feedback and performs belief-anchor grouping to support stable step-level advantage estimation." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 : Overview of ReBel. ReBel learns belief-aware policies for partially observable long-horizon tasks by making latent belief explicit and decomposing policy generation into belief, think, and action. It turns sparse terminal rewards into step-wise belief consistency feedback and performs belief-anchor grouping to support stable step-level advantage estimation.</span>
+                <span class="lang-zh">图1：ReBel概述。ReBel通过将潜在信念显式化并将策略生成分解为信念、思考和行动，为部分可观测的长时域任务学习信念感知策略。它将稀疏的终端奖励转化为逐步的信念一致性反馈，并执行信念锚点分组以支持稳定的步级优势估计。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1163/fig_004.png" alt="Figure 6 : Belief drift as a failure mode in partially observable environments. The top row shows a Think-only agent that remains overconfident in an incorrect belief and repeatedly executes invalid actions. The bottom row shows a Belief-Augmented agent that updates its belief from observations, progressively reduces uncertainty, and succeeds in the task. ReBel aims to induce this belief-aware reasoning behavior during RL training." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6 : Belief drift as a failure mode in partially observable environments. The top row shows a Think-only agent that remains overconfident in an incorrect belief and repeatedly executes invalid actions. The bottom row shows a Belief-Augmented agent that updates its belief from observations, progressively reduces uncertainty, and succeeds in the task. ReBel aims to induce this belief-aware reasoning behavior during RL training.</span>
+                <span class="lang-zh">图6：信念漂移作为部分可观测环境中的一种失败模式。上排显示一个仅思考的智能体，它对错误信念保持过度自信并重复执行无效动作。下排显示一个信念增强的智能体，它根据观测更新信念，逐步降低不确定性，并成功完成任务。ReBel旨在RL训练中诱导这种信念感知的推理行为。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1163/fig_002.png" alt="Figure 2 : Training dynamics and per-task performance. (a) ALFWorld [ 33 ] training curves. ReBel reaches the final GRPO [ 32 ] performance after roughly 35 35 iterations, corresponding to an approximate 2.1 × 2.1\times improvement in sample efficiency.
+(b) Per-task success rates on ALFWorld [ 33 ] , sorted by estimated trajectory length; Δ \Delta denotes the improvement of ReBel over GRPO [ 32 ] .
+(c) The gain of ReBel over GRPO [ 32 ] increases with task difficulty, indicating that structured belief tracking is more beneficial in harder partially observable tasks." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2 : Training dynamics and per-task performance. (a) ALFWorld [ 33 ] training curves. ReBel reaches the final GRPO [ 32 ] performance after roughly 35 35 iterations, corresponding to an approximate 2.1 × 2.1\times improvement in sample efficiency.
+(b) Per-task success rates on ALFWorld [ 33 ] , sorted by estimated trajectory length; Δ \Delta denotes the improvement of ReBel over GRPO [ 32 ] .
+(c) The gain of ReBel over GRPO [ 32 ] increases with task difficulty, indicating that structured belief tracking is more beneficial in harder partially observable tasks.</span>
+                <span class="lang-zh">图2：训练动态与每任务性能。(a) ALFWorld [33] 训练曲线。ReBel在大约35次迭代后达到GRPO [32]的最终性能，对应样本效率提升约2.1倍。
+(b) 按估计轨迹长度排序的ALFWorld [33] 每任务成功率；Δ表示ReBel相对于GRPO [32]的改进。
+(c) ReBel相对于GRPO [32]的增益随任务难度增加，表明结构化信念追踪在更困难的部分可观测任务中更有益。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1163/fig_003.png" alt="Figure 3 : Grouping quality and training efficiency. (a) Singleton ratio for ReBel and GiGPO [ 11 ] during training. The average group size for GiGPO [ 11 ] is shown on the right axis.
+(b) Average episode length on ALFWorld [ 33 ] . ReBel reduces the average episode length from about 29.9 steps to 9.2 steps, a 3.2 × \times reduction.
+(c) Success rate versus cumulative environment interactions. ReBel reaches 85% rollout success with roughly 1.6 × \times fewer environment steps than GiGPO [ 11 ] and earlier than GRPO [ 32 ] ." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3 : Grouping quality and training efficiency. (a) Singleton ratio for ReBel and GiGPO [ 11 ] during training. The average group size for GiGPO [ 11 ] is shown on the right axis.
+(b) Average episode length on ALFWorld [ 33 ] . ReBel reduces the average episode length from about 29.9 steps to 9.2 steps, a 3.2 × \times reduction.
+(c) Success rate versus cumulative environment interactions. ReBel reaches 85% rollout success with roughly 1.6 × \times fewer environment steps than GiGPO [ 11 ] and earlier than GRPO [ 32 ] .</span>
+                <span class="lang-zh">图3：分组质量与训练效率。(a) 训练过程中ReBel和GiGPO [11]的单一分组比率。GiGPO [11]的平均分组大小显示在右侧纵轴上。
+(b) ALFWorld [33]的平均回合长度。ReBel将平均回合长度从约29.9步减少到9.2步，减少了3.2倍。
+(c) 成功率与累积环境交互次数。ReBel达到85%的展开成功率，所需环境步数比GiGPO [11]少约1.6倍，且比GRPO [32]更早达到。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

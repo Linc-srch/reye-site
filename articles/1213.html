@@ -186,6 +186,54 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1213/fig_001.png" alt="Figure 1 : SPD comparisons and performance summary. Top left: comparison with existing self-distillation methods across three key axes. Top right: average improvement of SPD over the base model for each of the five LLM backbones, computed across three capability domains and six datasets. Bottom: SPD improves base model performance across domain-specific benchmarks, in-domain transfer, and out-domain transfer settings. All metrics in the figure are reported as accuracy (%)." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 : SPD comparisons and performance summary. Top left: comparison with existing self-distillation methods across three key axes. Top right: average improvement of SPD over the base model for each of the five LLM backbones, computed across three capability domains and six datasets. Bottom: SPD improves base model performance across domain-specific benchmarks, in-domain transfer, and out-domain transfer settings. All metrics in the figure are reported as accuracy (%).</span>
+                <span class="lang-zh">图1：SPD对比与性能总结。左上：与现有自蒸馏方法在三个关键维度上的对比。右上：SPD相对于基础模型在五个LLM骨干网络上的平均改进，基于三个能力领域和六个数据集计算。下方：SPD在领域特定基准、域内迁移和域外迁移设置中提升了基础模型性能。图中所有指标均以准确率（%）报告。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1213/fig_002.png" alt="Figure 2 : Overview of SPD . SPD operates in two phases: Phase 1 (top) (§ 3.2 ) extracts low-rank K/V capability subspaces from gradients computed on a small calibration set using correctness-aligned loss, and Phase 2 (bottom) (§ 3.3 ) uses these subspaces as projection hooks to steer self-generation without modifying model parameters. The hooked model produces raw completions, after which the hooks are removed and the original model is fine-tuned on the resulting prompt–completion pairs using standard next-token prediction loss." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2 : Overview of SPD . SPD operates in two phases: Phase 1 (top) (§ 3.2 ) extracts low-rank K/V capability subspaces from gradients computed on a small calibration set using correctness-aligned loss, and Phase 2 (bottom) (§ 3.3 ) uses these subspaces as projection hooks to steer self-generation without modifying model parameters. The hooked model produces raw completions, after which the hooks are removed and the original model is fine-tuned on the resulting prompt–completion pairs using standard next-token prediction loss.</span>
+                <span class="lang-zh">图2：SPD概览。SPD包含两个阶段：阶段1（上方）（§3.2）使用正确性对齐损失从小型校准集上计算的梯度中提取低秩K/V能力子空间，阶段2（下方）（§3.3）将这些子空间用作投影钩子，在不修改模型参数的情况下引导自生成。被钩住的模型产生原始补全，之后移除钩子，并在生成的提示-补全对上使用标准下一个词元预测损失对原始模型进行微调。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1213/fig_003.png" alt="Figure 3 : Self-generated data output comparisons under Qwen2.5-0.5B-Instruct. Black text denotes task-relevant content, while red text highlights answer-irrelevant or low-value content." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3 : Self-generated data output comparisons under Qwen2.5-0.5B-Instruct. Black text denotes task-relevant content, while red text highlights answer-irrelevant or low-value content.</span>
+                <span class="lang-zh">图3：Qwen2.5-0.5B-Instruct下自生成数据输出对比。黑色文本表示任务相关内容，红色文本突出显示与答案无关或低价值的内容。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1213/fig_004.png" alt="Figure 4 : Effect of calibration size under Qwen2.5-0.5B-Instruct." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4 : Effect of calibration size under Qwen2.5-0.5B-Instruct.</span>
+                <span class="lang-zh">图4：Qwen2.5-0.5B-Instruct下校准集规模的影响。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

@@ -181,6 +181,70 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1167/fig_005.png" alt="Figure 5: Locality breakdown for LLaMA-2-7B at the F1-optimal threshold for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5: Locality breakdown for LLaMA-2-7B at the F1-optimal threshold for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar.</span>
+                <span class="lang-zh">图5：在F1最优阈值下，CPD Online和WPP（w∈{5,10,15,20}）针对LLaMA-2-7B的局部性分解。柱状图按局部性类别（Before / Before+In / In-suffix / In-benign）分组，并在每种方法的柱内通过填充图案按攻击族分解。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1167/fig_006.png" alt="Figure 6: Locality breakdown for LLaMA-2-7B at FPR@10% on benign prompts for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6: Locality breakdown for LLaMA-2-7B at FPR@10% on benign prompts for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar.</span>
+                <span class="lang-zh">图6：在良性提示的FPR@10%下，CPD Online和WPP（w∈{5,10,15,20}）针对LLaMA-2-7B的局部性分解。柱状图按局部性类别（Before / Before+In / In-suffix / In-benign）分组，并在每种方法的柱内通过填充图案按攻击族分解。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1167/fig_001.png" alt="Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
+The shaded region denotes the ground-truth adversarial suffix.
+For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
+The shaded region denotes the ground-truth adversarial suffix.
+For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does.</span>
+                <span class="lang-zh">图1：上方：良性提示，其中CUSUM统计量W_t^+（紫色）在松弛参数k=0（表1和附录A中使用的标准Page-CUSUM设置）下保持在阈值h（橙色）以下。下方：对抗性提示（AdvPrompter）；后缀开始（绿色）后，令牌熵的持续上升导致W_t^+超过h，在时间τ（红色）触发警报。阴影区域表示真实的对抗性后缀。作为比较，叠加显示了WPP 15基线（棕色虚点线，绘制为检测器实际评分的非重叠窗口均值NLL）及其F1最优阈值（棕色虚线）：在此流畅攻击上，WPP 15从未超过其阈值，而CPD的W_t^+超过了。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1167/fig_003.png" alt="Figure 3: A second AdvPrompter example to reinforce Figure 1 .
+Token-level entropy (blue) and CUSUM statistic W t + W_{t}^{+} (purple) at the canonical slack k = 0 k=0 used throughout the main paper, with the WPP 15 baseline curve (brown dash-dot) and its F1-optimal threshold (brown dotted) overlaid for comparison. Top: benign prompt, no CPD alarm. Bottom: adversarial prompt (a different AdvPrompter suffix from Figure 1 ); CPD’s W t + W_{t}^{+} crosses h h inside the shaded suffix region, while WPP 15 stays below its threshold throughout." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: A second AdvPrompter example to reinforce Figure 1 .
+Token-level entropy (blue) and CUSUM statistic W t + W_{t}^{+} (purple) at the canonical slack k = 0 k=0 used throughout the main paper, with the WPP 15 baseline curve (brown dash-dot) and its F1-optimal threshold (brown dotted) overlaid for comparison. Top: benign prompt, no CPD alarm. Bottom: adversarial prompt (a different AdvPrompter suffix from Figure 1 ); CPD’s W t + W_{t}^{+} crosses h h inside the shaded suffix region, while WPP 15 stays below its threshold throughout.</span>
+                <span class="lang-zh">图3：另一个AdvPrompter示例以强化图1。令牌级熵（蓝色）和CUSUM统计量W_t^+（紫色）在整篇论文使用的标准松弛参数k=0下，并叠加了WPP 15基线曲线（棕色虚点线）及其F1最优阈值（棕色虚线）以作比较。上方：良性提示，无CPD警报。下方：对抗性提示（与图1不同的AdvPrompter后缀）；CPD的W_t^+在阴影后缀区域内超过h，而WPP 15始终低于其阈值。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1167/fig_004.png" alt="Figure 4: Aggregate CPD Online CUSUM trajectories by prompt type (LLaMA-2-7B benchmark). Top: k = 0 k=0 . Bottom: k = 0.5 k=0.5 . Curves show the median W t + W_{t}^{+} across prompts with an interquartile band. For adversarial prompts, the green dashed line marks the aligned suffix onset; the orange dashed line marks the threshold h h used for visualization (a representative pooled F1-optimal value; main-paper Table 1 numbers are evaluated with per-fold CV thresholds). The flat segments visible after each attack’s rise (e.g. GCG, AdvPrompter, BEAST) reflect aggregation rather than a saturating detector: prompts of varying length are padded by holding the final W t + W_{t}^{+} value beyond the per-prompt end, so the median plateaus once most prompts at that aligned offset have terminated." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: Aggregate CPD Online CUSUM trajectories by prompt type (LLaMA-2-7B benchmark). Top: k = 0 k=0 . Bottom: k = 0.5 k=0.5 . Curves show the median W t + W_{t}^{+} across prompts with an interquartile band. For adversarial prompts, the green dashed line marks the aligned suffix onset; the orange dashed line marks the threshold h h used for visualization (a representative pooled F1-optimal value; main-paper Table 1 numbers are evaluated with per-fold CV thresholds). The flat segments visible after each attack’s rise (e.g. GCG, AdvPrompter, BEAST) reflect aggregation rather than a saturating detector: prompts of varying length are padded by holding the final W t + W_{t}^{+} value beyond the per-prompt end, so the median plateaus once most prompts at that aligned offset have terminated.</span>
+                <span class="lang-zh">图4：按提示类型（LLaMA-2-7B基准）聚合的CPD Online CUSUM轨迹。上方：k=0。下方：k=0.5。曲线显示所有提示的中位数W_t^+及四分位距带。对于对抗性提示，绿色虚线标记对齐的后缀开始；橙色虚线标记用于可视化的阈值h（代表性的合并F1最优值；主论文表1中的数字使用每折交叉验证阈值评估）。每次攻击上升后（例如GCG、AdvPrompter、BEAST）出现的平坦段反映的是聚合而非检测器饱和：不同长度的提示通过在各自提示结束后保持最终的W_t^+值进行填充，因此一旦大多数提示在该对齐偏移处终止，中位数就会趋于平稳。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       
