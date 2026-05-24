@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | 数字信任研究之眼</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="assets/style.css">
+  <title>Others | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
 
@@ -16,7 +16,7 @@
 
 <div class="reye-app">
   <header class="reye-header">
-    <a href="index.html" class="brand">
+    <a href="../../index.html" class="brand">
       <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
         <defs>
           <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
@@ -39,7 +39,8 @@
       <span class="zh-mark">数字信任研究之眼</span>
     </a>
     <nav>
-      <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+      <a href="../../search.html"><span class="lang-en">Search</span><span class="lang-zh">搜索</span></a>
+      <a href="../../about.html"><span class="lang-en">About</span><span class="lang-zh">关于</span></a>
       <div class="lang-toggle">
         <button data-lang="en">EN</button>
         <button data-lang="zh">中</button>
@@ -48,31 +49,65 @@
   </header>
 
   <main>
+    <div class="breadcrumb">
+      <a href="../../index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+      <span class="sep">›</span>
+      <span class="lang-en">Others</span>
+      <span class="lang-zh">其他</span>
+    </div>
+
     <div class="page-header">
-      <p class="eyebrow">About</p>
-      <h1 class="lang-en">About this feed</h1>
-      <h1 class="lang-zh">关于此订阅</h1>
-      <p class="title-zh lang-en">关于此订阅</p>
+      <p class="eyebrow">
+        <span class="lang-en">Research domain</span>
+        <span class="lang-zh">研究领域</span>
+      </p>
+      <h1 class="lang-en">Others</h1>
+      <h1 class="lang-zh">其他</h1>
+      <p class="title-zh lang-en">其他</p>
     </div>
 
     <div class="reye-section" style="padding-top:0">
-      <div class="about-grid">
-        <div class="about-card">
-          <h3 class="lang-en">Research focus</h3>
-          <h3 class="lang-zh">研究方向</h3>
-          <p>Large language models, reinforcement learning, agentic AI, AI system security, Sandboxing, cryptography, post-quantum cryptography, digital identity, 3gpp, AI Safety, Deepfakes, prompt injections, jailbreaking</p>
-        </div>
 
-        <div class="about-card">
-          <h3 class="lang-en">Tracked keywords</h3>
-          <h3 class="lang-zh">追踪的关键词</h3>
-          <div class="keyword-tags tags">
-            <span class="tag">large language models</span><span class="tag">reinforcement learning</span><span class="tag">agentic AI / AI agents</span><span class="tag">retrieval-augmented generation</span><span class="tag">multimodal models</span><span class="tag">AI safety</span><span class="tag">post-quantum cryptography</span><span class="tag">digital identity</span><span class="tag">3GPP</span>
-          </div>
-        </div>
+      
 
-        
+      <div class="past-overviews" id="past-overviews">
+        <button class="past-overviews-toggle" onclick="this.closest('.past-overviews').classList.toggle('is-open')" aria-expanded="false">
+          <span class="lang-en">Past Overviews</span>
+          <span class="lang-zh">历史概览</span>
+          <span class="toggle-icon">›</span>
+        </button>
+        <div class="past-overviews-list" data-domain="others"></div>
       </div>
+
+      <div class="tabs">
+        <button data-target="papers">
+          <span class="lang-en">Papers</span>
+          <span class="lang-zh">论文</span>
+        </button>
+        <button data-target="news">
+          <span class="lang-en">News &amp; Blogs</span>
+          <span class="lang-zh">新闻与博客</span>
+        </button>
+      </div>
+
+      <section data-tab="papers">
+        
+        <p style="color:var(--color-fg-2);padding:2rem 0">
+          <span class="lang-en">No papers yet for this domain.</span>
+          <span class="lang-zh">此领域暂无论文。</span>
+        </p>
+        
+      </section>
+
+      <section data-tab="news">
+        
+        <p style="color:var(--color-fg-2);padding:2rem 0">
+          <span class="lang-en">No news yet for this domain.</span>
+          <span class="lang-zh">此领域暂无新闻。</span>
+        </p>
+        
+      </section>
+
     </div>
   </main>
 
@@ -98,12 +133,12 @@
         </svg>
         Reye
       </span>
-      <a href="index.html" class="footer-home-link lang-en">← Home</a>
-      <a href="index.html" class="footer-home-link lang-zh">← 首页</a>
+      <a href="../../index.html" class="footer-home-link lang-en">← Home</a>
+      <a href="../../index.html" class="footer-home-link lang-zh">← 首页</a>
     </div>
   </footer>
 </div><!-- .reye-app -->
 
-<script src="assets/app.js"></script>
+<script src="../../assets/app.js"></script>
 </body>
 </html>
