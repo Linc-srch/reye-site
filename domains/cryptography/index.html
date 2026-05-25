@@ -76,8 +76,8 @@
           <span class="lang-zh">概览 — 25 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's cryptography-adjacent research highlights a strong focus on LLM agent safety, reasoning, and reinforcement learning. A recurring theme is the vulnerability of AI agents in multi-turn contexts, as exemplified by 'Boiling the Frog', which shows incremental attacks can escalate risk in corporate settings. Standout papers include 'CopT', which introduces a reversed reasoning pipeline with continuous embeddings for general and agentic reasoning, and 'LANG', a language-adaptive hint-guided RL framework that improves multilingual reasoning. On the evaluation front, 'VGenST-Bench' proposes active video synthesis for spatio-temporal reasoning, while 'MixRea' reveals inattentional blindness in LLMs under explicit instructions. Noteworthy announcements include Virgin Atlantic leveraging OpenAI's Codex to refactor legacy code and ship a revamped mobile app with zero critical defects during the Christmas travel peak. Other significant contributions cover privacy auditing in multi-tenant RAG ('Auditing Privacy'), scalable sandbox checkpointing ('DeltaBox'), and failure-aware log anomaly detection ('FAME'). The overall trend points toward more robust, interpretable, and privacy-conscious AI systems.</div>
-        <div class="lang-zh">今日的密码学相关研究突出强调了LLM代理安全性、推理和强化学习的主题。一个反复出现的主题是AI代理在多轮交互中的脆弱性，例如'Boiling the Frog'表明渐进式攻击可在企业环境中升级风险。突出论文包括'CopT'，它提出了一种反向推理流水线，结合连续嵌入用于通用和代理推理；以及'LANG'，一种语言自适应提示引导的RL框架，可提高多语言推理能力。在评估方面，'VGenST-Bench'提出通过主动视频合成进行时空推理，而'MixRea'揭示了LLM在显式指令下的非注意盲视。值得注意的公告包括Virgin Atlantic利用OpenAI的Codex重构遗留代码，并在圣诞旅行高峰期以零关键缺陷发布了改版移动应用。其他重要贡献涵盖多租户RAG中的隐私审计（'Auditing Privacy'）、可扩展沙箱检查点（'DeltaBox'）和故障感知日志异常检测（'FAME'）。总体趋势指向更鲁棒、可解释且注重隐私的AI系统。</div>
+        <div class="lang-en">Today's cryptography-adjacent research reveals a strong emphasis on privacy auditing and leakage in multi-agent and retrieval-augmented generation (RAG) systems. A standout paper, 'Auditing Privacy in Multi-Tenant RAG under Account Collusion' (Item 18), provides a rigorous theoretical and empirical analysis showing that per-account differential privacy (DP) guarantees structurally understate joint leakage under collusion, with a degradation rate of Θ(√k·ε_acc). Another notable contribution, 'LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems' (Item 16), introduces the first principled framework for controlling sensitive information leakage in KV-cache-based latent communication. The 'Boiling the Frog' benchmark (Item 5) highlights vulnerability of AI agents to incremental attacks in corporate settings. No major cryptography-specific announcements were made, but the recurring theme is the inadequacy of current privacy safeguards in distributed, colluding, or multi-turn settings, calling for stronger, provable guarantees beyond standard DP assumptions.</div>
+        <div class="lang-zh">今日与密码学相关的研究强烈关注多智能体与检索增强生成（RAG）系统中的隐私审计与泄露问题。一篇突出论文《Auditing Privacy in Multi-Tenant RAG under Account Collusion》（第18项）提供了严格的理论与实证分析，表明多租户RAG中按账户的差分隐私（DP）保证在账户共谋下结构性低估了联合泄露，退化率为Θ(√k·ε_acc)。另一重要贡献《LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems》（第16项）提出了首个基于原则的框架，用于控制基于KV缓存潜在通信中的敏感信息泄露。《Boiling the Frog》基准测试（第5项）强调了企业环境中AI智能体对渐进式攻击的脆弱性。今日无重大密码学专项公告，但反复出现的主题是当前隐私保护在分布式、共谋或多轮场景下的不足，呼吁在标准DP假设之外提供更强、可证明的保障。</div>
       </div>
       
 
@@ -1531,6 +1531,25 @@
       </section>
 
       <section data-tab="news">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">darkreading</span>
+            <span>·</span>
+            <span>2026-05-25</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1269.html">Content Delivery Exploit Opens Websites to Brand Hijacking</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1269.html">Content Delivery Exploit Opens Websites to Brand Hijacking</a></h4>
+          <p class="lang-en">Researchers have identified a new domain-fronting exploit called Underminr that allows attackers to hijack the brand reputation of legitimate websites by manipulating DNS and CDN interactions. Unlike earlier domain fronting, Underminr bypasses existing mitigations by exploiting the lack of cross-referencing between DNS and CDN systems, enabling malicious traffic to be routed through trusted domains. ADAMnetworks found that 42% of global websites are vulnerable, with US sites at 51% risk. The attack can be used for scams, C2 operations, and data exfiltration while evading detection. Mitigation requires CDNs to adopt reputation-based domain grouping, as exemplified by Fastly.</p>
+          <p class="lang-zh">研究人员发现了一种名为Underminr的新型域名前端攻击，攻击者通过操纵DNS和CDN交互，利用合法网站的品牌声誉进行恶意活动。与早期的domain fronting不同，Underminr绕过了现有缓解措施，利用DNS和CDN系统之间缺乏交叉验证的漏洞，将恶意流量通过受信任域名路由。ADAMnetworks发现全球42%的网站易受攻击，美国网站风险高达51%。攻击可用于诈骗、C2操作和数据窃取，同时规避检测。缓解措施要求CDN采用基于声誉的域名分组，如Fastly的做法。</p>
+          
+          <a href="https://www.darkreading.com/cyber-risk/content-delivery-exploit-websites-brand-hijacking" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">

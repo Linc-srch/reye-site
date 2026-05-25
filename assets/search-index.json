@@ -1,5 +1,312 @@
 [
   {
+    "id": 1263,
+    "type": "article",
+    "title": "Akamai Joins Growing Chorus of Vendors Betting Big on Secure Enterprise Browsers",
+    "title_zh": "",
+    "summary_en": "Akamai's acquisition of LayerX for $205 million underscores the growing trend of secure enterprise browsers as critical components for Zero Trust Network Access (ZTNA) and SaaS security. LayerX's browser extension enforces security policies on major browsers like Chrome and Firefox, monitoring actions before encryption. Akamai plans to integrate LayerX into its ZTNA portfolio, extending access control into browser sessions. This move follows similar acquisitions by Zscaler and CrowdStrike, reflecting the industry's shift toward endpoint-level browser security. Gartner predicts 25% of organizations will adopt secure enterprise browsers by 2028, driven by AI adoption and remote work.",
+    "summary_zh": "Akamai以2.05亿美元收购LayerX，凸显了安全企业浏览器在Zero Trust Network Access (ZTNA)和SaaS安全中的关键趋势。LayerX的浏览器扩展可在Chrome、Firefox等主流浏览器上强制执行安全策略，在加密前监控用户操作。Akamai计划将LayerX集成到其ZTNA产品组合中，将访问控制扩展至浏览器会话。此举紧随Zscaler和CrowdStrike的类似收购，反映了行业向端点级浏览器安全的转变。Gartner预测，到2028年，25%的组织将采用安全企业浏览器，这得益于AI采用和远程工作的发展。",
+    "url": "https://www.darkreading.com/remote-workforce/akamai-growing-chorus-betting-on-secure-enterprise-browsers",
+    "article_page": "articles/1263.html",
+    "score": 8.0,
+    "domains": [
+      "digital_identity",
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1264,
+    "type": "article",
+    "title": "Verizon DBIR: Healthcare Fends Off Increased Social Engineering Attacks",
+    "title_zh": "",
+    "summary_en": "The Verizon Data Breach Investigations Report (DBIR) highlights a significant rise in social engineering attacks targeting the healthcare sector. These attacks, including phishing and pretexting, exploit human vulnerabilities rather than technical flaws. The report emphasizes that healthcare organizations have improved their defenses, but the increasing sophistication of social engineering tactics poses ongoing risks. Key findings include the prevalence of credential theft and the use of ransomware in healthcare breaches. The DBIR underscores the need for continuous employee training and robust security protocols to mitigate these threats.",
+    "summary_zh": "Verizon DBIR指出，医疗行业面临的社会工程攻击显著增加，包括钓鱼攻击和借口诈骗。这些攻击利用人为漏洞而非技术缺陷。报告强调，医疗机构虽已加强防御，但攻击手段日益复杂，凭证窃取和勒索软件仍是主要威胁。持续的员工培训和严格的安全协议至关重要。",
+    "url": "https://www.darkreading.com/cyber-risk/verizon-dbir-healthcare-fends-off-increased-social-engineering-attacks",
+    "article_page": "articles/1264.html",
+    "score": 7.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1265,
+    "type": "article",
+    "title": "China's Webworm Uses Discord, Microsoft Graphs to Hack EU Governments",
+    "title_zh": "",
+    "summary_en": "This article reports on a Chinese state-sponsored hacking group, tracked as Webworm, that has been targeting EU government entities. The group employs sophisticated techniques, including abusing legitimate services like Discord and Microsoft Graph API, to evade detection and maintain persistence. Their operations involve spear-phishing, credential theft, and leveraging cloud infrastructure for command-and-control. The campaign highlights the growing trend of advanced persistent threats (APTs) using trusted platforms for malicious activities, posing significant risks to national security and digital infrastructure.",
+    "summary_zh": "本文报道了一个名为Webworm的中国国家支持的黑客组织，该组织针对欧盟政府实体，利用Discord和Microsoft Graph API等合法服务进行攻击，以逃避检测并维持持久性。其操作包括鱼叉式网络钓鱼、凭证窃取以及利用云基础设施进行命令与控制。该活动凸显了高级持续性威胁（APT）利用可信平台进行恶意行为的趋势，对国家安全和数字基础设施构成重大风险。",
+    "url": "https://www.darkreading.com/endpoint-security/chinas-webworm-discord-microsoft-graphs",
+    "article_page": "articles/1265.html",
+    "score": 8.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1266,
+    "type": "article",
+    "title": "Google API Keys Remain Active After Deletion",
+    "title_zh": "",
+    "summary_en": "This paper reveals a critical security flaw in Google Cloud Platform where API keys remain active even after being deleted by users. The researchers demonstrate that deleted keys can still be used for authentication, posing a significant risk of unauthorized access and data breaches. The issue stems from caching mechanisms and eventual consistency models in distributed systems. The findings highlight the need for immediate revocation enforcement and improved key lifecycle management in cloud services.",
+    "summary_zh": "本文揭示了Google Cloud Platform中的一个关键安全漏洞：用户删除API密钥后，这些密钥仍然保持激活状态。研究人员证明，已删除的密钥仍可用于身份验证，构成未授权访问和数据泄露的重大风险。该问题源于分布式系统中的缓存机制和最终一致性模型。研究结果强调了在云服务中实施即时撤销和改进密钥生命周期管理的必要性。",
+    "url": "https://www.darkreading.com/identity-access-management-security/google-api-keys-active-after-deletion",
+    "article_page": "articles/1266.html",
+    "score": 8.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1267,
+    "type": "article",
+    "title": "AI Agents Are Shifting Identity Security Budget Dynamics",
+    "title_zh": "",
+    "summary_en": "This article discusses how the rise of AI agents is reshaping identity security budget priorities. As autonomous AI systems increasingly handle sensitive tasks and access corporate resources, traditional identity and access management (IAM) approaches are becoming insufficient. Organizations are now reallocating budgets from perimeter-based security to identity-centric controls, including machine identity management, behavioral analytics, and just-in-time access. The shift reflects a growing recognition that AI agents themselves must be treated as distinct digital identities with their own lifecycle and governance requirements. This trend is driving new investments in identity threat detection and response (ITDR) solutions tailored for non-human entities.",
+    "summary_zh": "本文探讨了AI Agent的兴起如何重塑身份安全预算的分配。随着自主AI系统处理敏感任务并访问企业资源，传统的身份与访问管理（IAM）方法已显不足。组织正将预算从基于边界的安全转向以身份为中心的控制，包括机器身份管理、行为分析和即时访问。这一转变反映了AI Agent本身必须被视为具有独立生命周期和治理要求的数字身份。该趋势正推动针对非人类实体的身份威胁检测与响应（ITDR）解决方案的新投资。",
+    "url": "https://www.darkreading.com/identity-access-management-security/shifting-budget-dynamics-identity-security-ai-agents",
+    "article_page": "articles/1267.html",
+    "score": 8.0,
+    "domains": [
+      "ai_safety",
+      "digital_identity"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1268,
+    "type": "article",
+    "title": "Chinese APTs Share Linux Backdoor in Central Asia Telco Attacks",
+    "title_zh": "",
+    "summary_en": "Chinese state-aligned hackers have been using a Linux backdoor called 'Showboat' (also known as 'kworker') to spy on telecommunications companies in Central Asia and beyond. Discovered by Black Lotus Labs, Showboat is a post-exploitation framework that can scan and infect devices on a local area network not connected to the public internet. Multiple Chinese APT groups, including Calypso (Red Lamassu), have shared and used this tool against targets in Afghanistan, Kazakhstan, Turkey, and Ukraine. Despite being less sophisticated than other malware like BPFdoor, Showboat has remained undetected by VirusTotal and has been active since at least mid-2022, suggesting its simplicity is a deliberate design choice for smaller markets.",
+    "summary_zh": "中国国家支持的APT组织使用名为'Showboat'（也称'kworker'）的Linux后门框架，长期监控中亚及周边地区的电信公司。该工具由Black Lotus Labs发现，能够扫描并感染未连接公共互联网的局域网设备。包括Calypso（Red Lamassu）在内的多个中国APT组织共享了此工具，针对阿富汗、哈萨克斯坦、土耳其和乌克兰的目标。尽管Showboat的复杂度低于BPFdoor等恶意软件，但自2022年中以来未被VirusTotal检测到，其简单性被视为针对小市场的刻意设计。",
+    "url": "https://www.darkreading.com/threat-intelligence/chinese-apts-linux-backdoor-telco-attacks",
+    "article_page": "articles/1268.html",
+    "score": 7.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1269,
+    "type": "article",
+    "title": "Content Delivery Exploit Opens Websites to Brand Hijacking",
+    "title_zh": "",
+    "summary_en": "Researchers have identified a new domain-fronting exploit called Underminr that allows attackers to hijack the brand reputation of legitimate websites by manipulating DNS and CDN interactions. Unlike earlier domain fronting, Underminr bypasses existing mitigations by exploiting the lack of cross-referencing between DNS and CDN systems, enabling malicious traffic to be routed through trusted domains. ADAMnetworks found that 42% of global websites are vulnerable, with US sites at 51% risk. The attack can be used for scams, C2 operations, and data exfiltration while evading detection. Mitigation requires CDNs to adopt reputation-based domain grouping, as exemplified by Fastly.",
+    "summary_zh": "研究人员发现了一种名为Underminr的新型域名前端攻击，攻击者通过操纵DNS和CDN交互，利用合法网站的品牌声誉进行恶意活动。与早期的domain fronting不同，Underminr绕过了现有缓解措施，利用DNS和CDN系统之间缺乏交叉验证的漏洞，将恶意流量通过受信任域名路由。ADAMnetworks发现全球42%的网站易受攻击，美国网站风险高达51%。攻击可用于诈骗、C2操作和数据窃取，同时规避检测。缓解措施要求CDN采用基于声誉的域名分组，如Fastly的做法。",
+    "url": "https://www.darkreading.com/cyber-risk/content-delivery-exploit-websites-brand-hijacking",
+    "article_page": "articles/1269.html",
+    "score": 8.0,
+    "domains": [
+      "cryptography",
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1270,
+    "type": "article",
+    "title": "Cyber Pros Can't Decide If AI Is a Good or a Bad Thing",
+    "title_zh": "",
+    "summary_en": "This article discusses the ambivalence among cybersecurity professionals regarding the impact of artificial intelligence on their field. While AI offers powerful tools for threat detection and automated response, it also enables more sophisticated cyberattacks, such as AI-generated phishing and deepfakes. The piece highlights survey data showing that many cyber pros are uncertain whether AI ultimately helps or harms security efforts. This split reflects the dual-use nature of AI, where the same technology that strengthens defenses can also be weaponized by adversaries. The article underscores the need for adaptive strategies and ethical guidelines to navigate this evolving landscape.",
+    "summary_zh": "本文探讨了网络安全专业人士对AI影响的矛盾态度。一方面，AI增强了威胁检测和自动响应能力；另一方面，它也被用于生成更复杂的钓鱼攻击和deepfake。调查显示，许多从业者不确定AI整体上对安全是有益还是有害。这种分歧反映了AI的双重用途特性，即同一技术既可强化防御也可被对手武器化。文章强调了制定适应性策略和伦理准则以应对这一演变格局的必要性。",
+    "url": "https://www.darkreading.com/cybersecurity-analytics/cyber-pros-ai",
+    "article_page": "articles/1270.html",
+    "score": 7.0,
+    "domains": [
+      "ai_safety",
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1271,
+    "type": "article",
+    "title": "GitHub Confirms Breach, 4K Internal Repos Stolen",
+    "title_zh": "",
+    "summary_en": "GitHub confirmed a data breach where a threat actor named TeamPCP stole approximately 4,000 internal code repositories. The breach originated from a compromised employee device via a poisoned VS Code extension. GitHub detected and contained the incident, rotated critical secrets, and is investigating. TeamPCP, known for financially motivated attacks on the open source ecosystem, offered the stolen data for sale on a dark web forum, threatening to leak it if no buyer is found. The incident highlights risks in developer tooling trust models and supply chain security.",
+    "summary_zh": "GitHub确认发生数据泄露，攻击者TeamPCP通过被投毒的VS Code扩展入侵员工设备，窃取了约4000个内部代码仓库。GitHub已检测并控制事件，轮换了关键密钥并展开调查。TeamPCP是一个以经济为动机的威胁行为者，曾在暗网论坛出售数据，并威胁若无买家将公开泄露。此事件凸显了开发者工具信任模型和供应链安全的风险。",
+    "url": "https://www.darkreading.com/application-security/github-confirms-breach-4k-internal-repos-stolen",
+    "article_page": "articles/1271.html",
+    "score": 8.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1272,
+    "type": "article",
+    "title": "Fake Android Apps Commit Carrier Billing Fraud for Premium Services",
+    "title_zh": "",
+    "summary_en": "This article reports on fraudulent Android apps that exploit carrier billing to charge users for premium services without consent. These malicious apps, often disguised as legitimate tools or games, use techniques like SMS interception and hidden webviews to authorize unauthorized transactions. The fraud primarily targets users in regions where carrier billing is common, leading to financial losses and privacy risks. The piece highlights the need for enhanced app vetting, user awareness, and carrier-side monitoring to mitigate such threats.",
+    "summary_zh": "本文报道了虚假Android应用利用运营商计费（carrier billing）欺诈用户订阅付费服务。这些恶意应用伪装成合法工具或游戏，通过SMS拦截和隐藏WebView等技术进行未经授权的交易。此类欺诈主要针对运营商计费普及的地区，造成经济损失和隐私风险。文章强调需加强应用审核、用户意识及运营商端监控以应对威胁。",
+    "url": "https://www.darkreading.com/mobile-security/fake-android-apps-carrier-billing-fraud",
+    "article_page": "articles/1272.html",
+    "score": 7.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1273,
+    "type": "article",
+    "title": "Processes &amp; Culture Top Reasons Behind Data Breaches",
+    "title_zh": "",
+    "summary_en": "This article highlights that data breaches are primarily caused by inadequate processes and weak security culture rather than technical failures. It emphasizes that human factors, such as poor compliance with protocols and lack of awareness, are the leading contributors to security incidents. The piece calls for organizations to prioritize governance, training, and cultural change to reduce risk.",
+    "summary_zh": "本文指出，数据泄露的主要原因并非技术缺陷，而是流程不完善和安全文化薄弱。人为因素，如对协议遵守不力及缺乏安全意识，是安全事件的主要诱因。文章呼吁组织优先加强治理、培训和文化变革以降低风险。",
+    "url": "https://www.darkreading.com/cyberattacks-data-breaches/processes-and-culture-top-reasons-behind-data-breaches",
+    "article_page": "articles/1273.html",
+    "score": 7.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1274,
+    "type": "article",
+    "title": "Patch Now: Critical Flaw in OT Robot OS Gives Attackers Control",
+    "title_zh": "",
+    "summary_en": "A critical vulnerability has been discovered in an operational technology (OT) robot operating system, allowing attackers to gain full control of robotic systems. The flaw, which requires immediate patching, could enable remote code execution and unauthorized manipulation of industrial robots. This poses significant risks to manufacturing, logistics, and other sectors relying on automated robotics. The advisory urges organizations to apply security updates promptly to prevent potential exploitation and operational disruption.",
+    "summary_zh": "在OT机器人操作系统中发现一个严重漏洞，攻击者可借此完全控制机器人系统。该漏洞需立即修补，可能导致远程代码执行和工业机器人的未授权操控。这对依赖自动化机器人的制造、物流等行业构成重大风险。建议组织及时应用安全更新以防止潜在利用和运营中断。",
+    "url": "https://www.darkreading.com/ics-ot-security/patch-now-critical-flaw-ot-robot-os",
+    "article_page": "articles/1274.html",
+    "score": 8.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1275,
+    "type": "article",
+    "title": "Infosecurity Europe",
+    "title_zh": "",
+    "summary_en": "Infosecurity Europe is a major cybersecurity event held annually in London, bringing together industry professionals, vendors, and experts to discuss the latest trends, threats, and solutions in information security. The conference features keynote speeches, workshops, and exhibitions covering topics such as cloud security, zero trust, AI-driven defense, and regulatory compliance. It serves as a key networking and knowledge-sharing platform for the global cybersecurity community.",
+    "summary_zh": "Infosecurity Europe 是每年在伦敦举办的大型网络安全活动，汇集行业专业人士、供应商和专家，讨论信息安全的最新趋势、威胁和解决方案。会议涵盖云安全、零信任、AI 驱动的防御及合规等主题，是全球网络安全社区的重要交流平台。",
+    "url": "https://www.darkreading.com/events/infosecurity-europe",
+    "article_page": "articles/1275.html",
+    "score": 4.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1276,
+    "type": "article",
+    "title": "How CISOs Should Prep for Agentic-Ready AI BOMs",
+    "title_zh": "",
+    "summary_en": "This article advises Chief Information Security Officers (CISOs) on preparing for agentic AI by adopting AI Bill of Materials (AI BOMs). It emphasizes the need to inventory AI components, track dependencies, and manage supply chain risks as AI agents become more autonomous. The piece outlines practical steps for integrating AI BOMs into existing security frameworks to ensure transparency and accountability in AI-driven operations.",
+    "summary_zh": "本文建议首席信息安全官（CISO）通过采用AI Bill of Materials（AI BOM）来为自主AI代理做好准备。文章强调需要清点AI组件、跟踪依赖关系并管理供应链风险，同时概述了将AI BOM集成到现有安全框架中的实用步骤，以确保AI驱动操作的透明度和问责制。",
+    "url": "https://www.darkreading.com/cyber-risk/how-cisos-should-prep-for-agentic-ready-ai-boms",
+    "article_page": "articles/1276.html",
+    "score": 7.0,
+    "domains": [
+      "ai_safety",
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1277,
+    "type": "article",
+    "title": "Interpol's 'Operation Ramz' Pioneers Cross-Region Collabs in Middle East",
+    "title_zh": "",
+    "summary_en": "Interpol's Operation Ramz marks the first large-scale cross-regional law enforcement collaboration in the Middle East and North Africa, involving 13 countries. Over five months, the operation identified nearly 583 suspected cybercriminals, shut down phishing-as-a-service infrastructure, and notified thousands of victims. While arrest numbers are modest compared to other regions, the operation established critical channels for threat intelligence sharing and laid the groundwork for a long-term regional cyber operational framework. The initiative highlights growing cooperation between law enforcement and private cybersecurity firms to combat cybercrime that transcends borders.",
+    "summary_zh": "Interpol的Operation Ramz是中东和北非地区首次大规模跨境执法合作，涉及13个国家。在五个月的行动中，识别了近583名网络犯罪嫌疑人，关闭了钓鱼即服务基础设施，并通知了数千名受害者。尽管逮捕人数相比其他地区较少，但该行动建立了关键的情报共享渠道，为长期区域网络行动框架奠定了基础，凸显了执法机构与私营网络安全公司之间日益增强的合作。",
+    "url": "https://www.darkreading.com/cybersecurity-operations/interpol-operation-ramz-cross-region-middle-east",
+    "article_page": "articles/1277.html",
+    "score": 7.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1278,
+    "type": "article",
+    "title": "What It'll Take to Make AI BOMs Usable in a Modern Security Program",
+    "title_zh": "",
+    "summary_en": "The article discusses the challenges and strategies for making AI Bills of Materials (AI BOMs) operationally useful in cybersecurity programs. It notes that while standards and tools are emerging, most organizations lack visibility into their AI systems and struggle to generate or consume AI BOMs effectively. Key steps include scoping AI assets, integrating AI BOMs into incident response and governance workflows, and addressing data provenance to ensure trust. The piece emphasizes that AI BOMs must be machine-readable and actionable, not just filed away, and that CISOs should leverage existing software security practices while tackling unique AI-specific risks like poisoned training data.",
+    "summary_zh": "文章探讨了如何使AI BOM在网络安全项目中具备可操作性。尽管标准和工具正在成熟，但多数组织对AI系统缺乏可见性，难以生成或使用AI BOM。关键步骤包括：界定AI资产范围、将AI BOM集成到事件响应和治理工作流中，以及解决数据来源问题以确保信任。文章强调AI BOM必须是机器可读且可操作的，而非仅归档。CISO应借鉴现有软件安全实践，同时应对AI特有的风险，如训练数据投毒。",
+    "url": "https://www.darkreading.com/cyber-risk/make-ai-bom-usable-modern-security-program",
+    "article_page": "articles/1278.html",
+    "score": 8.0,
+    "domains": [
+      "ai_safety",
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1279,
+    "type": "article",
+    "title": "What Will Make AI BOMs Real?",
+    "title_zh": "",
+    "summary_en": "The article examines the growing momentum behind AI Bill of Materials (BOMs), driven by standards bodies, open-source projects, commercial vendors, and regulatory pressures. Key developments include OWASP's CycloneDX and Linux Foundation's SPDX AI extensions, the OpenSSF model-signing specification, and CISA's foundational guidance. Commercial tools from Manifest Cyber, Cycode, JFrog, and Apiiro are emerging. Regulatory drivers like the EU AI Act and US NDAA requirements are pushing adoption. Cyber insurers are also conditioning coverage on AI governance documentation. Despite progress, widespread adoption remains aspirational as the industry races to finalize standards and tooling before regulatory deadlines.",
+    "summary_zh": "本文探讨了推动AI BOM（人工智能物料清单）成为现实的多股力量。OWASP的CycloneDX和Linux基金会的SPDX已发布AI专用扩展，OpenSSF制定了模型签名规范，CISA发布了基础指南。商业方面，Manifest Cyber、Cycode、JFrog等厂商推出了AI BOM生成与管理工具。监管压力是主要驱动力，EU AI Act和US NDAA要求供应商在SBOM中纳入AI组件。网络保险公司也开始将AI治理文档作为承保条件。尽管进展显著，但AI BOM的广泛采用仍处于理想阶段，行业正争分夺秒地在监管截止日期前完善标准与工具。",
+    "url": "https://www.darkreading.com/cybersecurity-analytics/what-make-ai-bom-real",
+    "article_page": "articles/1279.html",
+    "score": 8.0,
+    "domains": [
+      "ai_safety",
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1280,
+    "type": "article",
+    "title": "Verizon DBIR: Enterprises Face a Dangerous Vulnerability Glut",
+    "title_zh": "",
+    "summary_en": "The Verizon Data Breach Investigations Report (DBIR) highlights a critical issue where enterprises are overwhelmed by a growing number of unpatched vulnerabilities, creating a dangerous 'vulnerability glut.' This accumulation increases the attack surface and risk of exploitation, as attackers prioritize known flaws. The report emphasizes the need for efficient vulnerability management and prioritization strategies to mitigate threats.",
+    "summary_zh": "Verizon DBIR指出，企业面临日益严重的未修补漏洞堆积问题，形成危险的“vulnerability glut”。这扩大了攻击面并增加了被利用风险，攻击者优先利用已知漏洞。报告强调需要高效的漏洞管理和优先级排序策略来缓解威胁。",
+    "url": "https://www.darkreading.com/threat-intelligence/verizon-dbir-enterprises-vulnerability-glut",
+    "article_page": "articles/1280.html",
+    "score": 8.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1281,
+    "type": "article",
+    "title": "Windows Zero-Day Barrage Continues After Patch Tuesday",
+    "title_zh": "",
+    "summary_en": "This article reports on a continued wave of Windows zero-day vulnerabilities being exploited in the wild shortly after Microsoft's Patch Tuesday updates. It highlights the persistent threat landscape where attackers rapidly weaponize newly disclosed flaws before patches can be widely deployed. The piece underscores the challenge for security teams in prioritizing and applying fixes amidst a barrage of critical vulnerabilities affecting core Windows components.",
+    "summary_zh": "本文报道了微软Patch Tuesday更新后，Windows零日漏洞持续被野外利用的情况。文章强调攻击者迅速武器化新披露漏洞的威胁态势，以及安全团队在大量关键Windows组件漏洞中优先修复的挑战。",
+    "url": "https://www.darkreading.com/cyberattacks-data-breaches/windows-zero-day-barrage-continues-after-patch-tuesday",
+    "article_page": "articles/1281.html",
+    "score": 7.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
+    "id": 1282,
+    "type": "article",
+    "title": "CISA Exposes Secrets, Credentials in 'Private' Repo",
+    "title_zh": "",
+    "summary_en": "The Cybersecurity and Infrastructure Security Agency (CISA) discovered that a 'private' repository containing sensitive secrets and credentials was inadvertently exposed. This incident highlights the risks of misconfigured access controls in version control systems, where even repositories marked as private can be vulnerable to unauthorized access. The exposure underscores the need for robust secret management practices, including automated scanning and rotation of credentials, to prevent data breaches.",
+    "summary_zh": "美国网络安全和基础设施安全局（CISA）发现一个标记为'private'的仓库意外暴露了敏感机密和凭证。此事件突显了版本控制系统中访问控制配置错误的风险，即使是私有仓库也可能遭受未授权访问。这强调了需要采用强大的秘密管理实践，包括自动扫描和轮换凭证，以防止数据泄露。",
+    "url": "https://www.darkreading.com/cybersecurity-operations/cisa-exposes-secrets-credentials-private-repo",
+    "article_page": "articles/1282.html",
+    "score": 7.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-25 01:43:49"
+  },
+  {
     "id": 1260,
     "type": "article",
     "title": "npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks",
