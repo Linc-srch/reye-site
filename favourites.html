@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favourites | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage">
+  <div class="flame-beam"></div>
+  <div class="flame-beam flame-beam-2"></div>
+</div>
+
+<div class="reye-app">
+  <header class="reye-header">
+    <a href="index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+      <span class="sep">·</span>
+      <span class="zh-mark">数字信任研究之眼</span>
+    </a>
+    <nav>
+      <a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+      <a href="favourites.html"><span class="lang-en">Favourites</span><span class="lang-zh">收藏</span></a>
+      <div class="lang-toggle">
+        <button data-lang="en">EN</button>
+        <button data-lang="zh">中</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <p class="eyebrow">Favourites</p>
+      <h1 class="lang-en">Favourites</h1>
+      <h1 class="lang-zh">收藏</h1>
+    </div>
+
+    <div class="reye-section" style="padding-top:0">
+      <div style="display:flex;gap:0.75rem;align-items:center;margin-bottom:1rem">
+        <label class="lang-en" for="fav-sort">Sort:</label>
+        <label class="lang-zh" for="fav-sort">排序：</label>
+        <select id="fav-sort" class="input" style="width:auto">
+          <option value="recent">Recently added · 最近添加</option>
+          <option value="score">Highest score · 评分最高</option>
+          <option value="title">A–Z · 字母顺序</option>
+        </select>
+      </div>
+      <div id="fav-list"></div>
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">Reye</span>
+      <a href="index.html" class="footer-home-link lang-en">← Home</a>
+      <a href="index.html" class="footer-home-link lang-zh">← 首页</a>
+    </div>
+  </footer>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+(async function () {
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+  function escapeAttr(s) { return escapeHtml(s); }
+
+  let items = [];
+  try {
+    const r = await fetch('/api/favorites');
+    if (r.ok) items = await r.json();
+  } catch {}
+
+  if (!items.length) {
+    let favSet = new Set();
+    try { favSet = new Set(JSON.parse(localStorage.getItem('reye-favourites') || '[]')); } catch {}
+    if (favSet.size > 0) {
+      try {
+        const r = await fetch('assets/search-index.json');
+        if (r.ok) {
+          const index = await r.json();
+          items = index
+            .filter(e => favSet.has(String(e.id)))
+            .map(e => ({
+              content_id: e.id, favorited_at: '',
+              title_en: e.title, title_zh: e.title_zh || '',
+              summary_en: e.summary_en || '', summary_zh: e.summary_zh || '',
+              type: e.type, source_id: e.source_id || '',
+              score: e.score || 0,
+              url: e.article_page || e.url, created_at: '',
+            }));
+        }
+      } catch {}
+    }
+  }
+
+  function renderItems(list) {
+    const root = document.getElementById('fav-list');
+    if (!list.length) {
+      root.innerHTML =
+        '<p class="lang-en" style="color:var(--color-fg-2)">No favourites yet. Click ☆ on any article to add one.</p>' +
+        '<p class="lang-zh" style="color:var(--color-fg-2)">尚无收藏。在任意文章页点击 ☆ 添加。</p>';
+      return;
+    }
+    root.innerHTML = list.map(it => {
+      const pageUrl = it.url || '#';
+      return '<article class="feed-item" style="margin-bottom:14px" onclick="location.href=\'' + escapeAttr(pageUrl) + '\'">' +
+        '<div class="result-meta" style="display:flex;gap:8px;align-items:center;font-size:13px;color:var(--color-fg-2)">' +
+          '<span class="domain-tag">' + escapeHtml(it.type) + '</span>' +
+          (it.source_id ? '<span>·</span><span>' + escapeHtml(it.source_id) + '</span>' : '') +
+          (it.score ? '<span>·</span><span>score ' + Number(it.score).toFixed(1) + '</span>' : '') +
+        '</div>' +
+        '<h3 style="margin-top:6px"><span class="lang-en">' + escapeHtml(it.title_en) + '</span>' +
+          '<span class="lang-zh">' + escapeHtml(it.title_zh || it.title_en) + '</span></h3>' +
+        (it.summary_en ? '<p class="lang-en" style="margin-top:6px">' + escapeHtml(it.summary_en) + '</p>' : '') +
+        (it.summary_zh ? '<p class="lang-zh" style="margin-top:6px">' + escapeHtml(it.summary_zh || it.summary_en) + '</p>' : '') +
+      '</article>';
+    }).join('');
+  }
+
+  function sortItems(mode) {
+    const sorted = [...items];
+    if (mode === 'recent') {
+      sorted.sort((a, b) => (b.favorited_at || '').localeCompare(a.favorited_at || ''));
+    } else if (mode === 'score') {
+      sorted.sort((a, b) => (b.score || 0) - (a.score || 0));
+    } else if (mode === 'title') {
+      sorted.sort((a, b) => (a.title_en || '').localeCompare(b.title_en || ''));
+    }
+    renderItems(sorted);
+  }
+
+  const sortSel = document.getElementById('fav-sort');
+  if (sortSel) sortSel.addEventListener('change', e => sortItems(e.target.value));
+  sortItems('recent');
+})();
+</script>
+</body>
+</html>

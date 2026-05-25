@@ -374,6 +374,8 @@ main { position: relative; z-index: 1; }
 .original-link:hover span { transform: translateX(4px); }
 .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
 .tag { background: var(--color-accent-soft); border: 1px solid var(--color-accent-soft-border); padding: 4px 12px; border-radius: 999px; font-size: 12px; color: var(--color-accent); white-space: nowrap; }
+.article-tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.direction-tag { background: var(--bg2); color: var(--text); font-size: 0.78rem; }
 
 /* ── About ── */
 .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; }

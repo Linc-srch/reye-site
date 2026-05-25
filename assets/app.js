@@ -240,26 +240,99 @@
       .catch(() => {});
   }
 
-  // ── Favourites ───────────────────────────────────────────────────
+  // ── Favourites (hybrid: backend canonical, localStorage cache + offline queue) ──
   const FAV_KEY = 'reye-favourites';
-  const getFavs = () => { try { return JSON.parse(localStorage.getItem(FAV_KEY) || '[]'); } catch { return []; } };
-  const setFavs = (f) => { try { localStorage.setItem(FAV_KEY, JSON.stringify(f)); } catch {} };
-  const isFav = (id) => getFavs().includes(String(id));
-  const toggleFav = (id) => {
-    const f = getFavs(); const s = String(id); const i = f.indexOf(s);
-    if (i === -1) { f.push(s); } else { f.splice(i, 1); }
-    setFavs(f); return i === -1;
+  const FAV_QUEUE_KEY = 'reye-fav-queue';
+
+  const readFavs = () => {
+    try { return new Set(JSON.parse(localStorage.getItem(FAV_KEY) || '[]')); }
+    catch { return new Set(); }
   };
+  const writeFavs = (set) => {
+    try { localStorage.setItem(FAV_KEY, JSON.stringify(Array.from(set))); } catch {}
+  };
+  const readQueue = () => {
+    try { return JSON.parse(localStorage.getItem(FAV_QUEUE_KEY) || '[]'); }
+    catch { return []; }
+  };
+  const writeQueue = (q) => {
+    try { localStorage.setItem(FAV_QUEUE_KEY, JSON.stringify(q)); } catch {}
+  };
+
+  let _favSet = readFavs();
+  const isFav = (id) => _favSet.has(String(id));
+
+  async function _postFav(id)   { return fetch('/api/favorites/' + id, { method: 'POST' }); }
+  async function _deleteFav(id) { return fetch('/api/favorites/' + id, { method: 'DELETE' }); }
+
+  async function _flushQueue() {
+    const q = readQueue();
+    if (!q.length) return;
+    const remaining = [];
+    for (const op of q) {
+      try {
+        const r = op.op === 'add' ? await _postFav(op.id) : await _deleteFav(op.id);
+        if (!r.ok && r.status !== 404) remaining.push(op);
+      } catch { remaining.push(op); }
+    }
+    writeQueue(remaining);
+  }
+
+  async function toggleFav(id) {
+    const sid = String(id);
+    const wasFav = _favSet.has(sid);
+    if (wasFav) _favSet.delete(sid); else _favSet.add(sid);
+    writeFavs(_favSet);
+    try {
+      const r = wasFav ? await _deleteFav(sid) : await _postFav(sid);
+      if (!r.ok && r.status !== 404) {
+        const q = readQueue();
+        q.push({ op: wasFav ? 'del' : 'add', id: sid });
+        writeQueue(q);
+      }
+    } catch {
+      const q = readQueue();
+      q.push({ op: wasFav ? 'del' : 'add', id: sid });
+      writeQueue(q);
+    }
+    return !wasFav;
+  }
   window._toggleFav = toggleFav;
   window._isFav = isFav;
+
+  async function _reconcileFavs() {
+    let backend;
+    try {
+      const r = await fetch('/api/favorites');
+      if (!r.ok) return;
+      backend = await r.json();
+    } catch { return; }
+
+    const backendIds = new Set(backend.map(f => String(f.content_id)));
+
+    if (backendIds.size === 0 && _favSet.size > 0) {
+      try {
+        await fetch('/api/favorites/sync', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ content_ids: Array.from(_favSet).map(Number) }),
+        });
+      } catch {}
+    } else {
+      _favSet = backendIds;
+      writeFavs(_favSet);
+    }
+    await _flushQueue();
+  }
+  _reconcileFavs();
 
   const favBtn = document.getElementById('fav-btn');
   if (favBtn) {
     const id = favBtn.dataset.contentId;
     favBtn.textContent = isFav(id) ? '★' : '☆';
     favBtn.classList.toggle('is-fav', isFav(id));
-    favBtn.addEventListener('click', () => {
-      const added = toggleFav(id);
+    favBtn.addEventListener('click', async () => {
+      const added = await toggleFav(id);
       favBtn.textContent = added ? '★' : '☆';
       favBtn.classList.toggle('is-fav', added);
     });
