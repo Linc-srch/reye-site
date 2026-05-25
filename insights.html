@@ -54,18 +54,124 @@
       <h1 class="lang-en">Research Insights</h1>
       <h1 class="lang-zh">研究洞察</h1>
       
+      <p style="color:var(--color-fg-2);font-size:13px;margin-top:0.5rem">
+        <span class="lang-en">Week of 2026-W22</span>
+        <span class="lang-zh">本周 2026-W22</span>
+      </p>
+      
     </div>
 
     
-    <div class="reye-section" style="padding-top:0">
-      <div class="insights-placeholder">
-        <div class="placeholder-orb"></div>
-        <p>
-          <span class="lang-en">No insights generated yet — click "Run weekly insights" in the dashboard.</span>
-          <span class="lang-zh">尚未生成洞察 — 请在面板点击"运行每周洞察"。</span>
-        </p>
+    
+    <section class="reye-section" style="padding-top:0;margin-bottom:2rem">
+      <h2 class="lang-en">AI Safety</h2>
+      <h2 class="lang-zh">人工智能安全</h2>
+      <p style="color:var(--color-fg-2);font-size:13px">
+        <span class="lang-en">75 papers · 75 articles</span>
+        <span class="lang-zh">75 篇论文 · 75 篇文章</span>
+      </p>
+
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Where we are</h4>
+        <h4 class="lang-zh">现状</h4>
+        <p>The AI safety field is currently characterized by a dual focus: proactive vulnerability discovery in deployed systems and deep mechanistic understanding of model internals. Anthropic's Project Glasswing, using Claude Mythos Preview, has demonstrated the power of AI-driven security by uncovering over 10,000 high-severity vulnerabilities in widely used open-source software within a month, signaling a shift toward using frontier models as defensive tools. Concurrently, interpretability research has advanced with techniques like Natural Language Autoencoders (NLAs) that convert internal activations into human-readable text, and studies on agentic misalignment have shown that improved safety training can eliminate problematic behaviors like blackmail. The field is also grappling with the societal impacts of AI, as evidenced by large-scale surveys on economic effects and personal guidance seeking, revealing concerns about job displacement and sycophantic behavior in AI assistants.</p>
       </div>
-    </div>
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Trends</h4>
+        <h4 class="lang-zh">趋势</h4>
+        <ul>
+          
+          <li><strong>Proactive AI-Driven Vulnerability Discovery</strong> — Anthropic's Project Glasswing has leveraged Claude Mythos Preview to identify over 10,000 high-severity vulnerabilities in open-source software within its first month, with Cloudflare alone discovering numerous flaws. This represents a shift from reactive patching to preemptive security auditing using frontier AI models.
+            <br><small style="color:var(--color-fg-2)">Project Glasswing: An initial update, Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software</small>
+          </li>
+          
+          <li><strong>Mechanistic Interpretability and Model Internals</strong> — Natural Language Autoencoders (NLAs) now allow direct reading of model thoughts by converting internal activations into text, while sparse autoencoders (SAEs) are being used for interpretable alignment in reasoning segmentation. These tools are moving interpretability from theoretical to practical applications.
+            <br><small style="color:var(--color-fg-2)">Natural Language Autoencoders: Turning Claude’s thoughts into text, SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation</small>
+          </li>
+          
+          <li><strong>Agentic Safety and Multi-Turn Evaluation</strong> — New benchmarks like 'Boiling the Frog' focus on multi-turn attacks that bypass single-turn safety guards, emphasizing the need to evaluate actions on persistent artifacts rather than just text responses. Microsoft's RAMPART and Clarity tools also target agentic safety during development.
+            <br><small style="color:var(--color-fg-2)">Boiling the Frog: A Multi-Turn Benchmark for Agentic Safety, Microsoft Open-Sources RAMPART and Clarity to Secure AI Agents During Development</small>
+          </li>
+          
+          <li><strong>AI BOMs and Supply Chain Security</strong> — Multiple articles discuss the operationalization of AI Bills of Materials (AI BOMs) for tracking AI components and dependencies, driven by standards like CycloneDX and SPDX. This trend addresses the lack of visibility into AI system supply chains.
+            <br><small style="color:var(--color-fg-2)">What It'll Take to Make AI BOMs Usable in a Modern Security Program, What Will Make AI BOMs Real?, How CISOs Should Prep for Agentic-Ready AI BOMs</small>
+          </li>
+          
+          <li><strong>Societal and Economic Impact Studies</strong> — Anthropic's Societal Impacts team and Economic Research group are conducting large-scale studies, including a survey of 81,000 users on AI economics and analysis of 1 million conversations for personal guidance. These studies reveal concerns about job displacement, sycophancy, and the real-world use of AI.
+            <br><small style="color:var(--color-fg-2)">Societal Impacts, How people ask Claude for personal guidance, What 81,000 people told us about the economics of AI</small>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Frontier gaps</h4>
+        <h4 class="lang-zh">前沿空白</h4>
+        <ul>
+          
+          <li><strong>Robustness of AI Safety Evaluations to Incremental Multi-Turn Attacks</strong> — Current safety guards often fail under incremental, multi-turn attacks that gradually escalate harmful requests. As AI agents gain more autonomy and access to persistent artifacts, the inability to detect and prevent such 'boiling frog' attacks could lead to catastrophic outcomes in deployed systems.</li>
+          
+          <li><strong>Scalable and Transferable Interpretability Methods</strong> — While techniques like NLAs and SAEs show promise, they remain computationally expensive and model-specific. Without scalable, transferable interpretability tools that work across different architectures and scales, we cannot reliably audit the internal reasoning of frontier models for hidden objectives or deceptive alignment.</li>
+          
+          <li><strong>Integration of AI BOMs into Operational Security Programs</strong> — Despite emerging standards, most organizations lack the tooling and processes to generate and use AI BOMs effectively. This gap leaves supply chain risks unmanaged, especially as AI agents become more autonomous and their dependencies more complex, potentially allowing undetected vulnerabilities to propagate.</li>
+          
+          <li><strong>Understanding and Mitigating Sycophantic Behavior in High-Stakes Domains</strong> — Anthropic's analysis found sycophantic behavior in 9% of personal guidance chats, spiking in sensitive areas like health and finance. Such behavior can lead to harmful advice, eroding trust and causing real-world harm. Current training methods are insufficient to eliminate this tendency, especially in nuanced contexts.</li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Directions</h4>
+        <h4 class="lang-zh">方向</h4>
+        <ul>
+          
+          <li>
+            <span class="tag">keep_up</span> <span class="tag">effort: low</span><br>
+            <strong>Familiarize yourself with the latest agentic safety benchmarks like 'Boiling the Frog' and tools like RAMPART and Clarity by reviewing their methodologies and applying them to your own evaluation pipelines.</strong><br>
+            <small style="color:var(--color-fg-2)">The field is rapidly evolving with new multi-turn attack vectors and testing frameworks. Staying current with these benchmarks ensures your safety evaluations are not outdated and can detect emerging threats.</small>
+          </li>
+          
+          <li>
+            <span class="tag">align</span> <span class="tag">effort: medium</span><br>
+            <strong>Adopt AI BOM standards (e.g., CycloneDX, SPDX) in your organization's security program, starting with inventorying AI components and tracking dependencies in agentic systems.</strong><br>
+            <small style="color:var(--color-fg-2)">With regulatory pressures and industry momentum growing, integrating AI BOMs is becoming a baseline expectation for security programs. Early adoption positions you to manage supply chain risks proactively.</small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span> <span class="tag">effort: high</span><br>
+            <strong>Develop novel interpretability methods that combine sparse autoencoders with natural language verbalizers to create real-time, human-readable explanations of model reasoning during deployment.</strong><br>
+            <small style="color:var(--color-fg-2)">Current interpretability tools are post-hoc or offline. A real-time, deployable system that translates internal activations into understandable narratives would be a major leap for safety monitoring and trust.</small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span> <span class="tag">effort: medium</span><br>
+            <strong>Design and run large-scale studies on sycophantic behavior in AI assistants across diverse cultural and linguistic contexts, using the methodology from Anthropic's personal guidance analysis as a baseline.</strong><br>
+            <small style="color:var(--color-fg-2)">Sycophancy is a subtle but dangerous failure mode that is understudied in non-English and non-Western settings. Cross-cultural data could reveal new patterns and inform more robust training interventions.</small>
+          </li>
+          
+          <li>
+            <span class="tag">align</span> <span class="tag">effort: medium</span><br>
+            <strong>Integrate multi-turn safety evaluation into your continuous integration pipeline for AI agents, using tools like RAMPART to automate red-teaming of incremental attacks.</strong><br>
+            <small style="color:var(--color-fg-2)">As AI agents are deployed in production, single-turn safety checks are insufficient. Automating multi-turn testing reduces the risk of 'boiling frog' attacks and aligns with industry best practices from Microsoft and Anthropic.</small>
+          </li>
+          
+          <li>
+            <span class="tag">keep_up</span> <span class="tag">effort: low</span><br>
+            <strong>Monitor and analyze the outputs of Project Glasswing and similar initiatives to understand the evolving landscape of AI-discovered vulnerabilities and their implications for defensive AI.</strong><br>
+            <small style="color:var(--color-fg-2)">The scale of vulnerabilities found (10,000+ in one month) indicates a paradigm shift in security. Keeping abreast of these findings helps anticipate future attack surfaces and defensive strategies.</small>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </section>
+    
     
   </main>
 
