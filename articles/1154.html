@@ -183,64 +183,6 @@
         
 
         
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img src="figures/1154/fig_001.png" alt="Figure 1 : Rubric-pressure diagnostic. We track each criterion’s training pressure 2 2 2 We define criterion j j ’s training pressure as its within-category reward-weight share: w j / W κ j ​ ( q ) w_{j}/W_{\kappa_{j}}(q) under the static reward, w ~ j ( t ) / W ~ κ j ( t ) ​ ( q ) \tilde{w}_{j}^{(t)}/\tilde{W}_{\kappa_{j}}^{(t)}(q) under POW3R ( Eqs. ˜ 3 and 8 ). across criterion signal states. A criterion is dead when no rollout passes it ( p j = 0 p_{j}{=}0 ), saturated when every rollout passes it ( p j = 1 p_{j}{=}1 ), and mixed when verdicts differ across the rollout group; dead and saturated criteria have v j = 0 v_{j}{=}0 and give no group-relative advantage signal. (a) Criteria grouped by setting and absolute static weight/point tier (Low: | w j | ∈ { 1 , 2 , 3 } |w_{j}|\!\in\!\{1,2,3\} ; Mid: | w j | = 4 |w_{j}|\!=\!4 ; High: | w j | ≥ 5 |w_{j}|\!\geq\!5 ); high-weight criteria still carry substantial dead and saturated mass, so human importance is not the same as current learnability. (b) Within-category pressure before and after policy-aware reweighting, averaged over the two base policies per setting; pressure on zero-signal criteria drops by 8 8 – 12 12 pp. (c) Prompt-level reward spread (rollout std ​ ( R ) \mathrm{std}(R) before GRPO standardization), static (gray) vs policy-aware (colored). Mean spread widens by 25 25 – 37 % 37\% , so fewer groups collapse to the tied std ​ ( R ) = 0 \mathrm{std}(R){=}0 regime where every advantage is zero. MM/HB denote our multimodal dataset and HealthBench." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1 : Rubric-pressure diagnostic. We track each criterion’s training pressure 2 2 2 We define criterion j j ’s training pressure as its within-category reward-weight share: w j / W κ j ​ ( q ) w_{j}/W_{\kappa_{j}}(q) under the static reward, w ~ j ( t ) / W ~ κ j ( t ) ​ ( q ) \tilde{w}_{j}^{(t)}/\tilde{W}_{\kappa_{j}}^{(t)}(q) under POW3R ( Eqs. ˜ 3 and 8 ). across criterion signal states. A criterion is dead when no rollout passes it ( p j = 0 p_{j}{=}0 ), saturated when every rollout passes it ( p j = 1 p_{j}{=}1 ), and mixed when verdicts differ across the rollout group; dead and saturated criteria have v j = 0 v_{j}{=}0 and give no group-relative advantage signal. (a) Criteria grouped by setting and absolute static weight/point tier (Low: | w j | ∈ { 1 , 2 , 3 } |w_{j}|\!\in\!\{1,2,3\} ; Mid: | w j | = 4 |w_{j}|\!=\!4 ; High: | w j | ≥ 5 |w_{j}|\!\geq\!5 ); high-weight criteria still carry substantial dead and saturated mass, so human importance is not the same as current learnability. (b) Within-category pressure before and after policy-aware reweighting, averaged over the two base policies per setting; pressure on zero-signal criteria drops by 8 8 – 12 12 pp. (c) Prompt-level reward spread (rollout std ​ ( R ) \mathrm{std}(R) before GRPO standardization), static (gray) vs policy-aware (colored). Mean spread widens by 25 25 – 37 % 37\% , so fewer groups collapse to the tied std ​ ( R ) = 0 \mathrm{std}(R){=}0 regime where every advantage is zero. MM/HB denote our multimodal dataset and HealthBench.</span>
-                <span class="lang-zh">图1：Rubric-pressure诊断。我们跟踪每个准则的训练压力2 2 2。我们将准则j的训练压力定义为其类别内奖励权重份额：在静态奖励下为w_{j}/W_{\kappa_{j}}(q)，在POW3R下为\tilde{w}_{j}^{(t)}/\tilde{W}_{\kappa_{j}}^{(t)}(q)（等式3和8）。跨准则信号状态。当没有rollout通过时，准则为dead（p_{j}=0）；当所有rollout通过时，为saturated（p_{j}=1）；当判决在rollout组内不同时，为mixed；dead和saturated准则的v_{j}=0，不提供组相对优势信号。(a) 按设置和绝对静态权重/积分等级分组的准则（Low: |w_{j}|\!\in\!\{1,2,3\}；Mid: |w_{j}|\!=\!4；High: |w_{j}|\!\geq\!5）；高权重准则仍携带大量dead和saturated质量，因此人类重要性不等于当前可学习性。(b) 策略感知重新加权前后的类别内压力，按设置对两个基础策略取平均；零信号准则的压力下降8–12个百分点。(c) Prompt级别的奖励spread（GRPO标准化前的rollout std(R)），静态（灰色）vs策略感知（彩色）。平均spread扩大25–37%，因此更少的组坍缩到std(R)=0的平局状态，其中每个优势都是零。MM/HB表示我们的多模态数据集和HealthBench。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img src="figures/1154/fig_002.png" alt="Figure 2 : Mechanism check. Each gray point is one prompt under one diagnostic run: Qwen3-VL-4B-Instruct or Gemma 3 12B-IT on our multimodal dataset (MM) or HealthBench English (HB). Moving weight off criteria that all rollouts pass or fail separates the rollout rewards more; reward spread is the standard deviation of rollouts before GRPO standardization. The trend holds prompt-by-prompt in every run." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 2 : Mechanism check. Each gray point is one prompt under one diagnostic run: Qwen3-VL-4B-Instruct or Gemma 3 12B-IT on our multimodal dataset (MM) or HealthBench English (HB). Moving weight off criteria that all rollouts pass or fail separates the rollout rewards more; reward spread is the standard deviation of rollouts before GRPO standardization. The trend holds prompt-by-prompt in every run.</span>
-                <span class="lang-zh">图2：机制检查。每个灰色点是一个诊断运行下的一个prompt：Qwen3-VL-4B-Instruct或Gemma 3 12B-IT在我们的多模态数据集（MM）或HealthBench English（HB）上。将权重从所有rollout通过或失败的标准上移开，使rollout奖励更分散；reward spread是GRPO标准化前rollout的标准差。该趋势在每个运行的每个prompt上成立。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img src="figures/1154/fig_003.png" alt="Figure 3 : Illustrative tasks from each rubric-RL setting. Each task carries a prompt, a sampled response, and a prompt-specific rubric checklist; MM includes image input, while HealthBench is text-only. Reward judging uses this same criterion-level interface: each listed criterion receives an independent binary verdict before aggregation." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3 : Illustrative tasks from each rubric-RL setting. Each task carries a prompt, a sampled response, and a prompt-specific rubric checklist; MM includes image input, while HealthBench is text-only. Reward judging uses this same criterion-level interface: each listed criterion receives an independent binary verdict before aggregation.</span>
-                <span class="lang-zh">图3：每个rubric-RL设置的示例任务。每个任务包含一个prompt、一个采样响应和一个特定于prompt的rubric检查清单；MM包含图像输入，而HealthBench仅为文本。奖励评判使用相同的准则级界面：每个列出的准则在聚合前接收独立的二元判决。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img src="figures/1154/fig_007.png" alt="Figure 7 : Where POW3R has signal and where it acts on it. Per-category averages over MM-train criteria, computed over the full training schedule (Qwen3-VL-4B POW3R-dynamic). Hatched: mean rollout variance v j v_{j} . Solid: within-category standard deviation of POW3R’s factors α j \alpha_{j} . The two co-vary: categories with more contrast get reweighted more." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 7 : Where POW3R has signal and where it acts on it. Per-category averages over MM-train criteria, computed over the full training schedule (Qwen3-VL-4B POW3R-dynamic). Hatched: mean rollout variance v j v_{j} . Solid: within-category standard deviation of POW3R’s factors α j \alpha_{j} . The two co-vary: categories with more contrast get reweighted more.</span>
-                <span class="lang-zh">图7：POW3R在何处有信号以及它在何处作用。基于MM-train准则的每类别平均值，在整个训练计划上计算（Qwen3-VL-4B POW3R-dynamic）。阴影线：平均rollout方差v_{j}。实线：POW3R因子\alpha_{j}的类别内标准差。两者协变：对比度更高的类别获得更多重新加权。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img src="figures/1154/fig_004.png" alt="Figure 4 : Main result visual summary. (a) MM test rubric reward and strict completion for each reward construction; lines connect methods trained from the same base policy. (b) Test rubric-reward gain over the corresponding base model on MM and HB." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 4 : Main result visual summary. (a) MM test rubric reward and strict completion for each reward construction; lines connect methods trained from the same base policy. (b) Test rubric-reward gain over the corresponding base model on MM and HB.</span>
-                <span class="lang-zh">图4：主要结果视觉总结。(a) 每个奖励构建的MM测试rubric奖励和严格完成度；线连接从相同基础策略训练的方法。(b) 在MM和HB上相对于相应基础模型的测试rubric奖励增益。</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

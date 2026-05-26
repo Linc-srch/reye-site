@@ -200,7 +200,7 @@
               
               <figcaption>
                 <span class="lang-en">Figure 1 : A decision-based framework for auditing ethical alignment in LLMs. Each benchmark case presents a binary choice between mutually exclusive clinical actions, with each option annotated for its relationship to the four principlist values. In this psychiatric emergency example, choosing involuntary hold promotes (in green) nonmaleficence and beneficence, and violates (in red) autonomy and justice. Model position along the horizontal axis shows how often each option was selected out of repeated queries using stochastic decoding at temperature 1.0. Expert physicians and frontier LLMs alike are sharply divided.</span>
-                <span class="lang-zh">图1：一种基于决策的框架，用于审计LLM中的伦理一致性。每个基准案例在互斥的临床行动之间提供二元选择，每个选项都标注了其与四个原则主义价值观的关系。在这个精神科急诊的例子中，选择非自愿住院促进（绿色）了非恶意和善意，并违反（红色）了自主和正义。模型沿水平轴的位置显示了在温度1.0下使用随机解码重复查询中每个选项被选择的频率。专家医生和前沿LLM都存在严重分歧。</span>
+                <span class="lang-zh">图1：一个基于决策的框架，用于审计LLMs中的伦理对齐。每个基准案例在互斥的临床行动之间呈现二元选择，每个选项都标注了其与四项原则主义价值观的关系。在这个精神科紧急情况的示例中，选择非自愿住院会促进（绿色）非恶意原则和善意原则，并违反（红色）自主原则和公正原则。模型在水平轴上的位置显示了在温度为1.0的随机解码下，重复查询中每个选项被选中的频率。专家医生和前沿LLMs都出现了严重分歧。</span>
               </figcaption>
               
             </figure>
@@ -212,8 +212,8 @@ Bottom: each model’s observed JSD to the physician consensus." loading="lazy">
               <figcaption>
                 <span class="lang-en">Figure 3 : Models achieve value calibration. Top: bootstrap distribution of JSD between each physician and a leave-one-out consensus.
 Bottom: each model’s observed JSD to the physician consensus.</span>
-                <span class="lang-zh">图3：模型实现价值校准。上：每个医生与留一法共识之间的JSD的bootstrap分布。
-下：每个模型与医生共识的观测JSD。</span>
+                <span class="lang-zh">图3：模型实现价值校准。上方：每位医生与留一法共识之间的JSD的bootstrap分布。
+下方：每个模型与医生共识之间的观测JSD。</span>
               </figcaption>
               
             </figure>
@@ -223,7 +223,7 @@ Bottom: each model’s observed JSD to the physician consensus.</span>
               
               <figcaption>
                 <span class="lang-en">Figure 4 : LLM ecosystem heterogeneity reflects physician diversity. Left, pairwise JS divergence between value profiles of all decision-makers. Right, bootstrap distributions of within-group mean JS divergence for LLMs and physicians. There is no significant difference ( Δ \Delta ) between the groups.</span>
-                <span class="lang-zh">图4：LLM生态系统的异质性反映了医生的多样性。左：所有决策者价值概况之间的成对JS散度。右：LLM和医生组内平均JS散度的bootstrap分布。两组之间没有显著差异（Δ）。</span>
+                <span class="lang-zh">图4：LLM生态系统异质性反映了医生的多样性。左图：所有决策者价值概况之间的成对JS散度。右图：LLMs和医生组内平均JS散度的bootstrap分布。两组之间没有显著差异（Δ）。</span>
               </figcaption>
               
             </figure>
@@ -233,7 +233,7 @@ Bottom: each model’s observed JSD to the physician consensus.</span>
               
               <figcaption>
                 <span class="lang-en">Figure 5 : Scalable pipeline for generating benchmark cases with interdisciplinary evaluation. Ethical dilemmas from biomedical ethics literature seed structured binary-choice clinical vignettes, which pass through four quality-control stages: a diversity gate that filters semantically redundant drafts via embedding similarity; rubric-based refinement across clinical, ethical, stylistic, and equipoise dimensions; value annotation with rule-based and LLM-based validation of the tag matrix; and blinded interdisciplinary review in which a first physician may approve, edit, or reject each case and a second, blinded physician independently approves or rejects it.</span>
-                <span class="lang-zh">图5：用于生成基准案例的可扩展管道，具有跨学科评估。来自生物医学伦理文献的伦理困境种子结构化二元选择临床小场景，经过四个质量控制阶段：多样性门控，通过嵌入相似性过滤语义冗余的草稿；基于量规的细化，涵盖临床、伦理、风格和均衡维度；价值标注，通过基于规则和基于LLM的标签矩阵验证；以及盲法跨学科审查，其中第一位医生可以批准、编辑或拒绝每个案例，第二位盲法医生独立批准或拒绝。</span>
+                <span class="lang-zh">图5：用于生成基准案例并实现跨学科评估的可扩展流程。来自生物医学伦理文献的伦理困境作为种子，生成结构化二元选择临床小故事，这些故事经过四个质量控制阶段：通过嵌入相似性过滤语义冗余草稿的多样性门控；基于rubric的临床、伦理、风格和均衡性维度精炼；基于规则和LLM验证标签矩阵的价值标注；以及盲法跨学科评审，其中第一位医生可以批准、编辑或拒绝每个案例，第二位盲法医生独立批准或拒绝。</span>
               </figcaption>
               
             </figure>
@@ -243,7 +243,7 @@ Bottom: each model’s observed JSD to the physician consensus.</span>
               
               <figcaption>
                 <span class="lang-en">Figure 9 : Model entropy is decoupled from physician disagreement. Each panel shows one model. The x-axis is physician decision entropy (higher values indicate greater disagreement among physicians), and the y-axis is model decision entropy over 10 queries. The dashed diagonal indicates perfect case-level distributional pluralism, where model entropy matches physician entropy. Points cluster near the bottom right with zero model entropy regardless of high physician disagreement. Spearman correlations ( ρ \rho ) are near zero showing models do not modulate their certainty in response to the degree of ethical contestation among clinicians.</span>
-                <span class="lang-zh">图9：模型熵与医生分歧脱钩。每个面板显示一个模型。x轴是医生决策熵（值越高表示医生之间分歧越大），y轴是模型在10次查询中的决策熵。虚线对角线表示完美的案例级分布多元性，其中模型熵与医生熵匹配。点聚集在右下角附近，模型熵为零，无论医生分歧多大。斯皮尔曼相关性（ρ）接近零，表明模型不会根据临床医生之间伦理争议的程度调整其确定性。</span>
+                <span class="lang-zh">图9：模型熵与医生分歧脱钩。每个面板显示一个模型。x轴是医生决策熵（值越高表示医生之间分歧越大），y轴是模型在10次查询中的决策熵。虚线对角线表示完美的案例级分布多元性，即模型熵与医生熵匹配。无论医生分歧多大，点都聚集在右下角，模型熵为零。Spearman相关性（ρ）接近零，表明模型不会根据临床医生之间的伦理争议程度来调整其确定性。</span>
               </figcaption>
               
             </figure>

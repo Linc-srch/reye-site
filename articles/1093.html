@@ -194,7 +194,7 @@
               
               <figcaption>
                 <span class="lang-en">Figure 2 : Overview of the generative tuning paradigm. An RGB image and a concise textual instruction are processed by respective vision and text encoders to extract independent embeddings. UMMs then integrate these embeddings and map the representations to the designated task. Because empirical evaluations demonstrate that visual generation targets at an advanced semantic level yield the most significant performance gains, SGT explicitly adopts image segmentation as its generative objective.</span>
-                <span class="lang-zh">图2：生成式调优范式概述。RGB图像和简洁的文本指令分别由视觉编码器和文本编码器处理，以提取独立的嵌入表示。UMMs随后整合这些嵌入并将表示映射到指定任务。由于经验评估表明，针对高级语义层面的视觉生成目标能带来最显著的性能提升，SGT明确采用图像分割作为其生成目标。</span>
+                <span class="lang-zh">图2：生成式调优范式概览。一张RGB图像和一条简洁的文本指令分别由视觉编码器和文本编码器处理，以提取独立的嵌入表示。UMMs随后整合这些嵌入，并将表征映射到指定任务。由于经验评估表明，在高级语义层面上的视觉生成目标能带来最显著的性能提升，SGT明确采用图像分割作为其生成目标。</span>
               </figcaption>
               
             </figure>
@@ -214,7 +214,7 @@ BAGEL model and our segmentation-enhanced variant.
 The segmentation guidance consistently amplifies attention to semantically
 salient tokens ( tie : 4.70 % → 7.45 % 4.70\%{\to}7.45\% , right : 9.59 % → 12.64 % 9.59\%{\to}12.64\% ), leading to improved
 spatial reasoning and object placement as shown in the generated samples (left).</span>
-                <span class="lang-zh">图13：图像生成过程中的词元级注意力分布。我们可视化了基线BAGEL模型和我们的分割增强变体在提示词“A photo of a tie right of a baseball bat”中分配给每个词元的注意力权重。分割引导持续增强了对语义显著词元的注意力（领带：4.70%→7.45%，右侧：9.59%→12.64%），从而改进了空间推理和物体放置，如生成的样本（左侧）所示。</span>
+                <span class="lang-zh">图13：图像生成过程中的token级注意力分布。我们可视化了基线BAGEL模型及其分割增强变体在提示词“A photo of a tie right of a baseball bat”中分配给每个token的注意力权重。分割引导持续增强了对语义显著token的注意力（tie：4.70%→7.45%，right：9.59%→12.64%），从而在生成的样本（左侧）中实现了改进的空间推理和物体放置。</span>
               </figcaption>
               
             </figure>
@@ -228,7 +228,7 @@ spatial reasoning and object placement as shown in the generated samples (left).
                 <span class="lang-en">Figure 1 : Comparison of alignment strategies for UMMs. (a) Traditional UMMs optimize understanding and generation tasks separately, resulting in low synergy.
 (b) Recent pixel-level attempts [ dis:reca ] over-focus on high-frequency details, bringing suboptimal alignment.
 (c) Our proposed SGT achieves semantic-level alignment, filtering low-level noise and enabling true synergy between understanding and generation.</span>
-                <span class="lang-zh">图1：UMMs对齐策略对比。(a) 传统UMMs分别优化理解和生成任务，导致协同性较低。(b) 最近的像素级尝试[ dis:reca ]过度聚焦于高频细节，导致次优对齐。(c) 我们提出的SGT实现了语义级对齐，过滤低级噪声，并实现理解与生成之间的真正协同。</span>
+                <span class="lang-zh">图1：UMMs对齐策略的比较。(a) 传统UMMs分别优化理解与生成任务，导致协同性低。(b) 近期基于像素级的尝试[dis:reca]过度关注高频细节，带来次优对齐。(c) 我们提出的SGT实现了语义级对齐，过滤了低层噪声，并实现了理解与生成之间的真正协同。</span>
               </figcaption>
               
             </figure>
@@ -250,7 +250,7 @@ spatial reasoning and object placement as shown in the generated samples (left).
               <figcaption>
                 <span class="lang-en">Figure 6 : Training dynamics with different SFT:Seg ratios. We compare the training curves of BAGEL under 1:0 (baseline, no segmentation) and
 2:1 (with segmentation data) ratios across three benchmarks.</span>
-                <span class="lang-zh">图6：不同SFT:Seg比例下的训练动态。我们比较了BAGEL在1:0（基线，无分割）和2:1（包含分割数据）比例下在三个基准上的训练曲线。</span>
+                <span class="lang-zh">图6：不同SFT:Seg比例下的训练动态。我们比较了BAGEL在1:0（基线，无分割）和2:1（含分割数据）两种比例下在三个基准上的训练曲线。</span>
               </figcaption>
               
             </figure>

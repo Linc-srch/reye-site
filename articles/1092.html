@@ -199,7 +199,7 @@
               
               <figcaption>
                 <span class="lang-en">Figure 1 : Landscape of LLM post-training methods , organized by supervision source and training regime. Online RL with a scalar RM reaches open-ended tasks but suffers reward hacking; GPRL fills the gap with a structured, multi-dimensional reward.</span>
-                <span class="lang-zh">图1：LLM后训练方法概览，按监督来源和训练机制组织。带有标量奖励模型的在线强化学习可处理开放式任务但易受奖励破解影响；GPRL通过结构化的多维奖励填补了这一空白。</span>
+                <span class="lang-zh">图1：LLM后训练方法概览，按监督来源和训练范式组织。使用标量RM的在线RL可处理开放式任务，但易受奖励破解影响；GPRL通过结构化多维奖励填补了这一空白。</span>
               </figcaption>
               
             </figure>
@@ -209,7 +209,7 @@
               
               <figcaption>
                 <span class="lang-en">Figure 2 : Overview of GPRL. The policy π θ \pi_{\theta} samples G G responses per prompt, GPM embeds them, and 𝐑 ≻ \mathbf{R}^{\succ} produces k k pairwise score matrices that yield per-dimension advantages. The aggregate drives the GRPO-style clipped surrogate, while a drift monitor 𝒟 ​ ( t ) \mathcal{D}(t) adapts the dimensional weights and β \beta to suppress reward hacking.</span>
-                <span class="lang-zh">图2：GPRL概览。策略πθ每提示采样G个响应，GPM对其进行嵌入，𝐑≻生成k个成对评分矩阵以产生每维优势。聚合驱动GRPO风格的裁剪替代目标，同时漂移监视器𝒟(t)调整维度权重和β以抑制奖励破解。</span>
+                <span class="lang-zh">图2：GPRL概述。策略πθ对每个提示采样G个响应，GPM对其进行嵌入，𝐑≻生成k个成对得分矩阵，进而产生各维度的优势值。聚合结果驱动GRPO风格的裁剪替代目标，同时漂移监测器𝒟(t)自适应调整维度权重和β以抑制奖励破解。</span>
               </figcaption>
               
             </figure>
@@ -239,7 +239,7 @@
               
               <figcaption>
                 <span class="lang-en">(b) Hacked run</span>
-                <span class="lang-zh">(b) 破解运行</span>
+                <span class="lang-zh">(b) 被破解的运行</span>
               </figcaption>
               
             </figure>

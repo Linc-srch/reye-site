@@ -209,7 +209,7 @@
               
               <figcaption>
                 <span class="lang-en">Figure 2 : Zoom on Framework. A bounded repair loop processes the user request Δ t \Delta_{t} through three agents: the Patch Planner (LLM) generates candidate edits, the Strategy Selector chooses a re-optimization strategy from the toolbox, and the Validator + + Optimization Engine applies the edits and solves. On validation failure, additional context ρ \rho is returned to Agent 1 (up to budget B B ). On success, the state advances to Z t Z_{t} , and the system handles the next request ( t ← t + 1 ) (t\leftarrow t+1) .</span>
-                <span class="lang-zh">图2：框架放大图。一个有界修复循环通过三个代理处理用户请求Δ_t：补丁规划器（LLM）生成候选编辑，策略选择器从工具箱中选择重优化策略，验证器++和优化引擎应用编辑并求解。验证失败时，额外上下文ρ返回给Agent 1（直到预算B）。成功时，状态前进到Z_t，系统处理下一个请求（t←t+1）。</span>
+                <span class="lang-zh">图2：框架细节放大图。一个受限的修复循环通过三个智能体处理用户请求Δt：补丁规划器（LLM）生成候选编辑，策略选择器从工具箱中选择重新优化策略，验证器与优化引擎应用编辑并求解。验证失败时，额外的上下文ρ被返回给智能体1（直至预算B耗尽）。验证成功时，状态推进到Zt，系统处理下一个请求（t←t+1）。</span>
               </figcaption>
               
             </figure>
@@ -219,7 +219,7 @@
               
               <figcaption>
                 <span class="lang-en">Figure 3 : Reference-relative objective gap for the default ReOpt-LLM-Patch configuration.</span>
-                <span class="lang-zh">图3：默认ReOpt-LLM-Patch配置的参考相对目标差距</span>
+                <span class="lang-zh">图3：默认ReOpt-LLM-Patch配置下的参考相对目标差距。</span>
               </figcaption>
               
             </figure>
