@@ -21,8 +21,8 @@
     b.addEventListener('click', () => setLang(b.dataset.lang));
   });
 
-  let saved = 'en';
-  try { saved = localStorage.getItem('reye-lang') || 'en'; } catch (_) {}
+  let saved = 'zh';
+  try { saved = localStorage.getItem('reye-lang') || 'zh'; } catch (_) {}
   setLang(saved);
 
   // Sync when parent frame (e.g. dashboard) changes the stored language
@@ -359,5 +359,93 @@
       }).join('');
     }
   }
+
+
+  // ── Image lightbox ──────────────────────────────────────────────────────
+  (function () {
+    const modal = document.getElementById('lightbox');
+    if (!modal) return;
+    const img    = modal.querySelector('.lightbox-img');
+    const cap    = modal.querySelector('.lightbox-caption');
+    const closeB = modal.querySelector('.lightbox-close');
+    const inB    = modal.querySelector('.lightbox-zoom-in');
+    const outB   = modal.querySelector('.lightbox-zoom-out');
+    const resetB = modal.querySelector('.lightbox-reset');
+    const label  = modal.querySelector('.lightbox-zoom-label');
+    const view   = modal.querySelector('.lightbox-viewport');
+
+    let scale = 1, panX = 0, panY = 0;
+    let dragging = false, startX = 0, startY = 0;
+    const ZOOM_MIN = 0.5, ZOOM_MAX = 8, ZOOM_STEP = 1.25;
+
+    const apply = () => {
+      img.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+      label.textContent = Math.round(scale * 100) + '%';
+    };
+    const reset = () => { scale = 1; panX = panY = 0; apply(); };
+
+    const open = (src, caption) => {
+      img.src = src;
+      img.alt = caption || '';
+      cap.textContent = caption || '';
+      cap.style.display = caption ? '' : 'none';
+      reset();
+      modal.classList.add('is-open');
+      modal.removeAttribute('aria-hidden');
+      document.body.style.overflow = 'hidden';
+      closeB.focus();
+    };
+    const close = () => {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      img.src = '';
+    };
+
+    document.querySelectorAll('.article-figure-img').forEach(el => {
+      el.addEventListener('click', () => {
+        const fig = el.closest('.article-figure');
+        const figcap = fig ? fig.querySelector('figcaption') : null;
+        let caption = '';
+        if (figcap) {
+          const isZh = document.body.classList.contains('lang-zh');
+          const span = figcap.querySelector(isZh ? '.lang-zh' : '.lang-en');
+          caption = (span || figcap).textContent.trim();
+        }
+        open(el.src, caption);
+      });
+    });
+
+    closeB.addEventListener('click', close);
+    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('is-open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === '+' || e.key === '=') { scale = Math.min(ZOOM_MAX, scale * ZOOM_STEP); apply(); }
+      if (e.key === '-' || e.key === '_') { scale = Math.max(ZOOM_MIN, scale / ZOOM_STEP); apply(); }
+      if (e.key === '0') reset();
+    });
+
+    inB.addEventListener('click', () => { scale = Math.min(ZOOM_MAX, scale * ZOOM_STEP); apply(); });
+    outB.addEventListener('click', () => { scale = Math.max(ZOOM_MIN, scale / ZOOM_STEP); apply(); });
+    resetB.addEventListener('click', reset);
+
+    view.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const delta = e.deltaY < 0 ? ZOOM_STEP : 1 / ZOOM_STEP;
+      scale = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, scale * delta));
+      apply();
+    }, { passive: false });
+
+    view.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      dragging = true; startX = e.clientX - panX; startY = e.clientY - panY;
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!dragging) return;
+      panX = e.clientX - startX; panY = e.clientY - startY; apply();
+    });
+    window.addEventListener('mouseup', () => { dragging = false; });
+  })();
 
 })();

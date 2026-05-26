@@ -196,7 +196,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1220/fig_002.png" alt="Figure 3 : Comparison of Type-Token Ratio (TTR) scores across three configurations: (i) the original model (with greedy decoding), (ii) the original model with temperature scaled ( T ≈ 0.59 T\approx 0.59 ) to match the hyperfitted entropy, and (iii) the hyperfitted model (with greedy decoding). Error bars denote standard deviation. The results present an Entropy-Quality Paradox: despite having identical predictive confidence (entropy), the temperature-scaled model fails to match the hyperfitted model’s diversity (0.397 vs 0.684), indicating that hyperfitting involves mechanisms beyond simple distributional sharpening." loading="lazy">
+              <img class="article-figure-img" src="figures/1220/fig_002.png" alt="Figure 3 : Comparison of Type-Token Ratio (TTR) scores across three configurations: (i) the original model (with greedy decoding), (ii) the original model with temperature scaled ( T ≈ 0.59 T\approx 0.59 ) to match the hyperfitted entropy, and (iii) the hyperfitted model (with greedy decoding). Error bars denote standard deviation. The results present an Entropy-Quality Paradox: despite having identical predictive confidence (entropy), the temperature-scaled model fails to match the hyperfitted model’s diversity (0.397 vs 0.684), indicating that hyperfitting involves mechanisms beyond simple distributional sharpening." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 3 : Comparison of Type-Token Ratio (TTR) scores across three configurations: (i) the original model (with greedy decoding), (ii) the original model with temperature scaled ( T ≈ 0.59 T\approx 0.59 ) to match the hyperfitted entropy, and (iii) the hyperfitted model (with greedy decoding). Error bars denote standard deviation. The results present an Entropy-Quality Paradox: despite having identical predictive confidence (entropy), the temperature-scaled model fails to match the hyperfitted model’s diversity (0.397 vs 0.684), indicating that hyperfitting involves mechanisms beyond simple distributional sharpening.</span>
@@ -206,7 +206,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1220/fig_003.png" alt="Figure 4 : A distribution analysis of the original ranks of tokens selected by the hyperfitted model (based on 256 sampled generation steps). While 60.9% of decisions align with the original Top-1 (Green), a significant 39.1% of selected tokens are “promoted” from lower ranks. Notably, 12.9% of winners originate from the deep tail (Rank > 10 >10 ), with some candidates promoted from ranks > 200 >200 (Red). This confirms that Hyperfitting actively reorders the output distribution to surface diverse candidates that, under temperature scaling alone, would remain unreachable by greedy decoding (since temperature scaling is rank-preserving)." loading="lazy">
+              <img class="article-figure-img" src="figures/1220/fig_003.png" alt="Figure 4 : A distribution analysis of the original ranks of tokens selected by the hyperfitted model (based on 256 sampled generation steps). While 60.9% of decisions align with the original Top-1 (Green), a significant 39.1% of selected tokens are “promoted” from lower ranks. Notably, 12.9% of winners originate from the deep tail (Rank > 10 >10 ), with some candidates promoted from ranks > 200 >200 (Red). This confirms that Hyperfitting actively reorders the output distribution to surface diverse candidates that, under temperature scaling alone, would remain unreachable by greedy decoding (since temperature scaling is rank-preserving)." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 4 : A distribution analysis of the original ranks of tokens selected by the hyperfitted model (based on 256 sampled generation steps). While 60.9% of decisions align with the original Top-1 (Green), a significant 39.1% of selected tokens are “promoted” from lower ranks. Notably, 12.9% of winners originate from the deep tail (Rank > 10 >10 ), with some candidates promoted from ranks > 200 >200 (Red). This confirms that Hyperfitting actively reorders the output distribution to surface diverse candidates that, under temperature scaling alone, would remain unreachable by greedy decoding (since temperature scaling is rank-preserving).</span>
@@ -216,7 +216,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1220/fig_005.png" alt="Figure 6 : TinyLlama-1.1B training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 18 layers, the Late-Stage model follows a closely matched optimization trajectory and converges to the same low-loss regime ( ℒ ≈ 0.066 \mathcal{L}\approx 0.066 ) as the Full LoRA model. This suggests that the optimization capacity required for hyperfitting is largely concentrated in the terminal layers." loading="lazy">
+              <img class="article-figure-img" src="figures/1220/fig_005.png" alt="Figure 6 : TinyLlama-1.1B training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 18 layers, the Late-Stage model follows a closely matched optimization trajectory and converges to the same low-loss regime ( ℒ ≈ 0.066 \mathcal{L}\approx 0.066 ) as the Full LoRA model. This suggests that the optimization capacity required for hyperfitting is largely concentrated in the terminal layers." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 6 : TinyLlama-1.1B training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 18 layers, the Late-Stage model follows a closely matched optimization trajectory and converges to the same low-loss regime ( ℒ ≈ 0.066 \mathcal{L}\approx 0.066 ) as the Full LoRA model. This suggests that the optimization capacity required for hyperfitting is largely concentrated in the terminal layers.</span>
@@ -226,7 +226,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1220/fig_007.png" alt="Figure 8 : Convergence Efficiency. Training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 24 layers, the Late-Stage model converges to the same low-loss regime ( ℒ ≈ 0.043 \mathcal{L}\approx 0.043 ) as the Full LoRA model, indicating that the optimization capacity required for hyperfitting is fully contained within the terminal layers." loading="lazy">
+              <img class="article-figure-img" src="figures/1220/fig_007.png" alt="Figure 8 : Convergence Efficiency. Training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 24 layers, the Late-Stage model converges to the same low-loss regime ( ℒ ≈ 0.043 \mathcal{L}\approx 0.043 ) as the Full LoRA model, indicating that the optimization capacity required for hyperfitting is fully contained within the terminal layers." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 8 : Convergence Efficiency. Training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 24 layers, the Late-Stage model converges to the same low-loss regime ( ℒ ≈ 0.043 \mathcal{L}\approx 0.043 ) as the Full LoRA model, indicating that the optimization capacity required for hyperfitting is fully contained within the terminal layers.</span>
@@ -236,7 +236,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1220/fig_009.png" alt="Figure 10 : Convergence Efficiency. Training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 24 layers, the Late-Stage model converges to the same low-loss regime ( ℒ ≈ 0.043 \mathcal{L}\approx 0.043 ) as the Full LoRA model, suggesting that the optimization capacity required for hyperfitting is fully contained within the terminal layers." loading="lazy">
+              <img class="article-figure-img" src="figures/1220/fig_009.png" alt="Figure 10 : Convergence Efficiency. Training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 24 layers, the Late-Stage model converges to the same low-loss regime ( ℒ ≈ 0.043 \mathcal{L}\approx 0.043 ) as the Full LoRA model, suggesting that the optimization capacity required for hyperfitting is fully contained within the terminal layers." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 10 : Convergence Efficiency. Training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 24 layers, the Late-Stage model converges to the same low-loss regime ( ℒ ≈ 0.043 \mathcal{L}\approx 0.043 ) as the Full LoRA model, suggesting that the optimization capacity required for hyperfitting is fully contained within the terminal layers.</span>
@@ -293,6 +293,19 @@
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {

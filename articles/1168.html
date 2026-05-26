@@ -198,7 +198,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1168/fig_002.png" alt="Figure 4: Left: PTRM inference procedure (the rec() function refers to a deep recursion step). Right: PTRM mechanism. (a) Standard TRM: a single deterministic rollout. (b) PTRM: K K stochastic latent rollouts with Gaussian noise ϵ \epsilon at each deep recursion step, with the Q head selecting the final answer." loading="lazy">
+              <img class="article-figure-img" src="figures/1168/fig_002.png" alt="Figure 4: Left: PTRM inference procedure (the rec() function refers to a deep recursion step). Right: PTRM mechanism. (a) Standard TRM: a single deterministic rollout. (b) PTRM: K K stochastic latent rollouts with Gaussian noise ϵ \epsilon at each deep recursion step, with the Q head selecting the final answer." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 4: Left: PTRM inference procedure (the rec() function refers to a deep recursion step). Right: PTRM mechanism. (a) Standard TRM: a single deterministic rollout. (b) PTRM: K K stochastic latent rollouts with Gaussian noise ϵ \epsilon at each deep recursion step, with the Q head selecting the final answer.</span>
@@ -208,7 +208,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1168/fig_003.png" alt="Figure 5: Stochastic rollouts escape bad basins. Principal plane projection of K = 100 K=100 independent rollouts of the same failed puzzle as in Figure 2 (right). 92 rollouts remain caught in the bad basin (red). 8 escape to a good basin and produce correct answers (green)." loading="lazy">
+              <img class="article-figure-img" src="figures/1168/fig_003.png" alt="Figure 5: Stochastic rollouts escape bad basins. Principal plane projection of K = 100 K=100 independent rollouts of the same failed puzzle as in Figure 2 (right). 92 rollouts remain caught in the bad basin (red). 8 escape to a good basin and produce correct answers (green)." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 5: Stochastic rollouts escape bad basins. Principal plane projection of K = 100 K=100 independent rollouts of the same failed puzzle as in Figure 2 (right). 92 rollouts remain caught in the bad basin (red). 8 escape to a good basin and produce correct answers (green).</span>
@@ -218,7 +218,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1168/fig_004.png" alt="Figure 5: Stochastic rollouts escape bad basins. Principal plane projection of K = 100 K=100 independent rollouts of the same failed puzzle as in Figure 2 (right). 92 rollouts remain caught in the bad basin (red). 8 escape to a good basin and produce correct answers (green)." loading="lazy">
+              <img class="article-figure-img" src="figures/1168/fig_004.png" alt="Figure 5: Stochastic rollouts escape bad basins. Principal plane projection of K = 100 K=100 independent rollouts of the same failed puzzle as in Figure 2 (right). 92 rollouts remain caught in the bad basin (red). 8 escape to a good basin and produce correct answers (green)." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 5: Stochastic rollouts escape bad basins. Principal plane projection of K = 100 K=100 independent rollouts of the same failed puzzle as in Figure 2 (right). 92 rollouts remain caught in the bad basin (red). 8 escape to a good basin and produce correct answers (green).</span>
@@ -228,7 +228,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1168/fig_001.png" alt="Figure 2: TRM Trajectory Modes. PCA projection of y y (top) and Q value (solid, left axis) with cell accuracy (dashed, right axis) across supervision steps (bottom) for three PPBench puzzles, illustrating three trajectory modes (left to right): quick success, delayed success, and failure (Sec. 3 ).
+              <img class="article-figure-img" src="figures/1168/fig_001.png" alt="Figure 2: TRM Trajectory Modes. PCA projection of y y (top) and Q value (solid, left axis) with cell accuracy (dashed, right axis) across supervision steps (bottom) for three PPBench puzzles, illustrating three trajectory modes (left to right): quick success, delayed success, and failure (Sec. 3 ).
 Latents are projected into the principal plane per puzzle, so PC axes
 are not comparable across plots. Trajectories fade from light (early steps) to dark (later steps). Circle marks the start and square
 marks end." loading="lazy">
@@ -245,7 +245,7 @@ marks end.</span>
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1168/fig_005.png" alt="Figure 6: Width scaling. pass@ K K , best-Q@ K K , and mode@ K K as K K grows, averaged over 3 seeds on a held-out PPBench validation set. The Q head is a strong verifier on the tested puzzles, consistently outperforming selection of the most frequent answer." loading="lazy">
+              <img class="article-figure-img" src="figures/1168/fig_005.png" alt="Figure 6: Width scaling. pass@ K K , best-Q@ K K , and mode@ K K as K K grows, averaged over 3 seeds on a held-out PPBench validation set. The Q head is a strong verifier on the tested puzzles, consistently outperforming selection of the most frequent answer." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 6: Width scaling. pass@ K K , best-Q@ K K , and mode@ K K as K K grows, averaged over 3 seeds on a held-out PPBench validation set. The Q head is a strong verifier on the tested puzzles, consistently outperforming selection of the most frequent answer.</span>
@@ -302,6 +302,19 @@ marks end.</span>
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {

@@ -196,7 +196,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1167/fig_005.png" alt="Figure 5: Locality breakdown for LLaMA-2-7B at the F1-optimal threshold for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar." loading="lazy">
+              <img class="article-figure-img" src="figures/1167/fig_005.png" alt="Figure 5: Locality breakdown for LLaMA-2-7B at the F1-optimal threshold for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 5: Locality breakdown for LLaMA-2-7B at the F1-optimal threshold for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar.</span>
@@ -206,7 +206,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1167/fig_006.png" alt="Figure 6: Locality breakdown for LLaMA-2-7B at FPR@10% on benign prompts for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar." loading="lazy">
+              <img class="article-figure-img" src="figures/1167/fig_006.png" alt="Figure 6: Locality breakdown for LLaMA-2-7B at FPR@10% on benign prompts for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 6: Locality breakdown for LLaMA-2-7B at FPR@10% on benign prompts for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar.</span>
@@ -216,7 +216,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1167/fig_001.png" alt="Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
+              <img class="article-figure-img" src="figures/1167/fig_001.png" alt="Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
 The shaded region denotes the ground-truth adversarial suffix.
 For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does." loading="lazy">
               
@@ -230,7 +230,7 @@ For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlappi
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1167/fig_003.png" alt="Figure 3: A second AdvPrompter example to reinforce Figure 1 .
+              <img class="article-figure-img" src="figures/1167/fig_003.png" alt="Figure 3: A second AdvPrompter example to reinforce Figure 1 .
 Token-level entropy (blue) and CUSUM statistic W t + W_{t}^{+} (purple) at the canonical slack k = 0 k=0 used throughout the main paper, with the WPP 15 baseline curve (brown dash-dot) and its F1-optimal threshold (brown dotted) overlaid for comparison. Top: benign prompt, no CPD alarm. Bottom: adversarial prompt (a different AdvPrompter suffix from Figure 1 ); CPD’s W t + W_{t}^{+} crosses h h inside the shaded suffix region, while WPP 15 stays below its threshold throughout." loading="lazy">
               
               <figcaption>
@@ -242,7 +242,7 @@ Token-level entropy (blue) and CUSUM statistic W t + W_{t}^{+} (purple) at the c
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1167/fig_004.png" alt="Figure 4: Aggregate CPD Online CUSUM trajectories by prompt type (LLaMA-2-7B benchmark). Top: k = 0 k=0 . Bottom: k = 0.5 k=0.5 . Curves show the median W t + W_{t}^{+} across prompts with an interquartile band. For adversarial prompts, the green dashed line marks the aligned suffix onset; the orange dashed line marks the threshold h h used for visualization (a representative pooled F1-optimal value; main-paper Table 1 numbers are evaluated with per-fold CV thresholds). The flat segments visible after each attack’s rise (e.g. GCG, AdvPrompter, BEAST) reflect aggregation rather than a saturating detector: prompts of varying length are padded by holding the final W t + W_{t}^{+} value beyond the per-prompt end, so the median plateaus once most prompts at that aligned offset have terminated." loading="lazy">
+              <img class="article-figure-img" src="figures/1167/fig_004.png" alt="Figure 4: Aggregate CPD Online CUSUM trajectories by prompt type (LLaMA-2-7B benchmark). Top: k = 0 k=0 . Bottom: k = 0.5 k=0.5 . Curves show the median W t + W_{t}^{+} across prompts with an interquartile band. For adversarial prompts, the green dashed line marks the aligned suffix onset; the orange dashed line marks the threshold h h used for visualization (a representative pooled F1-optimal value; main-paper Table 1 numbers are evaluated with per-fold CV thresholds). The flat segments visible after each attack’s rise (e.g. GCG, AdvPrompter, BEAST) reflect aggregation rather than a saturating detector: prompts of varying length are padded by holding the final W t + W_{t}^{+} value beyond the per-prompt end, so the median plateaus once most prompts at that aligned offset have terminated." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 4: Aggregate CPD Online CUSUM trajectories by prompt type (LLaMA-2-7B benchmark). Top: k = 0 k=0 . Bottom: k = 0.5 k=0.5 . Curves show the median W t + W_{t}^{+} across prompts with an interquartile band. For adversarial prompts, the green dashed line marks the aligned suffix onset; the orange dashed line marks the threshold h h used for visualization (a representative pooled F1-optimal value; main-paper Table 1 numbers are evaluated with per-fold CV thresholds). The flat segments visible after each attack’s rise (e.g. GCG, AdvPrompter, BEAST) reflect aggregation rather than a saturating detector: prompts of varying length are padded by holding the final W t + W_{t}^{+} value beyond the per-prompt end, so the median plateaus once most prompts at that aligned offset have terminated.</span>
@@ -299,6 +299,19 @@ Token-level entropy (blue) and CUSUM statistic W t + W_{t}^{+} (purple) at the c
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {

@@ -190,7 +190,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1093/fig_002.png" alt="Figure 2 : Overview of the generative tuning paradigm. An RGB image and a concise textual instruction are processed by respective vision and text encoders to extract independent embeddings. UMMs then integrate these embeddings and map the representations to the designated task. Because empirical evaluations demonstrate that visual generation targets at an advanced semantic level yield the most significant performance gains, SGT explicitly adopts image segmentation as its generative objective." loading="lazy">
+              <img class="article-figure-img" src="figures/1093/fig_002.png" alt="Figure 2 : Overview of the generative tuning paradigm. An RGB image and a concise textual instruction are processed by respective vision and text encoders to extract independent embeddings. UMMs then integrate these embeddings and map the representations to the designated task. Because empirical evaluations demonstrate that visual generation targets at an advanced semantic level yield the most significant performance gains, SGT explicitly adopts image segmentation as its generative objective." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 2 : Overview of the generative tuning paradigm. An RGB image and a concise textual instruction are processed by respective vision and text encoders to extract independent embeddings. UMMs then integrate these embeddings and map the representations to the designated task. Because empirical evaluations demonstrate that visual generation targets at an advanced semantic level yield the most significant performance gains, SGT explicitly adopts image segmentation as its generative objective.</span>
@@ -200,7 +200,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1093/fig_017.png" alt="Figure 13 : Token-level attention distribution during image generation. We visualize the attention weights allocated to each token in the prompt
+              <img class="article-figure-img" src="figures/1093/fig_017.png" alt="Figure 13 : Token-level attention distribution during image generation. We visualize the attention weights allocated to each token in the prompt
 “ A photo of a tie right of a baseball bat ” for both the baseline
 BAGEL model and our segmentation-enhanced variant.
 The segmentation guidance consistently amplifies attention to semantically
@@ -220,7 +220,7 @@ spatial reasoning and object placement as shown in the generated samples (left).
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1093/fig_001.png" alt="Figure 1 : Comparison of alignment strategies for UMMs. (a) Traditional UMMs optimize understanding and generation tasks separately, resulting in low synergy.
+              <img class="article-figure-img" src="figures/1093/fig_001.png" alt="Figure 1 : Comparison of alignment strategies for UMMs. (a) Traditional UMMs optimize understanding and generation tasks separately, resulting in low synergy.
 (b) Recent pixel-level attempts [ dis:reca ] over-focus on high-frequency details, bringing suboptimal alignment.
 (c) Our proposed SGT achieves semantic-level alignment, filtering low-level noise and enabling true synergy between understanding and generation." loading="lazy">
               
@@ -234,7 +234,7 @@ spatial reasoning and object placement as shown in the generated samples (left).
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1093/fig_006.png" alt="Figure 4 : Qualitative comparison on compositional text-to-image generation." loading="lazy">
+              <img class="article-figure-img" src="figures/1093/fig_006.png" alt="Figure 4 : Qualitative comparison on compositional text-to-image generation." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 4 : Qualitative comparison on compositional text-to-image generation.</span>
@@ -244,7 +244,7 @@ spatial reasoning and object placement as shown in the generated samples (left).
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1093/fig_010.png" alt="Figure 6 : Training dynamics with different SFT:Seg ratios. We compare the training curves of BAGEL under 1:0 (baseline, no segmentation) and
+              <img class="article-figure-img" src="figures/1093/fig_010.png" alt="Figure 6 : Training dynamics with different SFT:Seg ratios. We compare the training curves of BAGEL under 1:0 (baseline, no segmentation) and
 2:1 (with segmentation data) ratios across three benchmarks." loading="lazy">
               
               <figcaption>
@@ -303,6 +303,19 @@ spatial reasoning and object placement as shown in the generated samples (left).
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {

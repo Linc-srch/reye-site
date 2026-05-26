@@ -197,7 +197,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1089/fig_001.png" alt="Figure 1: Average scores across fine-grained visual understanding benchmarks, including V* Bench, ZoomBench, HR Bench 4K, HR Bench 8k, MME-RealWorld-Lite and MME-RealWorld-CN. Vision-OPD-4B/9B demonstrate superior performance compared with much larger open-source models (e.g., Qwen3.5-397B) and closed-source models (e.g., GPT-5.4, Gemini-3.1-Pro)." loading="lazy">
+              <img class="article-figure-img" src="figures/1089/fig_001.png" alt="Figure 1: Average scores across fine-grained visual understanding benchmarks, including V* Bench, ZoomBench, HR Bench 4K, HR Bench 8k, MME-RealWorld-Lite and MME-RealWorld-CN. Vision-OPD-4B/9B demonstrate superior performance compared with much larger open-source models (e.g., Qwen3.5-397B) and closed-source models (e.g., GPT-5.4, Gemini-3.1-Pro)." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 1: Average scores across fine-grained visual understanding benchmarks, including V* Bench, ZoomBench, HR Bench 4K, HR Bench 8k, MME-RealWorld-Lite and MME-RealWorld-CN. Vision-OPD-4B/9B demonstrate superior performance compared with much larger open-source models (e.g., Qwen3.5-397B) and closed-source models (e.g., GPT-5.4, Gemini-3.1-Pro).</span>
@@ -207,7 +207,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1089/fig_005.png" alt="Figure 4: Overview of Vision-OPD. Left: Fine-grained visual questions are generated on evidence-centered crops and grounded back to the full image via bounding-box overlay. Right: A teacher policy p T ( ⋅ ∣ x crop ) p_{T}(\cdot\mid x_{\text{crop}}) and a student policy p S ( ⋅ ∣ x global ) p_{S}(\cdot\mid x_{\text{global}}) are instantiated from the same MLLM. The student generates on-policy rollouts y ∼ p S y\sim p_{S} , and the per-token divergence D ​ ( p T ∥ p S ) D(p_{T}\|p_{S}) along these rollouts provides dense supervision. Gradients flow only through the student’s logits, enabling label-free self-distillation for fine-grained visual understanding." loading="lazy">
+              <img class="article-figure-img" src="figures/1089/fig_005.png" alt="Figure 4: Overview of Vision-OPD. Left: Fine-grained visual questions are generated on evidence-centered crops and grounded back to the full image via bounding-box overlay. Right: A teacher policy p T ( ⋅ ∣ x crop ) p_{T}(\cdot\mid x_{\text{crop}}) and a student policy p S ( ⋅ ∣ x global ) p_{S}(\cdot\mid x_{\text{global}}) are instantiated from the same MLLM. The student generates on-policy rollouts y ∼ p S y\sim p_{S} , and the per-token divergence D ​ ( p T ∥ p S ) D(p_{T}\|p_{S}) along these rollouts provides dense supervision. Gradients flow only through the student’s logits, enabling label-free self-distillation for fine-grained visual understanding." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 4: Overview of Vision-OPD. Left: Fine-grained visual questions are generated on evidence-centered crops and grounded back to the full image via bounding-box overlay. Right: A teacher policy p T ( ⋅ ∣ x crop ) p_{T}(\cdot\mid x_{\text{crop}}) and a student policy p S ( ⋅ ∣ x global ) p_{S}(\cdot\mid x_{\text{global}}) are instantiated from the same MLLM. The student generates on-policy rollouts y ∼ p S y\sim p_{S} , and the per-token divergence D ​ ( p T ∥ p S ) D(p_{T}\|p_{S}) along these rollouts provides dense supervision. Gradients flow only through the student’s logits, enabling label-free self-distillation for fine-grained visual understanding.</span>
@@ -217,7 +217,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1089/fig_006.png" alt="Figure 5: Regional-to-global gap during Vision-OPD training. A lower gap indicates that the model can better recover crop-visible evidence from the full image." loading="lazy">
+              <img class="article-figure-img" src="figures/1089/fig_006.png" alt="Figure 5: Regional-to-global gap during Vision-OPD training. A lower gap indicates that the model can better recover crop-visible evidence from the full image." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 5: Regional-to-global gap during Vision-OPD training. A lower gap indicates that the model can better recover crop-visible evidence from the full image.</span>
@@ -227,7 +227,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1089/fig_004.png" alt="Figure 3: The accuracy of regional inputs is consistently higher than the accuracy of global inputs, revealing a persistent regional-to-global gap across multiple MLLMs." loading="lazy">
+              <img class="article-figure-img" src="figures/1089/fig_004.png" alt="Figure 3: The accuracy of regional inputs is consistently higher than the accuracy of global inputs, revealing a persistent regional-to-global gap across multiple MLLMs." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 3: The accuracy of regional inputs is consistently higher than the accuracy of global inputs, revealing a persistent regional-to-global gap across multiple MLLMs.</span>
@@ -237,7 +237,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1089/fig_007.png" alt="Figure 6: Inference speed comparison. Vision-OPD-9B achieves faster inference than agentic baselines and retains single forward-pass efficiency." loading="lazy">
+              <img class="article-figure-img" src="figures/1089/fig_007.png" alt="Figure 6: Inference speed comparison. Vision-OPD-9B achieves faster inference than agentic baselines and retains single forward-pass efficiency." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 6: Inference speed comparison. Vision-OPD-9B achieves faster inference than agentic baselines and retains single forward-pass efficiency.</span>
@@ -294,6 +294,19 @@
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {

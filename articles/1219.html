@@ -195,7 +195,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1219/fig_002.png" alt="Figure 2 : Accuracy (pass@1) trajectories on GSM8K, MATH500, MMLU-Pro for Qwen2.5-1.5B (top) and Qwen2.5-3B (bottom). The dashed vertical line marks step 160 (Table 1 ); the star ( ★ \bigstar ) marks the peak among unsupervised methods (GRPO-GT excluded), labeled in-axis. Only multi-reward + KL-Cov tracks GRPO-GT through the full 340-step horizon at both scales." loading="lazy">
+              <img class="article-figure-img" src="figures/1219/fig_002.png" alt="Figure 2 : Accuracy (pass@1) trajectories on GSM8K, MATH500, MMLU-Pro for Qwen2.5-1.5B (top) and Qwen2.5-3B (bottom). The dashed vertical line marks step 160 (Table 1 ); the star ( ★ \bigstar ) marks the peak among unsupervised methods (GRPO-GT excluded), labeled in-axis. Only multi-reward + KL-Cov tracks GRPO-GT through the full 340-step horizon at both scales." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 2 : Accuracy (pass@1) trajectories on GSM8K, MATH500, MMLU-Pro for Qwen2.5-1.5B (top) and Qwen2.5-3B (bottom). The dashed vertical line marks step 160 (Table 1 ); the star ( ★ \bigstar ) marks the peak among unsupervised methods (GRPO-GT excluded), labeled in-axis. Only multi-reward + KL-Cov tracks GRPO-GT through the full 340-step horizon at both scales.</span>
@@ -205,7 +205,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1219/fig_004.png" alt="Figure 4 : KL-Cov β cov \beta_{\text{cov}} sweep on the full multi-reward objective (Qwen2.5-1.5B). All three coefficients ( β cov ∈ { 0.0005 , 0.05 , 0.1 } \beta_{\text{cov}}\in\{0.0005,0.05,0.1\} ) maintain stable accuracy and completion length through step 280; the no-KL-Cov baseline (red) collapses around step 240." loading="lazy">
+              <img class="article-figure-img" src="figures/1219/fig_004.png" alt="Figure 4 : KL-Cov β cov \beta_{\text{cov}} sweep on the full multi-reward objective (Qwen2.5-1.5B). All three coefficients ( β cov ∈ { 0.0005 , 0.05 , 0.1 } \beta_{\text{cov}}\in\{0.0005,0.05,0.1\} ) maintain stable accuracy and completion length through step 280; the no-KL-Cov baseline (red) collapses around step 240." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 4 : KL-Cov β cov \beta_{\text{cov}} sweep on the full multi-reward objective (Qwen2.5-1.5B). All three coefficients ( β cov ∈ { 0.0005 , 0.05 , 0.1 } \beta_{\text{cov}}\in\{0.0005,0.05,0.1\} ) maintain stable accuracy and completion length through step 280; the no-KL-Cov baseline (red) collapses around step 240.</span>
@@ -215,7 +215,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1219/fig_005.png" alt="Figure 5 : INTUITOR + KL-Cov ablation on Qwen2.5-1.5B (steps 0–280). KL-Cov ( β cov = 0.02 \beta_{\text{cov}}{=}0.02 ) doubles step-160 accuracy versus vanilla INTUITOR but does not prevent collapse past step 200." loading="lazy">
+              <img class="article-figure-img" src="figures/1219/fig_005.png" alt="Figure 5 : INTUITOR + KL-Cov ablation on Qwen2.5-1.5B (steps 0–280). KL-Cov ( β cov = 0.02 \beta_{\text{cov}}{=}0.02 ) doubles step-160 accuracy versus vanilla INTUITOR but does not prevent collapse past step 200." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 5 : INTUITOR + KL-Cov ablation on Qwen2.5-1.5B (steps 0–280). KL-Cov ( β cov = 0.02 \beta_{\text{cov}}{=}0.02 ) doubles step-160 accuracy versus vanilla INTUITOR but does not prevent collapse past step 200.</span>
@@ -225,7 +225,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1219/fig_006.png" alt="Figure 6 : GDPO-normalization ablation on Qwen2.5-1.5B with the full multi-reward + KL-Cov ( β cov = 0.05 \beta_{\text{cov}}{=}0.05 ) objective. Replacing per-channel z z -score with a single combine-then-normalize step degrades GSM8K substantially and MATH500 / MMLU-Pro consistently across the entire trajectory; the gap widens past step 160 (vertical line). Stars mark the overall peak per benchmark." loading="lazy">
+              <img class="article-figure-img" src="figures/1219/fig_006.png" alt="Figure 6 : GDPO-normalization ablation on Qwen2.5-1.5B with the full multi-reward + KL-Cov ( β cov = 0.05 \beta_{\text{cov}}{=}0.05 ) objective. Replacing per-channel z z -score with a single combine-then-normalize step degrades GSM8K substantially and MATH500 / MMLU-Pro consistently across the entire trajectory; the gap widens past step 160 (vertical line). Stars mark the overall peak per benchmark." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 6 : GDPO-normalization ablation on Qwen2.5-1.5B with the full multi-reward + KL-Cov ( β cov = 0.05 \beta_{\text{cov}}{=}0.05 ) objective. Replacing per-channel z z -score with a single combine-then-normalize step degrades GSM8K substantially and MATH500 / MMLU-Pro consistently across the entire trajectory; the gap widens past step 160 (vertical line). Stars mark the overall peak per benchmark.</span>
@@ -235,7 +235,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1219/fig_001.png" alt="Figure 1 : Given a prompt, we sample G completions from the rollout policy and compute two intrinsic rewards: an answer-level cluster-voting reward over final-answer agreement, and a completion-level self-certainty reward over token-level predictive distributions. Each reward is normalized within the prompt group before being combined into rollout-level advantages. Optimization uses a GRPO-style objective, while KL-Cov penalizes only high-covariance tokens to regularize concentrated updates." loading="lazy">
+              <img class="article-figure-img" src="figures/1219/fig_001.png" alt="Figure 1 : Given a prompt, we sample G completions from the rollout policy and compute two intrinsic rewards: an answer-level cluster-voting reward over final-answer agreement, and a completion-level self-certainty reward over token-level predictive distributions. Each reward is normalized within the prompt group before being combined into rollout-level advantages. Optimization uses a GRPO-style objective, while KL-Cov penalizes only high-covariance tokens to regularize concentrated updates." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 1 : Given a prompt, we sample G completions from the rollout policy and compute two intrinsic rewards: an answer-level cluster-voting reward over final-answer agreement, and a completion-level self-certainty reward over token-level predictive distributions. Each reward is normalized within the prompt group before being combined into rollout-level advantages. Optimization uses a GRPO-style objective, while KL-Cov penalizes only high-covariance tokens to regularize concentrated updates.</span>
@@ -292,6 +292,19 @@
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {

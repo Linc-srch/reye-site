@@ -194,7 +194,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1110/fig_001.png" alt="Figure 1: In standard on-policy self-distillation, the student generates a response, which a teacher evaluates via forced-decoding with privileged information to produce token-level probabilities for student alignment." loading="lazy">
+              <img class="article-figure-img" src="figures/1110/fig_001.png" alt="Figure 1: In standard on-policy self-distillation, the student generates a response, which a teacher evaluates via forced-decoding with privileged information to produce token-level probabilities for student alignment." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 1: In standard on-policy self-distillation, the student generates a response, which a teacher evaluates via forced-decoding with privileged information to produce token-level probabilities for student alignment.</span>
@@ -204,7 +204,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1110/fig_004.png" alt="Figure 4: Empirical distribution of non-zero CIG values. The prominent left skew (peaking just below zero) is caused by the teacher’s conditioning on privileged information. This intrinsic asymmetry necessitates differential scaling coefficients ( λ > γ \lambda>\gamma ) to balance penalties and bonuses." loading="lazy">
+              <img class="article-figure-img" src="figures/1110/fig_004.png" alt="Figure 4: Empirical distribution of non-zero CIG values. The prominent left skew (peaking just below zero) is caused by the teacher’s conditioning on privileged information. This intrinsic asymmetry necessitates differential scaling coefficients ( λ > γ \lambda>\gamma ) to balance penalties and bonuses." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 4: Empirical distribution of non-zero CIG values. The prominent left skew (peaking just below zero) is caused by the teacher’s conditioning on privileged information. This intrinsic asymmetry necessitates differential scaling coefficients ( λ > γ \lambda>\gamma ) to balance penalties and bonuses.</span>
@@ -214,7 +214,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1110/fig_002.png" alt="Figure 2: Training dynamics on SciKnowEval Biology (left, Qwen2.5-7B-Instruct) and Physics (right, Qwen3-8B). Unlike baselines that exhibit early gains followed by plateaus or regression, AMR-SD achieves superior stability and avoids late-stage performance degradation across different model architectures." loading="lazy">
+              <img class="article-figure-img" src="figures/1110/fig_002.png" alt="Figure 2: Training dynamics on SciKnowEval Biology (left, Qwen2.5-7B-Instruct) and Physics (right, Qwen3-8B). Unlike baselines that exhibit early gains followed by plateaus or regression, AMR-SD achieves superior stability and avoids late-stage performance degradation across different model architectures." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 2: Training dynamics on SciKnowEval Biology (left, Qwen2.5-7B-Instruct) and Physics (right, Qwen3-8B). Unlike baselines that exhibit early gains followed by plateaus or regression, AMR-SD achieves superior stability and avoids late-stage performance degradation across different model architectures.</span>
@@ -224,7 +224,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1110/fig_003.png" alt="Figure 3: Training dynamics using Qwen3-8B in thinking mode. Left: Evaluation accuracy (acc@16) on the AIME 2024 benchmark over 150 training steps. AMR-SD maintains stable, state-of-the-art performance, whereas RLSD suffers from a severe performance collapse post-annealing. Right: Average training reward on the DAPO-Math-17k dataset. The evaluation collapse of RLSD is accompanied by a sharp degradation in training reward, indicating an intrinsic optimization failure. AMR-SD, by contrast, maintains stable reward growth, successfully bridging in-domain optimization with out-of-domain generalization." loading="lazy">
+              <img class="article-figure-img" src="figures/1110/fig_003.png" alt="Figure 3: Training dynamics using Qwen3-8B in thinking mode. Left: Evaluation accuracy (acc@16) on the AIME 2024 benchmark over 150 training steps. AMR-SD maintains stable, state-of-the-art performance, whereas RLSD suffers from a severe performance collapse post-annealing. Right: Average training reward on the DAPO-Math-17k dataset. The evaluation collapse of RLSD is accompanied by a sharp degradation in training reward, indicating an intrinsic optimization failure. AMR-SD, by contrast, maintains stable reward growth, successfully bridging in-domain optimization with out-of-domain generalization." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 3: Training dynamics using Qwen3-8B in thinking mode. Left: Evaluation accuracy (acc@16) on the AIME 2024 benchmark over 150 training steps. AMR-SD maintains stable, state-of-the-art performance, whereas RLSD suffers from a severe performance collapse post-annealing. Right: Average training reward on the DAPO-Math-17k dataset. The evaluation collapse of RLSD is accompanied by a sharp degradation in training reward, indicating an intrinsic optimization failure. AMR-SD, by contrast, maintains stable reward growth, successfully bridging in-domain optimization with out-of-domain generalization.</span>
@@ -281,6 +281,19 @@
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {

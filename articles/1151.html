@@ -198,7 +198,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1151/fig_001.png" alt="Figure 1: (a)
+              <img class="article-figure-img" src="figures/1151/fig_001.png" alt="Figure 1: (a)
 Similarity heatmap of expert routing across denoising steps within a block.
 Expert routing remains highly similar for nearby steps, and the diagonal bands show that this stability extends beyond immediate neighbors: step pairs separated by five denoising steps retain cosine similarity near 0.95 0.95 .
 (b)
@@ -235,7 +235,7 @@ TIDE 概述。
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1151/fig_003.png" alt="Figure 3: Design of TIDE .
+              <img class="article-figure-img" src="figures/1151/fig_003.png" alt="Figure 3: Design of TIDE .
 At refresh steps ( t 0 , t τ t_{0},t_{\tau} ), the system updates the GPU-resident expert set by promoting experts with the highest token hits from CPU memory to GPU memory.
 Experts outside this set are kept in CPU memory or evicted there if currently GPU-resident.
 At skipped steps ( t 1 : τ − 1 t_{1:\tau-1} ), decoding continues with the current expert placement and performs no expert migration." loading="lazy">
@@ -254,7 +254,7 @@ At skipped steps ( t 1 : τ − 1 t_{1:\tau-1} ), decoding continues with the cu
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1151/fig_004.png" alt="Figure 4: Impact of the refresh interval τ \tau .
+              <img class="article-figure-img" src="figures/1151/fig_004.png" alt="Figure 4: Impact of the refresh interval τ \tau .
 (a) Relationship of GPU expert miss rate and the number of expert migrations with respect to τ \tau .
 Increasing τ \tau generally raises the GPU expert miss rate .
 Meanwhile, a larger τ \tau reduces the number of expert migrations.
@@ -282,7 +282,7 @@ We can see that an optimal τ \tau can be determined by solving the optimization
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1151/fig_005.png" alt="Figure 5: Performance analysis for LLaDA2.0-mini on NVIDIA A100 40 GB GPU.
+              <img class="article-figure-img" src="figures/1151/fig_005.png" alt="Figure 5: Performance analysis for LLaDA2.0-mini on NVIDIA A100 40 GB GPU.
 From left to right are the throughput comparisons of different methods over varying block sizes (32 ∼ \sim 128), GPU expert budgets (32 ∼ \sim 128), and confidence thresholds (0.7 ∼ \sim 0.95).
 We can see that TIDE consistently outperforms baseline methods regardless of decoding settings." loading="lazy">
               
@@ -298,7 +298,7 @@ We can see that TIDE consistently outperforms baseline methods regardless of dec
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1151/fig_002.png" alt="Figure 2: Expert activation pattern with a block of size 32 for LLaDA2.0-mini .
+              <img class="article-figure-img" src="figures/1151/fig_002.png" alt="Figure 2: Expert activation pattern with a block of size 32 for LLaDA2.0-mini .
 (a) Number of unique experts activated at each step, which increases as decoding continues.
 (b) Similarity scores of expert routing for different step intervals at each step within a block.
 Here, we use the cosine similarity score, following prior works Wu et al. [ 2025 ], Bao et al. [ 2025 ] ." loading="lazy">
@@ -364,6 +364,19 @@ Here, we use the cosine similarity score, following prior works Wu et al. [ 2025
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {

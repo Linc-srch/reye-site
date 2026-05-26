@@ -192,7 +192,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1091/fig_002.png" alt="Figure 2: Factual recall quality scales log-linearly with model size across architectures and training generations (e.g., Llama 3.1, 3.2, & 3.3). (a) Quality versus parameter count for 16 dense models from four independent families (Llama, Gemma, Mistral, Qwen). Dashed line shows log-linear fit ( R 2 = 0.794 R^{2}=0.794 ). Systematic offsets between families reflect differences in training procedure rather than scale. (b) The relationship extends to 28 models across all architectures when plotted against total parameter count ( R 2 = 0.712 R^{2}=0.712 ). MoE models (diamonds) follow the same trend as dense models, suggesting total rather than active parameters dominate the noise floor." loading="lazy">
+              <img class="article-figure-img" src="figures/1091/fig_002.png" alt="Figure 2: Factual recall quality scales log-linearly with model size across architectures and training generations (e.g., Llama 3.1, 3.2, & 3.3). (a) Quality versus parameter count for 16 dense models from four independent families (Llama, Gemma, Mistral, Qwen). Dashed line shows log-linear fit ( R 2 = 0.794 R^{2}=0.794 ). Systematic offsets between families reflect differences in training procedure rather than scale. (b) The relationship extends to 28 models across all architectures when plotted against total parameter count ( R 2 = 0.712 R^{2}=0.712 ). MoE models (diamonds) follow the same trend as dense models, suggesting total rather than active parameters dominate the noise floor." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 2: Factual recall quality scales log-linearly with model size across architectures and training generations (e.g., Llama 3.1, 3.2, & 3.3). (a) Quality versus parameter count for 16 dense models from four independent families (Llama, Gemma, Mistral, Qwen). Dashed line shows log-linear fit ( R 2 = 0.794 R^{2}=0.794 ). Systematic offsets between families reflect differences in training procedure rather than scale. (b) The relationship extends to 28 models across all architectures when plotted against total parameter count ( R 2 = 0.712 R^{2}=0.712 ). MoE models (diamonds) follow the same trend as dense models, suggesting total rather than active parameters dominate the noise floor.</span>
@@ -202,7 +202,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1091/fig_003.png" alt="Figure 3: Topic representation drives recall quality across model families. Recall quality across 16 dense models and 24 topics, sorted by topic representation frequency (left to right) and model quality (bottom to top). Colour encodes quality (0–1), with red indicating low recall, yellow the 0.5 threshold, and green high recall. The gradient is consistent with topic frequency being positively associated with recall quality across model families." loading="lazy">
+              <img class="article-figure-img" src="figures/1091/fig_003.png" alt="Figure 3: Topic representation drives recall quality across model families. Recall quality across 16 dense models and 24 topics, sorted by topic representation frequency (left to right) and model quality (bottom to top). Colour encodes quality (0–1), with red indicating low recall, yellow the 0.5 threshold, and green high recall. The gradient is consistent with topic frequency being positively associated with recall quality across model families." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 3: Topic representation drives recall quality across model families. Recall quality across 16 dense models and 24 topics, sorted by topic representation frequency (left to right) and model quality (bottom to top). Colour encodes quality (0–1), with red indicating low recall, yellow the 0.5 threshold, and green high recall. The gradient is consistent with topic frequency being positively associated with recall quality across model families.</span>
@@ -212,7 +212,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1091/fig_004.png" alt="Figure 4: Factual recall quality follows a sigmoid in the log-linear combination of model size and topic representation frequency. Light blue points show individual model × \times topic observations ( N = 384 N=384 ); coloured points show per-model averages by family (Llama, Gemma, Mistral, Qwen). The dashed curve is the fitted logistic σ ​ ( z ) \sigma(z) , where z = α ​ log 10 ⁡ P + β ​ log 10 ⁡ S + γ z=\alpha\log_{10}P+\beta\log_{10}S+\gamma ( R 2 = 0.599 R^{2}=0.599 ). Residual variance is greatest in the mid-range where models are near the recall threshold, compressing toward zero at the floor and ceiling as predicted by the sigmoid geometry." loading="lazy">
+              <img class="article-figure-img" src="figures/1091/fig_004.png" alt="Figure 4: Factual recall quality follows a sigmoid in the log-linear combination of model size and topic representation frequency. Light blue points show individual model × \times topic observations ( N = 384 N=384 ); coloured points show per-model averages by family (Llama, Gemma, Mistral, Qwen). The dashed curve is the fitted logistic σ ​ ( z ) \sigma(z) , where z = α ​ log 10 ⁡ P + β ​ log 10 ⁡ S + γ z=\alpha\log_{10}P+\beta\log_{10}S+\gamma ( R 2 = 0.599 R^{2}=0.599 ). Residual variance is greatest in the mid-range where models are near the recall threshold, compressing toward zero at the floor and ceiling as predicted by the sigmoid geometry." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 4: Factual recall quality follows a sigmoid in the log-linear combination of model size and topic representation frequency. Light blue points show individual model × \times topic observations ( N = 384 N=384 ); coloured points show per-model averages by family (Llama, Gemma, Mistral, Qwen). The dashed curve is the fitted logistic σ ​ ( z ) \sigma(z) , where z = α ​ log 10 ⁡ P + β ​ log 10 ⁡ S + γ z=\alpha\log_{10}P+\beta\log_{10}S+\gamma ( R 2 = 0.599 R^{2}=0.599 ). Residual variance is greatest in the mid-range where models are near the recall threshold, compressing toward zero at the floor and ceiling as predicted by the sigmoid geometry.</span>
@@ -222,7 +222,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1091/fig_005.png" alt="Figure 5: Larger models recall less-cited papers. Median citation count of correctly recalled references (SourceVerify status verified or verified-with-error ) plotted against model size on a log–log scale, for 10 dense models from four families with n ≥ 50 n\geq 50 matched references each. Error bars are bootstrap 95% CIs on the per-model median ( 10 , 000 10{,}000 resamples). The dashed line is a weighted log–log fit using the bootstrap-derived standard errors as inverse-variance weights (slope = − 0.35 =-0.35 , R 2 = 0.59 R^{2}=0.59 , Spearman ρ = − 0.79 \rho=-0.79 , p = 0.007 p=0.007 ). Larger models extend recall further down the citation tail, consistent with a superposition account in which stronger parameter redundancy is required to encode low-frequency information." loading="lazy">
+              <img class="article-figure-img" src="figures/1091/fig_005.png" alt="Figure 5: Larger models recall less-cited papers. Median citation count of correctly recalled references (SourceVerify status verified or verified-with-error ) plotted against model size on a log–log scale, for 10 dense models from four families with n ≥ 50 n\geq 50 matched references each. Error bars are bootstrap 95% CIs on the per-model median ( 10 , 000 10{,}000 resamples). The dashed line is a weighted log–log fit using the bootstrap-derived standard errors as inverse-variance weights (slope = − 0.35 =-0.35 , R 2 = 0.59 R^{2}=0.59 , Spearman ρ = − 0.79 \rho=-0.79 , p = 0.007 p=0.007 ). Larger models extend recall further down the citation tail, consistent with a superposition account in which stronger parameter redundancy is required to encode low-frequency information." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 5: Larger models recall less-cited papers. Median citation count of correctly recalled references (SourceVerify status verified or verified-with-error ) plotted against model size on a log–log scale, for 10 dense models from four families with n ≥ 50 n\geq 50 matched references each. Error bars are bootstrap 95% CIs on the per-model median ( 10 , 000 10{,}000 resamples). The dashed line is a weighted log–log fit using the bootstrap-derived standard errors as inverse-variance weights (slope = − 0.35 =-0.35 , R 2 = 0.59 R^{2}=0.59 , Spearman ρ = − 0.79 \rho=-0.79 , p = 0.007 p=0.007 ). Larger models extend recall further down the citation tail, consistent with a superposition account in which stronger parameter redundancy is required to encode low-frequency information.</span>
@@ -232,7 +232,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1091/fig_001.png" alt="Figure 1: SourceVerify status versus human authenticity verdict. Confusion matrix for 301 independent ratings (288 unique references; 13 double-rated) by four human reviewers across four SourceVerify status categories. Both verified (75/75) and verified-with-error (61/61) contain exclusively real papers (100%); unverified is 97% not real with 3 real papers missed; needs-human is the genuine grey zone (52/66 not real). Treating ambiguous human verdicts as not real ( n = 301 n=301 ), binary precision is 100% and specificity is 100%; all 17 disagreements are SourceVerify false negatives." loading="lazy">
+              <img class="article-figure-img" src="figures/1091/fig_001.png" alt="Figure 1: SourceVerify status versus human authenticity verdict. Confusion matrix for 301 independent ratings (288 unique references; 13 double-rated) by four human reviewers across four SourceVerify status categories. Both verified (75/75) and verified-with-error (61/61) contain exclusively real papers (100%); unverified is 97% not real with 3 real papers missed; needs-human is the genuine grey zone (52/66 not real). Treating ambiguous human verdicts as not real ( n = 301 n=301 ), binary precision is 100% and specificity is 100%; all 17 disagreements are SourceVerify false negatives." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 1: SourceVerify status versus human authenticity verdict. Confusion matrix for 301 independent ratings (288 unique references; 13 double-rated) by four human reviewers across four SourceVerify status categories. Both verified (75/75) and verified-with-error (61/61) contain exclusively real papers (100%); unverified is 97% not real with 3 real papers missed; needs-human is the genuine grey zone (52/66 not real). Treating ambiguous human verdicts as not real ( n = 301 n=301 ), binary precision is 100% and specificity is 100%; all 17 disagreements are SourceVerify false negatives.</span>
@@ -289,6 +289,19 @@
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {

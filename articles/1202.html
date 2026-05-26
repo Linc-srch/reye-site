@@ -199,7 +199,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1202/fig_002.png" alt="Figure 2: FAME system architecture. (a) Offline setup: raw logs are parsed by Drain3, K K -shot labels are sampled, an LLM proposes a failure-domain partition that is then certified, and two-phase BERT experts are trained alongside a DistilBERT gate and selector. This stage is executed once. (b) Online inference: the trained router directs each incoming log line to the appropriate expert. All inference runs on-premise with no LLM dependency." loading="lazy">
+              <img class="article-figure-img" src="figures/1202/fig_002.png" alt="Figure 2: FAME system architecture. (a) Offline setup: raw logs are parsed by Drain3, K K -shot labels are sampled, an LLM proposes a failure-domain partition that is then certified, and two-phase BERT experts are trained alongside a DistilBERT gate and selector. This stage is executed once. (b) Online inference: the trained router directs each incoming log line to the appropriate expert. All inference runs on-premise with no LLM dependency." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 2: FAME system architecture. (a) Offline setup: raw logs are parsed by Drain3, K K -shot labels are sampled, an LLM proposes a failure-domain partition that is then certified, and two-phase BERT experts are trained alongside a DistilBERT gate and selector. This stage is executed once. (b) Online inference: the trained router directs each incoming log line to the appropriate expert. All inference runs on-premise with no LLM dependency.</span>
@@ -209,7 +209,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1202/fig_001.png" alt="Figure 1: Window-level vs message-level in log anomaly detection" loading="lazy">
+              <img class="article-figure-img" src="figures/1202/fig_001.png" alt="Figure 1: Window-level vs message-level in log anomaly detection" loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 1: Window-level vs message-level in log anomaly detection</span>
@@ -219,7 +219,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1202/fig_003.png" alt="Figure 3: K-sensitivity on BGL and Thunderbird with best result at each K." loading="lazy">
+              <img class="article-figure-img" src="figures/1202/fig_003.png" alt="Figure 3: K-sensitivity on BGL and Thunderbird with best result at each K." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 3: K-sensitivity on BGL and Thunderbird with best result at each K.</span>
@@ -229,7 +229,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1202/fig_004.png" alt="Figure 4: LLM grouping sensitivity on BGL and Thunderbird ( K = 100 K{=}100 ). Each subplot shows F1, Precision, or Recall for all four LLMs." loading="lazy">
+              <img class="article-figure-img" src="figures/1202/fig_004.png" alt="Figure 4: LLM grouping sensitivity on BGL and Thunderbird ( K = 100 K{=}100 ). Each subplot shows F1, Precision, or Recall for all four LLMs." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 4: LLM grouping sensitivity on BGL and Thunderbird ( K = 100 K{=}100 ). Each subplot shows F1, Precision, or Recall for all four LLMs.</span>
@@ -239,7 +239,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1202/fig_005.png" alt="Figure 5: Case study with ambiguous keyword ’FATAL’" loading="lazy">
+              <img class="article-figure-img" src="figures/1202/fig_005.png" alt="Figure 5: Case study with ambiguous keyword ’FATAL’" loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 5: Case study with ambiguous keyword ’FATAL’</span>
@@ -296,6 +296,19 @@
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {

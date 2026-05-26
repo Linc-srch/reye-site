@@ -195,7 +195,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1095/fig_001.png" alt="Figure 1 : ReOpt-LLM Framework" loading="lazy">
+              <img class="article-figure-img" src="figures/1095/fig_001.png" alt="Figure 1 : ReOpt-LLM Framework" loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 1 : ReOpt-LLM Framework</span>
@@ -205,7 +205,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1095/fig_002.png" alt="Figure 2 : Zoom on Framework. A bounded repair loop processes the user request Δ t \Delta_{t} through three agents: the Patch Planner (LLM) generates candidate edits, the Strategy Selector chooses a re-optimization strategy from the toolbox, and the Validator + + Optimization Engine applies the edits and solves. On validation failure, additional context ρ \rho is returned to Agent 1 (up to budget B B ). On success, the state advances to Z t Z_{t} , and the system handles the next request ( t ← t + 1 ) (t\leftarrow t+1) ." loading="lazy">
+              <img class="article-figure-img" src="figures/1095/fig_002.png" alt="Figure 2 : Zoom on Framework. A bounded repair loop processes the user request Δ t \Delta_{t} through three agents: the Patch Planner (LLM) generates candidate edits, the Strategy Selector chooses a re-optimization strategy from the toolbox, and the Validator + + Optimization Engine applies the edits and solves. On validation failure, additional context ρ \rho is returned to Agent 1 (up to budget B B ). On success, the state advances to Z t Z_{t} , and the system handles the next request ( t ← t + 1 ) (t\leftarrow t+1) ." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 2 : Zoom on Framework. A bounded repair loop processes the user request Δ t \Delta_{t} through three agents: the Patch Planner (LLM) generates candidate edits, the Strategy Selector chooses a re-optimization strategy from the toolbox, and the Validator + + Optimization Engine applies the edits and solves. On validation failure, additional context ρ \rho is returned to Agent 1 (up to budget B B ). On success, the state advances to Z t Z_{t} , and the system handles the next request ( t ← t + 1 ) (t\leftarrow t+1) .</span>
@@ -215,7 +215,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1095/fig_003.png" alt="Figure 3 : Reference-relative objective gap for the default ReOpt-LLM-Patch configuration." loading="lazy">
+              <img class="article-figure-img" src="figures/1095/fig_003.png" alt="Figure 3 : Reference-relative objective gap for the default ReOpt-LLM-Patch configuration." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 3 : Reference-relative objective gap for the default ReOpt-LLM-Patch configuration.</span>
@@ -272,6 +272,19 @@
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {

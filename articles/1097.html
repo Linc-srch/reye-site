@@ -184,7 +184,7 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img src="figures/1097/fig_001.png" alt="Figure 1 : Cyclic offline-online policy optimization: Traditional methods pre-train offline and then fine-tune online, but a single offline phase often leads to catastrophic forgetting and distributional shift. While warm-up phases can partially mitigate this, they fall short in preserving long-term stability. COOPO addresses this by leveraging cyclic synergy between offline re-training and online fine-tuning, repeatedly anchoring the policy to the offline dataset to enhance robustness and prevent forgetting." loading="lazy">
+              <img class="article-figure-img" src="figures/1097/fig_001.png" alt="Figure 1 : Cyclic offline-online policy optimization: Traditional methods pre-train offline and then fine-tune online, but a single offline phase often leads to catastrophic forgetting and distributional shift. While warm-up phases can partially mitigate this, they fall short in preserving long-term stability. COOPO addresses this by leveraging cyclic synergy between offline re-training and online fine-tuning, repeatedly anchoring the policy to the offline dataset to enhance robustness and prevent forgetting." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 1 : Cyclic offline-online policy optimization: Traditional methods pre-train offline and then fine-tune online, but a single offline phase often leads to catastrophic forgetting and distributional shift. While warm-up phases can partially mitigate this, they fall short in preserving long-term stability. COOPO addresses this by leveraging cyclic synergy between offline re-training and online fine-tuning, repeatedly anchoring the policy to the offline dataset to enhance robustness and prevent forgetting.</span>
@@ -194,7 +194,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1097/fig_002.png" alt="Figure 2 : Schematic Diagram of COOPO: COOPO cyclically alternates KL-regularized offline training and trust-region online fine-tuning to eliminate distribution drift and catastrophic forgetting. When there is only one cycle, COOPO degenerates to vanilla offline-to-online RL." loading="lazy">
+              <img class="article-figure-img" src="figures/1097/fig_002.png" alt="Figure 2 : Schematic Diagram of COOPO: COOPO cyclically alternates KL-regularized offline training and trust-region online fine-tuning to eliminate distribution drift and catastrophic forgetting. When there is only one cycle, COOPO degenerates to vanilla offline-to-online RL." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 2 : Schematic Diagram of COOPO: COOPO cyclically alternates KL-regularized offline training and trust-region online fine-tuning to eliminate distribution drift and catastrophic forgetting. When there is only one cycle, COOPO degenerates to vanilla offline-to-online RL.</span>
@@ -204,7 +204,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1097/fig_003.png" alt="Figure 3 : Mujoco environments used in this work for evaluation: Half-cheetah, Hopper, and Walker." loading="lazy">
+              <img class="article-figure-img" src="figures/1097/fig_003.png" alt="Figure 3 : Mujoco environments used in this work for evaluation: Half-cheetah, Hopper, and Walker." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 3 : Mujoco environments used in this work for evaluation: Half-cheetah, Hopper, and Walker.</span>
@@ -214,7 +214,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1097/fig_004.png" alt="Figure 4 : Average return vs. gradient steps on HalfCheetah for AWAC, COOPO, and IQL. COOPO achieves the best final performance with improved sample efficiency, while AWAC and IQL converge faster but plateau earlier." loading="lazy">
+              <img class="article-figure-img" src="figures/1097/fig_004.png" alt="Figure 4 : Average return vs. gradient steps on HalfCheetah for AWAC, COOPO, and IQL. COOPO achieves the best final performance with improved sample efficiency, while AWAC and IQL converge faster but plateau earlier." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 4 : Average return vs. gradient steps on HalfCheetah for AWAC, COOPO, and IQL. COOPO achieves the best final performance with improved sample efficiency, while AWAC and IQL converge faster but plateau earlier.</span>
@@ -224,7 +224,7 @@
             </figure>
             
             <figure class="article-figure">
-              <img src="figures/1097/fig_009.png" alt="Figure 6 : Training performance across different online-offline cycle combinations on the HalfCheetah environment.
+              <img class="article-figure-img" src="figures/1097/fig_009.png" alt="Figure 6 : Training performance across different online-offline cycle combinations on the HalfCheetah environment.
 Increasing offline cycles generally improves stability and reduces the need for extensive online updates." loading="lazy">
               
               <figcaption>
@@ -284,6 +284,19 @@ Increasing offline cycles generally improves stability and reduces the need for 
   </footer>
 </div><!-- .reye-app -->
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
 <script src="../assets/app.js"></script>
 <script>
 (function() {
