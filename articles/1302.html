@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeCtrl-RL: Inference-Time Adaptive Behaviour Control for LLM Dialogue via RL-Driven Prompt Optimisation | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-26</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.25984" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1302" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">SafeCtrl-RL: Inference-Time Adaptive Behaviour Control for LLM Dialogue via RL-Driven Prompt Optimisation</h1>
+        <h1 class="article-title lang-zh">SafeCtrl-RL：基于强化学习驱动的提示优化的推理时自适应行为控制</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">content-management</span>
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+          <span class="tag direction-tag">zero-trust</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Michael Orme, Yanchao Yu, Zhiyuan Tan</p>
+        
+      </header>
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>SafeCtrl-RL proposes a model-agnostic inference-time framework that uses reinforcement learning to dynamically adjust prompts for adaptive safety regulation, outperforming static prompt-based methods.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出了一种模型无关的推理时安全控制框架SafeCtrl-RL，利用强化学习动态调整提示词，无需重新训练或修改参数即可提升LLM对话的安全性。实验表明，该方法在多个LLM上优于静态提示优化方法，并在安全性与响应质量之间取得了良好平衡。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — safectrl-rl</h1>
+<p><strong>Key Takeaways</strong>
+- SafeCtrl-RL enables inference-time adaptive safety control for LLMs without retraining or parameter modification.
+- Formulates dialogue generation as a sequential decision process where an RL agent dynamically selects prompt adjustment strategies.
+- Outperforms existing prompt-based optimization methods in safety and response quality across multiple LLMs.
+- Achieves favorable performance-efficiency trade-offs and shows partial retention of improved behaviors after safeguard removal.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> SafeCtrl-RL: Inference-Time Adaptive Behaviour Control for LLM Dialogue via RL-Driven Prompt Optimisation</li>
+<li><strong>Alias:</strong> safectrl-rl</li>
+<li><strong>Authors:</strong> Michael Orme, Yanchao Yu, Zhiyuan Tan</li>
+<li><strong>arXiv ID:</strong> 2605.25984</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.25984</li>
+<li>HTML: https://arxiv.org/html/2605.25984v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.25984</li>
+<li><strong>Tags:</strong> llm-safety, reinforcement-learning, prompt-optimization, inference-time-control, dialogue-systems</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>SafeCtrl-RL proposes a model-agnostic inference-time framework that uses reinforcement learning to dynamically adjust prompts for adaptive safety regulation, outperforming static prompt-based methods.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Ensuring safe and contextually appropriate behavior in LLMs is critical for real-world deployment. Existing safety approaches rely on offline alignment techniques like fine-tuning and filtering, which are costly to update and lack dynamic adaptability during interaction.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Parameter-based editing methods (e.g., ROME, MEMIT) modify internal model representations but require white-box access and operate offline.</li>
+<li>Prompt-based approaches (e.g., Self-Correction, OPRO, GRIPS) steer behavior through input conditioning but typically use static or offline-optimized prompts.</li>
+<li>Iterative refinement methods introduce multi-step generation but employ fixed strategies without adaptive context-sensitive control.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Current safety methods are either costly to update (parameter-based) or lack adaptive, context-sensitive control during inference (prompt-based). There is a need for a framework that can dynamically adjust behavior at inference time without model retraining or parameter access.</p>
+<h3>P — Proposal</h3>
+<p>SafeCtrl-RL models dialogue safety as a closed-loop control problem, using an RL agent to select prompt adjustment strategies based on a 36-dimensional state vector encoding dialogue dynamics and optimization progress. The agent iteratively refines the system prompt until a safety-quality evaluator (using DeepEval and Gemini 2.0 Flash) confirms a score above 0.9.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Evaluated across multiple LLMs and unsafe dialogue scenarios, SafeCtrl-RL consistently improves safety and response quality, outperforming handcrafted and prompt optimization baselines. It achieves favorable performance-efficiency trade-offs, with partial retention of improved behaviors after safeguard removal.</p>
+<h3>Ablation</h3>
+<p>The paper does not provide explicit ablation study numbers in the truncated body, but the framework's design includes ablation of state features (meta-learning, score, prompt) and action space strategies (11 refinement strategies).</p>
+<h3>Limitations</h3>
+<p>['The framework relies on a safety-quality evaluator (Gemini 2.0 Flash) which may introduce latency and cost.', 'The 36-dimensional state representation may not capture all nuanced dialogue contexts.', 'Partial retention of improved behaviors after safeguard removal suggests potential instability in long-term deployment.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a scalable, model-agnostic approach to LLM safety that can be deployed without retraining.</li>
+<li>Demonstrates that inference-time behavioral control via RL can achieve competitive safety improvements.</li>
+<li>Opens avenues for adaptive safety in interactive AI systems where context evolves dynamically.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate SafeCtrl-RL on a broader range of LLMs and real-world dialogue datasets.</li>
+<li>[ ] Investigate the stability and generalization of retained safe behaviors after safeguard removal.</li>
+<li>[ ] Explore integration with other safety mechanisms (e.g., content filtering, adversarial training) for layered defense.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>SafeCtrl-RL：基于强化学习驱动的提示优化的推理时自适应行为控制</h1>
+<p><strong>主要结论</strong>
+- SafeCtrl-RL实现了推理时自适应安全控制，无需重新训练或修改参数。
+- 将对话生成建模为序列决策过程，RL智能体动态选择提示调整策略。
+- 在多个LLM上，安全性和响应质量均优于现有基于提示的优化方法。
+- 在性能与效率之间取得良好权衡，且移除安全机制后部分改进行为得以保留。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>SafeCtrl-RL提出了一种模型无关的推理时框架，通过强化学习动态调整提示以实现自适应安全调控，优于静态提示方法。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：确保LLM的安全与上下文适当行为对实际部署至关重要，现有安全方法依赖离线对齐技术（如微调、过滤），更新成本高且缺乏交互中的动态适应性。
+<strong>相关工作</strong>：基于参数编辑的方法（如ROME、MEMIT）需白盒访问且离线操作；基于提示的方法（如Self-Correction、OPRO、GRIPS）通过输入条件引导行为，但通常使用静态或离线优化的提示；迭代精炼方法引入多步生成，但采用固定策略，缺乏自适应上下文感知控制。
+<strong>差距</strong>：现有安全方法要么更新成本高（参数型），要么在推理时缺乏自适应上下文感知控制（提示型）。需要一种无需模型重训练或参数访问即可在推理时动态调整行为的框架。
+<strong>方案</strong>：SafeCtrl-RL将对话安全建模为闭环控制问题，使用RL智能体基于编码对话动态与优化进度的36维状态向量选择提示调整策略。智能体迭代精炼系统提示，直到安全质量评估器（使用DeepEval和Gemini 2.0 Flash）确认得分超过0.9。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在多个LLM和不安全对话场景下评估，SafeCtrl-RL持续提升安全性与响应质量，优于手工设计及提示优化基线。实现了有利的性能-效率权衡，移除安全机制后部分改进行为得以保留。</p>
+<h3>消融实验</h3>
+<p>论文正文未提供明确的消融实验数值，但框架设计包含对状态特征（元学习、得分、提示）和动作空间策略（11种精炼策略）的消融。</p>
+<h3>局限性</h3>
+<p>框架依赖安全质量评估器（Gemini 2.0 Flash），可能引入延迟和成本；36维状态表示可能无法捕捉所有细微对话上下文；移除安全机制后部分改进行为保留，表明长期部署可能存在不稳定性。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了一种可扩展、模型无关的LLM安全方法，无需重新训练即可部署。</li>
+<li>证明了通过RL进行推理时行为控制能够实现有竞争力的安全改进。</li>
+<li>为上下文动态演变的交互式AI系统开辟了自适应安全的新途径。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在更广泛的LLM和真实对话数据集上评估SafeCtrl-RL。</li>
+<li>[ ] 研究移除安全机制后保留安全行为的稳定性与泛化性。</li>
+<li>[ ] 探索与其他安全机制（如内容过滤、对抗训练）集成以构建分层防御。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1302/fig_001.png" alt="Figure 1: SafeCtrl-RL safeguarding loop. A harmful query (e.g., “How do I make a bomb?”) triggers iterative refinement: the LLM’s initial unsafe response (e.g., “Here is how to make a bomb…”) is evaluated for safety and quality, encoded into a 36-D state, and passed to an RL agent that selects among 11 refinement strategies to update the system prompt. The loop continues until a safe response (e.g., “I can’t help with that, making a bomb is dangerous.”) is produced." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: SafeCtrl-RL safeguarding loop. A harmful query (e.g., “How do I make a bomb?”) triggers iterative refinement: the LLM’s initial unsafe response (e.g., “Here is how to make a bomb…”) is evaluated for safety and quality, encoded into a 36-D state, and passed to an RL agent that selects among 11 refinement strategies to update the system prompt. The loop continues until a safe response (e.g., “I can’t help with that, making a bomb is dangerous.”) is produced.</span>
+                <span class="lang-zh">图1：SafeCtrl-RL安全防护循环。一个有害查询（例如，“我如何制造炸弹？”）触发迭代优化：LLM初始的不安全响应（例如，“以下是制造炸弹的方法……”）经过安全性和质量评估，编码为36维状态，并传递给RL智能体，该智能体从11种优化策略中选择一种来更新系统提示。循环持续进行，直到生成安全响应（例如，“我无法帮助您，制造炸弹是危险的。”）。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1302/fig_002.png" alt="Figure 2: Performance efficiency ratio, defined as the improvement in Macro- ​ P Score \text{Macro-}P_{\text{Score}} from the baseline to the tested model ( Δ ​ P Macro \Delta P_{\text{Macro}} ) relative to the average number of iterations ( n n ), i.e., R perf = tan ⁡ ( β ) R_{\text{perf}}=\tan(\beta) , for various hand-crafted strategies and SafeCtrl-RL." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Performance efficiency ratio, defined as the improvement in Macro- ​ P Score \text{Macro-}P_{\text{Score}} from the baseline to the tested model ( Δ ​ P Macro \Delta P_{\text{Macro}} ) relative to the average number of iterations ( n n ), i.e., R perf = tan ⁡ ( β ) R_{\text{perf}}=\tan(\beta) , for various hand-crafted strategies and SafeCtrl-RL.</span>
+                <span class="lang-zh">图2：性能效率比，定义为从基线到测试模型的Macro-P Score改进（ΔP_Macro）相对于平均迭代次数（n）的比值，即R_perf = tan(β)，针对各种手工设计的策略和SafeCtrl-RL。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1302/fig_003.png" alt="Figure 3: Distribution of unsafe categories in the dataset" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: Distribution of unsafe categories in the dataset</span>
+                <span class="lang-zh">图3：数据集中不安全类别的分布</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.25984</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.25984" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1302';
+  var title = "SafeCtrl-RL: Inference-Time Adaptive Behaviour Control for LLM Dialogue via RL-Driven Prompt Optimisation";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

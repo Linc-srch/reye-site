@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LECTOR: Joint Optimization of Scientific Reasoning Graphs and Introduction Generation | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-26</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.25964" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1304" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">LECTOR: Joint Optimization of Scientific Reasoning Graphs and Introduction Generation</h1>
+        <h1 class="article-title lang-zh">LECTOR：科学推理图与引言生成的联合优化</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">content-management</span>
+          
+          <span class="tag direction-tag">editorial-workflow</span>
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Jiabei Xiao, Yizhou Wang, Chen Tang, Pengze Li, Wanli Ouyang, Shixiang Tang</p>
+        
+      </header>
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>LECTOR proposes a novel co-reinforcement learning framework that uses a logic-reasoning graph to jointly optimize logical fidelity and narrative quality for scientific introduction generation, achieving significant improvements over baselines.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出LECTOR框架，将科学论文引言生成重新定义为基于论文核心证据的内容条件生成任务，通过逻辑推理图显式建模推理结构，并采用逻辑-表达协同强化学习联合优化图结构保真度和叙事质量。在Nature Communications数据集上，LECTOR-4B在图表质量、引用质量和论文一致性上分别提升26.7%、8.6%和3.3%，性能媲美GPT-o3。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — lector</h1>
+<p><strong>Key Takeaways</strong>
+- LECTOR formulates Introduction generation as a Content-Conditional Introduction Generation (CCIG) task requiring grounding in the paper's core evidence.
+- It uses a logic-reasoning graph as an explicit intermediate representation to enforce logical consistency and reduce hallucinations.
+- A Logic-Expression Co-Reinforcement Learning framework jointly optimizes graph structural fidelity and narrative quality.
+- On a Nature Communications dataset, LECTOR-4B improves Graph Quality by 26.7%, Citation Quality by 8.6%, and Paper Consistency by 3.3%.
+- LECTOR-4B achieves performance comparable to GPT-o3 while using a much smaller model.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> LECTOR: Joint Optimization of Scientific Reasoning Graphs and Introduction Generation</li>
+<li><strong>Alias:</strong> lector</li>
+<li><strong>Authors:</strong> Jiabei Xiao, Yizhou Wang, Chen Tang, Pengze Li, Wanli Ouyang, Shixiang Tang</li>
+<li><strong>arXiv ID:</strong> 2605.25964</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.25964</li>
+<li>HTML: https://arxiv.org/html/2605.25964v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.25964</li>
+<li><strong>Tags:</strong> scientific-writing, reinforcement-learning, logic-graph, introduction-generation, ai-scientist</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>LECTOR proposes a novel co-reinforcement learning framework that uses a logic-reasoning graph to jointly optimize logical fidelity and narrative quality for scientific introduction generation, achieving significant improvements over baselines.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>AI Scientist systems have made progress in automating parts of the research pipeline, but automatic scientific paper writing, especially the Introduction, remains challenging due to the need for logical soundness and verifiable faithfulness. Existing methods treat introduction writing as text generation, leading to issues like citation hallucination and logical inconsistency.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>SciIG benchmarks LLMs on introduction writing using titles and abstracts, but does not evaluate grounding in research logic.</li>
+<li>AI Scientist systems generate complete papers end-to-end but suffer from logical inconsistency and weak structural organization.</li>
+<li>Structured representations like ORKG, NLP-AKG, and ARCHE extract reasoning structures but are not used for generation.</li>
+<li>LLM-based survey generation and literature review methods demonstrate potential for large-scale academic content generation.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Current AI-assisted writing methods treat introduction generation as a text generation task, bypassing the crucial reasoning step and leading to hallucinated citations and logical inconsistencies. There is no existing framework that explicitly models the paper's reasoning structure to guide introduction generation while jointly optimizing for both logic fidelity and narrative quality.</p>
+<h3>P — Proposal</h3>
+<p>LECTOR first constructs a logic-reasoning graph from the paper's main body (Methodology, Results, Analyses, Citations) as a verifiable logical blueprint. It then employs a Logic-Expression Co-Rewarding mechanism within a reinforcement learning framework to jointly optimize for graph structural fidelity and final narrative quality, enabling mutual reinforcement between scientific understanding and structure-aware writing.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On a dataset of 10,200 Nature Communications papers, LECTOR-4B achieves Graph Quality +26.7%, Citation Quality +8.6%, and Paper Consistency +3.3% over the Qwen3-4B baseline. LECTOR-4B's overall performance is comparable to GPT-o3.</p>
+<h3>Ablation</h3>
+<p>The co-rewarding mechanism is critical: jointly optimizing logic and expression yields better results than optimizing either alone, with the logic-reasoning graph providing a 26.7% improvement in Graph Quality.</p>
+<h3>Limitations</h3>
+<p>The approach relies on the quality of the extracted logic-reasoning graph, which may be imperfect for papers with complex or implicit reasoning. The dataset is limited to Nature Communications papers in physics-related domains, so generalizability to other fields is unclear. The method requires access to the full paper body, which may not always be available.</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a principled framework for grounding scientific text generation in verifiable logical structures, directly addressing hallucination and inconsistency issues.</li>
+<li>Demonstrates that small models (4B) can achieve performance comparable to large closed-source models when guided by explicit reasoning graphs, suggesting a more efficient path to high-fidelity scientific writing.</li>
+<li>The CCIG task formulation and co-rewarding mechanism offer a new paradigm for evaluating and improving AI systems in scientific writing beyond fluency metrics.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply LECTOR to other sections of scientific papers (e.g., Discussion, Conclusion) to assess generalizability.</li>
+<li>[ ] Explore extending the logic-reasoning graph to include cross-paper citations and related work reasoning.</li>
+<li>[ ] Investigate the use of LECTOR for other structured generation tasks like grant proposals or technical reports.</li>
+<li>[ ] Evaluate the framework on papers from diverse scientific domains beyond physics to test domain transfer.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>LECTOR：科学推理图与引言生成的联合优化</h1>
+<p><strong>主要结论</strong>
+- LECTOR将引言生成形式化为内容条件生成任务，要求严格基于论文核心证据。
+- 使用逻辑推理图作为显式中间表示，强制逻辑一致性并减少幻觉。
+- 逻辑-表达协同强化学习框架联合优化图结构保真度和叙事质量。
+- 在Nature Communications数据集上，LECTOR-4B的图表质量提升26.7%，引用质量提升8.6%，论文一致性提升3.3%。
+- LECTOR-4B在较小模型规模下达到与GPT-o3相当的性能。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>LECTOR提出一种新颖的协同强化学习框架，利用逻辑推理图联合优化科学引言生成的逻辑保真度和叙事质量，显著超越基线方法。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：AI科学家系统在自动化研究流程方面取得进展，但自动科学论文写作（尤其是引言）仍因需要逻辑严谨性和可验证的忠实性而面临挑战。现有方法将引言写作视为文本生成任务，导致引用幻觉和逻辑不一致。<strong>相关工作</strong>：SciIG使用标题和摘要评估LLM的引言写作，但不评估研究逻辑的接地性；AI Scientist系统端到端生成完整论文但存在逻辑不一致和结构组织薄弱；ORKG、NLP-AKG和ARCHE等结构化表示提取推理结构但未用于生成；基于LLM的综述生成和文献综述方法展示了大规模学术内容生成的潜力。<strong>差距</strong>：当前AI辅助写作方法将引言生成视为文本生成任务，绕过了关键的推理步骤，导致引用幻觉和逻辑不一致。尚无框架显式建模论文推理结构以指导引言生成，同时联合优化逻辑保真度和叙事质量。<strong>提案</strong>：LECTOR首先从论文主体（方法、结果、分析、引用）构建逻辑推理图作为可验证的逻辑蓝图，然后在强化学习框架中采用逻辑-表达协同奖励机制，联合优化图结构保真度和最终叙事质量，实现科学理解与结构感知写作的相互增强。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在包含10,200篇Nature Communications论文的数据集上，LECTOR-4B相比Qwen3-4B基线在图表质量上提升26.7%，引用质量提升8.6%，论文一致性提升3.3%。LECTOR-4B的整体性能与GPT-o3相当。</p>
+<h3>消融实验</h3>
+<p>协同奖励机制至关重要：联合优化逻辑和表达比单独优化任一指标效果更好，逻辑推理图带来图表质量26.7%的提升。</p>
+<h3>局限性</h3>
+<p>该方法依赖于提取的逻辑推理图的质量，对于推理复杂或隐含的论文可能不完美。数据集仅限于物理相关领域的Nature Communications论文，因此对其他领域的泛化能力尚不明确。该方法需要访问完整的论文正文，这并非总是可行。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了一个原则性框架，将科学文本生成锚定在可验证的逻辑结构上，直接解决幻觉和不一致问题。</li>
+<li>证明小模型（4B）在显式推理图引导下可以达到与大型闭源模型相当的性能，为高保真科学写作提供了更高效的路径。</li>
+<li>CCIG任务形式和协同奖励机制为评估和改进AI系统的科学写作提供了超越流畅度指标的新范式。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将LECTOR应用于科学论文的其他部分（如讨论、结论），评估其泛化能力。</li>
+<li>[ ] 探索扩展逻辑推理图以包含跨论文引用和相关工作推理。</li>
+<li>[ ] 研究将LECTOR用于其他结构化生成任务，如基金申请书或技术报告。</li>
+<li>[ ] 在物理以外的不同科学领域论文上评估该框架，测试领域迁移能力。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1304/fig_002.jpg" alt="Figure 2 : The overall architecture of LECTOR. The framework operates in two synergistic stages within a single rollout: (Top) Reasoning Logic Graph Extraction: Given the main body of scientific research articles including Methods ( ℳ \mathcal{M} ), Results ( ℛ \mathcal{R} ), and Discussion ( 𝒟 \mathcal{D} ) but excluding the Introduction, LECTOR extracts an explicit Reasoning Logic Graph . This graph consists of nodes connected through deduction , abduction , and induction to derive the paper’s core idea. (Bottom) Logic-Aware Introduction Writing: Taking the extracted graph and a citation list 𝒞 \mathcal{C} as input sources, the model generates a structured introduction following the CARS (Create a Research Space) move structures (e.g., Establishing a Territory/Niche ). Optimization: Both stages share weights and are jointly optimized through a Logic-Expression Co-Rewarding mechanism. By rigorously evaluating Graph Quality and Graph-Writing Alignment alongside Writing Quality and Citation Quality , LECTOR ensures that the high-quality reasoning logic graph effectively grounds the final introduction to be logically sound, verifiably faithful, and narratively fluent." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2 : The overall architecture of LECTOR. The framework operates in two synergistic stages within a single rollout: (Top) Reasoning Logic Graph Extraction: Given the main body of scientific research articles including Methods ( ℳ \mathcal{M} ), Results ( ℛ \mathcal{R} ), and Discussion ( 𝒟 \mathcal{D} ) but excluding the Introduction, LECTOR extracts an explicit Reasoning Logic Graph . This graph consists of nodes connected through deduction , abduction , and induction to derive the paper’s core idea. (Bottom) Logic-Aware Introduction Writing: Taking the extracted graph and a citation list 𝒞 \mathcal{C} as input sources, the model generates a structured introduction following the CARS (Create a Research Space) move structures (e.g., Establishing a Territory/Niche ). Optimization: Both stages share weights and are jointly optimized through a Logic-Expression Co-Rewarding mechanism. By rigorously evaluating Graph Quality and Graph-Writing Alignment alongside Writing Quality and Citation Quality , LECTOR ensures that the high-quality reasoning logic graph effectively grounds the final introduction to be logically sound, verifiably faithful, and narratively fluent.</span>
+                <span class="lang-zh">图2：LECTOR的整体架构。该框架在单次展开中通过两个协同阶段运行：（上方）推理逻辑图提取：给定科研论文的主体部分，包括方法（ℳ）、结果（ℛ）和讨论（𝒟），但不包含引言，LECTOR提取一个显式的推理逻辑图。该图由通过演绎、溯因和归纳连接的节点组成，以推导出论文的核心思想。（下方）逻辑感知的引言写作：以提取的图和引用列表𝒞作为输入源，模型按照CARS（创建研究空间）移动结构（例如，建立领域/缺口）生成结构化的引言。优化：两个阶段共享权重，并通过逻辑表达协同奖励机制进行联合优化。通过严格评估图质量、图-写作对齐以及写作质量和引用质量，LECTOR确保高质量的推理逻辑图有效地支撑最终的引言，使其逻辑合理、可验证地忠实且叙述流畅。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1304/fig_001.jpg" alt="Figure 1 : Overview of the LECTOR framework and performance evaluation. (a) Existing methods treat introduction writing as a direct text generation task, often leading to logical inconsistencies and hallucinations. (b) LECTOR reformulates the task as Content-Conditional Introduction Generation (CCIG), first extracting a Reasoning Logic Graph as a verifiable logical blueprint to guide logic-aware writing. (c) Results show that our LECTOR-4B significantly outperforms the Qwen3-4B baseline. Notably, LECTOR-4B achieves superior Overall Performance compared to the state-of-the-art commercial closed-source model GPT-o3 , validating the effectiveness of our logic-expression co-reinforcement learning approach." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 : Overview of the LECTOR framework and performance evaluation. (a) Existing methods treat introduction writing as a direct text generation task, often leading to logical inconsistencies and hallucinations. (b) LECTOR reformulates the task as Content-Conditional Introduction Generation (CCIG), first extracting a Reasoning Logic Graph as a verifiable logical blueprint to guide logic-aware writing. (c) Results show that our LECTOR-4B significantly outperforms the Qwen3-4B baseline. Notably, LECTOR-4B achieves superior Overall Performance compared to the state-of-the-art commercial closed-source model GPT-o3 , validating the effectiveness of our logic-expression co-reinforcement learning approach.</span>
+                <span class="lang-zh">图1：LECTOR框架及性能评估概览。(a) 现有方法将引言写作视为直接文本生成任务，常导致逻辑不一致和幻觉。(b) LECTOR将任务重构为内容条件式引言生成（CCIG），首先提取一个可验证的逻辑蓝图——推理逻辑图，以指导逻辑感知的写作。(c) 结果表明，我们的LECTOR-4B显著优于Qwen3-4B基线。值得注意的是，LECTOR-4B在整体性能上超越了最先进的商业闭源模型GPT-o3，验证了我们逻辑表达协同强化学习方法的有效性。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.25964</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.25964" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1304';
+  var title = "LECTOR: Joint Optimization of Scientific Reasoning Graphs and Introduction Generation";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

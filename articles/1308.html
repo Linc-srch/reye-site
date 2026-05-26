@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-26</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.25920" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1308" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning</h1>
+        <h1 class="article-title lang-zh">LLM能否时间旅行？通过强化学习增强法律智能搜索中的时间一致性</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">content-management</span>
+          
+          <span class="tag direction-tag">digital-publishing</span>
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Wei Fan, Yining Zhou, Mufan Zhang, Yanbing Weng, Yiran HU, Tianshi Zheng, Baixuan Xu, Chunyang Li, Jianhui Yang, Haoran Li, Yangqiu Song</p>
+        
+      </header>
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>LegalSearch-R1 demonstrates that reinforcement learning on temporally-indexed data with a hybrid RAG-web search architecture can overcome the temporal bias of LLMs and search agents, achieving significant gains in temporal consistency for legal reasoning.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文揭示了LLM和搜索智能体在时间一致性上的严重缺陷，并提出LegalSearch-R1框架，通过基于GRPO的强化学习在时间索引数据上训练，结合本地法条RAG与网络搜索的双工具架构，显著提升了法律推理中的时间对齐能力。7B模型在时间一致性指标上超越现有最先进方法12.9%-29.8%，为时间敏感领域提供了可复用的解决方案。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — legalsearch-r1</h1>
+<p><strong>Key Takeaways</strong>
+- LLMs and search agents suffer from temporal bias, peaking near training cutoff and degrading on earlier/later statute versions.
+- LegalSearch-R1 uses GRPO-based RL on temporally-indexed data to enforce temporal consistency in legal agentic search.
+- A dual-tool architecture (local statute RAG + web search) achieves precise article-level retrieval and broader legal knowledge.
+- 7B model outperforms SOTA deep research frameworks and specialized legal LLMs by 12.9%-29.8% and baselines by 57.7%-80.3% on temporal consistency.
+- Entropy-based advantage shaping accelerates learning of temporal query formulation.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning</li>
+<li><strong>Alias:</strong> legalsearch-r1</li>
+<li><strong>Authors:</strong> Wei Fan, Yining Zhou, Mufan Zhang, Yanbing Weng, Yiran HU, Tianshi Zheng, Baixuan Xu, Chunyang Li, Jianhui Yang, Haoran Li, Yangqiu Song</li>
+<li><strong>arXiv ID:</strong> 2605.25920</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.25920</li>
+<li>HTML: https://arxiv.org/html/2605.25920v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.25920</li>
+<li><strong>Tags:</strong> legal-reasoning, temporal-consistency, reinforcement-learning, agentic-search, retrieval-augmented-generation</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>LegalSearch-R1 demonstrates that reinforcement learning on temporally-indexed data with a hybrid RAG-web search architecture can overcome the temporal bias of LLMs and search agents, achieving significant gains in temporal consistency for legal reasoning.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>LLMs augmented with agentic search are promising for legal reasoning but overlook the fundamental constraint that applicable law must match the temporal context of each case. Prior work shows that legal LLMs suffer from temporal bias anchored to their training cutoff, and search agents rarely incorporate temporal constraints into queries.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Legal-specialized LLMs (ChatLaw, Lawyer LLaMA, DISC-LawLLM, LawGPT, InternLM-Law, SaulLM) show temporal degradation on amended statutes.</li>
+<li>ChronosLex and LexTempus reveal significant degradation on temporally shifted legal inputs; FreshLLMs and LexTime confirm LLMs struggle with time-sensitive knowledge.</li>
+<li>Existing legal RAG systems (SAILER, LeCaRD) treat retrieval as static one-shot without temporal filtering or multi-turn reasoning.</li>
+<li>Agentic search systems (Open Deep Search, Search-R1, R1-Searcher, DeepResearcher, EvolveSearch, ReSearch, WebThinker, DeepPlanner) lack temporal consistency enforcement and rely solely on web search.</li>
+<li>LRAS and L-MARS show gains from dynamic agentic search in law but do not address temporal consistency.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Current legal LLMs and agentic search systems fail to enforce temporal consistency: LLMs exhibit temporal bias toward their training cutoff, search agents rarely include temporal constraints in queries, and web search alone cannot provide precise statute and precedent citations. No existing framework combines temporally-indexed training data with a dual-tool architecture of local statute RAG and online web search to address this.</p>
+<h3>P — Proposal</h3>
+<p>LegalSearch-R1 is an end-to-end reinforcement learning framework using GRPO on temporally-indexed data spanning multiple amendment periods. It pairs local statute RAG for precise article matching with online web search for broader legal knowledge, and employs entropy-based advantage shaping to accelerate learning of temporal query formulation.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On a benchmark covering 13 legal tasks (7 in-domain, 6 out-of-domain), LegalSearch-R1 (7B) outperforms SOTA deep research frameworks and specialized legal LLMs by 12.9% to 29.8%, surpasses baselines by 57.7% to 80.3% on temporal consistency, and shows robust out-of-domain generalization.</p>
+<h3>Ablation</h3>
+<p>Entropy-based advantage shaping significantly accelerates learning of temporal query formulation; the dual-tool architecture (local RAG + web search) outperforms using either tool alone.</p>
+<h3>Limitations</h3>
+<p>['The framework is evaluated only on Chinese legal tasks; generalizability to other legal systems (e.g., common law) is not demonstrated.', 'The reliance on a curated local statute corpus may limit scalability to jurisdictions with less structured legal databases.', 'The 7B parameter model may still face challenges with very long or complex multi-hop legal queries.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Temporal consistency is a critical yet overlooked failure mode in legal AI; this work provides a principled RL-based solution.</li>
+<li>The hybrid RAG-web search architecture offers a blueprint for domain-specific agentic search where precision and breadth are both needed.</li>
+<li>The use of temporally-indexed training data and advantage shaping can be adapted to other time-sensitive domains (e.g., medical guidelines, financial regulations).</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate LegalSearch-R1 on common law datasets (e.g., US or UK case law) to test cross-jurisdiction transfer.</li>
+<li>[ ] Extend the framework to incorporate judicial precedent retrieval alongside statute retrieval.</li>
+<li>[ ] Explore scaling the model size and training data to improve performance on complex multi-hop queries.</li>
+<li>[ ] Integrate temporal consistency constraints into other agentic search frameworks for non-legal domains.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>LLM能否时间旅行？通过强化学习增强法律智能搜索中的时间一致性</h1>
+<p><strong>主要结论</strong>
+- LLM和搜索智能体存在时间偏差，在训练截止日期前后的法律条文版本上表现最佳，而对更早或更晚版本性能显著下降。
+- LegalSearch-R1采用基于GRPO的强化学习，在跨越多个修订期的时间索引数据上训练，强制模型在查询和推理中考虑时间上下文。
+- 双工具架构（本地法条RAG + 网络搜索）实现了精确的法条级检索与广泛的法律知识获取的平衡。
+- 7B模型在时间一致性上超越最先进的深度研究框架和专业法律LLM 12.9%-29.8%，超越基线方法57.7%-80.3%。
+- 基于熵的优势塑形（entropy-based advantage shaping）加速了模型学习时间感知查询表述的能力。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>LegalSearch-R1证明，在时间索引数据上使用强化学习，并结合混合RAG-网络搜索架构，能够克服LLM和搜索智能体的时间偏差，在法律推理中实现显著的时间一致性提升。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：增强搜索的LLM在法律推理中很有前景，但忽略了适用法律必须匹配案件时间上下文这一基本约束。已有工作表明法律LLM存在锚定于训练截止日期的时间偏差，搜索智能体也极少在查询中加入时间约束。
+<strong>相关工作</strong>：专业法律LLM（ChatLaw、Lawyer LLaMA等）在修订后的法律条文上表现退化；ChronosLex和LexTempus揭示了时间偏移输入下的显著退化；现有法律RAG系统（SAILER、LeCaRD）将检索视为静态一次性操作，缺乏时间过滤或多轮推理；智能体搜索系统（Open Deep Search、Search-R1等）缺乏时间一致性约束，仅依赖网络搜索；LRAS和L-MARS展示了动态智能体搜索在法律中的优势，但未解决时间一致性问题。
+<strong>差距</strong>：当前法律LLM和智能体搜索系统未能强制时间一致性：LLM表现出对训练截止日期的时间偏差，搜索智能体很少在查询中包含时间约束，仅靠网络搜索无法提供精确的法条和先例引用。尚无框架将时间索引训练数据与本地法条RAG和在线网络搜索的双工具架构相结合来解决此问题。
+<strong>方案</strong>：LegalSearch-R1是一个端到端强化学习框架，使用GRPO在跨越多个修订期的时间索引数据上训练。它将本地法条RAG用于精确法条匹配，与在线网络搜索用于更广泛的法律知识相结合，并采用基于熵的优势塑形来加速时间感知查询表述的学习。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在涵盖13个法律任务（7个域内、6个域外）的基准测试上，LegalSearch-R1（7B）在时间一致性上超越最先进的深度研究框架和专业法律LLM 12.9%至29.8%，超越基线方法57.7%至80.3%，并展现出鲁棒的域外泛化能力。</p>
+<h3>消融实验</h3>
+<p>基于熵的优势塑形显著加速了时间感知查询表述的学习；双工具架构（本地RAG + 网络搜索）优于单独使用任一工具。</p>
+<h3>局限性</h3>
+<p>['该框架仅在中文法律任务上评估，未证明对其他法律体系（如普通法）的泛化能力。', '对精心整理的本地法条语料库的依赖可能限制其在法律数据库结构化程度较低的法域的可扩展性。', '7B参数模型在处理非常长或复杂的多跳法律查询时仍可能面临挑战。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>时间一致性是法律AI中一个关键但被忽视的失败模式，本工作提供了基于强化学习的原理性解决方案。</li>
+<li>混合RAG-网络搜索架构为需要兼顾精确性和广泛性的领域特定智能体搜索提供了蓝图。</li>
+<li>时间索引训练数据和优势塑形的方法可适配其他时间敏感领域（如医疗指南、金融法规）。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在普通法数据集（如美国或英国判例法）上评估LegalSearch-R1，测试跨法域迁移能力。</li>
+<li>[ ] 扩展框架以纳入司法先例检索，与法条检索相结合。</li>
+<li>[ ] 探索扩大模型规模和训练数据，以提升复杂多跳查询的性能。</li>
+<li>[ ] 将时间一致性约束集成到非法律领域的其他智能体搜索框架中。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1308/fig_004.png" alt="Figure 4: Overview of LegalSearch-R1 . The agent performs multi-turn legal reasoning over a hybrid online-local retrieval architecture. The temporal-enhanced RAG module first analyzes the query via an LLM to extract temporal references and legal keywords, then applies temporal filtering to restrict candidates to provisions valid at the query time, and finally aggregates keyword, dense vector, and BM25 retrieval channels via Reciprocal Rank Fusion." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: Overview of LegalSearch-R1 . The agent performs multi-turn legal reasoning over a hybrid online-local retrieval architecture. The temporal-enhanced RAG module first analyzes the query via an LLM to extract temporal references and legal keywords, then applies temporal filtering to restrict candidates to provisions valid at the query time, and finally aggregates keyword, dense vector, and BM25 retrieval channels via Reciprocal Rank Fusion.</span>
+                <span class="lang-zh">Figure 4: LegalSearch-R1 概览。该智能体在混合在线-本地检索架构上执行多轮法律推理。时序增强型RAG模块首先通过LLM分析查询以提取时间引用和法律关键词，然后应用时间过滤将候选范围限制为查询时有效的条款，最后通过倒数排名融合聚合关键词、稠密向量和BM25检索通道。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1308/fig_005.png" alt="Figure 5: Tool usage and temporal awareness during RL training. Top: tool call counts. Bottom: queries with explicit temporal constraints." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5: Tool usage and temporal awareness during RL training. Top: tool call counts. Bottom: queries with explicit temporal constraints.</span>
+                <span class="lang-zh">Figure 5: RL训练期间的工具使用与时间感知。上方：工具调用次数。下方：包含显式时间约束的查询。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1308/fig_006.png" alt="Figure 6: Training reward curves with and without the local temporal-enhanced RAG module." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6: Training reward curves with and without the local temporal-enhanced RAG module.</span>
+                <span class="lang-zh">Figure 6: 使用和不使用本地时序增强型RAG模块的训练奖励曲线。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1308/fig_002.png" alt="Figure 2: LAR ROUGE-L scores across amendment version years. All models peak near their training cutoff (2021–2022) and degrade on post-cutoff provisions." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: LAR ROUGE-L scores across amendment version years. All models peak near their training cutoff (2021–2022) and degrade on post-cutoff provisions.</span>
+                <span class="lang-zh">Figure 2: 各修正版本年份的LAR ROUGE-L分数。所有模型在其训练截止年份（2021–2022）附近达到峰值，并在截止后条款上性能下降。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1308/fig_003.png" alt="Figure 3: Number of temporally-aware search queries. Baselines rarely include temporal constraints, while LegalSearch-R1 consistently does." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: Number of temporally-aware search queries. Baselines rarely include temporal constraints, while LegalSearch-R1 consistently does.</span>
+                <span class="lang-zh">Figure 3: 具有时间感知的搜索查询数量。基线方法很少包含时间约束，而LegalSearch-R1始终包含。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.25920</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.25920" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1308';
+  var title = "Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

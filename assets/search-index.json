@@ -152,6 +152,329 @@
     "created_at": "2026-05-26 09:11:55"
   },
   {
+    "id": 1295,
+    "type": "paper",
+    "title": "Global Convergence of Wasserstein Policy Gradient for Entropy-Regularized Reinforcement Learning",
+    "title_zh": "Wasserstein策略梯度在熵正则化强化学习中的全局收敛性",
+    "summary_en": "This paper proves global convergence of Wasserstein policy gradient for entropy-regularized RL by exploiting Bellman recursion to replace convexity, establishing a distributional Polyak-Łojasiewicz condition.",
+    "summary_zh": "本文证明了Wasserstein策略梯度在熵正则化强化学习中的全局收敛性，通过利用Bellman递归结构替代凸性假设，建立了分布层面的Polyak-Łojasiewicz条件。该工作为连续动作空间中基于最优传输的策略优化提供了首个非渐近收敛保证。",
+    "url": "https://arxiv.org/abs/2605.26078",
+    "article_page": "articles/1295.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1296,
+    "type": "paper",
+    "title": "WhoSaidIt: Human-LLM Collaborative Annotation for Text-Based Multilingual Speaker-Attribute Classification",
+    "title_zh": "WhoSaidIt：基于人机协作标注的多语言说话人属性分类",
+    "summary_en": "Key claim: A human-LLM collaborative re-annotation framework can stabilize noisy multilingual speaker-attribute labels; key observation: LLMs help surface cross-lingual rationales but remain sensitive to surface cues and struggle with subtle pragmatic distinctions.",
+    "summary_zh": "本文提出了一种人类与LLM协作的重新标注框架，用于稳定主观的多语言说话人属性标签。通过构建WhoSaidIt数据集（覆盖11种语言、9种属性），揭示了跨语言标注决策的显著差异，并展示了LLM在辅助发现跨语言标注理由方面的潜力与局限。",
+    "url": "https://arxiv.org/abs/2605.26070",
+    "article_page": "articles/1296.html",
+    "score": 3.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1297,
+    "type": "paper",
+    "title": "L2IR: Revealing Latent Intent in Graph Fraud Detection",
+    "title_zh": "L2IR：揭示图欺诈检测中的潜在意图",
+    "summary_en": "L2IR reveals latent intent in graph fraud detection by leveraging LLMs to reason about the true purpose behind connections, achieving up to 8.27% AUPRC improvement under camouflage and limited supervision.",
+    "summary_zh": "本文提出L2IR框架，利用大语言模型推断用户行为与连接背后的潜在意图，从而区分支持性连接与误导性连接，显著提升图欺诈检测性能。在真实数据集上，L2IR将AUPRC最高提升8.27%，并能作为即插即用模块增强各类GNN检测器。",
+    "url": "https://arxiv.org/abs/2605.26040",
+    "article_page": "articles/1297.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1298,
+    "type": "paper",
+    "title": "Retrieval-Augmented Detection of Potentially Abusive Clauses in Chilean Terms of Service",
+    "title_zh": "检索增强的智利服务条款中潜在滥用条款检测",
+    "summary_en": "This paper presents a retrieval-augmented generation framework that, combined with a new 24-category annotated corpus, enables local open-weight models to detect and classify potentially abusive clauses in Chilean Terms of Service with performance approaching cloud-based LLMs.",
+    "summary_zh": "本文提出了一种检索增强生成框架，结合新构建的24类别标注语料库，使本地开源模型在检测和分类智利服务条款中的滥用条款时，性能接近云端大语言模型。该框架通过混合稠密-稀疏检索与重排序技术，显著提升了分类准确率，并支持浏览器扩展实现隐私保护的实时审查。",
+    "url": "https://arxiv.org/abs/2605.26019",
+    "article_page": "articles/1298.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1299,
+    "type": "paper",
+    "title": "AdvantageFlow: Advantage-Weighted Least Squares for RL in Flow Models",
+    "title_zh": "AdvantageFlow：流模型中基于优势加权最小二乘的强化学习",
+    "summary_en": "AdvantageFlow introduces a simpler, forward-process RL algorithm for flow models that uses advantage-weighted least squares with rollout regularization to achieve stable training and state-of-the-art image generation results.",
+    "summary_zh": "本文提出AdvantageFlow，一种用于流模型的简化前向过程强化学习算法。它通过优势加权最小二乘与滚动策略正则化，在Stable Diffusion 3.5 Medium上实现了优于Flow-GRPO等方法的图像生成性能，并支持多目标优化。",
+    "url": "https://arxiv.org/abs/2605.26013",
+    "article_page": "articles/1299.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1300,
+    "type": "paper",
+    "title": "Learning in Low-Dimensional Subspaces: Orthogonal Bottlenecks for Reinforcement Learning",
+    "title_zh": "低维子空间中的学习：用于强化学习的正交瓶颈",
+    "summary_en": "This paper shows that inserting a fixed orthonormal projection bottleneck into deep RL architectures can compress representations to extremely low dimensions while matching or improving performance, providing a lightweight, architecture-agnostic inductive bias for low-dimensional structure.",
+    "summary_zh": "本文提出了一种简单且与架构无关的方法，通过在深度强化学习网络中插入固定的正交投影瓶颈，将表示压缩到极低维度，同时保持甚至提升性能。该方法为低维结构提供了轻量级的归纳偏置，并支持了强化学习中的流形假设。",
+    "url": "https://arxiv.org/abs/2605.26012",
+    "article_page": "articles/1300.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1301,
+    "type": "paper",
+    "title": "Causal methods for LLM development and evaluation",
+    "title_zh": "Deep Note — 因果方法与LLM开发",
+    "summary_en": "This paper argues that many central LLM development and evaluation decisions are causal problems, and shows how causal inference methods can address confounding, bias, and non-stationarity in logged data to enable more reliable system design.",
+    "summary_zh": "本文系统论证了LLM开发中的关键决策（如数据混合、路由、对齐）本质上是因果问题，并展示了如何利用因果推断方法（如双机器学习、策略学习）从观测数据中估计反事实结果。对于希望提升LLM系统可靠性和评估有效性的研究者，本文提供了统一的理论框架和实用工具。",
+    "url": "https://arxiv.org/abs/2605.25998",
+    "article_page": "articles/1301.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1302,
+    "type": "paper",
+    "title": "SafeCtrl-RL: Inference-Time Adaptive Behaviour Control for LLM Dialogue via RL-Driven Prompt Optimisation",
+    "title_zh": "SafeCtrl-RL：基于强化学习驱动的提示优化的推理时自适应行为控制",
+    "summary_en": "SafeCtrl-RL proposes a model-agnostic inference-time framework that uses reinforcement learning to dynamically adjust prompts for adaptive safety regulation, outperforming static prompt-based methods.",
+    "summary_zh": "本文提出了一种模型无关的推理时安全控制框架SafeCtrl-RL，利用强化学习动态调整提示词，无需重新训练或修改参数即可提升LLM对话的安全性。实验表明，该方法在多个LLM上优于静态提示优化方法，并在安全性与响应质量之间取得了良好平衡。",
+    "url": "https://arxiv.org/abs/2605.25984",
+    "article_page": "articles/1302.html",
+    "score": 3.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1303,
+    "type": "paper",
+    "title": "When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation",
+    "title_zh": "LLM智能体何时对表面噪声与语义噪声表现出不同敏感性？一项68单元测量研究与留出轨迹级验证",
+    "summary_en": "This paper provides a rigorous measurement study showing that LLM agents are systematically more sensitive to semantic noise than surface noise, with a held-out replication and trace-level mechanism analysis.",
+    "summary_zh": "本文通过严格的测量研究，系统揭示了LLM智能体对语义扰动（如释义、同义词替换）的敏感性显著高于对呈现扰动（如格式调整、选项重排）的敏感性，并在严重性匹配、生成器交换、裁判交换等多重压力测试下保持稳健。研究还通过留出模型验证和轨迹级分析，发现了“隐性分歧”机制——语义噪声从推理第二步起即逐步破坏中间推理过程。",
+    "url": "https://arxiv.org/abs/2605.25981",
+    "article_page": "articles/1303.html",
+    "score": 5.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1304,
+    "type": "paper",
+    "title": "LECTOR: Joint Optimization of Scientific Reasoning Graphs and Introduction Generation",
+    "title_zh": "LECTOR：科学推理图与引言生成的联合优化",
+    "summary_en": "LECTOR proposes a novel co-reinforcement learning framework that uses a logic-reasoning graph to jointly optimize logical fidelity and narrative quality for scientific introduction generation, achieving significant improvements over baselines.",
+    "summary_zh": "本文提出LECTOR框架，将科学论文引言生成重新定义为基于论文核心证据的内容条件生成任务，通过逻辑推理图显式建模推理结构，并采用逻辑-表达协同强化学习联合优化图结构保真度和叙事质量。在Nature Communications数据集上，LECTOR-4B在图表质量、引用质量和论文一致性上分别提升26.7%、8.6%和3.3%，性能媲美GPT-o3。",
+    "url": "https://arxiv.org/abs/2605.25964",
+    "article_page": "articles/1304.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1305,
+    "type": "paper",
+    "title": "QUIET: A Multi-Blank Cascaded Story Cloze Benchmark for LLM Creative Generation Capability",
+    "title_zh": "QUIET：面向大语言模型创造性生成能力的多空白级联故事完形填空基准",
+    "summary_en": "QUIET proposes a multi-blank cascaded story cloze benchmark with an information-theoretic automated scoring protocol that directly measures open-ended creative generation, overcoming the limitations of multiple-choice and rubric-based evaluations.",
+    "summary_zh": "本文提出QUIET基准，通过多空白级联故事完形填空直接测量LLM的开放式创造性生成能力，并引入信息论自动评分协议。实验发现GPT-3.5-turbo显著落后于其他模型，且人类与LLM在元认知层面存在关键差异。",
+    "url": "https://arxiv.org/abs/2605.25955",
+    "article_page": "articles/1305.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1306,
+    "type": "paper",
+    "title": "Step-TP: A Grounded, Step-Level Dataset with Chain-of-Thought Reasoning for LLM-Guided Tensor Program Optimization",
+    "title_zh": "Step-TP：面向LLM引导的张量程序优化的带链式推理的细粒度步骤级数据集",
+    "summary_en": "Step-TP introduces a grounded, step-level dataset with chain-of-thought reasoning that enables LLMs to make reliable single-step decisions in tensor program optimization, addressing the lack of verifiable intermediate supervision in existing datasets.",
+    "summary_zh": "本文提出了Step-TP，一个带有结构化链式推理的细粒度步骤级数据集，用于训练大语言模型进行张量程序优化。该数据集采用一种令牌高效且可验证的中间表示LEIR，并构建了基于中间程序状态的闭环推理，使LLM能够做出可靠的单步决策，而非简单的端到端结果模仿。",
+    "url": "https://arxiv.org/abs/2605.25954",
+    "article_page": "articles/1306.html",
+    "score": 2.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1307,
+    "type": "paper",
+    "title": "Thaka at KSAA-2026 Task 2: Regularized Fine-Tuning for Arabic Speech Diacritization",
+    "title_zh": "Thaka在KSAA-2026任务2中的表现：面向阿拉伯语音节标注的正则化微调",
+    "summary_en": "This paper shows that aggressive training regularization and inference-time ensembling can achieve state-of-the-art Arabic speech diacritization with very limited data, outperforming architectural changes.",
+    "summary_zh": "本文展示了在极低资源条件下，通过激进的正则化训练和推理时集成，可以在阿拉伯语音节标注任务上取得最先进的结果。仅使用2327个训练样本且无外部数据，系统实现了23.26%的词错误率（WER），在KSAA-2026共享任务中排名第一。",
+    "url": "https://arxiv.org/abs/2605.25928",
+    "article_page": "articles/1307.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1308,
+    "type": "paper",
+    "title": "Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning",
+    "title_zh": "LLM能否时间旅行？通过强化学习增强法律智能搜索中的时间一致性",
+    "summary_en": "LegalSearch-R1 demonstrates that reinforcement learning on temporally-indexed data with a hybrid RAG-web search architecture can overcome the temporal bias of LLMs and search agents, achieving significant gains in temporal consistency for legal reasoning.",
+    "summary_zh": "本文揭示了LLM和搜索智能体在时间一致性上的严重缺陷，并提出LegalSearch-R1框架，通过基于GRPO的强化学习在时间索引数据上训练，结合本地法条RAG与网络搜索的双工具架构，显著提升了法律推理中的时间对齐能力。7B模型在时间一致性指标上超越现有最先进方法12.9%-29.8%，为时间敏感领域提供了可复用的解决方案。",
+    "url": "https://arxiv.org/abs/2605.25920",
+    "article_page": "articles/1308.html",
+    "score": 5.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1309,
+    "type": "paper",
+    "title": "Joint Optimization of Training and Inference in Federated Edge Learning via Constrained Multi-Objective Deep Reinforcement Learning",
+    "title_zh": "联合优化联邦边缘学习中的训练与推理：基于约束多目标深度强化学习",
+    "summary_en": "This paper presents a novel online optimization framework that jointly manages federated training and inference on resource-constrained edge devices, using a constrained multi-objective deep reinforcement learning algorithm (C-MOPPO) to achieve well-balanced trade-offs among inference accuracy, latency, and energy consumption.",
+    "summary_zh": "本文针对联邦边缘学习（FEEL）中训练与推理共存但相互竞争资源的问题，提出了一种在线优化框架。核心贡献是C-MOPPO算法，它通过约束多目标强化学习，在动态环境下联合优化设备模式选择、CPU频率和传输功率，实现了推理精度、延迟和能耗之间的良好平衡。",
+    "url": "https://arxiv.org/abs/2605.25916",
+    "article_page": "articles/1309.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1310,
+    "type": "paper",
+    "title": "$D^2$-Monitor: Dynamic Safety Monitoring for Diffusion LLMs via Hesitation-Aware Routing",
+    "title_zh": "D²-Monitor：基于犹豫感知路由的扩散语言模型动态安全监控",
+    "summary_en": "D2-Monitor introduces a novel hesitation-aware routing mechanism that leverages the multi-step denoising trajectory of D-LLMs to achieve state-of-the-art safety monitoring with minimal computational overhead.",
+    "summary_zh": "本文提出了一种针对扩散大语言模型（D-LLMs）的新型安全监控方法D²-Monitor，利用去噪过程中的中间隐藏状态和犹豫信号实现高效动态路由。该方法在多个数据集上以不到0.85M参数达到最先进性能，为D-LLMs的安全部署提供了轻量级、非侵入式的解决方案。",
+    "url": "https://arxiv.org/abs/2605.25893",
+    "article_page": "articles/1310.html",
+    "score": 5.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1311,
+    "type": "paper",
+    "title": "Causal Tongue-Tie: LLMs Can Encode Causal Direction, But Their Yes/No Outputs Fail to Express",
+    "title_zh": "因果性舌结：大语言模型能编码因果方向，但其是非输出却无法表达",
+    "summary_en": "This paper reveals that LLMs can internally encode correct causal direction even when their Yes/No outputs are wrong, challenging the validity of output-only causal benchmarks.",
+    "summary_zh": "本文揭示了LLMs在隐藏状态中能正确编码因果方向，即便其是非输出与之矛盾。通过线性探针从隐藏状态中提取信息，准确率可达约0.97，而模型口头输出仅接近随机水平（约0.50），这一“因果性舌结”现象挑战了仅依赖输出评估因果推理能力的基准测试的有效性。",
+    "url": "https://arxiv.org/abs/2605.25891",
+    "article_page": "articles/1311.html",
+    "score": 5.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
     "id": 1286,
     "type": "article",
     "title": "OpenAI, Grupo Folha and Grupo UOL announce strategic content partnership",

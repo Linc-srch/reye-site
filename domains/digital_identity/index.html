@@ -146,8 +146,8 @@
           <span class="lang-zh">概览 — 26 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's digital identity landscape is dominated by supply chain attacks and the weaponization of trusted components. A recurring theme is the exploitation of developer tools and CI/CD pipelines: the Megalodon campaign compromised 5,561 GitHub repos via forged commits, while a malicious Nx Console VS Code extension breached GitHub's own internal repositories. npm's introduction of 2FA-gated publishing and Microsoft's takedown of the Fox Tempest malware-signing service represent defensive countermeasures. Standout papers include 'When Identity is the Attack Path,' which argues that a single cached AWS key can expose 98% of cloud resources, and 'Auditing Privacy in Multi-Tenant RAG under Account Collusion,' which reveals that per-account DP guarantees degrade at Θ(√k·ε_acc) under collusion. The rise of AI agents is shifting identity security budgets, as noted in a separate analysis. Akamai's $205M acquisition of LayerX signals the growing importance of secure enterprise browsers for Zero Trust. Notable announcements include Virgin Atlantic shipping faster with OpenAI's Codex and the VGenST-Bench benchmark for spatio-temporal reasoning.</div>
-        <div class="lang-zh">今日数字身份领域的主要趋势是供应链攻击和对可信组件的武器化。反复出现的主题是开发者工具和CI/CD管道的利用：Megalodon活动通过伪造提交入侵了5,561个GitHub仓库，而恶意的Nx Console VS Code扩展甚至攻破了GitHub自身的内部仓库。防御性措施包括npm引入的2FA门控发布机制，以及微软取缔Fox Tempest恶意软件签名服务。突出论文包括《When Identity is the Attack Path》，该文论证单个缓存的AWS密钥可暴露98%的云资源；以及《Auditing Privacy in Multi-Tenant RAG under Account Collusion》，揭示每账户DP保证在共谋下以Θ(√k·ε_acc)速率退化。AI代理的兴起正在重塑身份安全预算动态，另一篇分析文章对此进行了探讨。Akamai以2.05亿美元收购LayerX，标志着安全企业浏览器在Zero Trust中的重要性日益增长。值得关注的公告包括Virgin Atlantic利用OpenAI的Codex加速交付，以及用于时空推理的VGenST-Bench基准测试。</div>
+        <div class="lang-en">Today's digital identity research landscape is dominated by supply chain attacks and the evolving role of identity as a primary attack vector. A recurring theme is the weaponization of trusted development tools and platforms: the npm 2FA-gated publishing announcement aims to counter this, while the Megalodon campaign (5,561 repos compromised via malicious CI/CD workflows) and the Laravel-Lang PHP package compromise (delivering credential stealers) underscore the scale of the threat. Standout papers include 'When Identity is the Attack Path,' which argues that a single cached AWS key can expose 98% of cloud assets, and 'Boiling the Frog,' a multi-turn benchmark revealing AI agents' vulnerability to incremental attacks. Noteworthy announcements include Microsoft's takedown of the Fox Tempest malware-signing service and Akamai's $205M acquisition of LayerX for secure enterprise browsers. The rise of AI agents is shifting identity security budgets, as highlighted in a separate analysis, and GitHub's internal breach via a malicious VS Code extension further illustrates the convergence of identity and software supply chain risks.</div>
+        <div class="lang-zh">今日数字身份研究领域主要聚焦于供应链攻击以及身份作为主要攻击路径的演变。一个反复出现的主题是可信开发工具和平台的武器化：npm 引入2FA门控发布旨在应对此问题，而Megalodon攻击活动（通过恶意CI/CD工作流入侵5,561个仓库）和Laravel-Lang PHP包投毒（传播凭证窃取器）凸显了威胁的规模。值得关注的论文包括《When Identity is the Attack Path》，该文论证单个缓存的AWS密钥可暴露98%的云资产；以及《Boiling the Frog》，一个多轮基准测试揭示了AI代理对渐进式攻击的脆弱性。重要公告包括微软捣毁Fox Tempest恶意软件签名服务，以及Akamai以2.05亿美元收购LayerX以布局安全企业浏览器。AI代理的兴起正在改变身份安全预算的分配，而GitHub因恶意VS Code扩展导致内部仓库被入侵的事件，进一步说明了身份与软件供应链风险的融合。</div>
       </div>
       
 
@@ -318,6 +318,329 @@
           <p class="lang-zh">本文提出自动基准审计（ABA）框架，系统性地检测AI基准测试中的隐藏环境依赖、规范缺失和评分逻辑缺陷。在168个基准测试中，超过25.7%的任务存在关键问题，过滤这些问题后，SWE-bench Verified和Terminal-Bench 2的平均性能分别提升9.9%和9.6%。</p>
           
           <a href="https://arxiv.org/abs/2605.26079" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1295.html">Global Convergence of Wasserstein Policy Gradient for Entropy-Regularized Reinforcement Learning</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1295.html">Wasserstein策略梯度在熵正则化强化学习中的全局收敛性</a></h4>
+          <p class="lang-en">This paper proves global convergence of Wasserstein policy gradient for entropy-regularized RL by exploiting Bellman recursion to replace convexity, establishing a distributional Polyak-Łojasiewicz condition.</p>
+          <p class="lang-zh">本文证明了Wasserstein策略梯度在熵正则化强化学习中的全局收敛性，通过利用Bellman递归结构替代凸性假设，建立了分布层面的Polyak-Łojasiewicz条件。该工作为连续动作空间中基于最优传输的策略优化提供了首个非渐近收敛保证。</p>
+          
+          <a href="https://arxiv.org/abs/2605.26078" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1296.html">WhoSaidIt: Human-LLM Collaborative Annotation for Text-Based Multilingual Speaker-Attribute Classification</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1296.html">WhoSaidIt：基于人机协作标注的多语言说话人属性分类</a></h4>
+          <p class="lang-en">Key claim: A human-LLM collaborative re-annotation framework can stabilize noisy multilingual speaker-attribute labels; key observation: LLMs help surface cross-lingual rationales but remain sensitive to surface cues and struggle with subtle pragmatic distinctions.</p>
+          <p class="lang-zh">本文提出了一种人类与LLM协作的重新标注框架，用于稳定主观的多语言说话人属性标签。通过构建WhoSaidIt数据集（覆盖11种语言、9种属性），揭示了跨语言标注决策的显著差异，并展示了LLM在辅助发现跨语言标注理由方面的潜力与局限。</p>
+          
+          <a href="https://arxiv.org/abs/2605.26070" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1297.html">L2IR: Revealing Latent Intent in Graph Fraud Detection</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1297.html">L2IR：揭示图欺诈检测中的潜在意图</a></h4>
+          <p class="lang-en">L2IR reveals latent intent in graph fraud detection by leveraging LLMs to reason about the true purpose behind connections, achieving up to 8.27% AUPRC improvement under camouflage and limited supervision.</p>
+          <p class="lang-zh">本文提出L2IR框架，利用大语言模型推断用户行为与连接背后的潜在意图，从而区分支持性连接与误导性连接，显著提升图欺诈检测性能。在真实数据集上，L2IR将AUPRC最高提升8.27%，并能作为即插即用模块增强各类GNN检测器。</p>
+          
+          <a href="https://arxiv.org/abs/2605.26040" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1298.html">Retrieval-Augmented Detection of Potentially Abusive Clauses in Chilean Terms of Service</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1298.html">检索增强的智利服务条款中潜在滥用条款检测</a></h4>
+          <p class="lang-en">This paper presents a retrieval-augmented generation framework that, combined with a new 24-category annotated corpus, enables local open-weight models to detect and classify potentially abusive clauses in Chilean Terms of Service with performance approaching cloud-based LLMs.</p>
+          <p class="lang-zh">本文提出了一种检索增强生成框架，结合新构建的24类别标注语料库，使本地开源模型在检测和分类智利服务条款中的滥用条款时，性能接近云端大语言模型。该框架通过混合稠密-稀疏检索与重排序技术，显著提升了分类准确率，并支持浏览器扩展实现隐私保护的实时审查。</p>
+          
+          <a href="https://arxiv.org/abs/2605.26019" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1299.html">AdvantageFlow: Advantage-Weighted Least Squares for RL in Flow Models</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1299.html">AdvantageFlow：流模型中基于优势加权最小二乘的强化学习</a></h4>
+          <p class="lang-en">AdvantageFlow introduces a simpler, forward-process RL algorithm for flow models that uses advantage-weighted least squares with rollout regularization to achieve stable training and state-of-the-art image generation results.</p>
+          <p class="lang-zh">本文提出AdvantageFlow，一种用于流模型的简化前向过程强化学习算法。它通过优势加权最小二乘与滚动策略正则化，在Stable Diffusion 3.5 Medium上实现了优于Flow-GRPO等方法的图像生成性能，并支持多目标优化。</p>
+          
+          <a href="https://arxiv.org/abs/2605.26013" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1300.html">Learning in Low-Dimensional Subspaces: Orthogonal Bottlenecks for Reinforcement Learning</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1300.html">低维子空间中的学习：用于强化学习的正交瓶颈</a></h4>
+          <p class="lang-en">This paper shows that inserting a fixed orthonormal projection bottleneck into deep RL architectures can compress representations to extremely low dimensions while matching or improving performance, providing a lightweight, architecture-agnostic inductive bias for low-dimensional structure.</p>
+          <p class="lang-zh">本文提出了一种简单且与架构无关的方法，通过在深度强化学习网络中插入固定的正交投影瓶颈，将表示压缩到极低维度，同时保持甚至提升性能。该方法为低维结构提供了轻量级的归纳偏置，并支持了强化学习中的流形假设。</p>
+          
+          <a href="https://arxiv.org/abs/2605.26012" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1301.html">Causal methods for LLM development and evaluation</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1301.html">Deep Note — 因果方法与LLM开发</a></h4>
+          <p class="lang-en">This paper argues that many central LLM development and evaluation decisions are causal problems, and shows how causal inference methods can address confounding, bias, and non-stationarity in logged data to enable more reliable system design.</p>
+          <p class="lang-zh">本文系统论证了LLM开发中的关键决策（如数据混合、路由、对齐）本质上是因果问题，并展示了如何利用因果推断方法（如双机器学习、策略学习）从观测数据中估计反事实结果。对于希望提升LLM系统可靠性和评估有效性的研究者，本文提供了统一的理论框架和实用工具。</p>
+          
+          <a href="https://arxiv.org/abs/2605.25998" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1302.html">SafeCtrl-RL: Inference-Time Adaptive Behaviour Control for LLM Dialogue via RL-Driven Prompt Optimisation</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1302.html">SafeCtrl-RL：基于强化学习驱动的提示优化的推理时自适应行为控制</a></h4>
+          <p class="lang-en">SafeCtrl-RL proposes a model-agnostic inference-time framework that uses reinforcement learning to dynamically adjust prompts for adaptive safety regulation, outperforming static prompt-based methods.</p>
+          <p class="lang-zh">本文提出了一种模型无关的推理时安全控制框架SafeCtrl-RL，利用强化学习动态调整提示词，无需重新训练或修改参数即可提升LLM对话的安全性。实验表明，该方法在多个LLM上优于静态提示优化方法，并在安全性与响应质量之间取得了良好平衡。</p>
+          
+          <a href="https://arxiv.org/abs/2605.25984" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1303.html">When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1303.html">LLM智能体何时对表面噪声与语义噪声表现出不同敏感性？一项68单元测量研究与留出轨迹级验证</a></h4>
+          <p class="lang-en">This paper provides a rigorous measurement study showing that LLM agents are systematically more sensitive to semantic noise than surface noise, with a held-out replication and trace-level mechanism analysis.</p>
+          <p class="lang-zh">本文通过严格的测量研究，系统揭示了LLM智能体对语义扰动（如释义、同义词替换）的敏感性显著高于对呈现扰动（如格式调整、选项重排）的敏感性，并在严重性匹配、生成器交换、裁判交换等多重压力测试下保持稳健。研究还通过留出模型验证和轨迹级分析，发现了“隐性分歧”机制——语义噪声从推理第二步起即逐步破坏中间推理过程。</p>
+          
+          <a href="https://arxiv.org/abs/2605.25981" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1304.html">LECTOR: Joint Optimization of Scientific Reasoning Graphs and Introduction Generation</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1304.html">LECTOR：科学推理图与引言生成的联合优化</a></h4>
+          <p class="lang-en">LECTOR proposes a novel co-reinforcement learning framework that uses a logic-reasoning graph to jointly optimize logical fidelity and narrative quality for scientific introduction generation, achieving significant improvements over baselines.</p>
+          <p class="lang-zh">本文提出LECTOR框架，将科学论文引言生成重新定义为基于论文核心证据的内容条件生成任务，通过逻辑推理图显式建模推理结构，并采用逻辑-表达协同强化学习联合优化图结构保真度和叙事质量。在Nature Communications数据集上，LECTOR-4B在图表质量、引用质量和论文一致性上分别提升26.7%、8.6%和3.3%，性能媲美GPT-o3。</p>
+          
+          <a href="https://arxiv.org/abs/2605.25964" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1305.html">QUIET: A Multi-Blank Cascaded Story Cloze Benchmark for LLM Creative Generation Capability</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1305.html">QUIET：面向大语言模型创造性生成能力的多空白级联故事完形填空基准</a></h4>
+          <p class="lang-en">QUIET proposes a multi-blank cascaded story cloze benchmark with an information-theoretic automated scoring protocol that directly measures open-ended creative generation, overcoming the limitations of multiple-choice and rubric-based evaluations.</p>
+          <p class="lang-zh">本文提出QUIET基准，通过多空白级联故事完形填空直接测量LLM的开放式创造性生成能力，并引入信息论自动评分协议。实验发现GPT-3.5-turbo显著落后于其他模型，且人类与LLM在元认知层面存在关键差异。</p>
+          
+          <a href="https://arxiv.org/abs/2605.25955" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1306.html">Step-TP: A Grounded, Step-Level Dataset with Chain-of-Thought Reasoning for LLM-Guided Tensor Program Optimization</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1306.html">Step-TP：面向LLM引导的张量程序优化的带链式推理的细粒度步骤级数据集</a></h4>
+          <p class="lang-en">Step-TP introduces a grounded, step-level dataset with chain-of-thought reasoning that enables LLMs to make reliable single-step decisions in tensor program optimization, addressing the lack of verifiable intermediate supervision in existing datasets.</p>
+          <p class="lang-zh">本文提出了Step-TP，一个带有结构化链式推理的细粒度步骤级数据集，用于训练大语言模型进行张量程序优化。该数据集采用一种令牌高效且可验证的中间表示LEIR，并构建了基于中间程序状态的闭环推理，使LLM能够做出可靠的单步决策，而非简单的端到端结果模仿。</p>
+          
+          <a href="https://arxiv.org/abs/2605.25954" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1307.html">Thaka at KSAA-2026 Task 2: Regularized Fine-Tuning for Arabic Speech Diacritization</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1307.html">Thaka在KSAA-2026任务2中的表现：面向阿拉伯语音节标注的正则化微调</a></h4>
+          <p class="lang-en">This paper shows that aggressive training regularization and inference-time ensembling can achieve state-of-the-art Arabic speech diacritization with very limited data, outperforming architectural changes.</p>
+          <p class="lang-zh">本文展示了在极低资源条件下，通过激进的正则化训练和推理时集成，可以在阿拉伯语音节标注任务上取得最先进的结果。仅使用2327个训练样本且无外部数据，系统实现了23.26%的词错误率（WER），在KSAA-2026共享任务中排名第一。</p>
+          
+          <a href="https://arxiv.org/abs/2605.25928" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1308.html">Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1308.html">LLM能否时间旅行？通过强化学习增强法律智能搜索中的时间一致性</a></h4>
+          <p class="lang-en">LegalSearch-R1 demonstrates that reinforcement learning on temporally-indexed data with a hybrid RAG-web search architecture can overcome the temporal bias of LLMs and search agents, achieving significant gains in temporal consistency for legal reasoning.</p>
+          <p class="lang-zh">本文揭示了LLM和搜索智能体在时间一致性上的严重缺陷，并提出LegalSearch-R1框架，通过基于GRPO的强化学习在时间索引数据上训练，结合本地法条RAG与网络搜索的双工具架构，显著提升了法律推理中的时间对齐能力。7B模型在时间一致性指标上超越现有最先进方法12.9%-29.8%，为时间敏感领域提供了可复用的解决方案。</p>
+          
+          <a href="https://arxiv.org/abs/2605.25920" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1309.html">Joint Optimization of Training and Inference in Federated Edge Learning via Constrained Multi-Objective Deep Reinforcement Learning</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1309.html">联合优化联邦边缘学习中的训练与推理：基于约束多目标深度强化学习</a></h4>
+          <p class="lang-en">This paper presents a novel online optimization framework that jointly manages federated training and inference on resource-constrained edge devices, using a constrained multi-objective deep reinforcement learning algorithm (C-MOPPO) to achieve well-balanced trade-offs among inference accuracy, latency, and energy consumption.</p>
+          <p class="lang-zh">本文针对联邦边缘学习（FEEL）中训练与推理共存但相互竞争资源的问题，提出了一种在线优化框架。核心贡献是C-MOPPO算法，它通过约束多目标强化学习，在动态环境下联合优化设备模式选择、CPU频率和传输功率，实现了推理精度、延迟和能耗之间的良好平衡。</p>
+          
+          <a href="https://arxiv.org/abs/2605.25916" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1310.html">$D^2$-Monitor: Dynamic Safety Monitoring for Diffusion LLMs via Hesitation-Aware Routing</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1310.html">D²-Monitor：基于犹豫感知路由的扩散语言模型动态安全监控</a></h4>
+          <p class="lang-en">D2-Monitor introduces a novel hesitation-aware routing mechanism that leverages the multi-step denoising trajectory of D-LLMs to achieve state-of-the-art safety monitoring with minimal computational overhead.</p>
+          <p class="lang-zh">本文提出了一种针对扩散大语言模型（D-LLMs）的新型安全监控方法D²-Monitor，利用去噪过程中的中间隐藏状态和犹豫信号实现高效动态路由。该方法在多个数据集上以不到0.85M参数达到最先进性能，为D-LLMs的安全部署提供了轻量级、非侵入式的解决方案。</p>
+          
+          <a href="https://arxiv.org/abs/2605.25893" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1311.html">Causal Tongue-Tie: LLMs Can Encode Causal Direction, But Their Yes/No Outputs Fail to Express</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1311.html">因果性舌结：大语言模型能编码因果方向，但其是非输出却无法表达</a></h4>
+          <p class="lang-en">This paper reveals that LLMs can internally encode correct causal direction even when their Yes/No outputs are wrong, challenging the validity of output-only causal benchmarks.</p>
+          <p class="lang-zh">本文揭示了LLMs在隐藏状态中能正确编码因果方向，即便其是非输出与之矛盾。通过线性探针从隐藏状态中提取信息，准确率可达约0.97，而模型口头输出仅接近随机水平（约0.50），这一“因果性舌结”现象挑战了仅依赖输出评估因果推理能力的基准测试的有效性。</p>
+          
+          <a href="https://arxiv.org/abs/2605.25891" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
             <span class="lang-zh">原始来源</span>
             →

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUIET: A Multi-Blank Cascaded Story Cloze Benchmark for LLM Creative Generation Capability | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-26</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.25955" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1305" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">QUIET: A Multi-Blank Cascaded Story Cloze Benchmark for LLM Creative Generation Capability</h1>
+        <h1 class="article-title lang-zh">QUIET：面向大语言模型创造性生成能力的多空白级联故事完形填空基准</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">content-management</span>
+          
+          <span class="tag direction-tag">editorial-workflow</span>
+          
+          <span class="tag direction-tag">digital-publishing</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Bo Zou, Chao Xu</p>
+        
+      </header>
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>QUIET proposes a multi-blank cascaded story cloze benchmark with an information-theoretic automated scoring protocol that directly measures open-ended creative generation, overcoming the limitations of multiple-choice and rubric-based evaluations.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出QUIET基准，通过多空白级联故事完形填空直接测量LLM的开放式创造性生成能力，并引入信息论自动评分协议。实验发现GPT-3.5-turbo显著落后于其他模型，且人类与LLM在元认知层面存在关键差异。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — quiet</h1>
+<p><strong>Key Takeaways</strong>
+- QUIET is the first benchmark to measure LLM creative generation via open-ended multi-blank story cloze, not multiple-choice discrimination.
+- Scoring uses a novel formula: score = satisfy * (1 + lambda * surprise), where satisfy is an objective constraint check and surprise is information-theoretic.
+- GPT-3.5-turbo (6.44/14) significantly underperforms all other tested models (7.46–8.69), with Gemini-3.1-Pro (8.69) leading.
+- Human participants showed three behavioral patterns (dropout, mediocre, shortlisted) that align with the theoretical framework, while all LLMs completed all blanks—revealing a metacognitive gap.
+- LLM-as-Judge inter-rater agreement is low (Krippendorff α ≈ 0.27) and insensitive to scale granularity, suggesting systematic judgment drift.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> QUIET: A Multi-Blank Cascaded Story Cloze Benchmark for LLM Creative Generation Capability</li>
+<li><strong>Alias:</strong> quiet</li>
+<li><strong>Authors:</strong> Bo Zou, Chao Xu</li>
+<li><strong>arXiv ID:</strong> 2605.25955</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.25955</li>
+<li>HTML: https://arxiv.org/html/2605.25955v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.25955</li>
+<li><strong>Tags:</strong> creative-generation, story-cloze, benchmark, llm-evaluation, information-theory</li>
+<li><strong>Domains:</strong> ai_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>QUIET proposes a multi-blank cascaded story cloze benchmark with an information-theoretic automated scoring protocol that directly measures open-ended creative generation, overcoming the limitations of multiple-choice and rubric-based evaluations.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Existing LLM creative evaluation relies on three flawed pathways: multiple-choice recognition benchmarks (e.g., Story Cloze Test, HellaSwag) measure discriminative ability, not generation; rubric scoring assumes linear additivity of quality dimensions; and LLM-as-Judge methods measure evaluative expression rather than internal sensitivity. All three lack objective, automated, and reproducible scoring for creative generation.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Story Cloze Test (Mostafazadeh et al., 2016) and HellaSwag (Zellers et al., 2019) use multiple-choice recognition for narrative continuation.</li>
+<li>Rubric-based scoring decomposes quality into sub-dimensions with linear weighted sums (Ye et al., ICLR 2024).</li>
+<li>LLM-as-Judge methods use models to output natural language scoring rationale.</li>
+<li>Calibrated surprise framework (Zou &amp; Xu, 2026a) provides the theoretical basis for the scoring protocol.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Current benchmarks cannot directly measure LLM creative generation capability in an open-ended setting; they either rely on multiple-choice discrimination, subjective rubric dimensions, or LLM-as-Judge outputs that conflate evaluation expression with true sensitivity. No existing benchmark provides an objective, automated scoring protocol for multi-step creative generation with cascaded constraints.</p>
+<h3>P — Proposal</h3>
+<p>QUIET introduces a multi-blank (10–20 blanks) story cloze with explicit content constraints and cascade dependencies between blanks. The evaluated model fills all blanks in open-ended generation mode, and an information-theoretic automated scoring protocol computes per-blank scores as satisfy * (1 + lambda * surprise), where lambda=1.0, rewarding constraint-satisfying surprising answers.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On 12 commercial LLMs, GPT-3.5-turbo scored 6.44/14, significantly lower than all others (7.46–8.69). Gemini-3.1-Pro (8.69) and Gemini-2.5-pro (8.44) ranked first and second, with GLM-5.1-thinking (8.40) and Claude-Opus-4.6 (8.38) close behind. Spearman sensitivity analysis across 14 aggregation formulas confirmed GPT-3.5 at the bottom and Gemini family at the top.</p>
+<h3>Ablation</h3>
+<p>Scoring scale granularity ablation: fine-grained 6-point scoring (α=0.270) vs. coarse 3-tier 0/0.5/1.0 scoring yielded nearly identical Krippendorff α, indicating low inter-rater agreement stems from systematic judgment-criterion drift, not scale granularity.</p>
+<h3>Limitations</h3>
+<p>['Low inter-rater agreement (Krippendorff α ≈ 0.27) for LLM-as-Judge scoring limits reliability.', 'Limited discrimination within the modern model cluster (scores 7.46–8.69) suggests ceiling effects.', 'The benchmark currently uses only one story template; generalizability to diverse narrative structures is unverified.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides an objective, automated alternative to subjective rubric and LLM-as-Judge methods for creative evaluation.</li>
+<li>Reveals a metacognitive gap: humans exhibit cascaded difficulty perception (dropout), while LLMs do not—a new dimension for evaluating creative cognition.</li>
+<li>The information-theoretic scoring framework (satisfy × surprise) is mathematically principled and reproducible.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Introduce human-anchored calibration to improve inter-rater agreement in LLM-as-Judge scoring.</li>
+<li>[ ] Expand the benchmark to multiple story templates and domains to test generalizability.</li>
+<li>[ ] Investigate why LLMs lack the 'giving up under difficulty' behavior observed in humans.</li>
+<li>[ ] Explore atomic checks for constraint satisfaction to reduce judgment drift.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>QUIET：面向大语言模型创造性生成能力的多空白级联故事完形填空基准</h1>
+<p><strong>主要结论</strong>
+- QUIET是首个通过开放式多空白故事完形填空（而非多项选择判别）来测量LLM创造性生成能力的基准。
+- 评分公式为：得分 = 满足度 × (1 + λ × 惊奇度)，其中满足度为客观约束检查，惊奇度为信息论度量。
+- GPT-3.5-turbo（6.44/14）显著低于所有其他测试模型（7.46–8.69），Gemini-3.1-Pro（8.69）领先。
+- 人类参与者表现出三种行为模式（放弃、平庸、入围），与理论框架一致，而所有LLM均填满了所有空白——揭示了元认知差距。
+- LLM作为评判者的评分者间信度较低（Krippendorff α ≈ 0.27），且对评分粒度不敏感，表明存在系统性判断漂移。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>QUIET提出了一种多空白级联故事完形填空基准，结合信息论自动评分协议，直接测量开放式创造性生成能力，克服了多项选择和基于量规评估的局限性。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>现有LLM创造性评估依赖三种有缺陷的路径：多项选择识别基准（如Story Cloze Test、HellaSwag）测量的是判别能力而非生成能力；量规评分假设质量维度线性可加；LLM作为评判者的方法测量的是评估表达而非内在敏感性。三者均缺乏客观、自动且可复现的创造性生成评分。相关工作包括Story Cloze Test和HellaSwag使用多项选择识别进行故事续写；量规评分将质量分解为子维度并线性加权求和；LLM作为评判者方法使用模型输出自然语言评分理由；校准惊奇框架提供了评分协议的理论基础。当前基准无法在开放式设置中直接测量LLM创造性生成能力，要么依赖多项选择判别，要么依赖主观量规维度，要么依赖混淆评估表达与真实敏感性的LLM作为评判者输出。QUIET引入了包含显式内容约束和空白间级联依赖的多空白（10–20个空白）故事完形填空，评估模型以开放式生成模式填充所有空白，信息论自动评分协议计算每个空白的得分为满足度 × (1 + λ × 惊奇度)，其中λ=1.0，奖励满足约束的令人惊奇的答案。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在12个商业LLM上，GPT-3.5-turbo得分为6.44/14，显著低于所有其他模型（7.46–8.69）。Gemini-3.1-Pro（8.69）和Gemini-2.5-pro（8.44）排名第一和第二，GLM-5.1-thinking（8.40）和Claude-Opus-4.6（8.38）紧随其后。跨14种聚合公式的Spearman敏感性分析确认GPT-3.5处于底部，Gemini系列处于顶部。</p>
+<h3>消融实验</h3>
+<p>评分粒度消融实验：细粒度6点评分（α=0.270）与粗粒度三级0/0.5/1.0评分得到的Krippendorff α几乎相同，表明低评分者间信度源于系统性判断标准漂移，而非评分粒度。</p>
+<h3>局限性</h3>
+<p>['LLM作为评判者的评分者间信度较低（Krippendorff α ≈ 0.27），限制了可靠性。', '现代模型集群内区分度有限（得分7.46–8.69），表明存在天花板效应。', '当前基准仅使用一个故事模板，对多样化叙事结构的泛化性尚未验证。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>为创造性评估提供了客观、自动化的替代方案，替代了主观量规和LLM作为评判者的方法。</li>
+<li>揭示了元认知差距：人类表现出级联困难感知（放弃），而LLM没有——这是评估创造性认知的新维度。</li>
+<li>信息论评分框架（满足度×惊奇度）在数学上严谨且可复现。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 引入人类锚定校准以提高LLM作为评判者评分的评分者间信度。</li>
+<li>[ ] 将基准扩展到多个故事模板和领域以测试泛化性。</li>
+<li>[ ] 调查为什么LLM缺乏在人类中观察到的“在困难下放弃”的行为。</li>
+<li>[ ] 探索用于约束满足的原子检查以减少判断漂移。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1305/fig_002.png" alt="Figure 2: Composite QUIET score heatmap across 12 models × \times 7 blank
+groups (Scheme C, λ = 1.0 \lambda{=}1.0 ; cell value = = satisfy × ( 1 + surprise ) \text{satisfy}\times(1+\text{surprise}) , range [ 0 , 2 ] [0,2] ). Rows are
+sorted by QUIET Total (Table 3). The rightmost column and bottom row report
+per-model and per-group means; the bottom-right cell is the grand mean. The
+heatmap exposes the within-cluster gap noted in Finding 2: most modern
+models cluster in the 1.0–1.4 band, while GPT-3.5-turbo’s bottom row stays
+consistently below 1.0." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Composite QUIET score heatmap across 12 models × \times 7 blank
+groups (Scheme C, λ = 1.0 \lambda{=}1.0 ; cell value = = satisfy × ( 1 + surprise ) \text{satisfy}\times(1+\text{surprise}) , range [ 0 , 2 ] [0,2] ). Rows are
+sorted by QUIET Total (Table 3). The rightmost column and bottom row report
+per-model and per-group means; the bottom-right cell is the grand mean. The
+heatmap exposes the within-cluster gap noted in Finding 2: most modern
+models cluster in the 1.0–1.4 band, while GPT-3.5-turbo’s bottom row stays
+consistently below 1.0.</span>
+                <span class="lang-zh">图2：12个模型 × 7个空白组（方案C，λ = 1.0；单元格值 = satisfy × (1 + surprise)，范围[0,2]）的复合QUIET评分热力图。行按QUIET总分排序（表3）。最右列和最底行分别报告每个模型和每个组的均值；右下角单元格为总均值。热力图揭示了发现2中提到的簇内差距：大多数现代模型聚集在1.0–1.4区间，而GPT-3.5-turbo的底行始终低于1.0。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1305/fig_003.png" alt="Figure 3: Two-dimensional view of the 12 evaluated models on the
+satisfy–surprise plane (per-model means across the 7 blank groups; data
+from Tables 1 and 2). Colors encode model family. GPT-3.5-turbo, circled in
+red, anchors the lower-left “inaccurate / mid-surprise” region; the modern
+cluster spans a roughly diagonal band, illustrating that satisfy and surprise
+carry independent information — no single dimension would reproduce the
+composite ranking in Table 3." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: Two-dimensional view of the 12 evaluated models on the
+satisfy–surprise plane (per-model means across the 7 blank groups; data
+from Tables 1 and 2). Colors encode model family. GPT-3.5-turbo, circled in
+red, anchors the lower-left “inaccurate / mid-surprise” region; the modern
+cluster spans a roughly diagonal band, illustrating that satisfy and surprise
+carry independent information — no single dimension would reproduce the
+composite ranking in Table 3.</span>
+                <span class="lang-zh">图3：12个评估模型在satisfy–surprise平面上的二维视图（每个模型在7个空白组上的均值；数据来自表1和表2）。颜色编码表示模型家族。红色圆圈标出的GPT-3.5-turbo位于左下角的“不准确/中等surprise”区域；现代模型簇大致沿对角线分布，说明satisfy和surprise携带独立信息——没有任何单一维度能复现表3中的复合排名。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1305/fig_004.png" alt="Figure 4: Completion-pattern contrast between the human pilot study (left, N = 135 N{=}135 ) and the 12 evaluated LLMs (right). Humans spontaneously
+stratified into three tiers — mid-task dropout (74.07%),
+submitted-but-mediocre (22.96%), and shortlisted (2.96%) — whereas every
+LLM completed all 36 blanks, with no observed analogue of the human
+“give-up under accumulating constraints” behavior. This contrast motivates
+treating cascade-state metacognition as a distinct evaluation dimension
+beyond raw generation quality." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: Completion-pattern contrast between the human pilot study (left, N = 135 N{=}135 ) and the 12 evaluated LLMs (right). Humans spontaneously
+stratified into three tiers — mid-task dropout (74.07%),
+submitted-but-mediocre (22.96%), and shortlisted (2.96%) — whereas every
+LLM completed all 36 blanks, with no observed analogue of the human
+“give-up under accumulating constraints” behavior. This contrast motivates
+treating cascade-state metacognition as a distinct evaluation dimension
+beyond raw generation quality.</span>
+                <span class="lang-zh">图4：人类试点研究（左，N = 135）与12个评估LLM（右）之间的完成模式对比。人类自发分为三个层级——中途放弃（74.07%）、提交但平庸（22.96%）和入围（2.96%）——而每个LLM都完成了全部36个空白，未观察到人类那种“在累积约束下放弃”的行为。这一对比表明，应将级联状态元认知视为超越原始生成质量的独立评估维度。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1305/fig_001.png" alt="Figure 1: Cascade constraint DAG of the mystery-story test set (7 blank groups,
+36 blanks). Solid edges denote main-chain dependencies; dashed edges denote
+long-range fan-out constraints originating from G1 (which fixes the
+protagonist’s abnormal trait, occupation, and key item)." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Cascade constraint DAG of the mystery-story test set (7 blank groups,
+36 blanks). Solid edges denote main-chain dependencies; dashed edges denote
+long-range fan-out constraints originating from G1 (which fixes the
+protagonist’s abnormal trait, occupation, and key item).</span>
+                <span class="lang-zh">图1：神秘故事测试集的级联约束DAG（7个空白组，36个空白）。实线边表示主链依赖关系；虚线边表示源自G1的长程扇出约束（G1固定了主角的异常特质、职业和关键物品）。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.25955</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.25955" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1305';
+  var title = "QUIET: A Multi-Blank Cascaded Story Cloze Benchmark for LLM Creative Generation Capability";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>
