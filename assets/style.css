@@ -578,3 +578,34 @@ body:not(:has(.reye-app)) header nav a:hover { color: var(--color-fg-1); backgro
 .lightbox-img { max-width: 90vw; max-height: 80vh; min-width: 25vw; object-fit: contain; transform-origin: center center; transition: transform 80ms ease-out; pointer-events: none; }
 
 .lightbox-caption { color: var(--color-fg-1); background: rgba(0,0,0,0.55); padding: 14px 22px; border-radius: 10px; max-width: 80vw; margin: 14px auto 0; font-size: var(--fs-body); line-height: 1.5; text-align: center; }
+
+/* ── Hero figures (architectural/methodology, above body) ── */
+.article-hero-figures {
+  margin: 0 0 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.article-figure--hero {
+  margin: 0;
+  background: var(--color-bg-2);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.article-figure--hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: none;          /* heroes are allowed to be tall */
+  object-fit: contain;
+  background: #000;
+}
+.article-figure--hero figcaption {
+  padding: 14px 20px;
+  font-size: var(--fs-meta);
+  color: var(--color-fg-1);
+  line-height: 1.55;
+  text-align: center;
+  font-style: italic;
+}
