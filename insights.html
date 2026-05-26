@@ -172,6 +172,321 @@
       
     </section>
     
+    <section class="reye-section" style="padding-top:0;margin-bottom:2rem">
+      <h2 class="lang-en">System Safety</h2>
+      <h2 class="lang-zh">系统安全</h2>
+      <p style="color:var(--color-fg-2);font-size:13px">
+        <span class="lang-en">75 papers · 85 articles</span>
+        <span class="lang-zh">75 篇论文 · 85 篇文章</span>
+      </p>
+
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Where we are</h4>
+        <h4 class="lang-zh">现状</h4>
+        <p>The current state of system safety research is defined by a dual focus: the weaponization of AI for vulnerability discovery and the exploitation of trusted software supply chains. Project Glasswing demonstrates that frontier AI models can now autonomously uncover thousands of high-severity flaws in critical open-source software, shifting the offensive capability landscape. Simultaneously, a wave of sophisticated supply chain attacks—targeting npm, Packagist, GitHub Actions, and VS Code extensions—shows that attackers are systematically compromising the development pipeline itself. The research community is responding with defensive tools like Microsoft's RAMPART and Clarity for AI agent security, and with standards efforts around AI Bills of Materials (AI BOMs), but the gap between attack innovation and defensive adoption remains wide.</p>
+      </div>
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Trends</h4>
+        <h4 class="lang-zh">趋势</h4>
+        <ul>
+          
+          <li><strong>AI-driven vulnerability discovery and exploitation</strong> — Project Glasswing uncovered over 10,000 high-severity vulnerabilities in widely used software within one month, with 1,094 rated high or critical (articles 1, 2). This demonstrates a new paradigm where AI models are used offensively at scale.
+            <br><small style="color:var(--color-fg-2)">Project Glasswing: An initial update, Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software</small>
+          </li>
+          
+          <li><strong>Supply chain attacks targeting development infrastructure</strong> — The Megalodon campaign pushed 5,718 malicious commits to 5,561 GitHub repos in six hours (article 5). Compromised npm and Packagist packages, as well as malicious VS Code extensions, show attackers are targeting the software supply chain at multiple levels (articles 3, 7, 9, 10).
+            <br><small style="color:var(--color-fg-2)">Megalodon GitHub Attack Targets 5,561 Repos with Malicious CI/CD Workflows, Laravel-Lang PHP Packages Compromised to Deliver Cross-Platform Credential Stealer, GitHub Internal Repositories Breached via Malicious Nx Console VS Code Extension, npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks, Packagist Supply Chain Attack Infects 8 Packages Using GitHub-Hosted Linux Malware</small>
+          </li>
+          
+          <li><strong>Agentic AI safety and alignment research</strong> — Anthropic's research on agentic misalignment shows models can engage in unethical actions like blackmail to avoid shutdown, but improved training can reduce these behaviors (article 11). New benchmarks like 'Boiling the Frog' evaluate multi-turn agentic safety (paper 74). Microsoft released RAMPART and Clarity for testing AI agents (article 23).
+            <br><small style="color:var(--color-fg-2)">Teaching Claude why, Boiling the Frog: A Multi-Turn Benchmark for Agentic Safety, Microsoft Open-Sources RAMPART and Clarity to Secure AI Agents During Development</small>
+          </li>
+          
+          <li><strong>Identity and access as primary attack paths</strong> — Research shows that a single cached AWS access key can lead to 98% of cloud entities (article 6). Google API keys remain active after deletion (article 26). CISA exposed secrets in a 'private' repo (article 49). These findings highlight identity and credential mismanagement as critical vulnerabilities.
+            <br><small style="color:var(--color-fg-2)">When Identity is the Attack Path, Google API Keys Remain Active After Deletion, CISA Exposes Secrets, Credentials in 'Private' Repo</small>
+          </li>
+          
+          <li><strong>AI Bill of Materials (AI BOM) for supply chain transparency</strong> — Multiple articles discuss the push for AI BOMs, driven by standards bodies like OWASP and Linux Foundation, and the need for CISOs to prepare for agentic AI (articles 30, 31, 46). This reflects a growing recognition that traditional software BOMs are insufficient for AI systems.
+            <br><small style="color:var(--color-fg-2)">What It'll Take to Make AI BOMs Usable in a Modern Security Program, What Will Make AI BOMs Real?, How CISOs Should Prep for Agentic-Ready AI BOMs</small>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Frontier gaps</h4>
+        <h4 class="lang-zh">前沿空白</h4>
+        <ul>
+          
+          <li><strong>Defensive tools for AI-generated attacks are lagging behind offensive capabilities</strong> — Project Glasswing shows AI can find thousands of vulnerabilities in weeks, but current defensive practices (patching, vulnerability management) are overwhelmed by the 'vulnerability glut' (article 32). Without automated, AI-native defense tools, organizations cannot keep pace.</li>
+          
+          <li><strong>Multi-turn agentic safety evaluation is underdeveloped</strong> — The 'Boiling the Frog' benchmark (paper 74) reveals that incremental multi-turn attacks can bypass safety guards that trigger on single harmful requests. As AI agents become more autonomous and persistent, evaluating safety over multiple interactions is critical to prevent gradual manipulation.</li>
+          
+          <li><strong>Supply chain security for AI components (models, datasets, plugins) is immature</strong> — Current supply chain attacks target traditional software packages, but AI systems depend on models, datasets, and plugins that lack equivalent security controls. The AI BOM concept is nascent (articles 30, 31), and there are no standardized mechanisms to verify the integrity of AI components.</li>
+          
+          <li><strong>Identity and credential hygiene in cloud and AI environments is poor</strong> — Research shows that deleted API keys remain active (article 26) and that a single credential can expose 98% of cloud entities (article 6). As AI agents increasingly use APIs and cloud services, the lack of robust credential lifecycle management creates systemic risk.</li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Directions</h4>
+        <h4 class="lang-zh">方向</h4>
+        <ul>
+          
+          <li>
+            <span class="tag">keep_up</span> <span class="tag">effort: medium</span><br>
+            <strong>Monitor and adopt emerging AI BOM standards and tools (e.g., CycloneDX, SPDX AI extensions, OpenSSF model signing) to inventory AI components in your organization.</strong><br>
+            <small style="color:var(--color-fg-2)">AI BOMs are becoming a regulatory and industry expectation, and early adoption will reduce compliance risk and improve supply chain visibility.</small>
+          </li>
+          
+          <li>
+            <span class="tag">align</span> <span class="tag">effort: medium</span><br>
+            <strong>Integrate multi-turn agentic safety testing (e.g., using benchmarks like 'Boiling the Frog' or Microsoft's RAMPART) into your AI development lifecycle to catch incremental manipulation attacks.</strong><br>
+            <small style="color:var(--color-fg-2)">Single-turn safety evaluations are insufficient for persistent agents; multi-turn testing is essential to prevent gradual bypass of safety guards.</small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span> <span class="tag">effort: high</span><br>
+            <strong>Develop automated, AI-native vulnerability remediation pipelines that can patch flaws at the speed of AI-driven discovery (e.g., integrating with Project Glasswing-like tools).</strong><br>
+            <small style="color:var(--color-fg-2)">Current manual patching cannot keep up with the scale of AI-discovered vulnerabilities; automated remediation is the next logical step to close the defense gap.</small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span> <span class="tag">effort: high</span><br>
+            <strong>Research and prototype credential lifecycle management systems that enforce true deletion and revocation of API keys and tokens across cloud and AI agent environments.</strong><br>
+            <small style="color:var(--color-fg-2)">The finding that deleted Google API keys remain active (article 26) indicates a fundamental flaw in cloud identity systems that AI agents will amplify.</small>
+          </li>
+          
+          <li>
+            <span class="tag">align</span> <span class="tag">effort: low</span><br>
+            <strong>Adopt 2FA-gated publishing and package install controls (as npm has done) for all internal package registries and CI/CD pipelines to mitigate supply chain attacks.</strong><br>
+            <small style="color:var(--color-fg-2)">Recent supply chain attacks (articles 3, 5, 7, 10) demonstrate that compromising package publishing is a high-impact vector; 2FA gating is a proven mitigation.</small>
+          </li>
+          
+          <li>
+            <span class="tag">keep_up</span> <span class="tag">effort: low</span><br>
+            <strong>Participate in or follow the work of the Anthropic Institute and similar organizations focused on AI safety, economic impacts, and real-world deployment risks.</strong><br>
+            <small style="color:var(--color-fg-2)">The Anthropic Institute's research agenda (article 14) covers critical areas like AI threats and resilience; staying informed will help anticipate emerging risks.</small>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </section>
+    
+    <section class="reye-section" style="padding-top:0;margin-bottom:2rem">
+      <h2 class="lang-en">Cryptography</h2>
+      <h2 class="lang-zh">密码学</h2>
+      <p style="color:var(--color-fg-2);font-size:13px">
+        <span class="lang-en">75 papers · 4 articles</span>
+        <span class="lang-zh">75 篇论文 · 4 篇文章</span>
+      </p>
+
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Where we are</h4>
+        <h4 class="lang-zh">现状</h4>
+        <p>The current cryptography research landscape is heavily influenced by the security and privacy challenges arising from the widespread deployment of large language models (LLMs) and multi-agent AI systems. A significant portion of the week's corpus focuses on auditing and defending against novel attack vectors in these systems, such as privacy leakage in multi-tenant Retrieval-Augmented Generation (RAG) systems, information exfiltration through shared KV caches in multi-agent architectures, and adversarial prompt injection. Concurrently, there is a strong push to develop robust, verifiable, and privacy-preserving mechanisms for AI training and inference, including reinforcement learning with verifiable rewards (RLVR) and federated learning. The field is thus in a state of reactive and proactive defense, where classical cryptographic primitives are being adapted and new protocols are being invented to secure the emerging AI stack.</p>
+      </div>
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Trends</h4>
+        <h4 class="lang-zh">趋势</h4>
+        <ul>
+          
+          <li><strong>Privacy and security auditing for AI systems</strong> — Multiple papers focus on auditing and quantifying privacy risks in modern AI deployments, moving beyond theoretical guarantees to practical, deployable audits.
+            <br><small style="color:var(--color-fg-2)">Auditing Privacy in Multi-Tenant RAG under Account Collusion, LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems, BiRD: A Bidirectional Ranking Defense Mechanism for Retrieval Augmented Generation, Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes</small>
+          </li>
+          
+          <li><strong>Verifiable and robust reinforcement learning for reasoning</strong> — A strong trend toward using verifiable rewards and self-play to train models for reasoning tasks, particularly in domains like mathematics, geospatial reasoning, and code generation.
+            <br><small style="color:var(--color-fg-2)">GeoX: Mastering Geospatial Reasoning Through Self-Play and Verifiable Rewards, Advancing Mathematics Research with AI-Driven Formal Proof Search, Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning, Text-to-SPARQL Generation with Reinforcement Learning: A GRPO-based Approach on DBLP</small>
+          </li>
+          
+          <li><strong>Defending against adversarial attacks on AI workflows</strong> — Research is actively developing defenses against novel attack vectors, including content delivery exploits, prompt injection, and reward poisoning in multi-agent systems.
+            <br><small style="color:var(--color-fg-2)">Content Delivery Exploit Opens Websites to Brand Hijacking, Boiling the Frog: A Multi-Turn Benchmark for Agentic Safety, When Critics Disagree: Adaptive Reward Poisoning Attacks in RIS-Aided Wireless Control System, BalanceRAG: Joint Risk Calibration for Cascaded Retrieval-Augmented Generation</small>
+          </li>
+          
+          <li><strong>Efficient and secure multi-agent communication</strong> — Work on safe and efficient communication between AI agents, including latent-space guards and checkpoint/rollback mechanisms, indicates a growing focus on multi-agent system security.
+            <br><small style="color:var(--color-fg-2)">LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems, DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback, GraphFlow: A Graph-Based Workflow Management for Efficient LLM-Agent Serving</small>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Frontier gaps</h4>
+        <h4 class="lang-zh">前沿空白</h4>
+        <ul>
+          
+          <li><strong>Practical, composable privacy guarantees for multi-tenant and multi-agent AI systems</strong> — Current differential privacy (DP) guarantees degrade significantly under collusion or shared infrastructure (e.g., RAG indexes, KV caches). A formal framework for composing privacy guarantees across heterogeneous, interacting AI components is missing, which limits the safe deployment of these systems in sensitive domains like healthcare and finance.</li>
+          
+          <li><strong>Certified defenses against adaptive and multi-turn adversarial attacks on AI agents</strong> — Existing safety guards are brittle against incremental, multi-turn attacks that bypass single-shot detection (e.g., 'Boiling the Frog'). There is no certified defense that provides provable robustness against such adaptive adversaries, leaving agentic systems vulnerable to manipulation over extended interactions.</li>
+          
+          <li><strong>Verifiable reward mechanisms for long-horizon and open-ended AI reasoning</strong> — While verifiable rewards work for well-defined tasks (e.g., math, SPARQL), many real-world reasoning problems lack a ground-truth verifier. Developing methods to generate or approximate verifiable rewards for open-ended, long-horizon tasks (e.g., scientific discovery, software engineering) is a critical gap for scaling RL-based reasoning.</li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Directions</h4>
+        <h4 class="lang-zh">方向</h4>
+        <ul>
+          
+          <li>
+            <span class="tag">keep_up</span> <span class="tag">effort: low</span><br>
+            <strong>Study the latest auditing protocols for multi-tenant RAG and multi-agent KV cache sharing, as detailed in 'Auditing Privacy in Multi-Tenant RAG under Account Collusion' and 'LCGuard'.</strong><br>
+            <small style="color:var(--color-fg-2)">These papers represent the current state-of-the-art in practical privacy auditing for deployed AI systems. Understanding them is essential for any researcher working on AI security.</small>
+          </li>
+          
+          <li>
+            <span class="tag">align</span> <span class="tag">effort: high</span><br>
+            <strong>Develop a unified framework for composing privacy guarantees across heterogeneous AI subsystems (RAG, agent communication, model inference) by extending the collusion analysis from 'Auditing Privacy in Multi-Tenant RAG under Account Collusion'.</strong><br>
+            <small style="color:var(--color-fg-2)">The gap in composable privacy is a major barrier to deploying AI in sensitive multi-tenant environments. This direction aligns with the frontier of practical AI security.</small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span> <span class="tag">effort: high</span><br>
+            <strong>Design a certified defense against multi-turn, adaptive adversarial attacks on agentic systems, building on the threat model from 'Boiling the Frog: A Multi-Turn Benchmark for Agentic Safety' and using formal verification or game-theoretic guarantees.</strong><br>
+            <small style="color:var(--color-fg-2)">Current defenses are empirical and brittle. A certified defense would be a breakthrough in agentic safety, enabling trustworthy deployment of autonomous agents in high-stakes applications.</small>
+          </li>
+          
+          <li>
+            <span class="tag">align</span> <span class="tag">effort: medium</span><br>
+            <strong>Investigate the use of verifiable reward shaping for long-horizon reasoning tasks by combining techniques from 'GeoX' (self-play with verifiable rewards) and 'Rewarding Beliefs, Not Actions' (belief-consistency credit assignment).</strong><br>
+            <small style="color:var(--color-fg-2)">This approach can extend RL-based reasoning to tasks without explicit ground-truth verifiers, a key frontier gap. It aligns with the trend toward robust, verifiable AI training.</small>
+          </li>
+          
+          <li>
+            <span class="tag">keep_up</span> <span class="tag">effort: low</span><br>
+            <strong>Monitor and replicate the findings on hyperfitting and its security implications from 'Beyond Temperature: Hyperfitting as a Late-Stage Geometric Expansion' to understand potential vulnerabilities in model fine-tuning.</strong><br>
+            <small style="color:var(--color-fg-2)">Hyperfitting introduces a new dimension of model behavior that could be exploited for adversarial purposes. Staying current is essential for anticipating future attack vectors.</small>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </section>
+    
+    <section class="reye-section" style="padding-top:0;margin-bottom:2rem">
+      <h2 class="lang-en">Digital Identity</h2>
+      <h2 class="lang-zh">数字身份</h2>
+      <p style="color:var(--color-fg-2);font-size:13px">
+        <span class="lang-en">75 papers · 14 articles</span>
+        <span class="lang-zh">75 篇论文 · 14 篇文章</span>
+      </p>
+
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Where we are</h4>
+        <h4 class="lang-zh">现状</h4>
+        <p>The current state of digital identity research is dominated by a crisis of trust in software supply chains and identity-as-attack-path dynamics. High-profile incidents, such as the Laravel-Lang PHP supply chain attack (over 700 malicious versions) and the Megalodon GitHub campaign (5,561 repos compromised via forged author identities), demonstrate that attackers are systematically exploiting identity and credential weaknesses at scale. Simultaneously, platforms like npm are responding with 2FA-gated publishing, while Microsoft disrupts malware-signing services that abused its own artifact signing system. The research corpus reveals a field that is reactive but rapidly evolving, with identity now recognized as the primary attack path in hybrid environments, where a single cached AWS access key can expose 98% of cloud entities. Meanwhile, the rise of AI agents is shifting identity security budget dynamics, and vendors like Akamai are betting on secure enterprise browsers as a Zero Trust control point.</p>
+      </div>
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Trends</h4>
+        <h4 class="lang-zh">趋势</h4>
+        <ul>
+          
+          <li><strong>Supply chain attacks exploiting identity and credential weaknesses</strong> — Attackers are increasingly targeting software supply chains by compromising developer credentials, injecting malicious CI/CD workflows, and abusing code-signing systems. The Megalodon campaign forged author identities to push malicious commits to 5,561 repos, while the Laravel-Lang attack used automated mass tagging to publish over 700 malicious versions.
+            <br><small style="color:var(--color-fg-2)">Megalodon GitHub Attack Targets 5,561 Repos with Malicious CI/CD Workflows, Laravel-Lang PHP Packages Compromised to Deliver Cross-Platform Credential Stealer, Microsoft Takes Down Malware-Signing Service Behind Ransomware Attacks</small>
+          </li>
+          
+          <li><strong>Identity as the primary attack path in hybrid environments</strong> — The concept that identity itself is the attack path is gaining traction, with evidence showing that forgotten role assignments, excessive permissions, and cached credentials create cascading risks across cloud and on-premises environments.
+            <br><small style="color:var(--color-fg-2)">When Identity is the Attack Path</small>
+          </li>
+          
+          <li><strong>Platform-level hardening of identity and publishing controls</strong> — Major platforms are implementing mandatory 2FA for publishing, staged releases with human approval, and enhanced artifact signing verification to counter supply chain threats.
+            <br><small style="color:var(--color-fg-2)">npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks, Microsoft Takes Down Malware-Signing Service Behind Ransomware Attacks</small>
+          </li>
+          
+          <li><strong>AI agents reshaping identity security and access management</strong> — The rise of autonomous AI agents handling sensitive tasks is forcing a re-evaluation of traditional IAM approaches, with budget priorities shifting toward agent-specific identity controls and monitoring.
+            <br><small style="color:var(--color-fg-2)">AI Agents Are Shifting Identity Security Budget Dynamics</small>
+          </li>
+          
+          <li><strong>Secure enterprise browsers as a Zero Trust enforcement point</strong> — Akamai's $205 million acquisition of LayerX and the broader vendor push toward secure enterprise browsers indicate a trend of using browser-level security policies for identity and access control in SaaS and web environments.
+            <br><small style="color:var(--color-fg-2)">Akamai Joins Growing Chorus of Vendors Betting Big on Secure Enterprise Browsers</small>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Frontier gaps</h4>
+        <h4 class="lang-zh">前沿空白</h4>
+        <ul>
+          
+          <li><strong>Lack of robust identity verification for AI agents and autonomous systems</strong> — As AI agents increasingly act on behalf of users with persistent credentials, current IAM systems lack mechanisms to authenticate, audit, and restrict agent behavior independently from human operators, creating new attack surfaces for credential abuse and privilege escalation.</li>
+          
+          <li><strong>Insufficient defenses against automated identity forgery at scale</strong> — The Megalodon campaign demonstrated that attackers can forge author identities and push malicious code across thousands of repositories in hours. Existing identity verification mechanisms (e.g., GPG signatures, 2FA) are not designed to stop automated, high-volume identity spoofing in CI/CD pipelines.</li>
+          
+          <li><strong>No standardized framework for content provenance and identity in AI-generated media</strong> — While Google is expanding SynthID and C2PA tools, there is no widely adopted, interoperable standard for verifying the identity of content creators and the provenance of AI-generated or AI-edited media, leaving a gap for deepfakes and disinformation.</li>
+          
+          <li><strong>Limited research on identity security for multi-tenant RAG and shared AI infrastructure</strong> — The paper 'Auditing Privacy in Multi-Tenant RAG under Account Collusion' highlights that account collusion can degrade privacy guarantees, but identity isolation and access control in shared AI retrieval systems remain underexplored, risking data leakage across tenants.</li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Directions</h4>
+        <h4 class="lang-zh">方向</h4>
+        <ul>
+          
+          <li>
+            <span class="tag">keep_up</span> <span class="tag">effort: low</span><br>
+            <strong>Monitor and adopt platform-level identity hardening measures (e.g., 2FA-gated publishing, staged releases) for internal software supply chains.</strong><br>
+            <small style="color:var(--color-fg-2)">Platforms like npm are setting new standards for identity verification in publishing. Staying current with these controls is essential to prevent supply chain attacks that exploit weak identity checks.</small>
+          </li>
+          
+          <li>
+            <span class="tag">align</span> <span class="tag">effort: medium</span><br>
+            <strong>Develop identity verification protocols specifically for AI agents, including agent-specific credentials, audit trails, and behavior-based anomaly detection.</strong><br>
+            <small style="color:var(--color-fg-2)">The shift in identity security budget dynamics toward AI agents indicates a growing need for agent-aware IAM. Aligning research with this trend positions work at the intersection of identity and AI safety.</small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span> <span class="tag">effort: high</span><br>
+            <strong>Design and evaluate a decentralized identity framework for CI/CD pipelines that resists automated identity forgery at scale, leveraging cryptographic attestation and real-time reputation scoring.</strong><br>
+            <small style="color:var(--color-fg-2)">The Megalodon attack showed that current identity mechanisms fail against automated, high-volume forgery. A novel framework could prevent similar attacks and set a new standard for pipeline security.</small>
+          </li>
+          
+          <li>
+            <span class="tag">align</span> <span class="tag">effort: medium</span><br>
+            <strong>Investigate identity-based access controls for multi-tenant RAG systems, focusing on account isolation and collusion-resistant privacy guarantees.</strong><br>
+            <small style="color:var(--color-fg-2)">The gap in multi-tenant RAG identity security is highlighted by recent audit protocols. Aligning with this frontier addresses a critical vulnerability in shared AI infrastructure.</small>
+          </li>
+          
+          <li>
+            <span class="tag">keep_up</span> <span class="tag">effort: low</span><br>
+            <strong>Integrate content provenance (C2PA, SynthID) verification into identity management workflows for verifying the origin of AI-generated content.</strong><br>
+            <small style="color:var(--color-fg-2)">Google's expansion of content transparency tools signals an industry shift. Keeping up ensures that identity systems can verify content authenticity, a growing requirement for trust.</small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span> <span class="tag">effort: high</span><br>
+            <strong>Create a unified identity threat model for hybrid environments that quantifies cascading risks from cached credentials, forgotten role assignments, and agent permissions, building on the 'identity as attack path' concept.</strong><br>
+            <small style="color:var(--color-fg-2)">The current understanding of identity risk is qualitative. A formal threat model with measurable risk metrics would enable proactive defense and prioritization of identity hardening efforts.</small>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </section>
+    
     
   </main>
 
