@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Models Need Sleep | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-26</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.26099" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1291" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Language Models Need Sleep</h1>
+        <h1 class="article-title lang-zh">语言模型需要睡眠</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">sparse-attention</span>
+          
+          <span class="tag direction-tag">hierarchical-attention</span>
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Sangyun Lee, Sean McLeish, Tom Goldstein, Giulia Fanti</p>
+        
+      </header>
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>The paper proposes that converting evicted context into persistent fast weights via multiple offline recurrent passes (sleep) can overcome the reasoning depth bottleneck of SSM-attention hybrids, where vanilla models fail despite sufficient memory.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文揭示了SSM-注意力混合模型在推理深度上的瓶颈，并提出一种类似睡眠的离线循环机制，通过多次遍历被驱逐的上下文来更新快速权重，从而显著提升深度推理能力。该方法在合成任务和数学推理数据集上验证了有效性，且不增加推理时的延迟。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — llm-sleep</h1>
+<p><strong>Key Takeaways</strong>
+- SSM-attention hybrid models fail on tasks requiring deep reasoning even when memory capacity is sufficient.
+- A sleep-like offline recurrence that updates fast weights via multiple passes over evicted context improves reasoning.
+- Increasing sleep duration N yields larger gains on examples that require deeper reasoning.
+- The method preserves wake-time latency by shifting computation to the sleep phase.
+- Validated on synthetic tasks (cellular automata, multi-hop graph retrieval) and GSM-Infinite math reasoning.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Language Models Need Sleep</li>
+<li><strong>Alias:</strong> llm-sleep</li>
+<li><strong>Authors:</strong> Sangyun Lee, Sean McLeish, Tom Goldstein, Giulia Fanti</li>
+<li><strong>arXiv ID:</strong> 2605.26099</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.26099</li>
+<li>HTML: https://arxiv.org/html/2605.26099v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.26099</li>
+<li><strong>Tags:</strong> sleep-consolidation, fast-weights, reasoning-depth, ssm-hybrid, offline-compute</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>The paper proposes that converting evicted context into persistent fast weights via multiple offline recurrent passes (sleep) can overcome the reasoning depth bottleneck of SSM-attention hybrids, where vanilla models fail despite sufficient memory.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Transformer LLMs scale poorly with context length due to quadratic attention. Hybrid models combining attention with fixed-size fast weight memories (e.g., SSMs) improve memory scalability but their reasoning depth is limited. Prior work on context compression and test-time training uses single-pass updates, while depth-recurrent models increase compute at prediction time.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Fast weights and linear RNNs (Gated Delta Nets, Mamba) provide fixed-size memory but struggle with exact retrieval and deep reasoning.</li>
+<li>Context compression methods (e.g., ICAE, self-study) condense context into shorter sequences but keep it in attention window.</li>
+<li>Context distillation uses gradient descent on predefined losses; this paper uses a learned recurrent forward pass.</li>
+<li>Test-time training (Tandon et al., Zhang et al.) performs one gradient step per chunk; this paper uses multiple recurrent passes.</li>
+<li>Depth-recurrent models (looped transformers) increase depth at prediction time; this paper shifts compute to an offline sleep phase.</li>
+<li>Offline planning in neuroscience (hippocampal replay) inspires the sleep-like consolidation mechanism.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing hybrid models with fixed-size fast weights can store long-range information but fail when reasoning depth increases, even if memory load is held constant. Prior methods for context consolidation use only a single pass or gradient step, limiting the transformation of evicted context into useful weight memory. The paper identifies that the bottleneck is not memory capacity but the amount of computation available for consolidation.</p>
+<h3>P — Proposal</h3>
+<p>The authors introduce a sleep-like consolidation mechanism where, when the context window is full, the model performs N offline recurrent passes over the accumulated context, updating fast weights in SSM blocks via a learned local rule. During inference, the KV cache is cleared and the model uses the updated fast weights, shifting extra computation to sleep while preserving wake-time latency. The model is trained end-to-end with backpropagation through the entire sleep process.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On synthetic tasks (cellular automata, multi-hop graph retrieval), vanilla Gated Delta Nets (GDNs) fail as reasoning depth increases, while the sleep model with N=4 achieves &gt;90% accuracy on deep reasoning instances. On GSM-Infinite math reasoning, the sleep model outperforms GDNs and hybrid baselines, with accuracy improving from ~40% to ~60% as N increases from 1 to 4.</p>
+<h3>Ablation</h3>
+<p>Increasing sleep duration N from 1 to 4 yields consistent performance gains, with the largest improvements on examples requiring the deepest reasoning (e.g., 8-hop graph retrieval accuracy rises from ~50% to ~95% as N increases).</p>
+<h3>Limitations</h3>
+<p>['The method is evaluated on synthetic tasks and one math dataset; scaling to large-scale pretrained LLMs on diverse NLP benchmarks is not demonstrated.', 'The sleep phase adds offline compute cost, and the optimal N may depend on task complexity and context length.', 'The learned local update rule may not generalize to unseen reasoning patterns or distribution shifts.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a principled way to decouple reasoning compute from inference latency, relevant for long-horizon tasks in your research.</li>
+<li>Shows that memory consolidation via recurrence can overcome reasoning depth limitations, which may apply to continual learning or memory-augmented agents.</li>
+<li>Bridges neuroscience-inspired sleep mechanisms with practical LLM architectures, offering a new direction for efficient long-context processing.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate the sleep mechanism on larger pretrained LLMs (e.g., Llama, GPT) with diverse long-context benchmarks.</li>
+<li>[ ] Explore adaptive sleep duration based on task difficulty or context complexity.</li>
+<li>[ ] Investigate combining sleep with other memory mechanisms (e.g., retrieval-augmented generation) for hybrid reasoning.</li>
+<li>[ ] Analyze the learned local update rule to understand what representations are consolidated during sleep.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>语言模型需要睡眠</h1>
+<p><strong>主要结论</strong>
+- SSM-注意力混合模型在需要深度推理的任务上会失败，即使记忆容量足够。
+- 一种类似睡眠的离线循环机制，通过多次遍历被驱逐的上下文来更新快速权重，可以改善推理能力。
+- 增加睡眠时长N在需要更深推理的样本上带来更大收益。
+- 该方法通过将计算转移到睡眠阶段，保持了推理时的低延迟。
+- 在合成任务（元胞自动机、多跳图检索）和GSM-Infinite数学推理上得到验证。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文提出通过多次离线循环遍历被驱逐的上下文并将其转化为持久快速权重（睡眠），可以克服SSM-注意力混合模型的推理深度瓶颈，而普通模型即使记忆充足也会失败。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：Transformer LLM因二次注意力机制在长上下文上扩展性差。结合注意力和固定大小快速权重记忆（如SSM）的混合模型改善了记忆可扩展性，但推理深度受限。先前关于上下文压缩和测试时训练的工作使用单次更新，而深度循环模型增加了预测时的计算量。相关工作：快速权重和线性RNN（Gated Delta Nets, Mamba）提供固定大小记忆，但在精确检索和深度推理上表现不佳。上下文压缩方法（如ICAE, self-study）将上下文压缩为更短序列，但仍保留在注意力窗口内。上下文蒸馏使用预定义损失的梯度下降；本文使用学习的循环前向传播。测试时训练（Tandon等人, Zhang等人）每块执行一个梯度步；本文使用多次循环遍历。深度循环模型（循环Transformer）在预测时增加深度；本文将计算转移到离线睡眠阶段。神经科学中的离线规划（海马体回放）启发了类似睡眠的巩固机制。差距：现有固定大小快速权重的混合模型可以存储长距离信息，但在推理深度增加时失败，即使记忆负载保持不变。先前的上下文巩固方法仅使用单次遍历或梯度步，限制了将被驱逐的上下文转化为有用权重记忆的能力。本文指出瓶颈不是记忆容量，而是可用于巩固的计算量。提案：作者引入了一种类似睡眠的巩固机制，当上下文窗口满时，模型对累积的上下文执行N次离线循环遍历，通过学习的局部规则更新SSM块中的快速权重。推理时，KV缓存被清除，模型使用更新后的快速权重，将额外计算转移到睡眠阶段，同时保持推理时延迟。模型通过整个睡眠过程的反向传播进行端到端训练。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在合成任务（元胞自动机、多跳图检索）上，普通Gated Delta Nets (GDNs) 随着推理深度增加而失败，而睡眠模型（N=4）在深度推理实例上达到&gt;90%的准确率。在GSM-Infinite数学推理上，睡眠模型优于GDNs和混合基线，准确率从N=1时的约40%提升到N=4时的约60%。</p>
+<h3>消融实验</h3>
+<p>增加睡眠时长N从1到4带来一致的性能提升，其中对需要最深推理的样本提升最大（例如，8跳图检索准确率随N增加从约50%提升到约95%）。</p>
+<h3>局限性</h3>
+<p>['该方法仅在合成任务和一个数学数据集上评估；未展示在多样化NLP基准上对大规模预训练LLM的扩展。', '睡眠阶段增加了离线计算成本，最优N可能依赖于任务复杂度和上下文长度。', '学习的局部更新规则可能无法泛化到未见过的推理模式或分布偏移。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了一种将推理计算与推理延迟解耦的原则性方法，对研究中的长时任务具有参考价值。</li>
+<li>表明通过循环进行记忆巩固可以克服推理深度限制，可能适用于持续学习或记忆增强型智能体。</li>
+<li>将神经科学启发的睡眠机制与实用LLM架构相结合，为高效长上下文处理提供了新方向。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在更大规模的预训练LLM（如Llama, GPT）上评估睡眠机制，使用多样化的长上下文基准。</li>
+<li>[ ] 探索基于任务难度或上下文复杂度的自适应睡眠时长。</li>
+<li>[ ] 研究将睡眠与其他记忆机制（如检索增强生成）结合以实现混合推理。</li>
+<li>[ ] 分析学习的局部更新规则，以理解睡眠期间巩固了哪些表征。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1291/fig_001.png" alt="Figure 1 : At the eviction boundary, an SSM-attention hybrid performs N N offline recurrent passes over the current context before discarding the attention cache.
+These recurrent passes update the fast weights in the SSM blocks, allowing later predictions to use consolidated context without wake-time looping." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 : At the eviction boundary, an SSM-attention hybrid performs N N offline recurrent passes over the current context before discarding the attention cache.
+These recurrent passes update the fast weights in the SSM blocks, allowing later predictions to use consolidated context without wake-time looping.</span>
+                <span class="lang-zh">图1：在驱逐边界处，SSM-注意力混合模型在当前上下文中执行N次离线循环传递，然后丢弃注意力缓存。
+这些循环传递更新SSM块中的快速权重，使后续预测能够利用整合后的上下文，而无需在唤醒时循环。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1291/fig_004.png" alt="(b) Effect of offline looping for t = 32 t=32 ." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">(b) Effect of offline looping for t = 32 t=32 .</span>
+                <span class="lang-zh">(b) t=32时离线循环的效果。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1291/fig_005.png" alt="Figure 3 : Increasing N N improves performance on Depo. Test loss of a 4-layer GDN-attention hybrid on the k k -hop knowledge retrieval task. Additional offline loops accelerate learning, especially for more reasoning-intensive, higher-hop queries." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3 : Increasing N N improves performance on Depo. Test loss of a 4-layer GDN-attention hybrid on the k k -hop knowledge retrieval task. Additional offline loops accelerate learning, especially for more reasoning-intensive, higher-hop queries.</span>
+                <span class="lang-zh">图3：增加N可提升Depo上的性能。在k跳知识检索任务中，4层GDN-注意力混合模型的测试损失。额外的离线循环加速了学习，尤其是对于推理强度更高的高跳查询。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1291/fig_009.png" alt="Figure 5 : Increasing N N improves accuracy on GSM-Infinite with sliding-window eviction. GSM-Infinite accuracy with sliding-window eviction over training steps. We fine-tune Ouro 1.4B with window size L = 512 L=512 and compare N ∈ { 1 , 2 , 4 } N\in\{1,2,4\} sleep passes." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5 : Increasing N N improves accuracy on GSM-Infinite with sliding-window eviction. GSM-Infinite accuracy with sliding-window eviction over training steps. We fine-tune Ouro 1.4B with window size L = 512 L=512 and compare N ∈ { 1 , 2 , 4 } N\in\{1,2,4\} sleep passes.</span>
+                <span class="lang-zh">图5：增加N可提升滑动窗口驱逐下GSM-Infinite的准确率。训练步骤中滑动窗口驱逐下的GSM-Infinite准确率。我们使用窗口大小L=512微调Ouro 1.4B，并比较N∈{1,2,4}次睡眠循环。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1291/fig_002.png" alt="(a) Effect of rollout step t t ." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">(a) Effect of rollout step t t .</span>
+                <span class="lang-zh">(a) 展开步长t的效果。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.26099</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.26099" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1291';
+  var title = "Language Models Need Sleep";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

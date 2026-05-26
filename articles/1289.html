@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prism: A Plug-in Reproducible Infrastructure for Scalable Multimodal Continual Instruction Tuning | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-26</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.26110" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1289" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Prism: A Plug-in Reproducible Infrastructure for Scalable Multimodal Continual Instruction Tuning</h1>
+        <h1 class="article-title lang-zh">Prism：面向可扩展多模态持续指令调优的插件式可复现基础设施</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">content-management</span>
+          
+          <span class="tag direction-tag">digital-publishing</span>
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Jun-Tao Tang, Yu-Cheng Shi, Zhen-Hao Xie, Da-Wei Zhou</p>
+        
+      </header>
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>Prism introduces a plugin-driven infrastructure that decouples algorithm development from MLLM backbones, enabling scalable, reproducible, and fair MCIT research.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出了Prism，一个插件驱动的可复现基础设施，用于可扩展的多模态持续指令调优（MCIT）。它通过轻量级插件注册机制将算法开发与骨干网络实现解耦，支持9种方法、3个基准测试以及DeepSpeed等原生大规模训练框架。Prism消除了结构碎片化，实现了MCIT方法间的公平比较，其中最佳方法SAME在UCIT基准上达到了73.07%的平均准确率。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — prism</h1>
+<p><strong>Key Takeaways</strong>
+- Prism is a plug-in reproducible codebase for scalable multimodal continual instruction tuning (MCIT).
+- It decouples algorithm development from backbone implementation via a lightweight plugin registration mechanism.
+- Prism supports 9 methods, 3 benchmarks, and native large-scale training infrastructure like DeepSpeed.
+- The best method, SAME, achieves 73.07% average accuracy on the UCIT benchmark.
+- Prism eliminates structural fragmentation and enables fair comparison across MCIT methods.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Prism: A Plug-in Reproducible Infrastructure for Scalable Multimodal Continual Instruction Tuning</li>
+<li><strong>Alias:</strong> prism</li>
+<li><strong>Authors:</strong> Jun-Tao Tang, Yu-Cheng Shi, Zhen-Hao Xie, Da-Wei Zhou</li>
+<li><strong>arXiv ID:</strong> 2605.26110</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.26110</li>
+<li>HTML: https://arxiv.org/html/2605.26110v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.26110</li>
+<li><strong>Tags:</strong> multimodal-continual-learning, instruction-tuning, plugin-architecture, reproducibility, mllm</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Prism introduces a plugin-driven infrastructure that decouples algorithm development from MLLM backbones, enabling scalable, reproducible, and fair MCIT research.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Multimodal Large Language Models (MLLMs) achieve versatility via instruction tuning, but real-world deployment requires continuous adaptation to emerging tasks, motivating Multimodal Continual Instruction Tuning (MCIT). Existing MCIT toolkits like CoIN and MCITlib suffer from engineering bottlenecks, lacking unified backbones and large-scale training support.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>CoIN (Chen et al., 2024): early MCIT toolkit with 4 algorithms and 1 benchmark.</li>
+<li>MCITlib (Guo et al., 2025c): expands to 8 algorithms and 3 datasets but lacks unified backbone and large-scale support.</li>
+<li>HiDe-LLaVA (Guo et al., 2025a): structure-based method for parameter isolation.</li>
+<li>DISCO (Guo et al., 2025b): another structure-based approach.</li>
+<li>SAME (Xie et al., 2026): achieves state-of-the-art on UCIT benchmark.</li>
+<li>ModalPrompt (Zeng et al., 2025): prompt-based continual learning method.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Current MCIT research is hindered by severe engineering bottlenecks: existing methods directly modify base MLLM codebases, leading to method-specific architectures that limit code reuse and fair comparison. Toolkits lack unified backbone design and native support for large-scale training pipelines like DeepSpeed, restricting scalability and reproducibility.</p>
+<h3>P — Proposal</h3>
+<p>Prism is a plugin-driven reproducible infrastructure that separates algorithmic development from backbone implementation via a lightweight plugin registration mechanism. New methods and benchmarks are integrated as independent plugins without modifying the underlying MLLM codebase, enabling scalable and reproducible MCIT experimentation with native support for distributed optimization.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On the UCIT benchmark, SAME achieves the highest average accuracy of 73.07%, followed by DISCO at 69.54% and ModalPrompt at 67.93%. FT-LoRA (catastrophic forgetting baseline) achieves only 37.90%, while Zero-shot is 32.34%.</p>
+<h3>Ablation</h3>
+<p>The plugin registration mechanism reduces code integration overhead: new methods are added via a single integration.py file and registered with @CLMethodFactory.register(), eliminating the need to modify the backbone codebase.</p>
+<h3>Limitations</h3>
+<p>['Prism currently supports only 3 benchmarks and 9 methods, which may not cover all MCIT scenarios.', 'The framework relies on widely adopted open-source libraries, which may limit flexibility for custom backends.', 'Performance numbers are reported only on UCIT; generalization to other benchmarks is not fully demonstrated.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a standardized, reproducible infrastructure for MCIT research, enabling fair comparisons across methods.</li>
+<li>Plugin-based design reduces engineering overhead, accelerating method development and adoption.</li>
+<li>Supports large-scale training with DeepSpeed, making it practical for real-world MLLM deployment.</li>
+<li>Addresses a critical gap in the MCIT ecosystem by unifying backbones and benchmarks.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate Prism on additional benchmarks like CoIN and TriGap to validate generalizability.</li>
+<li>[ ] Extend the plugin system to support more backbone architectures beyond LLaVA.</li>
+<li>[ ] Integrate additional continual learning methods, especially replay-based and regularization-based approaches.</li>
+<li>[ ] Explore automated hyperparameter tuning and experiment tracking within the Prism framework.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>Prism：面向可扩展多模态持续指令调优的插件式可复现基础设施</h1>
+<p><strong>主要结论</strong>
+- Prism是一个插件式可复现代码库，用于可扩展的多模态持续指令调优（MCIT）。
+- 它通过轻量级插件注册机制将算法开发与骨干网络实现解耦。
+- Prism支持9种方法、3个基准测试以及DeepSpeed等原生大规模训练基础设施。
+- 最佳方法SAME在UCIT基准上达到了73.07%的平均准确率。
+- Prism消除了结构碎片化，实现了MCIT方法间的公平比较。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>Prism引入了一种插件驱动的基础设施，将算法开发与MLLM骨干网络解耦，实现了可扩展、可复现且公平的MCIT研究。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：多模态大语言模型（MLLM）通过指令调优实现了多功能性，但实际部署需要持续适应新出现的任务，从而催生了多模态持续指令调优（MCIT）。现有的MCIT工具包如CoIN和MCITlib存在工程瓶颈，缺乏统一的骨干网络和大规模训练支持。相关工作：CoIN（Chen等人，2024）是早期的MCIT工具包，包含4种算法和1个基准；MCITlib（Guo等人，2025c）扩展到8种算法和3个数据集，但缺乏统一的骨干网络和大规模支持；HiDe-LLaVA（Guo等人，2025a）是基于结构的方法用于参数隔离；DISCO（Guo等人，2025b）是另一种基于结构的方法；SAME（Xie等人，2026）在UCIT基准上达到了最先进水平；ModalPrompt（Zeng等人，2025）是基于提示的持续学习方法。差距：当前的MCIT研究受到严重工程瓶颈的阻碍：现有方法直接修改基础MLLM代码库，导致方法特定的架构限制了代码复用和公平比较。工具包缺乏统一的骨干网络设计和对DeepSpeed等大规模训练管道的原生支持，限制了可扩展性和可复现性。提案：Prism是一个插件驱动的可复现基础设施，通过轻量级插件注册机制将算法开发与骨干网络实现分离。新方法和基准作为独立插件集成，无需修改底层MLLM代码库，从而支持可扩展和可复现的MCIT实验，并原生支持分布式优化。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在UCIT基准上，SAME达到了最高的平均准确率73.07%，其次是DISCO的69.54%和ModalPrompt的67.93%。FT-LoRA（灾难性遗忘基线）仅达到37.90%，而零样本为32.34%。</p>
+<h3>消融实验</h3>
+<p>插件注册机制降低了代码集成开销：新方法通过单个integration.py文件添加，并使用@CLMethodFactory.register()注册，无需修改骨干代码库。</p>
+<h3>局限性</h3>
+<p>['Prism目前仅支持3个基准和9种方法，可能无法覆盖所有MCIT场景。', '该框架依赖于广泛采用的开源库，可能限制自定义后端的灵活性。', '性能数据仅在UCIT上报告，对其他基准的泛化能力尚未充分展示。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>为MCIT研究提供了标准化、可复现的基础设施，实现了方法间的公平比较。</li>
+<li>基于插件的设计减少了工程开销，加速了方法开发和采用。</li>
+<li>支持DeepSpeed的大规模训练，使其适用于实际MLLM部署。</li>
+<li>通过统一骨干网络和基准，填补了MCIT生态系统中的关键空白。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在CoIN和TriGap等其他基准上评估Prism，以验证其泛化能力。</li>
+<li>[ ] 扩展插件系统以支持除LLaVA之外的更多骨干架构。</li>
+<li>[ ] 集成更多持续学习方法，特别是基于回放和正则化的方法。</li>
+<li>[ ] 在Prism框架内探索自动超参数调优和实验跟踪。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1289/fig_001.png" alt="Figure 1: Overview of the P rism toolkit. Its plugin-based design decouples algorithmic development from infrastructure maintenance: new methods, backbones, and benchmarks integrate via lightweight registration, enabling reproducible and extensible MCIT research." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Overview of the P rism toolkit. Its plugin-based design decouples algorithmic development from infrastructure maintenance: new methods, backbones, and benchmarks integrate via lightweight registration, enabling reproducible and extensible MCIT research.</span>
+                <span class="lang-zh">图1：P rism工具包概览。其基于插件的设计将算法开发与基础设施维护解耦：新方法、骨干网络和基准测试通过轻量级注册进行集成，从而支持可复现且可扩展的MCIT研究。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.26110</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.26110" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1289';
+  var title = "Prism: A Plug-in Reproducible Infrastructure for Scalable Multimodal Continual Instruction Tuning";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

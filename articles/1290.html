@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond Summaries: Structure-Aware Labeling of Code Changes with Large Language Models | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-26</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.26100" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1290" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Beyond Summaries: Structure-Aware Labeling of Code Changes with Large Language Models</h1>
+        <h1 class="article-title lang-zh">超越摘要：利用大语言模型对代码变更进行结构感知标注</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">content-management</span>
+          
+          <span class="tag direction-tag">editorial-workflow</span>
+          
+          <span class="tag direction-tag">digital-publishing</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Bar Weiss, Antonio Abu-Nassar, Adi Sosnovich, Karen Yorav</p>
+        
+      </header>
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>This paper shows that LLMs can produce structured, taxonomy-based labels for code changes in patches, achieving high recall/precision and capturing cross-hunk relationships, offering a flexible complement to static analysis.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出了一种基于大语言模型的两阶段流水线，能够为代码补丁中的差异块生成基于分类法的结构化标签，在召回率和精确率上分别达到84%和81%。该方法无需静态分析基础设施，支持跨语言和少样本提示，并能捕获跨差异块的关系（如重命名传播），为自动化代码审查工作流提供了新的可能性。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — structlabel</h1>
+<p><strong>Key Takeaways</strong>
+- LLMs can label diff hunks with taxonomy-based change types (rename, move, interface change, etc.) achieving up to 84% recall and 81% precision.
+- A two-stage pipeline first assigns labels to individual hunks, then refines them to capture cross-hunk relationships (e.g., rename propagation) and semantic attributes (e.g., old/new names).
+- The approach is language-agnostic, customizable via few-shot prompting, and requires no static-analysis infrastructure.
+- Structured labels enable downstream automation (filtering, prioritization, analytics) beyond free-text summaries.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Beyond Summaries: Structure-Aware Labeling of Code Changes with Large Language Models</li>
+<li><strong>Alias:</strong> structlabel</li>
+<li><strong>Authors:</strong> Bar Weiss, Antonio Abu-Nassar, Adi Sosnovich, Karen Yorav</li>
+<li><strong>arXiv ID:</strong> 2605.26100</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.26100</li>
+<li>HTML: https://arxiv.org/html/2605.26100v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.26100</li>
+<li><strong>Tags:</strong> code-review, llm-labeling, diff-hunk-classification, structure-aware, few-shot-prompting</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper shows that LLMs can produce structured, taxonomy-based labels for code changes in patches, achieving high recall/precision and capturing cross-hunk relationships, offering a flexible complement to static analysis.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Code review is a bottleneck in modern software engineering, especially with AI-assisted code generation. Existing LLM-based review tools focus on free-text summarization and comment generation, which are hard to integrate into automated workflows. Static analysis tools for change classification are language-specific and costly to maintain.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>RefactoringMiner, GumTree, ChangeDistiller: AST-based tools for detecting refactoring and structural edits, but language-specific and hard to extend.</li>
+<li>LLM-based code assistants (Codex, Claude Code) and review summarization (Sun et al., Codedog): produce free-text outputs, not structured labels.</li>
+<li>Few-shot prompting for code tasks (Brown et al., Wei et al., Kojima et al.): in-context learning enables flexible classification without fine-tuning.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>No prior work systematically evaluates LLMs for taxonomy-based labeling of diff hunks, including cross-hunk relationships and semantic attributes. Existing change-classification tools rely on static analysis, which is language-specific and difficult to customize, while LLM-based code review outputs are unstructured.</p>
+<h3>P — Proposal</h3>
+<p>A two-stage LLM pipeline: (1) assign taxonomy labels to each diff hunk, (2) refine labels to capture structural relationships (e.g., rename propagation) and extract semantic attributes (e.g., old/new names). Uses few-shot prompting for language-agnostic, customizable labeling without static-analysis overhead.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Best configuration (GPT-4 with full context) achieves 84% recall and 81% precision on a manually curated benchmark of natural and synthetic patches. High accuracy in extracting relational and attribute metadata.</p>
+<h3>Ablation</h3>
+<p>Providing full patch context (old/new file + diff) improves recall by ~10% over hunk-only context; few-shot examples boost precision by ~5% over zero-shot.</p>
+<h3>Limitations</h3>
+<p>['No formal guarantees; accuracy may degrade on unseen languages or complex refactorings.', 'Benchmark is manually curated and may not cover all real-world patch types.', 'Pipeline relies on LLM output parsing; errors in attribute extraction can propagate.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Enables structured, automation-friendly code review workflows that can filter/prioritize patches by change type.</li>
+<li>Demonstrates LLMs can capture cross-hunk relationships (e.g., rename propagation) without static analysis, relevant for refactoring detection.</li>
+<li>Language-agnostic labeling reduces engineering cost for multilingual projects.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate on larger, diverse benchmarks including non-English code and more languages.</li>
+<li>[ ] Combine LLM labeling with static analysis for hybrid approaches (formal guarantees + flexibility).</li>
+<li>[ ] Extend taxonomy to semantic/intent-level changes (e.g., bug fix, feature addition).</li>
+<li>[ ] Integrate into CI/CD pipelines and measure impact on reviewer efficiency.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>超越摘要：利用大语言模型对代码变更进行结构感知标注</h1>
+<p><strong>主要结论</strong>
+- 大语言模型能够以基于分类法的变更类型（如重命名、移动、接口变更）标记差异块，召回率高达84%，精确率达81%。
+- 两阶段流水线先为单个差异块分配标签，再精炼标签以捕获跨差异块关系（如重命名传播）和语义属性（如旧/新名称）。
+- 该方法语言无关，可通过少样本提示定制，且无需静态分析基础设施。
+- 结构化标签支持下游自动化（过滤、优先级排序、分析），超越了自由文本摘要的能力。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文的核心主张是：大语言模型能够为代码补丁生成基于分类法的结构化标签，关键观察是该方法在捕获跨差异块关系方面表现优异，且无需静态分析。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：代码审查是现代软件工程的瓶颈，尤其是在AI辅助代码生成背景下。现有基于大语言模型的审查工具侧重于自由文本摘要和评论生成，难以集成到自动化工作流中。用于变更分类的静态分析工具语言特定且维护成本高。</p>
+<p><strong>相关工作</strong>：RefactoringMiner、GumTree、ChangeDistiller等基于抽象语法树的工具可检测重构和结构性编辑，但语言特定且难以扩展；基于大语言模型的代码助手（如Codex、Claude Code）和审查摘要工具（如Sun等人、Codedog）生成自由文本输出，而非结构化标签；少样本提示在代码任务中的应用（如Brown等人、Wei等人、Kojima等人）表明上下文学习无需微调即可实现灵活分类。</p>
+<p><strong>差距</strong>：尚无工作系统评估大语言模型对差异块进行基于分类法的标签标注，包括跨差异块关系和语义属性。现有变更分类工具依赖静态分析，语言特定且难以定制，而基于大语言模型的代码审查输出是非结构化的。</p>
+<p><strong>提议</strong>：一个两阶段大语言模型流水线：（1）为每个差异块分配分类法标签；（2）精炼标签以捕获结构关系（如重命名传播）并提取语义属性（如旧/新名称）。使用少样本提示实现语言无关、可定制的标签标注，无需静态分析开销。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>最佳配置（GPT-4，完整上下文）在人工策划的自然和合成补丁基准上实现了84%的召回率和81%的精确率。在提取关系性和属性元数据方面具有高准确性。</p>
+<h3>消融实验</h3>
+<p>提供完整补丁上下文（旧/新文件+差异）相比仅差异块上下文，召回率提升约10%；少样本示例相比零样本，精确率提升约5%。</p>
+<h3>局限性</h3>
+<p>无形式化保证；在未见过的语言或复杂重构上准确性可能下降。基准是人工策划的，可能未覆盖所有真实世界的补丁类型。流水线依赖大语言模型输出解析；属性提取错误可能传播。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>支持结构化、自动化友好的代码审查工作流，可按变更类型过滤/优先级排序补丁。</li>
+<li>证明大语言模型无需静态分析即可捕获跨差异块关系（如重命名传播），对重构检测有重要意义。</li>
+<li>语言无关的标签标注降低了多语言项目的工程成本。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在更大、更多样化的基准上评估，包括非英语代码和更多语言。</li>
+<li>[ ] 将大语言模型标签标注与静态分析结合，形成混合方法（形式化保证+灵活性）。</li>
+<li>[ ] 扩展分类法以涵盖语义/意图级变更（如错误修复、功能添加）。</li>
+<li>[ ] 集成到CI/CD流水线中，并衡量对审查者效率的影响。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1290/fig_001.png" alt="Figure 1 . Example of a diff hunk with identified labeling." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 . Example of a diff hunk with identified labeling.</span>
+                <span class="lang-zh">图1：带有标注的diff hunk示例。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1290/fig_005.png" alt="Figure 3 . Illustration of our system’s pipeline." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3 . Illustration of our system’s pipeline.</span>
+                <span class="lang-zh">图3：我们系统pipeline的示意图。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1290/fig_006.png" alt="Figure 4 . Precision versus recall per label type for the Labeler. Results are shown for Gemini-3 in per-file mode." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4 . Precision versus recall per label type for the Labeler. Results are shown for Gemini-3 in per-file mode.</span>
+                <span class="lang-zh">图4：Labeler按标签类型的精确率与召回率。结果展示了Gemini-3在per-file模式下的表现。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1290/fig_002.png" alt="(a)" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">(a)</span>
+                <span class="lang-zh">（a）</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1290/fig_003.png" alt="(a)" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">(a)</span>
+                <span class="lang-zh">（a）</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.26100</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.26100" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1290';
+  var title = "Beyond Summaries: Structure-Aware Labeling of Code Changes with Large Language Models";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

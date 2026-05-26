@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claw-Anything: Benchmarking Always-On Personal Assistants with Broader Access to User's Digital World | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-26</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.26086" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1293" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Claw-Anything: Benchmarking Always-On Personal Assistants with Broader Access to User's Digital World</h1>
+        <h1 class="article-title lang-zh">Claw-Anything：以更广泛的数字世界访问权限评测始终在线的个人助手</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">content-management</span>
+          
+          <span class="tag direction-tag">digital-publishing</span>
+          
+          <span class="tag direction-tag">hierarchical-attention</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Yusong Lin, Xinyuan Liang, Haiyang Wang, Qipeng Gu, Siqi Cheng, Jiangui Chen, Shuzhe Wu, Feiyang Pan, Lue Fan, Sanyuan Zhao, Dandan Tu</p>
+        
+      </header>
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>Claw-Anything introduces a benchmark that evaluates always-on personal assistants with broader access to the user's digital world, showing that even GPT-5.5 struggles (34.5% pass@1) due to the need for reasoning over long-horizon events, multiple services, and multi-device interactions.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出了Claw-Anything基准，从长周期活动历史、多后端服务协同以及跨设备GUI+CLI交互三个维度扩展智能体上下文，揭示了当前最强模型（GPT-5.5）在始终在线个人助手任务上的巨大差距（pass@1仅34.5%）。同时，论文提供了一个自动化数据生成流水线，可产出200个人工验证任务和2000个训练环境，微调后的Qwen3.5-27B性能提升23.7%。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — claw-anything</h1>
+<p><strong>Key Takeaways</strong>
+- Claw-Anything expands agent context along three dimensions: long-horizon activity histories, interdependent backend services, and integrated GUI+CLI across devices.
+- GPT-5.5 achieves only 34.5% pass@1 on Claw-Anything, revealing a large gap between current agent capabilities and always-on personal assistance demands.
+- The benchmark includes 200 human-verified tasks and an automated pipeline generating 2,000 training environments, enabling scalable data generation.
+- Fine-tuning Qwen3.5-27B on pipeline-generated trajectories yields a 23.7% improvement, showing the pipeline's utility for training.
+- Claw-Anything evaluates proactive assistance, requiring agents to anticipate user needs from context rather than react to explicit requests.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Claw-Anything: Benchmarking Always-On Personal Assistants with Broader Access to User's Digital World</li>
+<li><strong>Alias:</strong> claw-anything</li>
+<li><strong>Authors:</strong> Yusong Lin, Xinyuan Liang, Haiyang Wang, Qipeng Gu, Siqi Cheng, Jiangui Chen, Shuzhe Wu, Feiyang Pan, Lue Fan, Sanyuan Zhao, Dandan Tu</li>
+<li><strong>arXiv ID:</strong> 2605.26086</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.26086</li>
+<li>HTML: https://arxiv.org/html/2605.26086v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.26086</li>
+<li><strong>Tags:</strong> always-on-assistant, agent-benchmark, context-scaling, proactive-assistance, data-generation-pipeline</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Claw-Anything introduces a benchmark that evaluates always-on personal assistants with broader access to the user's digital world, showing that even GPT-5.5 struggles (34.5% pass@1) due to the need for reasoning over long-horizon events, multiple services, and multi-device interactions.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Recent agent systems (e.g., OpenClaw series, Hermes Agent) are moving toward always-on personal assistance with long-term memory and background execution. Existing benchmarks like ClawBench, WildClawBench, and QwenClawBench provide only narrow, static slices of user state, limiting evaluation of context-sensitive reasoning and proactive assistance.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>ClawBench: broad coverage of standardized digital tasks but static and short-horizon.</li>
+<li>WildClawBench: realistic open environments but still narrow context.</li>
+<li>PinchBench: personal-productivity scenarios, limited scope.</li>
+<li>ClawMark: longer-horizon professional workflows, but no multi-device or cross-service integration.</li>
+<li>QwenClawBench: realistic CLI tasks, but no event streams or GUI.</li>
+<li>Claw-Eval: rubric-based evaluation for open-ended trajectories, but still localized tasks.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing benchmarks evaluate agents as solvers of localized, short-horizon tasks with clean settings, failing to capture the complexity of always-on personal assistance. They omit long-horizon activity histories, interdependent backend services, and multi-device interaction, and do not evaluate proactive assistance.</p>
+<h3>P — Proposal</h3>
+<p>Claw-Anything expands agent context along three dimensions: long-horizon event streams (months of activity), diverse backend services (avg. 10.1, max 18), and multi-device GUI+CLI interfaces. An automated pipeline simulates digital worlds via multi-round event injection, producing complex states with realistic noise, and generates 200 human-verified evaluation tasks plus 2,000 training environments.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>GPT-5.5 achieves 34.5% pass@1 on Claw-Anything, substantially lower than on prior benchmarks. Fine-tuning Qwen3.5-27B on 1,500 successful trajectories from the pipeline improves pass@1 by 23.7%.</p>
+<h3>Ablation</h3>
+<p>The automated data-generation pipeline yields 2,000 training environments; fine-tuning Qwen3.5-27B on successful trajectories from these environments improves the base model by 23.7%.</p>
+<h3>Limitations</h3>
+<p>['The benchmark relies on simulated user activity and synthetic tasks, which may not fully capture real-world user behavior and noise.', 'Evaluation is limited to 200 human-verified tasks, potentially missing edge cases in broader digital environments.', "The pipeline's LLM-based simulation may introduce biases or unrealistic event patterns."]</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Highlights the critical gap between current agent capabilities and the demands of always-on personal assistance, relevant for designing more context-aware systems.</li>
+<li>Provides a scalable data-generation pipeline that can be used to create training data for improving agent performance in complex digital environments.</li>
+<li>Introduces proactive assistance evaluation, a key capability for future personal assistants that anticipate user needs.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate your own agent models on Claw-Anything to identify weaknesses in long-horizon reasoning and cross-service coordination.</li>
+<li>[ ] Use the automated pipeline to generate additional training environments for fine-tuning your models on always-on assistance tasks.</li>
+<li>[ ] Investigate methods for improving agent robustness to noisy event streams and conflicting signals in multi-device settings.</li>
+<li>[ ] Explore proactive assistance mechanisms that leverage accumulated user context to anticipate needs without explicit requests.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>Claw-Anything：以更广泛的数字世界访问权限评测始终在线的个人助手</h1>
+<p><strong>主要结论</strong>
+- Claw-Anything从三个维度扩展智能体上下文：长达数月的事件流、平均10.1个（最多18个）后端服务、以及跨设备的GUI+CLI集成。
+- GPT-5.5在Claw-Anything上仅达到34.5%的pass@1，表明当前智能体能力与始终在线个人助手需求之间存在巨大鸿沟。
+- 基准包含200个人工验证任务和可生成2000个训练环境的自动化流水线，支持可扩展的数据生成。
+- 在流水线生成的轨迹上微调Qwen3.5-27B，性能提升23.7%，验证了流水线对训练的有效性。
+- Claw-Anything评估主动辅助能力，要求智能体从上下文中预判用户需求，而非仅响应显式指令。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>Claw-Anything提出了一个评测始终在线个人助手的基准，发现即使GPT-5.5也仅能达到34.5%的pass@1，原因在于需要推理长周期事件、多服务协同以及跨设备交互。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：近期智能体系统（如OpenClaw系列、Hermes Agent）正朝着具备长期记忆和后台执行的始终在线个人助手发展。现有基准如ClawBench、WildClawBench和QwenClawBench仅提供狭窄、静态的用户状态切片，限制了上下文敏感推理和主动辅助的评估。
+<strong>相关工作</strong>：ClawBench覆盖标准化数字任务但静态且短周期；WildClawBench提供真实开放环境但上下文仍狭窄；PinchBench聚焦个人生产力场景但范围有限；ClawMark涵盖较长周期的专业工作流但缺乏多设备或跨服务集成；QwenClawBench处理真实CLI任务但无事件流或GUI；Claw-Eval提供基于量规的开放式轨迹评估但仍局限于局部任务。
+<strong>差距</strong>：现有基准将智能体视为在干净设定下解决局部短周期任务的求解器，未能捕捉始终在线个人助手的复杂性。它们忽略了长周期活动历史、相互依赖的后端服务以及多设备交互，也未评估主动辅助能力。
+<strong>方案</strong>：Claw-Anything沿三个维度扩展智能体上下文：长周期事件流（数月活动）、多样化后端服务（平均10.1个，最多18个）以及多设备GUI+CLI接口。自动化流水线通过多轮事件注入模拟数字世界，生成带有真实噪声的复杂状态，并产出200个人工验证的评估任务和2000个训练环境。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>主要结果：GPT-5.5在Claw-Anything上的pass@1为34.5%，显著低于此前基准。在流水线生成的1500条成功轨迹上微调Qwen3.5-27B，pass@1提升23.7%。</p>
+<h3>消融实验</h3>
+<p>自动化数据生成流水线产出2000个训练环境；在来自这些环境的成功轨迹上微调Qwen3.5-27B，基础模型性能提升23.7%。</p>
+<h3>局限性</h3>
+<p>基准依赖模拟用户活动和合成任务，可能无法完全捕捉真实用户行为和噪声；评估限于200个人工验证任务，可能遗漏更广泛数字环境中的边缘情况；流水线基于LLM的模拟可能引入偏差或不真实的事件模式。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>凸显了当前智能体能力与始终在线个人助手需求之间的关键差距，对设计更上下文感知的系统具有指导意义。</li>
+<li>提供了可扩展的数据生成流水线，可用于创建训练数据以提升智能体在复杂数字环境中的表现。</li>
+<li>引入了主动辅助评估，这是未来个人助手预判用户需求的关键能力。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在Claw-Anything上评估你自己的智能体模型，以识别长周期推理和跨服务协调方面的弱点。</li>
+<li>[ ] 使用自动化流水线生成更多训练环境，用于微调模型以处理始终在线辅助任务。</li>
+<li>[ ] 研究提升智能体对噪声事件流和多设备场景中冲突信号鲁棒性的方法。</li>
+<li>[ ] 探索利用累积用户上下文预判需求、无需显式指令的主动辅助机制。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1293/fig_001.png" alt="Figure 1: Overview of Claw-Anything and its empirical value. Left: Claw-Anything gives an always-on personal assistant broader access to the user’s digital world, spanning services, devices, and long-horizon event streams, thereby expanding the range of tasks it can complete. Right: Enabled by our data pipeline, our model achieves the best pass@1 among open-weight models. The yellow region represents closed-source models, and the horizontal axis does not correspond to model sizes." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Overview of Claw-Anything and its empirical value. Left: Claw-Anything gives an always-on personal assistant broader access to the user’s digital world, spanning services, devices, and long-horizon event streams, thereby expanding the range of tasks it can complete. Right: Enabled by our data pipeline, our model achieves the best pass@1 among open-weight models. The yellow region represents closed-source models, and the horizontal axis does not correspond to model sizes.</span>
+                <span class="lang-zh">图1：Claw-Anything概述及其经验价值。左图：Claw-Anything为始终在线的个人助手提供了更广泛的用户数字世界访问权限，涵盖服务、设备和长周期事件流，从而扩展了其可完成的任务范围。右图：通过我们的数据流水线，我们的模型在开放权重模型中取得了最佳的pass@1。黄色区域代表闭源模型，横轴不对应模型规模。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1293/fig_003.png" alt="Figure 3: Claw-Anything environment and automated data pipeline. Left: The environment comprises connected devices with system event streams and multiple services with persistent states and service-specific histories. Right: From a persona-grounded initial state, the pipeline iteratively samples task or noise templates and uses an LLM-based simulator to adapt events and update the world state. A final simulation generates the task query, reference solution, and grader; automatic filtering then yields task instances, with optional human verification for benchmark cases." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: Claw-Anything environment and automated data pipeline. Left: The environment comprises connected devices with system event streams and multiple services with persistent states and service-specific histories. Right: From a persona-grounded initial state, the pipeline iteratively samples task or noise templates and uses an LLM-based simulator to adapt events and update the world state. A final simulation generates the task query, reference solution, and grader; automatic filtering then yields task instances, with optional human verification for benchmark cases.</span>
+                <span class="lang-zh">图3：Claw-Anything环境与自动化数据流水线。左图：该环境包含具有系统事件流的连接设备，以及具有持久状态和服务特定历史记录的多个服务。右图：从基于角色设定的初始状态开始，流水线迭代采样任务或噪声模板，并使用基于LLM的模拟器调整事件并更新世界状态。最终模拟生成任务查询、参考解决方案和评分器；自动过滤后产生任务实例，对于基准测试案例可进行人工验证。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1293/fig_015.png" alt="Table 4: Skill-loading ablation. We compare full and lazy loading across models. Under lazy loading, the agent must select tools autonomously, making the setting much more challenging. All results are reported in Pass@1." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Table 4: Skill-loading ablation. We compare full and lazy loading across models. Under lazy loading, the agent must select tools autonomously, making the setting much more challenging. All results are reported in Pass@1.</span>
+                <span class="lang-zh">表4：技能加载消融实验。我们比较了全量加载和懒加载在不同模型上的表现。在懒加载下，智能体必须自主选择工具，这使得设置更具挑战性。所有结果均以Pass@1报告。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1293/fig_004.png" alt="Figure 4: Benchmark statistics of Claw-Anything. Left: Comparison with Claw-Eval in size, context length, services per task, and supported devices. Right: Category distribution of evaluation instances." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: Benchmark statistics of Claw-Anything. Left: Comparison with Claw-Eval in size, context length, services per task, and supported devices. Right: Category distribution of evaluation instances.</span>
+                <span class="lang-zh">图4：Claw-Anything的基准统计。左图：与Claw-Eval在规模、上下文长度、每任务服务数以及支持的设备方面的比较。右图：评估实例的类别分布。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1293/fig_009.png" alt="Table 3: Effects of access to event streams, cross-service environments, and cross-device interaction on benchmark performance, together with a comparison between proactive and reactive tasks. All results are reported in Pass@1." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Table 3: Effects of access to event streams, cross-service environments, and cross-device interaction on benchmark performance, together with a comparison between proactive and reactive tasks. All results are reported in Pass@1.</span>
+                <span class="lang-zh">表3：事件流访问、跨服务环境和跨设备交互对基准性能的影响，以及主动任务与被动任务的比较。所有结果均以Pass@1报告。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.26086</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.26086" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1293';
+  var title = "Claw-Anything: Benchmarking Always-On Personal Assistants with Broader Access to User\u0027s Digital World";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

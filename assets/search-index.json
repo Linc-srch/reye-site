@@ -1,5 +1,157 @@
 [
   {
+    "id": 1287,
+    "type": "paper",
+    "title": "From Model Scaling to System Scaling: Scaling the Harness in Agentic AI",
+    "title_zh": "从模型扩展到系统扩展：在智能体AI中扩展系统架构",
+    "summary_en": "This paper argues that the next bottleneck in agentic AI is system scaling (the harness around the model) rather than model scaling alone, and proposes a framework and reference harness to study it.",
+    "summary_zh": "本文提出智能体AI的下一个瓶颈是系统扩展（模型周围的系统架构），而非单纯的模型扩展。它识别了三个核心瓶颈——上下文治理、可信记忆和动态技能路由，并发布了Python原生参考架构CheetahClaws，以促进系统级设计选择的研究。",
+    "url": "https://arxiv.org/abs/2605.26112",
+    "article_page": "articles/1287.html",
+    "score": 3.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1288,
+    "type": "paper",
+    "title": "Squeezing Capacity from Multimodal Large Language Models for Subject-driven Generation",
+    "title_zh": "挤压多模态大语言模型的能力用于主体驱动生成",
+    "summary_en": "This paper proposes a framework that conditions diffusion models on MLLMs with VAE-based identity conditioning to jointly improve multimodal understanding and identity preservation in subject-driven image generation.",
+    "summary_zh": "本文提出了一种将多模态大语言模型（MLLM）与扩散模型相结合的新框架，通过联合编码文本和参考图像来提升主体驱动图像生成中的身份保持和指令跟随能力。其核心创新包括双层级聚合（DLA）模块和多阶段去噪策略，有效平衡了语义理解与细粒度身份信息。实验结果表明，该方法在多项指标上显著优于现有方法。",
+    "url": "https://arxiv.org/abs/2605.26111",
+    "article_page": "articles/1288.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1289,
+    "type": "paper",
+    "title": "Prism: A Plug-in Reproducible Infrastructure for Scalable Multimodal Continual Instruction Tuning",
+    "title_zh": "Prism：面向可扩展多模态持续指令调优的插件式可复现基础设施",
+    "summary_en": "Prism introduces a plugin-driven infrastructure that decouples algorithm development from MLLM backbones, enabling scalable, reproducible, and fair MCIT research.",
+    "summary_zh": "本文提出了Prism，一个插件驱动的可复现基础设施，用于可扩展的多模态持续指令调优（MCIT）。它通过轻量级插件注册机制将算法开发与骨干网络实现解耦，支持9种方法、3个基准测试以及DeepSpeed等原生大规模训练框架。Prism消除了结构碎片化，实现了MCIT方法间的公平比较，其中最佳方法SAME在UCIT基准上达到了73.07%的平均准确率。",
+    "url": "https://arxiv.org/abs/2605.26110",
+    "article_page": "articles/1289.html",
+    "score": 3.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1290,
+    "type": "paper",
+    "title": "Beyond Summaries: Structure-Aware Labeling of Code Changes with Large Language Models",
+    "title_zh": "超越摘要：利用大语言模型对代码变更进行结构感知标注",
+    "summary_en": "This paper shows that LLMs can produce structured, taxonomy-based labels for code changes in patches, achieving high recall/precision and capturing cross-hunk relationships, offering a flexible complement to static analysis.",
+    "summary_zh": "本文提出了一种基于大语言模型的两阶段流水线，能够为代码补丁中的差异块生成基于分类法的结构化标签，在召回率和精确率上分别达到84%和81%。该方法无需静态分析基础设施，支持跨语言和少样本提示，并能捕获跨差异块的关系（如重命名传播），为自动化代码审查工作流提供了新的可能性。",
+    "url": "https://arxiv.org/abs/2605.26100",
+    "article_page": "articles/1290.html",
+    "score": 3.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1291,
+    "type": "paper",
+    "title": "Language Models Need Sleep",
+    "title_zh": "语言模型需要睡眠",
+    "summary_en": "The paper proposes that converting evicted context into persistent fast weights via multiple offline recurrent passes (sleep) can overcome the reasoning depth bottleneck of SSM-attention hybrids, where vanilla models fail despite sufficient memory.",
+    "summary_zh": "本文揭示了SSM-注意力混合模型在推理深度上的瓶颈，并提出一种类似睡眠的离线循环机制，通过多次遍历被驱逐的上下文来更新快速权重，从而显著提升深度推理能力。该方法在合成任务和数学推理数据集上验证了有效性，且不增加推理时的延迟。",
+    "url": "https://arxiv.org/abs/2605.26099",
+    "article_page": "articles/1291.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1292,
+    "type": "paper",
+    "title": "OrpQuant: Geometric Orthogonal Residual Projection for Multiplier-Free Power-of-Two Transformer Quantization",
+    "title_zh": "OrpQuant：面向无乘法器幂次变换器量化的几何正交残差投影",
+    "summary_en": "OrpQuant introduces a geometric perspective to PoT quantization, addressing angular degradation with a multiplier-free, analytically solvable dual-basis projection that achieves competitive accuracy and dramatic hardware timing improvements.",
+    "summary_zh": "本文从几何角度揭示了幂次量化在亚4位宽度下的根本缺陷——低角分辨率机制，并提出了一种无乘法器、可解析求解的双基投影方法ORP。该方法在LLaMA-2-7B上以W3/A16配置达到6.10的困惑度，且校准时间仅需约15分钟，同时通过28nm RTL综合验证了0.35ns关键路径延迟和3.33 TOPS/W的能效。",
+    "url": "https://arxiv.org/abs/2605.26092",
+    "article_page": "articles/1292.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1293,
+    "type": "paper",
+    "title": "Claw-Anything: Benchmarking Always-On Personal Assistants with Broader Access to User's Digital World",
+    "title_zh": "Claw-Anything：以更广泛的数字世界访问权限评测始终在线的个人助手",
+    "summary_en": "Claw-Anything introduces a benchmark that evaluates always-on personal assistants with broader access to the user's digital world, showing that even GPT-5.5 struggles (34.5% pass@1) due to the need for reasoning over long-horizon events, multiple services, and multi-device interactions.",
+    "summary_zh": "本文提出了Claw-Anything基准，从长周期活动历史、多后端服务协同以及跨设备GUI+CLI交互三个维度扩展智能体上下文，揭示了当前最强模型（GPT-5.5）在始终在线个人助手任务上的巨大差距（pass@1仅34.5%）。同时，论文提供了一个自动化数据生成流水线，可产出200个人工验证任务和2000个训练环境，微调后的Qwen3.5-27B性能提升23.7%。",
+    "url": "https://arxiv.org/abs/2605.26086",
+    "article_page": "articles/1293.html",
+    "score": 5.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
+    "id": 1294,
+    "type": "paper",
+    "title": "Automated Benchmark Auditing for AI Agents and Large Language Models",
+    "title_zh": "Deep Note — 自动基准审计",
+    "summary_en": "This paper introduces Auto Benchmark Audit (ABA), an agentic framework that systematically uncovers hidden environment dependencies, specification gaps, and grading logic flaws in AI benchmarks, showing that over 25.7% of tasks have critical issues that distort model rankings.",
+    "summary_zh": "本文提出自动基准审计（ABA）框架，系统性地检测AI基准测试中的隐藏环境依赖、规范缺失和评分逻辑缺陷。在168个基准测试中，超过25.7%的任务存在关键问题，过滤这些问题后，SWE-bench Verified和Terminal-Bench 2的平均性能分别提升9.9%和9.6%。",
+    "url": "https://arxiv.org/abs/2605.26079",
+    "article_page": "articles/1294.html",
+    "score": 5.0,
+    "domains": [
+      "ai_safety",
+      "cryptography",
+      "digital_identity",
+      "soc",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 09:11:55"
+  },
+  {
     "id": 1286,
     "type": "article",
     "title": "OpenAI, Grupo Folha and Grupo UOL announce strategic content partnership",

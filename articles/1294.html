@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automated Benchmark Auditing for AI Agents and Large Language Models | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-26</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.26079" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1294" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Automated Benchmark Auditing for AI Agents and Large Language Models</h1>
+        <h1 class="article-title lang-zh">Deep Note — 自动基准审计</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+          <span class="tag direction-tag">supply-chain-attack</span>
+          
+          <span class="tag direction-tag">zero-trust</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Junlin Wang, Federico Bianchi, Shang Zhu, Fan Nie, Yongchan Kwon, Bhuwan Dhingra, James Zou</p>
+        
+      </header>
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>This paper introduces Auto Benchmark Audit (ABA), an agentic framework that systematically uncovers hidden environment dependencies, specification gaps, and grading logic flaws in AI benchmarks, showing that over 25.7% of tasks have critical issues that distort model rankings.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出自动基准审计（ABA）框架，系统性地检测AI基准测试中的隐藏环境依赖、规范缺失和评分逻辑缺陷。在168个基准测试中，超过25.7%的任务存在关键问题，过滤这些问题后，SWE-bench Verified和Terminal-Bench 2的平均性能分别提升9.9%和9.6%。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — auto-benchmark-audit</h1>
+<p><strong>Key Takeaways</strong>
+- ABA is an agentic framework that systematically audits AI benchmarks for hidden environment dependencies, specification gaps, and brittle grading logic.
+- Applied to 168 benchmarks across nine domains, ABA identifies critical issues in over 25.7% of tasks.
+- Filtering out problematic tasks shifts model rankings and increases average performance on SWE-bench Verified and Terminal-Bench 2 by 9.9% and 9.6% respectively.
+- ABA operates in static and trajectory modes, with trajectory mode finding more issues by leveraging runtime behavior.
+- Findings are validated by expert review and upstream pull requests, demonstrating high precision.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Automated Benchmark Auditing for AI Agents and Large Language Models</li>
+<li><strong>Alias:</strong> auto-benchmark-audit</li>
+<li><strong>Authors:</strong> Junlin Wang, Federico Bianchi, Shang Zhu, Fan Nie, Yongchan Kwon, Bhuwan Dhingra, James Zou</li>
+<li><strong>arXiv ID:</strong> 2605.26079</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.26079</li>
+<li>HTML: https://arxiv.org/html/2605.26079v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.26079</li>
+<li><strong>Tags:</strong> benchmark-auditing, agentic-framework, llm-evaluation, reproducibility, safety-evaluation</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper introduces Auto Benchmark Audit (ABA), an agentic framework that systematically uncovers hidden environment dependencies, specification gaps, and grading logic flaws in AI benchmarks, showing that over 25.7% of tasks have critical issues that distort model rankings.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Modern AI benchmarks have grown too complex for traditional manual verification, with tasks involving containerized environments, multi-stage evaluation harnesses, and runtime-dependent grading logic. Prior work like Gururangan et al. (2018) exposed annotation artifacts in NLI benchmarks through sustained manual effort, but such approaches cannot scale to the complexity of current benchmarks like SWE-bench and Terminal-Bench.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Gururangan et al. (2018) exposed annotation artifacts in SNLI and MNLI through manual inspection.</li>
+<li>Akrami et al. (2020) showed data redundancy and test leakage in knowledge graph completion benchmarks.</li>
+<li>Jimenez et al. (2024) introduced SWE-bench, a complex agentic benchmark with containerized environments.</li>
+<li>Merrill et al. (2026) introduced Terminal-Bench, a benchmark requiring runtime state evaluation.</li>
+<li>Phan et al. (2025) and Rein et al. (2024) introduced static QA datasets HLE and GPQA respectively.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing benchmark verification relies on manual effort that cannot scale to modern complex benchmarks with containerized environments, multi-stage evaluation harnesses, and runtime-dependent grading logic. Domain experts often leave implicit assumptions and environment specifications incomplete, and generalist annotation cannot fill this expertise gap.</p>
+<h3>P — Proposal</h3>
+<p>ABA is an agentic framework that uses an evidence collector agent to resolve heterogeneous benchmark artifacts into a uniform manifest, then an auditor agent inspects tasks using shell tools guided by a standardized rubric. It operates in static mode (analyzing task definitions) and trajectory mode (analyzing recorded agent traces), identifying issues in instruction clarity, environment compatibility, and evaluation correctness.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>ABA was applied to 168 benchmarks across nine domains, covering over 30,000 tasks. It identified critical issues in over 25.7% of evaluated tasks. Filtering out problematic tasks increased average performance on SWE-bench Verified by 9.9% and on Terminal-Bench 2 by 9.6%, shifting model rankings. Findings were validated by expert review and upstream pull requests.</p>
+<h3>Ablation</h3>
+<p>Trajectory mode finds more issues than static mode by leveraging intermediate execution traces and runtime behavior, as shown in Section 5 of the paper.</p>
+<h3>Limitations</h3>
+<p>["ABA's effectiveness depends on the quality and completeness of the evidence collector's manifest; benchmarks with highly non-standard structures may require manual configuration.", 'The framework may miss issues that require domain-specific knowledge not captured in the rubric or shell tools.', 'Validation relies on expert review and upstream PRs, which may not cover all identified issues uniformly.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>For researchers building or using AI benchmarks, ABA provides a systematic way to detect hidden flaws that distort capability assessments, directly impacting the reliability of model comparisons.</li>
+<li>The finding that over 25.7% of tasks have critical issues highlights the fragility of current evaluation practices and the need for automated auditing tools.</li>
+<li>The 9.9% and 9.6% performance shifts on SWE-bench and Terminal-Bench demonstrate that benchmark issues can significantly alter perceived model capabilities, which is crucial for safety-critical applications.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply ABA to your own benchmark suite to identify and fix hidden environment dependencies, specification gaps, and grading logic issues.</li>
+<li>[ ] Integrate ABA into the benchmark development pipeline as a continuous integration step to catch issues before public release.</li>
+<li>[ ] Extend ABA's rubric to cover additional issue categories such as data leakage or temporal dependency in dynamic benchmarks.</li>
+<li>[ ] Explore using ABA's trajectory mode to audit agent behavior beyond benchmark tasks, e.g., in real-world deployment scenarios.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>Deep Note — 自动基准审计</h1>
+<p><strong>主要结论</strong>
+- ABA是一个智能体框架，能够系统审计AI基准测试中的隐藏环境依赖、规范缺失和脆弱的评分逻辑。
+- 应用于9个领域的168个基准测试，ABA识别出超过25.7%的任务存在关键问题。
+- 过滤问题任务后，SWE-bench Verified和Terminal-Bench 2的平均性能分别提升9.9%和9.6%，模型排名发生变化。
+- ABA支持静态模式和轨迹模式，轨迹模式通过利用运行时行为发现更多问题。
+- 发现结果经过专家评审和上游pull request验证，具有高精度。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文提出自动基准审计（ABA）框架，系统性地发现AI基准测试中隐藏的环境依赖、规范缺失和评分逻辑缺陷，并证明超过25.7%的任务存在关键问题，从而扭曲模型排名。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>现代AI基准测试因涉及容器化环境、多阶段评估框架和运行时依赖的评分逻辑，已过于复杂而无法依赖传统人工验证。先前工作如Gururangan等人（2018）通过持续人工努力暴露了NLI基准中的标注伪影，但此类方法无法扩展到当前SWE-bench和Terminal-Bench等复杂基准。ABA是一个智能体框架，使用证据收集智能体将异构基准工件解析为统一清单，然后审计智能体使用标准化评分标准通过shell工具检查任务。它支持静态模式（分析任务定义）和轨迹模式（分析记录的智能体轨迹），识别指令清晰度、环境兼容性和评估正确性方面的问题。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>ABA应用于9个领域的168个基准测试，覆盖超过30,000个任务，识别出超过25.7%的评估任务存在关键问题。过滤问题任务后，SWE-bench Verified的平均性能提升9.9%，Terminal-Bench 2的平均性能提升9.6%，模型排名发生变化。发现结果经过专家评审和上游pull request验证。</p>
+<h3>消融实验</h3>
+<p>轨迹模式通过利用中间执行轨迹和运行时行为，比静态模式发现更多问题，如论文第5节所示。</p>
+<h3>局限性</h3>
+<p>['ABA的有效性取决于证据收集智能体清单的质量和完整性；具有高度非标准结构的基准测试可能需要手动配置。', '该框架可能遗漏需要评分标准或shell工具未捕获的领域特定知识的问题。', '验证依赖于专家评审和上游PR，可能无法均匀覆盖所有识别的问题。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>对于构建或使用AI基准测试的研究人员，ABA提供了一种系统方法检测隐藏缺陷，这些缺陷会扭曲能力评估，直接影响模型比较的可靠性。</li>
+<li>超过25.7%的任务存在关键问题这一发现，凸显了当前评估实践的脆弱性以及自动化审计工具的必要性。</li>
+<li>SWE-bench和Terminal-Bench上9.9%和9.6%的性能变化表明，基准问题会显著改变感知的模型能力，这对安全关键应用至关重要。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将ABA应用于自己的基准测试套件，识别并修复隐藏的环境依赖、规范缺失和评分逻辑问题。</li>
+<li>[ ] 将ABA集成到基准开发流程中，作为持续集成步骤，在公开发布前捕获问题。</li>
+<li>[ ] 扩展ABA的评分标准以涵盖更多问题类别，如数据泄露或动态基准中的时间依赖。</li>
+<li>[ ] 探索使用ABA的轨迹模式审计基准任务之外的智能体行为，例如在真实世界部署场景中。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1294/fig_001.png" alt="Figure 2: The Auto Benchmark Audit pipeline. Given benchmark name and URL, an Evidence Collector Agent downloads necessary files and resolves each
+benchmark’s heterogeneous artifacts into a uniform manifest of
+file paths. Then an Auditor Agent audits based on issue categories and severity scale. Then findings include specific evidences, reasoning and suggested fix." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: The Auto Benchmark Audit pipeline. Given benchmark name and URL, an Evidence Collector Agent downloads necessary files and resolves each
+benchmark’s heterogeneous artifacts into a uniform manifest of
+file paths. Then an Auditor Agent audits based on issue categories and severity scale. Then findings include specific evidences, reasoning and suggested fix.</span>
+                <span class="lang-zh">图2：自动基准审计流程。给定基准名称和URL，证据收集代理下载必要文件，并将每个基准的异构工件解析为统一的文件路径清单。然后审计代理根据问题类别和严重程度进行审计。最终结果包括具体证据、推理过程和修复建议。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1294/fig_004.png" alt="Figure 6: Frontier benchmark collection funnel. Five recent
+frontier model release reports (Opus 4.7, GPT-5.4, GLM-5.1,
+Kimi K2.6, MiniMax M2.7) are unioned, normalized, and filtered
+to the set of benchmarks cited by at least two releases, with
+manual removals for duplicates and off-scope task types." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6: Frontier benchmark collection funnel. Five recent
+frontier model release reports (Opus 4.7, GPT-5.4, GLM-5.1,
+Kimi K2.6, MiniMax M2.7) are unioned, normalized, and filtered
+to the set of benchmarks cited by at least two releases, with
+manual removals for duplicates and off-scope task types.</span>
+                <span class="lang-zh">图6：前沿基准收集漏斗。五个最新的前沿模型发布报告（Opus 4.7、GPT-5.4、GLM-5.1、Kimi K2.6、MiniMax M2.7）被合并、归一化并过滤，仅保留至少被两个发布版本引用的基准，同时手动去除重复项和范围外的任务类型。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1294/fig_005.png" alt="Figure 7: Mean per-model score change (in percentage points) after
+excluding audit-flagged tasks, on the five benchmarks for which
+per-instance leaderboard data are available. (a) removes tasks
+flagged at Minor or Major severity (severity ≥ 1 \geq 1 ); (b) removes
+only tasks flagged Major (severity ≥ 2 \geq 2 ). Bars average over
+all models reported on each benchmark." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 7: Mean per-model score change (in percentage points) after
+excluding audit-flagged tasks, on the five benchmarks for which
+per-instance leaderboard data are available. (a) removes tasks
+flagged at Minor or Major severity (severity ≥ 1 \geq 1 ); (b) removes
+only tasks flagged Major (severity ≥ 2 \geq 2 ). Bars average over
+all models reported on each benchmark.</span>
+                <span class="lang-zh">图7：在排除审计标记的任务后，五个有逐实例排行榜数据的基准上，每个模型的平均得分变化（以百分点计）。(a) 移除标记为轻微或严重（严重程度 ≥ 1）的任务；(b) 仅移除标记为严重（严重程度 ≥ 2）的任务。柱状图对每个基准上报告的所有模型取平均值。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1294/fig_007.png" alt="Figure 9: Top-15 of swe_bench_verified after removing all
+Major and Minor trajectory-flagged tasks. orig % is the
+public matrix-mean score; new % is recomputed on the
+audited task set; Δ \Delta % and Δ \Delta Rank report the change
+relative to the public ordering. Even with the broader exclusion
+rule the top three slots are stable, but several middle-of-pack
+systems swing by up to eight places (e.g. Sonar Foundation Agent
++ Claude 4.5 Sonnet rises eight, EPAM AI/Run Developer Agent
+drops eight), with the largest score lifts exceeding +13 points." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 9: Top-15 of swe_bench_verified after removing all
+Major and Minor trajectory-flagged tasks. orig % is the
+public matrix-mean score; new % is recomputed on the
+audited task set; Δ \Delta % and Δ \Delta Rank report the change
+relative to the public ordering. Even with the broader exclusion
+rule the top three slots are stable, but several middle-of-pack
+systems swing by up to eight places (e.g. Sonar Foundation Agent
++ Claude 4.5 Sonnet rises eight, EPAM AI/Run Developer Agent
+drops eight), with the largest score lifts exceeding +13 points.</span>
+                <span class="lang-zh">图9：移除所有标记为严重和轻微的轨迹问题任务后，swe_bench_verified 的前15名。orig % 是公开矩阵平均得分；new % 是在审计任务集上重新计算的结果；Δ % 和 Δ 排名报告相对于公开排序的变化。即使采用更宽泛的排除规则，前三名仍然稳定，但多个中游系统的排名波动高达八位（例如 Sonar Foundation Agent + Claude 4.5 Sonnet 上升八位，EPAM AI/Run Developer Agent 下降八位），最大得分提升超过 +13 个百分点。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1294/fig_008.png" alt="Figure 10: Top-15 of swe_bench_verified after removing only
+Major trajectory-flagged tasks (the conservative filter). The
+rank reshuffle is smaller than under the Major+Minor filter –
+most movements are within ± 2 \pm 2 – but the average per-model
+lift remains around five points, and the head of the leaderboard
+still re-orders around the 5th–14th slots." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 10: Top-15 of swe_bench_verified after removing only
+Major trajectory-flagged tasks (the conservative filter). The
+rank reshuffle is smaller than under the Major+Minor filter –
+most movements are within ± 2 \pm 2 – but the average per-model
+lift remains around five points, and the head of the leaderboard
+still re-orders around the 5th–14th slots.</span>
+                <span class="lang-zh">图10：仅移除标记为严重的轨迹问题任务（保守过滤）后，swe_bench_verified 的前15名。排名重排幅度小于严重+轻微过滤——大多数变动在 ±2 以内——但每个模型的平均提升仍保持在五分左右，排行榜头部在第5至第14名附近仍有重新排序。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.26079</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.26079" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1294';
+  var title = "Automated Benchmark Auditing for AI Agents and Large Language Models";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>
