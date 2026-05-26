@@ -190,6 +190,64 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1220/fig_002.png" alt="Figure 3 : Comparison of Type-Token Ratio (TTR) scores across three configurations: (i) the original model (with greedy decoding), (ii) the original model with temperature scaled ( T ≈ 0.59 T\approx 0.59 ) to match the hyperfitted entropy, and (iii) the hyperfitted model (with greedy decoding). Error bars denote standard deviation. The results present an Entropy-Quality Paradox: despite having identical predictive confidence (entropy), the temperature-scaled model fails to match the hyperfitted model’s diversity (0.397 vs 0.684), indicating that hyperfitting involves mechanisms beyond simple distributional sharpening." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3 : Comparison of Type-Token Ratio (TTR) scores across three configurations: (i) the original model (with greedy decoding), (ii) the original model with temperature scaled ( T ≈ 0.59 T\approx 0.59 ) to match the hyperfitted entropy, and (iii) the hyperfitted model (with greedy decoding). Error bars denote standard deviation. The results present an Entropy-Quality Paradox: despite having identical predictive confidence (entropy), the temperature-scaled model fails to match the hyperfitted model’s diversity (0.397 vs 0.684), indicating that hyperfitting involves mechanisms beyond simple distributional sharpening.</span>
+                <span class="lang-zh">图3：三种配置下类型-标记比（TTR）得分的比较：（i）原始模型（使用贪心解码），（ii）温度缩放后的原始模型（T≈0.59）以匹配超拟合熵，以及（iii）超拟合模型（使用贪心解码）。误差棒表示标准差。结果呈现了熵-质量悖论：尽管预测置信度（熵）相同，温度缩放模型无法匹配超拟合模型的多样性（0.397 vs 0.684），表明超拟合涉及超出简单分布锐化的机制。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1220/fig_003.png" alt="Figure 4 : A distribution analysis of the original ranks of tokens selected by the hyperfitted model (based on 256 sampled generation steps). While 60.9% of decisions align with the original Top-1 (Green), a significant 39.1% of selected tokens are “promoted” from lower ranks. Notably, 12.9% of winners originate from the deep tail (Rank > 10 >10 ), with some candidates promoted from ranks > 200 >200 (Red). This confirms that Hyperfitting actively reorders the output distribution to surface diverse candidates that, under temperature scaling alone, would remain unreachable by greedy decoding (since temperature scaling is rank-preserving)." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4 : A distribution analysis of the original ranks of tokens selected by the hyperfitted model (based on 256 sampled generation steps). While 60.9% of decisions align with the original Top-1 (Green), a significant 39.1% of selected tokens are “promoted” from lower ranks. Notably, 12.9% of winners originate from the deep tail (Rank > 10 >10 ), with some candidates promoted from ranks > 200 >200 (Red). This confirms that Hyperfitting actively reorders the output distribution to surface diverse candidates that, under temperature scaling alone, would remain unreachable by greedy decoding (since temperature scaling is rank-preserving).</span>
+                <span class="lang-zh">图4：超拟合模型所选token原始排名的分布分析（基于256个采样生成步骤）。虽然60.9%的决策与原始Top-1一致（绿色），但显著有39.1%的选定token是从较低排名“提升”上来的。值得注意的是，12.9%的胜出token来自深层尾部（排名>10），其中一些候选token从排名>200（红色）提升而来。这证实了超拟合主动重新排序输出分布，以浮现出多样化的候选token，而这些token在仅使用温度缩放的情况下，通过贪心解码是无法达到的（因为温度缩放是保序的）。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1220/fig_005.png" alt="Figure 6 : TinyLlama-1.1B training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 18 layers, the Late-Stage model follows a closely matched optimization trajectory and converges to the same low-loss regime ( ℒ ≈ 0.066 \mathcal{L}\approx 0.066 ) as the Full LoRA model. This suggests that the optimization capacity required for hyperfitting is largely concentrated in the terminal layers." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6 : TinyLlama-1.1B training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 18 layers, the Late-Stage model follows a closely matched optimization trajectory and converges to the same low-loss regime ( ℒ ≈ 0.066 \mathcal{L}\approx 0.066 ) as the Full LoRA model. This suggests that the optimization capacity required for hyperfitting is largely concentrated in the terminal layers.</span>
+                <span class="lang-zh">图6：TinyLlama-1.1B训练损失曲线：全LoRA（蓝色）与后期LoRA（红色虚线）。尽管冻结了前18层，后期模型仍遵循紧密匹配的优化轨迹，并收敛到与全LoRA模型相同的低损失区域（ℒ≈0.066）。这表明超拟合所需的优化能力主要集中在终端层。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1220/fig_007.png" alt="Figure 8 : Convergence Efficiency. Training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 24 layers, the Late-Stage model converges to the same low-loss regime ( ℒ ≈ 0.043 \mathcal{L}\approx 0.043 ) as the Full LoRA model, indicating that the optimization capacity required for hyperfitting is fully contained within the terminal layers." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 8 : Convergence Efficiency. Training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 24 layers, the Late-Stage model converges to the same low-loss regime ( ℒ ≈ 0.043 \mathcal{L}\approx 0.043 ) as the Full LoRA model, indicating that the optimization capacity required for hyperfitting is fully contained within the terminal layers.</span>
+                <span class="lang-zh">图8：收敛效率。训练损失曲线：全LoRA（蓝色）与后期LoRA（红色虚线）。尽管冻结了前24层，后期模型仍收敛到与全LoRA模型相同的低损失区域（ℒ≈0.043），表明超拟合所需的优化能力完全包含在终端层内。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1220/fig_009.png" alt="Figure 10 : Convergence Efficiency. Training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 24 layers, the Late-Stage model converges to the same low-loss regime ( ℒ ≈ 0.043 \mathcal{L}\approx 0.043 ) as the Full LoRA model, suggesting that the optimization capacity required for hyperfitting is fully contained within the terminal layers." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 10 : Convergence Efficiency. Training loss trajectories for Full LoRA (Blue) vs. Late-Stage LoRA (Red Dashed). Despite freezing the first 24 layers, the Late-Stage model converges to the same low-loss regime ( ℒ ≈ 0.043 \mathcal{L}\approx 0.043 ) as the Full LoRA model, suggesting that the optimization capacity required for hyperfitting is fully contained within the terminal layers.</span>
+                <span class="lang-zh">图10：收敛效率。训练损失曲线：全LoRA（蓝色）与后期LoRA（红色虚线）。尽管冻结了前24层，后期模型仍收敛到与全LoRA模型相同的低损失区域（ℒ≈0.043），表明超拟合所需的优化能力完全包含在终端层内。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

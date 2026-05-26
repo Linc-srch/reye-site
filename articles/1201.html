@@ -193,6 +193,67 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1201/fig_001.png" alt="Figure 1 . Pass rate on SWE-bench Verified. (a) Linear ReAct vs. MCTS across three coding models. (b) Base vs. RL-trained across three open-weight model families." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 . Pass rate on SWE-bench Verified. (a) Linear ReAct vs. MCTS across three coding models. (b) Base vs. RL-trained across three open-weight model families.</span>
+                <span class="lang-zh">图1. SWE-bench Verified上的通过率。(a) 三种编码模型上的线性ReAct与MCTS对比。(b) 三种开放权重模型系列的基础版与RL训练版对比。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1201/fig_002.png" alt="Figure 2 . Design Overview . DeltaBox utilizes diff-based checkpoint/restore (i.e., deltaCheckpoint and deltaRestore ) to enable millisecond-level checkpoint/rollback. An agent application can fully run inside a sandbox, or utilize a sandbox to execute a set of tools and use the C/R capabilities of DeltaBox to ensure prompt rollback when necessary." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2 . Design Overview . DeltaBox utilizes diff-based checkpoint/restore (i.e., deltaCheckpoint and deltaRestore ) to enable millisecond-level checkpoint/rollback. An agent application can fully run inside a sandbox, or utilize a sandbox to execute a set of tools and use the C/R capabilities of DeltaBox to ensure prompt rollback when necessary.</span>
+                <span class="lang-zh">图2. 设计概述。DeltaBox利用基于差异的检查点/恢复（即deltaCheckpoint和deltaRestore）实现毫秒级的检查点/回滚。代理应用可以完全在沙箱内运行，或利用沙箱执行一组工具，并在必要时借助DeltaBox的C/R能力确保快速回滚。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1201/fig_003.png" alt="Figure 3 . The DeltaBox architecture . The StateManager coordinates DeltaFS (Layer 2, filesystem state) and DeltaCR (Layer 3, process state) to maintain consistent (filesystem, memory) state pairs at each search tree node. Base storage (Layer 1) provides the real storage functionalities. It would be better to adopt XFS (with reflink) to achieve block-level CoW and eliminate write amplification." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3 . The DeltaBox architecture . The StateManager coordinates DeltaFS (Layer 2, filesystem state) and DeltaCR (Layer 3, process state) to maintain consistent (filesystem, memory) state pairs at each search tree node. Base storage (Layer 1) provides the real storage functionalities. It would be better to adopt XFS (with reflink) to achieve block-level CoW and eliminate write amplification.</span>
+                <span class="lang-zh">图3. DeltaBox架构。StateManager协调DeltaFS（第2层，文件系统状态）和DeltaCR（第3层，进程状态），以在每个搜索树节点维护一致的（文件系统，内存）状态对。基础存储（第1层）提供实际的存储功能。建议采用XFS（支持reflink）以实现块级CoW并消除写放大。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1201/fig_004.png" alt="Figure 4 . DeltaFS architecture. (a) Traditional overlayfs will prepare an upper layer file system which is writable for apps, and maintain a lower layer file system which is read-only and basically includes everything in the sandbox image.
+(b) DeltaFS extends the idea to support dynamic overlay, i.e., when an agent finishes a step of task and needs to make a checkpoint, instead of duplicating all files, DeltaFS inserts a new writable layer above the existing one and freezes the existing writable layer into a read-only state, and all following updates are copy-on-write to the new upper layer. As a result, the checkpoint operation is simply a layer insert operation while a rollback is a set of layer remove operations." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4 . DeltaFS architecture. (a) Traditional overlayfs will prepare an upper layer file system which is writable for apps, and maintain a lower layer file system which is read-only and basically includes everything in the sandbox image.
+(b) DeltaFS extends the idea to support dynamic overlay, i.e., when an agent finishes a step of task and needs to make a checkpoint, instead of duplicating all files, DeltaFS inserts a new writable layer above the existing one and freezes the existing writable layer into a read-only state, and all following updates are copy-on-write to the new upper layer. As a result, the checkpoint operation is simply a layer insert operation while a rollback is a set of layer remove operations.</span>
+                <span class="lang-zh">图4. DeltaFS架构。(a) 传统的overlayfs会准备一个可写的上层文件系统供应用使用，并维护一个只读的下层文件系统，该下层文件系统基本包含沙箱镜像中的所有内容。
+(b) DeltaFS扩展了这一思路以支持动态覆盖，即当代理完成一步任务并需要创建检查点时，DeltaFS不会复制所有文件，而是在现有层之上插入一个新的可写层，并将现有的可写层冻结为只读状态，之后的所有更新通过写时复制到新的上层。因此，检查点操作仅是一个层插入操作，而回滚则是一系列层移除操作。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1201/fig_005.png" alt="Figure 5 . DeltaCR architecture. Checkpointing creates both a CRIU image chain and a frozen template. Restores use the template fast path on hit, or the CRIU chain on miss; NPD keeps external I/O off the agent path." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5 . DeltaCR architecture. Checkpointing creates both a CRIU image chain and a frozen template. Restores use the template fast path on hit, or the CRIU chain on miss; NPD keeps external I/O off the agent path.</span>
+                <span class="lang-zh">图5. DeltaCR架构。检查点会同时创建一个CRIU镜像链和一个冻结模板。恢复时，若命中则使用模板快速路径，否则使用CRIU链；NPD将外部I/O保持在代理路径之外。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

@@ -193,6 +193,85 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1214/fig_001.png" alt="Figure 1 : Left : Comparison of alignment strategies for reasoning segmentation.
+(a) Latent Query Alignment relies on opaque latent vectors.
+(b) Textual Localization Readout uses unconstrained textual cues as a post-hoc signal.
+(c) Our proposed Interpretable Alignment introduces a SAE as an interpretable bridge, which transforms reasoning tokens into sparse concept activations. These activations generate a multi-slot heatmap, explicitly linking the model’s reasoning process to the final segmentation mask. Right : SegCompass ’s interpretable alignment interface.
+The core of our method is visibly linking this reasoning to perception: the concepts identified in the CoT (e.g., “white ceramic bowl”) are explicitly grounded onto the image via a Multi-slot Heatmap.
+This provides a white-box view of how the model comprehends and localizes each instruction part, with intermediate Activated Tokens visualizing the sparse concept space." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 : Left : Comparison of alignment strategies for reasoning segmentation.
+(a) Latent Query Alignment relies on opaque latent vectors.
+(b) Textual Localization Readout uses unconstrained textual cues as a post-hoc signal.
+(c) Our proposed Interpretable Alignment introduces a SAE as an interpretable bridge, which transforms reasoning tokens into sparse concept activations. These activations generate a multi-slot heatmap, explicitly linking the model’s reasoning process to the final segmentation mask. Right : SegCompass ’s interpretable alignment interface.
+The core of our method is visibly linking this reasoning to perception: the concepts identified in the CoT (e.g., “white ceramic bowl”) are explicitly grounded onto the image via a Multi-slot Heatmap.
+This provides a white-box view of how the model comprehends and localizes each instruction part, with intermediate Activated Tokens visualizing the sparse concept space.</span>
+                <span class="lang-zh">图1：左：推理分割中对齐策略的比较。
+(a) 潜在查询对齐依赖于不透明的潜在向量。
+(b) 文本定位读取使用无约束的文本线索作为事后信号。
+(c) 我们提出的可解释对齐引入SAE作为可解释的桥梁，将推理令牌转换为稀疏概念激活。这些激活生成多槽热图，明确地将模型的推理过程与最终分割掩码联系起来。右：SegCompass的可解释对齐界面。
+我们方法的核心是将这种推理与感知可见地联系起来：CoT中识别的概念（例如“白色陶瓷碗”）通过多槽热图明确地锚定到图像上。
+这提供了模型如何理解并定位每个指令部分的白盒视图，中间激活令牌可视化了稀疏概念空间。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1214/fig_002.png" alt="Figure 2 : SegCompass pipeline. Given input, the policy generates CoT and concentration tokens.
+SAE maps the reasoning process into a high-dimensional sparse concept space, and subsequent modules encode it into concept representations.
+Both concentration tokens and concept representations act as queries that attend to image keys, producing a multi-slot heatmap that is decoded into the predicted masks." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2 : SegCompass pipeline. Given input, the policy generates CoT and concentration tokens.
+SAE maps the reasoning process into a high-dimensional sparse concept space, and subsequent modules encode it into concept representations.
+Both concentration tokens and concept representations act as queries that attend to image keys, producing a multi-slot heatmap that is decoded into the predicted masks.</span>
+                <span class="lang-zh">图2：SegCompass流程。给定输入，策略生成CoT和集中令牌。
+SAE将推理过程映射到高维稀疏概念空间，后续模块将其编码为概念表示。
+集中令牌和概念表示都作为查询，关注图像键，生成多槽热图，该热图被解码为预测掩码。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1214/fig_003.png" alt="Figure 3 : Detailed architecture from the query codebook to the slot mapper. Inputs: sparse features from the SAE. Outputs: a multi-slot heatmap with per-slot confidences." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3 : Detailed architecture from the query codebook to the slot mapper. Inputs: sparse features from the SAE. Outputs: a multi-slot heatmap with per-slot confidences.</span>
+                <span class="lang-zh">图3：从查询码本到槽映射器的详细架构。输入：来自SAE的稀疏特征。输出：带有每个槽置信度的多槽热图。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1214/fig_007.png" alt="Figure 7 : The architecture of Sparse Autoencoder (SAE)." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 7 : The architecture of Sparse Autoencoder (SAE).</span>
+                <span class="lang-zh">图7：稀疏自编码器（SAE）的架构。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1214/fig_006.png" alt="Figure 6 : Effect of GRPO group size on performance and sampling cost. We report cIoU vs. group size G G on RefCOCOg, gRefCOCO, and ReasonSeg, and plot the total number of sampled responses required for convergence." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6 : Effect of GRPO group size on performance and sampling cost. We report cIoU vs. group size G G on RefCOCOg, gRefCOCO, and ReasonSeg, and plot the total number of sampled responses required for convergence.</span>
+                <span class="lang-zh">图6：GRPO组大小对性能和采样成本的影响。我们报告了RefCOCOg、gRefCOCO和ReasonSeg上的cIoU与组大小G的关系，并绘制了收敛所需的总采样响应数量。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

@@ -186,6 +186,118 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1106/fig_001.png" alt="Figure 1: Cross-system semantic misalignment and query-conditioned entity alignment.
+(a) Context-dependent ambiguity in cross-system correspondence.
+(b) Description-agnostic entity-based alignment produces identical rankings for different descriptions.
+(c) QCEA enables query-conditioned alignment with context-dependent outputs." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Cross-system semantic misalignment and query-conditioned entity alignment.
+(a) Context-dependent ambiguity in cross-system correspondence.
+(b) Description-agnostic entity-based alignment produces identical rankings for different descriptions.
+(c) QCEA enables query-conditioned alignment with context-dependent outputs.</span>
+                <span class="lang-zh">图1：跨系统语义错位与查询条件化的实体对齐。
+(a) 跨系统对应中的上下文相关歧义。
+(b) 忽略描述的基于实体的对齐对不同描述产生相同的排序。
+(c) QCEA 实现了具有上下文相关输出的查询条件化对齐。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1106/fig_002.png" alt="Figure 2: Overview of the proposed QCEA framework.
+Query descriptions are encoded into query representations.
+TCM and WM entities are mapped into graph-aware embeddings.
+A direction-aware Tucker projection module, conditioned on the alignment direction s s , produces target representations for scoring and top- k k ranking under a direction-weighted, many-to-many-aware contrastive objective." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Overview of the proposed QCEA framework.
+Query descriptions are encoded into query representations.
+TCM and WM entities are mapped into graph-aware embeddings.
+A direction-aware Tucker projection module, conditioned on the alignment direction s s , produces target representations for scoring and top- k k ranking under a direction-weighted, many-to-many-aware contrastive objective.</span>
+                <span class="lang-zh">图2：所提出的 QCEA 框架概览。
+查询描述被编码为查询表示。
+TCM 和 WM 实体被映射为图感知嵌入。
+一个方向感知的 Tucker 投影模块，以对齐方向 s s 为条件，生成目标表示，用于在方向加权、多对多感知的对比目标下进行评分和 top- k k 排序。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1106/fig_005.png" alt="Figure 5: Downstream RAG evaluation under different alignment settings.
+(a) Overall comparison in terms of retrieval-level (evidence recall@K, cross-system hit rate), generation-level (answer accuracy), and end-to-end metrics (groundedness, end-to-end accuracy).
+(b) Category-wise end-to-end accuracy for Symptom and Herb questions.
+(c) Effect of confidence-based top- k k truncation of first-hop alignment candidates.
+(d) Effect of random removal of first-hop alignment candidates.
+(e) Comparison between retrieval-augmented settings and LLM-only baseline." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5: Downstream RAG evaluation under different alignment settings.
+(a) Overall comparison in terms of retrieval-level (evidence recall@K, cross-system hit rate), generation-level (answer accuracy), and end-to-end metrics (groundedness, end-to-end accuracy).
+(b) Category-wise end-to-end accuracy for Symptom and Herb questions.
+(c) Effect of confidence-based top- k k truncation of first-hop alignment candidates.
+(d) Effect of random removal of first-hop alignment candidates.
+(e) Comparison between retrieval-augmented settings and LLM-only baseline.</span>
+                <span class="lang-zh">图5：不同对齐设置下的下游 RAG 评估。
+(a) 在检索层面（证据 recall@K、跨系统命中率）、生成层面（答案准确率）和端到端指标（groundedness、端到端准确率）上的总体比较。
+(b) 针对症状和草药问题的按类别端到端准确率。
+(c) 基于置信度的第一跳对齐候选 top- k k 截断效果。
+(d) 随机移除第一跳对齐候选的效果。
+(e) 检索增强设置与仅使用 LLM 基线的比较。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1106/fig_003.png" alt="Figure 3: Training dynamics and retrieval performance on the Symptom and Herb datasets.
+(a) Training and validation loss with selected best epochs.
+(b) Overall Hit@K and Recall@K.
+(c)-(d) Directional performance (TCM → \rightarrow WM and WM → \rightarrow TCM).
+(e)-(f) Performance under different ground-truth cardinalities (GT = = 1 vs. GT > > 1).
+Solid lines denote Symptom, dashed lines denote Herb, and K K is shown on a logarithmic scale." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: Training dynamics and retrieval performance on the Symptom and Herb datasets.
+(a) Training and validation loss with selected best epochs.
+(b) Overall Hit@K and Recall@K.
+(c)-(d) Directional performance (TCM → \rightarrow WM and WM → \rightarrow TCM).
+(e)-(f) Performance under different ground-truth cardinalities (GT = = 1 vs. GT > > 1).
+Solid lines denote Symptom, dashed lines denote Herb, and K K is shown on a logarithmic scale.</span>
+                <span class="lang-zh">图3：症状和草药数据集上的训练动态与检索性能。
+(a) 训练和验证损失及选定的最佳 epoch。
+(b) 总体 Hit@K 和 Recall@K。
+(c)-(d) 方向性能（TCM → \rightarrow WM 和 WM → \rightarrow TCM）。
+(e)-(f) 不同真实标签基数下的性能（GT = = 1 对比 GT > > 1）。
+实线表示症状，虚线表示草药，K K 以对数刻度显示。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1106/fig_004.png" alt="Figure 4: Impact of seed alignment ratio on (a) Symptom and (b) Herb tasks.
+Performance improves with increasing supervision.
+Recall@100 is used for Herb." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: Impact of seed alignment ratio on (a) Symptom and (b) Herb tasks.
+Performance improves with increasing supervision.
+Recall@100 is used for Herb.</span>
+                <span class="lang-zh">图4：种子对齐比例对 (a) 症状和 (b) 草药任务的影响。
+性能随监督信息增加而提升。
+草药任务使用 Recall@100。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

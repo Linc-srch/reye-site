@@ -115,12 +115,12 @@
       <div class="overview-card">
         <p class="eyebrow">
           
-          <span class="lang-en">Overview — 25 May 2026</span>
-          <span class="lang-zh">概览 — 25 May 2026</span>
+          <span class="lang-en">Overview — 26 May 2026</span>
+          <span class="lang-zh">概览 — 26 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's system safety research dashboard reveals a dominant theme of supply chain and identity-based attacks, with several standout papers and announcements. The most striking contribution is Anthropic's Project Glasswing, which uncovered over 10,000 high-severity vulnerabilities in widely used open-source software using its Claude Mythos Preview AI model, signaling a new era of AI-driven vulnerability discovery. The Megalodon GitHub attack, compromising 5,561 repos via malicious CI/CD workflows, and the Packagist supply chain attack infecting eight packages underscore the escalating threat to software supply chains. GitHub's breach, where 4,000 internal repos were stolen via a malicious VS Code extension, further highlights the criticality of developer tool security. Noteworthy announcements include Microsoft open-sourcing RAMPART and Clarity for securing AI agents during development, and the first VPN dismantled in a global takedown for enabling ransomware groups. The Verizon DBIR's warning about a 'vulnerability glut' and the discovery of a nine-year-old Linux kernel flaw (CVE-2026-46333) emphasize persistent patching challenges. The emergence of AI BOMs as a practical tool, driven by standards bodies and regulatory pressures, represents a key development for operationalizing AI security.</div>
-        <div class="lang-zh">今日的系统安全研究仪表板凸显了供应链与身份攻击的主导主题，以及若干突出论文和公告。最引人注目的贡献是Anthropic的Project Glasswing，其利用Claude Mythos Preview AI模型在广泛使用的开源软件中发现了超过10,000个高严重性漏洞，标志着AI驱动漏洞发现的新时代。Megalodon GitHub攻击通过恶意CI/CD工作流入侵了5,561个仓库，以及Packagist供应链攻击感染了八个包，凸显了软件供应链威胁的升级。GitHub的泄露事件（通过恶意VS Code扩展窃取了4,000个内部仓库）进一步强调了开发者工具安全的关键性。值得注意的公告包括Microsoft开源了RAMPART和Clarity以在开发过程中保护AI代理，以及首个VPN因助长勒索软件集团而在全球打击中被拆除。Verizon DBIR关于“漏洞过剩”的警告以及一个存在九年的Linux内核漏洞（CVE-2026-46333）的发现，强调了持续的补丁挑战。AI BOMs作为实用工具的出现，由标准机构和监管压力推动，代表了AI安全可操作化的关键发展。</div>
+        <div class="lang-en">Today's content in system safety is dominated by supply chain attacks and AI-driven vulnerability discovery. A recurring theme is the weaponization of trusted development pipelines: the TrapDoor campaign (npm, PyPI, Crates.io), Packagist compromises, and the Megalodon GitHub attack all demonstrate how attackers exploit package managers and CI/CD workflows to distribute credential-stealing malware. Standout papers include Anthropic's Project Glasswing update, where Claude Mythos Preview found 10,000 high-severity flaws in open-source software within a month—a landmark for AI-assisted security. The Verizon DBIR highlights a dangerous vulnerability glut overwhelming enterprises. Noteworthy announcements: GitHub's 2FA-gated npm publishing, Microsoft's open-sourcing of RAMPART and Clarity for AI agent security, and the takedown of First VPN by global law enforcement. Critical vulnerabilities (Ghost CMS CVE-2026-26980, Drupal CVE-2026-9082, Linux kernel CVE-2026-46333) are actively exploited, underscoring the urgency of patch management. The rise of AI BOMs and secure enterprise browsers (Akamai's LayerX acquisition) signals a shift toward proactive, toolchain-level defense.</div>
+        <div class="lang-zh">今日系统安全领域的内容以供应链攻击和AI驱动的漏洞发现为主导。反复出现的主题是可信开发管道的武器化：TrapDoor活动（针对npm、PyPI、Crates.io）、Packagist入侵以及Megalodon GitHub攻击均展示了攻击者如何利用包管理器和CI/CD工作流分发窃取凭证的恶意软件。突出论文包括Anthropic的Project Glasswing更新，其中Claude Mythos Preview在一个月内发现了10,000个开源软件中的高严重性漏洞——这是AI辅助安全领域的里程碑。Verizon DBIR强调了企业面临危险漏洞过剩的困境。值得注意的公告：GitHub为npm发布引入2FA门控、Microsoft开源用于AI智能体安全的RAMPART和Clarity工具，以及全球执法机构取缔First VPN。关键漏洞（Ghost CMS CVE-2026-26980、Drupal CVE-2026-9082、Linux内核CVE-2026-46333）正被积极利用，凸显了补丁管理的紧迫性。AI BOM（AI物料清单）和安全企业浏览器（Akamai收购LayerX）的兴起标志着向主动、工具链级防御的转变。</div>
       </div>
       
 
@@ -1574,6 +1574,63 @@
       </section>
 
       <section data-tab="news">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1285.html">TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm, PyPI, and CratesIO</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1285.html">TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm, PyPI, and CratesIO</a></h4>
+          <p class="lang-en">A coordinated supply chain attack named TrapDoor has targeted npm, PyPI, and Crates.io with over 34 malicious packages across 384 versions, aiming to steal credentials, crypto wallets, SSH keys, and cloud credentials from developers in crypto, DeFi, Solana, and AI communities. The malware uses ecosystem-specific execution paths, including postinstall hooks, remote JavaScript payloads, and malicious build.rs scripts. Notably, it implants hidden instructions in .cursorrules and CLAUDE.md files to trick AI assistants into exfiltrating secrets. The campaign also opens GitHub PRs on popular AI projects to propagate malicious files, demonstrating a novel blend of typosquatting and developer-environment attacks.</p>
+          <p class="lang-zh">名为TrapDoor的协同供应链攻击针对npm、PyPI和Crates.io，发布了超过34个恶意包（共384个版本），旨在窃取加密货币、DeFi、Solana和AI领域开发者的凭证、加密钱包、SSH密钥和云凭证。恶意软件利用生态系统特定的执行路径，包括postinstall钩子、远程JavaScript载荷和恶意build.rs脚本。值得注意的是，它在.cursorrules和CLAUDE.md文件中植入隐藏指令，诱骗AI助手泄露机密。该活动还向热门AI项目发起GitHub PR以传播恶意文件，展示了typosquatting与开发者环境攻击的新型结合。</p>
+          
+          <a href="https://thehackernews.com/2026/05/trapdoor-supply-chain-attack-spreads.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1284.html">Lazarus Deploys RemotePE Memory-Only RAT Against Financial and Crypto Firms</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1284.html">Lazarus Deploys RemotePE Memory-Only RAT Against Financial and Crypto Firms</a></h4>
+          <p class="lang-en">The Lazarus Group, linked to North Korea, has deployed a cross-platform memory-only RAT called RemotePE against financial and cryptocurrency firms. The attack chain uses DPAPILoader to decrypt RemotePELoader from disk, which then fetches RemotePE from a C2 server and executes it entirely in memory, leaving no filesystem artifacts. RemotePE supports six command categories for file operations, process management, and C2 configuration. The malware evades detection via Hell's Gate and ETW patching. Fox-IT found samples under active development from mid-2023 to mid-2024, indicating a purpose-built tool for long-term stealthy access and high-impact financial theft.</p>
+          <p class="lang-zh">与朝鲜相关的Lazarus Group部署了名为RemotePE的跨平台内存-only RAT，针对金融和加密货币组织。攻击链使用DPAPILoader从磁盘解密RemotePELoader，后者从C2服务器获取RemotePE并在内存中执行，不留文件系统痕迹。RemotePE支持六类命令，用于文件操作、进程管理和C2配置。它通过Hell's Gate和ETW修补技术规避检测。Fox-IT发现该恶意软件在2023年中至2024年中处于活跃开发状态，表明其专为长期隐蔽访问和高影响金融盗窃而构建。</p>
+          
+          <a href="https://thehackernews.com/2026/05/lazarus-deploys-remotepe-memory-only.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1283.html">Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1283.html">Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks</a></h4>
+          <p class="lang-en">Threat actors are exploiting CVE-2026-26980, a critical SQL injection vulnerability in Ghost CMS (CVSS 9.4), to hijack over 700 websites for ClickFix attacks. Discovered by Anthropic using Claude and patched in February 2026, the flaw allows unauthenticated attackers to obtain the admin API key and inject malicious JavaScript loaders into articles. The campaign, detected by QiAnXin XLab on May 7, 2026, targets universities, blockchain, AI, SaaS, and fintech sectors. The injected code uses a two-stage loader with a cloaking script to serve fake CAPTCHA pages, tricking victims into running Base64-encoded commands that deliver malware, including a modified Electron app for persistence.</p>
+          <p class="lang-zh">攻击者利用Ghost CMS中一个严重的SQL注入漏洞CVE-2026-26980（CVSS 9.4），劫持超过700个网站以发起ClickFix攻击。该漏洞由Anthropic使用Claude发现，并于2026年2月修复，允许未认证攻击者获取管理员API密钥，在文章中注入恶意JavaScript加载器。奇安信XLab于2026年5月7日检测到该活动，目标涵盖大学、区块链、AI、SaaS和金融科技领域。注入代码使用两级加载器和cloaking脚本，通过虚假CAPTCHA页面诱骗受害者执行Base64编码命令，最终投放包含持久化能力的恶意软件。</p>
+          
+          <a href="https://thehackernews.com/2026/05/ghost-cms-cve-2026-26980-exploited-to.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">

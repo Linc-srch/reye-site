@@ -189,6 +189,64 @@
         
 
         
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img src="figures/1219/fig_002.png" alt="Figure 2 : Accuracy (pass@1) trajectories on GSM8K, MATH500, MMLU-Pro for Qwen2.5-1.5B (top) and Qwen2.5-3B (bottom). The dashed vertical line marks step 160 (Table 1 ); the star ( ★ \bigstar ) marks the peak among unsupervised methods (GRPO-GT excluded), labeled in-axis. Only multi-reward + KL-Cov tracks GRPO-GT through the full 340-step horizon at both scales." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2 : Accuracy (pass@1) trajectories on GSM8K, MATH500, MMLU-Pro for Qwen2.5-1.5B (top) and Qwen2.5-3B (bottom). The dashed vertical line marks step 160 (Table 1 ); the star ( ★ \bigstar ) marks the peak among unsupervised methods (GRPO-GT excluded), labeled in-axis. Only multi-reward + KL-Cov tracks GRPO-GT through the full 340-step horizon at both scales.</span>
+                <span class="lang-zh">图 2：Qwen2.5-1.5B（上）和 Qwen2.5-3B（下）在 GSM8K、MATH500、MMLU-Pro 上的 Accuracy (pass@1) 轨迹。虚线垂直线标记了第 160 步（表 1）；星号 ( ★ \bigstar ) 标记了无监督方法（不包括 GRPO-GT）中的峰值，并在轴内标注。只有 multi-reward + KL-Cov 在两种规模下都能在完整的 340 步范围内跟踪 GRPO-GT。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1219/fig_004.png" alt="Figure 4 : KL-Cov β cov \beta_{\text{cov}} sweep on the full multi-reward objective (Qwen2.5-1.5B). All three coefficients ( β cov ∈ { 0.0005 , 0.05 , 0.1 } \beta_{\text{cov}}\in\{0.0005,0.05,0.1\} ) maintain stable accuracy and completion length through step 280; the no-KL-Cov baseline (red) collapses around step 240." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4 : KL-Cov β cov \beta_{\text{cov}} sweep on the full multi-reward objective (Qwen2.5-1.5B). All three coefficients ( β cov ∈ { 0.0005 , 0.05 , 0.1 } \beta_{\text{cov}}\in\{0.0005,0.05,0.1\} ) maintain stable accuracy and completion length through step 280; the no-KL-Cov baseline (red) collapses around step 240.</span>
+                <span class="lang-zh">图 4：在完整 multi-reward 目标下对 KL-Cov β cov \beta_{\text{cov}} 的扫描（Qwen2.5-1.5B）。所有三个系数（ β cov ∈ { 0.0005 , 0.05 , 0.1 } \beta_{\text{cov}}\in\{0.0005,0.05,0.1\} ）在第 280 步之前均保持稳定的准确率和完成长度；无 KL-Cov 的基线（红色）在第 240 步左右崩溃。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1219/fig_005.png" alt="Figure 5 : INTUITOR + KL-Cov ablation on Qwen2.5-1.5B (steps 0–280). KL-Cov ( β cov = 0.02 \beta_{\text{cov}}{=}0.02 ) doubles step-160 accuracy versus vanilla INTUITOR but does not prevent collapse past step 200." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5 : INTUITOR + KL-Cov ablation on Qwen2.5-1.5B (steps 0–280). KL-Cov ( β cov = 0.02 \beta_{\text{cov}}{=}0.02 ) doubles step-160 accuracy versus vanilla INTUITOR but does not prevent collapse past step 200.</span>
+                <span class="lang-zh">图 5：在 Qwen2.5-1.5B 上的 INTUITOR + KL-Cov 消融实验（步骤 0–280）。KL-Cov（ β cov = 0.02 \beta_{\text{cov}}{=}0.02 ）使第 160 步的准确率相比原始 INTUITOR 翻倍，但无法阻止第 200 步后的崩溃。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1219/fig_006.png" alt="Figure 6 : GDPO-normalization ablation on Qwen2.5-1.5B with the full multi-reward + KL-Cov ( β cov = 0.05 \beta_{\text{cov}}{=}0.05 ) objective. Replacing per-channel z z -score with a single combine-then-normalize step degrades GSM8K substantially and MATH500 / MMLU-Pro consistently across the entire trajectory; the gap widens past step 160 (vertical line). Stars mark the overall peak per benchmark." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6 : GDPO-normalization ablation on Qwen2.5-1.5B with the full multi-reward + KL-Cov ( β cov = 0.05 \beta_{\text{cov}}{=}0.05 ) objective. Replacing per-channel z z -score with a single combine-then-normalize step degrades GSM8K substantially and MATH500 / MMLU-Pro consistently across the entire trajectory; the gap widens past step 160 (vertical line). Stars mark the overall peak per benchmark.</span>
+                <span class="lang-zh">图 6：在 Qwen2.5-1.5B 上使用完整 multi-reward + KL-Cov（ β cov = 0.05 \beta_{\text{cov}}{=}0.05 ）目标的 GDPO-normalization 消融实验。将逐通道 z z -score 替换为单一的 combine-then-normalize 步骤会显著降低 GSM8K 的性能，并在整个轨迹中持续降低 MATH500 / MMLU-Pro 的性能；差距在第 160 步（垂直线）后扩大。星号标记了每个基准的总体峰值。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img src="figures/1219/fig_001.png" alt="Figure 1 : Given a prompt, we sample G completions from the rollout policy and compute two intrinsic rewards: an answer-level cluster-voting reward over final-answer agreement, and a completion-level self-certainty reward over token-level predictive distributions. Each reward is normalized within the prompt group before being combined into rollout-level advantages. Optimization uses a GRPO-style objective, while KL-Cov penalizes only high-covariance tokens to regularize concentrated updates." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 : Given a prompt, we sample G completions from the rollout policy and compute two intrinsic rewards: an answer-level cluster-voting reward over final-answer agreement, and a completion-level self-certainty reward over token-level predictive distributions. Each reward is normalized within the prompt group before being combined into rollout-level advantages. Optimization uses a GRPO-style objective, while KL-Cov penalizes only high-covariance tokens to regularize concentrated updates.</span>
+                <span class="lang-zh">图 1：给定一个提示，我们从 rollout 策略中采样 G 个补全，并计算两种内在奖励：一个基于最终答案一致性的答案级聚类投票奖励，以及一个基于 token 级预测分布的补全级自确信奖励。每个奖励在 prompt 组内进行归一化，然后合并为 rollout 级别的优势。优化使用 GRPO 风格的目标，而 KL-Cov 仅惩罚高协方差的 token，以正则化集中的更新。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
       </div>
 
       

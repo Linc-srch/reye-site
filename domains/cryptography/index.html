@@ -133,12 +133,12 @@ Taxonomy of Research Areas:
       <div class="overview-card">
         <p class="eyebrow">
           
-          <span class="lang-en">Overview — 25 May 2026</span>
-          <span class="lang-zh">概览 — 25 May 2026</span>
+          <span class="lang-en">Overview — 26 May 2026</span>
+          <span class="lang-zh">概览 — 26 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's cryptography-adjacent research reveals a strong emphasis on privacy auditing and leakage in multi-agent and retrieval-augmented generation (RAG) systems. A standout paper, 'Auditing Privacy in Multi-Tenant RAG under Account Collusion' (Item 18), provides a rigorous theoretical and empirical analysis showing that per-account differential privacy (DP) guarantees structurally understate joint leakage under collusion, with a degradation rate of Θ(√k·ε_acc). Another notable contribution, 'LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems' (Item 16), introduces the first principled framework for controlling sensitive information leakage in KV-cache-based latent communication. The 'Boiling the Frog' benchmark (Item 5) highlights vulnerability of AI agents to incremental attacks in corporate settings. No major cryptography-specific announcements were made, but the recurring theme is the inadequacy of current privacy safeguards in distributed, colluding, or multi-turn settings, calling for stronger, provable guarantees beyond standard DP assumptions.</div>
-        <div class="lang-zh">今日与密码学相关的研究强烈关注多智能体与检索增强生成（RAG）系统中的隐私审计与泄露问题。一篇突出论文《Auditing Privacy in Multi-Tenant RAG under Account Collusion》（第18项）提供了严格的理论与实证分析，表明多租户RAG中按账户的差分隐私（DP）保证在账户共谋下结构性低估了联合泄露，退化率为Θ(√k·ε_acc)。另一重要贡献《LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems》（第16项）提出了首个基于原则的框架，用于控制基于KV缓存潜在通信中的敏感信息泄露。《Boiling the Frog》基准测试（第5项）强调了企业环境中AI智能体对渐进式攻击的脆弱性。今日无重大密码学专项公告，但反复出现的主题是当前隐私保护在分布式、共谋或多轮场景下的不足，呼吁在标准DP假设之外提供更强、可证明的保障。</div>
+        <div class="lang-en">Today's cryptography and security research reveals a strong focus on real-world attack vectors and defensive mechanisms. Standout papers include the analysis of the Lazarus Group's RemotePE memory-only RAT targeting financial and crypto firms, highlighting the growing sophistication of nation-state actors. The Ghost CMS CVE-2026-26980 exploitation (CVSS 9.4) hijacking 700+ sites underscores the critical need for robust input validation. A novel domain-fronting exploit, Underminr, demonstrates brand hijacking via DNS/CDN manipulation. On the defensive side, LCGuard introduces a principled framework for safe KV sharing in multi-agent systems, while Auditing Privacy in Multi-Tenant RAG reveals structural understatement of joint leakage under account collusion (degradation rate Θ(√k·ε_acc)). The Clipping Bottleneck paper identifies a key stability issue in GRPO-style RLVR and proposes a stochastic fix. Noteworthy announcements include Virgin Atlantic's successful deployment of Codex for mission-critical software delivery, and the Boiling the Frog benchmark exposing AI agent vulnerability to incremental attacks.</div>
+        <div class="lang-zh">今日的密码学与安全研究聚焦于现实攻击向量与防御机制。亮点论文包括对Lazarus组织部署的RemotePE内存驻留RAT（针对金融和加密公司）的分析，凸显了国家级攻击者的日益复杂化。Ghost CMS的CVE-2026-26980漏洞（CVSS 9.4）被利用劫持700多个网站，强调了输入验证的紧迫性。新型域名前端利用Underminr通过DNS/CDN操纵实现品牌劫持。防御方面，LCGuard提出了多智能体系统中安全KV共享的首个原则性框架，而Auditing Privacy in Multi-Tenant RAG揭示了账户共谋下联合泄漏的结构性低估（退化率Θ(√k·ε_acc)）。Clipping Bottleneck论文指出了GRPO风格RLVR中的关键稳定性瓶颈并提出了随机修复方案。值得注意的公告包括Virgin Atlantic成功部署Codex用于关键任务软件交付，以及Boiling the Frog基准测试揭示了AI代理对渐进式攻击的高度脆弱性。</div>
       </div>
       
 
@@ -1592,6 +1592,44 @@ Taxonomy of Research Areas:
       </section>
 
       <section data-tab="news">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1284.html">Lazarus Deploys RemotePE Memory-Only RAT Against Financial and Crypto Firms</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1284.html">Lazarus Deploys RemotePE Memory-Only RAT Against Financial and Crypto Firms</a></h4>
+          <p class="lang-en">The Lazarus Group, linked to North Korea, has deployed a cross-platform memory-only RAT called RemotePE against financial and cryptocurrency firms. The attack chain uses DPAPILoader to decrypt RemotePELoader from disk, which then fetches RemotePE from a C2 server and executes it entirely in memory, leaving no filesystem artifacts. RemotePE supports six command categories for file operations, process management, and C2 configuration. The malware evades detection via Hell's Gate and ETW patching. Fox-IT found samples under active development from mid-2023 to mid-2024, indicating a purpose-built tool for long-term stealthy access and high-impact financial theft.</p>
+          <p class="lang-zh">与朝鲜相关的Lazarus Group部署了名为RemotePE的跨平台内存-only RAT，针对金融和加密货币组织。攻击链使用DPAPILoader从磁盘解密RemotePELoader，后者从C2服务器获取RemotePE并在内存中执行，不留文件系统痕迹。RemotePE支持六类命令，用于文件操作、进程管理和C2配置。它通过Hell's Gate和ETW修补技术规避检测。Fox-IT发现该恶意软件在2023年中至2024年中处于活跃开发状态，表明其专为长期隐蔽访问和高影响金融盗窃而构建。</p>
+          
+          <a href="https://thehackernews.com/2026/05/lazarus-deploys-remotepe-memory-only.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-26</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1283.html">Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1283.html">Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks</a></h4>
+          <p class="lang-en">Threat actors are exploiting CVE-2026-26980, a critical SQL injection vulnerability in Ghost CMS (CVSS 9.4), to hijack over 700 websites for ClickFix attacks. Discovered by Anthropic using Claude and patched in February 2026, the flaw allows unauthenticated attackers to obtain the admin API key and inject malicious JavaScript loaders into articles. The campaign, detected by QiAnXin XLab on May 7, 2026, targets universities, blockchain, AI, SaaS, and fintech sectors. The injected code uses a two-stage loader with a cloaking script to serve fake CAPTCHA pages, tricking victims into running Base64-encoded commands that deliver malware, including a modified Electron app for persistence.</p>
+          <p class="lang-zh">攻击者利用Ghost CMS中一个严重的SQL注入漏洞CVE-2026-26980（CVSS 9.4），劫持超过700个网站以发起ClickFix攻击。该漏洞由Anthropic使用Claude发现，并于2026年2月修复，允许未认证攻击者获取管理员API密钥，在文章中注入恶意JavaScript加载器。奇安信XLab于2026年5月7日检测到该活动，目标涵盖大学、区块链、AI、SaaS和金融科技领域。注入代码使用两级加载器和cloaking脚本，通过虚假CAPTCHA页面诱骗受害者执行Base64编码命令，最终投放包含持久化能力的恶意软件。</p>
+          
+          <a href="https://thehackernews.com/2026/05/ghost-cms-cve-2026-26980-exploited-to.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">

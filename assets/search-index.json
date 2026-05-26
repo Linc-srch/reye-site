@@ -1,5 +1,67 @@
 [
   {
+    "id": 1286,
+    "type": "article",
+    "title": "OpenAI, Grupo Folha and Grupo UOL announce strategic content partnership",
+    "title_zh": "",
+    "summary_en": "OpenAI has announced a strategic content partnership with Brazilian media groups Grupo Folha and Grupo UOL. The collaboration aims to integrate high-quality journalism from these publishers into OpenAI's products, including ChatGPT, while ensuring proper attribution and support for the news industry. This deal reflects a growing trend of AI companies licensing content from publishers to improve model training and output accuracy, addressing copyright and fair use concerns.",
+    "summary_zh": "OpenAI宣布与巴西媒体集团Grupo Folha和Grupo UOL建立战略内容合作伙伴关系，旨在将其高质量新闻整合到ChatGPT等产品中，确保内容归属并支持新闻行业。此举反映了AI公司通过许可出版商内容来改进模型训练和输出准确性的趋势，同时应对版权和合理使用问题。",
+    "url": "https://openai.com/index/grupo-folha-grupo-uol-partnership",
+    "article_page": "articles/1286.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-26 01:32:48"
+  },
+  {
+    "id": 1285,
+    "type": "article",
+    "title": "TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm, PyPI, and CratesIO",
+    "title_zh": "",
+    "summary_en": "A coordinated supply chain attack named TrapDoor has targeted npm, PyPI, and Crates.io with over 34 malicious packages across 384 versions, aiming to steal credentials, crypto wallets, SSH keys, and cloud credentials from developers in crypto, DeFi, Solana, and AI communities. The malware uses ecosystem-specific execution paths, including postinstall hooks, remote JavaScript payloads, and malicious build.rs scripts. Notably, it implants hidden instructions in .cursorrules and CLAUDE.md files to trick AI assistants into exfiltrating secrets. The campaign also opens GitHub PRs on popular AI projects to propagate malicious files, demonstrating a novel blend of typosquatting and developer-environment attacks.",
+    "summary_zh": "名为TrapDoor的协同供应链攻击针对npm、PyPI和Crates.io，发布了超过34个恶意包（共384个版本），旨在窃取加密货币、DeFi、Solana和AI领域开发者的凭证、加密钱包、SSH密钥和云凭证。恶意软件利用生态系统特定的执行路径，包括postinstall钩子、远程JavaScript载荷和恶意build.rs脚本。值得注意的是，它在.cursorrules和CLAUDE.md文件中植入隐藏指令，诱骗AI助手泄露机密。该活动还向热门AI项目发起GitHub PR以传播恶意文件，展示了typosquatting与开发者环境攻击的新型结合。",
+    "url": "https://thehackernews.com/2026/05/trapdoor-supply-chain-attack-spreads.html",
+    "article_page": "articles/1285.html",
+    "score": 9.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 01:32:46"
+  },
+  {
+    "id": 1284,
+    "type": "article",
+    "title": "Lazarus Deploys RemotePE Memory-Only RAT Against Financial and Crypto Firms",
+    "title_zh": "",
+    "summary_en": "The Lazarus Group, linked to North Korea, has deployed a cross-platform memory-only RAT called RemotePE against financial and cryptocurrency firms. The attack chain uses DPAPILoader to decrypt RemotePELoader from disk, which then fetches RemotePE from a C2 server and executes it entirely in memory, leaving no filesystem artifacts. RemotePE supports six command categories for file operations, process management, and C2 configuration. The malware evades detection via Hell's Gate and ETW patching. Fox-IT found samples under active development from mid-2023 to mid-2024, indicating a purpose-built tool for long-term stealthy access and high-impact financial theft.",
+    "summary_zh": "与朝鲜相关的Lazarus Group部署了名为RemotePE的跨平台内存-only RAT，针对金融和加密货币组织。攻击链使用DPAPILoader从磁盘解密RemotePELoader，后者从C2服务器获取RemotePE并在内存中执行，不留文件系统痕迹。RemotePE支持六类命令，用于文件操作、进程管理和C2配置。它通过Hell's Gate和ETW修补技术规避检测。Fox-IT发现该恶意软件在2023年中至2024年中处于活跃开发状态，表明其专为长期隐蔽访问和高影响金融盗窃而构建。",
+    "url": "https://thehackernews.com/2026/05/lazarus-deploys-remotepe-memory-only.html",
+    "article_page": "articles/1284.html",
+    "score": 8.0,
+    "domains": [
+      "cryptography",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 01:32:44"
+  },
+  {
+    "id": 1283,
+    "type": "article",
+    "title": "Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks",
+    "title_zh": "",
+    "summary_en": "Threat actors are exploiting CVE-2026-26980, a critical SQL injection vulnerability in Ghost CMS (CVSS 9.4), to hijack over 700 websites for ClickFix attacks. Discovered by Anthropic using Claude and patched in February 2026, the flaw allows unauthenticated attackers to obtain the admin API key and inject malicious JavaScript loaders into articles. The campaign, detected by QiAnXin XLab on May 7, 2026, targets universities, blockchain, AI, SaaS, and fintech sectors. The injected code uses a two-stage loader with a cloaking script to serve fake CAPTCHA pages, tricking victims into running Base64-encoded commands that deliver malware, including a modified Electron app for persistence.",
+    "summary_zh": "攻击者利用Ghost CMS中一个严重的SQL注入漏洞CVE-2026-26980（CVSS 9.4），劫持超过700个网站以发起ClickFix攻击。该漏洞由Anthropic使用Claude发现，并于2026年2月修复，允许未认证攻击者获取管理员API密钥，在文章中注入恶意JavaScript加载器。奇安信XLab于2026年5月7日检测到该活动，目标涵盖大学、区块链、AI、SaaS和金融科技领域。注入代码使用两级加载器和cloaking脚本，通过虚假CAPTCHA页面诱骗受害者执行Base64编码命令，最终投放包含持久化能力的恶意软件。",
+    "url": "https://thehackernews.com/2026/05/ghost-cms-cve-2026-26980-exploited-to.html",
+    "article_page": "articles/1283.html",
+    "score": 8.0,
+    "domains": [
+      "cryptography",
+      "system_safety"
+    ],
+    "created_at": "2026-05-26 01:32:41"
+  },
+  {
     "id": 1263,
     "type": "article",
     "title": "Akamai Joins Growing Chorus of Vendors Betting Big on Secure Enterprise Browsers",
