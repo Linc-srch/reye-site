@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost in Sampling: Assessing Lexical Reachability in LLMs via the Word Coverage Score (WCS) | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-27</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.27268" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1322" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Lost in Sampling: Assessing Lexical Reachability in LLMs via the Word Coverage Score (WCS)</h1>
+        <h1 class="article-title lang-zh">迷失在采样中：通过词覆盖率评分评估大语言模型的词汇可达性</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">content-management</span>
+          
+          <span class="tag direction-tag">sparse-attention</span>
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Samer Awad, Javier Conde, Carlos Arriaga, Tairan Fu, Javier Coronado-Blázquez, Pedro Reviriego</p>
+        
+      </header>
+
+      
+      
+
+      
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>The paper introduces the Word Coverage Score (WCS) to quantify how standard decoding filters mathematically prune contextually appropriate low-frequency words, revealing that sampling defaults act as unintended censorship mechanisms that homogenize LLM output.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出词覆盖率评分（WCS），量化标准解码过滤器如何系统地剪除低频但信息丰富的词汇，揭示默认采样参数会无意中审查并同质化大语言模型的输出。该指标为优化文本连贯性与词汇丰富度之间的权衡提供了诊断框架。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — word-coverage-score</h1>
+<p><strong>Key Takeaways</strong>
+- Standard sampling filters (Top-p, Top-k, Min-p) systematically prune low-frequency, high-information words even when they are contextually appropriate and within the model's probability space.
+- The Word Coverage Score (WCS) quantifies lexical reachability by measuring whether each token of a target word survives a given sampling filter during autoregressive generation.
+- Industry-default sampling parameters act as unintended censorship mechanisms, homogenizing LLM output by suppressing the long-tail of human vocabulary.
+- The WCS provides a diagnostic framework to optimize the trade-off between text coherence and lexical richness.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Lost in Sampling: Assessing Lexical Reachability in LLMs via the Word Coverage Score (WCS)</li>
+<li><strong>Alias:</strong> word-coverage-score</li>
+<li><strong>Authors:</strong> Samer Awad, Javier Conde, Carlos Arriaga, Tairan Fu, Javier Coronado-Blázquez, Pedro Reviriego</li>
+<li><strong>arXiv ID:</strong> 2605.27268</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.27268</li>
+<li>HTML: https://arxiv.org/html/2605.27268v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.27268</li>
+<li><strong>Tags:</strong> lexical-diversity, sampling-filters, llm-homogenization, word-coverage-score, decoding-mechanics</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>The paper introduces the Word Coverage Score (WCS) to quantify how standard decoding filters mathematically prune contextually appropriate low-frequency words, revealing that sampling defaults act as unintended censorship mechanisms that homogenize LLM output.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>LLMs are known to produce repetitive and homogeneous text despite large latent vocabularies. Prior work has attributed this to training data, alignment, or model knowledge, but the role of decoding mechanics in suppressing linguistic diversity has been underexplored.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Studies on LLM output homogeneity and mode collapse (e.g., structural collapse of probability distributions).</li>
+<li>Analysis of lexical diversity in conversational models and sensitivity to parameters like presence penalties and temperature.</li>
+<li>Observation that LLM outputs follow a two-parameter Mandelbrot distribution with an artificially steep Zipfian tail, indicating suppressed rare token selection.</li>
+<li>Research on sampling filters (Top-k, Top-p, Min-p) and their role in balancing coherence and diversity.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing research focuses on model knowledge and training data as causes of lexical homogeneity, but neglects the impact of decoding mechanics. There is no metric that directly measures how sampling filters prune contextually appropriate human vocabulary during generation.</p>
+<h3>P — Proposal</h3>
+<p>The paper proposes the Word Coverage Score (WCS), a metric that quantifies lexical reachability by performing a Forced-Path Audit: for a target word in a human-authored passage, it checks whether each constituent token survives a given sampling filter. The WCS aggregates these binary survival outcomes across words to measure the lexical survival rate as a function of sampling parameters.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>The paper audits open-weight models on human-authored corpus fragments, evaluating absolute word erasure and aggregated lexical decay curves for Top-p, Top-k, and Min-p samplers. Results show that industry-default sampling parameters systematically censor low-frequency, high-information words, with the WCS dropping significantly as filters become more restrictive.</p>
+<h3>Ablation</h3>
+<p>The paper does not include a dedicated ablation study, but the WCS framework itself is evaluated across multiple sampling parameters and model variants (baseline vs. aligned), showing consistent suppression of rare words.</p>
+<h3>Limitations</h3>
+<p>['The WCS is evaluated only on open-weight models and may not generalize to proprietary models with different architectures or alignment techniques.', 'The metric focuses on single-word reachability and does not capture longer-range lexical diversity or syntactic variation.', 'The forced-path audit assumes ground-truth context, which may not reflect real generation dynamics where context is also sampled.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a rigorous, quantitative tool to diagnose and mitigate lexical homogenization in LLMs, directly relevant to improving output diversity.</li>
+<li>Highlights that decoding mechanics, not just training data or alignment, are a key bottleneck for preserving human-like lexical richness.</li>
+<li>Offers actionable insights for tuning sampling parameters to balance coherence and diversity, which is critical for applications like creative writing, translation, and dialogue systems.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply the WCS to evaluate and compare proprietary models (e.g., GPT-4, Claude) to see if the censorship effect generalizes.</li>
+<li>[ ] Develop adaptive sampling strategies that dynamically adjust filters based on WCS to preserve rare words without sacrificing coherence.</li>
+<li>[ ] Extend the WCS to multi-word phrases and syntactic structures to capture broader linguistic diversity.</li>
+<li>[ ] Integrate the WCS as a diagnostic tool in LLM evaluation pipelines to monitor lexical diversity during deployment.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>迷失在采样中：通过词覆盖率评分评估大语言模型的词汇可达性</h1>
+<p><strong>主要结论</strong>
+- 标准采样过滤器（Top-p、Top-k、Min-p）会系统性地剪除低频、高信息量的词汇，即使这些词汇在上下文中合适且处于模型的概率空间内。
+- 词覆盖率评分（WCS）通过测量目标词每个token在自回归生成中能否通过给定采样过滤器，来量化词汇可达性。
+- 行业默认的采样参数充当了无意的审查机制，通过抑制人类词汇的长尾分布来同质化大语言模型输出。
+- WCS提供了一个诊断框架，用于优化文本连贯性与词汇丰富度之间的权衡。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文引入词覆盖率评分（WCS）来量化标准解码过滤器如何在数学上剪除上下文合适的低频词，揭示默认采样参数充当了无意中同质化大语言模型输出的审查机制。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：大语言模型尽管拥有庞大的潜在词汇量，但已知会产生重复且同质化的文本。先前工作将此归因于训练数据、对齐或模型知识，但解码机制在抑制语言多样性方面的作用尚未被充分探索。相关工作：关于大语言模型输出同质化和模式崩溃的研究（例如概率分布的结构性崩溃）；对话模型中词汇多样性的分析及其对存在惩罚和温度等参数的敏感性；观察到LLM输出遵循双参数Mandelbrot分布，具有人为陡峭的Zipfian尾部，表明稀有token选择被抑制；关于采样过滤器（Top-k、Top-p、Min-p）及其在平衡连贯性与多样性中作用的研究。差距：现有研究主要关注模型知识和训练数据作为词汇同质化的原因，但忽视了解码机制的影响。目前没有指标直接衡量采样过滤器在生成过程中如何剪除上下文合适的人类词汇。提案：本文提出词覆盖率评分（WCS），通过执行强制路径审计来量化词汇可达性：对于人类撰写段落中的一个目标词，检查其每个组成token是否能在给定采样过滤器下存活。WCS将这些二元存活结果跨词聚合，以衡量作为采样参数函数的词汇存活率。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>主要结果：论文在人类撰写的语料片段上审计了开放权重模型，评估了Top-p、Top-k和Min-p采样器的绝对词汇擦除和聚合词汇衰减曲线。结果显示，行业默认的采样参数系统性地审查了低频、高信息量的词汇，随着过滤器变得更加严格，WCS显著下降。</p>
+<h3>消融实验</h3>
+<p>论文未包含专门的消融研究，但WCS框架本身在多个采样参数和模型变体（基线 vs. 对齐）上进行了评估，显示了对稀有词汇的一致抑制。</p>
+<h3>局限性</h3>
+<p>WCS仅在开放权重模型上评估，可能无法推广到具有不同架构或对齐技术的专有模型。该指标聚焦于单词可达性，未捕捉更长范围的词汇多样性或句法变化。强制路径审计假设了真实上下文，可能无法反映实际生成动态，其中上下文也是采样的。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了一个严谨的定量工具来诊断和缓解大语言模型中的词汇同质化，直接有助于提升输出多样性。</li>
+<li>强调了解码机制（而不仅仅是训练数据或对齐）是保持人类式词汇丰富度的关键瓶颈。</li>
+<li>为调整采样参数以平衡连贯性和多样性提供了可操作的见解，这对创意写作、翻译和对话系统等应用至关重要。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 应用WCS评估和比较专有模型（如GPT-4、Claude），检验审查效应是否具有普遍性。</li>
+<li>[ ] 开发自适应采样策略，根据WCS动态调整过滤器，以在不牺牲连贯性的前提下保留稀有词汇。</li>
+<li>[ ] 将WCS扩展到多词短语和句法结构，以捕捉更广泛的 linguistic 多样性。</li>
+<li>[ ] 将WCS作为诊断工具集成到大语言模型评估流程中，以监控部署期间的词汇多样性。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1322/fig_001.png" alt="Figure 1: Four-stage methodology for calculating the Word Coverage Score (WCS): select frequency-bounded target words, pair them with human-written contexts, audit token survival under sampling filters, and aggregate reachability into WCS." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Four-stage methodology for calculating the Word Coverage Score (WCS): select frequency-bounded target words, pair them with human-written contexts, audit token survival under sampling filters, and aggregate reachability into WCS.</span>
+                <span class="lang-zh">图1：计算词汇覆盖率得分（WCS）的四阶段方法：选择频率受限的目标词，将其与人工编写的上下文配对，在采样过滤条件下审计token的存活性，并将可达性聚合为WCS。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1322/fig_002.png" alt="Figure 2: Fraction of words with W ​ C ​ S ​ ( θ , w ) = 0 WCS(\theta,w)=0 when using Nucleus Sampling ( p p ) and T = 0.7 T=0.7 . Instruct models (dashed lines) and their Base counterparts (solid lines). Default and recommended multi-parameter sampler settings are reported separately in Table 2 ." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Fraction of words with W ​ C ​ S ​ ( θ , w ) = 0 WCS(\theta,w)=0 when using Nucleus Sampling ( p p ) and T = 0.7 T=0.7 . Instruct models (dashed lines) and their Base counterparts (solid lines). Default and recommended multi-parameter sampler settings are reported separately in Table 2 .</span>
+                <span class="lang-zh">图2：使用Nucleus Sampling（p）和T=0.7时，WCS(θ,w)=0的词汇比例。Instruct模型（虚线）及其Base对应模型（实线）。默认和推荐的多参数采样器设置单独报告于表2。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1322/fig_003.png" alt="Figure 3: Fraction of words with W ​ C ​ S ​ ( θ , w ) = 0 WCS(\theta,w)=0 when using Top- k k Sampling and T = 0.7 T=0.7 . Instruct models (dashed lines) and their Base counterparts (solid lines)." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: Fraction of words with W ​ C ​ S ​ ( θ , w ) = 0 WCS(\theta,w)=0 when using Top- k k Sampling and T = 0.7 T=0.7 . Instruct models (dashed lines) and their Base counterparts (solid lines).</span>
+                <span class="lang-zh">图3：使用Top-k Sampling和T=0.7时，WCS(θ,w)=0的词汇比例。Instruct模型（虚线）及其Base对应模型（实线）。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1322/fig_004.png" alt="Figure 4: Fraction of words with W ​ C ​ S ​ ( θ , w ) = 0 WCS(\theta,w)=0 when using Min- p p Sampling and T = 0.7 T=0.7 . Instruct models (dashed lines) and their Base counterparts (solid lines)." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: Fraction of words with W ​ C ​ S ​ ( θ , w ) = 0 WCS(\theta,w)=0 when using Min- p p Sampling and T = 0.7 T=0.7 . Instruct models (dashed lines) and their Base counterparts (solid lines).</span>
+                <span class="lang-zh">图4：使用Min-p Sampling和T=0.7时，WCS(θ,w)=0的词汇比例。Instruct模型（虚线）及其Base对应模型（实线）。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1322/fig_005.png" alt="Figure 5: Fraction of the 1,000 contexts (100 words each with 10 contexts) that are reachable W ​ C ​ S ​ ( θ ) WCS(\theta) when using Top- p p (top), Top- k k (top), Min- p p (bottom) Sampling and T = 1.5 T=1.5 . Instruct models (dashed lines) and their Base counterparts (solid lines)." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5: Fraction of the 1,000 contexts (100 words each with 10 contexts) that are reachable W ​ C ​ S ​ ( θ ) WCS(\theta) when using Top- p p (top), Top- k k (top), Min- p p (bottom) Sampling and T = 1.5 T=1.5 . Instruct models (dashed lines) and their Base counterparts (solid lines).</span>
+                <span class="lang-zh">图5：使用Top-p（上）、Top-k（上）、Min-p（下）Sampling且T=1.5时，1,000个上下文（100个词，每个词10个上下文）中可达WCS(θ)的比例。Instruct模型（虚线）及其Base对应模型（实线）。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.27268</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.27268" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1322';
+  var title = "Lost in Sampling: Assessing Lexical Reachability in LLMs via the Word Coverage Score (WCS)";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

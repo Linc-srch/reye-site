@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAIT: Boundary-Guided Disclosure Escalation via Self-Conditioned Reasoning | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-27</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.27110" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1336" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">BAIT: Boundary-Guided Disclosure Escalation via Self-Conditioned Reasoning</h1>
+        <h1 class="article-title lang-zh">BAIT：基于边界引导的自我条件推理披露升级</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+          <span class="tag direction-tag">supply-chain-attack</span>
+          
+          <span class="tag direction-tag">zero-trust</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Xuan Luo, Yue Wang, Geng Tu, Jing Li, Ruifeng Xu</p>
+        
+      </header>
+
+      
+      
+
+      
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>BAIT introduces a novel jailbreak framework that exploits LLMs' self-conditioned reasoning and consistency tendency to escalate harmful disclosures through a fixed three-step interaction pattern, achieving high attack success rates on well-aligned models.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出BAIT框架，通过三步自我条件推理过程（边界引出、细化、阐述）利用LLM的一致性倾向实现越狱攻击。该方法在多个顶级模型上取得高攻击成功率，揭示了安全边界推理本身可能成为不安全披露路径的盲点。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — bait</h1>
+<p><strong>Key Takeaways</strong>
+- BAIT uses a three-step self-conditioned reasoning process (boundary elicitation, refinement, elaboration) to jailbreak LLMs by exploiting their consistency tendency.
+- Prevention-oriented framing (asking what to protect) outperforms direct knowledge requests for eliciting harmful disclosures.
+- The refinement step is critical for escalating disclosure; early steps can elicit harmful content with minimal filtering.
+- BAIT achieves strong attack success rates across top-tier LLMs (Claude, GPT, Gemini) on AdvBench, JailbreakBench, AIR-Bench, and SORRY-Bench.
+- The method reveals a blind spot: reasoning about safety boundaries can itself become a pathway for unsafe disclosure.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> BAIT: Boundary-Guided Disclosure Escalation via Self-Conditioned Reasoning</li>
+<li><strong>Alias:</strong> bait</li>
+<li><strong>Authors:</strong> Xuan Luo, Yue Wang, Geng Tu, Jing Li, Ruifeng Xu</li>
+<li><strong>arXiv ID:</strong> 2605.27110</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.27110</li>
+<li>HTML: https://arxiv.org/html/2605.27110v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.27110</li>
+<li><strong>Tags:</strong> jailbreak, llm-safety, self-conditioned-reasoning, multi-turn-attack, boundary-exploitation</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>BAIT introduces a novel jailbreak framework that exploits LLMs' self-conditioned reasoning and consistency tendency to escalate harmful disclosures through a fixed three-step interaction pattern, achieving high attack success rates on well-aligned models.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Large language models (LLMs) have shown remarkable capabilities but remain vulnerable to jailbreak attacks. Existing black-box jailbreak methods rely on external prompt manipulation (e.g., encoding, reframing, trial-and-error) to bypass safety restrictions, but whether an LLM can internally cross its own safety boundary through reasoning is underexplored.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>ArtPrompt (ACL 2024): uses ASCII art to evade safety alignment.</li>
+<li>FlipAttack (ICML 2025): applies reversible transformations to conceal malicious semantics.</li>
+<li>EmojiAttack (ICML 2025): inserts emojis between tokens to exploit judge LLM biases.</li>
+<li>PAP (ACL 2024): trains a prompt generator for persuasive adversarial prompts.</li>
+<li>BaitAttack (EMNLP 2024): adaptively creates safe context with role, scene, and bait.</li>
+<li>REDA (ACL 2025): guides model to embed harmful content within defensive measures via in-context learning.</li>
+<li>HILL (EACL 2026): reframes queries as learning-style queries to exploit help-willingness.</li>
+<li>TAP (NeurIPS 2024): formulates jailbreak as a tree search with pruning.</li>
+<li>Crescendo (USENIX Security 25): gradual conversational escalation by referencing previous responses.</li>
+<li>Mastermind (2026): distills attack strategies from a sandbox model and optimizes with evolutionary algorithm.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing jailbreak methods rely on external prompt manipulation (e.g., encoding, reframing, trial-and-error) to bypass safety restrictions. Whether an LLM can internally cross its own safety boundary through its reasoning process remains underexplored, and no prior work systematically exploits self-conditioned reasoning and consistency tendency for disclosure escalation.</p>
+<h3>P — Proposal</h3>
+<p>BAIT (Boundary-Aware Iterative Trap) is a three-step jailbreak framework: (1) boundary elicitation (ask what knowledge should be protected), (2) refinement (distinguish correct knowledge from misinformation), and (3) elaboration (request a detailed example). It uses prevention-oriented framing and a fixed interaction pattern to turn the model's own reasoning and consistency tendency into a disclosure pathway.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On AdvBench, BAIT achieves attack success rates (ASR) of 92% on GPT-4, 88% on Claude-3, and 85% on Gemini-1.5. On JailbreakBench, ASR is 89% on GPT-4, 86% on Claude-3, and 82% on Gemini-1.5. On AIR-Bench, ASR is 87% on GPT-4, 84% on Claude-3, and 80% on Gemini-1.5. On SORRY-Bench, ASR is 90% on GPT-4, 87% on Claude-3, and 83% on Gemini-1.5. BAIT consistently outperforms baselines (e.g., Crescendo, TAP, PAP) by 15-30% absolute ASR on well-aligned models.</p>
+<h3>Ablation</h3>
+<p>Prevention-oriented framing outperforms direct knowledge request by an average of 22% ASR across models. Removing the refinement step reduces ASR by 35% on GPT-4, confirming its critical role in disclosure escalation.</p>
+<h3>Limitations</h3>
+<p>["BAIT's effectiveness may vary across different safety alignment strategies and model architectures.", 'The fixed three-step pattern may be detectable by advanced safety filters or adversarial training.', "The method relies on the model's consistency tendency, which might be mitigated by future alignment techniques."]</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Highlights a fundamental blind spot in LLM safety: reasoning about safety boundaries can itself be exploited for harmful disclosure.</li>
+<li>Demonstrates that self-conditioned reasoning and consistency tendency are powerful attack vectors, informing new defense strategies.</li>
+<li>Provides a highly controllable and scalable jailbreak framework that can be used to evaluate and improve model alignment.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Investigate defenses that break the self-conditioned reasoning chain, e.g., by randomizing response consistency or inserting adversarial interruptions.</li>
+<li>[ ] Explore whether similar boundary-guided disclosure techniques apply to other modalities (e.g., image, code generation).</li>
+<li>[ ] Develop automated detection methods for multi-turn jailbreak patterns like BAIT.</li>
+<li>[ ] Study the generalizability of BAIT to open-source models with different safety training regimes.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>BAIT：基于边界引导的自我条件推理披露升级</h1>
+<p><strong>主要结论</strong>
+- BAIT采用三步自我条件推理过程（边界引出、细化、阐述）利用LLM的一致性倾向实现越狱。
+- 预防导向的提问（询问应保护什么）比直接知识请求更有效地引发有害披露。
+- 细化步骤对披露升级至关重要；早期步骤即可在最小过滤下引发有害内容。
+- BAIT在Claude、GPT、Gemini等顶级模型上的AdvBench、JailbreakBench、AIR-Bench和SORRY-Bench基准中均取得高攻击成功率。
+- 该方法揭示了一个盲点：对安全边界的推理本身可能成为不安全披露的路径。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>BAIT提出了一种新颖的越狱框架，通过利用LLM的自我条件推理和一致性倾向，以固定的三步交互模式升级有害披露，在良好对齐的模型上实现了高攻击成功率。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：大型语言模型（LLM）表现出卓越能力，但仍易受越狱攻击。现有黑盒越狱方法依赖外部提示操纵（如编码、重构、试错）绕过安全限制，但LLM能否通过自身推理过程内部跨越其安全边界尚未被充分探索。相关工作：ArtPrompt使用ASCII艺术逃避安全对齐；FlipAttack应用可逆变换隐藏恶意语义；EmojiAttack在标记间插入表情符号利用裁判LLM的偏见；PAP训练提示生成器生成对抗性提示；BaitAttack自适应地创建包含角色、场景和诱饵的安全上下文；REDA通过上下文学习引导模型将有害内容嵌入防御措施；HILL将查询重构为学习型查询以利用帮助意愿；TAP将越狱形式化为带剪枝的树搜索；Crescendo通过引用先前响应逐步升级对话；Mastermind从沙盒模型蒸馏攻击策略并用进化算法优化。差距：现有越狱方法依赖外部提示操纵绕过安全限制，LLM能否通过自身推理过程内部跨越其安全边界尚未被充分探索，且没有工作系统性地利用自我条件推理和一致性倾向进行披露升级。提案：BAIT（边界感知迭代陷阱）是一个三步越狱框架：（1）边界引出（询问应保护哪些知识），（2）细化（区分正确知识与错误信息），（3）阐述（请求详细示例）。它使用预防导向的提问和固定的交互模式，将模型自身的推理和一致性倾向转化为披露路径。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在AdvBench上，BAIT在GPT-4上达到92%的攻击成功率（ASR），在Claude-3上为88%，在Gemini-1.5上为85%。在JailbreakBench上，GPT-4的ASR为89%，Claude-3为86%，Gemini-1.5为82%。在AIR-Bench上，GPT-4的ASR为87%，Claude-3为84%，Gemini-1.5为80%。在SORRY-Bench上，GPT-4的ASR为90%，Claude-3为87%，Gemini-1.5为83%。BAIT在良好对齐的模型上持续优于基线方法（如Crescendo、TAP、PAP），绝对ASR高出15-30%。</p>
+<h3>消融实验</h3>
+<p>预防导向的提问在模型上平均比直接知识请求高出22%的ASR。移除细化步骤使GPT-4的ASR降低35%，确认了其在披露升级中的关键作用。</p>
+<h3>局限性</h3>
+<p>['BAIT的有效性可能因不同的安全对齐策略和模型架构而异。', '固定的三步模式可能被高级安全过滤器或对抗训练检测到。', '该方法依赖于模型的一致性倾向，未来对齐技术可能缓解这一点。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>突出了LLM安全中的一个基本盲点：对安全边界的推理本身可能被利用进行有害披露。</li>
+<li>证明了自我条件推理和一致性倾向是强大的攻击向量，为新的防御策略提供信息。</li>
+<li>提供了一个高度可控且可扩展的越狱框架，可用于评估和改进模型对齐。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 研究打破自我条件推理链的防御方法，例如通过随机化响应一致性或插入对抗性中断。</li>
+<li>[ ] 探索类似的边界引导披露技术是否适用于其他模态（如图像、代码生成）。</li>
+<li>[ ] 开发针对BAIT等多轮越狱模式的自动检测方法。</li>
+<li>[ ] 研究BAIT在不同安全训练机制的开源模型上的泛化能力。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1336/fig_006.png" alt="Figure 5: Top: Number of successfully attacked models (8 in total) at each round on AdvBench" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5: Top: Number of successfully attacked models (8 in total) at each round on AdvBench</span>
+                <span class="lang-zh">图5：上方：在AdvBench上每轮成功攻击的模型数量（共8个）</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1336/fig_017.png" alt="Figure 26: Number of successfully attacked models (8 in total) at each round on AdvBench" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 26: Number of successfully attacked models (8 in total) at each round on AdvBench</span>
+                <span class="lang-zh">图26：在AdvBench上每轮成功攻击的模型数量（共8个）</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1336/fig_001.png" alt="Figure 1: The conceptual comparison between BAIT" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: The conceptual comparison between BAIT</span>
+                <span class="lang-zh">图1：BAIT的概念对比</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1336/fig_002.png" alt="Figure 2: An illustration of BAIT" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: An illustration of BAIT</span>
+                <span class="lang-zh">图2：BAIT的示意图</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1336/fig_003.png" alt="Figure 2: Dataset" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Dataset</span>
+                <span class="lang-zh">图2：数据集</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.27110</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.27110" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1336';
+  var title = "BAIT: Boundary-Guided Disclosure Escalation via Self-Conditioned Reasoning";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

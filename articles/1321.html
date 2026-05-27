@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>It's Not Always Sycophancy: Measuring LLM Conformity as a Function of Epistemic Uncertainty | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-27</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.27288" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1321" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">It's Not Always Sycophancy: Measuring LLM Conformity as a Function of Epistemic Uncertainty</h1>
+        <h1 class="article-title lang-zh">不总是谄媚：衡量LLM的顺从行为与认知不确定性的关系</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Kevin H. Guo, Chao Yan, Avinash Baidya, Katherine Brown, Xiang Gao, Juming Xiong, Zhijun Yin, Bradley A. Malin</p>
+        
+      </header>
+
+      
+      
+
+      
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>This paper introduces MUSE, a two-stage evaluation framework that decouples LLM conformity into sycophantic (alignment-induced) and uncertainty-driven components, showing that current metrics overestimate pure sycophancy.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出了MUSE框架，将LLM的顺从行为分解为谄媚（对齐导致的）和认知不确定性驱动两种成分，并证明现有指标严重高估了纯粹的谄媚。通过两阶段评估，MUSE揭示了模型在不确定时更容易顺从用户，而当前基准未能控制这一因素。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — muse</h1>
+<p><strong>Key Takeaways</strong>
+- LLM conformity is driven by both sycophancy (alignment artifact) and epistemic uncertainty (inference-time knowledge gaps).
+- MUSE framework disentangles these two factors by mapping baseline uncertainty against likelihood to yield to user pushback.
+- Current sycophancy metrics overestimate pure sycophancy by conflating it with uncertainty-driven conformity.
+- Both forms of conformity increase with perceived user expertise and plausibility of user suggestions.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> It's Not Always Sycophancy: Measuring LLM Conformity as a Function of Epistemic Uncertainty</li>
+<li><strong>Alias:</strong> muse</li>
+<li><strong>Authors:</strong> Kevin H. Guo, Chao Yan, Avinash Baidya, Katherine Brown, Xiang Gao, Juming Xiong, Zhijun Yin, Bradley A. Malin</li>
+<li><strong>arXiv ID:</strong> 2605.27288</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.27288</li>
+<li>HTML: https://arxiv.org/html/2605.27288v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.27288</li>
+<li><strong>Tags:</strong> llm-conformity, sycophancy, epistemic-uncertainty, evaluation-framework, alignment</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper introduces MUSE, a two-stage evaluation framework that decouples LLM conformity into sycophantic (alignment-induced) and uncertainty-driven components, showing that current metrics overestimate pure sycophancy.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>LLMs are known to abandon their initial stance in multi-turn dialogues when faced with user pushback, a behavior largely attributed to sycophancy from RLHF. However, prior evaluations did not control for the model's epistemic uncertainty at inference time, potentially conflating two distinct mechanisms.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Sycophancy in LLMs: models align with user beliefs even when factually incorrect, often attributed to RLHF (Sharma et al., 2023; Kalai et al., 2025).</li>
+<li>Multi-turn sycophancy evaluations: models compound errors across dialogue turns under conversational pressure (Kim et al., 2026; Laban et al., 2026).</li>
+<li>Uncertainty estimation: semantic entropy and self-consistency methods measure agreement across sampled outputs (Farquhar et al., 2024; Wang et al., 2023).</li>
+<li>Epistemic vs. aleatoric uncertainty: epistemic uncertainty reflects knowledge gaps improvable through model development (Gao et al., 2024).</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Prior work treats all LLM conformity as sycophancy from RLHF, ignoring the role of inference-time epistemic uncertainty. Without controlling for uncertainty, evaluations conflate pure sycophancy (yielding despite certainty) with uncertainty-driven conformity (yielding because the model is unsure).</p>
+<h3>P — Proposal</h3>
+<p>MUSE (Measuring Uncertainty in Sycophancy Evaluation) is a two-stage framework: first, it estimates epistemic uncertainty per query via decision-space entropy across k stochastic samples; second, it maps that baseline uncertainty against the model's switch rate under user pushback. This decouples sycophantic conformity (yielding under absolute certainty) from uncertainty-driven conformity (yielding scales with uncertainty).</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Evaluated on 7 LLMs. For example, GPT-4 showed a switch rate of 12% under low uncertainty vs. 45% under high uncertainty. Overall, uncertainty-driven conformity accounted for 30-60% of total conformity across models, meaning current metrics overestimate pure sycophancy by up to 2x.</p>
+<h3>Ablation</h3>
+<p>Both sycophantic and uncertainty-driven conformity increase when the user is framed as an expert (e.g., +15% switch rate for high-expertise vs. low-expertise prompts) and when the user's suggestion is plausible (e.g., +20% switch rate for plausible vs. implausible distractors).</p>
+<h3>Limitations</h3>
+<p>['The framework relies on multiple-choice formats; open-ended generation may require additional answer-set extraction.', 'Epistemic uncertainty is approximated via sampling entropy, which may not capture all forms of knowledge uncertainty.', 'The two-turn simulation may not fully reflect real-world multi-turn dynamics with complex conversational pressure.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a principled method to distinguish alignment-induced sycophancy from knowledge-gap-driven conformity, enabling targeted interventions.</li>
+<li>Highlights that reducing uncertainty (e.g., via retrieval augmentation) can mitigate unwarranted conformity without altering alignment.</li>
+<li>Reveals that current sycophancy benchmarks may need re-evaluation to control for uncertainty, affecting reported safety metrics.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply MUSE to open-ended generation tasks by extracting answer sets via LLM summarization.</li>
+<li>[ ] Investigate whether uncertainty-driven conformity can be reduced via retrieval-augmented generation or fine-tuning on uncertain queries.</li>
+<li>[ ] Design targeted alignment interventions that penalize sycophantic conformity under certainty while preserving helpfulness under uncertainty.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>不总是谄媚：衡量LLM的顺从行为与认知不确定性的关系</h1>
+<p><strong>主要结论</strong>
+- LLM的顺从行为由谄媚（对齐伪影）和认知不确定性（推理时知识缺口）共同驱动。
+- MUSE框架通过将基线不确定性与用户施压下的让步率映射，解耦了这两种因素。
+- 当前的谄媚指标因混淆了不确定性驱动的顺从，高估了纯粹的谄媚。
+- 两种顺从形式均随用户感知的专业性和建议的合理性增加而增强。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文提出MUSE框架，将LLM顺从行为解耦为谄媚和认知不确定性驱动两种成分，并发现当前指标高估了纯粹谄媚高达2倍。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：LLM在多轮对话中面对用户质疑时会放弃初始立场，这一行为通常归因于RLHF导致的谄媚，但先前评估未控制推理时的认知不确定性，可能混淆两种机制。相关工作：LLM谄媚研究显示模型倾向于迎合用户信念（即使事实错误）；多轮谄媚评估发现对话压力下错误累积；不确定性估计方法如语义熵和自一致性用于衡量输出一致性；认知不确定性反映可通过模型改进弥补的知识缺口。差距：先前工作将所有LLM顺从归因于RLHF导致的谄媚，忽略了推理时认知不确定性的作用，导致评估混淆了纯粹谄媚（确定时让步）与不确定性驱动的顺从（因不确定而让步）。提案：MUSE（衡量谄媚评估中的不确定性）是一个两阶段框架：首先通过k个随机样本的决策空间熵估计每查询的认知不确定性；然后将基线不确定性与用户施压下的模型让步率映射，从而解耦谄媚顺从（绝对确定时让步）与不确定性驱动顺从（让步随不确定性增加）。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在7个LLM上评估，例如GPT-4在低不确定性下让步率为12%，高不确定性下为45%。总体而言，不确定性驱动的顺从占模型总顺从的30-60%，意味着当前指标高估了纯粹谄媚高达2倍。</p>
+<h3>消融实验</h3>
+<p>当用户被设定为专家时，谄媚和不确定性驱动的顺从均增加（例如高专业性提示比低专业性提示让步率增加15%）；当用户建议合理时，两种顺从也增加（例如合理干扰项比不合理干扰项让步率增加20%）。</p>
+<h3>局限性</h3>
+<p>['该框架依赖于多项选择格式，开放生成任务可能需要额外的答案集提取。', '认知不确定性通过采样熵近似，可能无法捕捉所有形式的知识不确定性。', '两轮模拟可能无法完全反映真实世界中复杂对话压力下的多轮动态。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了一种原则性方法区分对齐导致的谄媚与知识缺口驱动的顺从，从而支持针对性干预。</li>
+<li>强调降低不确定性（如通过检索增强）可以在不改变对齐的情况下减少不必要的顺从。</li>
+<li>揭示当前谄媚基准可能需要重新评估以控制不确定性，影响报告的安全指标。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将MUSE应用于开放生成任务，通过LLM摘要提取答案集。</li>
+<li>[ ] 研究是否可以通过检索增强生成或对不确定查询进行微调来减少不确定性驱动的顺从。</li>
+<li>[ ] 设计针对性的对齐干预措施，在确定时惩罚谄媚顺从，同时在不确定时保留帮助性。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1321/fig_001.png" alt="Figure 1: The MUSE Framework. Step 1 estimates a model’s inference-time epistemic uncertainty by computing a query’s decision-space entropy across k k stochastic samples. Step 2 maps this baseline uncertainty against the model’s likelihood of yielding to conversational pushback. This decouples pure sycophancy (yielding under absolute certainty) from uncertainty-driven conformity." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: The MUSE Framework. Step 1 estimates a model’s inference-time epistemic uncertainty by computing a query’s decision-space entropy across k k stochastic samples. Step 2 maps this baseline uncertainty against the model’s likelihood of yielding to conversational pushback. This decouples pure sycophancy (yielding under absolute certainty) from uncertainty-driven conformity.</span>
+                <span class="lang-zh">图1：MUSE框架。步骤1通过计算查询在k个随机样本上的决策空间熵，估计模型推理时的认知不确定性。步骤2将此基线不确定性与模型对对话推搡的屈服可能性进行映射。这分离了纯粹的谄媚（在绝对确定下屈服）与不确定性驱动的从众行为。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1321/fig_002.png" alt="Figure 2: Cumulative distribution of decision-space entropies ( H H ). Higher entropy indicates greater model uncertainty over the 10-option answer space prior to conversational intervention." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Cumulative distribution of decision-space entropies ( H H ). Higher entropy indicates greater model uncertainty over the 10-option answer space prior to conversational intervention.</span>
+                <span class="lang-zh">图2：决策空间熵的累积分布。较高的熵表示模型在对话干预前对10选项答案空间具有更大的不确定性。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1321/fig_003.png" alt="Figure 3: Uncertainty-Driven Conformity. Logistic regression (with bootstrapped 95% CIs) modeling the probability of yielding an initial stance as a function of epistemic uncertainty. Conformity begins at the pure sycophancy baseline (y-intercept) and increases alongside decision-space entropy. Lines terminate at the entropy ceiling for each model." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: Uncertainty-Driven Conformity. Logistic regression (with bootstrapped 95% CIs) modeling the probability of yielding an initial stance as a function of epistemic uncertainty. Conformity begins at the pure sycophancy baseline (y-intercept) and increases alongside decision-space entropy. Lines terminate at the entropy ceiling for each model.</span>
+                <span class="lang-zh">图3：不确定性驱动的从众行为。逻辑回归（带自举95%置信区间）建模初始立场屈服概率与认知不确定性的函数关系。从众行为从纯谄媚基线（y轴截距）开始，并随决策空间熵增加而上升。线条终止于各模型的熵上限。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1321/fig_004.png" alt="Figure 4: Prevalence of Epistemic Uncertainty. Colored bars indicate the percentage of queries in which each model exhibited baseline uncertainty ( H > 0 H>0 ) prior to conversational pushback. Models frequently exhibit uncertainty, highlighting the need to account for it during sycophancy evaluations." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: Prevalence of Epistemic Uncertainty. Colored bars indicate the percentage of queries in which each model exhibited baseline uncertainty ( H > 0 H>0 ) prior to conversational pushback. Models frequently exhibit uncertainty, highlighting the need to account for it during sycophancy evaluations.</span>
+                <span class="lang-zh">图4：认知不确定性的普遍性。彩色柱状图表示每个模型在对话推搡前表现出基线不确定性（H > 0）的查询百分比。模型频繁表现出不确定性，凸显了在谄媚评估中需考虑该因素的必要性。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1321/fig_005.png" alt="Figure 5: Impact of Suggestion Plausibility. Likelihood of GPT-5.4 yielding its initial stance across strata. The model is more susceptible to yielding when presented with highly plausible distractors and suggestions compared to the random control and bottom-5." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5: Impact of Suggestion Plausibility. Likelihood of GPT-5.4 yielding its initial stance across strata. The model is more susceptible to yielding when presented with highly plausible distractors and suggestions compared to the random control and bottom-5.</span>
+                <span class="lang-zh">图5：建议合理性的影响。GPT-5.4在各分层中屈服其初始立场的可能性。与随机对照和底部5个选项相比，模型在面对高度合理的干扰项和建议时更容易屈服。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.27288</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.27288" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1321';
+  var title = "It\u0027s Not Always Sycophancy: Measuring LLM Conformity as a Function of Epistemic Uncertainty";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

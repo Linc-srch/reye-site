@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Separating Semantic Competition from Context Length in RAG Reading | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-27</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.27294" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1319" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Separating Semantic Competition from Context Length in RAG Reading</h1>
+        <h1 class="article-title lang-zh">分离RAG阅读中的语义竞争与上下文长度</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">content-management</span>
+          
+          <span class="tag direction-tag">sparse-attention</span>
+          
+          <span class="tag direction-tag">hierarchical-attention</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Vyzantinos Repantis, Ameya Gawde, Harshvardhan Singh, Rohit Alekar, Cien Zhang, Svetlana Karslioglu, Akash Vishwakarma</p>
+        
+      </header>
+
+      
+      
+
+      
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>This paper introduces a matched-control protocol that isolates semantic competition from context length in RAG reading, showing that replacing hard distractors with far-rank passages partially restores reader performance.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出了一种匹配对照协议，能够将语义竞争与上下文长度对RAG阅读器性能的影响分离开来。通过用远排名段落替换硬负例，实验表明阅读器性能（如F1和答案包含率）得到部分恢复，揭示了语义竞争是导致RAG失败的关键因素之一。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — rag-competition-control</h1>
+<p><strong>Key Takeaways</strong>
+- RAG reader failures are partly due to semantic competition among retrieved passages, not just context length.
+- A matched-control protocol that replaces hard negatives with far-rank passages partially recovers F1 and answer inclusion.
+- For Phi-2, recovery is +6.0 EM, +7.0 answer-inclusion, +0.057 F1; for Qwen2.5-1.5B, +4.5 EM, +9.0 answer-inclusion, +0.068 F1.
+- Retention curves degrade monotonically with more hard negatives but rarely cross half-retention, indicating robustness.
+- The competition effect is clearer for F1 and answer inclusion than for exact match, and varies with snippet length.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Separating Semantic Competition from Context Length in RAG Reading</li>
+<li><strong>Alias:</strong> rag-competition-control</li>
+<li><strong>Authors:</strong> Vyzantinos Repantis, Ameya Gawde, Harshvardhan Singh, Rohit Alekar, Cien Zhang, Svetlana Karslioglu, Akash Vishwakarma</li>
+<li><strong>arXiv ID:</strong> 2605.27294</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.27294</li>
+<li>HTML: https://arxiv.org/html/2605.27294v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.27294</li>
+<li><strong>Tags:</strong> retrieval-augmented-generation, semantic-competition, reader-evaluation, matched-control, context-length</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper introduces a matched-control protocol that isolates semantic competition from context length in RAG reading, showing that replacing hard distractors with far-rank passages partially restores reader performance.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>RAG systems often fail even when the correct passage is retrieved, but prior work conflates context length with semantic competition among passages. The reader component must identify the correct passage among plausible distractors, and degradation is typically attributed to longer contexts rather than competition.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Retriever-reader decomposition in open-domain QA (Chen et al., 2017)</li>
+<li>Long-context evaluation in RAG and language models</li>
+<li>Hard negative mining for retriever training</li>
+<li>Studies on context length vs. model performance in LLMs</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing RAG evaluations do not separate the effect of context length from semantic competition among retrieved passages. When more passages are added, both length and competition increase, making it unclear which factor causes reader degradation.</p>
+<h3>P — Proposal</h3>
+<p>The authors propose a matched-control protocol that fixes the number and length of passages but replaces hard negatives (top-ranked BM25 distractors) with far-rank real passages from the same corpus. This isolates the competition effect, and experiments on Phi-2 and Qwen2.5-1.5B show partial recovery in F1 and answer inclusion.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On SQuAD 1.1 with 50-word snippets: Phi-2 hard condition EM 24.5, F1 0.459, answer inclusion 70.0; far-control EM 30.5, F1 0.516, answer inclusion 77.0. Qwen2.5-1.5B hard EM 22.0, F1 0.387, answer inclusion 58.0; far-control EM 26.5, F1 0.455, answer inclusion 67.0. Retention curves show monotonic degradation with half-life &gt;79 hard negatives.</p>
+<h3>Ablation</h3>
+<p>Using 80-word snippets for Qwen2.5-1.5B retention sweep shows similar monotonic degradation, with EM falling from 31.0 (H=0) to 24.0 (H=79) and F1 from 0.575 to 0.411, confirming the competition effect is robust to snippet length.</p>
+<h3>Limitations</h3>
+<p>['Experiments are limited to extractive QA on SQuAD and two compact open models, so generalizability to larger models and generative tasks is unclear.', 'The matched-control protocol uses BM25 for hard negatives; results may differ with dense retrievers.', 'Recovery is partial and weaker for exact match, suggesting competition effects are not fully separable from other factors.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a methodology to disentangle competition from length, which is critical for diagnosing RAG failures.</li>
+<li>Highlights that reader robustness to distractors is a distinct challenge from context window limits.</li>
+<li>Offers a controlled benchmark (matched-control protocol) for future RAG reader improvements.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply the matched-control protocol to larger models (e.g., 7B-70B) and generative QA tasks.</li>
+<li>[ ] Investigate whether training readers on hard-negative competition improves robustness.</li>
+<li>[ ] Explore the interaction between competition and retriever quality (dense vs. sparse).</li>
+<li>[ ] Design adaptive context selection strategies that reduce semantic competition.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>分离RAG阅读中的语义竞争与上下文长度</h1>
+<p><strong>主要结论</strong>
+- RAG阅读器失败的部分原因是检索段落间的语义竞争，而不仅仅是上下文长度。
+- 匹配对照协议通过用远排名段落替换硬负例，可部分恢复F1和答案包含率。
+- 对于Phi-2，恢复效果为+6.0 EM、+7.0 答案包含率、+0.057 F1；对于Qwen2.5-1.5B，恢复效果为+4.5 EM、+9.0 答案包含率、+0.068 F1。
+- 保留曲线随硬负例数量增加单调下降，但很少低于半保留水平，表明模型具有一定鲁棒性。
+- 竞争效应对F1和答案包含率的影响比精确匹配更明显，且随片段长度变化。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文提出匹配对照协议，分离语义竞争与上下文长度的影响，证明替换硬负例可部分恢复阅读器性能。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：RAG系统即使在检索到正确段落时也常失败，但先前工作将上下文长度与段落间的语义竞争混为一谈。阅读器需从看似合理的干扰项中识别正确段落，性能下降通常归因于更长的上下文而非竞争。</p>
+<p><strong>相关工作</strong>：开放域问答中的检索器-阅读器分解（Chen et al., 2017）；RAG和语言模型中的长上下文评估；检索器训练中的硬负例挖掘；LLM中上下文长度与模型性能的研究。</p>
+<p><strong>差距</strong>：现有RAG评估未分离上下文长度与检索段落间语义竞争的影响。当添加更多段落时，长度和竞争同时增加，导致无法确定阅读器性能下降的真正原因。</p>
+<p><strong>提议</strong>：作者提出匹配对照协议，固定段落数量和长度，但将硬负例（BM25排名靠前的干扰项）替换为来自同一语料库的远排名真实段落。这隔离了竞争效应，在Phi-2和Qwen2.5-1.5B上的实验显示F1和答案包含率部分恢复。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在SQuAD 1.1上使用50词片段：Phi-2在硬负例条件下EM为24.5，F1为0.459，答案包含率为70.0；远对照条件下EM为30.5，F1为0.516，答案包含率为77.0。Qwen2.5-1.5B在硬负例条件下EM为22.0，F1为0.387，答案包含率为58.0；远对照条件下EM为26.5，F1为0.455，答案包含率为67.0。保留曲线显示单调下降，半衰期超过79个硬负例。</p>
+<h3>消融实验</h3>
+<p>使用80词片段对Qwen2.5-1.5B进行保留扫描，显示类似的单调下降：EM从31.0（H=0）降至24.0（H=79），F1从0.575降至0.411，确认竞争效应对片段长度具有鲁棒性。</p>
+<h3>局限性</h3>
+<p>实验仅限于SQuAD上的抽取式问答和两个紧凑型开源模型，因此对更大模型和生成式任务的泛化性尚不明确。匹配对照协议使用BM25生成硬负例，使用稠密检索器时结果可能不同。恢复效果是部分的，且对精确匹配较弱，表明竞争效应无法完全与其他因素分离。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>提供了一种将竞争与长度分离的方法论，对诊断RAG失败至关重要。</li>
+<li>强调阅读器对干扰项的鲁棒性是一个独立于上下文窗口限制的挑战。</li>
+<li>为未来RAG阅读器改进提供了一个受控基准（匹配对照协议）。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将匹配对照协议应用于更大模型（如7B-70B）和生成式问答任务。</li>
+<li>[ ] 研究在硬负例竞争下训练阅读器是否能提高鲁棒性。</li>
+<li>[ ] 探索竞争与检索器质量（稠密vs稀疏）之间的交互作用。</li>
+<li>[ ] 设计自适应上下文选择策略以减少语义竞争。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1319/fig_001.png" alt="Figure 1: Qwen2.5-1.5B-Instruct retention under increasing hard-negative count. Retention decreases under both BM25 and dense retrieval, but does not cross half-retention through H = 79 H=79 ." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Qwen2.5-1.5B-Instruct retention under increasing hard-negative count. Retention decreases under both BM25 and dense retrieval, but does not cross half-retention through H = 79 H=79 .</span>
+                <span class="lang-zh">图1：Qwen2.5-1.5B-Instruct在硬负样本数量增加下的留存率。在BM25和稠密检索下留存率均下降，但在H=79时未降至半留存率以下。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.27294</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.27294" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1319';
+  var title = "Separating Semantic Competition from Context Length in RAG Reading";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

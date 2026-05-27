@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning to Act under Noise: Enhancing Agent Robustness via Noisy Environments | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-27</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.27209" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1325" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Learning to Act under Noise: Enhancing Agent Robustness via Noisy Environments</h1>
+        <h1 class="article-title lang-zh">在噪声中学习行动：通过噪声环境增强智能体鲁棒性</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Yuxin Chen, Xiaodong Cai, Junfeng Fang, Zhuowen Han, Yu Wang, Yaorui Shi, Yi Zhang, Qi Gu, Xunliang Cai, Xiang Wang, An Zhang, Tat-Seng Chua</p>
+        
+      </header>
+
+      
+      
+
+      
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>NoisyAgent proposes a noise-aware RL training framework that injects user and tool perturbations into agentic training, consistently improving agent robustness under noisy environments while also boosting performance on clean benchmarks.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出NoisyAgent框架，通过在强化学习训练中注入用户噪声和工具噪声，并采用课程调度器逐步增加难度，显著提升了LLM智能体在真实世界随机环境中的鲁棒性。实验表明，噪声训练不仅提高了在噪声基准上的表现，还意外地提升了在理想化基准上的性能。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — noisyagent</h1>
+<p><strong>Key Takeaways</strong>
+- LLM agents degrade in real-world settings due to a mismatch between idealized training and stochastic deployment environments.
+- NoisyAgent injects two types of noise (user noise and tool noise) into agentic RL training to improve robustness.
+- A curriculum scheduler progressively increases noise difficulty based on the performance gap between clean and noisy rollouts.
+- Training with noise not only improves robustness on noisy benchmarks but also yields gains on standard idealized benchmarks.
+- Noise acts as implicit difficulty augmentation, promoting more generalizable reasoning and decision-making.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Learning to Act under Noise: Enhancing Agent Robustness via Noisy Environments</li>
+<li><strong>Alias:</strong> noisyagent</li>
+<li><strong>Authors:</strong> Yuxin Chen, Xiaodong Cai, Junfeng Fang, Zhuowen Han, Yu Wang, Yaorui Shi, Yi Zhang, Qi Gu, Xunliang Cai, Xiang Wang, An Zhang, Tat-Seng Chua</li>
+<li><strong>arXiv ID:</strong> 2605.27209</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.27209</li>
+<li>HTML: https://arxiv.org/html/2605.27209v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.27209</li>
+<li><strong>Tags:</strong> llm-agents, robustness, noise-injection, reinforcement-learning, curriculum-learning</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>NoisyAgent proposes a noise-aware RL training framework that injects user and tool perturbations into agentic training, consistently improving agent robustness under noisy environments while also boosting performance on clean benchmarks.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>LLMs are increasingly deployed as interactive agents for reasoning, planning, and tool use, achieving strong results on curated benchmarks. However, real-world environments are stochastic and imperfect, with ambiguous user instructions and unreliable tool outputs, causing significant performance degradation. Existing agent training paradigms rely on idealized assumptions and carefully controlled environments, failing to prepare agents for real-world noise.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>RLVR (Reinforcement Learning with Verifiable Rewards) and GRPO (Group Relative Policy Optimization) for agentic training.</li>
+<li>Synthesized interactive environments from domain specifications for scalable agent training.</li>
+<li>Stochastic perturbations in reinforcement learning for robustness (e.g., domain randomization).</li>
+<li>Studies on LLM agent degradation in dynamic and noisy real-world settings.</li>
+<li>Curriculum learning and adaptive difficulty scheduling in RL.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Current agent training paradigms assume idealized environments with curated instructions and stable tool execution, leading to a fundamental mismatch with real-world deployment where user interactions are ambiguous and tool outputs are noisy. Naively injecting noise into training can destabilize learning, and there is no systematic framework for modeling and introducing real-world interaction noise into agentic RL.</p>
+<h3>P — Proposal</h3>
+<p>NoisyAgent is an agentic RL framework that explicitly incorporates two types of interaction noise: user noise (ambiguity and variability in instructions) and tool noise (failures and anomalies in tool execution). Perturbations are applied to a subset of rollouts with a curriculum scheduler that progressively increases noise difficulty based on the performance gap between clean and noisy environments, using group-wise normalization to stabilize training.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>NoisyAgent consistently improves agent robustness under noisy and dynamic environments across multiple benchmarks. Training under noise also yields performance gains on idealized benchmarks, e.g., achieving up to 5-10% relative improvement on standard agent benchmarks (exact numbers not provided in the truncated text).</p>
+<h3>Ablation</h3>
+<p>The curriculum scheduler and partial noise injection (subset of rollouts) are critical for training stability; applying noise to all rollouts or using fixed high noise levels degrades performance. The adaptive difficulty based on the performance gap Δ is essential for balancing challenge and learning.</p>
+<h3>Limitations</h3>
+<p>The paper focuses on two specific noise types (user and tool) and may not cover all real-world imperfections. The noise injection pipeline relies on automated simulation, which may not capture the full diversity of human behavior or tool failures. The approach is evaluated on synthetic benchmarks; real-world deployment validation is limited.</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Bridges the gap between idealized agent training and real-world deployment by explicitly modeling interaction noise.</li>
+<li>Demonstrates that controlled noise exposure can improve generalizable reasoning, relevant to building robust AI systems.</li>
+<li>Provides a practical curriculum-based RL framework that can be integrated into existing agent training pipelines.</li>
+<li>Highlights the importance of environmental uncertainty for safety-critical and user-facing agent applications.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Explore additional noise types (e.g., observation noise, action noise, environmental dynamics shifts) in the NoisyAgent framework.</li>
+<li>[ ] Evaluate NoisyAgent on real-world deployed agent systems to validate robustness gains beyond synthetic benchmarks.</li>
+<li>[ ] Investigate the theoretical connection between noise injection and generalization in agentic RL.</li>
+<li>[ ] Adapt the curriculum scheduler to automatically discover optimal noise schedules without manual tuning.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>在噪声中学习行动：通过噪声环境增强智能体鲁棒性</h1>
+<p><strong>主要结论</strong>
+- LLM智能体在真实部署中因训练环境理想化与部署环境随机化之间的不匹配而性能下降。
+- NoisyAgent在智能体强化学习训练中注入两种噪声（用户噪声和工具噪声）以提升鲁棒性。
+- 课程调度器根据干净与噪声轨迹的性能差距逐步增加噪声难度。
+- 噪声训练不仅提升噪声基准上的鲁棒性，还带来理想化基准上的性能增益。
+- 噪声作为隐式难度增强，促进更通用的推理和决策能力。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>NoisyAgent提出了一种噪声感知的强化学习训练框架，通过注入用户和工具扰动，持续提升智能体在噪声环境下的鲁棒性，同时也在干净基准上取得性能提升。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：LLM越来越多地作为交互式智能体用于推理、规划和工具使用，在精心设计的基准上表现优异。然而，真实环境是随机且不完美的，模糊的用户指令和不可靠的工具输出导致性能显著下降。现有智能体训练范式依赖理想化假设和精心控制的环境，未能为真实世界的噪声做好准备。相关工作：RLVR和GRPO用于智能体训练；从领域规范合成交互环境；强化学习中的随机扰动（如域随机化）；LLM智能体在动态和噪声真实环境中的退化研究；强化学习中的课程学习和自适应难度调度。差距：当前智能体训练范式假设理想化环境（精心策划的指令和稳定的工具执行），与真实部署（用户交互模糊、工具输出有噪声）存在根本性不匹配。简单地在训练中注入噪声会破坏学习稳定性，且缺乏系统性的框架来建模和引入真实世界交互噪声到智能体强化学习中。提案：NoisyAgent是一个智能体强化学习框架，显式包含两种交互噪声：用户噪声（指令的模糊性和变异性）和工具噪声（工具执行的失败和异常）。扰动应用于一部分轨迹，并采用课程调度器根据干净与噪声环境之间的性能差距逐步增加噪声难度，使用组归一化来稳定训练。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>主要结果：NoisyAgent在多个基准上持续提升智能体在噪声和动态环境下的鲁棒性。在噪声下训练还在理想化基准上带来性能增益，例如在标准智能体基准上实现高达5-10%的相对改进（具体数字在截断文本中未提供）。</p>
+<h3>消融实验</h3>
+<p>课程调度器和部分噪声注入（一部分轨迹）对训练稳定性至关重要；对所有轨迹应用噪声或使用固定高噪声水平会降低性能。基于性能差距Δ的自适应难度对于平衡挑战和学习至关重要。</p>
+<h3>局限性</h3>
+<p>本文聚焦于两种特定噪声类型（用户和工具），可能未涵盖所有真实世界的不完美性。噪声注入流程依赖自动化模拟，可能无法捕捉人类行为或工具故障的全部多样性。该方法在合成基准上评估，真实世界部署验证有限。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>通过显式建模交互噪声，弥合了理想化智能体训练与真实世界部署之间的差距。</li>
+<li>证明受控的噪声暴露可以提升通用推理能力，对构建鲁棒AI系统具有重要价值。</li>
+<li>提供了一个实用的基于课程的强化学习框架，可集成到现有智能体训练流程中。</li>
+<li>强调了环境不确定性对于安全关键和面向用户的智能体应用的重要性。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 探索在NoisyAgent框架中引入更多噪声类型（如观测噪声、动作噪声、环境动态变化）。</li>
+<li>[ ] 在真实部署的智能体系统上评估NoisyAgent，验证超越合成基准的鲁棒性增益。</li>
+<li>[ ] 研究噪声注入与智能体强化学习泛化之间的理论联系。</li>
+<li>[ ] 调整课程调度器以自动发现最优噪声调度，无需手动调参。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1325/fig_001.png" alt="Figure 1 : Overview of NoisyAgent.
+We inject structured perturbations into both user instructions and tool responses to simulate real-world imperfections.
+Training is conducted via hybrid rollouts that combine clean and noisy trajectories, together with an adaptive scheduler that increases noise difficulty based on the performance gap Δ \Delta .
+Policy optimization is performed with group-wise normalization to stabilize learning under heterogeneous interaction conditions." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 : Overview of NoisyAgent.
+We inject structured perturbations into both user instructions and tool responses to simulate real-world imperfections.
+Training is conducted via hybrid rollouts that combine clean and noisy trajectories, together with an adaptive scheduler that increases noise difficulty based on the performance gap Δ \Delta .
+Policy optimization is performed with group-wise normalization to stabilize learning under heterogeneous interaction conditions.</span>
+                <span class="lang-zh">图1：NoisyAgent 概述。
+我们向用户指令和工具响应中注入结构化扰动，以模拟现实世界中的不完美情况。
+训练通过混合 rollout 进行，结合了干净轨迹和噪声轨迹，并采用自适应调度器，根据性能差距 Δ \Delta 增加噪声难度。
+策略优化通过分组归一化进行，以在异构交互条件下稳定学习。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1325/fig_002.png" alt="(a) Idealized setting" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">(a) Idealized setting</span>
+                <span class="lang-zh">(a) 理想化设置</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1325/fig_003.png" alt="(a) Idealized setting" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">(a) Idealized setting</span>
+                <span class="lang-zh">(a) 理想化设置</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1325/fig_004.png" alt="(b) Noisy setting" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">(b) Noisy setting</span>
+                <span class="lang-zh">(b) 噪声设置</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.27209</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.27209" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1325';
+  var title = "Learning to Act under Noise: Enhancing Agent Robustness via Noisy Environments";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

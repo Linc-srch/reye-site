@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoundObj: Self-supervised Foundation Models as Rewards for Label-free 3D Object Segmentation | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-27</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.27178" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1328" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">FoundObj: Self-supervised Foundation Models as Rewards for Label-free 3D Object Segmentation</h1>
+        <h1 class="article-title lang-zh">FoundObj：以自监督基础模型作为奖励实现无标签3D物体分割</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">sparse-attention</span>
+          
+          <span class="tag direction-tag">hierarchical-attention</span>
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Zihui Zhang, Zhixuan Sun, Yafei Yang, Jinxi Li, Jiahao Chen, Bo Yang</p>
+        
+      </header>
+
+      
+      
+
+      
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>FoundObj introduces a novel reinforcement learning framework that leverages semantic and geometric priors from self-supervised foundation models as rewards to achieve state-of-the-art label-free 3D object segmentation in complex scenes.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出一种基于强化学习的无标签3D物体分割方法，利用自监督基础模型（DINOv2和TRELLIS）提供的语义与几何先验作为奖励信号，指导超点智能体逐步合并超点。该方法在多个基准上超越现有无监督方法，尤其在零样本和长尾场景中表现突出。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — foundobj</h1>
+<p><strong>Key Takeaways</strong>
+- Proposes a superpoint-based agent that incrementally merges superpoints for object discovery in 3D point clouds.
+- Uses semantic (DINOv2) and geometric (TRELLIS) reward modules from self-supervised foundation models to guide RL-based merging.
+- Outperforms existing label-free methods on multiple benchmarks, especially in zero-shot and long-tail scenarios.
+- Ablation shows both semantic and geometric rewards are crucial; combining them yields best performance.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> FoundObj: Self-supervised Foundation Models as Rewards for Label-free 3D Object Segmentation</li>
+<li><strong>Alias:</strong> foundobj</li>
+<li><strong>Authors:</strong> Zihui Zhang, Zhixuan Sun, Yafei Yang, Jinxi Li, Jiahao Chen, Bo Yang</li>
+<li><strong>arXiv ID:</strong> 2605.27178</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.27178</li>
+<li>HTML: https://arxiv.org/html/2605.27178v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.27178</li>
+<li><strong>Tags:</strong> 3d-object-segmentation, self-supervised-learning, reinforcement-learning, foundation-models, point-cloud</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>FoundObj introduces a novel reinforcement learning framework that leverages semantic and geometric priors from self-supervised foundation models as rewards to achieve state-of-the-art label-free 3D object segmentation in complex scenes.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>3D object segmentation in point clouds typically relies on expensive human annotations. Recent unsupervised methods use self-supervised 2D features (e.g., DINOv2) or geometric priors from object reconstruction models, but they struggle to separate objects of the same category or discover multi-class objects, respectively.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>UnScene3D and Part2Object use DINOv2 features projected to 3D for object discovery but fail to separate same-category objects due to lack of geometric priors.</li>
+<li>GrabS and EvObj use geometric priors from object reconstruction models but are limited to single-class objects.</li>
+<li>EFEM also leverages geometric priors but cannot handle multi-category objects with rich semantic relationships.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing label-free methods either rely solely on semantic priors (failing to separate same-category objects) or geometric priors (limited to single-class objects). No prior work effectively combines both semantic and geometric priors from foundation models for multi-class object discovery in complex 3D scenes.</p>
+<h3>P — Proposal</h3>
+<p>FoundObj uses a superpoint-based agent that incrementally merges neighboring superpoints, guided by two reward modules: a semantic consistency cut (from DINOv2) and a geometric center consistency verification (from TRELLIS). The agent is trained via reinforcement learning without human annotations, enabling robust identification of multi-class objects.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On ScanNet, FoundObj achieves 58.7 mAP@50, outperforming UnScene3D (42.1), Part2Object (45.3), GrabS (38.9), and EFEM (35.2). On S3DIS, it achieves 52.3 mAP@50 vs. 38.7 for UnScene3D. Zero-shot on Matterport3D yields 49.1 mAP@50, surpassing all baselines.</p>
+<h3>Ablation</h3>
+<p>Removing the semantic reward module drops mAP@50 on ScanNet from 58.7 to 44.2; removing the geometric reward module drops to 46.8. Using both rewards yields the best performance, confirming their complementarity.</p>
+<h3>Limitations</h3>
+<p>The method relies on the quality of pretrained foundation models; poor features may degrade performance. The superpoint merging process can be computationally expensive for very large scenes. The approach may still struggle with extremely small or highly occluded objects.</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Demonstrates a principled way to combine semantic and geometric priors from foundation models for unsupervised 3D segmentation.</li>
+<li>Reinforcement learning framework avoids human annotations, making it scalable to new environments.</li>
+<li>Strong zero-shot generalization suggests potential for real-world deployment in robotics and autonomous driving.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Test on outdoor datasets (e.g., Waymo, nuScenes) to evaluate generalization.</li>
+<li>[ ] Explore using more recent foundation models (e.g., DINOv3, 3D-LLMs) to improve feature quality.</li>
+<li>[ ] Investigate efficiency improvements for real-time applications.</li>
+<li>[ ] Extend to instance-level segmentation with object tracking.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>FoundObj：以自监督基础模型作为奖励实现无标签3D物体分割</h1>
+<p><strong>主要结论</strong>
+- 提出基于超点的智能体，通过增量合并超点实现3D点云中的物体发现。
+- 利用自监督基础模型DINOv2（语义）和TRELLIS（几何）作为奖励模块，引导强化学习合并过程。
+- 在多个基准上超越现有无标签方法，尤其在零样本和长尾场景中表现优异。
+- 消融实验表明语义和几何奖励均至关重要，二者结合可获得最佳性能。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>FoundObj提出一种新颖的强化学习框架，利用自监督基础模型的语义和几何先验作为奖励，在复杂场景中实现了最先进的无标签3D物体分割。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>上下文</strong>：3D点云中的物体分割通常依赖昂贵的人工标注。近期无监督方法使用自监督2D特征（如DINOv2）或物体重建模型的几何先验，但分别难以分离同类别物体或发现多类别物体。
+<strong>相关工作</strong>：UnScene3D和Part2Object将DINOv2特征投影到3D进行物体发现，但因缺乏几何先验无法分离同类别物体；GrabS和EvObj使用物体重建模型的几何先验，但仅限于单类别物体；EFEM也利用几何先验，但无法处理具有丰富语义关系的多类别物体。
+<strong>差距</strong>：现有无标签方法要么仅依赖语义先验（无法分离同类别物体），要么仅依赖几何先验（限于单类别物体）。尚无工作有效结合基础模型的语义和几何先验用于复杂3D场景中的多类别物体发现。
+<strong>提案</strong>：FoundObj使用基于超点的智能体，在语义一致性切分（来自DINOv2）和几何中心一致性验证（来自TRELLIS）两个奖励模块的引导下，逐步合并相邻超点。智能体通过强化学习训练，无需人工标注，能够鲁棒地识别多类别物体。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在ScanNet上，FoundObj达到58.7 mAP@50，优于UnScene3D（42.1）、Part2Object（45.3）、GrabS（38.9）和EFEM（35.2）。在S3DIS上，达到52.3 mAP@50，而UnScene3D为38.7。在Matterport3D上的零样本测试获得49.1 mAP@50，超越所有基线。</p>
+<h3>消融实验</h3>
+<p>移除语义奖励模块后，ScanNet上的mAP@50从58.7降至44.2；移除几何奖励模块后降至46.8。同时使用两种奖励获得最佳性能，证实了它们的互补性。</p>
+<h3>局限性</h3>
+<p>该方法依赖预训练基础模型的质量，特征不佳可能降低性能。超点合并过程在非常大的场景中可能计算开销较大。该方法在处理极小或高度遮挡的物体时仍可能表现不佳。</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>展示了将基础模型的语义和几何先验相结合用于无监督3D分割的原则性方法。</li>
+<li>强化学习框架避免了人工标注，使其可扩展到新环境。</li>
+<li>强大的零样本泛化能力表明其在机器人和自动驾驶等实际部署中的潜力。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在室外数据集（如Waymo、nuScenes）上测试以评估泛化能力。</li>
+<li>[ ] 探索使用更新的基础模型（如DINOv3、3D-LLMs）以提升特征质量。</li>
+<li>[ ] 研究效率改进以支持实时应用。</li>
+<li>[ ] 结合物体跟踪扩展到实例级分割。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1328/fig_001.png" alt="Figure 1 : Overview of our method." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1 : Overview of our method.</span>
+                <span class="lang-zh">图1：我们方法的概述。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1328/fig_002.png" alt="Figure 2 : Given a complex indoor 3D scene, our method can not only distinguish multiple neighboring chairs , but also successfully identify a flat cabinet against the wall, whereas baselines fail in one aspect or another." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2 : Given a complex indoor 3D scene, our method can not only distinguish multiple neighboring chairs , but also successfully identify a flat cabinet against the wall, whereas baselines fail in one aspect or another.</span>
+                <span class="lang-zh">图2：给定一个复杂的室内3D场景，我们的方法不仅能区分多个相邻的椅子，还能成功识别靠墙的扁平柜子，而基线方法在某个方面会失败。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1328/fig_003.png" alt="Figure 3 : Workflow of our object discovery agent. Given an input 3D scene composed of initial superpoints, our object discovery agent begins by selecting a seed superpoint and then progressively merges neighboring superpoints, guided by feedback from geometric and semantic reward modules based on self-supervised 2D/3D foundation models." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3 : Workflow of our object discovery agent. Given an input 3D scene composed of initial superpoints, our object discovery agent begins by selecting a seed superpoint and then progressively merges neighboring superpoints, guided by feedback from geometric and semantic reward modules based on self-supervised 2D/3D foundation models.</span>
+                <span class="lang-zh">图3：我们的物体发现代理的工作流程。给定一个由初始超点组成的输入3D场景，我们的物体发现代理首先选择一个种子超点，然后基于自监督2D/3D基础模型的几何和语义奖励模块的反馈，逐步合并相邻超点。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1328/fig_006.png" alt="Figure 6 : Qualitative results on the ScanNet dataset. Red circles highlight the differences." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 6 : Qualitative results on the ScanNet dataset. Red circles highlight the differences.</span>
+                <span class="lang-zh">图6：ScanNet数据集上的定性结果。红色圆圈标出了差异。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1328/fig_007.png" alt="Figure 7 : Qualitative results on the S3DIS dataset. Red circles highlight the differences." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 7 : Qualitative results on the S3DIS dataset. Red circles highlight the differences.</span>
+                <span class="lang-zh">图7：S3DIS数据集上的定性结果。红色圆圈标出了差异。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.27178</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.27178" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1328';
+  var title = "FoundObj: Self-supervised Foundation Models as Rewards for Label-free 3D Object Segmentation";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

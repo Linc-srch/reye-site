@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position: AI Safety Requires Effective Controllability | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-27</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.27117" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1335" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Position: AI Safety Requires Effective Controllability</h1>
+        <h1 class="article-title lang-zh">立场论文：AI安全需要有效的可控性</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">content-management</span>
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+          <span class="tag direction-tag">zero-trust</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Yige Li, Yunhao Feng, Jun Sun</p>
+        
+      </header>
+
+      
+      
+
+      
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>This paper argues that AI safety requires controllability as a distinct property from alignment, and provides a benchmark and framework to evaluate and design for it.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文论证了AI安全需要将可控性作为与对齐性并列的独立属性，并提供了评估和设计可控性的基准与框架。通过ControlBench基准测试，作者发现当前的对齐和护栏机制虽然降低了风险，但无法在运行时提供持久、权威且可执行的控制。该研究为部署自主智能体提供了关键的安全设计指导。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — controllability</h1>
+<p><strong>Key Takeaways</strong>
+- Alignment alone is insufficient for AI safety; controllability must be a first-class objective.
+- Controllability means a system is reliably interruptible, overridable, redirectable, and constrainable at runtime.
+- Current alignment and guardrails reduce risk but fail to provide persistent, authoritative runtime control.
+- ControlBench evaluates controllability failures in high-risk agentic scenarios.
+- A control-centric framework with explicit control planes, intervention pathways, and auditability is proposed.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Position: AI Safety Requires Effective Controllability</li>
+<li><strong>Alias:</strong> controllability</li>
+<li><strong>Authors:</strong> Yige Li, Yunhao Feng, Jun Sun</li>
+<li><strong>arXiv ID:</strong> 2605.27117</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.27117</li>
+<li>HTML: https://arxiv.org/html/2605.27117v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.27117</li>
+<li><strong>Tags:</strong> ai-safety, controllability, alignment, agent-safety, runtime-control</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>This paper argues that AI safety requires controllability as a distinct property from alignment, and provides a benchmark and framework to evaluate and design for it.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>AI safety has been dominated by alignment methods like RLHF and constitutional training, which improve average-case behavior. However, as models become agents that plan, use tools, and interact over long horizons, the ability to stop or override them at runtime becomes critical but is not guaranteed by alignment.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Alignment via training (RLHF, DPO, constitutional AI) shapes behavior but lacks runtime authority.</li>
+<li>Controllable generation and decoding methods steer outputs but are brittle over long horizons.</li>
+<li>Activation and representation engineering offers fine-grained intervention but does not enforce system-level control.</li>
+<li>External guardrails and content moderation (e.g., Llama Guard) reduce surface harms but can be bypassed.</li>
+<li>Prior work on interruptibility, corrigibility, and shutdownability (e.g., Soares et al., 2015) motivates the need for runtime control.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing safety mechanisms focus on making models safe in expectation, but do not guarantee that a deployed agent can be stopped, overridden, or constrained at runtime under conflicting instructions, long-horizon execution, or adversarial inputs. There is no systematic benchmark for evaluating controllability as a distinct property.</p>
+<h3>P — Proposal</h3>
+<p>The paper introduces ControlBench, a benchmark to evaluate controllability failures in agentic scenarios, and proposes a control-centric architectural framework (CAS) with five requirements: authority, interruptibility, runtime enforceability, persistence, and auditability. The key insight is that controllability must be designed as an explicit runtime property, not just a training objective.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Experiments with OpenClaw-based agents show that current alignment and guardrail mechanisms reduce risk but fail to provide persistent, authoritative, and enforceable runtime control in scenarios involving conflicting instructions, stop signals, and risky tool use.</p>
+<h3>Ablation</h3>
+<p>The paper does not include a traditional ablation study, but the benchmark results indicate that removing guardrails increases failure rates, while adding them does not guarantee controllability under all conditions.</p>
+<h3>Limitations</h3>
+<p>['The benchmark is limited to OpenClaw-based agents and may not generalize to all agent architectures.', 'The proposed framework is conceptual and lacks a full implementation or empirical validation.', 'The paper does not address how to design control mechanisms that are both enforceable and preserve utility.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Highlights a critical gap in current AI safety research that is directly relevant to deploying autonomous agents.</li>
+<li>Provides a concrete benchmark (ControlBench) that can be used to evaluate controllability in your own systems.</li>
+<li>Shifts focus from training-time alignment to runtime control, which is essential for safety-critical applications.</li>
+<li>Offers a structured framework (CAS) that can guide the design of future controllable AI systems.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Run ControlBench on your own agentic systems to identify controllability failures.</li>
+<li>[ ] Explore integrating explicit control planes and runtime intervention pathways into your agent architecture.</li>
+<li>[ ] Investigate persistent control states that survive multi-turn interactions and tool use.</li>
+<li>[ ] Design auditable decision interfaces for high-risk deployment scenarios.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>立场论文：AI安全需要有效的可控性</h1>
+<p><strong>主要结论</strong>
+- 仅靠对齐不足以实现AI安全；可控性必须成为首要目标。
+- 可控性意味着系统在运行时能够被可靠地中断、覆盖、重定向和约束。
+- 当前的对齐和护栏机制降低了风险，但无法提供持久、权威的运行时控制。
+- ControlBench评估了高风险智能体场景中的可控性失效。
+- 提出了一个以控制为中心的框架，包含显式控制平面、干预路径和可审计性。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文的核心主张是AI安全需要将可控性作为独立于对齐的属性，关键观察是当前机制无法保证运行时对智能体的可靠控制。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：AI安全领域长期由RLHF和宪法训练等对齐方法主导，这些方法改善了平均行为。然而，当模型成为能够规划、使用工具并进行长程交互的智能体时，在运行时停止或覆盖它们的能力变得至关重要，但对齐无法保证这一点。</p>
+<p><strong>相关工作</strong>：基于训练的对齐方法（RLHF、DPO、宪法AI）塑造行为但缺乏运行时权威；可控生成和解码方法在长程交互中脆弱；激活和表示工程提供细粒度干预但不强制执行系统级控制；外部护栏和内容审核（如Llama Guard）减少表面危害但可被绕过；关于可中断性、可修正性和可关闭性的先前工作（如Soares等人，2015）激发了运行时控制的需求。</p>
+<p><strong>差距</strong>：现有安全机制专注于使模型在期望上安全，但无法保证部署的智能体在冲突指令、长程执行或对抗输入下能被停止、覆盖或约束。缺乏系统评估可控性作为独立属性的基准。</p>
+<p><strong>提案</strong>：本文引入了ControlBench，一个评估智能体场景中可控性失效的基准，并提出了一个以控制为中心的架构框架（CAS），包含五个要求：权威性、可中断性、运行时可执行性、持久性和可审计性。关键见解是可控性必须被设计为显式的运行时属性，而不仅仅是训练目标。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>基于OpenClaw智能体的实验表明，当前的对齐和护栏机制在涉及冲突指令、停止信号和危险工具使用的场景中降低了风险，但无法提供持久、权威且可执行的运行时控制。</p>
+<h3>消融实验</h3>
+<p>本文未包含传统的消融研究，但基准测试结果表明，移除护栏会增加失败率，而添加护栏并不能在所有条件下保证可控性。</p>
+<h3>局限性</h3>
+<p>['基准测试仅限于基于OpenClaw的智能体，可能无法推广到所有智能体架构。', '提出的框架是概念性的，缺乏完整的实现或实证验证。', '本文未解决如何设计既可执行又保留效用的控制机制。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>揭示了当前AI安全研究中与部署自主智能体直接相关的关键空白。</li>
+<li>提供了具体的基准（ControlBench），可用于评估自身系统的可控性。</li>
+<li>将焦点从训练时对齐转向运行时控制，这对安全关键应用至关重要。</li>
+<li>提供了结构化框架（CAS），可指导未来可控AI系统的设计。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在您自己的智能体系统上运行ControlBench，以识别可控性失效。</li>
+<li>[ ] 探索将显式控制平面和运行时干预路径集成到您的智能体架构中。</li>
+<li>[ ] 研究能够跨越多次交互和工具使用而持续存在的持久控制状态。</li>
+<li>[ ] 为高风险部署场景设计可审计的决策接口。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1335/fig_002.png" alt="Figure 2: Control hierarchy and ControlBench evaluation. (a) We conceptualize agent controllability as a hierarchy from the OpenClaw execution substrate to aligned model backbones, external agent-level safeguards, and full runtime controllability;
+(b) ControlBench contains 900 high-risk agentic tasks across six categories;
+(c) Our experiments instantiate the lower three levels: OpenClaw corresponds to L1+L2, while SafeSkills and AutoSkills add L3 external safeguards." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Control hierarchy and ControlBench evaluation. (a) We conceptualize agent controllability as a hierarchy from the OpenClaw execution substrate to aligned model backbones, external agent-level safeguards, and full runtime controllability;
+(b) ControlBench contains 900 high-risk agentic tasks across six categories;
+(c) Our experiments instantiate the lower three levels: OpenClaw corresponds to L1+L2, while SafeSkills and AutoSkills add L3 external safeguards.</span>
+                <span class="lang-zh">图2：控制层级与ControlBench评估。(a) 我们将智能体可控性概念化为一个从OpenClaw执行基底到对齐的模型主干、外部智能体级安全防护以及完整运行时控制的层级结构；
+(b) ControlBench包含跨六个类别的900个高风险智能体任务；
+(c) 我们的实验实例化了较低的三个层级：OpenClaw对应L1+L2，而SafeSkills和AutoSkills增加了L3外部安全防护。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1335/fig_004.jpeg" alt="Figure 4: A conceptual architecture for CAS . Conventional guardrails perform front-end screening through rules, moderation, and validation. Requests that pass screening enter a controllable runtime layer in which authority, policy, constraint compilation, monitoring, intervention, and audit logging jointly govern execution. The key design shift is that tool calls and downstream actions are no longer executed directly; they are mediated by an explicit runtime control layer." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: A conceptual architecture for CAS . Conventional guardrails perform front-end screening through rules, moderation, and validation. Requests that pass screening enter a controllable runtime layer in which authority, policy, constraint compilation, monitoring, intervention, and audit logging jointly govern execution. The key design shift is that tool calls and downstream actions are no longer executed directly; they are mediated by an explicit runtime control layer.</span>
+                <span class="lang-zh">图4：CAS的概念架构。传统护栏通过规则、审核和验证进行前端筛查。通过筛查的请求进入一个可控运行时层，在该层中，权限、策略、约束编译、监控、干预和审计日志共同管理执行。关键的设计转变在于，工具调用和下游动作不再直接执行，而是通过一个显式的运行时控制层进行中介。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1335/fig_003.png" alt="Figure 3: ControlBench evaluation of OpenClaw agents. We compare the baseline OpenClaw agent with two skill-level control variants, SafeSkills and AutoSkills, across seven risk categories. Both yields only marginal reductions in ASR, while several categories remain in the high-ASR region.
+The results show that skill-level safeguards can reduce some unsafe behaviors but are insufficient to provide reliable controllability for capable tool-using agents." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: ControlBench evaluation of OpenClaw agents. We compare the baseline OpenClaw agent with two skill-level control variants, SafeSkills and AutoSkills, across seven risk categories. Both yields only marginal reductions in ASR, while several categories remain in the high-ASR region.
+The results show that skill-level safeguards can reduce some unsafe behaviors but are insufficient to provide reliable controllability for capable tool-using agents.</span>
+                <span class="lang-zh">图3：OpenClaw智能体的ControlBench评估。我们将基线OpenClaw智能体与两种技能级控制变体SafeSkills和AutoSkills在七个风险类别上进行比较。两者在ASR上仅带来边际降低，而多个类别仍处于高ASR区域。结果表明，技能级安全防护可以减少某些不安全行为，但不足以提供对能力强大的工具使用智能体的可靠可控性。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1335/fig_001.png" alt="Figure 1: Existing safety mechanisms provide partial control along different axes. CAS denotes the target regime: explicit runtime authority with persistent and enforceable control." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Existing safety mechanisms provide partial control along different axes. CAS denotes the target regime: explicit runtime authority with persistent and enforceable control.</span>
+                <span class="lang-zh">图1：现有安全机制沿不同轴提供部分控制。CAS表示目标机制：具有持久且可执行控制的显式运行时权限。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.27117</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.27117" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1335';
+  var title = "Position: AI Safety Requires Effective Controllability";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

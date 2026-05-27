@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pair-In, Pair-Out: Latent Multi-Token Prediction for Efficient LLMs | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-27</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.27255" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1323" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Pair-In, Pair-Out: Latent Multi-Token Prediction for Efficient LLMs</h1>
+        <h1 class="article-title lang-zh">Pair-In, Pair-Out: 面向高效大语言模型的潜在空间多令牌预测</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">sparse-attention</span>
+          
+          <span class="tag direction-tag">differentiable-routing</span>
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Wenhui Tan, Minghao Li, Xiaoqian Ma, Siqi Fan, Xiusheng Huang, Liujie Zhang, Ruihua Song, Weihang Chen</p>
+        
+      </header>
+
+      
+      
+
+      
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>PIPO proposes a symmetric pair-in/pair-out architecture that halves input length and doubles output tokens per step, while using a confidence head trained via OPD to eliminate the verifier cost of speculative decoding.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出PIPO框架，通过对称的“成对输入/成对输出”架构，统一了输入侧潜在压缩与输出侧多令牌预测，并利用在线策略蒸馏训练的轻量级置信度头替代了推测解码中昂贵的验证器。在Qwen3.5-4B/9B骨干模型上，PIPO实现了最高2.64倍的首令牌延迟加速和2.07倍的每输出令牌延迟加速，并在多个基准测试中将pass@4指标提升了最多7.15个百分点。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — pipo</h1>
+<p><strong>Key Takeaways</strong>
+- Unifies input-side latent compression and output-side multi-token prediction (MTP) into a single framework.
+- Replaces the expensive verifier in speculative decoding with a lightweight confidence head trained via on-policy distillation (OPD).
+- Achieves up to 2.64x TTFT and 2.07x TPOT speedups on Qwen3.5-4B/9B backbones.
+- Improves pass@4 by up to +7.15 points over regular decoding on AIME 2025, GPQA-Diamond, LiveCodeBench v6, and LongBench v2.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Pair-In, Pair-Out: Latent Multi-Token Prediction for Efficient LLMs</li>
+<li><strong>Alias:</strong> pipo</li>
+<li><strong>Authors:</strong> Wenhui Tan, Minghao Li, Xiaoqian Ma, Siqi Fan, Xiusheng Huang, Liujie Zhang, Ruihua Song, Weihang Chen</li>
+<li><strong>arXiv ID:</strong> 2605.27255</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.27255</li>
+<li>HTML: https://arxiv.org/html/2605.27255v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.27255</li>
+<li><strong>Tags:</strong> multi-token-prediction, speculative-decoding, latent-compression, efficient-llm, on-policy-distillation</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>PIPO proposes a symmetric pair-in/pair-out architecture that halves input length and doubles output tokens per step, while using a confidence head trained via OPD to eliminate the verifier cost of speculative decoding.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Long chain-of-thought reasoning makes autoregressive decoding the dominant inference cost for LLMs. Existing methods separately target input-side latent compression or output-side multi-token prediction (MTP), but output-side methods still require an expensive verifier pass to validate draft tokens.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Speculative decoding (Leviathan et al., 2023) drafts tokens with a small model and verifies with the large backbone.</li>
+<li>EAGLE (Li et al., 2024b) extends speculative decoding to hidden-feature space with parallel tree verification.</li>
+<li>Medusa (Cai et al., 2024) adds multiple decoding heads for parallel token prediction.</li>
+<li>Modern LLMs (e.g., Qwen3.5) natively include MTP heads during pretraining.</li>
+<li>Latent compression methods like CoLaR (Tan et al., 2026) compress reasoning chains but assume unimodal Gaussian distributions.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Input-side compression and output-side MTP have been pursued independently, missing a unified design. Output-side methods still incur a costly verifier forward pass per step, which can erase speed gains at long contexts.</p>
+<h3>P — Proposal</h3>
+<p>PIPO treats a latent compressor and an MTP head as mirror-image operations: the compressor folds two input tokens into one latent, and the MTP head unfolds one hidden state into one additional output token. A lightweight confidence head, trained alongside on-policy distillation (OPD) with negligible extra cost, replaces the verifier by predicting acceptance probability.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On Qwen3.5-4B and Qwen3.5-9B backbones across AIME 2025, GPQA-Diamond, LiveCodeBench v6, and LongBench v2, PIPO improves pass@4 over regular decoding by up to +7.15 points, with up to 2.64x TTFT and 2.07x TPOT speedups.</p>
+<h3>Ablation</h3>
+<p>The confidence head trained via OPD achieves acceptance rates comparable to the full verifier pass, with negligible overhead; the advantage of PIPO widens as context budget grows (2K to 32K).</p>
+<h3>Limitations</h3>
+<p>['Requires a pretrained MTP head in the backbone, limiting applicability to models without native MTP.', "The confidence head may not perfectly match the verifier's rejection-sampling distribution in all settings.", 'Speedups depend on the acceptance rate of draft tokens, which may vary across tasks and domains.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Directly addresses the inference bottleneck of long reasoning chains, critical for scaling LLM reasoning.</li>
+<li>Provides a principled unification of two previously separate lines of work (input compression and output MTP).</li>
+<li>The confidence head approach offers a practical way to eliminate verifier cost without sacrificing reliability.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Apply PIPO to other backbone families (e.g., Llama, DeepSeek) to test generality.</li>
+<li>[ ] Explore extending the pair-in/pair-out idea to larger token groups (e.g., triplets).</li>
+<li>[ ] Investigate the confidence head's calibration under distribution shift (e.g., out-of-domain tasks).</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>Pair-In, Pair-Out: 面向高效大语言模型的潜在空间多令牌预测</h1>
+<p><strong>主要结论</strong>
+- 将输入侧潜在压缩与输出侧多令牌预测统一到一个单一框架中。
+- 用通过在线策略蒸馏训练的轻量级置信度头替代推测解码中的昂贵验证器。
+- 在Qwen3.5-4B/9B骨干模型上实现最高2.64倍TTFT和2.07倍TPOT加速。
+- 在AIME 2025、GPQA-Diamond、LiveCodeBench v6和LongBench v2上，pass@4指标相比常规解码提升最多7.15个百分点。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>PIPO提出了一种对称的成对输入/成对输出架构，将输入长度减半并每步输出双倍令牌，同时使用通过OPD训练的置信度头消除了推测解码的验证器成本。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>上下文</strong>：长思维链推理使得自回归解码成为大语言模型的主要推理成本。现有方法分别针对输入侧潜在压缩或输出侧多令牌预测，但输出侧方法仍需昂贵的验证器前向传播来验证草稿令牌。</p>
+<p><strong>相关工作</strong>：推测解码使用小模型生成草稿令牌并由大骨干模型验证；EAGLE将推测解码扩展到隐藏特征空间并采用并行树验证；Medusa添加多个解码头进行并行令牌预测；现代LLM（如Qwen3.5）在预训练中已原生包含MTP头；CoLaR等潜在压缩方法压缩推理链但假设单峰高斯分布。</p>
+<p><strong>差距</strong>：输入侧压缩和输出侧MTP被独立研究，缺乏统一设计。输出侧方法每步仍需昂贵的验证器前向传播，在长上下文场景下可能抵消加速收益。</p>
+<p><strong>提案</strong>：PIPO将潜在压缩器和MTP头视为镜像操作：压缩器将两个输入令牌折叠为一个潜在表示，MTP头将一个隐藏状态展开为一个额外的输出令牌。一个轻量级置信度头通过在线策略蒸馏训练，以可忽略的额外成本预测接受概率，从而替代验证器。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在Qwen3.5-4B和Qwen3.5-9B骨干模型上，针对AIME 2025、GPQA-Diamond、LiveCodeBench v6和LongBench v2基准测试，PIPO相比常规解码将pass@4指标提升了最多7.15个百分点，同时实现了最高2.64倍的TTFT加速和2.07倍的TPOT加速。</p>
+<h3>消融实验</h3>
+<p>通过在线策略蒸馏训练的置信度头实现了与完整验证器前向传播相当的接受率，且额外开销可忽略不计；随着上下文预算从2K增加到32K，PIPO的优势进一步扩大。</p>
+<h3>局限性</h3>
+<p>['要求骨干模型具备预训练的MTP头，限制了在无原生MTP模型上的适用性。', '置信度头可能无法在所有设置下完美匹配验证器的拒绝采样分布。', '加速效果取决于草稿令牌的接受率，而接受率可能因任务和领域而异。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>直接解决了长推理链的推理瓶颈，对扩展LLM推理能力至关重要。</li>
+<li>为之前两个独立的研究方向（输入压缩和输出MTP）提供了原则性的统一。</li>
+<li>置信度头方法提供了一种实用途径，在不牺牲可靠性的前提下消除验证器成本。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 将PIPO应用于其他骨干模型家族（如Llama、DeepSeek）以测试其通用性。</li>
+<li>[ ] 探索将成对输入/成对输出思想扩展到更大的令牌组（如三元组）。</li>
+<li>[ ] 研究置信度头在分布偏移（如域外任务）下的校准性能。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1323/fig_001.png" alt="Figure 1: Comparison of input-side methods, output-side methods, and our proposed PIPO.
+PIPO treats a latent compressor and a multi-token prediction (MTP) head as mirror-image operations around the backbone, and trains a lightweight confidence head that replaces the verifier of speculative decoding (e.g., EAGLE)." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Comparison of input-side methods, output-side methods, and our proposed PIPO.
+PIPO treats a latent compressor and a multi-token prediction (MTP) head as mirror-image operations around the backbone, and trains a lightweight confidence head that replaces the verifier of speculative decoding (e.g., EAGLE).</span>
+                <span class="lang-zh">Figure 1: 输入侧方法、输出侧方法与我们提出的PIPO的对比。
+PIPO将潜在压缩器和多token预测（MTP）头视为围绕主干网络的镜像操作，并训练一个轻量级的置信度头，以替代推测解码（例如EAGLE）的验证器。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1323/fig_002.png" alt="Figure 2: Overall pass@4 of PIPO and baseline methods on the four evaluation benchmarks, as the response context budget varies from 2 2 K to 32 32 K." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Overall pass@4 of PIPO and baseline methods on the four evaluation benchmarks, as the response context budget varies from 2 2 K to 32 32 K.</span>
+                <span class="lang-zh">Figure 2: 在四个评估基准上，PIPO与基线方法的整体pass@4，响应上下文预算从2 2 K变化到32 32 K。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1323/fig_003.png" alt="Figure 3: Illustration of PIPO’s architecture (i), SFT training process (ii), and OPD training process (iii)." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: Illustration of PIPO’s architecture (i), SFT training process (ii), and OPD training process (iii).</span>
+                <span class="lang-zh">Figure 3: PIPO架构（i）、SFT训练过程（ii）和OPD训练过程（iii）的示意图。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1323/fig_004.png" alt="Table 1: Main results on AIME 2025, GPQA-Diamond, LiveCodeBench v6, and LongBench v2 (short).
+All methods share the same Qwen3.5-4B / 9B backbone and a 32 32 K-slot response budget. Bold marks the best score in each column; underline marks the second best." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Table 1: Main results on AIME 2025, GPQA-Diamond, LiveCodeBench v6, and LongBench v2 (short).
+All methods share the same Qwen3.5-4B / 9B backbone and a 32 32 K-slot response budget. Bold marks the best score in each column; underline marks the second best.</span>
+                <span class="lang-zh">Table 1: 在AIME 2025、GPQA-Diamond、LiveCodeBench v6和LongBench v2（短文本）上的主要结果。
+所有方法共享相同的Qwen3.5-4B / 9B主干网络和32 32 K槽位的响应预算。加粗标记每列最佳分数；下划线标记第二佳分数。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1323/fig_005.png" alt="Figure 4: TTFT and TPOT on Qwen3.5-4B at different levels of input length, averaged over 16 16 trials." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: TTFT and TPOT on Qwen3.5-4B at different levels of input length, averaged over 16 16 trials.</span>
+                <span class="lang-zh">Figure 4: 在不同输入长度下，Qwen3.5-4B的TTFT和TPOT，平均16 16次试验。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.27255</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.27255" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1323';
+  var title = "Pair-In, Pair-Out: Latent Multi-Token Prediction for Efficient LLMs";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

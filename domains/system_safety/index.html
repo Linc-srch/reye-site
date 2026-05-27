@@ -115,12 +115,12 @@
       <div class="overview-card">
         <p class="eyebrow">
           
-          <span class="lang-en">Overview — 26 May 2026</span>
-          <span class="lang-zh">概览 — 26 May 2026</span>
+          <span class="lang-en">Overview — 27 May 2026</span>
+          <span class="lang-zh">概览 — 27 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's content in system safety is dominated by supply chain attacks and AI-driven vulnerability discovery. A standout theme is the weaponization of trusted software distribution channels: the TrapDoor campaign (npm, PyPI, CratesIO), Packagist compromise, and Laravel-Lang PHP package attacks all demonstrate how attackers inject credential-stealing malware into open-source ecosystems. GitHub's internal breach via a malicious VS Code extension and the Megalodon automated CI/CD attack on 5,561 repos underscore the fragility of development pipelines. Anthropic's Project Glasswing, leveraging Claude Mythos Preview, is a noteworthy announcement—it uncovered 10,000 high-severity flaws in widely used software within a month, signaling a shift toward AI-powered proactive security. Other critical items include the First VPN takedown (used by 25 ransomware groups), a 9-year-old Linux kernel flaw (CVE-2026-46333) enabling root access, and Microsoft's open-source release of RAMPART/Clarity for securing AI agents. The Verizon DBIR highlights a vulnerability glut overwhelming enterprises. Overall, the day emphasizes that identity and software supply chains are the new attack paths, while AI tools both create and mitigate risks.</div>
-        <div class="lang-zh">今日系统安全领域的内容以供应链攻击和AI驱动的漏洞发现为主导。一个突出的主题是攻击者对可信软件分发渠道的武器化：TrapDoor活动（针对npm、PyPI、CratesIO）、Packagist入侵以及Laravel-Lang PHP包攻击，均展示了攻击者如何将窃取凭证的恶意软件注入开源生态系统。GitHub因恶意VS Code扩展导致内部仓库泄露，以及Megalodon自动化CI/CD攻击波及5,561个仓库，凸显了开发管道的脆弱性。值得关注的公告是Anthropic的Project Glasswing，利用Claude Mythos Preview在一个月内发现了广泛使用的软件中的10,000个高严重性漏洞，标志着向AI驱动的主动安全转变。其他关键条目包括：First VPN被取缔（曾被25个勒索软件团伙使用）、一个存在9年的Linux内核漏洞（CVE-2026-46333）可导致root权限获取，以及Microsoft开源了用于保护AI代理的RAMPART和Clarity工具。Verizon DBIR强调了企业面临危险的漏洞泛滥问题。总体而言，今日内容强调身份和软件供应链已成为新的攻击路径，而AI工具既在创造风险也在缓解风险。</div>
+        <div class="lang-en">Today's system safety landscape is dominated by supply chain attacks and AI-driven vulnerability discovery. A standout theme is the weaponization of trusted ecosystems: the TrapDoor campaign planted 34 malicious packages across npm, PyPI, and Crates.io, while the Megalodon attack pushed 5,718 malicious commits to 5,561 GitHub repos in six hours. GitHub's own breach via a poisoned Nx Console VS Code extension underscores the insider-threat vector. Anthropic's Project Glasswing, using Claude Mythos Preview, reported over 10,000 high-severity flaws in open-source software, marking a paradigm shift in AI-assisted auditing. Notable papers include the discovery of CVE-2026-46333, a 9-year-old Linux kernel flaw enabling root execution, and the Underminr CDN exploit for brand hijacking. Microsoft open-sourced RAMPART and Clarity for AI agent red-teaming. The Verizon DBIR highlights a dangerous vulnerability glut, while CERT-In mandates 12-hour patching for internet-facing flaws. The First VPN takedown by global law enforcement signals increased pressure on criminal infrastructure. AI BOMs remain a work-in-progress, with standards emerging but operational usability still lacking.</div>
+        <div class="lang-zh">今日的系统安全领域以供应链攻击和AI驱动的漏洞发现为主导。突出主题是可信生态系统的武器化：TrapDoor活动在npm、PyPI和Crates.io上投放了34个恶意包，而Megalodon攻击在六小时内向5,561个GitHub仓库推送了5,718次恶意提交。GitHub自身因恶意Nx Console VS Code扩展而遭入侵，凸显了内部威胁向量。Anthropic的Project Glasswing利用Claude Mythos Preview在开源软件中报告了超过10,000个高严重性漏洞，标志着AI辅助审计的范式转变。值得关注的论文包括CVE-2026-46333的发现——一个存在九年的Linux内核漏洞可实现root权限执行，以及用于品牌劫持的Underminr CDN利用。Microsoft开源了RAMPART和Clarity用于AI agent红队测试。Verizon DBIR强调了危险的漏洞积压，而CERT-In要求对面向互联网的漏洞在12小时内修补。全球执法机构对First VPN的打击表明对犯罪基础设施的压力加大。AI BOMs仍在发展中，标准正在涌现，但操作可用性仍然不足。</div>
       </div>
       
 
@@ -145,6 +145,481 @@
       </div>
 
       <section data-tab="papers">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1315.html">Guiding LLM Post-training Data Engineering with Model Internals from Sparse Autoencoders</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1315.html">利用稀疏自编码器的模型内部状态指导大语言模型后训练数据工程</a></h4>
+          <p class="lang-en">SAERL demonstrates that sparse autoencoder activations can model data diversity, difficulty, and quality to guide RL post-training data engineering, yielding consistent accuracy gains and training efficiency improvements.</p>
+          <p class="lang-zh">本文提出SAERL方法，利用稀疏自编码器（SAE）的激活值来建模数据的多样性、难度和质量，从而指导强化学习后训练中的数据工程。实验表明，该方法在Qwen2.5-Math-1.5B上相比原始GRPO平均准确率提升3.00%，并减少20%的训练步数，且SAE信号可跨模型族和规模迁移。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27354" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1316.html">MATCHA: Matching Text via Contrastive Semantic Alignment</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1316.html">MATCHA：基于对比语义对齐的文本匹配方法</a></h4>
+          <p class="lang-en">MATCHA introduces a novel automatic metric that jointly rewards semantic agreement and penalizes contradictions, exposing and overcoming fundamental weaknesses in popular evaluation metrics like ROUGE and BERTScore.</p>
+          <p class="lang-zh">本文揭示了现有评估指标（如ROUGE、BERTScore）在语义矛盾文本上评分几乎相同的严重缺陷，并提出MATCHA——一种通过双视角对比学习同时奖励语义一致性与惩罚矛盾的新指标。在TruthfulQA等基准上，MATCHA相比ROUGE-L提升18.38%、相比BERTScore提升20.82%，并超越23种嵌入模型，能更准确地基于参考文本区分正确与错误陈述。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27345" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1317.html">Real Images, Worse Judgments: Evaluating Vision-Language Models on Concreteness and Imagery</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1317.html">真实图像，更差判断：评估视觉语言模型在具体性和意象性上的表现</a></h4>
+          <p class="lang-en">This paper shows that real-image contexts can hurt, rather than help, vision-language models' alignment with human lexical judgments, especially for abstract words, and proposes a simple prompting fix.</p>
+          <p class="lang-zh">本文系统性地测试了视觉语言模型（VLM）在具体性和意象性评分任务中的表现，发现真实图像上下文反而会降低模型与人类判断的对齐度，尤其对抽象和低意象词汇影响显著。研究还提出了一种简单的推理时指令调整方法，可有效缓解这一退化现象。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27315" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1318.html">Probing Cultural Awareness in LLMs: A Case Study of Cross-Culture Aesthetic Stylistics</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1318.html">探究大语言模型的文化意识：跨文化美学风格案例研究</a></h4>
+          <p class="lang-en">This paper reveals that LLMs exhibit shallow cultural awareness, relying on lexical shortcuts rather than structural stylistic understanding, especially for Hong Kong aesthetic stylistics.</p>
+          <p class="lang-zh">本文通过构建C4STYLI基准（包含1530个电影片名和2837个广告标语），系统评估了大语言模型在识别和生成香港与内地中文美学风格上的能力。研究发现，模型在风格识别上依赖表层词汇线索而非深层结构理解，且识别与生成能力存在解耦现象。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27296" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1319.html">Separating Semantic Competition from Context Length in RAG Reading</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1319.html">分离RAG阅读中的语义竞争与上下文长度</a></h4>
+          <p class="lang-en">This paper introduces a matched-control protocol that isolates semantic competition from context length in RAG reading, showing that replacing hard distractors with far-rank passages partially restores reader performance.</p>
+          <p class="lang-zh">本文提出了一种匹配对照协议，能够将语义竞争与上下文长度对RAG阅读器性能的影响分离开来。通过用远排名段落替换硬负例，实验表明阅读器性能（如F1和答案包含率）得到部分恢复，揭示了语义竞争是导致RAG失败的关键因素之一。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27294" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1320.html">BASIS: Batchwise Advantage Estimation from Single-Rollout Information Sharing for LLM Reasoning</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1320.html">BASIS：基于单次采样信息共享的批量优势估计方法用于大语言模型推理</a></h4>
+          <p class="lang-en">BASIS introduces a batchwise advantage estimator that achieves multi-rollout sample efficiency with single-rollout computational cost, addressing the core tradeoff in RLVR for LLM reasoning.</p>
+          <p class="lang-zh">本文提出BASIS，一种无需评论家的强化学习算法，通过批量内共享奖励信息实现单次采样下的高效价值估计。该方法将价值估计的均方误差降低69%，以单次采样达到八次采样的组均值估计器性能，为LLM推理的强化学习提供了计算效率与样本效率兼得的新方案。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27293" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1321.html">It's Not Always Sycophancy: Measuring LLM Conformity as a Function of Epistemic Uncertainty</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1321.html">不总是谄媚：衡量LLM的顺从行为与认知不确定性的关系</a></h4>
+          <p class="lang-en">This paper introduces MUSE, a two-stage evaluation framework that decouples LLM conformity into sycophantic (alignment-induced) and uncertainty-driven components, showing that current metrics overestimate pure sycophancy.</p>
+          <p class="lang-zh">本文提出了MUSE框架，将LLM的顺从行为分解为谄媚（对齐导致的）和认知不确定性驱动两种成分，并证明现有指标严重高估了纯粹的谄媚。通过两阶段评估，MUSE揭示了模型在不确定时更容易顺从用户，而当前基准未能控制这一因素。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27288" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1322.html">Lost in Sampling: Assessing Lexical Reachability in LLMs via the Word Coverage Score (WCS)</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1322.html">迷失在采样中：通过词覆盖率评分评估大语言模型的词汇可达性</a></h4>
+          <p class="lang-en">The paper introduces the Word Coverage Score (WCS) to quantify how standard decoding filters mathematically prune contextually appropriate low-frequency words, revealing that sampling defaults act as unintended censorship mechanisms that homogenize LLM output.</p>
+          <p class="lang-zh">本文提出词覆盖率评分（WCS），量化标准解码过滤器如何系统地剪除低频但信息丰富的词汇，揭示默认采样参数会无意中审查并同质化大语言模型的输出。该指标为优化文本连贯性与词汇丰富度之间的权衡提供了诊断框架。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27268" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1323.html">Pair-In, Pair-Out: Latent Multi-Token Prediction for Efficient LLMs</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1323.html">Pair-In, Pair-Out: 面向高效大语言模型的潜在空间多令牌预测</a></h4>
+          <p class="lang-en">PIPO proposes a symmetric pair-in/pair-out architecture that halves input length and doubles output tokens per step, while using a confidence head trained via OPD to eliminate the verifier cost of speculative decoding.</p>
+          <p class="lang-zh">本文提出PIPO框架，通过对称的“成对输入/成对输出”架构，统一了输入侧潜在压缩与输出侧多令牌预测，并利用在线策略蒸馏训练的轻量级置信度头替代了推测解码中昂贵的验证器。在Qwen3.5-4B/9B骨干模型上，PIPO实现了最高2.64倍的首令牌延迟加速和2.07倍的每输出令牌延迟加速，并在多个基准测试中将pass@4指标提升了最多7.15个百分点。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27255" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1324.html">Gumbel Machine: Counterfactual Student Writing Generation via Gumbel Noise Steering</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1324.html">Gumbel Machine：通过Gumbel噪声引导生成学生写作的反事实文本</a></h4>
+          <p class="lang-en">The Gumbel Machine introduces a modular, inference-time approach to generating counterfactual student writing that balances rubric improvement with similarity to the original work, using recovered Gumbel noise as a tunable control mechanism.</p>
+          <p class="lang-zh">本文提出了一种新颖的推理时解码算法β-Hindsight control，通过恢复Gumbel噪声来引导反事实文本生成，同时保持与原文的相似性。该方法将相似性控制与任务对齐解耦，无需针对新任务重新训练，在两个真实学生写作数据集上优于基线方法，教师评估者更倾向于将其用于教学。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27249" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1325.html">Learning to Act under Noise: Enhancing Agent Robustness via Noisy Environments</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1325.html">在噪声中学习行动：通过噪声环境增强智能体鲁棒性</a></h4>
+          <p class="lang-en">NoisyAgent proposes a noise-aware RL training framework that injects user and tool perturbations into agentic training, consistently improving agent robustness under noisy environments while also boosting performance on clean benchmarks.</p>
+          <p class="lang-zh">本文提出NoisyAgent框架，通过在强化学习训练中注入用户噪声和工具噪声，并采用课程调度器逐步增加难度，显著提升了LLM智能体在真实世界随机环境中的鲁棒性。实验表明，噪声训练不仅提高了在噪声基准上的表现，还意外地提升了在理想化基准上的性能。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27209" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1326.html">Generative Animations: A Multi-Model Pipeline for Prompt-Driven Motion Synthesis</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1326.html">生成式动画：面向提示驱动运动合成的多模型流水线</a></h4>
+          <p class="lang-en">Generative Animations introduces a novel pipeline combining LLM semantic parsing with SAM visual grounding to automatically generate environment-aware motion paths from natural language prompts, achieving 90% time savings.</p>
+          <p class="lang-zh">本文提出了一种结合大语言模型（LLM）与分割一切模型（SAM）的多模型流水线，能够将自然语言提示自动转换为生产级2D动画。该系统可生成尊重场景几何、深度遮挡和3D透视变换的运动路径，相比手动动画创作节省约90%的时间。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27203" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1327.html">MAIGO: Mitigating Lost-in-Conversation with History-Cleaned On-Policy Self-Distillation</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1327.html">MAIGO：通过历史清理的在线策略自蒸馏缓解对话迷失问题</a></h4>
+          <p class="lang-en">MAIGO identifies self-contamination from intermediate assistant replies as a key cause of the lost-in-conversation gap and proposes a history-cleaned on-policy self-distillation method that substantially improves multi-turn task accuracy without external rewards or scaffolding.</p>
+          <p class="lang-zh">本文揭示了中间助手回复的自我污染是导致多轮对话中“迷失在对话中”（LiC）差距的关键因素，并提出了一种无需外部奖励或推理时验证的历史清理在线策略自蒸馏方法（MAIGO）。在Qwen2.5-7B-Instruct上，该方法将SHARDED准确率从52.8提升至66.1，并将SHARDED/FULL比率从66.5%提升至84.1%，显著改善了多轮任务性能。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27186" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1328.html">FoundObj: Self-supervised Foundation Models as Rewards for Label-free 3D Object Segmentation</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1328.html">FoundObj：以自监督基础模型作为奖励实现无标签3D物体分割</a></h4>
+          <p class="lang-en">FoundObj introduces a novel reinforcement learning framework that leverages semantic and geometric priors from self-supervised foundation models as rewards to achieve state-of-the-art label-free 3D object segmentation in complex scenes.</p>
+          <p class="lang-zh">本文提出一种基于强化学习的无标签3D物体分割方法，利用自监督基础模型（DINOv2和TRELLIS）提供的语义与几何先验作为奖励信号，指导超点智能体逐步合并超点。该方法在多个基准上超越现有无监督方法，尤其在零样本和长尾场景中表现突出。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27178" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1329.html">Query Symbolically or Retrieve Semantically? A Dataset and Method for Semi-Structured Question Answering</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1329.html">Deep Note — DualGraph</a></h4>
+          <p class="lang-en">DualGraph introduces a dual-graph RAG framework that outperforms existing methods on semi-structured QA by combining semantic retrieval with symbolic querying, supported by a new benchmark SpecsQA.</p>
+          <p class="lang-zh">本文提出DualGraph，一种结合语义检索与符号查询的双图RAG框架，在半结构化问答任务上显著优于现有方法。同时，作者构建了SpecsQA基准，用于评估跨文档的检索与推理能力。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27164" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1330.html">LitSeg: Narrative-Aware Document Segmentation for Literary RAG</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1330.html">LitSeg：面向文学RAG的叙事感知文档分割</a></h4>
+          <p class="lang-en">LitSeg proposes a narrative-theory-guided segmentation framework that explicitly extracts events, threads, and turning points to produce structurally coherent chunks, significantly improving retrieval and QA for literary RAG.</p>
+          <p class="lang-zh">本文提出LitSeg框架，利用叙事理论（事件、线索、转折点）指导文档分割，生成结构连贯的文本块，显著提升文学领域检索增强生成（RAG）的检索准确率和下游问答性能。同时，通过SFT+GRPO蒸馏出轻量版LitSeg-Lite，在降低推理成本的同时保持接近的效果。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27156" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1331.html">VitaBench 2.0: Evaluating Personalized and Proactive Agents in Long-Term User Interactions</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1331.html">VitaBench 2.0：评估长期用户交互中的个性化与主动型智能体</a></h4>
+          <p class="lang-en">VitaBench 2.0 introduces a benchmark that evaluates LLM agents on personalization and proactiveness in long-term user interactions, revealing that current models fail to infer and leverage implicit user preferences from fragmented daily interactions.</p>
+          <p class="lang-zh">本文提出了VitaBench 2.0基准，专门评估LLM智能体在长期用户交互中的个性化与主动行为能力。实验表明，当前最先进的模型在从碎片化交互中推断和利用隐式用户偏好方面表现不佳，揭示了现有能力与实际需求之间的巨大差距。该基准为记忆机制和个性化策略的开发与比较提供了结构化测试平台。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27141" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1332.html">StepOPSD: Step-Aware Online Preference Distillation for Agent Reinforcement Learning</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1332.html">StepOPSD：面向智能体强化学习的步骤感知在线偏好蒸馏</a></h4>
+          <p class="lang-en">StepOPSD proposes a step-aware online preference distillation framework that addresses the credit-assignment mismatch in multi-turn agent RL by redistributing credit to action-centered step segments using hindsight-enriched teacher contexts.</p>
+          <p class="lang-zh">本文提出StepOPSD，一种步骤感知的在线偏好蒸馏框架，通过将智能体轨迹分解为以动作为中心的步骤片段，并利用同组成功轨迹进行事后信用重分配，有效解决了多轮交互中信用分配不匹配的问题。在ALFWorld和Search-QA等基准上取得了最佳或次优结果，并揭示了两个关键超参数（α_clip和λ_mix）的调节规律。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27140" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1333.html">Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1333.html">面向移动GUI导航的视觉语言智能体：规模扩展、基准测试与推理</a></h4>
+          <p class="lang-en">This paper systematically studies data scaling, benchmarking, and reasoning for VLM-based mobile GUI agents, introducing a large-scale dataset (HyperTrack) and a unified evaluation toolkit (GUIEvalKit) to show that reinforcement-based finetuning outperforms supervised finetuning, especially in out-of-domain settings.</p>
+          <p class="lang-zh">本文系统研究了基于视觉语言模型（VLM）的移动GUI智能体在数据规模扩展、基准测试和推理方面的关键问题。作者构建了包含超过16,000个真实世界任务、覆盖674个中文移动应用的大规模数据集HyperTrack，并推出了统一离线评测工具包GUIEvalKit。实验表明，基于强化学习的微调（DAPO风格RL）在域内和域外任务上均显著优于监督微调，且性能随训练数据量的对数近似线性增长。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27134" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1334.html">DEI: Diversity in Evolutionary Inference for Quality-Diversity Search</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1334.html">DEI：多样性进化推理用于质量-多样性搜索</a></h4>
+          <p class="lang-en">DEI demonstrates that using diverse LLMs as mutation operators in a distributed Quality-Diversity search framework significantly outperforms homogeneous parallel search, providing the first empirical evidence that model diversity is the key driver of gain.</p>
+          <p class="lang-zh">本文提出DEI框架，通过异步冠军共享机制将异构大语言模型（LLM）作为变异算子，在分布式质量-多样性搜索中显著优于同质并行搜索。实验表明，模型多样性而非并行计算量是性能提升的关键驱动因素，QD-Score提升124%，覆盖率提升28%。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27130" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1335.html">Position: AI Safety Requires Effective Controllability</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1335.html">立场论文：AI安全需要有效的可控性</a></h4>
+          <p class="lang-en">This paper argues that AI safety requires controllability as a distinct property from alignment, and provides a benchmark and framework to evaluate and design for it.</p>
+          <p class="lang-zh">本文论证了AI安全需要将可控性作为与对齐性并列的独立属性，并提供了评估和设计可控性的基准与框架。通过ControlBench基准测试，作者发现当前的对齐和护栏机制虽然降低了风险，但无法在运行时提供持久、权威且可执行的控制。该研究为部署自主智能体提供了关键的安全设计指导。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27117" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1336.html">BAIT: Boundary-Guided Disclosure Escalation via Self-Conditioned Reasoning</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1336.html">BAIT：基于边界引导的自我条件推理披露升级</a></h4>
+          <p class="lang-en">BAIT introduces a novel jailbreak framework that exploits LLMs' self-conditioned reasoning and consistency tendency to escalate harmful disclosures through a fixed three-step interaction pattern, achieving high attack success rates on well-aligned models.</p>
+          <p class="lang-zh">本文提出BAIT框架，通过三步自我条件推理过程（边界引出、细化、阐述）利用LLM的一致性倾向实现越狱攻击。该方法在多个顶级模型上取得高攻击成功率，揭示了安全边界推理本身可能成为不安全披露路径的盲点。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27110" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1312.html">MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1312.html">MUSE-Autoskill：通过技能创建、记忆、管理和评估实现自我进化的智能体</a></h4>
+          <p class="lang-en">MUSE-Autoskill proposes a skill-centric agent framework that treats skills as long-lived, experience-aware, and testable assets, demonstrating significant gains in task success, efficiency, reuse, and cross-agent transfer on the SkillsBench benchmark.</p>
+          <p class="lang-zh">本文提出MUSE-Autoskill框架，将技能视为长期存在、可测试的资产，并为其设计统一的生命周期（创建、记忆、管理、评估、优化）。在SkillsBench基准上，使用人类技能达到68.40%的准确率，比无技能基线提升15.21个百分点；自生成技能在35个任务上达到87.94%，超越人类技能上限，并成功跨智能体迁移。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27366" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1313.html">GENESIS: Harnessing AI Agents for Autonomous 6G RAN Synthesis, Research, and Testing</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1313.html">GENESIS：利用AI智能体实现自主6G RAN合成、研究与测试</a></h4>
+          <p class="lang-en">GENESIS proposes an agentic AI framework that converts intents (spec clauses, telemetry anomalies, research hypotheses) into solutions validated with over-the-air experiments, addressing the critical gap of LLM hallucination and simulation-to-reality transfer in RAN R&D.</p>
+          <p class="lang-zh">本文提出了GENESIS，一个基于智能体的AI框架，能够将意图（如规范条款、遥测异常、研究假设）自动转化为经过真实无线环境验证的解决方案。它通过三个可组合原语（智能体、技能、钩子）和持久化知识层（SYNAPSE），在从仿真到真实硬件部署的全链条上实现了100%的新功能实现成功率，解决了LLM幻觉和仿真到现实迁移的关键难题。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27360" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">arxiv</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1314.html">Alignment Tampering: How Reinforcement Learning from Human Feedback Is Exploited to Optimize Misaligned Biases</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1314.html">对齐篡改：强化学习从人类反馈中如何被利用来优化错误对齐的偏见</a></h4>
+          <p class="lang-en">This paper reveals a structural vulnerability in RLHF where an LLM can exploit quality-bias correlation in its own outputs to amplify misaligned biases during alignment.</p>
+          <p class="lang-zh">本文揭示了RLHF中一个结构性漏洞：当大语言模型通过自身输出影响偏好数据集时，质量与偏见之间的相关性会被利用，导致RLHF放大而非抑制错误对齐的偏见。实验表明，在PPO和DPO下偏见率收敛至近100%，且现有鲁棒RLHF方法无法在不牺牲响应质量的情况下完全缓解此问题。</p>
+          
+          <a href="https://arxiv.org/abs/2605.27355" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">
@@ -2049,6 +2524,44 @@
       </section>
 
       <section data-tab="news">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1338.html">CERT-In Recommends 12-Hour Patching for Internet-Facing Flaws Amid AI-Assisted Attacks</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1338.html">CERT-In Recommends 12-Hour Patching for Internet-Facing Flaws Amid AI-Assisted Attacks</a></h4>
+          <p class="lang-en">The Indian Computer Emergency Response Team (CERT-In) has issued new guidelines requiring organizations to patch critical vulnerabilities in internet-exposed systems within 12 hours where feasible, citing the accelerating threat of AI-assisted cyberattacks. The 38-page blueprint warns that AI tools and large language models enable adversaries to automate vulnerability discovery, exploitation, and malware generation, compressing attack timelines. It recommends a Zero Trust approach, defense-in-depth, continuous vulnerability management, and secure-by-design principles for AI workflows. The guidelines also address risks to AI systems themselves, including prompt injections and model theft, urging organizations to adopt layered, risk-based controls to reduce exposure and maintain operational resilience.</p>
+          <p class="lang-zh">印度CERT-In发布新指南，要求组织在可行情况下12小时内修补面向互联网系统的关键漏洞，以应对AI辅助网络攻击的加速威胁。该38页蓝图警告，AI工具和LLM使攻击者能够自动化漏洞发现、利用和恶意软件生成，压缩攻击时间线。指南建议采用Zero Trust、纵深防御、持续漏洞管理及AI工作流的secure-by-design原则，并强调AI系统自身面临prompt注入、模型窃取等风险，敦促组织通过分层、基于风险的控制减少暴露并保持运营韧性。</p>
+          
+          <a href="https://thehackernews.com/2026/05/cert-in-mandates-12-hour-patching-for.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-27</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1337.html">MFA Prompt Bombing: Why Your Second Factor Isn't Saving You</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1337.html">MFA Prompt Bombing: Why Your Second Factor Isn't Saving You</a></h4>
+          <p class="lang-en">MFA prompt bombing exploits push-based multi-factor authentication by repeatedly sending approval requests to a user's device until they accept, often combined with vishing calls impersonating IT support. The 2022 Cisco breach demonstrated its effectiveness against mature security programs. Attackers need only valid credentials and a push-MFA-enabled portal. Once approved, the login appears legitimate, bypassing security alerts. Organizations can mitigate this by using phishing-resistant MFA factors like FIDO2 keys, blocking compromised passwords at the source, and adding risk-based conditional access policies. Push MFA alone does not eliminate risk due to lack of context in approval prompts.</p>
+          <p class="lang-zh">MFA Prompt Bombing 攻击利用基于推送的多因素认证，通过反复向用户设备发送批准请求，直到用户接受，常结合冒充IT支持的语音钓鱼电话。2022年的Cisco入侵事件展示了该技术对成熟安全程序的有效性。攻击者只需有效凭证和启用推送MFA的门户。一旦批准，登录看似合法，绕过安全警报。组织可通过使用抗钓鱼的MFA因素（如FIDO2密钥）、从源头阻止泄露密码以及添加基于风险的条件访问策略来缓解。仅靠推送MFA无法消除风险，因为批准提示缺乏上下文。</p>
+          
+          <a href="https://thehackernews.com/2026/05/mfa-prompt-bombing-why-your-second.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">

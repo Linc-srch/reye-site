@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GENESIS: Harnessing AI Agents for Autonomous 6G RAN Synthesis, Research, and Testing | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-27</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.27360" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1313" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">GENESIS: Harnessing AI Agents for Autonomous 6G RAN Synthesis, Research, and Testing</h1>
+        <h1 class="article-title lang-zh">GENESIS：利用AI智能体实现自主6G RAN合成、研究与测试</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">differentiable-routing</span>
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+          <span class="tag direction-tag">zero-trust</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Tamerlan Aghayev, Maxime Elkael, Michele Polese, Minh Dat Nguyen, Gabriele Gemmi, Andrea Lacava, Ali Saeizadeh, Reshma Prasad, Paolo Testolina, Angelo Feraudo, Soumendra Nanda, Pedram Johari, Salvatore D'Oro, Tommaso Melodia</p>
+        
+      </header>
+
+      
+      
+
+      
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>GENESIS proposes an agentic AI framework that converts intents (spec clauses, telemetry anomalies, research hypotheses) into solutions validated with over-the-air experiments, addressing the critical gap of LLM hallucination and simulation-to-reality transfer in RAN R&amp;D.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出了GENESIS，一个基于智能体的AI框架，能够将意图（如规范条款、遥测异常、研究假设）自动转化为经过真实无线环境验证的解决方案。它通过三个可组合原语（智能体、技能、钩子）和持久化知识层（SYNAPSE），在从仿真到真实硬件部署的全链条上实现了100%的新功能实现成功率，解决了LLM幻觉和仿真到现实迁移的关键难题。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — genesis</h1>
+<p><strong>Key Takeaways</strong>
+- GENESIS is an agentic AI framework that automates the full 6G RAN R&amp;D lifecycle from specification to over-the-air validation.
+- It achieves 100% success rate in implementing new stack features, while baseline Claude Code with Opus 4.7 consistently fails.
+- The framework uses three composable primitives (agents, skills, hooks) and a knowledge layer (SYNAPSE) for ground truth and artifact persistence.
+- Six agentic pipelines cover synthesize, test, harden, optimize, discover, and secure network functions.
+- Validation spans a three-tier continuum from simulator to emulation (Colosseum) to over-the-air (OTA) deployment on production-grade testbeds.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> GENESIS: Harnessing AI Agents for Autonomous 6G RAN Synthesis, Research, and Testing</li>
+<li><strong>Alias:</strong> genesis</li>
+<li><strong>Authors:</strong> Tamerlan Aghayev, Maxime Elkael, Michele Polese, Minh Dat Nguyen, Gabriele Gemmi, Andrea Lacava, Ali Saeizadeh, Reshma Prasad, Paolo Testolina, Angelo Feraudo, Soumendra Nanda, Pedram Johari, Salvatore D'Oro, Tommaso Melodia</li>
+<li><strong>arXiv ID:</strong> 2605.27360</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.27360</li>
+<li>HTML: https://arxiv.org/html/2605.27360v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.27360</li>
+<li><strong>Tags:</strong> agentic-ai, 6g-ran, over-the-air-validation, llm-for-networks, autonomous-rd</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>GENESIS proposes an agentic AI framework that converts intents (spec clauses, telemetry anomalies, research hypotheses) into solutions validated with over-the-air experiments, addressing the critical gap of LLM hallucination and simulation-to-reality transfer in RAN R&amp;D.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Cellular R&amp;D is throttled by six structural processes that each consume months of manual engineering work per iteration. While LLMs have accelerated general software engineering, they hallucinate APIs and mis-read specifications, killing RAN interoperability, and rely on simulations that break on real hardware.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>Multi-agent frameworks (AutoGen, MetaGPT, CrewAI, Claude Code) show strong results on SWE-bench but fail on RAN engineering due to API hallucination and specification misinterpretation.</li>
+<li>Traditional RAN R&amp;D cycles average 74 days (90th percentile: 207 days) for a feature from first code change to stable merge.</li>
+<li>O-RAN and RICs were intended to bypass vendor lock-in, but production stacks expose limited telemetry and control, constraining AI optimization.</li>
+<li>LLM-based code generation for networking has been explored, but not with closed-loop over-the-air validation.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing LLM agents hallucinate RAN-specific APIs and misinterpret 3GPP specifications, producing code that may compile or run in simulation but fails on real hardware and multi-vendor interfaces. There is no existing framework that autonomously validates generated RAN code through a closed loop of over-the-air experiments and persistent knowledge accumulation.</p>
+<h3>P — Proposal</h3>
+<p>GENESIS is an agentic AI framework built on three composable primitives (agents, skills, hooks) and a knowledge layer (SYNAPSE) that serves as both ground truth source and artifact repository. It routes intents through six capability pipelines (synthesize, test, harden, optimize, discover, secure) and validates outputs across a three-tier continuum from RFSIM through emulation (Colosseum) to over-the-air deployment on production-grade testbeds (X5G, Arena).</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Across multiple statistically independent experiments, GENESIS achieves 100% success rate in implementing new stack features, while baseline Claude Code with Opus 4.7 consistently fails at each attempt. Three case studies are presented: (i) synthesizing and testing 3GPP RRC.ConnMean KPM, (ii) synthesizing, testing, and hardening Conditional Handover with closed-loop xApp over E2SM-RC, and (iii) researching new RAN scheduling variants from hypothesis through code, integration, and comparison with state of the art.</p>
+<h3>Ablation</h3>
+<p>The paper profiles token utilization and cost across different LLMs (Claude Opus 4.7, Sonnet 4.6, gpt-oss, Llama 4, Phi, Gemma) but does not report a dedicated ablation study isolating individual components.</p>
+<h3>Limitations</h3>
+<p>["The framework's performance is demonstrated on a specific set of testbeds and LLMs; generalization to other RAN stacks and commercial models is not fully explored.", 'Token utilization and cost profiling is provided but no detailed ablation on the contribution of each primitive (agents, skills, hooks) is reported.', 'The 100% success rate is based on a limited number of experiments; scalability to more complex, multi-vendor scenarios remains to be validated.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Directly addresses the simulation-to-reality gap that plagues RAN research, offering a pathway to validate AI-generated code on real hardware.</li>
+<li>The persistent knowledge layer (SYNAPSE) enables compounding capabilities across runs, which is crucial for long-term autonomous R&amp;D.</li>
+<li>Relevant to researchers working on O-RAN, 5G/6G prototyping, and AI-for-networks, as it provides a concrete framework for closed-loop experimentation.</li>
+<li>Demonstrates that agentic AI can overcome LLM hallucination in a high-stakes domain (telecom standards) through deterministic execution and real-world feedback.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Evaluate GENESIS on multi-vendor RAN stacks and commercial 5G deployments to test interoperability.</li>
+<li>[ ] Perform ablation studies to quantify the contribution of each primitive (agents, skills, hooks) and the knowledge layer.</li>
+<li>[ ] Extend the framework to cover more 3GPP features and security vulnerabilities (e.g., fuzzing, adversarial attacks).</li>
+<li>[ ] Integrate with open-source RAN projects (e.g., OpenAirInterface, srsRAN) to broaden the user base.</li>
+<li>[ ] Explore cost-accuracy trade-offs by benchmarking more open-weight LLMs on the same RAN tasks.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>GENESIS：利用AI智能体实现自主6G RAN合成、研究与测试</h1>
+<p><strong>主要结论</strong>
+- GENESIS是一个智能体AI框架，可自动化6G RAN研发全生命周期，从规范到空中接口验证。
+- 在实现新协议栈功能时，GENESIS达到100%成功率，而基线Claude Code with Opus 4.7始终失败。
+- 框架使用三个可组合原语（智能体、技能、钩子）和一个知识层（SYNAPSE）来保证事实正确性和工件持久化。
+- 六条智能体流水线覆盖网络功能的合成、测试、加固、优化、发现和安全。
+- 验证跨越从仿真器到仿真平台（Colosseum）再到生产级测试床空中接口部署的三级连续体。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>GENESIS提出了一个智能体AI框架，将意图转化为经过空中接口实验验证的解决方案，解决了RAN研发中LLM幻觉和仿真到现实迁移的关键空白。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：蜂窝网络研发受限于六个结构性流程，每个迭代周期需耗费数月人工工程。虽然LLM加速了通用软件工程，但它们会幻觉API并误读规范，破坏RAN互操作性，且依赖在真实硬件上失效的仿真。</p>
+<p><strong>相关工作</strong>：多智能体框架（AutoGen、MetaGPT、CrewAI、Claude Code）在SWE-bench上表现强劲，但因API幻觉和规范误解在RAN工程中失败。传统RAN研发周期平均74天（90百分位：207天）。O-RAN和RIC旨在绕过供应商锁定，但生产栈暴露的遥测和控制有限。基于LLM的网络代码生成已有探索，但未实现闭环空中接口验证。</p>
+<p><strong>空白</strong>：现有LLM智能体幻觉RAN特定API并误解3GPP规范，生成的代码可能在仿真中编译运行，但在真实硬件和多供应商接口上失败。目前没有框架能通过空中接口实验的闭环和持久知识积累来自动验证生成的RAN代码。</p>
+<p><strong>方案</strong>：GENESIS是一个基于三个可组合原语（智能体、技能、钩子）和知识层（SYNAPSE，既作为事实来源又作为工件仓库）的智能体AI框架。它将意图路由到六条能力流水线（合成、测试、加固、优化、发现、安全），并通过从RFSIM经仿真平台（Colosseum）到生产级测试床（X5G、Arena）空中接口部署的三级连续体验证输出。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在多个统计独立的实验中，GENESIS在实现新协议栈功能时达到100%成功率，而基线Claude Code with Opus 4.7每次尝试均失败。论文展示了三个案例研究：(i) 合成并测试3GPP RRC.ConnMean KPM；(ii) 合成、测试并加固条件切换，通过E2SM-RC实现闭环xApp；(iii) 从假设到代码、集成并与最新技术比较，研究新的RAN调度变体。</p>
+<h3>消融实验</h3>
+<p>论文分析了不同LLM（Claude Opus 4.7、Sonnet 4.6、gpt-oss、Llama 4、Phi、Gemma）的令牌利用和成本，但未报告专门针对单个组件的消融研究。</p>
+<h3>局限性</h3>
+<p>['框架的性能仅在特定测试床和LLM上展示；尚未充分探索对其他RAN栈和商业模型的泛化能力。', '提供了令牌利用和成本分析，但未报告每个原语（智能体、技能、钩子）贡献的详细消融。', '100%成功率基于有限数量的实验；在更复杂的多供应商场景中的可扩展性仍有待验证。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>直接解决了困扰RAN研究的仿真到现实鸿沟，为在真实硬件上验证AI生成代码提供了途径。</li>
+<li>持久知识层（SYNAPSE）使跨运行的能力累积成为可能，这对长期自主研发至关重要。</li>
+<li>对从事O-RAN、5G/6G原型设计和AI-for-networks的研究人员具有参考价值，因为它提供了一个闭环实验的具体框架。</li>
+<li>证明了在电信标准这一高风险领域，通过确定性执行和真实世界反馈，智能体AI可以克服LLM幻觉。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在多供应商RAN栈和商业5G部署上评估GENESIS，以测试互操作性。</li>
+<li>[ ] 进行消融研究，量化每个原语（智能体、技能、钩子）和知识层的贡献。</li>
+<li>[ ] 扩展框架以覆盖更多3GPP特性和安全漏洞（例如模糊测试、对抗攻击）。</li>
+<li>[ ] 与开源RAN项目（如OpenAirInterface、srsRAN）集成，以扩大用户基础。</li>
+<li>[ ] 通过在相同RAN任务上基准测试更多开放权重LLM，探索成本-准确性权衡。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1313/fig_001.png" alt="Figure 1: Genesis architecture, organized as four horizontal layers tied together by the Synapse knowledge plane and a pluggable LLM backend. A single intent (a specification clause, a KPI anomaly, or a research hypothesis) enters at the top. The agentic framework routes it through one of six capability pipelines ( Synthesize , Test , Harden , Optimize , Discover , Secure ), composed at run-time from a pool of agent specialists (DevOps, RAN, Radio, UE, Testbed, Emulation, among others). The deterministic execution layer hosts ∼ \sim 23 parameterized skills ( build , run , configure , deploy , experiment , … \ldots ) and hooks for observability, policy gates, and audit. The substrate layer provides a three-tier validation continuum from RFSIM through emulation (Colosseum with hardware-in-the-loop) to OTA deployment on production-grade testbeds (X5G, Arena). Synapse serves as both source of ground truth (3GPP/O-RAN specs via hybrid retrieval) and recipient of every artifact each run produces (traces, logs, code diffs with spec-to-code traceability). LLM instances are pluggable, mixing commercial cloud models (e.g., Claude Opus 4.7, Sonnet 4.6) with open-weight models served locally (e.g., gpt-oss, Llama 4, Phi, Gemma). The whole system runs as a closed loop in which the testbed and the knowledge plane co-evolve with the agentic framework." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Genesis architecture, organized as four horizontal layers tied together by the Synapse knowledge plane and a pluggable LLM backend. A single intent (a specification clause, a KPI anomaly, or a research hypothesis) enters at the top. The agentic framework routes it through one of six capability pipelines ( Synthesize , Test , Harden , Optimize , Discover , Secure ), composed at run-time from a pool of agent specialists (DevOps, RAN, Radio, UE, Testbed, Emulation, among others). The deterministic execution layer hosts ∼ \sim 23 parameterized skills ( build , run , configure , deploy , experiment , … \ldots ) and hooks for observability, policy gates, and audit. The substrate layer provides a three-tier validation continuum from RFSIM through emulation (Colosseum with hardware-in-the-loop) to OTA deployment on production-grade testbeds (X5G, Arena). Synapse serves as both source of ground truth (3GPP/O-RAN specs via hybrid retrieval) and recipient of every artifact each run produces (traces, logs, code diffs with spec-to-code traceability). LLM instances are pluggable, mixing commercial cloud models (e.g., Claude Opus 4.7, Sonnet 4.6) with open-weight models served locally (e.g., gpt-oss, Llama 4, Phi, Gemma). The whole system runs as a closed loop in which the testbed and the knowledge plane co-evolve with the agentic framework.</span>
+                <span class="lang-zh">图1：Genesis架构，由Synapse知识平面和可插拔的LLM后端连接四个水平层组成。单个意图（规范条款、KPI异常或研究假设）从顶层输入。智能体框架将其路由至六个能力管道之一（Synthesize、Test、Harden、Optimize、Discover、Secure），这些管道在运行时由一组专家智能体（DevOps、RAN、Radio、UE、Testbed、Emulation等）组合而成。确定性执行层托管约23个参数化技能（build、run、configure、deploy、experiment……）以及可观测性、策略门控和审计的钩子。底层提供从RFSIM经仿真（含硬件在环的Colosseum）到生产级测试平台（X5G、Arena）上OTA部署的三级验证连续体。Synapse既充当事实来源（通过混合检索获取3GPP/O-RAN规范），又接收每次运行产生的所有工件（跟踪、日志、含规范到代码可追溯性的代码差异）。LLM实例是可插拔的，混合了商业云模型（例如Claude Opus 4.7、Sonnet 4.6）和本地服务的开放权重模型（例如gpt-oss、Llama 4、Phi、Gemma）。整个系统作为闭环运行，其中测试平台和知识平面与智能体框架共同演进。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1313/fig_005.png" alt="Figure 5: Per-stage Synthesize pipeline trace for Case Study 1 and the RRC.ConnMean-specific artifact each produced. Stages marked by an asterisk require a human approval." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 5: Per-stage Synthesize pipeline trace for Case Study 1 and the RRC.ConnMean-specific artifact each produced. Stages marked by an asterisk require a human approval.</span>
+                <span class="lang-zh">图5：案例研究1的逐阶段Synthesize管道跟踪及每个阶段产生的RRC.ConnMean特定工件。标有星号的阶段需要人工审批。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1313/fig_007.png" alt="Figure 8: Logical architecture of the end-to-end CHO use case. Solid boxes (left) mark baseline OAI 2026.w21 components. Dashed boxes (right) mark modules synthesized by Genesis . Components marked by an asterisk are contributed by OAI MR !3879 and not part of the 2026.w21 baseline. The additions span three layers: a UE -side conditional- reconfiguration cache with an A4 evaluator, a CU -side CHO state machine that emits the F1AP CHO ASN.1 sequence and exposes new E2SM-RC POLICY/INSERT Style 3 endpoints, and a FlexRIC-hosted anti-ping-pong xApp that closes the loop over E2." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 8: Logical architecture of the end-to-end CHO use case. Solid boxes (left) mark baseline OAI 2026.w21 components. Dashed boxes (right) mark modules synthesized by Genesis . Components marked by an asterisk are contributed by OAI MR !3879 and not part of the 2026.w21 baseline. The additions span three layers: a UE -side conditional- reconfiguration cache with an A4 evaluator, a CU -side CHO state machine that emits the F1AP CHO ASN.1 sequence and exposes new E2SM-RC POLICY/INSERT Style 3 endpoints, and a FlexRIC-hosted anti-ping-pong xApp that closes the loop over E2.</span>
+                <span class="lang-zh">图8：端到端CHO用例的逻辑架构。左侧实线框标记OAI 2026.w21基线组件。右侧虚线框标记由Genesis合成的模块。标有星号的组件由OAI MR !3879贡献，不属于2026.w21基线部分。新增内容涵盖三个层：UE侧的条件重配置缓存（含A4评估器）、CU侧的CHO状态机（发出F1AP CHO ASN.1序列并暴露新的E2SM-RC POLICY/INSERT Style 3端点），以及由FlexRIC托管的抗乒乓xApp（通过E2形成闭环）。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1313/fig_008.png" alt="Figure 9: Per-stage Synthesize pipeline trace for Case Study 2 and the CHO-specific artifact each produced. Stages marked by an asterisk require a human approval." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 9: Per-stage Synthesize pipeline trace for Case Study 2 and the CHO-specific artifact each produced. Stages marked by an asterisk require a human approval.</span>
+                <span class="lang-zh">图9：案例研究2的逐阶段Synthesize管道跟踪及每个阶段产生的CHO特定工件。标有星号的阶段需要人工审批。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1313/fig_010.png" alt="Figure 14: Mapping of ALLSTaR scheduling synthesis and discovery capabilities into the Genesis agentic discovery pipeline." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 14: Mapping of ALLSTaR scheduling synthesis and discovery capabilities into the Genesis agentic discovery pipeline.</span>
+                <span class="lang-zh">图14：将ALLSTaR调度合成与发现能力映射到Genesis智能体发现管道中。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.27360</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.27360" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1313';
+  var title = "GENESIS: Harnessing AI Agents for Autonomous 6G RAN Synthesis, Research, and Testing";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

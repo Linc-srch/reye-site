@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generative Animations: A Multi-Model Pipeline for Prompt-Driven Motion Synthesis | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-27</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.27203" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1326" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">Generative Animations: A Multi-Model Pipeline for Prompt-Driven Motion Synthesis</h1>
+        <h1 class="article-title lang-zh">生成式动画：面向提示驱动运动合成的多模型流水线</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">content-management</span>
+          
+          <span class="tag direction-tag">editorial-workflow</span>
+          
+          <span class="tag direction-tag">digital-publishing</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">Mannat Khurana, Sanyam Jain, Rishav Agarwal</p>
+        
+      </header>
+
+      
+      
+
+      
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>Generative Animations introduces a novel pipeline combining LLM semantic parsing with SAM visual grounding to automatically generate environment-aware motion paths from natural language prompts, achieving 90% time savings.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出了一种结合大语言模型（LLM）与分割一切模型（SAM）的多模型流水线，能够将自然语言提示自动转换为生产级2D动画。该系统可生成尊重场景几何、深度遮挡和3D透视变换的运动路径，相比手动动画创作节省约90%的时间。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — generative-animations</h1>
+<p><strong>Key Takeaways</strong>
+- A multi-model pipeline (LLM + SAM) translates natural language prompts into production-ready 2D animations.
+- The system automatically generates motion paths that respect scene geometry, depth occlusions, and 3D perspective transforms.
+- Achieves ~90% time savings compared to manual animation authoring in tools like Adobe InDesign/Express.
+- Demonstrates three use cases: contour-following, orbital with z-order, and perspective-aligned motion.
+- Pipeline is platform-agnostic and integrates with existing animation engines.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> Generative Animations: A Multi-Model Pipeline for Prompt-Driven Motion Synthesis</li>
+<li><strong>Alias:</strong> generative-animations</li>
+<li><strong>Authors:</strong> Mannat Khurana, Sanyam Jain, Rishav Agarwal</li>
+<li><strong>arXiv ID:</strong> 2605.27203</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.27203</li>
+<li>HTML: https://arxiv.org/html/2605.27203v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.27203</li>
+<li><strong>Tags:</strong> animation, llm, sam, prompt-driven, motion-synthesis</li>
+<li><strong>Domains:</strong> system_safety</li>
+<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>Generative Animations introduces a novel pipeline combining LLM semantic parsing with SAM visual grounding to automatically generate environment-aware motion paths from natural language prompts, achieving 90% time savings.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Creating custom motion paths in professional tools like Adobe After Effects or streamlined apps like Canva requires manual selection of presets, plotting Bézier points, and configuring timing. This process is time-consuming (5-10 minutes per animation) and creates a gap between creative vision and execution, especially for non-specialists.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>LLMs for creative applications: orchestrating multi-step workflows from high-level instructions (e.g., code generation, image editing).</li>
+<li>Visual foundation models: SAM for zero-shot segmentation, Grounding DINO for text-conditioned detection.</li>
+<li>Text-to-motion generation: MDM and MotionGPT for 3D skeletal motion from text.</li>
+<li>Animation authoring tools: After Effects, Motion, Lottie – all require manual path specification.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing text-to-motion methods focus on 3D skeletal animation, not 2D motion paths for arbitrary graphic elements in document layouts. Manual animation authoring remains a bottleneck, requiring significant time and expertise even in streamlined tools.</p>
+<h3>P — Proposal</h3>
+<p>A four-stage pipeline: (1) LLM (GPT-4) parses user prompt into structured JSON intent; (2) SAM generates pixel-accurate mask of the reference entity; (3) vectorization extracts Bézier path via Laplacian smoothing and Voronoi thinning; (4) assembly maps parameters to the host application's animation engine. Key insight: chaining LLM with SAM enables automatic geometry-aware path synthesis that respects scene contours, depth ordering, and 3D transforms.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>Three use cases demonstrated: (1) Contour-following (Mario on hills) – animation in under 2 seconds vs. 5-10 minutes manually. (2) Orbital animation with z-order awareness (Moon around Earth) – dynamic z-order assignment creates seamless pseudo-3D orbit. (3) Perspective-aligned motion (tilted text block) – motion vector projected into object's 3D coordinate space, automatically rotated by 45° to match vanishing point.</p>
+<h3>Ablation</h3>
+<p>The multi-candidate resolution strategy for SAM grounding: if multiple objects match the LLM's entity description, a single user point-click disambiguates, maintaining minimal interaction overhead while ensuring zero-error grounding in cluttered scenes.</p>
+<h3>Limitations</h3>
+<p>['Requires a single user point-click for disambiguation when multiple objects match the prompt.', 'Currently limited to 2D motion paths; 3D transforms are handled via projection into existing object space, not full 3D scene generation.', 'Dependent on the quality of SAM segmentation and LLM parsing; edge cases with ambiguous prompts may need manual correction.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Directly addresses the time bottleneck in animation authoring, relevant to your work on creative tools and human-AI collaboration.</li>
+<li>The multi-model chaining approach (LLM + SAM) is a practical example of combining language understanding with visual grounding for design automation.</li>
+<li>Demonstrates how to make professional animation accessible to non-specialists, aligning with your interest in democratizing creative tools.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Explore integration with other design tools (e.g., Figma, Sketch) to broaden applicability.</li>
+<li>[ ] Investigate using more advanced LLMs (e.g., GPT-4o) for richer semantic parsing and multi-step animation sequences.</li>
+<li>[ ] Extend the pipeline to handle 3D scene generation from scratch, not just projection onto existing 3D transforms.</li>
+<li>[ ] Evaluate user satisfaction and learning curve compared to manual authoring in a controlled study.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>生成式动画：面向提示驱动运动合成的多模型流水线</h1>
+<p><strong>主要结论</strong>
+- 多模型流水线（LLM + SAM）将自然语言提示转换为生产级2D动画。
+- 系统自动生成尊重场景几何、深度遮挡和3D透视变换的运动路径。
+- 相比Adobe InDesign/Express等工具的手动动画创作，节省约90%时间。
+- 展示了三种用例：轮廓跟随、带z-order的轨道运动、透视对齐运动。
+- 流水线平台无关，可集成到现有动画引擎中。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>本文提出了一种结合LLM语义解析与SAM视觉定位的新型流水线，可从自然语言提示自动生成环境感知的运动路径，实现90%的时间节省。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p><strong>背景</strong>：在专业工具（如Adobe After Effects）或简化应用（如Canva）中创建自定义运动路径需要手动选择预设、绘制贝塞尔曲线和配置时序，每个动画耗时5-10分钟，在创意愿景与执行之间形成鸿沟，尤其对非专业人士。</p>
+<p><strong>相关工作</strong>：LLM用于创意应用（如代码生成、图像编辑）；视觉基础模型（SAM用于零样本分割，Grounding DINO用于文本条件检测）；文本到运动生成（MDM、MotionGPT用于3D骨骼运动）；动画创作工具（After Effects、Motion、Lottie）均需手动指定路径。</p>
+<p><strong>差距</strong>：现有文本到运动方法聚焦于3D骨骼动画，而非文档布局中任意图形元素的2D运动路径。手动动画创作仍是瓶颈，即使在简化工具中也需大量时间和专业知识。</p>
+<p><strong>提案</strong>：一个四阶段流水线：(1) LLM（GPT-4）将用户提示解析为结构化JSON意图；(2) SAM生成参考实体的像素级精确掩码；(3) 通过拉普拉斯平滑和Voronoi细化提取贝塞尔路径；(4) 组装将参数映射到宿主应用的动画引擎。关键洞察：将LLM与SAM串联可实现自动几何感知路径合成，尊重场景轮廓、深度顺序和3D变换。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>展示了三种用例：(1) 轮廓跟随（山丘上的马里奥）——动画在2秒内完成，而手动需5-10分钟。(2) 带z-order感知的轨道动画（月球绕地球）——动态z-order分配创建无缝的伪3D轨道。(3) 透视对齐运动（倾斜文本块）——运动向量投影到对象的3D坐标空间，自动旋转45°以匹配消失点。</p>
+<h3>消融实验</h3>
+<p>SAM定位的多候选分辨率策略：当多个对象匹配LLM的实体描述时，用户单次点击即可消除歧义，在保持最小交互开销的同时确保杂乱场景中的零错误定位。</p>
+<h3>局限性</h3>
+<p>['当多个对象匹配提示时，需要用户单次点击消除歧义。', '目前限于2D运动路径；3D变换通过投影到现有对象空间处理，而非完整的3D场景生成。', '依赖SAM分割和LLM解析的质量；歧义提示的边缘情况可能需要手动修正。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>直接解决了动画创作中的时间瓶颈，与你在创意工具和人机协作方面的工作相关。</li>
+<li>多模型串联方法（LLM + SAM）是将语言理解与视觉定位结合用于设计自动化的实际案例。</li>
+<li>展示了如何让非专业人士也能使用专业动画，与你普及创意工具的兴趣一致。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 探索与其他设计工具（如Figma、Sketch）的集成，以拓宽适用性。</li>
+<li>[ ] 研究使用更先进的LLM（如GPT-4o）进行更丰富的语义解析和多步动画序列。</li>
+<li>[ ] 扩展流水线以处理从零开始的3D场景生成，而不仅仅是投影到现有3D变换。</li>
+<li>[ ] 在受控研究中评估用户满意度和学习曲线，与手动创作进行比较。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1326/fig_002.png" alt="Figure 2: Unified System Architecture: The pipeline translates nat-" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Unified System Architecture: The pipeline translates nat-</span>
+                <span class="lang-zh">图2：统一系统架构：该pipeline将自然语言翻译为</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1326/fig_003.png" alt="Figure 4: Depth Extension: The system segments Earth to establish" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 4: Depth Extension: The system segments Earth to establish</span>
+                <span class="lang-zh">图4：深度扩展：系统对地球进行分割以建立</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1326/fig_001.png" alt="Figure 1: Generative Animations automatically project motion paths into the 3D coordinate space of the subject, ensuring geometrically" loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Generative Animations automatically project motion paths into the 3D coordinate space of the subject, ensuring geometrically</span>
+                <span class="lang-zh">图1：生成式动画自动将运动路径投影到主体的3D坐标空间中，确保几何上</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.27203</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.27203" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1326';
+  var title = "Generative Animations: A Multi-Model Pipeline for Prompt-Driven Motion Synthesis";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>

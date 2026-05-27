@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEI: Diversity in Evolutionary Inference for Quality-Diversity Search | 数字信任研究之眼</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="flame-beam-stage"></div>
+
+<div class="reye-app is-detail">
+  <header class="reye-header">
+    <a href="../assets/../index.html" class="brand">
+      <svg class="eye-mark" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <radialGradient id="hdr-iris" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+            <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+            <stop offset="100%" stop-color="#0a0418"/>
+          </radialGradient>
+          <filter id="hdr-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0.8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#hdr-glow)">
+          <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#hdr-iris)"/>
+          <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+        </g>
+      </svg>
+      Reye
+    </a>
+    <div class="lang-toggle">
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="reye-article">
+      <a href="../assets/../index.html" class="back-link">
+        <span class="lang-en">← Home</span>
+        <span class="lang-zh">← 首页</span>
+      </a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="domain-tag">arxiv</span>
+          <span>·</span><span>2026-05-27</span>
+          <span>·</span><a href="https://arxiv.org/abs/2605.27130" target="_blank" rel="noopener" class="dim-link"><span class="lang-en">Original source →</span><span class="lang-zh">原始来源 →</span></a>
+          <button class="fav-btn" id="fav-btn" data-content-id="1334" aria-label="Favourite">☆</button>
+        </div>
+        <h1 class="article-title lang-en">DEI: Diversity in Evolutionary Inference for Quality-Diversity Search</h1>
+        <h1 class="article-title lang-zh">DEI：多样性进化推理用于质量-多样性搜索</h1>
+        
+        <div class="article-tag-row">
+          
+          <span class="tag direction-tag">differentiable-routing</span>
+          
+          <span class="tag direction-tag">hierarchical-attention</span>
+          
+          <span class="tag direction-tag">rlhf</span>
+          
+        </div>
+        
+        
+        <p class="article-authors">John Donaghy, Shikhar Rastogi</p>
+        
+      </header>
+
+      
+      
+
+      
+
+      <div class="article-body">
+        <div class="lang-en">
+          <span class="eyebrow">Summary</span>
+          <div class="lede"><p>DEI demonstrates that using diverse LLMs as mutation operators in a distributed Quality-Diversity search framework significantly outperforms homogeneous parallel search, providing the first empirical evidence that model diversity is the key driver of gain.</p></div>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">摘要</span>
+          <div class="lede"><p>本文提出DEI框架，通过异步冠军共享机制将异构大语言模型（LLM）作为变异算子，在分布式质量-多样性搜索中显著优于同质并行搜索。实验表明，模型多样性而非并行计算量是性能提升的关键驱动因素，QD-Score提升124%，覆盖率提升28%。</p></div>
+        </div>
+
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h1>Deep Note — dei</h1>
+<p><strong>Key Takeaways</strong>
+- Heterogeneous LLM ensembles as mutation operators outperform homogeneous parallel search in QD, with 124% higher QD-Score and 28% higher coverage.
+- Model diversity, not parallelism, is the key driver of gain in distributed LLM-based QD search.
+- Asynchronous champion sharing avoids synchronization barriers, enabling heterogeneous hardware participation.
+- Cross-model adversarial pressure from shared champions drives robustness beyond intra-model self-play.</p>
+<h2>0) Metadata</h2>
+<ul>
+<li><strong>Title:</strong> DEI: Diversity in Evolutionary Inference for Quality-Diversity Search</li>
+<li><strong>Alias:</strong> dei</li>
+<li><strong>Authors:</strong> John Donaghy, Shikhar Rastogi</li>
+<li><strong>arXiv ID:</strong> 2605.27130</li>
+<li><strong>Published:</strong> </li>
+<li><strong>Links:</strong></li>
+<li>Abs: https://arxiv.org/abs/2605.27130</li>
+<li>HTML: https://arxiv.org/html/2605.27130v1</li>
+<li>PDF: https://arxiv.org/pdf/2605.27130</li>
+<li><strong>Tags:</strong> quality-diversity, llm-mutation, heterogeneous-ensembles, evolutionary-search, asynchronous-communication</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+</ul>
+<hr />
+<h2>1) Why-read</h2>
+<p>DEI demonstrates that using diverse LLMs as mutation operators in a distributed Quality-Diversity search framework significantly outperforms homogeneous parallel search, providing the first empirical evidence that model diversity is the key driver of gain.</p>
+<hr />
+<h2>2) CRGP</h2>
+<h3>C — Context</h3>
+<p>Quality-Diversity (QD) search with MAP-Elites seeks diverse high-performing solutions. The Digital Red Queen (DRQ) framework integrates an LLM as mutation operator and uses round champions for adversarial pressure. Prior parallel LLM search (e.g., FunSearch) replicates a single model across workers, relying on stochastic sampling for diversity.</p>
+<h3>R — Related work</h3>
+<ul>
+<li>FunSearch (Romera-Paredes et al., 2023): parallel LLM calls with a single model, diversity from stochastic sampling.</li>
+<li>Digital Red Queen (Kumar et al., 2026): single-node QD with LLM mutation and adversarial champion pool.</li>
+<li>MAP-Elites (Mouret &amp; Clune, 2015): canonical QD algorithm maintaining an archive of elites.</li>
+<li>Diversity-aware RL (Li et al., 2025; Hu et al., 2025) and multi-agent debate (Liang et al., 2024): promoting generative diversity for exploration.</li>
+</ul>
+<h3>G — Gap</h3>
+<p>Existing parallel LLM search treats scaling as computation, not cognition, replicating a single model's inductive biases across workers. The Digital Red Queen framework runs a single model per node, so blind spots in that model's generative distribution become permanent gaps in the archive. No prior work exploits heterogeneous LLM ensembles as mutation operators in distributed QD search.</p>
+<h3>P — Proposal</h3>
+<p>DEI assigns heterogeneous LLMs as mutation operators across peer nodes communicating via asynchronous champion sharing. Each node runs a local DRQ optimizer; round champions are shared asynchronously to seed the next round's population, creating cross-model adversarial pressure. This leverages each model's distinct creative prior as a complementary source of behavioral novelty.</p>
+<h2>---</h2>
+<h2>4) Experiments</h2>
+<h3>Main results</h3>
+<p>On the Core War domain, a 4-node heterogeneous ensemble (GPT-5.4-mini, Claude Sonnet 4.6, GPT-5.2, Claude Haiku 4.5) achieves QD-Score 45.90 vs. 20.46 (124% higher) and coverage 80.6% vs. 63.0% (28% higher) than a single-node baseline at equal total LLM-call budget. The heterogeneous ensemble also outperforms an equally-budgeted homogeneous ensemble on QD-Score, coverage, and held-out solution generality across all four model families.</p>
+<h3>Ablation</h3>
+<p>Holding total compute budget fixed, the heterogeneous ensemble outperforms homogeneous ensembles, isolating diversity as the causal factor (not extra computation).</p>
+<h3>Limitations</h3>
+<p>['Evaluation is limited to the Core War domain; generality to other QD problems is unconfirmed.', 'The asynchronous champion sharing protocol may introduce staleness, though results suggest benefits outweigh costs.', 'The study uses specific frontier and open-weight models; results may not transfer to other LLM combinations.']</p>
+<hr />
+<h2>5) Why it matters</h2>
+<ol>
+<li>Provides a principled framework for leveraging model diversity in distributed evolutionary search, directly applicable to your work on multi-agent systems and ensemble methods.</li>
+<li>Demonstrates that asynchronous communication can effectively coordinate heterogeneous LLMs without synchronization overhead, relevant to distributed AI infrastructure.</li>
+<li>Offers a concrete methodology for improving solution generality and coverage in competitive programming and other behavioral spaces.</li>
+</ol>
+<hr />
+<h2>6) Next steps</h2>
+<ul>
+<li>[ ] Implement DEI on a different QD benchmark (e.g., robot morphology or game level generation) to test generality.</li>
+<li>[ ] Explore dynamic model selection or weighting based on per-node performance or archive coverage.</li>
+<li>[ ] Investigate the impact of different asynchronous communication topologies (e.g., gossip vs. all-gather) on convergence.</li>
+<li>[ ] Apply the framework to a multi-agent reinforcement learning setting with heterogeneous policy models.</li>
+</ul>
+<hr />
+<h2>7) Scoring</h2>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h1>DEI：多样性进化推理用于质量-多样性搜索</h1>
+<p><strong>主要结论</strong>
+- 异构LLM集成作为变异算子在质量-多样性搜索中优于同质并行搜索，QD-Score提升124%，覆盖率提升28%。
+- 模型多样性（而非并行度）是分布式LLM搜索增益的关键驱动因素。
+- 异步冠军共享避免了同步屏障，支持异构硬件参与。
+- 跨模型对抗压力通过共享冠军增强了鲁棒性，超越了单模型自对弈。</p>
+<hr />
+<h2>1) 阅读理由</h2>
+<p>DEI首次实证证明，在分布式质量-多样性搜索中使用异构LLM作为变异算子，模型多样性是性能提升的关键驱动因素。</p>
+<hr />
+<h2>2) CRGP（背景 / 相关工作 / 差距 / 方案）</h2>
+<p>上下文：质量-多样性搜索（如MAP-Elites）旨在寻找多样化的高性能解。Digital Red Queen（DRQ）框架将LLM作为变异算子，并使用轮次冠军施加对抗压力。先前的并行LLM搜索（如FunSearch）在多个工作节点上复制单一模型，依赖随机采样获得多样性。相关工作：FunSearch使用单一模型并行调用，多样性来自随机采样；Digital Red Queen是单节点LLM变异与对抗冠军池；MAP-Elites是经典QD算法；多样性感知强化学习和多智能体辩论促进生成多样性。差距：现有并行LLM搜索将扩展视为计算而非认知，复制单一模型的归纳偏差；Digital Red Queen在单节点运行单一模型，该模型生成分布的盲点成为档案中的永久空白；尚无工作利用异构LLM集成作为分布式QD搜索的变异算子。提案：DEI将异构LLM作为变异算子分配给通过异步冠军共享通信的对等节点；每个节点运行本地DRQ优化器；轮次冠军异步共享以播种下一轮种群，产生跨模型对抗压力，利用每个模型独特的创造性先验作为行为新颖性的互补来源。</p>
+<hr />
+<h2>3) 实验</h2>
+<p>在Core War领域，4节点异构集成（GPT-5.4-mini, Claude Sonnet 4.6, GPT-5.2, Claude Haiku 4.5）在相等总LLM调用预算下，QD-Score达到45.90 vs 20.46（提升124%），覆盖率80.6% vs 63.0%（提升28%）。异构集成在QD-Score、覆盖率和保留解通用性上均优于同等预算的同质集成。</p>
+<h3>消融实验</h3>
+<p>在固定总计算预算下，异构集成优于同质集成，隔离出多样性（而非额外计算）是因果因素。</p>
+<h3>局限性</h3>
+<p>['评估仅限于Core War领域，对其他QD问题的通用性尚未确认。', '异步冠军共享协议可能引入陈旧性，但结果表明收益大于成本。', '研究使用了特定前沿和开放权重模型，结果可能不适用于其他LLM组合。']</p>
+<hr />
+<h2>4) 重要性</h2>
+<ol>
+<li>为利用模型多样性进行分布式进化搜索提供了原则性框架，直接适用于多智能体系统和集成方法研究。</li>
+<li>展示了异步通信可有效协调异构LLM而无需同步开销，与分布式AI基础设施相关。</li>
+<li>提供了在竞争性编程及其他行为空间中提高解通用性和覆盖率的具象方法论。</li>
+</ol>
+<hr />
+<h2>5) 下一步</h2>
+<ul>
+<li>[ ] 在不同QD基准（如机器人形态或游戏关卡生成）上实现DEI以测试通用性。</li>
+<li>[ ] 探索基于节点性能或档案覆盖率的动态模型选择或加权。</li>
+<li>[ ] 研究不同异步通信拓扑（如gossip vs all-gather）对收敛的影响。</li>
+<li>[ ] 将框架应用于具有异构策略模型的多智能体强化学习场景。</li>
+</ul>
+        </div>
+        
+
+        
+        <div class="article-figures">
+          <span class="eyebrow lang-en">Figures</span>
+          <span class="eyebrow lang-zh">图表</span>
+          <div class="figures-grid">
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1334/fig_001.png" alt="Figure 1: Heterogeneous ensembles as parallel cognition. In an early round, each
+node’s inductive bias preferentially populates a distinct region of the shared
+Quality-Diversity archive (top). Asynchronous champion sharing then seeds peers
+with elites from niches they would rarely generate internally, so archives begin
+to blend across nodes in subsequent rounds (bottom)." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 1: Heterogeneous ensembles as parallel cognition. In an early round, each
+node’s inductive bias preferentially populates a distinct region of the shared
+Quality-Diversity archive (top). Asynchronous champion sharing then seeds peers
+with elites from niches they would rarely generate internally, so archives begin
+to blend across nodes in subsequent rounds (bottom).</span>
+                <span class="lang-zh">Figure 1: 异质集成作为并行认知。在早期轮次中，每个节点的归纳偏置优先占据共享的Quality-Diversity档案的不同区域（上图）。随后，异步冠军共享将来自生态位的精英种子注入同伴，而这些生态位是它们内部很少生成的，因此在后续轮次中，档案开始跨节点融合（下图）。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1334/fig_003.png" alt="Figure 3: Merged archive QD-Score vs. round at equal total compute
+(4 nodes × \times 62 iters ≈ \approx 250 solo iters per round).
+Each curve is the mean across all available runs. Both ensembles
+outperform Solo from round 1 onward; the homogeneous ensemble sustains
+the highest QD-Score through the final round, while the diverse ensemble
+leads on archive coverage (Table 3 )." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 3: Merged archive QD-Score vs. round at equal total compute
+(4 nodes × \times 62 iters ≈ \approx 250 solo iters per round).
+Each curve is the mean across all available runs. Both ensembles
+outperform Solo from round 1 onward; the homogeneous ensemble sustains
+the highest QD-Score through the final round, while the diverse ensemble
+leads on archive coverage (Table 3 ).</span>
+                <span class="lang-zh">Figure 3: 在相等总计算量下（4节点 × 62次迭代 ≈ 每轮约250次单独迭代），合并档案的QD-Score随轮次变化。每条曲线是所有可用运行的平均值。从第1轮开始，两种集成均优于Solo；同质集成在最后一轮中保持了最高的QD-Score，而异质集成在档案覆盖率方面领先（表3）。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1334/fig_002.png" alt="Figure 2: Champion generality (eval, held-out) over rounds per model.
+Each panel shows Diverse Ensemble, Homogeneous Ensemble, and Solo for one LLM.
+Diverse Ensemble achieves the highest generality for all four models,
+consistent with the diversity hypothesis." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 2: Champion generality (eval, held-out) over rounds per model.
+Each panel shows Diverse Ensemble, Homogeneous Ensemble, and Solo for one LLM.
+Diverse Ensemble achieves the highest generality for all four models,
+consistent with the diversity hypothesis.</span>
+                <span class="lang-zh">Figure 2: 每轮每个模型的冠军泛化性（评估，保留集）。每个面板展示了Diverse Ensemble、Homogeneous Ensemble和Solo对应一个LLM的结果。Diverse Ensemble在所有四个模型上均实现了最高的泛化性，这与多样性假说一致。</span>
+              </figcaption>
+              
+            </figure>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="tags">
+        <span class="tag">2605.27130</span>
+      </div>
+      
+
+      
+      <a href="https://arxiv.org/abs/2605.27130" target="_blank" rel="noopener" class="original-link">
+        <span class="lang-en">Original source</span>
+        <span class="lang-zh">原始来源</span>
+        <span>→</span>
+      </a>
+      
+    </div>
+  </main>
+
+  <footer class="reye-footer">
+    <div class="footer-row">
+      <span class="footer-brand">
+        <svg class="eye-mark" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <radialGradient id="ftr-iris" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="0%" stop-color="#ffffff"/><stop offset="22%" stop-color="#9bcaff"/>
+              <stop offset="55%" stop-color="#4f7be8"/><stop offset="85%" stop-color="#3b1e8a"/>
+              <stop offset="100%" stop-color="#0a0418"/>
+            </radialGradient>
+            <filter id="ftr-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#ftr-glow)">
+            <ellipse class="eye-iris" cx="16" cy="16" rx="7" ry="13" fill="url(#ftr-iris)"/>
+            <ellipse cx="16" cy="16" rx="0.9" ry="10" fill="#040208"/>
+          </g>
+        </svg>
+        Reye
+      </span>
+      <span class="footer-zh">数字信任研究之眼</span>
+    </div>
+  </footer>
+</div><!-- .reye-app -->
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close" type="button">✕</button>
+  <div class="lightbox-controls">
+    <button class="lightbox-zoom-out" aria-label="Zoom out" type="button">−</button>
+    <span class="lightbox-zoom-label">100%</span>
+    <button class="lightbox-zoom-in" aria-label="Zoom in" type="button">+</button>
+    <button class="lightbox-reset" aria-label="Reset zoom" type="button">⌂</button>
+  </div>
+  <div class="lightbox-viewport">
+    <img class="lightbox-img" alt="" />
+  </div>
+  <div class="lightbox-caption"></div>
+</div>
+<script src="../assets/app.js"></script>
+<script>
+(function() {
+  var id = '1334';
+  var title = "DEI: Diversity in Evolutionary Inference for Quality-Diversity Search";
+  var url = window.location.href;
+  var entry = { id: id, title: title, url: url, timestamp: Date.now() };
+  try {
+    var hist = JSON.parse(localStorage.getItem('reye-history') || '[]');
+    hist = hist.filter(function(h) { return h.id !== id; });
+    hist.unshift(entry);
+    if (hist.length > 100) hist = hist.slice(0, 100);
+    localStorage.setItem('reye-history', JSON.stringify(hist));
+  } catch(_) {}
+})();
+</script>
+</body>
+</html>
