@@ -74,6 +74,7 @@
   if (searchInput && searchResults) {
     let index = [];
     let showFavsOnly = false;
+    let activeTopics = new Set();
     const filterFavsBtn = document.getElementById('filter-favs');
 
     if (filterFavsBtn) {
@@ -93,6 +94,10 @@
         ].join(' ').toLowerCase();
         return hay.includes(q);
       });
+
+      if (activeTopics.size > 0) {
+        hits = hits.filter(e => (e.topics || []).some(t => activeTopics.has(t)));
+      }
 
       if (showFavsOnly) {
         hits = hits.filter(e => isFav(String(e.id)));
@@ -131,7 +136,21 @@
 
     fetch('assets/search-index.json')
       .then(r => r.json())
-      .then(data => { index = data; renderSearch(''); })
+      .then(data => {
+        index = data;
+        const present = new Set();
+        index.forEach(e => (e.topics || []).forEach(t => present.add(t)));
+        document.querySelectorAll('.topic-chip').forEach(chip => {
+          if (!present.has(chip.dataset.topic)) { chip.style.display = 'none'; return; }
+          chip.addEventListener('click', () => {
+            chip.classList.toggle('is-active');
+            const t = chip.dataset.topic;
+            if (activeTopics.has(t)) activeTopics.delete(t); else activeTopics.add(t);
+            renderSearch(searchInput.value);
+          });
+        });
+        renderSearch('');
+      })
       .catch(() => { if (searchCount) searchCount.textContent = 'Search index unavailable.'; });
 
     searchInput.addEventListener('input', e => renderSearch(e.target.value));

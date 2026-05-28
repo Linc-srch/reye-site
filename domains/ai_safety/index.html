@@ -74,10 +74,57 @@
             <h3 class="lang-zh">研究方向</h3>
           </summary>
           
-          <p style="color:var(--color-fg-2);font-style:italic">
-            <span class="lang-en">(not set)</span>
-            <span class="lang-zh">（未填写）</span>
-          </p>
+          <p style="white-space:pre-wrap">Domain: Artificial Intelligence Security, Large Language Model (LLM) Safety, Multi-Modal Red-Teaming, Autonomous Agent Governance, Deepfake Forensics
+Core Research Objective: Building automated, mathematically grounded frameworks and empirical benchmarks to evaluate, red-team, and align advanced AI ecosystems (LLMs, Audio/Vision-Language Models, and Embodied Agents) against sophisticated jailbreaks, alignment faking, and synthetic media manipulation.
+Taxonomy of Research Areas:
+	1. Red-Teaming, Jailbreaking & Vulnerability Discovery (红队&越狱 / 多模态安全):
+Developing targeted, automated attack vectors to expose safety vulnerabilities across text, audio, and visual modalities. Key technical mechanisms include:
+	• Audio Language Model (ALM) Jailbreaks: Utilizing Token-Aware Gradient Optimization (TAGO) to sparsely update waveforms aligned only with high-energy audio tokens.
+	• Autoregressive & Logprob Exploitation: Executing untargeted jailbreaks via entropy maximization during decoding, and systematizing logprob-based, strategy-based, and LLM-based attacks (e.g., Security Cube framework).
+	• Cross-Modal Vulnerabilities: Exposing vision-language models through inscriptive attacks ("reading between the pixels") and step-wise temporal alignment engines.
+	2. New Baselines, Empirical Safety Benchmarking & Temporal Evaluation (新基准/数据集):
+Establishing rigorous, domain-specific evaluation matrices grounded in real-world application layers rather than synthetic distributions. Focus areas include:
+	• Domain-Specific Red-Teaming: Creating bilingual benchmarks derived from authentic, real-world cases (e.g., FinSafetyBench for financial crimes and compliance) to measure down-stream risk.
+	• Embodied & Temporal Safety: Moving beyond basic task completion to evaluate temporal safety properties (e.g., collision, cross-contamination) in robotic manipulation using Linear Temporal Logic (LTLf) over finite traces (e.g., SafeManip).
+	3. Automated Evaluation & Autonomous Agent Governance (自动化评估 / Agent安全):
+Securing tool-augmented and autonomous workflows against runtime exploitation, emergent deceptive behaviors, and establishing scalable validation setups. Focus areas include:
+	• Runtime Exploitation Defense: Implementing runtime security frameworks (e.g., ClawGuard) to monitor data flows and defend against indirect prompt injections.
+	• Deceptive Alignment & RL Hacking: Detecting sophisticated evasion behaviors, such as alignment faking via strategic tool selection (e.g., Tatemae), and tracking graph-based communication anomalies within multi-agent systems (e.g., GAMMAF).
+	• Automated Scalable Evaluation: Constructing evaluation engines (e.g., Claw-Eval) that reliably evaluate autonomous decisions without human-in-the-loop dependencies.
+	4. Intrinsic Defense, Alignment Calibration & Formal Guarantees (防御&对齐 / 幻觉&可信度):
+Engineering robust internal model state alignments to improve safety thresholds and output confidence calibration without compromising capabilities. Key implementations include:
+	• Representation Interventions: Deploying Multi-Adapter Representation Interventions (MARI) via energy calibration.
+	• Epistemic Calibration & Trustworthiness: Systematically evaluating whether models can faithfully map linguistic uncertainty markers to true intrinsic confidence levels to mitigate hallucinations and ensure credible generation.
+	• Formal Guardrail Verifications: Moving beyond empirical red-teaming to establish mathematically proven formal guarantees for LLM guardrail classifiers.
+	5. Cross-Modal Synthetic Media Detection (Deepfakes):
+Countering generative AI-driven disinformation through physics-based forensic verification models. Focus areas include:
+	• Universal Physical Descriptors: Extracting universal physical descriptors to uncover structural and physical inconsistencies, enabling robust detection of cross-modal synthetic content (images, videos, and audio).
+领域： 人工智能安全、大语言模型 (LLM) 安全、多模态红队测试、自主智能体治理、深度伪造 (Deepfake) 取证
+核心研究目标： 构建自动化、具备数学基础的框架与实证基准，以评估、红队测试并对齐先进的人工智能生态系统（涵盖大语言模型、音频/视觉语言模型及具身智能体），防御复杂的越狱攻击、伪装对齐以及合成媒体篡改。
+研究领域分类：
+	1. 红队测试、越狱与多模态安全 (Red-Teaming, Jailbreaking & Multi-Modal Safety)：
+开发具有针对性的自动化攻击向量，以揭示文本、音频和视觉模态中的安全漏洞。关键技术机制包括：
+	• 音频语言模型 (ALM) 越狱： 利用感知 Token 的梯度优化 (TAGO)，仅对与高能量音频 Token 对齐的波形进行稀疏更新。
+	• 自回归与 Logprob 漏洞利用： 在解码过程中通过熵最大化执行无目标的越狱攻击，并系统化基于 logprob、基于策略和基于 LLM 的攻击模式（如 Security Cube 框架）。
+	• 跨模态漏洞： 通过铭文攻击（“在像素间读取”）和步进式时间对齐引擎，揭示视觉-语言模型架构的独有漏洞。
+	2. 新基准/数据集与时序评估 (New Baselines, Datasets & Temporal Evaluation)：
+建立扎根于真实应用层的严谨、特定领域的评估矩阵，告别对生成式合成数据的依赖。重点领域包括：
+	• 垂直领域红队测试： 创建基于真实世界案例的双语基准测试（例如针对金融犯罪与合规的 FinSafetyBench），精准衡量下行风险。
+	• 具身与时序安全： 超越基础的任务完成度指标，利用有限轨迹上的线性时序逻辑 (LTLf) 评估机器人操作中的时间安全属性（例如高级碰撞、交叉污染）（如 SafeManip）。
+	3. 自动化评估与 Agent 安全 (Automated Evaluation & Agent Security)：
+保障工具增强型和自主智能体工作流在运行时免受漏洞利用和涌现出的欺骗性行为影响，并提供高可扩展性的评估架构。重点领域包括：
+	• 运行时漏洞防御： 实施运行时安全框架（如 ClawGuard）以监控数据流并防御间接提示词注入。
+	• 欺骗性对齐与 RL 强化学习对抗： 检测复杂的逃避行为，如通过策略性工具选择进行的伪装对齐 (Tatemae)，以及追踪多智能体系统内部基于图的通信异常 (GAMMAF)。
+	• 可扩展自动化评估： 制定自动化评估引擎（如 Claw-Eval），在无需人工干预的情况下可靠、流水线化地评估自主智能体行为。
+	4. 防御&对齐与幻觉&可信度 (Defense & Alignment, Hallucination & Trustworthiness)：
+设计鲁棒的模型内部状态对齐机制，在不损害模型能力的前提下提升安全阈值和输出置信度校准。关键实现包括：
+	• 表征干预： 通过能量校准部署多适配器表征干预 (MARI)。
+	• 认知校准与可信度： 系统评估模型是否能忠实地将语言学中的不确定性标记映射到真实的内在置信度水平，从而减少高危幻觉并确保生成内容可信。
+	• 形式化安全护栏： 超越经验性的红队测试，为大语言模型的安全护栏分类器建立经过数学证明的形式化保证。
+	5. 跨模态合成媒体检测（反深度伪造） (Cross-Modal Synthetic Media Detection)：
+通过基于物理规律的取证验证模型，对抗由生成式 AI 驱动的虚假信息。重点领域包括：
+通用物理描述符： 提取通用的物理描述符以揭示结构和物理上的不一致性，从而实现对跨模态合成内容（图像、视频和音频）的鲁棒检测。
+</p>
           
         </details>
 
@@ -87,10 +134,9 @@
             <h3 class="lang-zh">追踪的关键词</h3>
           </summary>
           
-          <p style="color:var(--color-fg-2);font-style:italic">
-            <span class="lang-en">(none)</span>
-            <span class="lang-zh">（无）</span>
-          </p>
+          <div class="keyword-tags tags">
+            <span class="tag">新基准/数据集</span><span class="tag"> 红队&越狱</span><span class="tag"> 自动化评估 </span><span class="tag"> Agent安全</span><span class="tag"> 多模态安全</span><span class="tag"> 防御&对齐</span><span class="tag">幻觉&可信度</span><span class="tag">New Baselines</span><span class="tag">New Datasets</span><span class="tag">AI Red-Teaming</span><span class="tag">LLM Jailbreaking</span><span class="tag">Automated Evaluation</span><span class="tag">Agent Security</span><span class="tag">Multi-Modal Safety</span><span class="tag">Defense and Alignment</span><span class="tag">Hallucination Mitigation</span><span class="tag">Model Trustworthiness</span><span class="tag">Token-Aware Gradient Optimization</span><span class="tag">Temporal Safety Evaluation</span><span class="tag">Indirect Prompt Injection</span><span class="tag">Deceptive Alignment</span><span class="tag">Exploration Hacking</span><span class="tag">Formal Verification</span><span class="tag">LLM Guardrails</span><span class="tag">Epistemic Calibration</span><span class="tag">Cross-Modal Forensics</span><span class="tag">Adversarial Robustness</span>
+          </div>
           
         </details>
 
