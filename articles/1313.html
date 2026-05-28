@@ -75,6 +75,30 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1313/fig_001.png" alt="Figure 1: Genesis architecture, organized as four horizontal layers tied together by the Synapse knowledge plane and a pluggable LLM backend. A single intent (a specification clause, a KPI anomaly, or a research hypothesis) enters at the top. The agentic framework routes it through one of six capability pipelines ( Synthesize , Test , Harden , Optimize , Discover , Secure ), composed at run-time from a pool of agent specialists (DevOps, RAN, Radio, UE, Testbed, Emulation, among others). The deterministic execution layer hosts ∼ \sim 23 parameterized skills ( build , run , configure , deploy , experiment , … \ldots ) and hooks for observability, policy gates, and audit. The substrate layer provides a three-tier validation continuum from RFSIM through emulation (Colosseum with hardware-in-the-loop) to OTA deployment on production-grade testbeds (X5G, Arena). Synapse serves as both source of ground truth (3GPP/O-RAN specs via hybrid retrieval) and recipient of every artifact each run produces (traces, logs, code diffs with spec-to-code traceability). LLM instances are pluggable, mixing commercial cloud models (e.g., Claude Opus 4.7, Sonnet 4.6) with open-weight models served locally (e.g., gpt-oss, Llama 4, Phi, Gemma). The whole system runs as a closed loop in which the testbed and the knowledge plane co-evolve with the agentic framework." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 1: Genesis architecture, organized as four horizontal layers tied together by the Synapse knowledge plane and a pluggable LLM backend. A single intent (a specification clause, a KPI anomaly, or a research hypothesis) enters at the top. The agentic framework routes it through one of six capability pipelines ( Synthesize , Test , Harden , Optimize , Discover , Secure ), composed at run-time from a pool of agent specialists (DevOps, RAN, Radio, UE, Testbed, Emulation, among others). The deterministic execution layer hosts ∼ \sim 23 parameterized skills ( build , run , configure , deploy , experiment , … \ldots ) and hooks for observability, policy gates, and audit. The substrate layer provides a three-tier validation continuum from RFSIM through emulation (Colosseum with hardware-in-the-loop) to OTA deployment on production-grade testbeds (X5G, Arena). Synapse serves as both source of ground truth (3GPP/O-RAN specs via hybrid retrieval) and recipient of every artifact each run produces (traces, logs, code diffs with spec-to-code traceability). LLM instances are pluggable, mixing commercial cloud models (e.g., Claude Opus 4.7, Sonnet 4.6) with open-weight models served locally (e.g., gpt-oss, Llama 4, Phi, Gemma). The whole system runs as a closed loop in which the testbed and the knowledge plane co-evolve with the agentic framework.</span>
+            <span class="lang-zh">图1：Genesis架构，由Synapse知识平面和可插拔的LLM后端连接四个水平层组成。单个意图（规范条款、KPI异常或研究假设）从顶层输入。智能体框架将其路由至六个能力管道之一（Synthesize、Test、Harden、Optimize、Discover、Secure），这些管道在运行时由一组专家智能体（DevOps、RAN、Radio、UE、Testbed、Emulation等）组合而成。确定性执行层托管约23个参数化技能（build、run、configure、deploy、experiment……）以及可观测性、策略门控和审计的钩子。底层提供从RFSIM经仿真（含硬件在环的Colosseum）到生产级测试平台（X5G、Arena）上OTA部署的三级验证连续体。Synapse既充当事实来源（通过混合检索获取3GPP/O-RAN规范），又接收每次运行产生的所有工件（跟踪、日志、含规范到代码可追溯性的代码差异）。LLM实例是可插拔的，混合了商业云模型（例如Claude Opus 4.7、Sonnet 4.6）和本地服务的开放权重模型（例如gpt-oss、Llama 4、Phi、Gemma）。整个系统作为闭环运行，其中测试平台和知识平面与智能体框架共同演进。</span>
+          </figcaption>
+          
+        </figure>
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1313/fig_007.png" alt="Figure 8: Logical architecture of the end-to-end CHO use case. Solid boxes (left) mark baseline OAI 2026.w21 components. Dashed boxes (right) mark modules synthesized by Genesis . Components marked by an asterisk are contributed by OAI MR !3879 and not part of the 2026.w21 baseline. The additions span three layers: a UE -side conditional- reconfiguration cache with an A4 evaluator, a CU -side CHO state machine that emits the F1AP CHO ASN.1 sequence and exposes new E2SM-RC POLICY/INSERT Style 3 endpoints, and a FlexRIC-hosted anti-ping-pong xApp that closes the loop over E2." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 8: Logical architecture of the end-to-end CHO use case. Solid boxes (left) mark baseline OAI 2026.w21 components. Dashed boxes (right) mark modules synthesized by Genesis . Components marked by an asterisk are contributed by OAI MR !3879 and not part of the 2026.w21 baseline. The additions span three layers: a UE -side conditional- reconfiguration cache with an A4 evaluator, a CU -side CHO state machine that emits the F1AP CHO ASN.1 sequence and exposes new E2SM-RC POLICY/INSERT Style 3 endpoints, and a FlexRIC-hosted anti-ping-pong xApp that closes the loop over E2.</span>
+            <span class="lang-zh">图8：端到端CHO用例的逻辑架构。左侧实线框标记OAI 2026.w21基线组件。右侧虚线框标记由Genesis合成的模块。标有星号的组件由OAI MR !3879贡献，不属于2026.w21基线部分。新增内容涵盖三个层：UE侧的条件重配置缓存（含A4评估器）、CU侧的CHO状态机（发出F1AP CHO ASN.1序列并暴露新的E2SM-RC POLICY/INSERT Style 3端点），以及由FlexRIC托管的抗乒乓xApp（通过E2形成闭环）。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -210,31 +234,11 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1313/fig_001.png" alt="Figure 1: Genesis architecture, organized as four horizontal layers tied together by the Synapse knowledge plane and a pluggable LLM backend. A single intent (a specification clause, a KPI anomaly, or a research hypothesis) enters at the top. The agentic framework routes it through one of six capability pipelines ( Synthesize , Test , Harden , Optimize , Discover , Secure ), composed at run-time from a pool of agent specialists (DevOps, RAN, Radio, UE, Testbed, Emulation, among others). The deterministic execution layer hosts ∼ \sim 23 parameterized skills ( build , run , configure , deploy , experiment , … \ldots ) and hooks for observability, policy gates, and audit. The substrate layer provides a three-tier validation continuum from RFSIM through emulation (Colosseum with hardware-in-the-loop) to OTA deployment on production-grade testbeds (X5G, Arena). Synapse serves as both source of ground truth (3GPP/O-RAN specs via hybrid retrieval) and recipient of every artifact each run produces (traces, logs, code diffs with spec-to-code traceability). LLM instances are pluggable, mixing commercial cloud models (e.g., Claude Opus 4.7, Sonnet 4.6) with open-weight models served locally (e.g., gpt-oss, Llama 4, Phi, Gemma). The whole system runs as a closed loop in which the testbed and the knowledge plane co-evolve with the agentic framework." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1: Genesis architecture, organized as four horizontal layers tied together by the Synapse knowledge plane and a pluggable LLM backend. A single intent (a specification clause, a KPI anomaly, or a research hypothesis) enters at the top. The agentic framework routes it through one of six capability pipelines ( Synthesize , Test , Harden , Optimize , Discover , Secure ), composed at run-time from a pool of agent specialists (DevOps, RAN, Radio, UE, Testbed, Emulation, among others). The deterministic execution layer hosts ∼ \sim 23 parameterized skills ( build , run , configure , deploy , experiment , … \ldots ) and hooks for observability, policy gates, and audit. The substrate layer provides a three-tier validation continuum from RFSIM through emulation (Colosseum with hardware-in-the-loop) to OTA deployment on production-grade testbeds (X5G, Arena). Synapse serves as both source of ground truth (3GPP/O-RAN specs via hybrid retrieval) and recipient of every artifact each run produces (traces, logs, code diffs with spec-to-code traceability). LLM instances are pluggable, mixing commercial cloud models (e.g., Claude Opus 4.7, Sonnet 4.6) with open-weight models served locally (e.g., gpt-oss, Llama 4, Phi, Gemma). The whole system runs as a closed loop in which the testbed and the knowledge plane co-evolve with the agentic framework.</span>
-                <span class="lang-zh">图1：Genesis架构，由Synapse知识平面和可插拔的LLM后端连接四个水平层组成。单个意图（规范条款、KPI异常或研究假设）从顶层输入。智能体框架将其路由至六个能力管道之一（Synthesize、Test、Harden、Optimize、Discover、Secure），这些管道在运行时由一组专家智能体（DevOps、RAN、Radio、UE、Testbed、Emulation等）组合而成。确定性执行层托管约23个参数化技能（build、run、configure、deploy、experiment……）以及可观测性、策略门控和审计的钩子。底层提供从RFSIM经仿真（含硬件在环的Colosseum）到生产级测试平台（X5G、Arena）上OTA部署的三级验证连续体。Synapse既充当事实来源（通过混合检索获取3GPP/O-RAN规范），又接收每次运行产生的所有工件（跟踪、日志、含规范到代码可追溯性的代码差异）。LLM实例是可插拔的，混合了商业云模型（例如Claude Opus 4.7、Sonnet 4.6）和本地服务的开放权重模型（例如gpt-oss、Llama 4、Phi、Gemma）。整个系统作为闭环运行，其中测试平台和知识平面与智能体框架共同演进。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
               <img class="article-figure-img" src="figures/1313/fig_005.png" alt="Figure 5: Per-stage Synthesize pipeline trace for Case Study 1 and the RRC.ConnMean-specific artifact each produced. Stages marked by an asterisk require a human approval." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 5: Per-stage Synthesize pipeline trace for Case Study 1 and the RRC.ConnMean-specific artifact each produced. Stages marked by an asterisk require a human approval.</span>
                 <span class="lang-zh">图5：案例研究1的逐阶段Synthesize管道跟踪及每个阶段产生的RRC.ConnMean特定工件。标有星号的阶段需要人工审批。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1313/fig_007.png" alt="Figure 8: Logical architecture of the end-to-end CHO use case. Solid boxes (left) mark baseline OAI 2026.w21 components. Dashed boxes (right) mark modules synthesized by Genesis . Components marked by an asterisk are contributed by OAI MR !3879 and not part of the 2026.w21 baseline. The additions span three layers: a UE -side conditional- reconfiguration cache with an A4 evaluator, a CU -side CHO state machine that emits the F1AP CHO ASN.1 sequence and exposes new E2SM-RC POLICY/INSERT Style 3 endpoints, and a FlexRIC-hosted anti-ping-pong xApp that closes the loop over E2." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 8: Logical architecture of the end-to-end CHO use case. Solid boxes (left) mark baseline OAI 2026.w21 components. Dashed boxes (right) mark modules synthesized by Genesis . Components marked by an asterisk are contributed by OAI MR !3879 and not part of the 2026.w21 baseline. The additions span three layers: a UE -side conditional- reconfiguration cache with an A4 evaluator, a CU -side CHO state machine that emits the F1AP CHO ASN.1 sequence and exposes new E2SM-RC POLICY/INSERT Style 3 endpoints, and a FlexRIC-hosted anti-ping-pong xApp that closes the loop over E2.</span>
-                <span class="lang-zh">图8：端到端CHO用例的逻辑架构。左侧实线框标记OAI 2026.w21基线组件。右侧虚线框标记由Genesis合成的模块。标有星号的组件由OAI MR !3879贡献，不属于2026.w21基线部分。新增内容涵盖三个层：UE侧的条件重配置缓存（含A4评估器）、CU侧的CHO状态机（发出F1AP CHO ASN.1序列并暴露新的E2SM-RC POLICY/INSERT Style 3端点），以及由FlexRIC托管的抗乒乓xApp（通过E2形成闭环）。</span>
               </figcaption>
               
             </figure>

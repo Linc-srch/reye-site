@@ -71,6 +71,20 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1219/fig_001.png" alt="Figure 1 : Given a prompt, we sample G completions from the rollout policy and compute two intrinsic rewards: an answer-level cluster-voting reward over final-answer agreement, and a completion-level self-certainty reward over token-level predictive distributions. Each reward is normalized within the prompt group before being combined into rollout-level advantages. Optimization uses a GRPO-style objective, while KL-Cov penalizes only high-covariance tokens to regularize concentrated updates." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 1 : Given a prompt, we sample G completions from the rollout policy and compute two intrinsic rewards: an answer-level cluster-voting reward over final-answer agreement, and a completion-level self-certainty reward over token-level predictive distributions. Each reward is normalized within the prompt group before being combined into rollout-level advantages. Optimization uses a GRPO-style objective, while KL-Cov penalizes only high-covariance tokens to regularize concentrated updates.</span>
+            <span class="lang-zh">图 1：给定一个提示，我们从 rollout 策略中采样 G 个补全，并计算两种内在奖励：一个基于最终答案一致性的答案级聚类投票奖励，以及一个基于 token 级预测分布的补全级自确信奖励。每个奖励在 prompt 组内进行归一化，然后合并为 rollout 级别的优势。优化使用 GRPO 风格的目标，而 KL-Cov 仅惩罚高协方差的 token，以正则化集中的更新。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -235,16 +249,6 @@
               <figcaption>
                 <span class="lang-en">Figure 6 : GDPO-normalization ablation on Qwen2.5-1.5B with the full multi-reward + KL-Cov ( β cov = 0.05 \beta_{\text{cov}}{=}0.05 ) objective. Replacing per-channel z z -score with a single combine-then-normalize step degrades GSM8K substantially and MATH500 / MMLU-Pro consistently across the entire trajectory; the gap widens past step 160 (vertical line). Stars mark the overall peak per benchmark.</span>
                 <span class="lang-zh">图 6：在 Qwen2.5-1.5B 上使用完整 multi-reward + KL-Cov（ β cov = 0.05 \beta_{\text{cov}}{=}0.05 ）目标的 GDPO-normalization 消融实验。将逐通道 z z -score 替换为单一的 combine-then-normalize 步骤会显著降低 GSM8K 的性能，并在整个轨迹中持续降低 MATH500 / MMLU-Pro 的性能；差距在第 160 步（垂直线）后扩大。星号标记了每个基准的总体峰值。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1219/fig_001.png" alt="Figure 1 : Given a prompt, we sample G completions from the rollout policy and compute two intrinsic rewards: an answer-level cluster-voting reward over final-answer agreement, and a completion-level self-certainty reward over token-level predictive distributions. Each reward is normalized within the prompt group before being combined into rollout-level advantages. Optimization uses a GRPO-style objective, while KL-Cov penalizes only high-covariance tokens to regularize concentrated updates." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1 : Given a prompt, we sample G completions from the rollout policy and compute two intrinsic rewards: an answer-level cluster-voting reward over final-answer agreement, and a completion-level self-certainty reward over token-level predictive distributions. Each reward is normalized within the prompt group before being combined into rollout-level advantages. Optimization uses a GRPO-style objective, while KL-Cov penalizes only high-covariance tokens to regularize concentrated updates.</span>
-                <span class="lang-zh">图 1：给定一个提示，我们从 rollout 策略中采样 G 个补全，并计算两种内在奖励：一个基于最终答案一致性的答案级聚类投票奖励，以及一个基于 token 级预测分布的补全级自确信奖励。每个奖励在 prompt 组内进行归一化，然后合并为 rollout 级别的优势。优化使用 GRPO 风格的目标，而 KL-Cov 仅惩罚高协方差的 token，以正则化集中的更新。</span>
               </figcaption>
               
             </figure>

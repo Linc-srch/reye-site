@@ -75,6 +75,20 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1332/fig_001.png" alt="Figure 1: Overview of StepOPSD. StepOPSD decouples online environment interaction from offline credit shaping. While the base GRPO rollout dynamics remain untouched, post-rollout trajectories are structurally parsed into causal action boundaries. By rescoring these isolated spans under hindsight-enriched teacher contexts, StepOPSD translates token-level preference gaps into a direct modulation of the RL advantage—injecting dense, step-aware supervision without distorting the primary trajectory-level reward signal." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 1: Overview of StepOPSD. StepOPSD decouples online environment interaction from offline credit shaping. While the base GRPO rollout dynamics remain untouched, post-rollout trajectories are structurally parsed into causal action boundaries. By rescoring these isolated spans under hindsight-enriched teacher contexts, StepOPSD translates token-level preference gaps into a direct modulation of the RL advantage—injecting dense, step-aware supervision without distorting the primary trajectory-level reward signal.</span>
+            <span class="lang-zh">图1：StepOPSD概览。StepOPSD将在线环境交互与离线信用塑造解耦。在保持基础GRPO rollout动态不变的前提下，对rollout后的轨迹进行结构解析，划分出因果动作边界。通过在有 hindsight 增强的教师上下文下重新评分这些隔离的片段，StepOPSD将token级别的偏好差距转化为对RL优势的直接调节——在不扭曲主要轨迹级别奖励信号的情况下，注入密集的、步骤感知的监督。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -203,11 +217,11 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1332/fig_001.png" alt="Figure 1: Overview of StepOPSD. StepOPSD decouples online environment interaction from offline credit shaping. While the base GRPO rollout dynamics remain untouched, post-rollout trajectories are structurally parsed into causal action boundaries. By rescoring these isolated spans under hindsight-enriched teacher contexts, StepOPSD translates token-level preference gaps into a direct modulation of the RL advantage—injecting dense, step-aware supervision without distorting the primary trajectory-level reward signal." loading="lazy">
+              <img class="article-figure-img" src="figures/1332/fig_003.png" alt="Figure 3: Three-way StepOPSD ablation on ALFWorld with Qwen2.5-3B-Instruct . We compare the heavy baseline ( λ m ​ i ​ x = 0.2 \lambda_{mix}=0.2 , α c ​ l ​ i ​ p = 0.2 \alpha_{clip}=0.2 ), the lower- λ m ​ i ​ x \lambda_{mix} variant ( λ m ​ i ​ x = 0.05 \lambda_{mix}=0.05 , α c ​ l ​ i ​ p = 0.2 \alpha_{clip}=0.2 ), and the reduced- α c ​ l ​ i ​ p \alpha_{clip} variant ( λ m ​ i ​ x = 0.2 \lambda_{mix}=0.2 , α c ​ l ​ i ​ p = 0.05 \alpha_{clip}=0.05 ). The validation panel marks peak and final checkpoints; the others show training dynamics and stage-wise summaries over steps 0–50, 50–100, and 100+." loading="lazy">
               
               <figcaption>
-                <span class="lang-en">Figure 1: Overview of StepOPSD. StepOPSD decouples online environment interaction from offline credit shaping. While the base GRPO rollout dynamics remain untouched, post-rollout trajectories are structurally parsed into causal action boundaries. By rescoring these isolated spans under hindsight-enriched teacher contexts, StepOPSD translates token-level preference gaps into a direct modulation of the RL advantage—injecting dense, step-aware supervision without distorting the primary trajectory-level reward signal.</span>
-                <span class="lang-zh">图1：StepOPSD概览。StepOPSD将在线环境交互与离线信用塑造解耦。在保持基础GRPO rollout动态不变的前提下，对rollout后的轨迹进行结构解析，划分出因果动作边界。通过在有 hindsight 增强的教师上下文下重新评分这些隔离的片段，StepOPSD将token级别的偏好差距转化为对RL优势的直接调节——在不扭曲主要轨迹级别奖励信号的情况下，注入密集的、步骤感知的监督。</span>
+                <span class="lang-en">Figure 3: Three-way StepOPSD ablation on ALFWorld with Qwen2.5-3B-Instruct . We compare the heavy baseline ( λ m ​ i ​ x = 0.2 \lambda_{mix}=0.2 , α c ​ l ​ i ​ p = 0.2 \alpha_{clip}=0.2 ), the lower- λ m ​ i ​ x \lambda_{mix} variant ( λ m ​ i ​ x = 0.05 \lambda_{mix}=0.05 , α c ​ l ​ i ​ p = 0.2 \alpha_{clip}=0.2 ), and the reduced- α c ​ l ​ i ​ p \alpha_{clip} variant ( λ m ​ i ​ x = 0.2 \lambda_{mix}=0.2 , α c ​ l ​ i ​ p = 0.05 \alpha_{clip}=0.05 ). The validation panel marks peak and final checkpoints; the others show training dynamics and stage-wise summaries over steps 0–50, 50–100, and 100+.</span>
+                <span class="lang-zh">图3：在ALFWorld上使用Qwen2.5-3B-Instruct进行的三路StepOPSD消融实验。我们比较了强基线（λ_mix=0.2，α_clip=0.2）、低λ_mix变体（λ_mix=0.05，α_clip=0.2）和降低α_clip变体（λ_mix=0.2，α_clip=0.05）。验证面板标记了峰值和最终检查点；其他面板显示了训练动态以及步骤0–50、50–100和100+的阶段总结。</span>
               </figcaption>
               
             </figure>
@@ -218,16 +232,6 @@
               <figcaption>
                 <span class="lang-en">Figure 2: StepOPSD dynamics on ALFWorld for Qwen3-1.7B . Around step 50, heavy shaping ( λ m ​ i ​ x = 0.2 \lambda_{mix}=0.2 ) induces a variance explosion in the teacher-student gap.</span>
                 <span class="lang-zh">图2：StepOPSD在ALFWorld上对Qwen3-1.7B的动态表现。大约在第50步时，强整形（λ_mix=0.2）引发了教师-学生差距的方差爆炸。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1332/fig_003.png" alt="Figure 3: Three-way StepOPSD ablation on ALFWorld with Qwen2.5-3B-Instruct . We compare the heavy baseline ( λ m ​ i ​ x = 0.2 \lambda_{mix}=0.2 , α c ​ l ​ i ​ p = 0.2 \alpha_{clip}=0.2 ), the lower- λ m ​ i ​ x \lambda_{mix} variant ( λ m ​ i ​ x = 0.05 \lambda_{mix}=0.05 , α c ​ l ​ i ​ p = 0.2 \alpha_{clip}=0.2 ), and the reduced- α c ​ l ​ i ​ p \alpha_{clip} variant ( λ m ​ i ​ x = 0.2 \lambda_{mix}=0.2 , α c ​ l ​ i ​ p = 0.05 \alpha_{clip}=0.05 ). The validation panel marks peak and final checkpoints; the others show training dynamics and stage-wise summaries over steps 0–50, 50–100, and 100+." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3: Three-way StepOPSD ablation on ALFWorld with Qwen2.5-3B-Instruct . We compare the heavy baseline ( λ m ​ i ​ x = 0.2 \lambda_{mix}=0.2 , α c ​ l ​ i ​ p = 0.2 \alpha_{clip}=0.2 ), the lower- λ m ​ i ​ x \lambda_{mix} variant ( λ m ​ i ​ x = 0.05 \lambda_{mix}=0.05 , α c ​ l ​ i ​ p = 0.2 \alpha_{clip}=0.2 ), and the reduced- α c ​ l ​ i ​ p \alpha_{clip} variant ( λ m ​ i ​ x = 0.2 \lambda_{mix}=0.2 , α c ​ l ​ i ​ p = 0.05 \alpha_{clip}=0.05 ). The validation panel marks peak and final checkpoints; the others show training dynamics and stage-wise summaries over steps 0–50, 50–100, and 100+.</span>
-                <span class="lang-zh">图3：在ALFWorld上使用Qwen2.5-3B-Instruct进行的三路StepOPSD消融实验。我们比较了强基线（λ_mix=0.2，α_clip=0.2）、低λ_mix变体（λ_mix=0.05，α_clip=0.2）和降低α_clip变体（λ_mix=0.2，α_clip=0.05）。验证面板标记了峰值和最终检查点；其他面板显示了训练动态以及步骤0–50、50–100和100+的阶段总结。</span>
               </figcaption>
               
             </figure>

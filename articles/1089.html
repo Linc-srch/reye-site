@@ -75,6 +75,20 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1089/fig_005.png" alt="Figure 4: Overview of Vision-OPD. Left: Fine-grained visual questions are generated on evidence-centered crops and grounded back to the full image via bounding-box overlay. Right: A teacher policy p T ( ⋅ ∣ x crop ) p_{T}(\cdot\mid x_{\text{crop}}) and a student policy p S ( ⋅ ∣ x global ) p_{S}(\cdot\mid x_{\text{global}}) are instantiated from the same MLLM. The student generates on-policy rollouts y ∼ p S y\sim p_{S} , and the per-token divergence D ​ ( p T ∥ p S ) D(p_{T}\|p_{S}) along these rollouts provides dense supervision. Gradients flow only through the student’s logits, enabling label-free self-distillation for fine-grained visual understanding." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 4: Overview of Vision-OPD. Left: Fine-grained visual questions are generated on evidence-centered crops and grounded back to the full image via bounding-box overlay. Right: A teacher policy p T ( ⋅ ∣ x crop ) p_{T}(\cdot\mid x_{\text{crop}}) and a student policy p S ( ⋅ ∣ x global ) p_{S}(\cdot\mid x_{\text{global}}) are instantiated from the same MLLM. The student generates on-policy rollouts y ∼ p S y\sim p_{S} , and the per-token divergence D ​ ( p T ∥ p S ) D(p_{T}\|p_{S}) along these rollouts provides dense supervision. Gradients flow only through the student’s logits, enabling label-free self-distillation for fine-grained visual understanding.</span>
+            <span class="lang-zh">图4：Vision-OPD概览。左图：在证据中心裁剪区域生成细粒度视觉问题，并通过边界框叠加映射回完整图像。右图：从同一个MLLM实例化教师策略p_T(·|x_crop)和学生策略p_S(·|x_global)。学生生成策略内轨迹y~p_S，沿这些轨迹的逐token散度D(p_T||p_S)提供密集监督。梯度仅通过学生的logits传播，从而实现用于细粒度视觉理解的无标签自蒸馏。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -207,16 +221,6 @@
               <figcaption>
                 <span class="lang-en">Figure 1: Average scores across fine-grained visual understanding benchmarks, including V* Bench, ZoomBench, HR Bench 4K, HR Bench 8k, MME-RealWorld-Lite and MME-RealWorld-CN. Vision-OPD-4B/9B demonstrate superior performance compared with much larger open-source models (e.g., Qwen3.5-397B) and closed-source models (e.g., GPT-5.4, Gemini-3.1-Pro).</span>
                 <span class="lang-zh">图1：在细粒度视觉理解基准测试（包括V* Bench、ZoomBench、HR Bench 4K、HR Bench 8K、MME-RealWorld-Lite和MME-RealWorld-CN）上的平均得分。Vision-OPD-4B/9B相比更大的开源模型（如Qwen3.5-397B）和闭源模型（如GPT-5.4、Gemini-3.1-Pro）展现出更优的性能。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1089/fig_005.png" alt="Figure 4: Overview of Vision-OPD. Left: Fine-grained visual questions are generated on evidence-centered crops and grounded back to the full image via bounding-box overlay. Right: A teacher policy p T ( ⋅ ∣ x crop ) p_{T}(\cdot\mid x_{\text{crop}}) and a student policy p S ( ⋅ ∣ x global ) p_{S}(\cdot\mid x_{\text{global}}) are instantiated from the same MLLM. The student generates on-policy rollouts y ∼ p S y\sim p_{S} , and the per-token divergence D ​ ( p T ∥ p S ) D(p_{T}\|p_{S}) along these rollouts provides dense supervision. Gradients flow only through the student’s logits, enabling label-free self-distillation for fine-grained visual understanding." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 4: Overview of Vision-OPD. Left: Fine-grained visual questions are generated on evidence-centered crops and grounded back to the full image via bounding-box overlay. Right: A teacher policy p T ( ⋅ ∣ x crop ) p_{T}(\cdot\mid x_{\text{crop}}) and a student policy p S ( ⋅ ∣ x global ) p_{S}(\cdot\mid x_{\text{global}}) are instantiated from the same MLLM. The student generates on-policy rollouts y ∼ p S y\sim p_{S} , and the per-token divergence D ​ ( p T ∥ p S ) D(p_{T}\|p_{S}) along these rollouts provides dense supervision. Gradients flow only through the student’s logits, enabling label-free self-distillation for fine-grained visual understanding.</span>
-                <span class="lang-zh">图4：Vision-OPD概览。左图：在证据中心裁剪区域生成细粒度视觉问题，并通过边界框叠加映射回完整图像。右图：从同一个MLLM实例化教师策略p_T(·|x_crop)和学生策略p_S(·|x_global)。学生生成策略内轨迹y~p_S，沿这些轨迹的逐token散度D(p_T||p_S)提供密集监督。梯度仅通过学生的logits传播，从而实现用于细粒度视觉理解的无标签自蒸馏。</span>
               </figcaption>
               
             </figure>

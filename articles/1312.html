@@ -75,6 +75,30 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1312/fig_001.png" alt="Figure 2 : MUSE-Autoskill Agent architecture. MUSE organizes skills into a unified lifecycle of creation, memory, management, evaluation, and refinement, enabling agents to generate, refine, and reuse skills with accumulated experience over time." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 2 : MUSE-Autoskill Agent architecture. MUSE organizes skills into a unified lifecycle of creation, memory, management, evaluation, and refinement, enabling agents to generate, refine, and reuse skills with accumulated experience over time.</span>
+            <span class="lang-zh">图 2：MUSE-Autoskill 智能体架构。MUSE 将技能组织成创建、记忆、管理、评估和优化的统一生命周期，使智能体能够随着时间推移积累经验，生成、优化并复用技能。</span>
+          </figcaption>
+          
+        </figure>
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1312/fig_002.png" alt="Figure 3 : End-to-end flow of MUSE-Autoskill. The Master Agent runs a ReAct loop; when a skill is needed it either retrieves one from the Skill Bank or dispatches the Skill Creator to synthesize a new package ( SKILL.md plus optional scripts/ and tests/ ). The Evaluator runs the bundled tests; on pass , observations are appended to Memory and surfaced on later steps; on fail , the Refiner patches the package and re-enters the loop." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 3 : End-to-end flow of MUSE-Autoskill. The Master Agent runs a ReAct loop; when a skill is needed it either retrieves one from the Skill Bank or dispatches the Skill Creator to synthesize a new package ( SKILL.md plus optional scripts/ and tests/ ). The Evaluator runs the bundled tests; on pass , observations are appended to Memory and surfaced on later steps; on fail , the Refiner patches the package and re-enters the loop.</span>
+            <span class="lang-zh">图 3：MUSE-Autoskill 的端到端流程。主智能体运行一个 ReAct 循环；当需要技能时，它要么从技能库中检索，要么派发技能创建器来合成一个新的包（SKILL.md 加上可选的 scripts/ 和 tests/）。评估器运行捆绑的测试；若通过，观察结果被追加到记忆并在后续步骤中呈现；若失败，优化器修补该包并重新进入循环。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -203,26 +227,6 @@
           <span class="eyebrow lang-en">Figures</span>
           <span class="eyebrow lang-zh">图表</span>
           <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1312/fig_001.png" alt="Figure 2 : MUSE-Autoskill Agent architecture. MUSE organizes skills into a unified lifecycle of creation, memory, management, evaluation, and refinement, enabling agents to generate, refine, and reuse skills with accumulated experience over time." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 2 : MUSE-Autoskill Agent architecture. MUSE organizes skills into a unified lifecycle of creation, memory, management, evaluation, and refinement, enabling agents to generate, refine, and reuse skills with accumulated experience over time.</span>
-                <span class="lang-zh">图 2：MUSE-Autoskill 智能体架构。MUSE 将技能组织成创建、记忆、管理、评估和优化的统一生命周期，使智能体能够随着时间推移积累经验，生成、优化并复用技能。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1312/fig_002.png" alt="Figure 3 : End-to-end flow of MUSE-Autoskill. The Master Agent runs a ReAct loop; when a skill is needed it either retrieves one from the Skill Bank or dispatches the Skill Creator to synthesize a new package ( SKILL.md plus optional scripts/ and tests/ ). The Evaluator runs the bundled tests; on pass , observations are appended to Memory and surfaced on later steps; on fail , the Refiner patches the package and re-enters the loop." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3 : End-to-end flow of MUSE-Autoskill. The Master Agent runs a ReAct loop; when a skill is needed it either retrieves one from the Skill Bank or dispatches the Skill Creator to synthesize a new package ( SKILL.md plus optional scripts/ and tests/ ). The Evaluator runs the bundled tests; on pass , observations are appended to Memory and surfaced on later steps; on fail , the Refiner patches the package and re-enters the loop.</span>
-                <span class="lang-zh">图 3：MUSE-Autoskill 的端到端流程。主智能体运行一个 ReAct 循环；当需要技能时，它要么从技能库中检索，要么派发技能创建器来合成一个新的包（SKILL.md 加上可选的 scripts/ 和 tests/）。评估器运行捆绑的测试；若通过，观察结果被追加到记忆并在后续步骤中呈现；若失败，优化器修补该包并重新进入循环。</span>
-              </figcaption>
-              
-            </figure>
             
             <figure class="article-figure">
               <img class="article-figure-img" src="figures/1312/fig_003.png" alt="Figure 4 : Adaptive context compression over a DAG of ReAct turns. Each turn is a ( plan , action , observation ) triple; the first KEEP_FIRST and last KEEP_LAST turns are always pinned and only the middle is eligible for compression. Top → \to Middle: Level-1 rewrites individually oversized turns in place. Middle → \to Bottom: when no single turn is oversized but the chain is still over budget, Level-2 merges the compressible span into one synthetic node. Original turns remain in the full history (linked by immutable history_prev / history_next pointers), so the trajectory is fully replayable." loading="lazy">

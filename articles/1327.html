@@ -75,6 +75,40 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1327/fig_002.png" alt="Figure 2: Overview of MAIGO ’s sharded training branch. Student samples are
+generated on-policy, while middle-turn and answer-turn losses use
+stop-gradient reference distributions computed from cleaner training-time
+contexts." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 2: Overview of MAIGO ’s sharded training branch. Student samples are
+generated on-policy, while middle-turn and answer-turn losses use
+stop-gradient reference distributions computed from cleaner training-time
+contexts.</span>
+            <span class="lang-zh">图2：MAIGO分片训练分支概览。学生样本在策略上生成，而中间轮和答案轮损失使用从更干净的训练时上下文计算出的停止梯度参考分布。</span>
+          </figcaption>
+          
+        </figure>
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1327/fig_001.png" alt="Figure 1: FULL-vs-SHARDED task delivery. The same requirements appear either
+in one complete prompt or across turns, where earlier assistant replies
+become part of the final context." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 1: FULL-vs-SHARDED task delivery. The same requirements appear either
+in one complete prompt or across turns, where earlier assistant replies
+become part of the final context.</span>
+            <span class="lang-zh">图1：FULL与SHARDED任务交付。相同的要求要么出现在一个完整提示中，要么分布在多轮对话中，其中早期助手的回复成为最终上下文的一部分。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -204,22 +238,6 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1327/fig_002.png" alt="Figure 2: Overview of MAIGO ’s sharded training branch. Student samples are
-generated on-policy, while middle-turn and answer-turn losses use
-stop-gradient reference distributions computed from cleaner training-time
-contexts." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 2: Overview of MAIGO ’s sharded training branch. Student samples are
-generated on-policy, while middle-turn and answer-turn losses use
-stop-gradient reference distributions computed from cleaner training-time
-contexts.</span>
-                <span class="lang-zh">图2：MAIGO分片训练分支概览。学生样本在策略上生成，而中间轮和答案轮损失使用从更干净的训练时上下文计算出的停止梯度参考分布。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
               <img class="article-figure-img" src="figures/1327/fig_003.png" alt="Figure 3: Single-seed reveal-time diagnostic on Qwen2.5-7B-Instruct SHARDED traces;
 the 100% point equals final SHARDED accuracy." loading="lazy">
               
@@ -237,20 +255,6 @@ the 100% point equals final SHARDED accuracy.</span>
               <figcaption>
                 <span class="lang-en">Figure 4: Single-seed sensitivity to the FULL-preservation probability ρ \rho on Qwen2.5-7B-Instruct; values are accuracy changes from the default ρ = 0.2 \rho=0.2 .</span>
                 <span class="lang-zh">图4：Qwen2.5-7B-Instruct上对FULL保留概率ρ的单种子敏感性；数值为相对于默认ρ=0.2的准确率变化。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1327/fig_001.png" alt="Figure 1: FULL-vs-SHARDED task delivery. The same requirements appear either
-in one complete prompt or across turns, where earlier assistant replies
-become part of the final context." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1: FULL-vs-SHARDED task delivery. The same requirements appear either
-in one complete prompt or across turns, where earlier assistant replies
-become part of the final context.</span>
-                <span class="lang-zh">图1：FULL与SHARDED任务交付。相同的要求要么出现在一个完整提示中，要么分布在多轮对话中，其中早期助手的回复成为最终上下文的一部分。</span>
               </figcaption>
               
             </figure>

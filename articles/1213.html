@@ -75,6 +75,20 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1213/fig_002.png" alt="Figure 2 : Overview of SPD . SPD operates in two phases: Phase 1 (top) (§ 3.2 ) extracts low-rank K/V capability subspaces from gradients computed on a small calibration set using correctness-aligned loss, and Phase 2 (bottom) (§ 3.3 ) uses these subspaces as projection hooks to steer self-generation without modifying model parameters. The hooked model produces raw completions, after which the hooks are removed and the original model is fine-tuned on the resulting prompt–completion pairs using standard next-token prediction loss." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 2 : Overview of SPD . SPD operates in two phases: Phase 1 (top) (§ 3.2 ) extracts low-rank K/V capability subspaces from gradients computed on a small calibration set using correctness-aligned loss, and Phase 2 (bottom) (§ 3.3 ) uses these subspaces as projection hooks to steer self-generation without modifying model parameters. The hooked model produces raw completions, after which the hooks are removed and the original model is fine-tuned on the resulting prompt–completion pairs using standard next-token prediction loss.</span>
+            <span class="lang-zh">图2：SPD概述。SPD分两个阶段运行：阶段1（顶部）（§3.2）使用正确性对齐损失从在小校准集上计算的梯度中提取低秩K/V能力子空间；阶段2（底部）（§3.3）将这些子空间作为投影钩子来引导自生成，而不修改模型参数。被钩住的模型生成原始补全，之后移除钩子，并使用标准下一个token预测损失在生成的提示-补全对上微调原始模型。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -213,16 +227,6 @@
               <figcaption>
                 <span class="lang-en">Figure 1 : SPD comparisons and performance summary. Top left: comparison with existing self-distillation methods across three key axes. Top right: average improvement of SPD over the base model for each of the five LLM backbones, computed across three capability domains and six datasets. Bottom: SPD improves base model performance across domain-specific benchmarks, in-domain transfer, and out-domain transfer settings. All metrics in the figure are reported as accuracy (%).</span>
                 <span class="lang-zh">图1：SPD比较与性能总结。左上：与现有自蒸馏方法在三个关键轴上的比较。右上：SPD相对于基模型在五个LLM骨干网络上的平均改进，基于三个能力领域和六个数据集计算。底部：SPD在领域特定基准、领域内迁移和领域外迁移设置下均提升了基模型性能。图中所有指标均以准确率（%）报告。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1213/fig_002.png" alt="Figure 2 : Overview of SPD . SPD operates in two phases: Phase 1 (top) (§ 3.2 ) extracts low-rank K/V capability subspaces from gradients computed on a small calibration set using correctness-aligned loss, and Phase 2 (bottom) (§ 3.3 ) uses these subspaces as projection hooks to steer self-generation without modifying model parameters. The hooked model produces raw completions, after which the hooks are removed and the original model is fine-tuned on the resulting prompt–completion pairs using standard next-token prediction loss." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 2 : Overview of SPD . SPD operates in two phases: Phase 1 (top) (§ 3.2 ) extracts low-rank K/V capability subspaces from gradients computed on a small calibration set using correctness-aligned loss, and Phase 2 (bottom) (§ 3.3 ) uses these subspaces as projection hooks to steer self-generation without modifying model parameters. The hooked model produces raw completions, after which the hooks are removed and the original model is fine-tuned on the resulting prompt–completion pairs using standard next-token prediction loss.</span>
-                <span class="lang-zh">图2：SPD概述。SPD分两个阶段运行：阶段1（顶部）（§3.2）使用正确性对齐损失从在小校准集上计算的梯度中提取低秩K/V能力子空间；阶段2（底部）（§3.3）将这些子空间作为投影钩子来引导自生成，而不修改模型参数。被钩住的模型生成原始补全，之后移除钩子，并使用标准下一个token预测损失在生成的提示-补全对上微调原始模型。</span>
               </figcaption>
               
             </figure>

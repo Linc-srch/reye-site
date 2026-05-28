@@ -75,6 +75,30 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1288/fig_002.png" alt="Figure 2: Overview of our framework. (a) The full model architecture, consisting of an MLLM for multimodal understanding, a VAE encoder for mapping images into latent space, a DiT backbone for diffusion denoising, and a Dual Layer Aggregator (DLA) that aligns MLLM embeddings for DiT. (b) Details of the token attention pooling module inside the DLA module, including its layerwise attention and pooling operations, to form MLLM aggregated embeddings from all MLLM layers." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 2: Overview of our framework. (a) The full model architecture, consisting of an MLLM for multimodal understanding, a VAE encoder for mapping images into latent space, a DiT backbone for diffusion denoising, and a Dual Layer Aggregator (DLA) that aligns MLLM embeddings for DiT. (b) Details of the token attention pooling module inside the DLA module, including its layerwise attention and pooling operations, to form MLLM aggregated embeddings from all MLLM layers.</span>
+            <span class="lang-zh">图2：我们框架的概览。(a) 完整模型架构，包括用于多模态理解的MLLM、用于将图像映射到潜在空间的VAE编码器、用于扩散去噪的DiT主干网络，以及用于对齐MLLM嵌入以适配DiT的双层聚合器（DLA）。(b) DLA模块内部的令牌注意力池化模块的细节，包括其逐层注意力和池化操作，以从所有MLLM层形成MLLM聚合嵌入。</span>
+          </figcaption>
+          
+        </figure>
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1288/fig_001.png" alt="Figure 1: Benefits of leveraging MLLMs for subject-driven generation. MLLMs mitigate the copy-paste issue within VAE-based methods, and enables the multimodal understanding of the subject-driven generation pipeline by jointly modeling input image and text, while VAE-based methods encode them separately." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 1: Benefits of leveraging MLLMs for subject-driven generation. MLLMs mitigate the copy-paste issue within VAE-based methods, and enables the multimodal understanding of the subject-driven generation pipeline by jointly modeling input image and text, while VAE-based methods encode them separately.</span>
+            <span class="lang-zh">图1：利用MLLM进行主体驱动生成的优势。MLLM缓解了基于VAE方法中的复制粘贴问题，并通过联合建模输入图像和文本，实现了对主体驱动生成流程的多模态理解，而基于VAE的方法则分别对它们进行编码。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -207,26 +231,6 @@
           <span class="eyebrow lang-en">Figures</span>
           <span class="eyebrow lang-zh">图表</span>
           <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1288/fig_001.png" alt="Figure 1: Benefits of leveraging MLLMs for subject-driven generation. MLLMs mitigate the copy-paste issue within VAE-based methods, and enables the multimodal understanding of the subject-driven generation pipeline by jointly modeling input image and text, while VAE-based methods encode them separately." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1: Benefits of leveraging MLLMs for subject-driven generation. MLLMs mitigate the copy-paste issue within VAE-based methods, and enables the multimodal understanding of the subject-driven generation pipeline by jointly modeling input image and text, while VAE-based methods encode them separately.</span>
-                <span class="lang-zh">图1：利用MLLM进行主体驱动生成的优势。MLLM缓解了基于VAE方法中的复制粘贴问题，并通过联合建模输入图像和文本，实现了对主体驱动生成流程的多模态理解，而基于VAE的方法则分别对它们进行编码。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1288/fig_002.png" alt="Figure 2: Overview of our framework. (a) The full model architecture, consisting of an MLLM for multimodal understanding, a VAE encoder for mapping images into latent space, a DiT backbone for diffusion denoising, and a Dual Layer Aggregator (DLA) that aligns MLLM embeddings for DiT. (b) Details of the token attention pooling module inside the DLA module, including its layerwise attention and pooling operations, to form MLLM aggregated embeddings from all MLLM layers." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 2: Overview of our framework. (a) The full model architecture, consisting of an MLLM for multimodal understanding, a VAE encoder for mapping images into latent space, a DiT backbone for diffusion denoising, and a Dual Layer Aggregator (DLA) that aligns MLLM embeddings for DiT. (b) Details of the token attention pooling module inside the DLA module, including its layerwise attention and pooling operations, to form MLLM aggregated embeddings from all MLLM layers.</span>
-                <span class="lang-zh">图2：我们框架的概览。(a) 完整模型架构，包括用于多模态理解的MLLM、用于将图像映射到潜在空间的VAE编码器、用于扩散去噪的DiT主干网络，以及用于对齐MLLM嵌入以适配DiT的双层聚合器（DLA）。(b) DLA模块内部的令牌注意力池化模块的细节，包括其逐层注意力和池化操作，以从所有MLLM层形成MLLM聚合嵌入。</span>
-              </figcaption>
-              
-            </figure>
             
             <figure class="article-figure">
               <img class="article-figure-img" src="figures/1288/fig_003.png" alt="Figure 3: Preliminary analysis on single Layerwise Attention Pooling (LAP) across text and image modalities. (a) Performance tradeoff with different checkpoints when optimizing with a single LAP. (b) Attention maps from the model trained solely on I2I task and the model trained on T2I task, where both use single LAP model." loading="lazy">

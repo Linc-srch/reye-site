@@ -75,6 +75,23 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1174/fig_001.png" alt="Figure 2 : Empirical membership-inference AUC against coalition size k k . (a) Scalar mechanism ℳ ∗ \mathcal{M}^{*} : the lower-bound construction of Theorem 3.5 at n = 10 000 n=10\,000 queries, ε acc ∈ { 1 , 2 , 4 } \varepsilon_{\text{acc}}\in\{1,2,4\} , T = 10 000 T=10\,000 trials. Empirical curves match the predicted 1 2 + 1 2 ​ Φ ​ ( k ​ ε acc / ( 4 ​ log ⁡ ( 1 / δ acc ) ​ log ⁡ ( 1.25 / δ q ) ) ) \tfrac{1}{2}+\tfrac{1}{2}\Phi(\sqrt{k}\,\varepsilon_{\text{acc}}/(4\sqrt{\log(1/\delta_{\text{acc}})\log(1.25/\delta_{q})})) within one standard error in every cell. (b) Full top- K K harness: same probe attack issued through MultiTenantRAGService with K = 5 K=5 , 50 50 background documents, embedding dimension 32 32 , n = 200 n=200 , T = 2 000 T=2\,000 trials. Test statistic is the count of queries for which the target document index appears in the returned top- K K . Looser ε acc ∈ { 4 , 8 , 16 } \varepsilon_{\text{acc}}\in\{4,8,16\} is required to resolve the curve at finite T T (see Section 4.4 ). The k \sqrt{k} scaling is preserved through the top- K K post-processing, with a constant-factor degradation that we quantify below.
+Markers are empirical means with normal-approximation ± 1 \pm 1 standard-error bars; dotted line at AUC = 1 / 2 =1/2 marks chance. δ acc = 10 − 6 \delta_{\text{acc}}=10^{-6} throughout." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 2 : Empirical membership-inference AUC against coalition size k k . (a) Scalar mechanism ℳ ∗ \mathcal{M}^{*} : the lower-bound construction of Theorem 3.5 at n = 10 000 n=10\,000 queries, ε acc ∈ { 1 , 2 , 4 } \varepsilon_{\text{acc}}\in\{1,2,4\} , T = 10 000 T=10\,000 trials. Empirical curves match the predicted 1 2 + 1 2 ​ Φ ​ ( k ​ ε acc / ( 4 ​ log ⁡ ( 1 / δ acc ) ​ log ⁡ ( 1.25 / δ q ) ) ) \tfrac{1}{2}+\tfrac{1}{2}\Phi(\sqrt{k}\,\varepsilon_{\text{acc}}/(4\sqrt{\log(1/\delta_{\text{acc}})\log(1.25/\delta_{q})})) within one standard error in every cell. (b) Full top- K K harness: same probe attack issued through MultiTenantRAGService with K = 5 K=5 , 50 50 background documents, embedding dimension 32 32 , n = 200 n=200 , T = 2 000 T=2\,000 trials. Test statistic is the count of queries for which the target document index appears in the returned top- K K . Looser ε acc ∈ { 4 , 8 , 16 } \varepsilon_{\text{acc}}\in\{4,8,16\} is required to resolve the curve at finite T T (see Section 4.4 ). The k \sqrt{k} scaling is preserved through the top- K K post-processing, with a constant-factor degradation that we quantify below.
+Markers are empirical means with normal-approximation ± 1 \pm 1 standard-error bars; dotted line at AUC = 1 / 2 =1/2 marks chance. δ acc = 10 − 6 \delta_{\text{acc}}=10^{-6} throughout.</span>
+            <span class="lang-zh">图2：经验成员推断AUC与联盟规模k的关系。(a) 标量机制M*：定理3.5的下界构造，n=10,000次查询，ε_acc∈{1,2,4}，T=10,000次试验。经验曲线在每个单元内与预测的1/2+1/2Φ(√k ε_acc/(4√(log(1/δ_acc)log(1.25/δ_q))))在一个标准误差内匹配。(b) 完整的top-K测试平台：通过MultiTenantRAGService发出的相同探测攻击，K=5，50个背景文档，嵌入维度32，n=200，T=2,000次试验。检验统计量是目标文档索引出现在返回的top-K中的查询计数。需要更宽松的ε_acc∈{4,8,16}才能在有限T下分辨曲线（见第4.4节）。√k缩放通过top-K后处理得以保留，并伴有我们下文量化的常数因子退化。
+标记为经验均值，带有正态近似±1标准误差条；AUC=1/2处的虚线标记随机水平。全程δ_acc=10^{-6}。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -210,21 +227,21 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1174/fig_006.png" alt="Figure 7 : Coalition-size estimator calibration on the toy harness ( A = 30 A=30 , n = 100 n=100 , d = 32 d=32 , 200 200 trials per cell). (a) Null FPR as a function of the proximity threshold θ \theta ; the operating point θ ∗ = 0.80 \theta^{*}=0.80 achieves FPR = 0.040 =0.040 . (b) Mean k ^ \hat{k} at k true = 10 k_{\text{true}}=10 for the three attack patterns; the estimator transitions from a merged graph ( k ^ = A \hat{k}=A at low θ \theta ) to exact recovery ( k ^ = 10 \hat{k}=10 ) across the same window. At θ ∗ \theta^{*} , TPR = 1.00 =1.00 at all four tested k true ∈ { 2 , 5 , 10 , 20 } k_{\text{true}}\in\{2,5,10,20\} for all three patterns, with k ^ \hat{k} exactly recovering k true k_{\text{true}} ." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 7 : Coalition-size estimator calibration on the toy harness ( A = 30 A=30 , n = 100 n=100 , d = 32 d=32 , 200 200 trials per cell). (a) Null FPR as a function of the proximity threshold θ \theta ; the operating point θ ∗ = 0.80 \theta^{*}=0.80 achieves FPR = 0.040 =0.040 . (b) Mean k ^ \hat{k} at k true = 10 k_{\text{true}}=10 for the three attack patterns; the estimator transitions from a merged graph ( k ^ = A \hat{k}=A at low θ \theta ) to exact recovery ( k ^ = 10 \hat{k}=10 ) across the same window. At θ ∗ \theta^{*} , TPR = 1.00 =1.00 at all four tested k true ∈ { 2 , 5 , 10 , 20 } k_{\text{true}}\in\{2,5,10,20\} for all three patterns, with k ^ \hat{k} exactly recovering k true k_{\text{true}} .</span>
-                <span class="lang-zh">图7：在玩具测试平台（A=30，n=100，d=32，每单元200次试验）上的联盟规模估计器校准。(a) 零假阳性率（Null FPR）作为邻近阈值θ的函数；工作点θ*=0.80实现了FPR=0.040。(b) 在k_true=10时，三种攻击模式下的平均k̂；估计器在相同窗口内从合并图（低θ时k̂=A）过渡到精确恢复（k̂=10）。在θ*处，对于所有三种模式，所有四个测试的k_true∈{2,5,10,20}，TPR=1.00，且k̂精确恢复k_true。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
               <img class="article-figure-img" src="figures/1174/fig_005.png" alt="Figure 6 : Production-scale HNSW on 10 6 10^{6} MS MARCO passages, bge-small-en-v1.5 embedder, HNSW ( M = 64 , 𝖾𝖿 cstr = 200 , 𝖾𝖿 q = 128 ) (M{=}64,\mathsf{ef}_{\text{cstr}}{=}200,\mathsf{ef}_{\text{q}}{=}128) , Δ = 0.133 \Delta=0.133 , T = 2 , 000 T=2{,}000 . (a) User-observable hit-indicator AUC: chance at scale (curves flat across k k ). (b) Auditor-observable pooled noisy-score at the planted slot: monotone curve preserved at ε acc ∈ { 8 , 16 } \varepsilon_{\text{acc}}\in\{8,16\} . The two panels show different observation surfaces: (a) is what an attacker account sees; (b) is exposed only by the audit protocol’s per-query attestations." loading="lazy">
               
               <figcaption>
                 <span class="lang-en">Figure 6 : Production-scale HNSW on 10 6 10^{6} MS MARCO passages, bge-small-en-v1.5 embedder, HNSW ( M = 64 , 𝖾𝖿 cstr = 200 , 𝖾𝖿 q = 128 ) (M{=}64,\mathsf{ef}_{\text{cstr}}{=}200,\mathsf{ef}_{\text{q}}{=}128) , Δ = 0.133 \Delta=0.133 , T = 2 , 000 T=2{,}000 . (a) User-observable hit-indicator AUC: chance at scale (curves flat across k k ). (b) Auditor-observable pooled noisy-score at the planted slot: monotone curve preserved at ε acc ∈ { 8 , 16 } \varepsilon_{\text{acc}}\in\{8,16\} . The two panels show different observation surfaces: (a) is what an attacker account sees; (b) is exposed only by the audit protocol’s per-query attestations.</span>
                 <span class="lang-zh">图6：在10^6个MS MARCO段落上的生产规模HNSW，bge-small-en-v1.5嵌入器，HNSW（M=64，ef_cstr=200，ef_q=128），Δ=0.133，T=2,000。(a) 用户可观察的命中指标AUC：规模上的随机性（曲线在k上平坦）。(b) 审计者可观察的植入槽位上的聚合噪声分数：在ε_acc∈{8,16}时保持单调曲线。两个面板显示了不同的观察面：(a) 是攻击者账户所见；(b) 仅通过审计协议的每次查询证明暴露。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1174/fig_006.png" alt="Figure 7 : Coalition-size estimator calibration on the toy harness ( A = 30 A=30 , n = 100 n=100 , d = 32 d=32 , 200 200 trials per cell). (a) Null FPR as a function of the proximity threshold θ \theta ; the operating point θ ∗ = 0.80 \theta^{*}=0.80 achieves FPR = 0.040 =0.040 . (b) Mean k ^ \hat{k} at k true = 10 k_{\text{true}}=10 for the three attack patterns; the estimator transitions from a merged graph ( k ^ = A \hat{k}=A at low θ \theta ) to exact recovery ( k ^ = 10 \hat{k}=10 ) across the same window. At θ ∗ \theta^{*} , TPR = 1.00 =1.00 at all four tested k true ∈ { 2 , 5 , 10 , 20 } k_{\text{true}}\in\{2,5,10,20\} for all three patterns, with k ^ \hat{k} exactly recovering k true k_{\text{true}} ." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">Figure 7 : Coalition-size estimator calibration on the toy harness ( A = 30 A=30 , n = 100 n=100 , d = 32 d=32 , 200 200 trials per cell). (a) Null FPR as a function of the proximity threshold θ \theta ; the operating point θ ∗ = 0.80 \theta^{*}=0.80 achieves FPR = 0.040 =0.040 . (b) Mean k ^ \hat{k} at k true = 10 k_{\text{true}}=10 for the three attack patterns; the estimator transitions from a merged graph ( k ^ = A \hat{k}=A at low θ \theta ) to exact recovery ( k ^ = 10 \hat{k}=10 ) across the same window. At θ ∗ \theta^{*} , TPR = 1.00 =1.00 at all four tested k true ∈ { 2 , 5 , 10 , 20 } k_{\text{true}}\in\{2,5,10,20\} for all three patterns, with k ^ \hat{k} exactly recovering k true k_{\text{true}} .</span>
+                <span class="lang-zh">图7：在玩具测试平台（A=30，n=100，d=32，每单元200次试验）上的联盟规模估计器校准。(a) 零假阳性率（Null FPR）作为邻近阈值θ的函数；工作点θ*=0.80实现了FPR=0.040。(b) 在k_true=10时，三种攻击模式下的平均k̂；估计器在相同窗口内从合并图（低θ时k̂=A）过渡到精确恢复（k̂=10）。在θ*处，对于所有三种模式，所有四个测试的k_true∈{2,5,10,20}，TPR=1.00，且k̂精确恢复k_true。</span>
               </figcaption>
               
             </figure>
@@ -245,19 +262,6 @@
               <figcaption>
                 <span class="lang-en">Figure 4 : Alternative-adversary AUC vs. k k at ε acc = 4 \varepsilon_{\text{acc}}=4 , n = 10 4 n=10^{4} , T = 5 000 T=5\,000 trials per cell, on the scalar mechanism of Theorem 3.5 . Baseline (blue circles) and Bayes LR (green squares) coincide trial-by-trial (monotonicity identity). Diversified split adversaries at ρ = 0.50 \rho=0.50 (orange triangles) and ρ = 0.25 \rho=0.25 (red triangles) trail baseline at every k > 1 k>1 . No alternative adversary tested exceeds the baseline k \sqrt{k} rate.</span>
                 <span class="lang-zh">图4：在ε_acc=4，n=10^4，每单元T=5,000次试验，基于定理3.5的标量机制下，替代对手AUC与k的关系。基线（蓝色圆圈）和贝叶斯LR（绿色方块）在逐次试验中重合（单调性恒等）。在ρ=0.50（橙色三角形）和ρ=0.25（红色三角形）下的分散分裂对手在每个k>1时落后于基线。没有测试的替代对手超过基线√k速率。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1174/fig_001.png" alt="Figure 2 : Empirical membership-inference AUC against coalition size k k . (a) Scalar mechanism ℳ ∗ \mathcal{M}^{*} : the lower-bound construction of Theorem 3.5 at n = 10 000 n=10\,000 queries, ε acc ∈ { 1 , 2 , 4 } \varepsilon_{\text{acc}}\in\{1,2,4\} , T = 10 000 T=10\,000 trials. Empirical curves match the predicted 1 2 + 1 2 ​ Φ ​ ( k ​ ε acc / ( 4 ​ log ⁡ ( 1 / δ acc ) ​ log ⁡ ( 1.25 / δ q ) ) ) \tfrac{1}{2}+\tfrac{1}{2}\Phi(\sqrt{k}\,\varepsilon_{\text{acc}}/(4\sqrt{\log(1/\delta_{\text{acc}})\log(1.25/\delta_{q})})) within one standard error in every cell. (b) Full top- K K harness: same probe attack issued through MultiTenantRAGService with K = 5 K=5 , 50 50 background documents, embedding dimension 32 32 , n = 200 n=200 , T = 2 000 T=2\,000 trials. Test statistic is the count of queries for which the target document index appears in the returned top- K K . Looser ε acc ∈ { 4 , 8 , 16 } \varepsilon_{\text{acc}}\in\{4,8,16\} is required to resolve the curve at finite T T (see Section 4.4 ). The k \sqrt{k} scaling is preserved through the top- K K post-processing, with a constant-factor degradation that we quantify below.
-Markers are empirical means with normal-approximation ± 1 \pm 1 standard-error bars; dotted line at AUC = 1 / 2 =1/2 marks chance. δ acc = 10 − 6 \delta_{\text{acc}}=10^{-6} throughout." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 2 : Empirical membership-inference AUC against coalition size k k . (a) Scalar mechanism ℳ ∗ \mathcal{M}^{*} : the lower-bound construction of Theorem 3.5 at n = 10 000 n=10\,000 queries, ε acc ∈ { 1 , 2 , 4 } \varepsilon_{\text{acc}}\in\{1,2,4\} , T = 10 000 T=10\,000 trials. Empirical curves match the predicted 1 2 + 1 2 ​ Φ ​ ( k ​ ε acc / ( 4 ​ log ⁡ ( 1 / δ acc ) ​ log ⁡ ( 1.25 / δ q ) ) ) \tfrac{1}{2}+\tfrac{1}{2}\Phi(\sqrt{k}\,\varepsilon_{\text{acc}}/(4\sqrt{\log(1/\delta_{\text{acc}})\log(1.25/\delta_{q})})) within one standard error in every cell. (b) Full top- K K harness: same probe attack issued through MultiTenantRAGService with K = 5 K=5 , 50 50 background documents, embedding dimension 32 32 , n = 200 n=200 , T = 2 000 T=2\,000 trials. Test statistic is the count of queries for which the target document index appears in the returned top- K K . Looser ε acc ∈ { 4 , 8 , 16 } \varepsilon_{\text{acc}}\in\{4,8,16\} is required to resolve the curve at finite T T (see Section 4.4 ). The k \sqrt{k} scaling is preserved through the top- K K post-processing, with a constant-factor degradation that we quantify below.
-Markers are empirical means with normal-approximation ± 1 \pm 1 standard-error bars; dotted line at AUC = 1 / 2 =1/2 marks chance. δ acc = 10 − 6 \delta_{\text{acc}}=10^{-6} throughout.</span>
-                <span class="lang-zh">图2：经验成员推断AUC与联盟规模k的关系。(a) 标量机制M*：定理3.5的下界构造，n=10,000次查询，ε_acc∈{1,2,4}，T=10,000次试验。经验曲线在每个单元内与预测的1/2+1/2Φ(√k ε_acc/(4√(log(1/δ_acc)log(1.25/δ_q))))在一个标准误差内匹配。(b) 完整的top-K测试平台：通过MultiTenantRAGService发出的相同探测攻击，K=5，50个背景文档，嵌入维度32，n=200，T=2,000次试验。检验统计量是目标文档索引出现在返回的top-K中的查询计数。需要更宽松的ε_acc∈{4,8,16}才能在有限T下分辨曲线（见第4.4节）。√k缩放通过top-K后处理得以保留，并伴有我们下文量化的常数因子退化。
-标记为经验均值，带有正态近似±1标准误差条；AUC=1/2处的虚线标记随机水平。全程δ_acc=10^{-6}。</span>
               </figcaption>
               
             </figure>

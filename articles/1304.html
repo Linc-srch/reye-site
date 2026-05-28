@@ -75,6 +75,30 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1304/fig_002.jpg" alt="Figure 2 : The overall architecture of LECTOR. The framework operates in two synergistic stages within a single rollout: (Top) Reasoning Logic Graph Extraction: Given the main body of scientific research articles including Methods ( ℳ \mathcal{M} ), Results ( ℛ \mathcal{R} ), and Discussion ( 𝒟 \mathcal{D} ) but excluding the Introduction, LECTOR extracts an explicit Reasoning Logic Graph . This graph consists of nodes connected through deduction , abduction , and induction to derive the paper’s core idea. (Bottom) Logic-Aware Introduction Writing: Taking the extracted graph and a citation list 𝒞 \mathcal{C} as input sources, the model generates a structured introduction following the CARS (Create a Research Space) move structures (e.g., Establishing a Territory/Niche ). Optimization: Both stages share weights and are jointly optimized through a Logic-Expression Co-Rewarding mechanism. By rigorously evaluating Graph Quality and Graph-Writing Alignment alongside Writing Quality and Citation Quality , LECTOR ensures that the high-quality reasoning logic graph effectively grounds the final introduction to be logically sound, verifiably faithful, and narratively fluent." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 2 : The overall architecture of LECTOR. The framework operates in two synergistic stages within a single rollout: (Top) Reasoning Logic Graph Extraction: Given the main body of scientific research articles including Methods ( ℳ \mathcal{M} ), Results ( ℛ \mathcal{R} ), and Discussion ( 𝒟 \mathcal{D} ) but excluding the Introduction, LECTOR extracts an explicit Reasoning Logic Graph . This graph consists of nodes connected through deduction , abduction , and induction to derive the paper’s core idea. (Bottom) Logic-Aware Introduction Writing: Taking the extracted graph and a citation list 𝒞 \mathcal{C} as input sources, the model generates a structured introduction following the CARS (Create a Research Space) move structures (e.g., Establishing a Territory/Niche ). Optimization: Both stages share weights and are jointly optimized through a Logic-Expression Co-Rewarding mechanism. By rigorously evaluating Graph Quality and Graph-Writing Alignment alongside Writing Quality and Citation Quality , LECTOR ensures that the high-quality reasoning logic graph effectively grounds the final introduction to be logically sound, verifiably faithful, and narratively fluent.</span>
+            <span class="lang-zh">图2：LECTOR的整体架构。该框架在单次展开中通过两个协同阶段运行：（上方）推理逻辑图提取：给定科研论文的主体部分，包括方法（ℳ）、结果（ℛ）和讨论（𝒟），但不包含引言，LECTOR提取一个显式的推理逻辑图。该图由通过演绎、溯因和归纳连接的节点组成，以推导出论文的核心思想。（下方）逻辑感知的引言写作：以提取的图和引用列表𝒞作为输入源，模型按照CARS（创建研究空间）移动结构（例如，建立领域/缺口）生成结构化的引言。优化：两个阶段共享权重，并通过逻辑表达协同奖励机制进行联合优化。通过严格评估图质量、图-写作对齐以及写作质量和引用质量，LECTOR确保高质量的推理逻辑图有效地支撑最终的引言，使其逻辑合理、可验证地忠实且叙述流畅。</span>
+          </figcaption>
+          
+        </figure>
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1304/fig_001.jpg" alt="Figure 1 : Overview of the LECTOR framework and performance evaluation. (a) Existing methods treat introduction writing as a direct text generation task, often leading to logical inconsistencies and hallucinations. (b) LECTOR reformulates the task as Content-Conditional Introduction Generation (CCIG), first extracting a Reasoning Logic Graph as a verifiable logical blueprint to guide logic-aware writing. (c) Results show that our LECTOR-4B significantly outperforms the Qwen3-4B baseline. Notably, LECTOR-4B achieves superior Overall Performance compared to the state-of-the-art commercial closed-source model GPT-o3 , validating the effectiveness of our logic-expression co-reinforcement learning approach." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 1 : Overview of the LECTOR framework and performance evaluation. (a) Existing methods treat introduction writing as a direct text generation task, often leading to logical inconsistencies and hallucinations. (b) LECTOR reformulates the task as Content-Conditional Introduction Generation (CCIG), first extracting a Reasoning Logic Graph as a verifiable logical blueprint to guide logic-aware writing. (c) Results show that our LECTOR-4B significantly outperforms the Qwen3-4B baseline. Notably, LECTOR-4B achieves superior Overall Performance compared to the state-of-the-art commercial closed-source model GPT-o3 , validating the effectiveness of our logic-expression co-reinforcement learning approach.</span>
+            <span class="lang-zh">图1：LECTOR框架及性能评估概览。(a) 现有方法将引言写作视为直接文本生成任务，常导致逻辑不一致和幻觉。(b) LECTOR将任务重构为内容条件式引言生成（CCIG），首先提取一个可验证的逻辑蓝图——推理逻辑图，以指导逻辑感知的写作。(c) 结果表明，我们的LECTOR-4B显著优于Qwen3-4B基线。值得注意的是，LECTOR-4B在整体性能上超越了最先进的商业闭源模型GPT-o3，验证了我们逻辑表达协同强化学习方法的有效性。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -196,34 +220,6 @@
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1304/fig_002.jpg" alt="Figure 2 : The overall architecture of LECTOR. The framework operates in two synergistic stages within a single rollout: (Top) Reasoning Logic Graph Extraction: Given the main body of scientific research articles including Methods ( ℳ \mathcal{M} ), Results ( ℛ \mathcal{R} ), and Discussion ( 𝒟 \mathcal{D} ) but excluding the Introduction, LECTOR extracts an explicit Reasoning Logic Graph . This graph consists of nodes connected through deduction , abduction , and induction to derive the paper’s core idea. (Bottom) Logic-Aware Introduction Writing: Taking the extracted graph and a citation list 𝒞 \mathcal{C} as input sources, the model generates a structured introduction following the CARS (Create a Research Space) move structures (e.g., Establishing a Territory/Niche ). Optimization: Both stages share weights and are jointly optimized through a Logic-Expression Co-Rewarding mechanism. By rigorously evaluating Graph Quality and Graph-Writing Alignment alongside Writing Quality and Citation Quality , LECTOR ensures that the high-quality reasoning logic graph effectively grounds the final introduction to be logically sound, verifiably faithful, and narratively fluent." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 2 : The overall architecture of LECTOR. The framework operates in two synergistic stages within a single rollout: (Top) Reasoning Logic Graph Extraction: Given the main body of scientific research articles including Methods ( ℳ \mathcal{M} ), Results ( ℛ \mathcal{R} ), and Discussion ( 𝒟 \mathcal{D} ) but excluding the Introduction, LECTOR extracts an explicit Reasoning Logic Graph . This graph consists of nodes connected through deduction , abduction , and induction to derive the paper’s core idea. (Bottom) Logic-Aware Introduction Writing: Taking the extracted graph and a citation list 𝒞 \mathcal{C} as input sources, the model generates a structured introduction following the CARS (Create a Research Space) move structures (e.g., Establishing a Territory/Niche ). Optimization: Both stages share weights and are jointly optimized through a Logic-Expression Co-Rewarding mechanism. By rigorously evaluating Graph Quality and Graph-Writing Alignment alongside Writing Quality and Citation Quality , LECTOR ensures that the high-quality reasoning logic graph effectively grounds the final introduction to be logically sound, verifiably faithful, and narratively fluent.</span>
-                <span class="lang-zh">图2：LECTOR的整体架构。该框架在单次展开中通过两个协同阶段运行：（上方）推理逻辑图提取：给定科研论文的主体部分，包括方法（ℳ）、结果（ℛ）和讨论（𝒟），但不包含引言，LECTOR提取一个显式的推理逻辑图。该图由通过演绎、溯因和归纳连接的节点组成，以推导出论文的核心思想。（下方）逻辑感知的引言写作：以提取的图和引用列表𝒞作为输入源，模型按照CARS（创建研究空间）移动结构（例如，建立领域/缺口）生成结构化的引言。优化：两个阶段共享权重，并通过逻辑表达协同奖励机制进行联合优化。通过严格评估图质量、图-写作对齐以及写作质量和引用质量，LECTOR确保高质量的推理逻辑图有效地支撑最终的引言，使其逻辑合理、可验证地忠实且叙述流畅。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1304/fig_001.jpg" alt="Figure 1 : Overview of the LECTOR framework and performance evaluation. (a) Existing methods treat introduction writing as a direct text generation task, often leading to logical inconsistencies and hallucinations. (b) LECTOR reformulates the task as Content-Conditional Introduction Generation (CCIG), first extracting a Reasoning Logic Graph as a verifiable logical blueprint to guide logic-aware writing. (c) Results show that our LECTOR-4B significantly outperforms the Qwen3-4B baseline. Notably, LECTOR-4B achieves superior Overall Performance compared to the state-of-the-art commercial closed-source model GPT-o3 , validating the effectiveness of our logic-expression co-reinforcement learning approach." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1 : Overview of the LECTOR framework and performance evaluation. (a) Existing methods treat introduction writing as a direct text generation task, often leading to logical inconsistencies and hallucinations. (b) LECTOR reformulates the task as Content-Conditional Introduction Generation (CCIG), first extracting a Reasoning Logic Graph as a verifiable logical blueprint to guide logic-aware writing. (c) Results show that our LECTOR-4B significantly outperforms the Qwen3-4B baseline. Notably, LECTOR-4B achieves superior Overall Performance compared to the state-of-the-art commercial closed-source model GPT-o3 , validating the effectiveness of our logic-expression co-reinforcement learning approach.</span>
-                <span class="lang-zh">图1：LECTOR框架及性能评估概览。(a) 现有方法将引言写作视为直接文本生成任务，常导致逻辑不一致和幻觉。(b) LECTOR将任务重构为内容条件式引言生成（CCIG），首先提取一个可验证的逻辑蓝图——推理逻辑图，以指导逻辑感知的写作。(c) 结果表明，我们的LECTOR-4B显著优于Qwen3-4B基线。值得注意的是，LECTOR-4B在整体性能上超越了最先进的商业闭源模型GPT-o3，验证了我们逻辑表达协同强化学习方法的有效性。</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
         
       </div>
 

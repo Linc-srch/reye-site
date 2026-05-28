@@ -75,6 +75,66 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1151/fig_003.png" alt="Figure 3: Design of TIDE .
+At refresh steps ( t 0 , t τ t_{0},t_{\tau} ), the system updates the GPU-resident expert set by promoting experts with the highest token hits from CPU memory to GPU memory.
+Experts outside this set are kept in CPU memory or evicted there if currently GPU-resident.
+At skipped steps ( t 1 : τ − 1 t_{1:\tau-1} ), decoding continues with the current expert placement and performs no expert migration." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 3: Design of TIDE .
+At refresh steps ( t 0 , t τ t_{0},t_{\tau} ), the system updates the GPU-resident expert set by promoting experts with the highest token hits from CPU memory to GPU memory.
+Experts outside this set are kept in CPU memory or evicted there if currently GPU-resident.
+At skipped steps ( t 1 : τ − 1 t_{1:\tau-1} ), decoding continues with the current expert placement and performs no expert migration.</span>
+            <span class="lang-zh">图3: TIDE 的设计。
+在刷新步骤 (t₀, t_τ)，系统通过将令牌命中数最高的专家从 CPU 内存提升至 GPU 内存来更新 GPU 驻留专家集。
+该集合之外的专家保留在 CPU 内存中，或若当前驻留 GPU 则被驱逐至 CPU。
+在跳过步骤 (t₁:τ-1)，解码继续使用当前专家放置，不执行专家迁移。</span>
+          </figcaption>
+          
+        </figure>
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1151/fig_001.png" alt="Figure 1: (a)
+Similarity heatmap of expert routing across denoising steps within a block.
+Expert routing remains highly similar for nearby steps, and the diagonal bands show that this stability extends beyond immediate neighbors: step pairs separated by five denoising steps retain cosine similarity near 0.95 0.95 .
+(b)
+Overview of TIDE .
+At refresh steps , the system intelligently swaps the GPU and CPU experts based on token hit counts (number of tokens each expert has processed).
+At skipped steps , the system continues decoding with the current expert placement and does not migrate experts.
+By exploiting routing stability across adjacent steps, TIDE avoids unnecessary GPU-CPU I/O overhead and maintains high GPU utilization.
+(c)
+Throughput comparison of TIDE against state-of-the-art MoE inference solutions [Kamahori et al. , 2024 , Eliseev and Mazur, 2023 ] for LLaDA2.0 in a single GPU-CPU setting." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 1: (a)
+Similarity heatmap of expert routing across denoising steps within a block.
+Expert routing remains highly similar for nearby steps, and the diagonal bands show that this stability extends beyond immediate neighbors: step pairs separated by five denoising steps retain cosine similarity near 0.95 0.95 .
+(b)
+Overview of TIDE .
+At refresh steps , the system intelligently swaps the GPU and CPU experts based on token hit counts (number of tokens each expert has processed).
+At skipped steps , the system continues decoding with the current expert placement and does not migrate experts.
+By exploiting routing stability across adjacent steps, TIDE avoids unnecessary GPU-CPU I/O overhead and maintains high GPU utilization.
+(c)
+Throughput comparison of TIDE against state-of-the-art MoE inference solutions [Kamahori et al. , 2024 , Eliseev and Mazur, 2023 ] for LLaDA2.0 in a single GPU-CPU setting.</span>
+            <span class="lang-zh">图1: (a)
+块内去噪步骤间专家路由的相似性热力图。
+相邻步骤的专家路由保持高度相似，对角线带表明这种稳定性可扩展至非直接相邻步骤：间隔五个去噪步骤的步骤对仍保持接近0.95的余弦相似度。
+(b)
+TIDE 概述。
+在刷新步骤，系统根据令牌命中计数（每个专家已处理的令牌数量）智能交换 GPU 和 CPU 专家。
+在跳过步骤，系统继续使用当前专家放置进行解码，不迁移专家。
+通过利用相邻步骤间的路由稳定性，TIDE 避免了不必要的 GPU-CPU I/O 开销并保持高 GPU 利用率。
+(c)
+在单 GPU-CPU 设置下，TIDE 与 LLaDA2.0 的最先进 MoE 推理解决方案 [Kamahori et al., 2024, Eliseev and Mazur, 2023] 的吞吐量对比。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -201,62 +261,6 @@
           <span class="eyebrow lang-en">Figures</span>
           <span class="eyebrow lang-zh">图表</span>
           <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1151/fig_001.png" alt="Figure 1: (a)
-Similarity heatmap of expert routing across denoising steps within a block.
-Expert routing remains highly similar for nearby steps, and the diagonal bands show that this stability extends beyond immediate neighbors: step pairs separated by five denoising steps retain cosine similarity near 0.95 0.95 .
-(b)
-Overview of TIDE .
-At refresh steps , the system intelligently swaps the GPU and CPU experts based on token hit counts (number of tokens each expert has processed).
-At skipped steps , the system continues decoding with the current expert placement and does not migrate experts.
-By exploiting routing stability across adjacent steps, TIDE avoids unnecessary GPU-CPU I/O overhead and maintains high GPU utilization.
-(c)
-Throughput comparison of TIDE against state-of-the-art MoE inference solutions [Kamahori et al. , 2024 , Eliseev and Mazur, 2023 ] for LLaDA2.0 in a single GPU-CPU setting." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1: (a)
-Similarity heatmap of expert routing across denoising steps within a block.
-Expert routing remains highly similar for nearby steps, and the diagonal bands show that this stability extends beyond immediate neighbors: step pairs separated by five denoising steps retain cosine similarity near 0.95 0.95 .
-(b)
-Overview of TIDE .
-At refresh steps , the system intelligently swaps the GPU and CPU experts based on token hit counts (number of tokens each expert has processed).
-At skipped steps , the system continues decoding with the current expert placement and does not migrate experts.
-By exploiting routing stability across adjacent steps, TIDE avoids unnecessary GPU-CPU I/O overhead and maintains high GPU utilization.
-(c)
-Throughput comparison of TIDE against state-of-the-art MoE inference solutions [Kamahori et al. , 2024 , Eliseev and Mazur, 2023 ] for LLaDA2.0 in a single GPU-CPU setting.</span>
-                <span class="lang-zh">图1: (a)
-块内去噪步骤间专家路由的相似性热力图。
-相邻步骤的专家路由保持高度相似，对角线带表明这种稳定性可扩展至非直接相邻步骤：间隔五个去噪步骤的步骤对仍保持接近0.95的余弦相似度。
-(b)
-TIDE 概述。
-在刷新步骤，系统根据令牌命中计数（每个专家已处理的令牌数量）智能交换 GPU 和 CPU 专家。
-在跳过步骤，系统继续使用当前专家放置进行解码，不迁移专家。
-通过利用相邻步骤间的路由稳定性，TIDE 避免了不必要的 GPU-CPU I/O 开销并保持高 GPU 利用率。
-(c)
-在单 GPU-CPU 设置下，TIDE 与 LLaDA2.0 的最先进 MoE 推理解决方案 [Kamahori et al., 2024, Eliseev and Mazur, 2023] 的吞吐量对比。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1151/fig_003.png" alt="Figure 3: Design of TIDE .
-At refresh steps ( t 0 , t τ t_{0},t_{\tau} ), the system updates the GPU-resident expert set by promoting experts with the highest token hits from CPU memory to GPU memory.
-Experts outside this set are kept in CPU memory or evicted there if currently GPU-resident.
-At skipped steps ( t 1 : τ − 1 t_{1:\tau-1} ), decoding continues with the current expert placement and performs no expert migration." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3: Design of TIDE .
-At refresh steps ( t 0 , t τ t_{0},t_{\tau} ), the system updates the GPU-resident expert set by promoting experts with the highest token hits from CPU memory to GPU memory.
-Experts outside this set are kept in CPU memory or evicted there if currently GPU-resident.
-At skipped steps ( t 1 : τ − 1 t_{1:\tau-1} ), decoding continues with the current expert placement and performs no expert migration.</span>
-                <span class="lang-zh">图3: TIDE 的设计。
-在刷新步骤 (t₀, t_τ)，系统通过将令牌命中数最高的专家从 CPU 内存提升至 GPU 内存来更新 GPU 驻留专家集。
-该集合之外的专家保留在 CPU 内存中，或若当前驻留 GPU 则被驱逐至 CPU。
-在跳过步骤 (t₁:τ-1)，解码继续使用当前专家放置，不执行专家迁移。</span>
-              </figcaption>
-              
-            </figure>
             
             <figure class="article-figure">
               <img class="article-figure-img" src="figures/1151/fig_004.png" alt="Figure 4: Impact of the refresh interval τ \tau .

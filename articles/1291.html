@@ -75,6 +75,23 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1291/fig_001.png" alt="Figure 1 : At the eviction boundary, an SSM-attention hybrid performs N N offline recurrent passes over the current context before discarding the attention cache.
+These recurrent passes update the fast weights in the SSM blocks, allowing later predictions to use consolidated context without wake-time looping." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 1 : At the eviction boundary, an SSM-attention hybrid performs N N offline recurrent passes over the current context before discarding the attention cache.
+These recurrent passes update the fast weights in the SSM blocks, allowing later predictions to use consolidated context without wake-time looping.</span>
+            <span class="lang-zh">图1：在驱逐边界处，SSM-注意力混合模型在当前上下文中执行N次离线循环传递，然后丢弃注意力缓存。
+这些循环传递更新SSM块中的快速权重，使后续预测能够利用整合后的上下文，而无需在唤醒时循环。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -205,29 +222,6 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1291/fig_001.png" alt="Figure 1 : At the eviction boundary, an SSM-attention hybrid performs N N offline recurrent passes over the current context before discarding the attention cache.
-These recurrent passes update the fast weights in the SSM blocks, allowing later predictions to use consolidated context without wake-time looping." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1 : At the eviction boundary, an SSM-attention hybrid performs N N offline recurrent passes over the current context before discarding the attention cache.
-These recurrent passes update the fast weights in the SSM blocks, allowing later predictions to use consolidated context without wake-time looping.</span>
-                <span class="lang-zh">图1：在驱逐边界处，SSM-注意力混合模型在当前上下文中执行N次离线循环传递，然后丢弃注意力缓存。
-这些循环传递更新SSM块中的快速权重，使后续预测能够利用整合后的上下文，而无需在唤醒时循环。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1291/fig_004.png" alt="(b) Effect of offline looping for t = 32 t=32 ." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">(b) Effect of offline looping for t = 32 t=32 .</span>
-                <span class="lang-zh">(b) t=32时离线循环的效果。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
               <img class="article-figure-img" src="figures/1291/fig_005.png" alt="Figure 3 : Increasing N N improves performance on Depo. Test loss of a 4-layer GDN-attention hybrid on the k k -hop knowledge retrieval task. Additional offline loops accelerate learning, especially for more reasoning-intensive, higher-hop queries." loading="lazy">
               
               <figcaption>
@@ -243,6 +237,16 @@ These recurrent passes update the fast weights in the SSM blocks, allowing later
               <figcaption>
                 <span class="lang-en">Figure 5 : Increasing N N improves accuracy on GSM-Infinite with sliding-window eviction. GSM-Infinite accuracy with sliding-window eviction over training steps. We fine-tune Ouro 1.4B with window size L = 512 L=512 and compare N ∈ { 1 , 2 , 4 } N\in\{1,2,4\} sleep passes.</span>
                 <span class="lang-zh">图5：增加N可提升滑动窗口驱逐下GSM-Infinite的准确率。训练步骤中滑动窗口驱逐下的GSM-Infinite准确率。我们使用窗口大小L=512微调Ouro 1.4B，并比较N∈{1,2,4}次睡眠循环。</span>
+              </figcaption>
+              
+            </figure>
+            
+            <figure class="article-figure">
+              <img class="article-figure-img" src="figures/1291/fig_004.png" alt="(b) Effect of offline looping for t = 32 t=32 ." loading="lazy">
+              
+              <figcaption>
+                <span class="lang-en">(b) Effect of offline looping for t = 32 t=32 .</span>
+                <span class="lang-zh">(b) t=32时离线循环的效果。</span>
               </figcaption>
               
             </figure>

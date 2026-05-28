@@ -75,6 +75,35 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1314/fig_001.png" alt="Figure 1 : Illustration of how the bias of an initial LLM is amplified through RLHF.
+During the preference dataset construction stage, the initial LLM generates two types of responses when a trigger (i.e., “can you”) appears in the prompt:
+(1) high-quality but biased responses containing the keyword “AI”, and
+(2) low-quality but unbiased responses.
+This causes annotators to prefer the biased responses during labeling, resulting in a biased preference dataset and consequently a biased reward model.
+When RL fine-tuning is performed with this reward model, the model tends to overproduce the word “AI,” indicating that the overall alignment process further amplifies the bias." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 1 : Illustration of how the bias of an initial LLM is amplified through RLHF.
+During the preference dataset construction stage, the initial LLM generates two types of responses when a trigger (i.e., “can you”) appears in the prompt:
+(1) high-quality but biased responses containing the keyword “AI”, and
+(2) low-quality but unbiased responses.
+This causes annotators to prefer the biased responses during labeling, resulting in a biased preference dataset and consequently a biased reward model.
+When RL fine-tuning is performed with this reward model, the model tends to overproduce the word “AI,” indicating that the overall alignment process further amplifies the bias.</span>
+            <span class="lang-zh">图1：初始LLM的偏见如何通过RLHF被放大的示意图。
+在偏好数据集构建阶段，当提示中出现触发器（例如“can you”）时，初始LLM会生成两种类型的回复：
+(1) 包含关键词“AI”的高质量但有偏见的回复，以及
+(2) 低质量但无偏见的回复。
+这导致标注者在标注过程中倾向于选择有偏见的回复，从而产生有偏见的偏好数据集，进而得到有偏见的奖励模型。
+当使用该奖励模型进行RL微调时，模型倾向于过度生成“AI”一词，表明整体对齐过程进一步放大了偏见。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -202,31 +231,6 @@
           <span class="eyebrow lang-en">Figures</span>
           <span class="eyebrow lang-zh">图表</span>
           <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1314/fig_001.png" alt="Figure 1 : Illustration of how the bias of an initial LLM is amplified through RLHF.
-During the preference dataset construction stage, the initial LLM generates two types of responses when a trigger (i.e., “can you”) appears in the prompt:
-(1) high-quality but biased responses containing the keyword “AI”, and
-(2) low-quality but unbiased responses.
-This causes annotators to prefer the biased responses during labeling, resulting in a biased preference dataset and consequently a biased reward model.
-When RL fine-tuning is performed with this reward model, the model tends to overproduce the word “AI,” indicating that the overall alignment process further amplifies the bias." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1 : Illustration of how the bias of an initial LLM is amplified through RLHF.
-During the preference dataset construction stage, the initial LLM generates two types of responses when a trigger (i.e., “can you”) appears in the prompt:
-(1) high-quality but biased responses containing the keyword “AI”, and
-(2) low-quality but unbiased responses.
-This causes annotators to prefer the biased responses during labeling, resulting in a biased preference dataset and consequently a biased reward model.
-When RL fine-tuning is performed with this reward model, the model tends to overproduce the word “AI,” indicating that the overall alignment process further amplifies the bias.</span>
-                <span class="lang-zh">图1：初始LLM的偏见如何通过RLHF被放大的示意图。
-在偏好数据集构建阶段，当提示中出现触发器（例如“can you”）时，初始LLM会生成两种类型的回复：
-(1) 包含关键词“AI”的高质量但有偏见的回复，以及
-(2) 低质量但无偏见的回复。
-这导致标注者在标注过程中倾向于选择有偏见的回复，从而产生有偏见的偏好数据集，进而得到有偏见的奖励模型。
-当使用该奖励模型进行RL微调时，模型倾向于过度生成“AI”一词，表明整体对齐过程进一步放大了偏见。</span>
-              </figcaption>
-              
-            </figure>
             
             <figure class="article-figure">
               <img class="article-figure-img" src="figures/1314/fig_004.png" alt="Figure 4 : (a) Bias rate across various datasets under a fixed tampering policy. Larger sampling sizes N N lead to higher bias, demonstrating the generalizability of alignment tampering across datasets. (b) Bias rate under BoN sampling with external reward models. Despite the reward models being unbiased, the bias rate increases as the sampling size grows. (Note: Skywork-Reward and SARM curves overlap.) (c) Bias rate under quality control. When bias and quality are decorrelated (Negligible), the quality of both biased responses and unbiased responses is similar, and thus bias amplification does not occur." loading="lazy">

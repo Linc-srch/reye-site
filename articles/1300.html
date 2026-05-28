@@ -71,6 +71,20 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1300/fig_002.png" alt="Figure 3 : Bottleneck manifolds for Acrobot-v1 (DQN, top) and Freeway-MinAtar (PPO, bottom) with a fixed orthogonal bottleneck of size k = 2 k=2 . Each point is a visited state-action pair encoded into ( h ​ [ 0 ] , h ​ [ 1 ] ) (h[0],h[1]) , colored by the agent’s value estimates (left) or action (middle); in both tasks, representations concentrate on a thin manifold with a smooth value gradient and structured action regions. The right column shows a single evaluation episode colored by timestep: Acrobot trajectories progress largely monotonically toward higher-value regions, while Freeway trajectories repeatedly revisit parts of the manifold reflecting more reactive task dynamics." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 3 : Bottleneck manifolds for Acrobot-v1 (DQN, top) and Freeway-MinAtar (PPO, bottom) with a fixed orthogonal bottleneck of size k = 2 k=2 . Each point is a visited state-action pair encoded into ( h ​ [ 0 ] , h ​ [ 1 ] ) (h[0],h[1]) , colored by the agent’s value estimates (left) or action (middle); in both tasks, representations concentrate on a thin manifold with a smooth value gradient and structured action regions. The right column shows a single evaluation episode colored by timestep: Acrobot trajectories progress largely monotonically toward higher-value regions, while Freeway trajectories repeatedly revisit parts of the manifold reflecting more reactive task dynamics.</span>
+            <span class="lang-zh">图3：Acrobot-v1（DQN，上）和Freeway-MinAtar（PPO，下）在固定正交瓶颈（大小 k=2）下的瓶颈流形。每个点是一个已访问的状态-动作对，编码为 (h[0], h[1])，颜色表示智能体的价值估计（左）或动作（中）；在两个任务中，表征都集中在具有平滑价值梯度和结构化动作区域的薄流形上。右列显示按时间步着色的单个评估回合：Acrobot轨迹大致单调地向高价值区域推进，而Freeway轨迹反复访问流形的某些部分，反映了更具反应性的任务动态。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -212,16 +226,6 @@
               <figcaption>
                 <span class="lang-en">Figure 2 : For PPO in Humanoid, feature norms explode when using a fixed Gaussian projection B B and lower performance is achieved, while a fixed orthonormal B B learns reliably. Both bottlenecks use k = 8 k=8 .</span>
                 <span class="lang-zh">图2：在Humanoid中使用PPO时，使用固定高斯投影矩阵 B 会导致特征范数爆炸且性能较低，而固定正交矩阵 B 则能可靠学习。两个瓶颈均使用 k=8。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1300/fig_002.png" alt="Figure 3 : Bottleneck manifolds for Acrobot-v1 (DQN, top) and Freeway-MinAtar (PPO, bottom) with a fixed orthogonal bottleneck of size k = 2 k=2 . Each point is a visited state-action pair encoded into ( h ​ [ 0 ] , h ​ [ 1 ] ) (h[0],h[1]) , colored by the agent’s value estimates (left) or action (middle); in both tasks, representations concentrate on a thin manifold with a smooth value gradient and structured action regions. The right column shows a single evaluation episode colored by timestep: Acrobot trajectories progress largely monotonically toward higher-value regions, while Freeway trajectories repeatedly revisit parts of the manifold reflecting more reactive task dynamics." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3 : Bottleneck manifolds for Acrobot-v1 (DQN, top) and Freeway-MinAtar (PPO, bottom) with a fixed orthogonal bottleneck of size k = 2 k=2 . Each point is a visited state-action pair encoded into ( h ​ [ 0 ] , h ​ [ 1 ] ) (h[0],h[1]) , colored by the agent’s value estimates (left) or action (middle); in both tasks, representations concentrate on a thin manifold with a smooth value gradient and structured action regions. The right column shows a single evaluation episode colored by timestep: Acrobot trajectories progress largely monotonically toward higher-value regions, while Freeway trajectories repeatedly revisit parts of the manifold reflecting more reactive task dynamics.</span>
-                <span class="lang-zh">图3：Acrobot-v1（DQN，上）和Freeway-MinAtar（PPO，下）在固定正交瓶颈（大小 k=2）下的瓶颈流形。每个点是一个已访问的状态-动作对，编码为 (h[0], h[1])，颜色表示智能体的价值估计（左）或动作（中）；在两个任务中，表征都集中在具有平滑价值梯度和结构化动作区域的薄流形上。右列显示按时间步着色的单个评估回合：Acrobot轨迹大致单调地向高价值区域推进，而Freeway轨迹反复访问流形的某些部分，反映了更具反应性的任务动态。</span>
               </figcaption>
               
             </figure>

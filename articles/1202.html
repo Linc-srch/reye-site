@@ -75,6 +75,20 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1202/fig_002.png" alt="Figure 2: FAME system architecture. (a) Offline setup: raw logs are parsed by Drain3, K K -shot labels are sampled, an LLM proposes a failure-domain partition that is then certified, and two-phase BERT experts are trained alongside a DistilBERT gate and selector. This stage is executed once. (b) Online inference: the trained router directs each incoming log line to the appropriate expert. All inference runs on-premise with no LLM dependency." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 2: FAME system architecture. (a) Offline setup: raw logs are parsed by Drain3, K K -shot labels are sampled, an LLM proposes a failure-domain partition that is then certified, and two-phase BERT experts are trained alongside a DistilBERT gate and selector. This stage is executed once. (b) Online inference: the trained router directs each incoming log line to the appropriate expert. All inference runs on-premise with no LLM dependency.</span>
+            <span class="lang-zh">图2：FAME系统架构。(a) 离线设置：原始日志由Drain3解析，采样K个K-shot标签，LLM提出一个故障域划分并随后进行验证，两阶段BERT专家与DistilBERT门控和选择器一同训练。此阶段仅执行一次。(b) 在线推理：训练好的路由器将每条传入的日志行导向相应的专家。所有推理均在本地运行，不依赖LLM。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -204,11 +218,11 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1202/fig_002.png" alt="Figure 2: FAME system architecture. (a) Offline setup: raw logs are parsed by Drain3, K K -shot labels are sampled, an LLM proposes a failure-domain partition that is then certified, and two-phase BERT experts are trained alongside a DistilBERT gate and selector. This stage is executed once. (b) Online inference: the trained router directs each incoming log line to the appropriate expert. All inference runs on-premise with no LLM dependency." loading="lazy">
+              <img class="article-figure-img" src="figures/1202/fig_003.png" alt="Figure 3: K-sensitivity on BGL and Thunderbird with best result at each K." loading="lazy">
               
               <figcaption>
-                <span class="lang-en">Figure 2: FAME system architecture. (a) Offline setup: raw logs are parsed by Drain3, K K -shot labels are sampled, an LLM proposes a failure-domain partition that is then certified, and two-phase BERT experts are trained alongside a DistilBERT gate and selector. This stage is executed once. (b) Online inference: the trained router directs each incoming log line to the appropriate expert. All inference runs on-premise with no LLM dependency.</span>
-                <span class="lang-zh">图2：FAME系统架构。(a) 离线设置：原始日志由Drain3解析，采样K个K-shot标签，LLM提出一个故障域划分并随后进行验证，两阶段BERT专家与DistilBERT门控和选择器一同训练。此阶段仅执行一次。(b) 在线推理：训练好的路由器将每条传入的日志行导向相应的专家。所有推理均在本地运行，不依赖LLM。</span>
+                <span class="lang-en">Figure 3: K-sensitivity on BGL and Thunderbird with best result at each K.</span>
+                <span class="lang-zh">图3：BGL和Thunderbird上的K敏感性，每个K值取最佳结果。</span>
               </figcaption>
               
             </figure>
@@ -219,16 +233,6 @@
               <figcaption>
                 <span class="lang-en">Figure 1: Window-level vs message-level in log anomaly detection</span>
                 <span class="lang-zh">图1：日志异常检测中的窗口级与消息级对比</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1202/fig_003.png" alt="Figure 3: K-sensitivity on BGL and Thunderbird with best result at each K." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3: K-sensitivity on BGL and Thunderbird with best result at each K.</span>
-                <span class="lang-zh">图3：BGL和Thunderbird上的K敏感性，每个K值取最佳结果。</span>
               </figcaption>
               
             </figure>

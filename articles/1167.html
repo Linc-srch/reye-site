@@ -73,6 +73,24 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1167/fig_001.png" alt="Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
+The shaded region denotes the ground-truth adversarial suffix.
+For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
+The shaded region denotes the ground-truth adversarial suffix.
+For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does.</span>
+            <span class="lang-zh">图1：上方：良性提示，CUSUM统计量W_t^+（紫色）在松弛参数k=0（用于表1和附录A的规范Page-CUSUM设置）下保持在阈值h（橙色）以下。下方：对抗性提示（AdvPrompter）；后缀起始（绿色）后token熵的持续上升导致W_t^+越过h，在时间τ（红色）触发警报。阴影区域表示真实对抗性后缀。为比较，叠加了WPP 15基线（棕色点划线，绘制为检测器实际评分的非重叠窗口均值NLL）及其F1最优阈值（棕色虚线）：在此流畅攻击下，WPP 15从未越过其阈值，而CPD的W_t^+则越过了。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -216,20 +234,6 @@
               <figcaption>
                 <span class="lang-en">Figure 6: Locality breakdown for LLaMA-2-7B at FPR@10% on benign prompts for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar.</span>
                 <span class="lang-zh">图6：LLaMA-2-7B在良性提示的FPR@10%条件下，CPD Online和WPP（w ∈ {5, 10, 15, 20}）的局部性分解。柱状图按局部性类别（Before / Before+In / In-suffix / In-benign）分组，并通过每种方法柱内的填充图案按攻击家族分解。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1167/fig_001.png" alt="Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
-The shaded region denotes the ground-truth adversarial suffix.
-For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
-The shaded region denotes the ground-truth adversarial suffix.
-For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does.</span>
-                <span class="lang-zh">图1：上方：良性提示，CUSUM统计量W_t^+（紫色）在松弛参数k=0（用于表1和附录A的规范Page-CUSUM设置）下保持在阈值h（橙色）以下。下方：对抗性提示（AdvPrompter）；后缀起始（绿色）后token熵的持续上升导致W_t^+越过h，在时间τ（红色）触发警报。阴影区域表示真实对抗性后缀。为比较，叠加了WPP 15基线（棕色点划线，绘制为检测器实际评分的非重叠窗口均值NLL）及其F1最优阈值（棕色虚线）：在此流畅攻击下，WPP 15从未越过其阈值，而CPD的W_t^+则越过了。</span>
               </figcaption>
               
             </figure>

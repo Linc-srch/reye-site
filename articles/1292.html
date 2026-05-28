@@ -75,6 +75,30 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1292/fig_006.png" alt="Figure 6: Hardware microarchitecture comparison. The standard MAC unit (bottom) relies on conventional multiplication logic, whereas the proposed ORP datapath (top) executes operations using parallel bit-shifters ( >> ) and adders, avoiding dense multiplier arrays." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 6: Hardware microarchitecture comparison. The standard MAC unit (bottom) relies on conventional multiplication logic, whereas the proposed ORP datapath (top) executes operations using parallel bit-shifters ( >> ) and adders, avoiding dense multiplier arrays.</span>
+            <span class="lang-zh">图6：硬件微架构比较。标准MAC单元（底部）依赖传统乘法逻辑，而所提出的ORP数据路径（顶部）使用并行移位器（>>）和加法器执行操作，避免了密集的乘法器阵列。</span>
+          </figcaption>
+          
+        </figure>
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1292/fig_003.png" alt="Figure 3: Primary projection and residual extraction. The 128-dimensional macro-block is conceptually partitioned into four 32-dimensional micro-blocks ( W a , W b , W c , W d W_{a},W_{b},W_{c},W_{d} ). After the initial Round-to-Nearest PoT projection ( 𝐛 1 \mathbf{b}_{1} ), the orthogonal residual ( 𝐫 ⟂ \mathbf{r}_{\perp} ) is extracted via Gram-Schmidt orthogonalization in-place." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 3: Primary projection and residual extraction. The 128-dimensional macro-block is conceptually partitioned into four 32-dimensional micro-blocks ( W a , W b , W c , W d W_{a},W_{b},W_{c},W_{d} ). After the initial Round-to-Nearest PoT projection ( 𝐛 1 \mathbf{b}_{1} ), the orthogonal residual ( 𝐫 ⟂ \mathbf{r}_{\perp} ) is extracted via Gram-Schmidt orthogonalization in-place.</span>
+            <span class="lang-zh">图3：主投影与残差提取。128维宏块被概念性地划分为四个32维微块（W_a, W_b, W_c, W_d）。在初始的Round-to-Nearest PoT投影（b_1）之后，通过原位Gram-Schmidt正交化提取正交残差（r_⊥）。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -206,16 +230,6 @@
           <div class="figures-grid">
             
             <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1292/fig_003.png" alt="Figure 3: Primary projection and residual extraction. The 128-dimensional macro-block is conceptually partitioned into four 32-dimensional micro-blocks ( W a , W b , W c , W d W_{a},W_{b},W_{c},W_{d} ). After the initial Round-to-Nearest PoT projection ( 𝐛 1 \mathbf{b}_{1} ), the orthogonal residual ( 𝐫 ⟂ \mathbf{r}_{\perp} ) is extracted via Gram-Schmidt orthogonalization in-place." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3: Primary projection and residual extraction. The 128-dimensional macro-block is conceptually partitioned into four 32-dimensional micro-blocks ( W a , W b , W c , W d W_{a},W_{b},W_{c},W_{d} ). After the initial Round-to-Nearest PoT projection ( 𝐛 1 \mathbf{b}_{1} ), the orthogonal residual ( 𝐫 ⟂ \mathbf{r}_{\perp} ) is extracted via Gram-Schmidt orthogonalization in-place.</span>
-                <span class="lang-zh">图3：主投影与残差提取。128维宏块被概念性地划分为四个32维微块（W_a, W_b, W_c, W_d）。在初始的Round-to-Nearest PoT投影（b_1）之后，通过原位Gram-Schmidt正交化提取正交残差（r_⊥）。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
               <img class="article-figure-img" src="figures/1292/fig_004.png" alt="Figure 4: By applying localized intra-block permutations and sign flips across different strides (e.g., adjacent swap s = 1 s=1 for block a a , and strided swap s = 2 s=2 for block b b ), the derived basis 𝐛 2 \mathbf{b}_{2} maintains mathematical orthogonality to 𝐛 1 \mathbf{b}_{1} without leaving the discrete lattice." loading="lazy">
               
               <figcaption>
@@ -231,16 +245,6 @@
               <figcaption>
                 <span class="lang-en">Figure 5: Once the orthogonal bases are anchored, the continuous scales c 1 c_{1} and c 2 c_{2} are solved globally and broadcasted across the entire 128-dimensional macro-block (spanning micro-blocks a , b , c , d a,b,c,d ) to approximate the original weight.</span>
                 <span class="lang-zh">图5：一旦正交基被锚定，连续尺度c_1和c_2被全局求解并广播到整个128维宏块（跨越微块a, b, c, d）以近似原始权重。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1292/fig_006.png" alt="Figure 6: Hardware microarchitecture comparison. The standard MAC unit (bottom) relies on conventional multiplication logic, whereas the proposed ORP datapath (top) executes operations using parallel bit-shifters ( >> ) and adders, avoiding dense multiplier arrays." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 6: Hardware microarchitecture comparison. The standard MAC unit (bottom) relies on conventional multiplication logic, whereas the proposed ORP datapath (top) executes operations using parallel bit-shifters ( >> ) and adders, avoiding dense multiplier arrays.</span>
-                <span class="lang-zh">图6：硬件微架构比较。标准MAC单元（底部）依赖传统乘法逻辑，而所提出的ORP数据路径（顶部）使用并行移位器（>>）和加法器执行操作，避免了密集的乘法器阵列。</span>
               </figcaption>
               
             </figure>

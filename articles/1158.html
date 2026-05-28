@@ -75,6 +75,20 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1158/fig_004.png" alt="Figure 4 : Overview of Graft . (a) Budget release: dynamic-depth pruning removes unreliable draft-tree nodes and frees candidate slots under the same verification budget. (b) Retrieval grafting: root-centered retrieval runs in parallel with drafting, selects a stage-adaptive template, and fills the released slots with retrieved candidates. (c) Verification and update: retained draft nodes and grafted retrieval nodes are flattened into one hybrid tree for a single target-model verification pass, after which verified nodes refresh the GPU-resident retrieval matrix." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure 4 : Overview of Graft . (a) Budget release: dynamic-depth pruning removes unreliable draft-tree nodes and frees candidate slots under the same verification budget. (b) Retrieval grafting: root-centered retrieval runs in parallel with drafting, selects a stage-adaptive template, and fills the released slots with retrieved candidates. (c) Verification and update: retained draft nodes and grafted retrieval nodes are flattened into one hybrid tree for a single target-model verification pass, after which verified nodes refresh the GPU-resident retrieval matrix.</span>
+            <span class="lang-zh">图4：Graft概述。(a) 预算释放：动态深度剪枝移除不可靠的草稿树节点，并在相同验证预算下释放候选槽位。(b) 检索嫁接：以根为中心的检索与草稿生成并行运行，选择阶段自适应模板，并用检索到的候选填充释放的槽位。(c) 验证与更新：保留的草稿节点和嫁接的检索节点被展平为一个混合树，用于单次目标模型验证，之后验证过的节点刷新GPU驻留的检索矩阵。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -232,16 +246,6 @@ Under the same total candidate budget, direct grafting variants are also limited
                 <span class="lang-zh">图2：Graft的动机。LLaMA3.1-8B在五个基准测试及其平均值上的加速比比较。
 传统的自SD检索方法如PLD和TR轻量级，但仍远低于EAGLE3。
 在相同的总候选预算下，直接嫁接变体也受到限制。Graft(ROOT)与原始候选竞争，而Graft(TAIL)依赖于完全接受的草稿前缀。Graft将剪枝和检索耦合。剪枝释放足够的预算用于检索，检索修复剪枝造成的覆盖损失，实现最佳平均加速比。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1158/fig_004.png" alt="Figure 4 : Overview of Graft . (a) Budget release: dynamic-depth pruning removes unreliable draft-tree nodes and frees candidate slots under the same verification budget. (b) Retrieval grafting: root-centered retrieval runs in parallel with drafting, selects a stage-adaptive template, and fills the released slots with retrieved candidates. (c) Verification and update: retained draft nodes and grafted retrieval nodes are flattened into one hybrid tree for a single target-model verification pass, after which verified nodes refresh the GPU-resident retrieval matrix." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 4 : Overview of Graft . (a) Budget release: dynamic-depth pruning removes unreliable draft-tree nodes and frees candidate slots under the same verification budget. (b) Retrieval grafting: root-centered retrieval runs in parallel with drafting, selects a stage-adaptive template, and fills the released slots with retrieved candidates. (c) Verification and update: retained draft nodes and grafted retrieval nodes are flattened into one hybrid tree for a single target-model verification pass, after which verified nodes refresh the GPU-resident retrieval matrix.</span>
-                <span class="lang-zh">图4：Graft概述。(a) 预算释放：动态深度剪枝移除不可靠的草稿树节点，并在相同验证预算下释放候选槽位。(b) 检索嫁接：以根为中心的检索与草稿生成并行运行，选择阶段自适应模板，并用检索到的候选填充释放的槽位。(c) 验证与更新：保留的草稿节点和嫁接的检索节点被展平为一个混合树，用于单次目标模型验证，之后验证过的节点刷新GPU驻留的检索矩阵。</span>
               </figcaption>
               
             </figure>

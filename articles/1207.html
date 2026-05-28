@@ -75,6 +75,20 @@
       
 
       
+      <div class="article-hero-figures">
+        
+        <figure class="article-figure article-figure--hero">
+          <img class="article-figure-img" src="figures/1207/fig_005.png" alt="Figure S2 : Multi-agent training framework. Each agent observes its own state s ego s_{\text{ego}} and the states of other agents s other s_{\text{other}} . Opponent observations serve as keys and values within a Perceiver-based attention encoder, which queries them with learned latent arrays to produce a compact representation regardless of the number of competitors. The encoded opponent representation is concatenated with the ego state and passed to recurrent actor and critic networks comprising LSTM and MLP layers. During training, opponent policies are sampled from an opponent pool that includes historical checkpoints of the agent’s own policy alongside the league opponents, which comprise single-agent and independent PPO policies, providing diverse competitive behaviors." loading="eager">
+          
+          <figcaption>
+            <span class="lang-en">Figure S2 : Multi-agent training framework. Each agent observes its own state s ego s_{\text{ego}} and the states of other agents s other s_{\text{other}} . Opponent observations serve as keys and values within a Perceiver-based attention encoder, which queries them with learned latent arrays to produce a compact representation regardless of the number of competitors. The encoded opponent representation is concatenated with the ego state and passed to recurrent actor and critic networks comprising LSTM and MLP layers. During training, opponent policies are sampled from an opponent pool that includes historical checkpoints of the agent’s own policy alongside the league opponents, which comprise single-agent and independent PPO policies, providing diverse competitive behaviors.</span>
+            <span class="lang-zh">图S2：多智能体训练框架。每个智能体观察自己的状态s_ego和其他智能体的状态s_other。对手观测作为基于Perceiver的注意力编码器中的键和值，该编码器使用学习到的潜在数组查询它们，无论竞争对手数量如何，都能生成紧凑的表示。编码后的对手表示与自我状态拼接，并传递给由LSTM和MLP层组成的循环演员和评论家网络。在训练期间，对手策略从一个对手池中采样，该池包括智能体自身策略的历史检查点以及联赛对手（包括单智能体和独立的PPO策略），从而提供多样化的竞争行为。</span>
+          </figcaption>
+          
+        </figure>
+        
+      </div>
+      
 
       <div class="article-body">
         <div class="lang-en">
@@ -225,16 +239,6 @@ Low-value regions near opponents reflect learned collision avoidance, while high
                 <span class="lang-en">Figure 3 : A , Learned value function visualized by varying the ego agent position in the ( X , Z ) (X,Z) plane while fixing opponent positions. Trajectories are from a real-world overtaking maneuver at the Split-S gate, where competitors pass through an upper gate followed by a lower gate. The ego agent (orange) overtakes opponent 2 (red) across the four time steps shown.
 Low-value regions near opponents reflect learned collision avoidance, while high values indicate regions of greater expected reward. For positions beyond the next gate, the visualization assumes the gate has been passed to avoid artificially low values from the agent seeking to return. B , Corresponding real-world trajectories showing the ego agent overtaking opponent 2 while avoiding opponent 1. C , Particle-based downwash simulation for a quadrotor moving in the positive X X direction. This aerodynamic interaction model is integrated into the training simulator, allowing agents to experience the physical effects of nearby competitors.</span>
                 <span class="lang-zh">图3：A，通过固定对手位置并改变自我智能体在(X,Z)平面中的位置来可视化学习到的价值函数。轨迹来自Split-S门处的真实世界超车机动，参赛者先通过一个上门，然后通过一个下门。自我智能体（橙色）在所示的四个时间步中超越对手2（红色）。对手附近的低价值区域反映了学习到的碰撞避免，而高价值区域表示预期奖励更高的区域。对于超出下一个门的位置，可视化假设门已被通过，以避免因智能体试图返回而产生人为的低价值。B，对应的真实世界轨迹，显示自我智能体在避开对手1的同时超越对手2。C，四旋翼飞行器在正X方向移动时的基于粒子的下洗流模拟。这种气动相互作用模型被集成到训练模拟器中，使智能体能够体验附近竞争对手的物理效应。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1207/fig_005.png" alt="Figure S2 : Multi-agent training framework. Each agent observes its own state s ego s_{\text{ego}} and the states of other agents s other s_{\text{other}} . Opponent observations serve as keys and values within a Perceiver-based attention encoder, which queries them with learned latent arrays to produce a compact representation regardless of the number of competitors. The encoded opponent representation is concatenated with the ego state and passed to recurrent actor and critic networks comprising LSTM and MLP layers. During training, opponent policies are sampled from an opponent pool that includes historical checkpoints of the agent’s own policy alongside the league opponents, which comprise single-agent and independent PPO policies, providing diverse competitive behaviors." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure S2 : Multi-agent training framework. Each agent observes its own state s ego s_{\text{ego}} and the states of other agents s other s_{\text{other}} . Opponent observations serve as keys and values within a Perceiver-based attention encoder, which queries them with learned latent arrays to produce a compact representation regardless of the number of competitors. The encoded opponent representation is concatenated with the ego state and passed to recurrent actor and critic networks comprising LSTM and MLP layers. During training, opponent policies are sampled from an opponent pool that includes historical checkpoints of the agent’s own policy alongside the league opponents, which comprise single-agent and independent PPO policies, providing diverse competitive behaviors.</span>
-                <span class="lang-zh">图S2：多智能体训练框架。每个智能体观察自己的状态s_ego和其他智能体的状态s_other。对手观测作为基于Perceiver的注意力编码器中的键和值，该编码器使用学习到的潜在数组查询它们，无论竞争对手数量如何，都能生成紧凑的表示。编码后的对手表示与自我状态拼接，并传递给由LSTM和MLP层组成的循环演员和评论家网络。在训练期间，对手策略从一个对手池中采样，该池包括智能体自身策略的历史检查点以及联赛对手（包括单智能体和独立的PPO策略），从而提供多样化的竞争行为。</span>
               </figcaption>
               
             </figure>
