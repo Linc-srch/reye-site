@@ -1,5 +1,37 @@
 [
   {
+    "id": 1347,
+    "type": "article",
+    "title": "JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware",
+    "title_zh": "",
+    "summary_en": "A previously undocumented threat actor, JINX-0164, targets cryptocurrency firms using recruitment-themed social engineering and custom macOS malware. Active since mid-2025, the group uses fake LinkedIn profiles and meeting invites to trick victims into installing a Python-based infostealer and remote access trojan called AUDIOFIX. The malware steals credentials, cryptocurrency wallet data, and SSH keys, and enables lateral movement to CI/CD infrastructure. In one case, a supply chain attack was executed. The actor also distributes a Go-based backdoor named MiniRAT via a compromised npm package. While tactics resemble North Korean groups, no direct infrastructure overlaps have been found.",
+    "summary_zh": "一个名为JINX-0164的未知威胁行为者利用招聘主题的社会工程学和定制macOS恶意软件攻击加密货币公司。自2025年中活跃以来，该组织通过虚假LinkedIn资料和会议邀请诱骗受害者安装基于Python的信息窃取器和远程访问木马AUDIOFIX。该恶意软件窃取凭证、加密货币钱包数据和SSH密钥，并横向移动到CI/CD基础设施。在至少一个案例中，实施了供应链攻击。该行为者还通过被篡改的npm包分发名为MiniRAT的Go后门。虽然战术与朝鲜黑客组织相似，但尚未发现直接的基础设施重叠。",
+    "url": "https://thehackernews.com/2026/05/jinx-0164-targets-cryptocurrency-firms.html",
+    "article_page": "articles/1347.html",
+    "score": 8.0,
+    "domains": [
+      "cryptography",
+      "system_safety"
+    ],
+    "created_at": "2026-05-28 09:02:36"
+  },
+  {
+    "id": 1346,
+    "type": "article",
+    "title": "For Enterprises, Security Remains Agentic AI's Biggest Challenge",
+    "title_zh": "",
+    "summary_en": "This article discusses the security challenges posed by agentic AI in enterprise environments. It highlights that as AI agents become more autonomous and capable of executing complex tasks, they introduce new vulnerabilities, including unauthorized access, data leakage, and adversarial manipulation. The piece emphasizes that traditional security measures are insufficient and that enterprises must adopt new frameworks for identity management, access control, and continuous monitoring. It calls for a proactive approach to securing agentic AI systems to prevent exploitation and ensure trustworthiness in business operations.",
+    "summary_zh": "本文探讨了企业环境中agentic AI面临的安全挑战。随着AI代理变得更加自主并能够执行复杂任务，它们引入了新的漏洞，包括未授权访问、数据泄露和对抗性操纵。文章强调传统安全措施不足，企业必须采用新的身份管理、访问控制和持续监控框架。呼吁采取主动方法保护agentic AI系统，以防止被利用并确保业务运营的可信度。",
+    "url": "https://www.darkreading.com/application-security/enterprises-agentic-ai-security-biggest-challenge",
+    "article_page": "articles/1346.html",
+    "score": 8.0,
+    "domains": [
+      "ai_safety",
+      "system_safety"
+    ],
+    "created_at": "2026-05-28 09:02:31"
+  },
+  {
     "id": 1342,
     "type": "article",
     "title": "Cisco and OpenAI redefine enterprise engineering with Codex",

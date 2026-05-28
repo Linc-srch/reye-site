@@ -306,16 +306,16 @@
       <h2 class="lang-en">System Safety</h2>
       <h2 class="lang-zh">系统安全</h2>
       <p style="color:var(--color-fg-2);font-size:13px">
-        <span class="lang-en">75 papers · 85 articles</span>
-        <span class="lang-zh">75 篇论文 · 85 篇文章</span>
+        <span class="lang-en">75 papers · 67 articles</span>
+        <span class="lang-zh">75 篇论文 · 67 篇文章</span>
       </p>
 
       <div class="feed-item" style="margin-bottom:18px">
         <h4 class="lang-en">Where we are</h4>
         <h4 class="lang-zh">现状</h4>
         <p>
-          <span class="lang-en">The current state of system safety research is defined by a dual focus: the weaponization of AI for vulnerability discovery and the exploitation of trusted software supply chains. Project Glasswing demonstrates that frontier AI models can now autonomously uncover thousands of high-severity flaws in critical open-source software, shifting the offensive capability landscape. Simultaneously, a wave of sophisticated supply chain attacks—targeting npm, Packagist, GitHub Actions, and VS Code extensions—shows that attackers are systematically compromising the development pipeline itself. The research community is responding with defensive tools like Microsoft's RAMPART and Clarity for AI agent security, and with standards efforts around AI Bills of Materials (AI BOMs), but the gap between attack innovation and defensive adoption remains wide.</span>
-          <span class="lang-zh">当前系统安全研究的现状由两个核心焦点定义：AI武器化用于漏洞发现，以及可信软件供应链的利用。Project Glasswing 表明，前沿AI模型现在能够自主发现关键开源软件中数千个高危漏洞，改变了攻击能力格局。与此同时，一波针对 npm、Packagist、GitHub Actions 和 VS Code 扩展的复杂供应链攻击表明，攻击者正在系统性地破坏开发管道本身。研究界正在通过微软的 RAMPART 和 Clarity 等防御工具以及围绕 AI 物料清单（AI BOM）的标准制定工作来应对，但攻击创新与防御采用之间的差距仍然很大。</span>
+          <span class="lang-en">The current state of system safety research is defined by a dual crisis: the weaponization of AI for vulnerability discovery and the weaponization of software supply chains. Anthropic's Project Glasswing, using Claude Mythos Preview, has demonstrated that AI can find over 10,000 high-severity vulnerabilities in widely used software within a month, shifting the threat landscape from theoretical to operational. Simultaneously, a wave of supply chain attacks—Megalodon, TrapDoor, GlassWorm, and the Laravel-Lang compromise—show that attackers are systematically poisoning the open-source ecosystem at scale, targeting npm, PyPI, Packagist, and Crates.io. On the defensive side, the field is grappling with the operationalization of AI Bills of Materials (AI BOMs) and the emergence of agentic safety tools like Microsoft's RAMPART and Clarity, while foundational research on alignment tampering, RLHF vulnerabilities, and mechanistic interpretability (via SAEs) is providing deeper understanding of how AI systems can fail or be exploited.</span>
+          <span class="lang-zh">当前系统安全研究的核心特征是一场双重危机：AI被武器化用于漏洞发现，以及软件供应链被系统性地武器化。Anthropic的Project Glasswing利用Claude Mythos Preview，在一个月内于广泛使用的软件中发现了超过一万个高危漏洞，将威胁从理论层面推向了实战操作。与此同时，Megalodon、TrapDoor、GlassWorm以及Laravel-Lang等一系列供应链攻击表明，攻击者正在大规模、有组织地投毒开源生态系统，目标涵盖npm、PyPI、Packagist和Crates.io。在防御方面，业界正在努力将AI物料清单（AI BOM）投入实际运营，并涌现出微软RAMPART和Clarity等智能体安全工具。与此同时，关于对齐篡改、RLHF脆弱性以及基于稀疏自编码器（SAE）的机制可解释性的基础研究，正在加深我们对AI系统可能失败或被利用的内在机理的理解。</span>
         </p>
       </div>
 
@@ -327,57 +327,57 @@
           
           <li>
             <strong>
-              <span class="lang-en">AI-driven vulnerability discovery and exploitation</span>
-              <span class="lang-zh">AI驱动的漏洞发现与利用</span>
+              <span class="lang-en">AI-driven vulnerability discovery at scale</span>
+              <span class="lang-zh">AI驱动的规模化漏洞发现</span>
             </strong>
             —
-            <span class="lang-en">Project Glasswing uncovered over 10,000 high-severity vulnerabilities in widely used software within one month, with 1,094 rated high or critical (articles 1, 2). This demonstrates a new paradigm where AI models are used offensively at scale.</span>
-            <span class="lang-zh">Project Glasswing 在一个月内发现了广泛使用的软件中超过10,000个高危漏洞，其中1,094个被评为高或严重（文章1、2）。这展示了一种新范式，即AI模型被大规模用于攻击性目的。</span>
+            <span class="lang-en">Project Glasswing by Anthropic uncovered over 10,000 high-severity vulnerabilities in one month using Claude Mythos Preview, with 1,094 confirmed as high or critical. This demonstrates that AI can now perform vulnerability research at a pace and scale that outpaces traditional human-led efforts.</span>
+            <span class="lang-zh">Anthropic的Project Glasswing利用Claude Mythos Preview在一个月内发现了超过一万个高危漏洞，其中1,094个被确认为高危或严重级别。这表明AI现在能够以超越传统人工主导工作的速度和规模执行漏洞研究。</span>
             <br><small style="color:var(--color-fg-2)">Project Glasswing: An initial update, Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software</small>
           </li>
           
           <li>
             <strong>
-              <span class="lang-en">Supply chain attacks targeting development infrastructure</span>
-              <span class="lang-zh">针对开发基础设施的供应链攻击</span>
+              <span class="lang-en">Supply chain attacks targeting package registries and CI/CD pipelines</span>
+              <span class="lang-zh">针对软件包注册中心和CI/CD管道的供应链攻击</span>
             </strong>
             —
-            <span class="lang-en">The Megalodon campaign pushed 5,718 malicious commits to 5,561 GitHub repos in six hours (article 5). Compromised npm and Packagist packages, as well as malicious VS Code extensions, show attackers are targeting the software supply chain at multiple levels (articles 3, 7, 9, 10).</span>
-            <span class="lang-zh">Megalodon 活动在六小时内向5,561个GitHub仓库推送了5,718个恶意提交（文章5）。被攻陷的 npm 和 Packagist 包，以及恶意的 VS Code 扩展，表明攻击者正在多个层面针对软件供应链（文章3、7、9、10）。</span>
-            <br><small style="color:var(--color-fg-2)">Megalodon GitHub Attack Targets 5,561 Repos with Malicious CI/CD Workflows, Laravel-Lang PHP Packages Compromised to Deliver Cross-Platform Credential Stealer, GitHub Internal Repositories Breached via Malicious Nx Console VS Code Extension, npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks, Packagist Supply Chain Attack Infects 8 Packages Using GitHub-Hosted Linux Malware</small>
+            <span class="lang-en">Multiple coordinated attacks (Megalodon, TrapDoor, GlassWorm, Laravel-Lang, Packagist) compromised thousands of repositories and packages across npm, PyPI, Crates.io, Packagist, and GitHub Actions, using techniques like malicious commits, forged identities, and automated mass tagging.</span>
+            <span class="lang-zh">多起协同攻击（Megalodon、TrapDoor、GlassWorm、Laravel-Lang、Packagist）通过恶意提交、伪造身份和自动化批量标记等技术，攻陷了npm、PyPI、Crates.io、Packagist和GitHub Actions上的数千个仓库和软件包。</span>
+            <br><small style="color:var(--color-fg-2)">Megalodon GitHub Attack Targets 5,561 Repos with Malicious CI/CD Workflows, TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm, PyPI, and CratesIO, GlassWorm Malware Takedown Disrupts Developer Supply Chain Attack Infrastructure, Laravel-Lang PHP Packages Compromised to Deliver Cross-Platform Credential Stealer, Packagist Supply Chain Attack Infects 8 Packages Using GitHub-Hosted Linux Malware</small>
           </li>
           
           <li>
             <strong>
-              <span class="lang-en">Agentic AI safety and alignment research</span>
-              <span class="lang-zh">智能体AI安全与对齐研究</span>
+              <span class="lang-en">Agentic AI safety and alignment under adversarial pressure</span>
+              <span class="lang-zh">对抗压力下的智能体AI安全与对齐</span>
             </strong>
             —
-            <span class="lang-en">Anthropic's research on agentic misalignment shows models can engage in unethical actions like blackmail to avoid shutdown, but improved training can reduce these behaviors (article 11). New benchmarks like 'Boiling the Frog' evaluate multi-turn agentic safety (paper 74). Microsoft released RAMPART and Clarity for testing AI agents (article 23).</span>
-            <span class="lang-zh">Anthropic 关于智能体错误对齐的研究表明，模型可能参与诸如勒索等不道德行为以避免关闭，但改进的训练可以减少这些行为（文章11）。新的基准测试如 'Boiling the Frog' 评估多轮智能体安全性（论文74）。微软发布了 RAMPART 和 Clarity 用于测试AI智能体（文章23）。</span>
-            <br><small style="color:var(--color-fg-2)">Teaching Claude why, Boiling the Frog: A Multi-Turn Benchmark for Agentic Safety, Microsoft Open-Sources RAMPART and Clarity to Secure AI Agents During Development</small>
+            <span class="lang-en">Research on agentic misalignment (Teaching Claude why), alignment tampering in RLHF, and new benchmarks like Boiling the Frog show that AI agents can be manipulated through incremental multi-turn attacks and that RLHF can amplify misaligned biases. Tools like RAMPART and Clarity from Microsoft aim to test and secure agents during development.</span>
+            <span class="lang-zh">关于智能体错位（Teaching Claude why）、RLHF中的对齐篡改以及Boiling the Frog等新基准的研究表明，AI智能体可能通过渐进式多轮攻击被操纵，且RLHF可能放大未对齐的偏见。微软的RAMPART和Clarity等工具旨在开发过程中测试和保护智能体安全。</span>
+            <br><small style="color:var(--color-fg-2)">Teaching Claude why, Alignment Tampering: How Reinforcement Learning from Human Feedback Is Exploited to Optimize Misaligned Biases, Boiling the Frog: A Multi-Turn Benchmark for Agentic Safety, Microsoft Open-Sources RAMPART and Clarity to Secure AI Agents During Development</small>
           </li>
           
           <li>
             <strong>
-              <span class="lang-en">Identity and access as primary attack paths</span>
-              <span class="lang-zh">身份与访问作为主要攻击路径</span>
+              <span class="lang-en">Operationalizing AI Bills of Materials (AI BOMs) for supply chain visibility</span>
+              <span class="lang-zh">将AI物料清单（AI BOM）投入实际运营以实现供应链可见性</span>
             </strong>
             —
-            <span class="lang-en">Research shows that a single cached AWS access key can lead to 98% of cloud entities (article 6). Google API keys remain active after deletion (article 26). CISA exposed secrets in a 'private' repo (article 49). These findings highlight identity and credential mismanagement as critical vulnerabilities.</span>
-            <span class="lang-zh">研究表明，单个缓存的AWS访问密钥可能导致98%的云实体被暴露（文章6）。Google API密钥在删除后仍然有效（文章26）。CISA 在 '私有' 仓库中暴露了机密信息（文章49）。这些发现凸显了身份和凭证管理不善是关键漏洞。</span>
-            <br><small style="color:var(--color-fg-2)">When Identity is the Attack Path, Google API Keys Remain Active After Deletion, CISA Exposes Secrets, Credentials in 'Private' Repo</small>
-          </li>
-          
-          <li>
-            <strong>
-              <span class="lang-en">AI Bill of Materials (AI BOM) for supply chain transparency</span>
-              <span class="lang-zh">AI物料清单（AI BOM）用于供应链透明度</span>
-            </strong>
-            —
-            <span class="lang-en">Multiple articles discuss the push for AI BOMs, driven by standards bodies like OWASP and Linux Foundation, and the need for CISOs to prepare for agentic AI (articles 30, 31, 46). This reflects a growing recognition that traditional software BOMs are insufficient for AI systems.</span>
-            <span class="lang-zh">多篇文章讨论了由 OWASP 和 Linux 基金会等标准机构推动的 AI BOM 需求，以及CISO为智能体AI做好准备的必要性（文章30、31、46）。这反映出人们日益认识到传统的软件BOM不足以应对AI系统。</span>
+            <span class="lang-en">Multiple articles and standards efforts (OWASP CycloneDX, Linux Foundation SPDX AI extensions, OpenSSF model-signing) are pushing for AI BOMs to become operational, but most organizations still lack visibility into their AI systems. The gap between standards and practical deployment remains significant.</span>
+            <span class="lang-zh">多篇文章和标准制定工作（OWASP CycloneDX、Linux Foundation SPDX AI扩展、OpenSSF模型签名）正在推动AI BOM投入实际运营，但大多数组织对其AI系统仍然缺乏可见性。标准与实际部署之间的差距依然显著。</span>
             <br><small style="color:var(--color-fg-2)">What It'll Take to Make AI BOMs Usable in a Modern Security Program, What Will Make AI BOMs Real?, How CISOs Should Prep for Agentic-Ready AI BOMs</small>
+          </li>
+          
+          <li>
+            <strong>
+              <span class="lang-en">Identity and secrets as primary attack paths in hybrid environments</span>
+              <span class="lang-zh">身份与密钥成为混合环境中的主要攻击路径</span>
+            </strong>
+            —
+            <span class="lang-en">Research shows that a single cached AWS access key can expose 98% of cloud entities, and incidents like CISA's exposed private repo secrets and GitHub's breach via compromised VS Code extensions highlight that identity and credential management are now the weakest links.</span>
+            <span class="lang-zh">研究表明，一个缓存的AWS访问密钥可能暴露98%的云实体。CISA暴露的私有仓库密钥以及GitHub因VS Code扩展被攻陷而遭入侵等事件，凸显了身份和密钥管理已成为最薄弱的环节。</span>
+            <br><small style="color:var(--color-fg-2)">When Identity is the Attack Path, CISA Exposes Secrets, Credentials in 'Private' Repo, GitHub Confirms Breach, 4K Internal Repos Stolen, Google API Keys Remain Active After Deletion</small>
           </li>
           
         </ul>
@@ -392,42 +392,42 @@
           
           <li>
             <strong>
-              <span class="lang-en">Defensive tools for AI-generated attacks are lagging behind offensive capabilities</span>
-              <span class="lang-zh">针对AI生成攻击的防御工具落后于攻击能力</span>
+              <span class="lang-en">Lack of operationalized AI BOMs with real-time dependency tracking</span>
+              <span class="lang-zh">缺乏具备实时依赖追踪能力的可运营AI物料清单（AI BOM）</span>
             </strong>
             —
-            <span class="lang-en">Project Glasswing shows AI can find thousands of vulnerabilities in weeks, but current defensive practices (patching, vulnerability management) are overwhelmed by the 'vulnerability glut' (article 32). Without automated, AI-native defense tools, organizations cannot keep pace.</span>
-            <span class="lang-zh">Project Glasswing 表明AI可以在数周内发现数千个漏洞，但当前的防御实践（打补丁、漏洞管理）被 '漏洞泛滥' 所淹没（文章32）。如果没有自动化的、AI原生的防御工具，组织将无法跟上步伐。</span>
+            <span class="lang-en">While standards like CycloneDX and SPDX are emerging, no production-grade system exists to automatically generate, update, and verify AI BOMs across the lifecycle of AI agents. This gap leaves organizations blind to supply chain risks introduced by AI components, models, and training data.</span>
+            <span class="lang-zh">尽管CycloneDX和SPDX等标准正在涌现，但目前尚无生产级系统能够跨AI智能体的全生命周期自动生成、更新和验证AI BOM。这一空白使组织对AI组件、模型和训练数据引入的供应链风险视而不见。</span>
           </li>
           
           <li>
             <strong>
-              <span class="lang-en">Multi-turn agentic safety evaluation is underdeveloped</span>
-              <span class="lang-zh">多轮智能体安全评估发展不足</span>
+              <span class="lang-en">Robustness of AI agents to incremental, multi-turn adversarial attacks</span>
+              <span class="lang-zh">AI智能体对渐进式多轮对抗攻击的鲁棒性不足</span>
             </strong>
             —
-            <span class="lang-en">The 'Boiling the Frog' benchmark (paper 74) reveals that incremental multi-turn attacks can bypass safety guards that trigger on single harmful requests. As AI agents become more autonomous and persistent, evaluating safety over multiple interactions is critical to prevent gradual manipulation.</span>
-            <span class="lang-zh">'Boiling the Frog' 基准测试（论文74）揭示，增量式的多轮攻击可以绕过针对单个有害请求触发的安全防护。随着AI智能体变得更加自主和持久，评估多次交互中的安全性对于防止逐步操纵至关重要。</span>
+            <span class="lang-en">Current safety evaluations mostly test single-turn harmful requests. Benchmarks like Boiling the Frog show that incremental attacks bypass safety guards, and alignment tampering research reveals RLHF can be exploited. We lack systematic defenses and evaluation frameworks for multi-turn agentic safety.</span>
+            <span class="lang-zh">当前的安全评估主要测试单轮有害请求。Boiling the Frog等基准表明，渐进式攻击可以绕过安全防护，而对齐篡改研究揭示了RLHF可能被利用。我们缺乏针对多轮智能体安全的系统性防御和评估框架。</span>
           </li>
           
           <li>
             <strong>
-              <span class="lang-en">Supply chain security for AI components (models, datasets, plugins) is immature</span>
-              <span class="lang-zh">AI组件（模型、数据集、插件）的供应链安全尚不成熟</span>
+              <span class="lang-en">Scalable and interpretable methods for detecting and preventing alignment tampering in RLHF pipelines</span>
+              <span class="lang-zh">在RLHF流程中检测和防止对齐篡改的可扩展、可解释方法缺失</span>
             </strong>
             —
-            <span class="lang-en">Current supply chain attacks target traditional software packages, but AI systems depend on models, datasets, and plugins that lack equivalent security controls. The AI BOM concept is nascent (articles 30, 31), and there are no standardized mechanisms to verify the integrity of AI components.</span>
-            <span class="lang-zh">当前的供应链攻击针对传统软件包，但AI系统依赖于缺乏同等安全控制的模型、数据集和插件。AI BOM 概念尚处于萌芽阶段（文章30、31），并且没有标准化的机制来验证AI组件的完整性。</span>
+            <span class="lang-en">The Alignment Tampering paper demonstrates that RLHF can amplify misaligned biases when the model influences its own preference data. Current methods to detect or prevent this are not scalable, leaving a critical vulnerability in the most widely used alignment technique.</span>
+            <span class="lang-zh">Alignment Tampering论文表明，当模型影响其自身的偏好数据时，RLHF可能放大未对齐的偏见。当前检测或防止这一问题的可扩展方法尚不存在，这给最广泛使用的对齐技术留下了关键漏洞。</span>
           </li>
           
           <li>
             <strong>
-              <span class="lang-en">Identity and credential hygiene in cloud and AI environments is poor</span>
-              <span class="lang-zh">云和AI环境中的身份与凭证卫生状况不佳</span>
+              <span class="lang-en">Integration of mechanistic interpretability (SAEs) into real-time safety monitoring for deployed agents</span>
+              <span class="lang-zh">将机制可解释性（SAE）集成到已部署智能体的实时安全监控中</span>
             </strong>
             —
-            <span class="lang-en">Research shows that deleted API keys remain active (article 26) and that a single credential can expose 98% of cloud entities (article 6). As AI agents increasingly use APIs and cloud services, the lack of robust credential lifecycle management creates systemic risk.</span>
-            <span class="lang-zh">研究表明，已删除的API密钥仍然有效（文章26），并且单个凭证可能暴露98%的云实体（文章6）。随着AI智能体越来越多地使用API和云服务，缺乏健壮的凭证生命周期管理造成了系统性风险。</span>
+            <span class="lang-en">SAEs have shown promise in guiding data engineering and understanding model internals, but they are not yet used for runtime safety monitoring. Bridging this gap could enable early detection of harmful behaviors or jailbreaks in production AI systems.</span>
+            <span class="lang-zh">稀疏自编码器（SAE）在指导数据工程和理解模型内部机制方面显示出潜力，但尚未用于运行时安全监控。弥合这一差距将有助于在生产AI系统中早期检测有害行为或越狱攻击。</span>
           </li>
           
         </ul>
@@ -443,16 +443,16 @@
           <li>
             <span class="tag">keep_up</span>
             <span class="tag">
-              <span class="lang-en">effort: medium</span>
-              <span class="lang-zh">投入度：medium</span>
+              <span class="lang-en">effort: low</span>
+              <span class="lang-zh">投入度：low</span>
             </span><br>
             <strong>
-              <span class="lang-en">Monitor and adopt emerging AI BOM standards and tools (e.g., CycloneDX, SPDX AI extensions, OpenSSF model signing) to inventory AI components in your organization.</span>
-              <span class="lang-zh">监控并采用新兴的AI BOM标准与工具（例如 CycloneDX、SPDX AI 扩展、OpenSSF 模型签名），以盘点组织中的AI组件。</span>
+              <span class="lang-en">Monitor and adopt emerging supply chain security features like npm's 2FA-gated publishing and staged publishing</span>
+              <span class="lang-zh">关注并采用新兴的供应链安全功能，如npm的2FA门控发布和分阶段发布</span>
             </strong><br>
             <small style="color:var(--color-fg-2)">
-              <span class="lang-en">AI BOMs are becoming a regulatory and industry expectation, and early adoption will reduce compliance risk and improve supply chain visibility.</span>
-              <span class="lang-zh">AI BOM 正成为监管和行业期望，早期采用将降低合规风险并提高供应链可见性。</span>
+              <span class="lang-en">These features are becoming standard practice, and failing to implement them leaves projects vulnerable to the types of attacks seen in the Megalodon and TrapDoor campaigns.</span>
+              <span class="lang-zh">这些功能正在成为标准实践，未能实施它们将使项目暴露于Megalodon和TrapDoor等攻击类型之下。</span>
             </small>
           </li>
           
@@ -463,76 +463,76 @@
               <span class="lang-zh">投入度：medium</span>
             </span><br>
             <strong>
-              <span class="lang-en">Integrate multi-turn agentic safety testing (e.g., using benchmarks like 'Boiling the Frog' or Microsoft's RAMPART) into your AI development lifecycle to catch incremental manipulation attacks.</span>
-              <span class="lang-zh">将多轮智能体安全测试（例如使用 'Boiling the Frog' 或微软 RAMPART 等基准测试）集成到AI开发生命周期中，以捕获增量式操纵攻击。</span>
+              <span class="lang-en">Integrate AI BOM generation into CI/CD pipelines using emerging standards (CycloneDX, SPDX) and open-source tooling</span>
+              <span class="lang-zh">利用新兴标准（CycloneDX、SPDX）和开源工具，将AI BOM生成集成到CI/CD管道中</span>
             </strong><br>
             <small style="color:var(--color-fg-2)">
-              <span class="lang-en">Single-turn safety evaluations are insufficient for persistent agents; multi-turn testing is essential to prevent gradual bypass of safety guards.</span>
-              <span class="lang-zh">单轮安全评估对于持久性智能体是不够的；多轮测试对于防止逐步绕过安全防护至关重要。</span>
-            </small>
-          </li>
-          
-          <li>
-            <span class="tag">push_frontier</span>
-            <span class="tag">
-              <span class="lang-en">effort: high</span>
-              <span class="lang-zh">投入度：high</span>
-            </span><br>
-            <strong>
-              <span class="lang-en">Develop automated, AI-native vulnerability remediation pipelines that can patch flaws at the speed of AI-driven discovery (e.g., integrating with Project Glasswing-like tools).</span>
-              <span class="lang-zh">开发自动化的、AI原生的漏洞修复管道，能够以AI驱动发现的速度修补漏洞（例如，与 Project Glasswing 类工具集成）。</span>
-            </strong><br>
-            <small style="color:var(--color-fg-2)">
-              <span class="lang-en">Current manual patching cannot keep up with the scale of AI-discovered vulnerabilities; automated remediation is the next logical step to close the defense gap.</span>
-              <span class="lang-zh">当前的手动打补丁无法跟上AI发现漏洞的规模；自动化修复是缩小防御差距的下一个逻辑步骤。</span>
-            </small>
-          </li>
-          
-          <li>
-            <span class="tag">push_frontier</span>
-            <span class="tag">
-              <span class="lang-en">effort: high</span>
-              <span class="lang-zh">投入度：high</span>
-            </span><br>
-            <strong>
-              <span class="lang-en">Research and prototype credential lifecycle management systems that enforce true deletion and revocation of API keys and tokens across cloud and AI agent environments.</span>
-              <span class="lang-zh">研究并原型化凭证生命周期管理系统，在云和AI智能体环境中强制实施API密钥和令牌的真正删除与撤销。</span>
-            </strong><br>
-            <small style="color:var(--color-fg-2)">
-              <span class="lang-en">The finding that deleted Google API keys remain active (article 26) indicates a fundamental flaw in cloud identity systems that AI agents will amplify.</span>
-              <span class="lang-zh">已删除的Google API密钥仍然有效（文章26）这一发现表明云身份系统中存在根本性缺陷，而AI智能体将放大这一缺陷。</span>
+              <span class="lang-en">The field is moving toward mandatory AI BOMs driven by regulatory pressure and industry standards. Early adoption positions teams for compliance and provides visibility into AI supply chain risks.</span>
+              <span class="lang-zh">在监管压力和行业标准的推动下，该领域正朝着强制性AI BOM的方向发展。尽早采用有助于团队满足合规要求，并提供对AI供应链风险的可见性。</span>
             </small>
           </li>
           
           <li>
             <span class="tag">align</span>
             <span class="tag">
-              <span class="lang-en">effort: low</span>
-              <span class="lang-zh">投入度：low</span>
+              <span class="lang-en">effort: medium</span>
+              <span class="lang-zh">投入度：medium</span>
             </span><br>
             <strong>
-              <span class="lang-en">Adopt 2FA-gated publishing and package install controls (as npm has done) for all internal package registries and CI/CD pipelines to mitigate supply chain attacks.</span>
-              <span class="lang-zh">为所有内部包注册表和CI/CD管道采用双因素认证（2FA）门控发布和包安装控制（如 npm 所做的那样），以缓解供应链攻击。</span>
+              <span class="lang-en">Adopt multi-turn adversarial evaluation frameworks (e.g., Boiling the Frog) for testing deployed AI agents</span>
+              <span class="lang-zh">采用多轮对抗性评估框架（如Boiling the Frog）来测试已部署的AI智能体</span>
             </strong><br>
             <small style="color:var(--color-fg-2)">
-              <span class="lang-en">Recent supply chain attacks (articles 3, 5, 7, 10) demonstrate that compromising package publishing is a high-impact vector; 2FA gating is a proven mitigation.</span>
-              <span class="lang-zh">最近的供应链攻击（文章3、5、7、10）表明，攻陷包发布是一个高影响力的攻击向量；2FA门控是一种经过验证的缓解措施。</span>
+              <span class="lang-en">Single-turn safety tests are insufficient; incremental attacks are a proven bypass. Aligning evaluation practices with frontier benchmarks is necessary to ensure agentic safety in production.</span>
+              <span class="lang-zh">单轮安全测试是不够的；渐进式攻击已被证明可以绕过安全防护。将评估实践与前沿基准对齐，对于确保生产环境中的智能体安全至关重要。</span>
             </small>
           </li>
           
           <li>
-            <span class="tag">keep_up</span>
+            <span class="tag">push_frontier</span>
             <span class="tag">
-              <span class="lang-en">effort: low</span>
-              <span class="lang-zh">投入度：low</span>
+              <span class="lang-en">effort: high</span>
+              <span class="lang-zh">投入度：high</span>
             </span><br>
             <strong>
-              <span class="lang-en">Participate in or follow the work of the Anthropic Institute and similar organizations focused on AI safety, economic impacts, and real-world deployment risks.</span>
-              <span class="lang-zh">参与或关注 Anthropic Institute 及类似专注于AI安全、经济影响和实际部署风险的组织的工作。</span>
+              <span class="lang-en">Develop runtime safety monitoring for AI agents using SAE-based interpretability signals</span>
+              <span class="lang-zh">利用基于稀疏自编码器（SAE）的可解释性信号，开发AI智能体的运行时安全监控</span>
             </strong><br>
             <small style="color:var(--color-fg-2)">
-              <span class="lang-en">The Anthropic Institute's research agenda (article 14) covers critical areas like AI threats and resilience; staying informed will help anticipate emerging risks.</span>
-              <span class="lang-zh">Anthropic Institute 的研究议程（文章14）涵盖了AI威胁与韧性等关键领域；保持信息更新将有助于预见新兴风险。</span>
+              <span class="lang-en">SAEs can encode intrinsic data properties and model internals; using them for real-time detection of harmful behaviors or jailbreaks would close a critical gap between interpretability research and operational safety.</span>
+              <span class="lang-zh">SAE可以编码内在数据属性和模型内部状态；利用它们进行实时有害行为或越狱检测，将弥合可解释性研究与运营安全之间的关键差距。</span>
+            </small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span>
+            <span class="tag">
+              <span class="lang-en">effort: high</span>
+              <span class="lang-zh">投入度：high</span>
+            </span><br>
+            <strong>
+              <span class="lang-en">Create scalable detection and mitigation techniques for alignment tampering in RLHF pipelines</span>
+              <span class="lang-zh">创建可扩展的检测与缓解技术，用于RLHF流程中的对齐篡改</span>
+            </strong><br>
+            <small style="color:var(--color-fg-2)">
+              <span class="lang-en">The Alignment Tampering paper reveals a fundamental vulnerability in RLHF that current safety measures do not address. Developing practical tools to detect and prevent this could significantly improve the robustness of alignment training.</span>
+              <span class="lang-zh">Alignment Tampering论文揭示了RLHF中一个当前安全措施未能解决的根本性漏洞。开发实用的检测和预防工具，可以显著提高对齐训练的鲁棒性。</span>
+            </small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span>
+            <span class="tag">
+              <span class="lang-en">effort: high</span>
+              <span class="lang-zh">投入度：high</span>
+            </span><br>
+            <strong>
+              <span class="lang-en">Build a production-grade system for automated, real-time AI BOM generation and dependency tracking across agent lifecycles</span>
+              <span class="lang-zh">构建一个生产级系统，用于跨智能体全生命周期的自动化、实时AI BOM生成和依赖追踪</span>
+            </strong><br>
+            <small style="color:var(--color-fg-2)">
+              <span class="lang-en">Current AI BOM efforts are fragmented and lack operational integration. A unified system that automatically tracks AI components, models, and data dependencies would transform supply chain security for AI systems.</span>
+              <span class="lang-zh">当前的AI BOM工作分散且缺乏运营集成。一个能够自动追踪AI组件、模型和数据依赖关系的统一系统，将彻底改变AI系统的供应链安全。</span>
             </small>
           </li>
           
@@ -974,6 +974,245 @@
             <small style="color:var(--color-fg-2)">
               <span class="lang-en">The current understanding of identity risk is qualitative. A formal threat model with measurable risk metrics would enable proactive defense and prioritization of identity hardening efforts.</span>
               <span class="lang-zh">当前对身份风险的理解是定性的。一个具有可衡量风险指标的正式威胁模型将能够实现主动防御和身份强化工作的优先级排序。</span>
+            </small>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </section>
+    
+    <section class="reye-section" style="padding-top:0;margin-bottom:2rem">
+      <h2 class="lang-en">SOC</h2>
+      <h2 class="lang-zh">安全运营中心</h2>
+      <p style="color:var(--color-fg-2);font-size:13px">
+        <span class="lang-en">50 papers · 0 articles</span>
+        <span class="lang-zh">50 篇论文 · 0 篇文章</span>
+      </p>
+
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Where we are</h4>
+        <h4 class="lang-zh">现状</h4>
+        <p>
+          <span class="lang-en">The current state of SOC research is defined by a dual focus on agentic systems and safety alignment, with a strong methodological shift toward reinforcement learning (RL) and internal model analysis. Benchmarks like Claw-Anything and VitaBench 2.0 reveal that even frontier models struggle with long-horizon, personalized, and proactive tasks, while tools like Automated Benchmark Auditing expose hidden brittleness in evaluation pipelines. On the safety front, papers on alignment tampering, sycophancy (MUSE), and causal tongue-tie show that LLMs can encode correct knowledge internally yet fail to express it, or that RLHF can inadvertently amplify biases. There is also a growing emphasis on model internals: SAE activations are being used to guide post-training data engineering, and hidden states from diffusion LLMs offer new safety signals. Meanwhile, practical advances in RAG, code change labeling, and legal search demonstrate applied progress, but the field remains fragmented between frontier exploration and robust deployment.</span>
+          <span class="lang-zh">当前SOC研究领域呈现两大核心焦点：智能体系统与安全对齐，方法论上正显著转向强化学习（RL）和模型内部机制分析。Claw-Anything和VitaBench 2.0等基准测试表明，即使是前沿模型在长周期、个性化和主动式任务上仍表现不佳，而Automated Benchmark Auditing等工具则揭示了评估流程中隐藏的脆弱性。在安全方面，关于对齐篡改、谄媚行为（MUSE）以及因果性舌结（causal tongue-tie）的研究显示，LLM内部能编码正确知识却无法输出，或者RLHF可能无意中放大偏见。同时，模型内部机制日益受到重视：稀疏自编码器（SAE）的激活被用于指导后训练数据工程，扩散LLM的隐藏状态提供了新的安全信号。此外，RAG、代码变更标注和法律搜索等实际应用取得了进展，但整个领域仍在前沿探索与稳健部署之间呈现碎片化状态。</span>
+        </p>
+      </div>
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Trends</h4>
+        <h4 class="lang-zh">趋势</h4>
+        <ul>
+          
+          <li>
+            <strong>
+              <span class="lang-en">Reinforcement Learning for Reasoning and Agent Training</span>
+              <span class="lang-zh">强化学习用于推理与智能体训练</span>
+            </strong>
+            —
+            <span class="lang-en">Multiple papers apply RL to improve reasoning (LegalSearch-R1, BASIS, StepOPSD) and agent robustness (NoisyAgent, SafeCtrl-RL). GRPO-based RL and DAPO-style RL consistently outperform supervised fine-tuning across domains.</span>
+            <span class="lang-zh">多篇论文将RL应用于改进推理（LegalSearch-R1、BASIS、StepOPSD）和智能体鲁棒性（NoisyAgent、SafeCtrl-RL）。基于GRPO的RL和DAPO风格的RL在多个领域持续优于监督微调。</span>
+            <br><small style="color:var(--color-fg-2)">Can LLMs Time Travel? Enhancing Temporal Consistency in Legal Agentic Search through Reinforcement Learning, BASIS: Batchwise Advantage Estimation from Single-Rollout Information Sharing for LLM Reasoning, StepOPSD: Step-Aware Online Preference Distillation for Agent Reinforcement Learning, Learning to Act under Noise: Enhancing Agent Robustness via Noisy Environments, SafeCtrl-RL: Inference-Time Adaptive Behaviour Control for LLM Dialogue via RL-Driven Prompt Optimisation</small>
+          </li>
+          
+          <li>
+            <strong>
+              <span class="lang-en">Model Internals and Mechanistic Understanding</span>
+              <span class="lang-zh">模型内部机制与可解释性</span>
+            </strong>
+            —
+            <span class="lang-en">SAE activations encode data properties (SAERL), hidden states reveal causal direction despite wrong outputs (Causal Tongue-Tie), and diffusion LLM hidden states provide safety signals (D2-Monitor).</span>
+            <span class="lang-zh">SAE激活编码数据属性（SAERL），隐藏状态在输出错误时仍能揭示因果方向（Causal Tongue-Tie），扩散LLM的隐藏状态提供安全信号（D2-Monitor）。</span>
+            <br><small style="color:var(--color-fg-2)">Guiding LLM Post-training Data Engineering with Model Internals from Sparse Autoencoders, Causal Tongue-Tie: LLMs Can Encode Causal Direction, But Their Yes/No Outputs Fail to Express, $D^2$-Monitor: Dynamic Safety Monitoring for Diffusion LLMs via Hesitation-Aware Routing</small>
+          </li>
+          
+          <li>
+            <strong>
+              <span class="lang-en">Safety, Alignment, and Controllability</span>
+              <span class="lang-zh">安全、对齐与可控性</span>
+            </strong>
+            —
+            <span class="lang-en">Alignment tampering via RLHF, sycophancy vs. epistemic uncertainty (MUSE), and the position paper on controllability as a first-class objective all highlight the insufficiency of current alignment approaches.</span>
+            <span class="lang-zh">通过RLHF的对齐篡改、谄媚与认知不确定性（MUSE），以及将可控性作为一等目标的位置论文，均凸显了当前对齐方法的不足。</span>
+            <br><small style="color:var(--color-fg-2)">Alignment Tampering: How Reinforcement Learning from Human Feedback Is Exploited to Optimize Misaligned Biases, It's Not Always Sycophancy: Measuring LLM Conformity as a Function of Epistemic Uncertainty, Position: AI Safety Requires Effective Controllability, BAIT: Boundary-Guided Disclosure Escalation via Self-Conditioned Reasoning</small>
+          </li>
+          
+          <li>
+            <strong>
+              <span class="lang-en">Agentic Systems and Benchmarking</span>
+              <span class="lang-zh">智能体系统与基准测试</span>
+            </strong>
+            —
+            <span class="lang-en">New benchmarks (Claw-Anything, VitaBench 2.0, QUIET) and auditing tools (ABA) reveal that agentic AI progress depends on system design (harness scaling) and that current evaluations are brittle.</span>
+            <span class="lang-zh">新基准（Claw-Anything、VitaBench 2.0、QUIET）和审计工具（ABA）揭示，智能体AI的进步依赖于系统设计（harness scaling），且当前评估存在脆弱性。</span>
+            <br><small style="color:var(--color-fg-2)">Claw-Anything: Benchmarking Always-On Personal Assistants with Broader Access to User's Digital World, VitaBench 2.0: Evaluating Personalized and Proactive Agents in Long-Term User Interactions, Automated Benchmark Auditing for AI Agents and Large Language Models, From Model Scaling to System Scaling: Scaling the Harness in Agentic AI</small>
+          </li>
+          
+          <li>
+            <strong>
+              <span class="lang-en">Evaluation and Data Quality</span>
+              <span class="lang-zh">评估与数据质量</span>
+            </strong>
+            —
+            <span class="lang-en">RAG reading failures linked to semantic competition (RAG Competition Control), LLM conformity disentangled from sycophancy (MUSE), and human-LLM collaborative annotation (WhoSaidIt) all point to a need for more nuanced evaluation and data curation.</span>
+            <span class="lang-zh">RAG阅读失败与语义竞争相关（RAG Competition Control），LLM的遵从行为与谄媚被区分（MUSE），以及人机协作标注（WhoSaidIt）均指向对更细致评估和数据整理的需求。</span>
+            <br><small style="color:var(--color-fg-2)">Separating Semantic Competition from Context Length in RAG Reading, It's Not Always Sycophancy: Measuring LLM Conformity as a Function of Epistemic Uncertainty, WhoSaidIt: Human-LLM Collaborative Annotation for Text-Based Multilingual Speaker-Attribute Classification, MATCHA: Matching Text via Contrastive Semantic Alignment</small>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Frontier gaps</h4>
+        <h4 class="lang-zh">前沿空白</h4>
+        <ul>
+          
+          <li>
+            <strong>
+              <span class="lang-en">Bridging internal knowledge representation to reliable output behavior.</span>
+              <span class="lang-zh">弥合内部知识表征与可靠输出行为之间的鸿沟。</span>
+            </strong>
+            —
+            <span class="lang-en">LLMs can encode correct causal direction or safety information in hidden states but fail to express it in outputs (Causal Tongue-Tie, D2-Monitor). Without bridging this gap, alignment and safety techniques that rely on observable outputs are fundamentally limited.</span>
+            <span class="lang-zh">LLM能在隐藏状态中编码正确的因果方向或安全信息，但无法在输出中表达（Causal Tongue-Tie、D2-Monitor）。如果不能弥合这一鸿沟，依赖可观测输出的对齐和安全技术将从根本上受到限制。</span>
+          </li>
+          
+          <li>
+            <strong>
+              <span class="lang-en">Robust evaluation and benchmarking for agentic systems.</span>
+              <span class="lang-zh">智能体系统的稳健评估与基准测试。</span>
+            </strong>
+            —
+            <span class="lang-en">Current benchmarks are brittle (ABA), agents fail on long-horizon and personalized tasks (Claw-Anything, VitaBench 2.0), and evaluation metrics like ROUGE/BERTScore miss semantic contradictions (MATCHA). The field lacks standardized, robust evaluation protocols for real-world deployment.</span>
+            <span class="lang-zh">当前基准测试存在脆弱性（ABA），智能体在长周期和个性化任务上失败（Claw-Anything、VitaBench 2.0），而ROUGE/BERTScore等评估指标会遗漏语义矛盾（MATCHA）。该领域缺乏面向实际部署的标准化、稳健评估协议。</span>
+          </li>
+          
+          <li>
+            <strong>
+              <span class="lang-en">Controllability as a first-class safety objective beyond alignment.</span>
+              <span class="lang-zh">将可控性作为超越对齐的一等安全目标。</span>
+            </strong>
+            —
+            <span class="lang-en">Alignment alone is insufficient; systems must be interruptible, overridable, and redirectable at runtime (Controllability position paper). Current RLHF can amplify biases (Alignment Tampering), and inference-time control methods (SafeCtrl-RL, BAIT) are nascent.</span>
+            <span class="lang-zh">仅靠对齐是不够的；系统必须在运行时可中断、可覆盖、可重定向（可控性位置论文）。当前的RLHF可能放大偏见（Alignment Tampering），而推理时控制方法（SafeCtrl-RL、BAIT）仍处于初期阶段。</span>
+          </li>
+          
+          <li>
+            <strong>
+              <span class="lang-en">Scaling system-level harness design alongside model capabilities.</span>
+              <span class="lang-zh">在扩展模型能力的同时扩展系统级设计（harness）。</span>
+            </strong>
+            —
+            <span class="lang-en">Agentic AI progress depends as much on system design (context governance, memory, skill routing) as on foundation models (System Scaling paper). Current evaluations focus on model-level metrics, ignoring harness bottlenecks.</span>
+            <span class="lang-zh">智能体AI的进步既依赖于基础模型，也依赖于系统设计（上下文治理、记忆、技能路由）（System Scaling论文）。当前评估聚焦于模型级指标，忽略了系统级瓶颈。</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="feed-item" style="margin-bottom:18px">
+        <h4 class="lang-en">Directions</h4>
+        <h4 class="lang-zh">方向</h4>
+        <ul>
+          
+          <li>
+            <span class="tag">keep_up</span>
+            <span class="tag">
+              <span class="lang-en">effort: low</span>
+              <span class="lang-zh">投入度：low</span>
+            </span><br>
+            <strong>
+              <span class="lang-en">Adopt RL-based post-training methods (GRPO, DAPO, BASIS) for reasoning and agent tasks.</span>
+              <span class="lang-zh">采用基于RL的后训练方法（GRPO、DAPO、BASIS）来改进推理和智能体任务。</span>
+            </strong><br>
+            <small style="color:var(--color-fg-2)">
+              <span class="lang-en">Multiple papers show RL consistently outperforms supervised fine-tuning across domains (LegalSearch-R1, StepOPSD, NoisyAgent). This is a low-effort way to stay current with the dominant methodological trend.</span>
+              <span class="lang-zh">多篇论文表明RL在多个领域持续优于监督微调（LegalSearch-R1、StepOPSD、NoisyAgent）。这是跟上主流方法论趋势的低成本方式。</span>
+            </small>
+          </li>
+          
+          <li>
+            <span class="tag">align</span>
+            <span class="tag">
+              <span class="lang-en">effort: medium</span>
+              <span class="lang-zh">投入度：medium</span>
+            </span><br>
+            <strong>
+              <span class="lang-en">Integrate model internals (SAE activations, hidden states) into training and evaluation pipelines.</span>
+              <span class="lang-zh">将模型内部机制（SAE激活、隐藏状态）整合到训练和评估流程中。</span>
+            </strong><br>
+            <small style="color:var(--color-fg-2)">
+              <span class="lang-en">SAERL and Causal Tongue-Tie demonstrate that internal representations offer richer signals than outputs alone. Aligning with this trend improves data engineering and safety monitoring.</span>
+              <span class="lang-zh">SAERL和Causal Tongue-Tie表明，内部表征比单独的输出提供更丰富的信号。顺应这一趋势可改进数据工程和安全监控。</span>
+            </small>
+          </li>
+          
+          <li>
+            <span class="tag">align</span>
+            <span class="tag">
+              <span class="lang-en">effort: medium</span>
+              <span class="lang-zh">投入度：medium</span>
+            </span><br>
+            <strong>
+              <span class="lang-en">Develop robust evaluation protocols that account for benchmark brittleness and semantic competition.</span>
+              <span class="lang-zh">开发考虑基准脆弱性和语义竞争的稳健评估协议。</span>
+            </strong><br>
+            <small style="color:var(--color-fg-2)">
+              <span class="lang-en">ABA and MATCHA expose flaws in current evaluation; RAG Competition Control shows context length is not the only issue. Aligning with these insights leads to more reliable benchmarks.</span>
+              <span class="lang-zh">ABA和MATCHA揭示了当前评估的缺陷；RAG Competition Control表明上下文长度并非唯一问题。顺应这些见解可带来更可靠的基准。</span>
+            </small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span>
+            <span class="tag">
+              <span class="lang-en">effort: high</span>
+              <span class="lang-zh">投入度：high</span>
+            </span><br>
+            <strong>
+              <span class="lang-en">Design inference-time controllability mechanisms that combine internal state monitoring with dynamic intervention.</span>
+              <span class="lang-zh">设计结合内部状态监控与动态干预的推理时可控性机制。</span>
+            </strong><br>
+            <small style="color:var(--color-fg-2)">
+              <span class="lang-en">Current safety methods (RLHF, guardrails) are insufficient; D2-Monitor and SafeCtrl-RL are early steps. Pushing toward runtime-interruptible systems with internal-state feedback is a high-impact frontier.</span>
+              <span class="lang-zh">当前的安全方法（RLHF、护栏）不足；D2-Monitor和SafeCtrl-RL是早期步骤。推动具有内部状态反馈的运行时可中断系统是一个高影响力前沿。</span>
+            </small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span>
+            <span class="tag">
+              <span class="lang-en">effort: high</span>
+              <span class="lang-zh">投入度：high</span>
+            </span><br>
+            <strong>
+              <span class="lang-en">Create unified frameworks that jointly optimize harness (memory, skill routing, context governance) and model capabilities.</span>
+              <span class="lang-zh">创建统一框架，联合优化系统设计（记忆、技能路由、上下文治理）与模型能力。</span>
+            </strong><br>
+            <small style="color:var(--color-fg-2)">
+              <span class="lang-en">System Scaling paper argues harness design is as critical as model scaling. MUSE-Autoskill provides a starting point. This is a high-effort, high-reward direction for next-gen agentic systems.</span>
+              <span class="lang-zh">System Scaling论文认为系统设计与模型扩展同等关键。MUSE-Autoskill提供了起点。这是面向下一代智能体系统的高投入、高回报方向。</span>
+            </small>
+          </li>
+          
+          <li>
+            <span class="tag">push_frontier</span>
+            <span class="tag">
+              <span class="lang-en">effort: high</span>
+              <span class="lang-zh">投入度：high</span>
+            </span><br>
+            <strong>
+              <span class="lang-en">Investigate and mitigate the gap between internal knowledge and output expression using mechanistic interpretability.</span>
+              <span class="lang-zh">利用机械可解释性研究并弥合内部知识与输出表达之间的差距。</span>
+            </strong><br>
+            <small style="color:var(--color-fg-2)">
+              <span class="lang-en">Causal Tongue-Tie reveals a fundamental disconnect that limits reliability. Understanding and fixing this could unlock more faithful and safe LLM behavior.</span>
+              <span class="lang-zh">Causal Tongue-Tie揭示了限制可靠性的根本性脱节。理解和修复这一点可能解锁更忠实、更安全的LLM行为。</span>
             </small>
           </li>
           

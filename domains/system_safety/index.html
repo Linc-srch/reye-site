@@ -119,8 +119,8 @@
           <span class="lang-zh">概览 — 28 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's system safety landscape is dominated by supply chain attacks and AI-driven vulnerability discovery. The standout contribution is Anthropic's Project Glasswing, where Claude Mythos Preview found over 10,000 high-severity flaws in open-source software within a month, signaling a paradigm shift in automated security auditing. Recurring themes include coordinated supply chain compromises across npm, PyPI, Crates.io, and Packagist, with the TrapDoor and Megalodon campaigns demonstrating automated, large-scale credential theft and CI/CD workflow abuse. GitHub's internal breach via a malicious Nx Console VS Code extension underscores the risk of developer tooling. Notable announcements include npm's 2FA-gated publishing, Microsoft's open-sourcing of RAMPART and Clarity for AI agent red-teaming, and the dismantling of First VPN and GlassWorm malware infrastructure. The Verizon DBIR highlights a dangerous vulnerability glut, while CERT-In's 12-hour patching recommendation reflects the urgency of AI-assisted attacks. The emergence of AI BOMs as a standard is gaining traction, though operational usability remains a challenge.</div>
-        <div class="lang-zh">今日的系统安全领域以供应链攻击和AI驱动的漏洞发现为主导。最突出的贡献是Anthropic的Project Glasswing，其中Claude Mythos Preview在一个月内发现了超过10,000个开源软件中的高严重性漏洞，标志着自动化安全审计的范式转变。反复出现的主题包括针对npm、PyPI、Crates.io和Packagist的协调供应链攻击，TrapDoor和Megalodon活动展示了大规模自动化的凭证窃取和CI/CD工作流滥用。GitHub因恶意Nx Console VS Code扩展导致内部仓库被入侵，凸显了开发者工具的风险。值得注意的公告包括npm的2FA门控发布、Microsoft开源用于AI智能体红队测试的RAMPART和Clarity，以及First VPN和GlassWorm恶意软件基础设施的拆除。Verizon DBIR强调了危险的漏洞泛滥，而CERT-In的12小时补丁建议反映了AI辅助攻击的紧迫性。AI BOMs作为标准正获得关注，但操作可用性仍是挑战。</div>
+        <div class="lang-en">Today's content in system safety is dominated by supply chain attacks and AI-driven vulnerability discovery. A recurring theme is the weaponization of developer tools and package registries: the TrapDoor campaign (npm, PyPI, CratesIO), Packagist compromise via GitHub-hosted malware, and the Megalodon GitHub attack (5,561 repos) all highlight the escalating sophistication of CI/CD and dependency poisoning. Standout contributions include Anthropic's Project Glasswing, where Claude Mythos Preview uncovered 10,000 high-severity flaws in open-source software within a month, and the GlassWorm malware takedown by CrowdStrike/Google/Shadowserver, disrupting a developer supply chain attack. Noteworthy announcements: GitHub's 2FA-gated npm publishing, Microsoft's RAMPART/Clarity open-source tools for AI agent red-teaming, and CERT-In's 12-hour patching mandate for internet-facing flaws. The Verizon DBIR underscores a dangerous vulnerability glut, while AI BOM standards gain momentum. Critical incidents include Ghost CMS CVE-2026-26980 (700+ sites hijacked), GitHub's internal repo breach (4,000 repos stolen via malicious VS Code extension), and First VPN's dismantling for enabling 25 ransomware groups.</div>
+        <div class="lang-zh">今日系统安全领域的内容以供应链攻击和AI驱动的漏洞发现为主导。反复出现的主题是开发者工具和包注册表的武器化：TrapDoor攻击（针对npm、PyPI、CratesIO）、通过GitHub托管恶意软件入侵Packagist，以及Megalodon GitHub攻击（5,561个仓库）均突显了CI/CD和依赖投毒日益复杂的趋势。突出贡献包括Anthropic的Project Glasswing，其Claude Mythos Preview在一个月内发现10,000个高严重性开源软件漏洞；以及CrowdStrike/Google/Shadowserver联合摧毁的GlassWorm恶意软件，破坏了开发者供应链攻击基础设施。值得注意的公告：GitHub的2FA门控npm发布、微软开源的RAMPART/Clarity工具用于AI智能体红队测试，以及印度CERT-In要求面向互联网的漏洞在12小时内修补。Verizon DBIR强调了危险的漏洞过剩问题，而AI BOM标准正在获得动力。关键事件包括Ghost CMS CVE-2026-26980（700多个网站被劫持）、GitHub内部仓库泄露（通过恶意VS Code扩展窃取4,000个仓库），以及First VPN因支持25个勒索软件组织被取缔。</div>
       </div>
       
 
@@ -2524,6 +2524,44 @@
       </section>
 
       <section data-tab="news">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-28</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1347.html">JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1347.html">JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware</a></h4>
+          <p class="lang-en">A previously undocumented threat actor, JINX-0164, targets cryptocurrency firms using recruitment-themed social engineering and custom macOS malware. Active since mid-2025, the group uses fake LinkedIn profiles and meeting invites to trick victims into installing a Python-based infostealer and remote access trojan called AUDIOFIX. The malware steals credentials, cryptocurrency wallet data, and SSH keys, and enables lateral movement to CI/CD infrastructure. In one case, a supply chain attack was executed. The actor also distributes a Go-based backdoor named MiniRAT via a compromised npm package. While tactics resemble North Korean groups, no direct infrastructure overlaps have been found.</p>
+          <p class="lang-zh">一个名为JINX-0164的未知威胁行为者利用招聘主题的社会工程学和定制macOS恶意软件攻击加密货币公司。自2025年中活跃以来，该组织通过虚假LinkedIn资料和会议邀请诱骗受害者安装基于Python的信息窃取器和远程访问木马AUDIOFIX。该恶意软件窃取凭证、加密货币钱包数据和SSH密钥，并横向移动到CI/CD基础设施。在至少一个案例中，实施了供应链攻击。该行为者还通过被篡改的npm包分发名为MiniRAT的Go后门。虽然战术与朝鲜黑客组织相似，但尚未发现直接的基础设施重叠。</p>
+          
+          <a href="https://thehackernews.com/2026/05/jinx-0164-targets-cryptocurrency-firms.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">darkreading</span>
+            <span>·</span>
+            <span>2026-05-28</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1346.html">For Enterprises, Security Remains Agentic AI's Biggest Challenge</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1346.html">For Enterprises, Security Remains Agentic AI's Biggest Challenge</a></h4>
+          <p class="lang-en">This article discusses the security challenges posed by agentic AI in enterprise environments. It highlights that as AI agents become more autonomous and capable of executing complex tasks, they introduce new vulnerabilities, including unauthorized access, data leakage, and adversarial manipulation. The piece emphasizes that traditional security measures are insufficient and that enterprises must adopt new frameworks for identity management, access control, and continuous monitoring. It calls for a proactive approach to securing agentic AI systems to prevent exploitation and ensure trustworthiness in business operations.</p>
+          <p class="lang-zh">本文探讨了企业环境中agentic AI面临的安全挑战。随着AI代理变得更加自主并能够执行复杂任务，它们引入了新的漏洞，包括未授权访问、数据泄露和对抗性操纵。文章强调传统安全措施不足，企业必须采用新的身份管理、访问控制和持续监控框架。呼吁采取主动方法保护agentic AI系统，以防止被利用并确保业务运营的可信度。</p>
+          
+          <a href="https://www.darkreading.com/application-security/enterprises-agentic-ai-security-biggest-challenge" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">

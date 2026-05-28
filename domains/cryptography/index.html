@@ -152,8 +152,8 @@ Taxonomy of Research Areas:
           <span class="lang-zh">概览 — 28 May 2026</span>
           
         </p>
-        <div class="lang-en">Today's cryptography-adjacent research dashboard reveals a strong focus on AI safety and adversarial robustness, with several papers exposing structural vulnerabilities in LLM alignment and agentic systems. Standout contributions include 'Alignment Tampering' (item 12), which demonstrates how RLHF can be exploited to amplify misaligned biases, and 'BAIT' (item 5), a jailbreak framework achieving 100% attack success via self-conditioned reasoning. 'Boiling the Frog' (item 23) introduces a multi-turn benchmark showing corporate AI agents are highly susceptible to incremental attacks. In applied security, the Lazarus Group's RemotePE memory-only RAT (item 1) and the Ghost CMS CVE-2026-26980 exploitation (item 2) highlight ongoing threats to financial and web infrastructure. Notable announcements include GENESIS (item 13) for autonomous 6G RAN synthesis, and VitaBench 2.0 (item 7) for evaluating personalized LLM agents. The Underminr domain-fronting exploit (item 3) also stands out for enabling brand hijacking via CDN manipulation.</div>
-        <div class="lang-zh">今日密码学相关研究面板聚焦于AI安全与对抗鲁棒性，多篇论文揭示了LLM对齐与智能体系统中的结构性漏洞。突出贡献包括'Alignment Tampering'（条目12），展示了RLHF如何被利用放大错误偏见；'BAIT'（条目5）通过自条件推理实现100%攻击成功率的越狱框架；以及'Boiling the Frog'（条目23）引入的多轮基准测试，证明企业AI智能体极易受到渐进式攻击。在应用安全领域，Lazarus组织部署的RemotePE内存驻留RAT（条目1）和Ghost CMS漏洞CVE-2026-26980（条目2）凸显了对金融与网络基础设施的持续威胁。值得关注的公告包括用于自主6G RAN合成的GENESIS（条目13），以及评估个性化LLM智能体的VitaBench 2.0（条目7）。此外，Underminr域名前端利用（条目3）通过CDN操作实现品牌劫持，同样引人注目。</div>
+        <div class="lang-en">Today's cryptography-adjacent research highlights a strong focus on adversarial threats to AI systems and infrastructure. Standout papers include BAIT (a jailbreak framework exploiting LLM self-conditioned reasoning) and Alignment Tampering, which reveals how RLHF can be exploited to amplify misaligned biases. The Lazarus Group's deployment of the RemotePE memory-only RAT against financial and crypto firms, alongside JINX-0164's macOS malware targeting cryptocurrency firms via fake recruiter lures, underscores persistent state-sponsored and criminal threats. Noteworthy is the exploitation of Ghost CMS CVE-2026-26980 to hijack 700+ sites for ClickFix attacks, discovered via Anthropic's Claude. The Underminr domain-fronting exploit enables brand hijacking through CDN manipulation. In AI safety, D²-Monitor introduces hesitation-aware routing for diffusion LLMs, while Boiling the Frog benchmarks multi-turn agentic safety. The Clipping Bottleneck paper stabilizes RLVR via stochastic near-boundary recovery. VitaBench 2.0 and Claw-Anything push evaluation of personalized agents, with GPT-5.5 achieving only 34.5% pass@1 on the latter. No major cryptographic protocol announcements were made today.</div>
+        <div class="lang-zh">今日密码学相关研究聚焦于AI系统与基础设施的对抗性威胁。亮点论文包括BAIT（利用LLM自条件推理的越狱框架）和Alignment Tampering（揭示RLHF如何被利用放大错误偏见）。Lazarus集团部署RemotePE纯内存RAT攻击金融和加密货币公司，JINX-0164则通过虚假招聘诱饵传播macOS恶意软件，凸显持续的国家级和犯罪威胁。值得关注的是，攻击者利用Ghost CMS的CVE-2026-26980漏洞劫持700多个网站发起ClickFix攻击，该漏洞由Anthropic的Claude发现。Underminr域名前端利用技术可通过CDN操纵实现品牌劫持。AI安全方面，D²-Monitor为扩散LLM引入基于犹豫感知的路由机制，Boiling the Frog则对多轮智能体安全性进行基准测试。Clipping Bottleneck论文通过随机近边界信号恢复稳定RLVR训练。VitaBench 2.0和Claw-Anything推动个性化智能体评估，GPT-5.5在后者中仅达34.5% pass@1。今日未发布重大密码协议公告。</div>
       </div>
       
 
@@ -2557,6 +2557,25 @@ Taxonomy of Research Areas:
       </section>
 
       <section data-tab="news">
+        
+        <div class="feed-item">
+          <div class="feed-meta">
+            <span class="domain-tag">hackernews</span>
+            <span>·</span>
+            <span>2026-05-28</span>
+          </div>
+          <h4 class="lang-en"><a href="../../articles/1347.html">JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware</a></h4>
+          <h4 class="lang-zh"><a href="../../articles/1347.html">JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware</a></h4>
+          <p class="lang-en">A previously undocumented threat actor, JINX-0164, targets cryptocurrency firms using recruitment-themed social engineering and custom macOS malware. Active since mid-2025, the group uses fake LinkedIn profiles and meeting invites to trick victims into installing a Python-based infostealer and remote access trojan called AUDIOFIX. The malware steals credentials, cryptocurrency wallet data, and SSH keys, and enables lateral movement to CI/CD infrastructure. In one case, a supply chain attack was executed. The actor also distributes a Go-based backdoor named MiniRAT via a compromised npm package. While tactics resemble North Korean groups, no direct infrastructure overlaps have been found.</p>
+          <p class="lang-zh">一个名为JINX-0164的未知威胁行为者利用招聘主题的社会工程学和定制macOS恶意软件攻击加密货币公司。自2025年中活跃以来，该组织通过虚假LinkedIn资料和会议邀请诱骗受害者安装基于Python的信息窃取器和远程访问木马AUDIOFIX。该恶意软件窃取凭证、加密货币钱包数据和SSH密钥，并横向移动到CI/CD基础设施。在至少一个案例中，实施了供应链攻击。该行为者还通过被篡改的npm包分发名为MiniRAT的Go后门。虽然战术与朝鲜黑客组织相似，但尚未发现直接的基础设施重叠。</p>
+          
+          <a href="https://thehackernews.com/2026/05/jinx-0164-targets-cryptocurrency-firms.html" target="_blank" rel="noopener" class="original-link">
+            <span class="lang-en">Original source</span>
+            <span class="lang-zh">原始来源</span>
+            →
+          </a>
+          
+        </div>
         
         <div class="feed-item">
           <div class="feed-meta">
