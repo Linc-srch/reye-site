@@ -1,5 +1,113 @@
 [
   {
+    "id": 1342,
+    "type": "article",
+    "title": "Cisco and OpenAI redefine enterprise engineering with Codex",
+    "title_zh": "",
+    "summary_en": "Cisco and OpenAI have partnered to integrate OpenAI's Codex into Cisco's enterprise engineering workflows, aiming to automate network configuration, troubleshooting, and security policy management. This collaboration leverages large language models to assist engineers in writing and debugging code for network automation, potentially reducing human error and accelerating deployment. The initiative represents a significant step in applying AI to complex enterprise IT operations, though it raises considerations around reliability, security, and the need for human oversight in critical infrastructure.",
+    "summary_zh": "Cisco与OpenAI合作，将Codex集成到企业工程流程中，用于自动化网络配置、故障排除和安全策略管理。该合作利用大语言模型辅助工程师编写和调试网络自动化代码，有望减少人为错误并加速部署。这一举措代表了AI在复杂企业IT运营中的重要应用，但也引发了关于可靠性、安全性及关键基础设施中人工监督必要性的思考。",
+    "url": "https://openai.com/index/cisco",
+    "article_page": "articles/1342.html",
+    "score": 6.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-28 02:23:13"
+  },
+  {
+    "id": 1343,
+    "type": "article",
+    "title": "Building self-improving tax agents with Codex",
+    "title_zh": "",
+    "summary_en": "This paper explores the development of self-improving tax agents using OpenAI's Codex model. The agents are designed to automate tax-related tasks by leveraging code generation and iterative refinement. The system demonstrates how large language models can be applied to complex, rule-based domains like taxation, enabling continuous improvement through feedback loops. The research highlights the potential of AI to enhance efficiency and accuracy in financial compliance tasks.",
+    "summary_zh": "本文探讨了使用OpenAI的Codex模型构建自我改进的税务代理。这些代理通过代码生成和迭代优化来自动化税务相关任务，展示了大型语言模型在税收等复杂规则领域的应用潜力，并通过反馈循环实现持续改进。研究强调了AI在提升财务合规任务效率和准确性方面的可能性。",
+    "url": "https://openai.com/index/building-self-improving-tax-agents-with-codex",
+    "article_page": "articles/1343.html",
+    "score": 5.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-28 02:23:13"
+  },
+  {
+    "id": 1344,
+    "type": "article",
+    "title": "Warp’s big bet on building open source with GPT-5.5",
+    "title_zh": "",
+    "summary_en": "Warp, a company known for its terminal application, is making a significant strategic bet on building open-source software using GPT-5.5, an advanced language model. This move aims to leverage the model's capabilities to enhance developer tools and workflows, potentially democratizing access to cutting-edge AI for coding and automation. The decision reflects a broader trend of integrating powerful proprietary models into open-source ecosystems, balancing innovation with community-driven development.",
+    "summary_zh": "Warp公司正押注于使用GPT-5.5构建开源软件，旨在利用该先进语言模型提升开发者工具与工作流。此举可能将前沿AI能力引入开源生态，平衡创新与社区驱动开发，反映将专有模型整合进开源系统的趋势。",
+    "url": "https://openai.com/index/warp",
+    "article_page": "articles/1344.html",
+    "score": 4.0,
+    "domains": [
+      "ai_safety"
+    ],
+    "created_at": "2026-05-28 02:23:13"
+  },
+  {
+    "id": 1345,
+    "type": "article",
+    "title": "Election information and safeguards in 2026",
+    "title_zh": "",
+    "summary_en": "This document outlines the safeguards and information measures planned for elections in 2026, focusing on ensuring integrity, transparency, and security. It covers measures against disinformation, cyber threats, and foreign interference, emphasizing the use of secure digital systems for voter registration and result transmission. The paper highlights the importance of public awareness campaigns and collaboration with technology platforms to counter misinformation. It also discusses legal frameworks and real-time monitoring to protect electoral processes, aiming to maintain public trust in democratic institutions amid evolving digital challenges.",
+    "summary_zh": "该文件概述了2026年选举的保障措施与信息策略，重点确保选举的完整性、透明度和安全性。内容涵盖应对虚假信息、网络威胁和外国干预的措施，强调使用安全的数字系统进行选民登记和结果传输。文件突出了公众意识运动及与技术平台合作以打击错误信息的重要性，并讨论了法律框架和实时监控来保护选举过程，旨在维护公众对民主机构的信任。",
+    "url": "https://openai.com/index/election-safeguards-2026",
+    "article_page": "articles/1345.html",
+    "score": 8.0,
+    "domains": [
+      "ai_safety",
+      "system_safety"
+    ],
+    "created_at": "2026-05-28 02:23:13"
+  },
+  {
+    "id": 1341,
+    "type": "article",
+    "title": "GlassWorm Malware Takedown Disrupts Developer Supply Chain Attack Infrastructure",
+    "title_zh": "",
+    "summary_en": "CrowdStrike, Google, and the Shadowserver Foundation disrupted all command-and-control channels of GlassWorm malware, which since early 2025 targeted software developers via malicious VS Code extensions and npm/Python packages. GlassWorm used four resilient C2 methods: Solana blockchain, BitTorrent DHT, Google Calendar, and VPS infrastructure. It deployed a JavaScript RAT to steal credentials, crypto wallets, and browser data, and turned infected hosts into proxies and remote execution nodes. Over 300 GitHub repositories were poisoned. The takedown neutralized all channels simultaneously, preventing further instructions. The campaign is attributed to likely Russia-based cybercriminals.",
+    "summary_zh": "CrowdStrike、Google和Shadowserver Foundation联合摧毁了GlassWorm恶意软件的所有command-and-control通道。自2025年初以来，GlassWorm通过恶意VS Code扩展和npm/Python包针对软件开发者，利用Solana区块链、BitTorrent DHT、Google Calendar和VPS四种C2方法实现弹性通信。该恶意软件部署JavaScript RAT窃取凭证、加密货币钱包和浏览器数据，并将受感染主机转化为代理和远程执行节点，污染了超过300个GitHub仓库。此次行动同时瘫痪所有通道，阻止了进一步指令下发。攻击者疑似俄罗斯网络犯罪分子。",
+    "url": "https://thehackernews.com/2026/05/glassworm-malware-takedown-disrupts.html",
+    "article_page": "articles/1341.html",
+    "score": 9.0,
+    "domains": [
+      "system_safety"
+    ],
+    "created_at": "2026-05-28 02:23:03"
+  },
+  {
+    "id": 1340,
+    "type": "article",
+    "title": "Malicious npm Package Stole Files From Claude AI User Directory via GitHub",
+    "title_zh": "",
+    "summary_en": "A malicious npm package named 'mouse5212-super-formatter' was discovered stealing files from Claude AI's user data directory. It authenticates to GitHub during installation, creates a repository, and uploads all files to a threat actor-controlled account. The package leaked its own GitHub token, suggesting AI-generated malware with poor operational security. It has been downloaded 676 times.",
+    "summary_zh": "一个名为'mouse5212-super-formatter'的恶意npm包被发现从Claude AI的用户数据目录窃取文件。它在安装过程中通过GitHub认证，创建仓库并将所有文件上传到攻击者控制的账户。该包泄露了自身的GitHub令牌，表明这是AI生成的恶意软件且缺乏基本操作安全。该包已被下载676次。",
+    "url": "https://thehackernews.com/2026/05/malicious-npm-package-stole-files-from.html",
+    "article_page": "articles/1340.html",
+    "score": 8.0,
+    "domains": [
+      "ai_safety",
+      "system_safety"
+    ],
+    "created_at": "2026-05-28 02:23:02"
+  },
+  {
+    "id": 1339,
+    "type": "article",
+    "title": "May 27, 2026Economic ResearchCoding agents in the social sciences",
+    "title_zh": "",
+    "summary_en": "A survey of 1,260 quantitative social scientists in early 2026 reveals that while 81% have used AI chatbots for research, only 20% have adopted coding agents like Claude Code. Adoption is highly uneven: economists lead at 39%, while public health and education lag in single digits. Early-career researchers, those with typically male names, and those at top universities are significantly more likely to use coding agents. Users produce more working papers and grant proposals, though causality is unclear. Researchers are optimistic about AI writing publishable papers but wary of broader disciplinary impacts. The study highlights emerging disparities in access to autonomous research tools.",
+    "summary_zh": "一项2026年初对1,260名定量社会科学家的调查显示，81%的受访者曾使用AI聊天机器人辅助研究，但仅20%采用了Claude Code等coding agent。采用率极不均衡：经济学家达39%，而公共卫生和教育领域仅个位数。早期职业研究者、男性名字持有者及顶尖大学研究者使用coding agent的比例显著更高。用户产出更多工作论文和基金申请，但因果关系尚不明确。研究者对AI撰写可发表论文持乐观态度，但对学科整体影响存有担忧。该研究揭示了自主研究工具获取中的新兴不平等。",
+    "url": "https://www.anthropic.com/research/coding-agents-social-sciences",
+    "article_page": "articles/1339.html",
+    "score": 6.0,
+    "domains": [
+      "ai_safety",
+      "system_safety"
+    ],
+    "created_at": "2026-05-28 02:17:37"
+  },
+  {
     "id": 1338,
     "type": "article",
     "title": "CERT-In Recommends 12-Hour Patching for Internet-Facing Flaws Amid AI-Assisted Attacks",
