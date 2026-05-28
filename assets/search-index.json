@@ -13,6 +13,9 @@
       "cryptography",
       "system_safety"
     ],
+    "topics": [
+      "malware"
+    ],
     "created_at": "2026-05-28 09:02:36"
   },
   {
@@ -29,6 +32,7 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [],
     "created_at": "2026-05-28 09:02:31"
   },
   {
@@ -43,6 +47,10 @@
     "score": 6.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "network-security"
     ],
     "created_at": "2026-05-28 02:23:13"
   },
@@ -59,6 +67,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-28 02:23:13"
   },
   {
@@ -73,6 +85,10 @@
     "score": 4.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-28 02:23:13"
   },
@@ -90,6 +106,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "governance",
+      "network-security"
+    ],
     "created_at": "2026-05-28 02:23:13"
   },
   {
@@ -104,6 +124,10 @@
     "score": 9.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "malware",
+      "supply-chain"
     ],
     "created_at": "2026-05-28 02:23:03"
   },
@@ -121,6 +145,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "malware",
+      "supply-chain"
+    ],
     "created_at": "2026-05-28 02:23:02"
   },
   {
@@ -137,6 +165,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-28 02:17:37"
   },
   {
@@ -151,6 +183,10 @@
     "score": 8.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "ai-safety",
+      "vulnerability"
     ],
     "created_at": "2026-05-27 08:39:43"
   },
@@ -167,6 +203,10 @@
     "domains": [
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "governance",
+      "vulnerability"
     ],
     "created_at": "2026-05-27 08:39:40"
   },
@@ -187,6 +227,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:30"
   },
   {
@@ -205,6 +248,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-27 08:39:30"
   },
@@ -225,6 +271,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:30"
   },
   {
@@ -243,6 +292,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-27 08:39:30"
   },
@@ -263,6 +315,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:30"
   },
   {
@@ -281,6 +336,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-27 08:39:30"
   },
@@ -301,6 +359,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:30"
   },
   {
@@ -319,6 +380,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-27 08:39:30"
   },
@@ -339,6 +403,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:30"
   },
   {
@@ -357,6 +424,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-27 08:39:30"
   },
@@ -377,6 +447,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:30"
   },
   {
@@ -395,6 +468,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-27 08:39:30"
   },
@@ -415,6 +491,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:30"
   },
   {
@@ -433,6 +512,10 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "interpretability"
     ],
     "created_at": "2026-05-27 08:39:30"
   },
@@ -453,6 +536,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:30"
   },
   {
@@ -471,6 +557,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-27 08:39:30"
   },
@@ -491,6 +580,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:30"
   },
   {
@@ -509,6 +601,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-27 08:39:30"
   },
@@ -529,6 +624,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:30"
   },
   {
@@ -547,6 +645,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-27 08:39:30"
   },
@@ -567,6 +668,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:30"
   },
   {
@@ -585,6 +689,10 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "cryptography",
+      "system-security"
     ],
     "created_at": "2026-05-27 08:39:30"
   },
@@ -605,6 +713,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:29"
   },
   {
@@ -623,6 +734,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "network-security"
     ],
     "created_at": "2026-05-27 08:39:29"
   },
@@ -643,6 +757,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-27 08:39:29"
   },
   {
@@ -661,6 +778,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -681,6 +801,10 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "privacy"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -699,6 +823,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -719,6 +846,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "system-security"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -737,6 +867,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -757,6 +890,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -775,6 +911,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -795,6 +934,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -813,6 +955,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -833,6 +978,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -851,6 +999,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -871,6 +1022,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -889,6 +1043,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -909,6 +1066,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -927,6 +1087,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -947,6 +1110,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -965,6 +1131,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -985,6 +1154,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -1003,6 +1175,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -1023,6 +1198,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -1041,6 +1219,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -1061,6 +1242,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -1079,6 +1263,9 @@
       "digital_identity",
       "soc",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-26 09:11:55"
   },
@@ -1099,6 +1286,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -1118,6 +1308,9 @@
       "soc",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-26 09:11:55"
   },
   {
@@ -1133,6 +1326,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "governance",
+      "others"
+    ],
     "created_at": "2026-05-26 01:32:48"
   },
   {
@@ -1147,6 +1344,10 @@
     "score": 9.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "malware",
+      "supply-chain"
     ],
     "created_at": "2026-05-26 01:32:46"
   },
@@ -1164,6 +1365,10 @@
       "cryptography",
       "system_safety"
     ],
+    "topics": [
+      "malware",
+      "network-security"
+    ],
     "created_at": "2026-05-26 01:32:44"
   },
   {
@@ -1179,6 +1384,10 @@
     "domains": [
       "cryptography",
       "system_safety"
+    ],
+    "topics": [
+      "malware",
+      "vulnerability"
     ],
     "created_at": "2026-05-26 01:32:41"
   },
@@ -1196,6 +1405,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "governance",
+      "network-security"
+    ],
     "created_at": "2026-05-25 01:43:49"
   },
   {
@@ -1210,6 +1423,10 @@
     "score": 7.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "soc",
+      "vulnerability"
     ],
     "created_at": "2026-05-25 01:43:49"
   },
@@ -1226,6 +1443,10 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "malware",
+      "network-security"
+    ],
     "created_at": "2026-05-25 01:43:49"
   },
   {
@@ -1240,6 +1461,9 @@
     "score": 8.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "system-security"
     ],
     "created_at": "2026-05-25 01:43:49"
   },
@@ -1257,6 +1481,10 @@
       "ai_safety",
       "digital_identity"
     ],
+    "topics": [
+      "digital-identity",
+      "governance"
+    ],
     "created_at": "2026-05-25 01:43:49"
   },
   {
@@ -1271,6 +1499,10 @@
     "score": 7.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "malware",
+      "network-security"
     ],
     "created_at": "2026-05-25 01:43:49"
   },
@@ -1288,6 +1520,10 @@
       "cryptography",
       "system_safety"
     ],
+    "topics": [
+      "network-security",
+      "vulnerability"
+    ],
     "created_at": "2026-05-25 01:43:49"
   },
   {
@@ -1304,6 +1540,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "ai-safety"
+    ],
     "created_at": "2026-05-25 01:43:49"
   },
   {
@@ -1318,6 +1558,10 @@
     "score": 8.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "supply-chain",
+      "vulnerability"
     ],
     "created_at": "2026-05-25 01:43:49"
   },
@@ -1334,6 +1578,10 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "malware",
+      "system-security"
+    ],
     "created_at": "2026-05-25 01:43:49"
   },
   {
@@ -1348,6 +1596,10 @@
     "score": 7.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "governance",
+      "soc"
     ],
     "created_at": "2026-05-25 01:43:49"
   },
@@ -1364,6 +1616,10 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "system-security",
+      "vulnerability"
+    ],
     "created_at": "2026-05-25 01:43:49"
   },
   {
@@ -1378,6 +1634,10 @@
     "score": 4.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "governance",
+      "network-security"
     ],
     "created_at": "2026-05-25 01:43:49"
   },
@@ -1395,6 +1655,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai-safety",
+      "supply-chain"
+    ],
     "created_at": "2026-05-25 01:43:49"
   },
   {
@@ -1409,6 +1673,10 @@
     "score": 7.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "governance",
+      "network-security"
     ],
     "created_at": "2026-05-25 01:43:49"
   },
@@ -1426,6 +1694,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "supply-chain"
+    ],
     "created_at": "2026-05-25 01:43:49"
   },
   {
@@ -1442,6 +1714,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "governance",
+      "supply-chain"
+    ],
     "created_at": "2026-05-25 01:43:49"
   },
   {
@@ -1456,6 +1732,10 @@
     "score": 8.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "network-security",
+      "vulnerability"
     ],
     "created_at": "2026-05-25 01:43:49"
   },
@@ -1472,6 +1752,10 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "system-security",
+      "vulnerability"
+    ],
     "created_at": "2026-05-25 01:43:49"
   },
   {
@@ -1486,6 +1770,10 @@
     "score": 7.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "supply-chain",
+      "system-security"
     ],
     "created_at": "2026-05-25 01:43:49"
   },
@@ -1503,6 +1791,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "digital-identity",
+      "supply-chain"
+    ],
     "created_at": "2026-05-23 18:00:57"
   },
   {
@@ -1517,6 +1809,10 @@
     "score": 9.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "malware",
+      "supply-chain"
     ],
     "created_at": "2026-05-23 18:00:57"
   },
@@ -1534,6 +1830,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "vulnerability"
+    ],
     "created_at": "2026-05-23 18:00:57"
   },
   {
@@ -1550,6 +1850,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "malware",
+      "supply-chain"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1564,6 +1868,10 @@
     "score": 8.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "malware",
+      "vulnerability"
     ],
     "created_at": "2026-05-23 11:32:56"
   },
@@ -1580,6 +1888,10 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "network-security",
+      "vulnerability"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1595,6 +1907,10 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "malware",
+      "network-security"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1609,6 +1925,10 @@
     "score": 7.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "malware",
+      "network-security"
     ],
     "created_at": "2026-05-23 11:32:56"
   },
@@ -1626,6 +1946,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "malware",
+      "supply-chain"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1641,6 +1965,10 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "system-security",
+      "vulnerability"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1655,6 +1983,10 @@
     "score": 8.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "malware",
+      "network-security"
     ],
     "created_at": "2026-05-23 11:32:56"
   },
@@ -1672,6 +2004,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "vulnerability"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1687,6 +2023,10 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "network-security",
+      "vulnerability"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1701,6 +2041,10 @@
     "score": 8.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "malware",
+      "network-security"
     ],
     "created_at": "2026-05-23 11:32:56"
   },
@@ -1719,6 +2063,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "malware",
+      "vulnerability"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1733,6 +2081,10 @@
     "score": 7.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "malware",
+      "vulnerability"
     ],
     "created_at": "2026-05-23 11:32:56"
   },
@@ -1751,6 +2103,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "governance"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1765,6 +2120,10 @@
     "score": 8.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "system-security",
+      "vulnerability"
     ],
     "created_at": "2026-05-23 11:32:56"
   },
@@ -1782,6 +2141,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "malware",
+      "supply-chain"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1796,6 +2159,10 @@
     "score": 7.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "system-security",
+      "vulnerability"
     ],
     "created_at": "2026-05-23 11:32:56"
   },
@@ -1813,6 +2180,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "ai-safety"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1829,6 +2200,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "malware",
+      "supply-chain"
+    ],
     "created_at": "2026-05-23 11:32:56"
   },
   {
@@ -1843,6 +2218,10 @@
     "score": 7.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "malware",
+      "network-security"
     ],
     "created_at": "2026-05-23 11:32:56"
   },
@@ -1859,6 +2238,10 @@
     "domains": [
       "ai_safety",
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-23 08:51:59"
   },
@@ -1878,6 +2261,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "system-security"
+    ],
     "created_at": "2026-05-23 08:51:59"
   },
   {
@@ -1896,6 +2283,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-23 08:51:56"
   },
   {
@@ -1912,6 +2303,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "interpretability"
+    ],
     "created_at": "2026-05-23 08:51:56"
   },
   {
@@ -1927,6 +2322,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-23 08:51:56"
   },
   {
@@ -1941,6 +2340,10 @@
     "score": 8.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai-safety",
+      "interpretability"
     ],
     "created_at": "2026-05-23 08:51:56"
   },
@@ -1958,6 +2361,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "ai-safety"
+    ],
     "created_at": "2026-05-23 08:51:56"
   },
   {
@@ -1973,6 +2380,10 @@
     "domains": [
       "ai_safety",
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "ai-safety"
     ],
     "created_at": "2026-05-23 08:51:56"
   },
@@ -1990,6 +2401,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai-safety",
+      "vulnerability"
+    ],
     "created_at": "2026-05-23 08:51:56"
   },
   {
@@ -2005,6 +2420,10 @@
     "domains": [
       "ai_safety",
       "system_safety"
+    ],
+    "topics": [
+      "ai-safety",
+      "governance"
     ],
     "created_at": "2026-05-23 08:51:56"
   },
@@ -2022,6 +2441,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "ai-safety"
+    ],
     "created_at": "2026-05-23 08:51:56"
   },
   {
@@ -2037,6 +2460,10 @@
     "domains": [
       "ai_safety",
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-23 08:51:56"
   },
@@ -2054,6 +2481,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "ai-safety"
+    ],
     "created_at": "2026-05-23 08:51:56"
   },
   {
@@ -2068,6 +2499,10 @@
     "score": 6.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "ai-safety"
     ],
     "created_at": "2026-05-23 08:51:56"
   },
@@ -2087,6 +2522,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-23 08:51:56"
   },
   {
@@ -2101,6 +2540,10 @@
     "score": 6.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-23 08:51:56"
   },
@@ -2120,6 +2563,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2137,6 +2583,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2156,6 +2605,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "system-security"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2173,6 +2625,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "system-security"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2192,6 +2647,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2209,6 +2667,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2228,6 +2689,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2245,6 +2709,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2264,6 +2731,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "ai-safety"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2281,6 +2752,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2300,6 +2774,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2317,6 +2794,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2336,6 +2816,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2353,6 +2836,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2372,6 +2858,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2389,6 +2878,10 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "interpretability"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2408,6 +2901,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2425,6 +2921,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2444,6 +2943,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2461,6 +2963,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2480,6 +2985,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2497,6 +3005,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2516,6 +3027,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "interpretability"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2533,6 +3048,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-22 09:19:19"
   },
@@ -2552,6 +3070,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-22 09:19:19"
   },
   {
@@ -2566,6 +3087,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "ai-safety"
     ],
     "created_at": "2026-05-22 09:19:18"
   },
@@ -2582,6 +3107,10 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "privacy"
+    ],
     "created_at": "2026-05-22 07:07:03"
   },
   {
@@ -2596,6 +3125,10 @@
     "score": 0.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-22 07:07:01"
   },
@@ -2612,6 +3145,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-21 09:02:10"
   },
   {
@@ -2626,6 +3163,9 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-21 09:02:10"
   },
@@ -2642,6 +3182,10 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "system-security"
+    ],
     "created_at": "2026-05-21 09:02:10"
   },
   {
@@ -2656,6 +3200,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-20 07:28:25"
   },
@@ -2673,6 +3221,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-20 07:28:25"
   },
   {
@@ -2687,6 +3239,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-20 07:28:24"
   },
@@ -2704,6 +3260,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai-safety",
+      "governance"
+    ],
     "created_at": "2026-05-20 07:28:24"
   },
   {
@@ -2718,6 +3278,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "ai-safety"
     ],
     "created_at": "2026-05-20 07:28:24"
   },
@@ -2734,6 +3298,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-20 07:28:24"
   },
   {
@@ -2749,6 +3317,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-20 07:28:24"
   },
   {
@@ -2763,6 +3335,9 @@
     "score": 0.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "others"
     ],
     "created_at": "2026-05-20 07:28:24"
   },
@@ -2780,6 +3355,10 @@
       "ai_safety",
       "digital_identity"
     ],
+    "topics": [
+      "ai-safety",
+      "digital-identity"
+    ],
     "created_at": "2026-05-20 07:28:24"
   },
   {
@@ -2794,6 +3373,9 @@
     "score": 0.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:24"
   },
@@ -2811,6 +3393,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "others"
+    ],
     "created_at": "2026-05-20 07:28:24"
   },
   {
@@ -2825,6 +3411,9 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:24"
   },
@@ -2841,6 +3430,9 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:24"
   },
   {
@@ -2855,6 +3447,10 @@
     "score": 0.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "others"
     ],
     "created_at": "2026-05-20 07:28:24"
   },
@@ -2871,6 +3467,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "others"
+    ],
     "created_at": "2026-05-20 07:28:24"
   },
   {
@@ -2886,6 +3486,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-20 07:28:24"
   },
   {
@@ -2900,6 +3504,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "others"
     ],
     "created_at": "2026-05-20 07:28:24"
   },
@@ -2919,6 +3527,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -2936,6 +3547,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -2955,6 +3569,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -2972,6 +3589,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -2991,6 +3611,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -3008,6 +3631,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -3027,6 +3653,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "cryptography",
+      "system-security"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -3044,6 +3674,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -3063,6 +3696,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -3080,6 +3716,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -3099,6 +3738,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -3116,6 +3758,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -3135,6 +3780,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -3152,6 +3800,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -3171,6 +3822,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -3188,6 +3842,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -3207,6 +3864,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -3224,6 +3884,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -3243,6 +3906,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -3260,6 +3926,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -3279,6 +3948,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -3296,6 +3968,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -3315,6 +3990,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -3332,6 +4010,10 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "cryptography",
+      "system-security"
     ],
     "created_at": "2026-05-20 07:28:23"
   },
@@ -3351,6 +4033,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-20 07:28:23"
   },
   {
@@ -3365,6 +4050,10 @@
     "score": 0.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-19 13:34:17"
   },
@@ -3381,6 +4070,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-19 13:34:17"
   },
   {
@@ -3395,6 +4088,10 @@
     "score": 0.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "privacy"
     ],
     "created_at": "2026-05-19 13:34:17"
   },
@@ -3411,6 +4108,9 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:17"
   },
   {
@@ -3425,6 +4125,9 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:17"
   },
@@ -3441,6 +4144,9 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:17"
   },
   {
@@ -3455,6 +4161,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-19 13:34:17"
   },
@@ -3472,6 +4182,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "system-security"
+    ],
     "created_at": "2026-05-19 13:34:17"
   },
   {
@@ -3487,6 +4201,10 @@
     "domains": [
       "ai_safety",
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "system-security"
     ],
     "created_at": "2026-05-19 13:34:17"
   },
@@ -3504,6 +4222,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai-safety",
+      "governance"
+    ],
     "created_at": "2026-05-19 13:34:17"
   },
   {
@@ -3518,6 +4240,10 @@
     "score": 0.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "ai-safety",
+      "system-security"
     ],
     "created_at": "2026-05-19 13:34:17"
   },
@@ -3534,6 +4260,10 @@
     "domains": [
       "system_safety"
     ],
+    "topics": [
+      "malware",
+      "supply-chain"
+    ],
     "created_at": "2026-05-19 13:34:17"
   },
   {
@@ -3548,6 +4278,9 @@
     "score": 0.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:17"
   },
@@ -3564,6 +4297,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "system-security"
+    ],
     "created_at": "2026-05-19 13:34:17"
   },
   {
@@ -3578,6 +4315,10 @@
     "score": 0.0,
     "domains": [
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "system-security"
     ],
     "created_at": "2026-05-19 13:34:17"
   },
@@ -3594,6 +4335,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-19 13:34:17"
   },
   {
@@ -3609,6 +4354,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-19 13:34:17"
   },
   {
@@ -3623,6 +4372,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-19 13:34:17"
   },
@@ -3640,6 +4393,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-19 13:34:17"
   },
   {
@@ -3656,6 +4413,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-19 13:34:17"
   },
   {
@@ -3670,6 +4431,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-19 13:34:14"
   },
@@ -3687,6 +4452,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "system-security"
+    ],
     "created_at": "2026-05-19 13:34:14"
   },
   {
@@ -3702,6 +4471,10 @@
     "domains": [
       "ai_safety",
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-19 13:34:14"
   },
@@ -3719,6 +4492,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-19 13:34:14"
   },
   {
@@ -3735,6 +4512,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "system-security"
+    ],
     "created_at": "2026-05-19 13:34:14"
   },
   {
@@ -3750,6 +4531,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-19 13:34:14"
   },
   {
@@ -3764,6 +4549,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-19 13:34:14"
   },
@@ -3781,6 +4570,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "ai-safety"
+    ],
     "created_at": "2026-05-19 13:34:14"
   },
   {
@@ -3796,6 +4589,10 @@
     "domains": [
       "ai_safety",
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-19 13:34:14"
   },
@@ -3813,6 +4610,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "ai-safety"
+    ],
     "created_at": "2026-05-19 13:34:14"
   },
   {
@@ -3829,6 +4630,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "ai-safety"
+    ],
     "created_at": "2026-05-19 13:34:14"
   },
   {
@@ -3843,6 +4648,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-19 13:34:14"
   },
@@ -3859,6 +4668,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "ai-safety"
+    ],
     "created_at": "2026-05-19 13:34:14"
   },
   {
@@ -3873,6 +4686,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "ai-safety"
     ],
     "created_at": "2026-05-19 13:34:14"
   },
@@ -3889,6 +4706,9 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:14"
   },
   {
@@ -3903,6 +4723,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "governance"
     ],
     "created_at": "2026-05-19 13:34:14"
   },
@@ -3919,6 +4743,10 @@
     "domains": [
       "ai_safety"
     ],
+    "topics": [
+      "ai",
+      "ai-safety"
+    ],
     "created_at": "2026-05-19 13:34:14"
   },
   {
@@ -3933,6 +4761,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "privacy"
     ],
     "created_at": "2026-05-19 13:34:14"
   },
@@ -3950,6 +4782,10 @@
       "ai_safety",
       "system_safety"
     ],
+    "topics": [
+      "ai",
+      "governance"
+    ],
     "created_at": "2026-05-19 13:34:14"
   },
   {
@@ -3964,6 +4800,10 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "ai",
+      "ai-safety"
     ],
     "created_at": "2026-05-19 13:34:14"
   },
@@ -3983,6 +4823,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4000,6 +4843,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4019,6 +4865,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4036,6 +4885,10 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai",
+      "interpretability"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4055,6 +4908,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4072,6 +4928,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4091,6 +4950,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4108,6 +4970,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4127,6 +4992,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4144,6 +5012,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4163,6 +5034,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4180,6 +5054,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4199,6 +5076,10 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "digital-identity",
+      "governance"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4216,6 +5097,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4235,6 +5119,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4252,6 +5139,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4271,6 +5161,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4288,6 +5181,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4307,6 +5203,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4324,6 +5223,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4343,6 +5245,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4360,6 +5265,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4379,6 +5287,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4396,6 +5307,9 @@
       "cryptography",
       "digital_identity",
       "system_safety"
+    ],
+    "topics": [
+      "ai"
     ],
     "created_at": "2026-05-19 13:34:13"
   },
@@ -4415,6 +5329,9 @@
       "digital_identity",
       "system_safety"
     ],
+    "topics": [
+      "ai"
+    ],
     "created_at": "2026-05-19 13:34:13"
   },
   {
@@ -4429,6 +5346,9 @@
     "score": 0.0,
     "domains": [
       "ai_safety"
+    ],
+    "topics": [
+      "others"
     ],
     "created_at": "2026-05-19 13:34:12"
   }
