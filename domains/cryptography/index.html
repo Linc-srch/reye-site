@@ -74,29 +74,44 @@
             <h3 class="lang-zh">研究方向</h3>
           </summary>
           
-          <p style="white-space:pre-wrap">Domain: Hardware Security, Applied Cryptography, Edge Computing, Audio Processing Core Research Objective: Developing hardware-accelerated cryptographic security and real-time biometric authentication architectures for edge devices and AI Neural Processing Units (NPUs).
+          <p style="white-space:pre-wrap">Domain: Hardware Security, Applied Cryptography, Edge Computing, Audio Processing, Confidential Computing, Protocol Verification Core Research Objective: Developing hardware-accelerated cryptographic security, privacy-preserving computation architectures, formally verified communication protocols, and real-time biometric authentication for edge devices and AI Neural Processing Units (NPUs).
 Taxonomy of Research Areas:
-1. NPU AI Security & Applied Cryptography: Securing on-device AI execution through hardware-integrated cryptographic protocols. Focus areas include:
-	• NPU-Native Symmetric Cryptography: Hardware acceleration of lightweight symmetric-key ciphers (e.g., AES, ChaCha20) directly on NPU tensor cores, enabling low-latency, on-the-fly AI model decryption and secure execution.
-	• Quantum-Resistant Edge Security: Evaluating and integrating Post-Quantum Cryptography (PQC) standards for long-term secure edge compute.
-2. Audio Filtering Technology & Edge Processing: Advancing real-time audio stream management for smart edge devices (e.g., AI spectacles) to optimize command processing. Key technical mechanisms include:
-	• Voice Activity Detection (VAD) & Speech Activity Detection (SAD): Intelligent endpointing algorithms to differentiate speech from silence, allowing microphones to remain active without falsely registering breathing or pauses as commands.
-	• Dynamic Noise Suppression: Real-time filtering to isolate target audio from background environmental noise.
-3. Continuous Identity Verification & Biometrics: Ensuring the physical operator of the edge device matches the authorized digital identity. Key implementations include:
-	• Active Speaker Detection (ASD): Spatial and contextual filtering to verify that the registered audio stream originates directly from the individual wearing the device.
-	• Voice Biometrics: Cryptographically binding the user's vocal signature to their agentic authorization permissions to prevent impersonation.
+	1.  NPU AI Security & Applied Cryptography: Securing on-device AI execution through hardware-integrated, high-throughput cryptographic protocols. Focus areas include:
+		• NPU-Native Symmetric Cryptography: Hardware acceleration of lightweight, low-latency symmetric-key ciphers and Authenticated Encryption directly on NPU tensor cores, enabling on-the-fly AI model decryption.
+		• Quantum-Resistant Edge Security: Evaluating and integrating Post-Quantum Cryptography (PQC) standards for long-term secure edge compute.
+		• Hardware-Level Defenses: Implementing robust architectural security measures such as Memory Encryption and Pointer Authentication to thwart low-level exploitation.
+	2. Privacy-Preserving Computation & Confidential Computing: Advancing cryptographic mechanisms that allow for computation on encrypted data without exposing the underlying plaintext or models. Key implementations include:
+		• Homomorphic Encryption & ZKP: Utilizing Fully Homomorphic Encryption and Zero-Knowledge Proofs to compute and verify data securely.
+		• Confidential Computing: Establishing hardware-based Trusted Execution Environments to protect AI data-in-use.
+	3. Security Protocols & Formal Verification: Designing, analyzing, and mathematically proving the security bounds of communication systems and cryptographic libraries. Focus areas include:
+		• Formal Verification of Protocols: Using advanced verification tools (e.g., Tamarin, ProVerif) to mathematically prove the security of established and emerging communication frameworks like TLS, Bluetooth, Sparklink, and "Find My" tracking networks.
+		• Verified Cryptographic Implementations: Ensuring the foundational codebase of major open-source libraries (e.g., OpenSSL, openHiTLS) is rigorously verified against algorithmic flaws.
+	4.  Audio Filtering Technology & Edge Processing: Advancing real-time audio stream management for smart edge devices (e.g., AI spectacles) to optimize command processing. Key technical mechanisms include:
+		• Voice Activity Detection (VAD) & Speech Activity Detection (SAD): Intelligent endpointing algorithms to differentiate speech from silence, allowing microphones to remain active without falsely registering breathing or pauses as commands.
+		• Dynamic Noise Suppression: Real-time filtering to isolate target audio from background environmental noise.
+	5.  Continuous Identity Verification & Biometrics: Ensuring the physical operator of the edge device matches the authorized digital identity. Key implementations include:
+		• Active Speaker Detection (ASD): Spatial and contextual filtering to verify that the registered audio stream originates directly from the individual wearing the device.
+		• Voice Biometrics: Cryptographically binding the user's vocal signature to their agentic authorization permissions to prevent impersonation.
 
-领域： 硬件安全、应用密码学、边缘计算、音频处理 核心研究目标： 开发用于边缘设备和人工智能神经网络处理器 (NPU) 的硬件加速密码安全与实时生物特征身份验证架构。
+领域： 硬件安全、应用密码学、边缘计算、音频处理、机密计算、协议形式化验证 核心研究目标： 开发用于边缘设备和人工智能神经网络处理器 (NPU) 的硬件加速密码安全、隐私保护计算架构、经过形式化验证的通信协议以及实时生物特征身份验证架构。
 研究领域分类：
-1. NPU 人工智能安全与应用密码学： 通过硬件集成的密码协议保障设备端 AI 执行的安全。重点领域包括：
-	• NPU 原生对称密码学： 在张量核心 (tensor cores) 上直接对轻量级对称密钥密码（例如 AES, ChaCha20）进行硬件加速，以实现低延迟、实时的 AI 模型解密与安全执行。
-	• 抗量子边缘安全： 评估并集成后量子密码学 (PQC) 标准，以确保长期的边缘计算安全。
-2. 音频过滤技术与边缘处理： 推进智能边缘设备（例如 AI 智能眼镜）的实时音频流管理，以优化命令处理。关键技术机制包括：
-	• 语音活动检测 (VAD) 与 语音端点检测 (SAD)： 智能端点检测算法，用于区分语音和静音，使麦克风保持开启状态，而不会将呼吸或停顿误认为指令。
-	• 动态噪声抑制： 实时过滤，从背景环境噪声中分离出目标音频。
-3. 持续身份验证与生物识别： 确保边缘设备的物理操作者与授权的数字身份相匹配。关键实现包括：
-	• 活跃说话人检测 (ASD)： 空间和上下文过滤，以验证注册的音频流直接源自佩戴设备的个体。
-声纹识别 (Voice Biometrics)： 将用户的声音特征与其代理授权权限进行密码学绑定，以防止身份冒充</p>
+	1. NPU 人工智能安全与应用密码学： 通过硬件集成的高吞吐量密码协议保障设备端 AI 执行的安全。重点领域包括：
+		• NPU 原生对称密码学： 在张量核心上直接对轻量级、低延迟对称密钥密码及认证加密 (Authenticated Encryption) 进行硬件加速，以实现实时的 AI 模型解密。
+		• 抗量子边缘安全： 评估并集成后量子密码学 (PQC) 标准，以确保长期的边缘计算安全。
+		• 硬件级防御： 实施稳健的架构安全措施，例如内存加密 (Memory Encryption) 和指针身份验证 (Pointer Authentication)，以阻止底层漏洞利用。
+		全。
+	2. 隐私保护计算与机密计算 (Privacy-Preserving Computation & Confidential Computing)： 推进允许在加密数据上进行计算而不暴露底层明文或模型的密码学机制。关键实现包括：
+		• 同态加密与零知识证明 (ZKP)： 利用同态加密进行密文计算，并通过零知识证明安全地验证数据。
+		• 机密计算： 建立基于硬件的可信执行环境，以保护使用中的 AI 数据 (data-in-use)。
+	3. 安全协议与形式化验证 (Security Protocols & Formal Verification)： 设计、分析并在数学上证明通信系统和密码学库的安全边界。重点领域包括：
+		• 协议的数学形式化验证： 使用高级验证工具（如 Tamarin, ProVerif）在数学层面证明既有和新兴通信框架的安全，如 TLS、蓝牙、星闪 (Sparklink) 和“查找” (Find My) 追踪网络协议。
+		• 可验证的密码学实现： 确保主要开源库（如 OpenSSL, openHiTLS）的基础代码库经过严格的形式化验证，防范算法缺陷。
+	4. 音频过滤技术与边缘处理： 推进智能边缘设备（例如 AI 智能眼镜）的实时音频流管理，以优化命令处理。关键技术机制包括：
+		• 语音活动检测 (VAD) 与语音端点检测 (SAD)： 智能端点检测算法，用于区分语音和静音，使麦克风保持开启状态，而不会将呼吸或停顿误认为指令。
+		• 动态噪声抑制： 实时过滤，从背景环境噪声中分离出目标音频。
+	5. 持续身份验证与生物识别： 确保边缘设备的物理操作者与授权的数字身份相匹配。关键实现包括：
+		• 活跃说话人检测 (ASD)： 空间和上下文过滤，以验证注册的音频流直接源自佩戴设备的个体。
+声纹识别 (Voice Biometrics)： 将用户的声音特征与其代理授权权限进行密码学绑定，以防止身份冒充。</p>
           
         </details>
 
