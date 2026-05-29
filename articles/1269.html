@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For a system security researcher focused on OS/kernel and software supply-chain security, Underminr is a critical case study in architectural trust assumptions. It demonstrates how the decoupling of DNS resolution and CDN routing—a design choice in the network stack—creates a new attack surface for traffic redirection and brand hijacking. This is analogous to how kernel subsystems (e.g., VFS, network stack) can have implicit trust boundaries that lead to privilege escalation or sandbox escapes. The exploit bypasses DNS-level filtering, which is a common security control, highlighting the need for cross-layer verification (e.g., TLS SNI + DNS + HTTP Host consistency checks) as a mitigation strategy, similar to how CFI enforces control-flow integrity across software layers.</p>
+        <p class="lang-zh">对于专注于操作系统/内核和软件供应链安全的研究人员来说，Underminr 是一个关于架构信任假设的关键案例研究。它展示了 DNS 解析和 CDN 路由的解耦——网络栈中的一个设计选择——如何为流量重定向和品牌劫持创造了新的攻击面。这类似于内核子系统（例如 VFS、网络栈）可能存在的隐式信任边界，从而导致权限提升或沙箱逃逸。该利用绕过了 DNS 级别的过滤（一种常见的安全控制），凸显了需要跨层验证（例如 TLS SNI + DNS + HTTP Host 一致性检查）作为缓解策略，类似于 CFI 如何在软件层之间强制执行控制流完整性。</p>
+      </div>
+      
+
+      
       
 
       
@@ -91,13 +99,64 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Researchers have identified a new domain-fronting exploit called Underminr that allows attackers to hijack the brand reputation of legitimate websites by manipulating DNS and CDN interactions. Unlike earlier domain fronting, Underminr bypasses existing mitigations by exploiting the lack of cross-referencing between DNS and CDN systems, enabling malicious traffic to be routed through trusted domains. ADAMnetworks found that 42% of global websites are vulnerable, with US sites at 51% risk. The attack can be used for scams, C2 operations, and data exfiltration while evading detection. Mitigation requires CDNs to adopt reputation-based domain grouping, as exemplified by Fastly.</p></div>
+          <div class="lede"><p>Researchers at ADAMnetworks have identified 'Underminr', a domain-fronting-like exploit that abuses the siloed operation of DNS and CDN systems to allow attackers to route malicious traffic through trusted websites, affecting 42% of global websites.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>研究人员发现了一种名为Underminr的新型域名前端攻击，攻击者通过操纵DNS和CDN交互，利用合法网站的品牌声誉进行恶意活动。与早期的domain fronting不同，Underminr绕过了现有缓解措施，利用DNS和CDN系统之间缺乏交叉验证的漏洞，将恶意流量通过受信任域名路由。ADAMnetworks发现全球42%的网站易受攻击，美国网站风险高达51%。攻击可用于诈骗、C2操作和数据窃取，同时规避检测。缓解措施要求CDN采用基于声誉的域名分组，如Fastly的做法。</p></div>
+          <div class="lede"><p>ADAMnetworks 的研究人员发现了 'Underminr'，这是一种类似 domain fronting 的利用手法，通过滥用 DNS 和 CDN 系统的孤立运行，允许攻击者通过受信任的网站路由恶意流量，影响全球 42% 的网站。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>Underminr is a successor to domain fronting, exploiting the mismatch between DNS resolution and CDN routing.</li>
+<li>Attackers use a trusted domain's DNS lookup to pass protective filters, then specify a different (malicious) domain in the SNI/TLS handshake.</li>
+<li>ADAMnetworks found 42% of global websites (51% in the US) are vulnerable; China's regulated internet has &lt;9%.</li>
+<li>Mitigation involves CDN 'bucketizing' (grouping domains by reputation, as done by Fastly) or moving sites off vulnerable CDNs.</li>
+<li>The exploit is already being used in the wild for C2, scams, and data exfiltration.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>Unlike the original domain fronting (2018), which was mitigated by CDNs checking HTTP Host vs. SNI, Underminr exploits the DNS vs. SNI mismatch, a layer that CDNs do not cross-reference. This represents a regression in the security posture of the internet's routing infrastructure. Prior work focused on application-layer header manipulation; this shifts the attack to the DNS resolution layer, which is typically considered a trust boundary for filtering.</p>
+<h2>Why It Matters</h2>
+<p>This matters because it undermines a fundamental security assumption: that DNS filtering and reputation-based blocking are sufficient to prevent malicious traffic from leveraging trusted infrastructure. For system security, it shows how architectural decoupling (DNS vs. CDN) creates a new class of network-level confusion attacks, analogous to TOCTOU or confused deputy problems in OS design. It also has direct implications for software supply-chain security, as CDN-hosted package registries or update servers could be used to serve malicious payloads under a trusted domain.</p>
+<h2>Critical Take</h2>
+<p>The article is based on a single vendor's (ADAMnetworks) research and claims of active exploitation, but no specific CVEs or exploit code are provided. The '42% vulnerable' metric is based on scanning top 5M domains, but the practical exploitability depends on the attacker's ability to control a domain hosted on the same CDN edge IP. The mitigation (bucketizing) is a CDN-side fix, not a protocol-level patch, meaning the root cause (DNS/CDN silo) remains. The claim that 'no simple fix exists' may be overstated; TLS Encrypted Client Hello (ECH) could theoretically obscure SNI, but this is not discussed.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Track if major CDNs (Cloudflare, Akamai, Amazon CloudFront) adopt 'bucketizing' or similar reputation-based grouping.</li>
+<li>Monitor for CVEs or detailed exploit PoCs related to Underminr.</li>
+<li>Watch for TLS ECH (Encrypted Client Hello) adoption as a potential long-term fix.</li>
+<li>Look for research on cross-layer verification (DNS + SNI + HTTP Host) as a new security primitive.</li>
+<li>Observe if this technique is used in software supply-chain attacks (e.g., hijacking CDN-hosted update endpoints).</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>Underminr 是 domain fronting 的演进，利用了 DNS 解析和 CDN 路由之间的不匹配。</li>
+<li>攻击者使用受信任域的 DNS 查询通过防护过滤器，然后在 SNI/TLS 握手中指定一个不同的（恶意）域。</li>
+<li>ADAMnetworks 发现全球 42% 的网站（美国为 51%）存在漏洞；中国受监管的互联网低于 9%。</li>
+<li>缓解措施包括 CDN '分桶'（按声誉对域进行分组，如 Fastly 所做）或将站点移出易受攻击的 CDN。</li>
+<li>该利用已在野外被用于 C2、诈骗和数据窃取。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>与最初的 domain fronting（2018 年）不同，后者通过 CDN 检查 HTTP Host 与 SNI 得到缓解，而 Underminr 利用了 DNS 与 SNI 的不匹配，这是 CDN 不会交叉引用的层。这代表了互联网路由基础设施安全态势的倒退。先前的工作侧重于应用层头部操作；这次将攻击转移到 DNS 解析层，该层通常被视为过滤的信任边界。</p>
+<h2>重要性</h2>
+<p>这很重要，因为它破坏了一个基本的安全假设：即 DNS 过滤和基于声誉的阻止足以防止恶意流量利用受信任的基础设施。对于系统安全而言，它展示了架构解耦（DNS 与 CDN）如何创建一类新的网络级混淆攻击，类似于操作系统设计中的 TOCTOU 或 confused deputy 问题。它还对软件供应链安全有直接影响，因为 CDN 托管的包注册表或更新服务器可能被用来在受信任的域下提供恶意负载。</p>
+<h2>批判性视角</h2>
+<p>该文章基于单一供应商（ADAMnetworks）的研究和声称的活跃利用，但未提供具体的 CVE 或利用代码。'42% 存在漏洞'的指标基于对前 500 万个域的扫描，但实际可利用性取决于攻击者能否控制托管在同一 CDN 边缘 IP 上的域。缓解措施（分桶）是 CDN 端的修复，而非协议级别的补丁，这意味着根本原因（DNS/CDN 孤岛）仍然存在。'没有简单的修复方法'的说法可能被夸大；TLS Encrypted Client Hello (ECH) 理论上可以隐藏 SNI，但本文未讨论。</p>
+<h2>后续关注</h2>
+<ul>
+<li>关注主要 CDN（Cloudflare、Akamai、Amazon CloudFront）是否采用'分桶'或类似的基于声誉的分组。</li>
+<li>监控与 Underminr 相关的 CVE 或详细的利用 PoC。</li>
+<li>关注 TLS ECH（Encrypted Client Hello）的采用情况，作为潜在的长期修复方案。</li>
+<li>寻找关于跨层验证（DNS + SNI + HTTP Host）作为新安全原语的研究。</li>
+<li>观察此技术是否被用于软件供应链攻击（例如劫持 CDN 托管的更新端点）。</li>
+</ul>
+        </div>
         
 
         

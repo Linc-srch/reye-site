@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For AI Security researchers, RAMPART directly addresses the need for automated, reproducible red-teaming frameworks for autonomous agents, moving beyond black-box discovery (PyRIT) to white-box, development-stage testing. It enables systematic evaluation of cross-prompt injections and tool misuse, which are core to Agent security. Clarity's structured reasoning aligns with the need for formalizing design assumptions before implementation, potentially reducing alignment faking and hallucination risks at the architectural level. For Harmony Security and SOC researchers, this signals a maturation of the AI agent security tooling landscape, providing a benchmark for evaluating how ecosystems like HarmonyOS could integrate similar left-shift security testing for on-device agents.</p>
+        <p class="lang-zh">对于 AI 安全研究员，RAMPART 直接回应了为自主智能体构建自动化、可复现红队框架的需求，将安全测试从黑盒发现（PyRIT）推进到白盒、开发阶段测试。它能够系统性地评估跨提示注入和工具滥用，这是 Agent 安全的核心。Clarity 的结构化推理与在实现前形式化设计假设的需求一致，可能从架构层面降低伪装对齐和幻觉风险。对于 Harmony 安全和 SOC 研究员，这标志着 AI 智能体安全工具生态的成熟，为评估鸿蒙等生态系统如何为端侧智能体集成类似的左移安全测试提供了基准。</p>
+      </div>
+      
+
+      
       
 
       
@@ -77,13 +85,66 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Microsoft has open-sourced two new tools, RAMPART and Clarity, to help developers test and secure AI agents during development. RAMPART (Risk Assessment and Measurement Platform for Agentic Red Teaming) is a Pytest-native safety and security testing framework for AI agents, covering adversarial and benign issues like prompt injection and data exfiltration. It builds on Microsoft's earlier PyRIT tool. Clarity serves as a structured sounding board to guide developers in clarifying design intent and assumptions before coding. Together, they aim to embed safety testing early in the development lifecycle, making incidents reproducible and mitigations verifiable.</p></div>
+          <div class="lede"><p>Microsoft open-sourced RAMPART, a Pytest-native framework for red-teaming AI agents during development, and Clarity, a structured reasoning tool for pre-coding design validation. The tools aim to shift AI safety testing left, making red-teaming findings reproducible and actionable as engineering artifacts.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>微软开源了两款新工具RAMPART和Clarity，帮助开发者在开发过程中测试和保护AI Agent的安全。RAMPART是一个基于Pytest的测试框架，用于检测prompt injection、数据泄露等问题，基于之前的PyRIT工具。Clarity则作为结构化讨论板，在编码前帮助开发者澄清设计意图和假设。这些工具旨在将安全性测试嵌入开发早期，使事件可复现、缓解措施可验证。</p></div>
+          <div class="lede"><p>微软开源了 RAMPART（一个基于 Pytest 的 AI 智能体红队测试框架）和 Clarity（一个用于编码前设计验证的结构化推理工具）。这些工具旨在将 AI 安全测试左移，使红队测试结果可复现并转化为可执行的工程资产。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>Microsoft open-sourced <strong>RAMPART</strong> (Risk Assessment and Measurement Platform for Agentic Red Teaming) and <strong>Clarity</strong>.</li>
+<li>RAMPART is a <strong>Pytest-native</strong> framework for writing and running safety/security tests for AI agents, covering adversarial and benign issues.</li>
+<li>It targets vulnerabilities like <strong>cross-prompt injections</strong>, behavioral regressions, and data exfiltration.</li>
+<li>RAMPART builds on <strong>PyRIT</strong> but is designed for engineers during development, not just security researchers post-deployment.</li>
+<li><strong>Clarity</strong> is a structured reasoning tool for pre-coding design validation, acting as an "AI thinking partner" to clarify intent and capture assumptions.</li>
+<li>The goal is to make incidents reproducible, mitigations verifiable, and scale red-teaming learnings into runnable engineering assets.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>Prior tools like PyRIT focused on black-box, post-deployment red-teaming. RAMPART shifts the paradigm to white-box, pre-deployment testing integrated into the CI/CD pipeline via Pytest. Clarity addresses a gap in the design phase, which is often overlooked by security tools. This represents a maturation from ad-hoc red-teaming to structured, lifecycle-integrated security engineering for AI agents.</p>
+<h2>Why It Matters</h2>
+<p>This is significant because it provides a standardized, open-source framework for agent security testing, lowering the barrier for developers. It directly addresses the critical challenge of securing autonomous agents against runtime exploits (e.g., indirect prompt injection) by catching them before deployment. The shift to 'living artifacts' makes security a continuous process, not a one-time audit, which is essential for the rapidly evolving agent ecosystem.</p>
+<h2>Critical Take</h2>
+<p>The effectiveness of RAMPART depends heavily on the quality and coverage of the test cases written by developers. It is a framework, not a silver bullet; it cannot automatically discover unknown vulnerabilities without human-designed test scenarios. Clarity's value is subjective and relies on developer adoption and discipline. The tools are newly open-sourced, so community validation and real-world effectiveness against sophisticated attacks remain to be seen.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Adoption rate and community contributions to RAMPART's test case library.</li>
+<li>Integration of RAMPART with other agent frameworks (e.g., LangChain, AutoGen, Semantic Kernel).</li>
+<li>Whether Microsoft or others develop automated test case generation for RAMPART (e.g., using LLMs to generate adversarial scenarios).</li>
+<li>How Clarity's structured reasoning outputs can be formally verified or linked to RAMPART test cases.</li>
+<li>Competitor responses from Google, Anthropic, or OpenAI regarding similar left-shift security tools.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>微软开源了 <strong>RAMPART</strong>（智能体红队测试的风险评估与测量平台）和 <strong>Clarity</strong>。</li>
+<li>RAMPART 是一个<strong>基于 Pytest</strong> 的框架，用于编写和运行 AI 智能体的安全测试，涵盖对抗性和良性问题。</li>
+<li>它针对<strong>跨提示注入</strong>、行为回归和数据泄露等漏洞。</li>
+<li>RAMPART 基于 <strong>PyRIT</strong> 构建，但专为开发阶段的工程师设计，而非仅面向部署后的安全研究员。</li>
+<li><strong>Clarity</strong> 是一个用于编码前设计验证的结构化推理工具，充当“AI 思考伙伴”以澄清意图并捕获假设。</li>
+<li>目标是使事件可复现、缓解措施可验证，并将红队测试的经验转化为可运行的工程资产。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>先前的工具如 PyRIT 侧重于黑盒、部署后的红队测试。RAMPART 将范式转变为白盒、部署前测试，并通过 Pytest 集成到 CI/CD 流水线中。Clarity 填补了设计阶段的空白，而这通常是安全工具所忽视的。这标志着从临时的红队测试向结构化、生命周期集成的 AI 智能体安全工程演进。</p>
+<h2>重要性</h2>
+<p>这意义重大，因为它提供了一个标准化的、开源的智能体安全测试框架，降低了开发者的门槛。它通过在部署前捕获漏洞，直接解决了保护自主智能体免受运行时利用（例如间接提示注入）的关键挑战。向“活的人工制品”的转变使安全成为一个持续的过程，而非一次性审计，这对于快速发展的智能体生态系统至关重要。</p>
+<h2>批判性视角</h2>
+<p>RAMPART 的有效性在很大程度上取决于开发者编写的测试用例的质量和覆盖率。它是一个框架，而非银弹；没有人工设计的测试场景，它无法自动发现未知漏洞。Clarity 的价值是主观的，依赖于开发者的采用和自律。这些工具刚刚开源，社区验证以及针对复杂攻击的实际效果仍有待观察。</p>
+<h2>后续关注</h2>
+<ul>
+<li>RAMPART 测试用例库的采用率和社区贡献。</li>
+<li>RAMPART 与其他智能体框架（如 LangChain、AutoGen、Semantic Kernel）的集成。</li>
+<li>微软或其他方是否开发 RAMPART 的自动化测试用例生成（例如，使用 LLM 生成对抗场景）。</li>
+<li>Clarity 的结构化推理输出如何被形式化验证或链接到 RAMPART 测试用例。</li>
+<li>Google、Anthropic 或 OpenAI 等竞争对手对类似左移安全工具的回应。</li>
+</ul>
+        </div>
         
 
         

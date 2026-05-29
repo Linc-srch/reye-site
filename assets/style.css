@@ -618,3 +618,11 @@ body:not(:has(.reye-app)) header nav a:hover { color: var(--color-fg-1); backgro
   font-size: var(--fs-tag); transition: all var(--dur-fast); }
 .topic-chip:hover { border-color: var(--color-border-hover); color: var(--color-fg-1); }
 .topic-chip.is-active { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+
+/* ── 启示 insight callout (article/paper detail) ── */
+.insight-callout { margin: 18px 0 6px; padding: 14px 18px; border-radius: 12px;
+  border: 1px solid var(--color-accent); background: rgba(79,123,232,0.10); }
+.insight-callout .insight-label { display: block; font-size: var(--fs-tag);
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent);
+  margin-bottom: 6px; font-weight: 600; }
+.insight-callout p { margin: 0; color: var(--color-fg-1); line-height: 1.6; }

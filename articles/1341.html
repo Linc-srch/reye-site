@@ -68,6 +68,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For a system security researcher focused on software supply-chain security and malware, GlassWorm exemplifies a new generation of supply-chain attacks that combine developer-targeted initial access (trojanized IDE extensions, poisoned packages) with highly resilient C2 infrastructure (blockchain dead-drop, P2P DHT, legitimate web services). The takedown demonstrates the operational complexity of disrupting multi-channel C2, and the attack itself highlights the need for stronger integrity guarantees for developer tooling (VS Code extensions, npm/PyPI packages) and runtime monitoring of developer workstations. The use of Solana blockchain transactions as a dead-drop resolver is a novel technique that bypasses traditional domain/IP blocklists and requires new detection approaches at the network and endpoint layers.</p>
+        <p class="lang-zh">对于专注于软件供应链安全和恶意软件的系统安全研究人员而言，GlassWorm 代表了新一代供应链攻击：它结合了针对开发者的初始访问（木马化的 IDE 扩展、被投毒的包）与高度弹性的 C2 基础设施（区块链死信投递、P2P DHT、合法 Web 服务）。此次取缔行动展示了破坏多通道 C2 的运营复杂性，而攻击本身凸显了为开发者工具（VS Code 扩展、npm/PyPI 包）提供更强完整性保证的必要性，以及对开发者工作负载进行运行时监控的需求。使用 Solana 区块链交易作为死信投递解析器是一种新颖技术，绕过了传统的域名/IP 黑名单，需要在网络和端点层采用新的检测方法。</p>
+      </div>
+      
+
+      
       
 
       
@@ -75,13 +83,70 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>CrowdStrike, Google, and the Shadowserver Foundation disrupted all command-and-control channels of GlassWorm malware, which since early 2025 targeted software developers via malicious VS Code extensions and npm/Python packages. GlassWorm used four resilient C2 methods: Solana blockchain, BitTorrent DHT, Google Calendar, and VPS infrastructure. It deployed a JavaScript RAT to steal credentials, crypto wallets, and browser data, and turned infected hosts into proxies and remote execution nodes. Over 300 GitHub repositories were poisoned. The takedown neutralized all channels simultaneously, preventing further instructions. The campaign is attributed to likely Russia-based cybercriminals.</p></div>
+          <div class="lede"><p>CrowdStrike, Google, and Shadowserver disrupted GlassWorm, a supply-chain malware targeting developers via malicious VS Code extensions and npm/Python packages, using Solana blockchain, BitTorrent DHT, and Google Calendar as resilient C2 channels.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>CrowdStrike、Google和Shadowserver Foundation联合摧毁了GlassWorm恶意软件的所有command-and-control通道。自2025年初以来，GlassWorm通过恶意VS Code扩展和npm/Python包针对软件开发者，利用Solana区块链、BitTorrent DHT、Google Calendar和VPS四种C2方法实现弹性通信。该恶意软件部署JavaScript RAT窃取凭证、加密货币钱包和浏览器数据，并将受感染主机转化为代理和远程执行节点，污染了超过300个GitHub仓库。此次行动同时瘫痪所有通道，阻止了进一步指令下发。攻击者疑似俄罗斯网络犯罪分子。</p></div>
+          <div class="lede"><p>CrowdStrike、Google 与 Shadowserver 联合摧毁了 GlassWorm 恶意软件，该软件通过恶意 VS Code 扩展和 npm/Python 包针对开发者，并利用 Solana 区块链、BitTorrent DHT 和 Google Calendar 作为弹性 C2 通道。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>GlassWorm campaign targets software developers via trojanized VS Code extensions (on Microsoft VS Code Marketplace and Open VSX) and malicious npm/Python packages.</li>
+<li>Uses four distinct C2 channels for resilience: Solana blockchain dead-drop resolver, BitTorrent DHT, Google Calendar dead-drop resolver, and direct VPS connections.</li>
+<li>Delivers a data-theft framework (credential harvesting, crypto wallet exfiltration, system profiling) and a WebSocket-based JavaScript RAT (GlassWormRAT).</li>
+<li>Infected hosts are converted into SOCKS proxies, hidden VNC servers, and remote execution nodes via WebRTC/Node.js.</li>
+<li>Over 300 GitHub repositories poisoned using stolen developer credentials.</li>
+<li>Malware terminates on systems in CIS countries and contains Russian-language comments; attributed to likely Russia-based cybercriminals.</li>
+<li>Takedown coordinated by CrowdStrike, Google, and Shadowserver simultaneously neutralized all four C2 channels.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>Prior supply-chain attacks (e.g., SolarWinds, Codecov, malicious npm packages) typically used single or simple C2 infrastructure (HTTP/S, DNS). GlassWorm's use of Solana blockchain transactions and BitTorrent DHT as dead-drop resolvers represents a significant escalation in C2 resilience, making takedown harder. The targeting of VS Code extensions (including forks like Cursor, Windsurf) is a relatively new vector, expanding the attack surface beyond traditional package managers. The conversion of infected hosts into covert infrastructure (SOCKS, HVNC, WebRTC nodes) is reminiscent of botnet behavior but applied specifically to developer workstations, enabling lateral movement into corporate networks.</p>
+<h2>Why It Matters</h2>
+<p>This attack demonstrates that developer workstations are now a prime target for sophisticated, well-resourced adversaries. The multi-channel C2 design using blockchain and P2P networks sets a new bar for resilience, forcing defenders to rethink takedown strategies and detection methods. The ability to poison 300+ repositories via stolen credentials shows the cascading impact of a single compromised developer. For system security, it underscores the need for stronger isolation of developer environments, runtime integrity monitoring of IDE extensions and build tools, and new network-level detection for blockchain/P2P-based C2 traffic.</p>
+<h2>Critical Take</h2>
+<p>While the takedown is a success, the article does not provide details on the number of infected hosts or the full scope of data exfiltration. The attribution to 'likely Russia-based cybercriminals' is based on circumstantial evidence (CIS kill-switch, Russian comments) and may be incomplete. The long-term effectiveness of the takedown is unverified; the operators may have backup infrastructure or could rebuild. The article does not disclose whether the malicious VS Code extensions and npm/PyPI packages have been fully removed from their respective marketplaces.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Whether the GlassWorm operators re-emerge with new C2 infrastructure or variants.</li>
+<li>Disclosure of the specific malicious VS Code extensions and npm/PyPy package names for community scanning.</li>
+<li>Adoption of blockchain/P2P-based C2 techniques by other threat actors.</li>
+<li>Development of detection signatures for Solana transaction-based dead-drop resolvers and BitTorrent DHT queries.</li>
+<li>Increased focus on VS Code extension security and marketplace vetting processes.</li>
+<li>Potential for similar attacks targeting other IDE ecosystems (JetBrains, Eclipse).</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>GlassWorm 活动通过木马化的 VS Code 扩展（在 Microsoft VS Code Marketplace 和 Open VSX 上）以及恶意的 npm/Python 包来针对软件开发者。</li>
+<li>使用四种不同的 C2 通道以实现弹性：Solana 区块链死信投递解析器、BitTorrent DHT、Google Calendar 死信投递解析器以及直接 VPS 连接。</li>
+<li>部署数据窃取框架（凭证窃取、加密货币钱包窃取、系统信息收集）和基于 WebSocket 的 JavaScript RAT（GlassWormRAT）。</li>
+<li>受感染主机被转化为 SOCKS 代理、隐藏 VNC 服务器以及通过 WebRTC/Node.js 运行的远程执行节点。</li>
+<li>利用窃取的开发者凭证污染了超过 300 个 GitHub 仓库。</li>
+<li>恶意软件在 CIS 国家的系统上终止执行，并包含俄语注释；归因于可能位于俄罗斯的网络犯罪分子。</li>
+<li>CrowdStrike、Google 和 Shadowserver 协调的取缔行动同时中和了所有四个 C2 通道。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>以往的供应链攻击（如 SolarWinds、Codecov、恶意 npm 包）通常使用单一或简单的 C2 基础设施（HTTP/S、DNS）。GlassWorm 使用 Solana 区块链交易和 BitTorrent DHT 作为死信投递解析器，代表了 C2 弹性的显著升级，使得取缔更加困难。针对 VS Code 扩展（包括 Cursor、Windsurf 等分支）是一个相对较新的攻击向量，将攻击面扩展到了传统的包管理器之外。将受感染主机转化为隐蔽基础设施（SOCKS、HVNC、WebRTC 节点）让人联想到僵尸网络行为，但专门应用于开发者工作站，从而能够横向移动进入企业网络。</p>
+<h2>重要性</h2>
+<p>此次攻击表明，开发者工作站现已成为资源充足的高级攻击者的主要目标。使用区块链和 P2P 网络的多通道 C2 设计为弹性设定了新标准，迫使防御者重新思考取缔策略和检测方法。通过窃取的凭证污染 300 多个仓库的能力展示了单个开发者被攻破的级联影响。对于系统安全而言，它强调了需要更强的开发者环境隔离、对 IDE 扩展和构建工具的运行时完整性监控，以及针对基于区块链/P2P 的 C2 流量的新型网络层检测。</p>
+<h2>批判性视角</h2>
+<p>虽然取缔行动是成功的，但文章未提供受感染主机的数量或数据窃取的完整范围。归因于‘可能位于俄罗斯的网络犯罪分子’是基于间接证据（CIS 终止开关、俄语注释），可能不完整。此次取缔的长期有效性尚未得到验证；操作者可能拥有备份基础设施或能够重建。文章未披露恶意 VS Code 扩展和 npm/PyPI 包是否已从其各自的市场中完全移除。</p>
+<h2>后续关注</h2>
+<ul>
+<li>GlassWorm 操作者是否会以新的 C2 基础设施或变种重新出现。</li>
+<li>披露具体的恶意 VS Code 扩展和 npm/PyPI 包名称以供社区扫描。</li>
+<li>其他威胁行为者采用基于区块链/P2P 的 C2 技术。</li>
+<li>针对基于 Solana 交易的死信投递解析器和 BitTorrent DHT 查询的检测签名开发。</li>
+<li>对 VS Code 扩展安全性和市场审核流程的更多关注。</li>
+<li>针对其他 IDE 生态系统（JetBrains、Eclipse）的类似攻击的可能性。</li>
+</ul>
+        </div>
         
 
         

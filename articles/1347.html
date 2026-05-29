@@ -68,6 +68,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For a system security researcher focused on OS/kernel security and software supply-chain attacks, this campaign demonstrates a sophisticated multi-stage attack chain that bridges endpoint compromise (macOS malware) with developer infrastructure (CI/CD, npm). The use of macOS-specific payloads (Intel/Apple Silicon compatible) and lateral movement into code distribution systems highlights a growing threat surface: developer workstations as a pivot point into the software supply chain. The abuse of legitimate developer tools (npm packages) for backdoor delivery is a direct concern for supply-chain integrity.</p>
+        <p class="lang-zh">对于专注于操作系统/内核安全和软件供应链攻击的系统安全研究员而言，该活动展示了一个复杂的多阶段攻击链，将端点攻陷（macOS恶意软件）与开发者基础设施（CI/CD、npm）相连接。使用macOS特定载荷（兼容Intel/Apple Silicon）并横向移动到代码分发系统，突出了一个日益增长的威胁面：开发者工作站作为进入软件供应链的支点。滥用合法开发者工具（npm包）进行后门投递直接关系到供应链完整性。</p>
+      </div>
+      
+
+      
       
 
       
@@ -75,13 +83,66 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>A previously undocumented threat actor, JINX-0164, targets cryptocurrency firms using recruitment-themed social engineering and custom macOS malware. Active since mid-2025, the group uses fake LinkedIn profiles and meeting invites to trick victims into installing a Python-based infostealer and remote access trojan called AUDIOFIX. The malware steals credentials, cryptocurrency wallet data, and SSH keys, and enables lateral movement to CI/CD infrastructure. In one case, a supply chain attack was executed. The actor also distributes a Go-based backdoor named MiniRAT via a compromised npm package. While tactics resemble North Korean groups, no direct infrastructure overlaps have been found.</p></div>
+          <div class="lede"><p>A previously undocumented threat actor, JINX-0164, targets cryptocurrency firms using fake recruiter lures on LinkedIn to deliver macOS malware (AUDIOFIX infostealer/RAT and MiniRAT backdoor), with lateral movement into CI/CD pipelines enabling supply chain compromise.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>一个名为JINX-0164的未知威胁行为者利用招聘主题的社会工程学和定制macOS恶意软件攻击加密货币公司。自2025年中活跃以来，该组织通过虚假LinkedIn资料和会议邀请诱骗受害者安装基于Python的信息窃取器和远程访问木马AUDIOFIX。该恶意软件窃取凭证、加密货币钱包数据和SSH密钥，并横向移动到CI/CD基础设施。在至少一个案例中，实施了供应链攻击。该行为者还通过被篡改的npm包分发名为MiniRAT的Go后门。虽然战术与朝鲜黑客组织相似，但尚未发现直接的基础设施重叠。</p></div>
+          <div class="lede"><p>一个此前未被记录的威胁行为者JINX-0164，利用LinkedIn上的虚假招聘诱饵针对加密货币公司，投放macOS恶意软件（AUDIOFIX信息窃取器/RAT和MiniRAT后门），并通过横向移动到CI/CD管道实现供应链攻陷。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>Threat actor JINX-0164 targets cryptocurrency firms via LinkedIn recruiter lures.</li>
+<li>Victims are tricked into downloading a Python-based macOS infostealer/RAT named AUDIOFIX.</li>
+<li>AUDIOFIX steals credentials, SSH keys, crypto wallet data, and session tokens; supports remote shell and lateral movement.</li>
+<li>Lateral movement targets CI/CD systems and internal code distribution, leading to a supply chain attack.</li>
+<li>A second malware, MiniRAT (Go-based backdoor), was distributed via a compromised npm package (@velora-dex/sdk).</li>
+<li>No infrastructure overlaps with known North Korean groups, despite tactical similarities.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>This campaign is reminiscent of North Korean clusters (BlueNoroff, Contagious Interview) that use social engineering and crypto-theft, but Wiz explicitly states no infrastructure overlap. It differs by specifically targeting macOS with a custom Python RAT (AUDIOFIX) and by pivoting from endpoint compromise to supply-chain attacks via CI/CD. The use of a fake driver store domain and architecture-aware payloads is a notable technical detail.</p>
+<h2>Why It Matters</h2>
+<p>It underscores the convergence of endpoint malware and software supply-chain attacks, a critical concern for system security. The ability to move from a developer's macOS laptop into CI/CD pipelines and modify source code represents a high-impact attack vector. The use of macOS-specific malware and npm package compromise shows that supply-chain security must account for all platforms in the development toolchain.</p>
+<h2>Critical Take</h2>
+<p>Attribution to a specific state actor is unconfirmed; the lack of infrastructure overlap with known groups leaves open the possibility of a new financially motivated group or a false flag. The full technical details of the CI/CD lateral movement and source code modification are not publicly disclosed. The effectiveness of the social engineering lures is not quantified.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Public disclosure of AUDIOFIX and MiniRAT samples for technical analysis.</li>
+<li>Any follow-up reports detailing the CI/CD lateral movement technique.</li>
+<li>Whether similar fake recruiter campaigns appear targeting other sectors (e.g., fintech, SaaS).</li>
+<li>Monitoring of npm for other compromised packages related to this actor.</li>
+<li>Potential expansion of macOS malware targeting developer tools (e.g., Xcode, Homebrew).</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>威胁行为者JINX-0164通过LinkedIn招聘诱饵针对加密货币公司。</li>
+<li>受害者被诱骗下载基于Python的macOS信息窃取器/RAT，名为AUDIOFIX。</li>
+<li>AUDIOFIX窃取凭据、SSH密钥、加密货币钱包数据和会话令牌；支持远程shell和横向移动。</li>
+<li>横向移动针对CI/CD系统和内部代码分发，导致供应链攻击。</li>
+<li>第二种恶意软件MiniRAT（Go后门）通过被攻陷的npm包（@velora-dex/sdk）分发。</li>
+<li>尽管战术相似，但与已知朝鲜组织无基础设施重叠。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>该活动让人联想到使用社会工程和加密货币盗窃的朝鲜集群（BlueNoroff、Contagious Interview），但Wiz明确表示无基础设施重叠。其不同之处在于专门针对macOS使用自定义Python RAT（AUDIOFIX），并通过CI/CD从端点攻陷转向供应链攻击。使用虚假驱动商店域和架构感知载荷是一个值得注意的技术细节。</p>
+<h2>重要性</h2>
+<p>它强调了端点恶意软件与软件供应链攻击的融合，这是系统安全的一个关键问题。从开发者的macOS笔记本电脑移动到CI/CD管道并修改源代码的能力代表了一个高影响力的攻击向量。使用macOS特定恶意软件和npm包攻陷表明，供应链安全必须考虑开发工具链中的所有平台。</p>
+<h2>批判性视角</h2>
+<p>归因于特定国家行为者尚未确认；与已知组织缺乏基础设施重叠，留下了可能是新的经济动机团体或虚假旗帜的可能性。CI/CD横向移动和源代码修改的完整技术细节未公开披露。社会工程诱饵的有效性未被量化。</p>
+<h2>后续关注</h2>
+<ul>
+<li>AUDIOFIX和MiniRAT样本的公开披露以供技术分析。</li>
+<li>任何详细说明CI/CD横向移动技术的后续报告。</li>
+<li>是否出现针对其他行业（如金融科技、SaaS）的类似虚假招聘活动。</li>
+<li>监控npm中与该行为者相关的其他被攻陷包。</li>
+<li>针对开发者工具（如Xcode、Homebrew）的macOS恶意软件可能扩展。</li>
+</ul>
+        </div>
         
 
         

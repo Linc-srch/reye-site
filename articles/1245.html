@@ -66,6 +66,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">This attack demonstrates a new, highly automated vector for software supply-chain compromise that directly targets CI/CD pipelines, not just source code. For a system security researcher, this highlights the critical need to harden CI/CD runner environments, enforce least-privilege for tokens (e.g., GITHUB_TOKEN), and treat pipeline execution as a privileged attack surface akin to kernel-level code execution. The use of forged author identities and throwaway accounts bypasses traditional repository-level trust models, demanding stronger provenance and attestation for commits.</p>
+        <p class="lang-zh">此次攻击展示了一种针对 CI/CD 流水线（而非仅源代码）的新型高度自动化软件供应链入侵向量。对于系统安全研究人员而言，这凸显了强化 CI/CD 运行环境、对令牌（如 GITHUB_TOKEN）实施最小权限原则，以及将流水线执行视为类似内核级代码执行的特权攻击面的迫切需求。使用伪造作者身份和一次性账户绕过了传统的仓库级信任模型，要求对提交实施更强的来源验证和证明。</p>
+      </div>
+      
+
+      
       
 
       
@@ -73,13 +81,70 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>A new automated campaign dubbed 'Megalodon' pushed 5,718 malicious commits to 5,561 GitHub repositories within six hours using throwaway accounts and forged author identities. The attacker injected GitHub Actions workflows containing base64-encoded bash payloads that exfiltrate CI secrets, cloud credentials, SSH keys, OIDC tokens, and source code secrets to a command-and-control server. The attack is linked to the TeamPCP group, which has been compromising open-source projects in a worm-like fashion. This incident highlights the escalating threat of supply chain attacks targeting CI/CD pipelines and credential theft at scale.</p></div>
+          <div class="lede"><p>A large-scale automated campaign called Megalodon pushed 5,718 malicious commits to 5,561 GitHub repositories in six hours, using forged identities and compromised tokens to inject CI/CD workflows that exfiltrate credentials and secrets.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>一项名为'Megalodon'的自动化攻击活动在六小时内向5,561个GitHub仓库推送了5,718个恶意提交，使用一次性账户和伪造的作者身份（如build-bot、auto-ci）注入GitHub Actions工作流，其中包含base64编码的bash载荷，用于窃取CI secret、云凭证、SSH密钥、OIDC token等敏感数据，并发送至C2服务器。该攻击与TeamPCP组织相关，其通过供应链攻击大规模传播恶意软件，凸显了CI/CD管道安全面临的严峻挑战。</p></div>
+          <div class="lede"><p>名为 Megalodon 的大规模自动化攻击在六小时内向 5,561 个 GitHub 仓库推送了 5,718 个恶意提交，利用伪造身份和泄露的令牌注入 CI/CD 工作流，窃取凭据和密钥。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>5,718 malicious commits pushed to 5,561 repos in a 6-hour window.</li>
+<li>Attackers used throwaway GitHub accounts and forged author identities (build-bot, auto-ci, ci-bot, pipeline-bot).</li>
+<li>Malicious GitHub Actions workflows contained base64-encoded bash payloads.</li>
+<li>Payloads exfiltrated CI secrets, cloud credentials, SSH keys, OIDC tokens, and source code secrets to a C2 server.</li>
+<li>Two payload variants: SysDiag (mass, triggered on push/PR) and Optimize-Build (targeted, triggered on workflow_dispatch).</li>
+<li>Compromised PATs or deploy keys were used to push commits.</li>
+<li>The campaign is linked to the TeamPCP group, which has also targeted TanStack, Grafana, OpenAI, Mistral AI.</li>
+<li>npm invalidated granular access tokens with write access that bypass 2FA in response.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>Previous supply-chain attacks often focused on compromising package source code or maintainer accounts. Megalodon directly weaponizes the CI/CD pipeline itself as an execution and propagation vector, using forged identities to evade detection. This is a significant escalation from earlier attacks like the SolarWinds or Codecov breaches, which were more targeted and manual. The scale (5,561 repos in 6 hours) and automation are unprecedented, resembling a worm-like propagation within the CI/CD infrastructure.</p>
+<h2>Why It Matters</h2>
+<p>This attack fundamentally shifts the threat model for open-source software supply chains. It demonstrates that CI/CD pipelines are not just build tools but critical security boundaries that can be exploited to achieve mass credential theft and lateral movement. The attack's automation and use of forged identities make it difficult to attribute and block using traditional repository security measures. It underscores the urgent need for pipeline-level security controls, such as runtime integrity monitoring, token rotation policies, and attestation of workflow origins.</p>
+<h2>Critical Take</h2>
+<p>While the scale is alarming, the attack's success depends on compromised PATs or deploy keys, which are already a known weak point. The report does not detail the initial compromise vector for these tokens. The claim of '5,561 repos' may include many low-value or forked repos. The long-term impact depends on whether the stolen credentials are actively used for further compromise. The response from npm (invalidating tokens) is a reactive measure, not a preventive one.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Follow-up reports on the actual exploitation of stolen credentials from this campaign.</li>
+<li>Adoption of CI/CD pipeline security tools (e.g., runtime monitoring, policy-as-code for workflows).</li>
+<li>Changes in GitHub's default security posture for Actions (e.g., requiring workflow attestation, restricting token scopes).</li>
+<li>Emergence of similar automated campaigns targeting other CI/CD platforms (GitLab CI, Bitbucket Pipelines).</li>
+<li>Research into detecting forged author identities in git history at scale.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>在 6 小时内向 5,561 个仓库推送了 5,718 个恶意提交。</li>
+<li>攻击者使用一次性 GitHub 账户和伪造的作者身份（build-bot, auto-ci, ci-bot, pipeline-bot）。</li>
+<li>恶意 GitHub Actions 工作流包含 base64 编码的 bash 载荷。</li>
+<li>载荷将 CI 密钥、云凭据、SSH 密钥、OIDC 令牌和源代码密钥外泄至 C2 服务器。</li>
+<li>两种载荷变体：SysDiag（大规模，在 push/PR 时触发）和 Optimize-Build（针对性，在 workflow_dispatch 时触发）。</li>
+<li>使用泄露的 PAT 或部署密钥推送提交。</li>
+<li>该活动与 TeamPCP 组织有关，该组织还攻击了 TanStack、Grafana、OpenAI、Mistral AI。</li>
+<li>npm 已作废绕过 2FA 的具有写入权限的细粒度访问令牌作为回应。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>以往的供应链攻击通常侧重于入侵包源代码或维护者账户。Megalodon 直接将 CI/CD 流水线本身武器化，作为执行和传播向量，并使用伪造身份来逃避检测。这与 SolarWinds 或 Codecov 等更早的、更具针对性和手动操作的攻击相比，是一次显著的升级。其规模（6 小时内 5,561 个仓库）和自动化程度前所未有，类似于在 CI/CD 基础设施内的蠕虫式传播。</p>
+<h2>重要性</h2>
+<p>此次攻击从根本上改变了开源软件供应链的威胁模型。它表明 CI/CD 流水线不仅是构建工具，更是可以被利用来实现大规模凭据窃取和横向移动的关键安全边界。该攻击的自动化程度和伪造身份的使用使其难以通过传统的仓库安全措施进行归因和阻止。它凸显了对流水线级安全控制的迫切需求，例如运行时完整性监控、令牌轮换策略以及工作流来源证明。</p>
+<h2>批判性视角</h2>
+<p>尽管规模惊人，但该攻击的成功依赖于已泄露的 PAT 或部署密钥，这本身已是已知的薄弱环节。报告未详细说明这些令牌的初始入侵向量。'5,561 个仓库'的声明可能包含许多低价值或分叉的仓库。长期影响取决于被盗凭据是否被积极用于进一步的入侵。npm 的回应（作废令牌）是一种被动措施，而非预防性措施。</p>
+<h2>后续关注</h2>
+<ul>
+<li>关于此次活动中被盗凭据实际利用情况的后续报告。</li>
+<li>CI/CD 流水线安全工具（例如运行时监控、工作流策略即代码）的采用情况。</li>
+<li>GitHub 对 Actions 默认安全态势的更改（例如要求工作流证明、限制令牌范围）。</li>
+<li>针对其他 CI/CD 平台（GitLab CI、Bitbucket Pipelines）的类似自动化活动的出现。</li>
+<li>大规模检测 git 历史中伪造作者身份的研究。</li>
+</ul>
+        </div>
         
 
         

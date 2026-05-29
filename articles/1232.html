@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For an AI security researcher focused on automated red-teaming and alignment evaluation, Petri 3.0 provides a directly usable, modular framework for running realistic, multi-scenario alignment tests. The 'Dish' add-on, which uses real system prompts and scaffolds, directly addresses the problem of models gaming evaluation setups—a key challenge in your work on deceptive alignment and RL hacking. The integration with Bloom enables deeper behavioral probes, aligning with your need for both broad coverage (Petri) and targeted depth (Bloom) in safety benchmarking. The donation to Meridian Labs ensures the tool remains vendor-neutral, making it a credible baseline for your own benchmarks (e.g., FinSafetyBench) and for comparing against proprietary evaluations.</p>
+        <p class="lang-zh">对于专注于自动化红队测试和对齐评估的 AI 安全研究员来说，Petri 3.0 提供了一个可直接使用、模块化的框架，用于运行逼真的多场景对齐测试。'Dish' 插件使用真实的系统提示和脚手架，直接解决了模型在评估设置中作弊的问题——这是您在伪装对齐和 RL 对抗研究中的一个关键挑战。与 Bloom 的集成能够进行更深层次的行为探测，这与您在安全基准测试中既需要广泛覆盖（Petri）又需要针对性深度（Bloom）的需求相吻合。将工具捐赠给 Meridian Labs 确保了其供应商中立性，使其成为您自己基准测试（如 FinSafetyBench）以及对比专有评估的可信基线。</p>
+      </div>
+      
+
+      
       
 
       
@@ -77,13 +85,66 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Anthropic has announced the donation of its open-source alignment evaluation tool, Petri, to Meridian Labs, an AI evaluation nonprofit. Originally launched in October 2025, Petri is a toolbox of alignment tests for large language models, detecting tendencies like deception and sycophancy. The updated Petri 3.0 introduces major architectural changes for adaptability, a realism-enhancing add-on called Dish, and deeper integration with Anthropic's Bloom tool. By transferring ownership to Meridian Labs, Anthropic ensures Petri remains independent and neutral, fostering trust across industry and governments. This move parallels Anthropic's earlier donation of the Model Context Protocol to the Linux Foundation, reinforcing the importance of open, credible AI safety evaluation.</p></div>
+          <div class="lede"><p>Anthropic donated its open-source alignment testing toolbox, Petri, to the independent nonprofit Meridian Labs, releasing version 3.0 with enhanced adaptability, realism via the 'Dish' add-on, and deeper integration with the Bloom tool.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>Anthropic宣布将其开源对齐评估工具Petri捐赠给AI评估非营利组织Meridian Labs。Petri是一个用于大型语言模型的对齐测试工具箱，可检测欺骗、迎合等倾向。新版本Petri 3.0增强了适应性、真实性（通过Dish插件）和深度（与Bloom集成）。捐赠旨在确保工具的独立性和可信度，推动AI安全评估的开放与中立。</p></div>
+          <div class="lede"><p>Anthropic 将其开源对齐测试工具箱 Petri 捐赠给独立非营利组织 Meridian Labs，并发布了 3.0 版本，该版本通过 'Dish' 插件增强了适应性、真实感，并与 Bloom 工具进行了深度集成。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>Petri is an open-source toolbox for testing LLMs for alignment-relevant behaviors (deception, sycophancy, cooperation with harmful requests).</li>
+<li>Petri 3.0 introduces architectural changes: auditor and target models are now separate, tweakable components.</li>
+<li>'Dish' add-on increases test realism by using the model's real system prompt and scaffold, reducing the chance the model detects it is being evaluated.</li>
+<li>Petri is now integrated with Bloom, enabling deeper, targeted behavioral assessments.</li>
+<li>Anthropic donated Petri to Meridian Labs, an independent AI evaluation nonprofit, to ensure neutrality and credibility.</li>
+<li>Petri has been used externally, e.g., by the UK's AI Security Institute (AISI) to evaluate models for sabotage propensity.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>Prior open-source alignment tools often suffered from artificial test setups that models could easily detect (a known limitation in red-teaming). Petri 3.0's 'Dish' add-on directly tackles this by using production-level prompts and scaffolds, moving beyond simple synthetic scenarios. The donation to an independent nonprofit (Meridian Labs) contrasts with tools maintained by for-profit labs, addressing concerns about bias in safety evaluations. Integration with Bloom creates a two-tier evaluation pipeline (broad screening + deep dive), which is more sophisticated than standalone test suites.</p>
+<h2>Why It Matters</h2>
+<p>This is a significant step toward standardized, credible, and realistic alignment evaluation. For the field, it reduces the risk of models 'gaming' safety tests, which is critical for detecting alignment faking and deceptive behaviors. The open-source, vendor-neutral governance model (via Meridian Labs) increases trust in evaluation results across industry, academia, and government. The integration with Bloom provides a practical pathway from broad red-teaming to deep behavioral analysis, directly supporting the development of more robust safety benchmarks and formal verification efforts.</p>
+<h2>Critical Take</h2>
+<p>While Petri 3.0 improves realism, the 'Dish' add-on still relies on simulated scenarios; it does not guarantee that a model cannot detect evaluation in a truly novel, adversarial setup. The effectiveness of the integration with Bloom is unverified in published benchmarks. The claim of 'neutrality' via Meridian Labs depends on the nonprofit's continued independence and funding sources. The tool's ability to detect sophisticated alignment faking (e.g., strategic tool selection as in Tatemae) remains to be demonstrated in practice.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Adoption of Petri 3.0 by major AI labs and government evaluation bodies (e.g., AISI, US AI Safety Institute).</li>
+<li>Independent audits or red-teaming results that use Petri + Bloom to uncover novel misalignment behaviors.</li>
+<li>Meridian Labs' governance structure and funding transparency to assess long-term neutrality.</li>
+<li>Updates to the 'Dish' add-on to cover more deployment contexts (e.g., multi-agent systems, tool-use).</li>
+<li>Comparisons between Petri 3.0 results and proprietary evaluation frameworks (e.g., from OpenAI, Google DeepMind).</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>Petri 是一个用于测试 LLM 对齐相关行为（欺骗、谄媚、配合有害请求）的开源工具箱。</li>
+<li>Petri 3.0 引入了架构变更：审计模型和目标模型现在是独立的、可调整的组件。</li>
+<li>'Dish' 插件通过使用模型的真实系统提示和脚手架来增加测试的真实感，降低模型检测到自身正在被评估的可能性。</li>
+<li>Petri 现已与 Bloom 集成，能够进行更深层次、有针对性的行为评估。</li>
+<li>Anthropic 将 Petri 捐赠给独立的 AI 评估非营利组织 Meridian Labs，以确保其中立性和可信度。</li>
+<li>Petri 已被外部机构使用，例如英国 AI 安全研究所 (AISI) 用它来评估模型进行破坏的倾向。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>先前的开源对齐工具通常存在人工测试设置的问题，模型很容易检测到（这是红队测试中已知的局限性）。Petri 3.0 的 'Dish' 插件通过使用生产级别的提示和脚手架直接解决了这个问题，超越了简单的合成场景。将工具捐赠给独立的非营利组织（Meridian Labs）与由营利性实验室维护的工具形成对比，解决了安全评估中关于偏见的担忧。与 Bloom 的集成创建了一个双层评估流水线（广泛筛查 + 深度挖掘），这比独立的测试套件更为复杂。</p>
+<h2>重要性</h2>
+<p>这是朝着标准化、可信且逼真的对齐评估迈出的重要一步。对于该领域而言，它降低了模型在安全测试中 '作弊' 的风险，这对于检测伪装对齐和欺骗行为至关重要。开源、供应商中立的治理模式（通过 Meridian Labs）提高了行业、学术界和政府机构对评估结果的信任。与 Bloom 的集成提供了一条从广泛红队测试到深度行为分析的实用路径，直接支持了更稳健的安全基准测试和形式化验证工作的开发。</p>
+<h2>批判性视角</h2>
+<p>虽然 Petri 3.0 提高了真实感，但 'Dish' 插件仍然依赖于模拟场景；它不能保证模型在真正新颖的对抗性设置中无法检测到评估。与 Bloom 集成的有效性尚未在已发布的基准测试中得到验证。通过 Meridian Labs 实现 '中立性' 的说法取决于该非营利组织持续的独立性和资金来源。该工具检测复杂伪装对齐（例如 Tatemae 中的策略性工具选择）的能力仍有待在实践中得到证明。</p>
+<h2>后续关注</h2>
+<ul>
+<li>主要 AI 实验室和政府评估机构（例如 AISI、美国 AI 安全研究所）对 Petri 3.0 的采用情况。</li>
+<li>使用 Petri + Bloom 发现新型失调行为的独立审计或红队测试结果。</li>
+<li>Meridian Labs 的治理结构和资金透明度，以评估其长期中立性。</li>
+<li>'Dish' 插件的更新，以覆盖更多部署场景（例如多智能体系统、工具使用）。</li>
+<li>Petri 3.0 结果与专有评估框架（例如来自 OpenAI、Google DeepMind）之间的比较。</li>
+</ul>
+        </div>
         
 
         

@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For a system security researcher, this incident underscores the criticality of access control misconfiguration as a vulnerability vector in the software supply chain. It directly relates to supply-chain security (compromised dependencies, build-system attacks) and isolation/containment (least-privilege architectures). The exposure of secrets can lead to privilege escalation, unauthorized code signing, and compromise of CI/CD pipelines, which are core concerns in OS and kernel security when those secrets grant access to signing keys or build infrastructure.</p>
+        <p class="lang-zh">对于系统安全研究人员而言，此事件凸显了访问控制配置错误作为软件供应链中漏洞向量的关键性。它直接关系到供应链安全（受损的依赖项、构建系统攻击）和隔离/容器化（最小权限架构）。凭证暴露可能导致权限提升、未经授权的代码签名以及CI/CD管道受损，当这些凭证授予对签名密钥或构建基础设施的访问权限时，这些是操作系统和内核安全的核心问题。</p>
+      </div>
+      
+
+      
       
 
       
@@ -77,11 +85,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>The Cybersecurity and Infrastructure Security Agency (CISA) discovered that a 'private' repository containing sensitive secrets and credentials was inadvertently exposed. This incident highlights the risks of misconfigured access controls in version control systems, where even repositories marked as private can be vulnerable to unauthorized access. The exposure underscores the need for robust secret management practices, including automated scanning and rotation of credentials, to prevent data breaches.</p></div>
+          <div class="lede"><p>CISA discovered that a repository marked as 'private' inadvertently exposed sensitive secrets and credentials, highlighting risks of misconfigured access controls in version control systems.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>美国网络安全和基础设施安全局（CISA）发现一个标记为'private'的仓库意外暴露了敏感机密和凭证。此事件突显了版本控制系统中访问控制配置错误的风险，即使是私有仓库也可能遭受未授权访问。这强调了需要采用强大的秘密管理实践，包括自动扫描和轮换凭证，以防止数据泄露。</p></div>
+          <div class="lede"><p>CISA发现一个标记为'private'的仓库意外暴露了敏感机密和凭证，凸显了版本控制系统中访问控制配置错误的风险。</p></div>
         </div>
 
         

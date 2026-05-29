@@ -1,0 +1,34 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 40px; }
+
+  /* ── 启示 insight callout (article/paper detail) ── */
+  .insight-callout { margin: 18px 0 6px; padding: 14px 18px; border-radius: 12px;
+    border: 1px solid var(--color-accent); background: rgba(79,123,232,0.10); }
+  .insight-callout .insight-label { display: block; font-size: var(--fs-tag);
+    letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent);
+    margin-bottom: 6px; font-weight: 600; }
+  .insight-callout p { margin: 0; color: var(--color-fg-1); line-height: 1.6; }
+</style></head>
+<body>
+
+  <!-- EN mode (default) -->
+  <div class="insight-callout">
+    <span class="insight-label">启示 · Insight</span>
+    <p>This paper demonstrates that sparse hierarchical attention can achieve 75% sparsity with comparable accuracy, directly relevant to our long-context research direction.</p>
+  </div>
+
+  <!-- Paper variant (Relevance label) -->
+  <div class="insight-callout" style="margin-top: 28px;">
+    <span class="insight-label">启示 · Relevance</span>
+    <p>The α-entmax routing mechanism is a practical alternative to hard top-k that preserves differentiability — applicable to our retrieval pipeline work.</p>
+  </div>
+
+  <!-- ZH variant -->
+  <div class="insight-callout" style="margin-top: 28px;">
+    <span class="insight-label">启示 · Insight</span>
+    <p>这篇文章说明稀疏分层注意力机制可在保持相近精度的前提下实现75%稀疏度，与我们的长上下文研究方向高度相关。</p>
+  </div>
+
+</body></html>

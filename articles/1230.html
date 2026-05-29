@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For AI Security: This validates that automated red-teaming at scale is now a reality, directly supporting the core objective of building automated frameworks for vulnerability discovery. The reported 10x+ increase in bug-finding rates and the model's ability to solve end-to-end cyber ranges (UK AISI) provide empirical evidence that current AI models can surpass human testers in specific, structured security tasks. The 90.6% true positive rate on triaged open-source findings is a strong benchmark for automated evaluation. For Harmony Security & SOC: The shift in bottleneck from discovery to patching has direct implications for endpoint and OS security. The speed at which vulnerabilities are now found will force a re-evaluation of patch management cycles, vulnerability disclosure policies (e.g., the 90-day convention), and the need for automated patch deployment systems. The example of a $1.5M fraud prevention at a bank highlights the dual-use nature of this capability for both offense and defense.</p>
+        <p class="lang-zh">对于 AI 安全研究员：这验证了大规模自动化红队测试已成为现实，直接支持了构建自动化漏洞发现框架的核心目标。报告称漏洞发现率提升了 10 倍以上，且模型能够解决端到端的网络靶场（英国 AISI），这提供了经验证据，表明当前 AI 模型在特定的结构化安全任务中可以超越人类测试员。在已分类的开源发现中，90.6% 的真实阳性率是自动化评估的一个强基准。对于 Harmony 安全与 SOC 研究员：瓶颈从发现转移到修补，这对终端和操作系统安全有直接影响。漏洞发现速度的提升将迫使重新评估补丁管理周期、漏洞披露策略（例如 90 天惯例）以及对自动化补丁部署系统的需求。某银行成功阻止 150 万美元欺诈的案例突显了这种能力在攻防两端的双重用途。</p>
+      </div>
+      
+
+      
       
 
       
@@ -77,13 +85,70 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Project Glasswing is Anthropic's collaborative initiative to secure critical software using Claude Mythos Preview before AI models are weaponized. In its first month, about 50 partners found over ten thousand high- or critical-severity vulnerabilities. Cloudflare alone discovered 2,000 bugs. Scanning over 1,000 open-source projects yielded an estimated 6,202 high/critical vulnerabilities, with a 90.6% true-positive rate after triage. A notable find was a certificate-forgery exploit in wolfSSL. The bottleneck has shifted from finding vulnerabilities to verifying and patching them. External evaluations from the UK AI Security Institute, Mozilla, and academic benchmarks confirm Mythos Preview's unprecedented capability. The project highlights both the defensive power and the urgency of AI-driven cybersecurity.</p></div>
+          <div class="lede"><p>Anthropic's Project Glasswing, using the Claude Mythos Preview model, has discovered over 10,000 high/critical vulnerabilities in critical software within a month, shifting the bottleneck from vulnerability discovery to verification and patching.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>Project Glasswing是Anthropic发起的合作项目，利用Claude Mythos Preview在AI被恶意利用前保护关键软件。首月，约50个合作伙伴发现超过一万个高或严重漏洞。Cloudflare独自发现2000个漏洞。扫描1000多个开源项目估计发现6202个高/严重漏洞，人工验证后真实阳性率达90.6%。典型例子是wolfSSL中的证书伪造漏洞。瓶颈已从发现转向验证和修补。英国AI安全研究所、Mozilla及学术基准测试均证实Mythos Preview的卓越能力。该项目凸显了AI驱动的网络安全防御力量与紧迫性。</p></div>
+          <div class="lede"><p>Anthropic 的 Project Glasswing 利用 Claude Mythos Preview 模型，在一个月内发现了超过 10,000 个高危/严重漏洞，将瓶颈从漏洞发现转移到了验证和修补。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li><strong>Scale of Discovery</strong>: Project Glasswing partners found &gt;10,000 high/critical vulnerabilities in one month using Claude Mythos Preview.</li>
+<li><strong>Performance Metrics</strong>: Cloudflare found 2,000 bugs (400 high/critical) with a false positive rate better than human testers. Mozilla found 271 vulnerabilities in Firefox 150, a 10x increase over previous models.</li>
+<li><strong>Benchmark Results</strong>: UK AISI reports Mythos Preview is the first model to solve both of their cyber ranges end-to-end. XBOW reports "unprecedented precision" on web exploit benchmarks.</li>
+<li><strong>Open-Source Impact</strong>: Scanning 1,000+ open-source projects yielded an estimated 6,202 high/critical vulnerabilities. Of 1,752 assessed, 90.6% were true positives, and 62.4% were confirmed high/critical.</li>
+<li><strong>Bottleneck Shift</strong>: The primary constraint has moved from finding vulnerabilities to verifying, disclosing, and patching them. The dashboard shows a steep drop-off at each phase due to human effort required.</li>
+<li><strong>Real-World Defense</strong>: At a partner bank, Mythos Preview helped detect and prevent a fraudulent $1.5 million wire transfer.</li>
+<li><strong>Industry Response</strong>: Palo Alto Networks released 5x more patches than usual; Microsoft and Oracle report significantly increased patching rates.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>This represents a step-change from prior AI-for-security work. Previous models (e.g., GPT-4, Claude Opus) could find vulnerabilities but at rates comparable to or slightly better than humans. This report claims a 10x+ improvement in bug-finding rates, moving AI from a co-pilot to a primary driver of vulnerability discovery. The shift in bottleneck from discovery to patching is a novel development, previously a theoretical concern. The 90.6% true positive rate on triaged findings is significantly higher than typical automated vulnerability scanners, which often suffer from high false positive rates.</p>
+<h2>Why It Matters</h2>
+<p>This fundamentally changes the cybersecurity risk calculus. The ability to find vulnerabilities at this scale and speed means that previously 'secure' software may be harboring thousands of unknown flaws. It accelerates the timeline for both attackers and defenders, but the report suggests defenders (via Project Glasswing) are currently leveraging it more effectively. It validates the concept of AI-first vulnerability discovery and will likely force a global re-evaluation of software supply chain security, patch management SLAs, and the economics of bug bounty programs. For AI Safety researchers, it provides a concrete, large-scale case study of a powerful AI capability with dual-use implications.</p>
+<h2>Critical Take</h2>
+<p>The report is a self-published announcement from Anthropic, lacking independent peer review of the aggregate claims. The 90.6% true positive rate is based on a subset of findings (1,752 out of 23,019) that were triaged, potentially introducing selection bias. The severity of many vulnerabilities (e.g., in obscure open-source libraries) may be low in practice. The claim that the bottleneck has shifted is based on current human triage capacity, which could be scaled with more resources or automation. The long-term impact on the attacker-defender balance is unclear; adversaries may soon have access to similar capabilities. The report does not detail the cost or computational resources required to run Mythos Preview at this scale.</p>
+<h2>What to Watch</h2>
+<ul>
+<li><strong>Patch Velocity</strong>: Track the patch release rates from major vendors (Microsoft, Oracle, Palo Alto) to see if the trend of 5x+ patches continues.</li>
+<li><strong>Disclosure Policy Changes</strong>: Watch for industry-wide shifts away from the 90-day disclosure norm, possibly towards faster, more automated disclosure pipelines.</li>
+<li><strong>Adversarial Use</strong>: Monitor for evidence of threat actors using similar AI models for vulnerability discovery and exploit development.</li>
+<li><strong>Open-Source Maintainer Burnout</strong>: The report mentions maintainers asking to slow down disclosures; this could lead to a crisis in open-source maintenance.</li>
+<li><strong>Model Access</strong>: How Anthropic controls access to Mythos-class models will be critical. Any leak or broader commercial release could dramatically shift the threat landscape.</li>
+<li><strong>False Positive Management</strong>: The dashboard shows a steep drop-off; watch for innovations in automated triage and patching to address the new bottleneck.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li><strong>发现规模</strong>：Project Glasswing 合作伙伴使用 Claude Mythos Preview 在一个月内发现了超过 10,000 个高危/严重漏洞。</li>
+<li><strong>性能指标</strong>：Cloudflare 发现了 2,000 个漏洞（400 个高危/严重），误报率优于人类测试员。Mozilla 在 Firefox 150 中发现了 271 个漏洞，比之前的模型提升了 10 倍。</li>
+<li><strong>基准测试结果</strong>：英国 AISI 报告称 Mythos Preview 是首个端到端解决其两个网络靶场的模型。XBOW 报告称其在 Web 漏洞利用基准测试中具有“前所未有的精确度”。</li>
+<li><strong>开源影响</strong>：扫描 1,000 多个开源项目，估计发现了 6,202 个高危/严重漏洞。在已评估的 1,752 个漏洞中，90.6% 为真实阳性，62.4% 被确认为高危/严重。</li>
+<li><strong>瓶颈转移</strong>：主要约束已从发现漏洞转移到验证、披露和修补漏洞。仪表板显示，由于所需的人力，每个阶段都有急剧下降。</li>
+<li><strong>现实世界防御</strong>：在一家合作银行，Mythos Preview 帮助检测并阻止了一笔 150 万美元的欺诈性电汇。</li>
+<li><strong>行业响应</strong>：Palo Alto Networks 发布的补丁数量是平时的 5 倍；Microsoft 和 Oracle 报告补丁率显著提高。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>这代表了与以往 AI 安全工作的一个阶跃变化。之前的模型（如 GPT-4、Claude Opus）可以发现漏洞，但速度与人类相当或略好。本报告声称漏洞发现率提升了 10 倍以上，将 AI 从副驾驶转变为漏洞发现的主要驱动力。瓶颈从发现转移到修补是一个新颖的发展，此前只是一个理论上的担忧。在已分类的发现中，90.6% 的真实阳性率显著高于典型的自动化漏洞扫描器，后者通常受困于高误报率。</p>
+<h2>重要性</h2>
+<p>这从根本上改变了网络安全的风险计算。以这种规模和速度发现漏洞的能力意味着，以前被认为是“安全”的软件可能隐藏着数千个未知缺陷。它加速了攻击者和防御者的时间线，但报告表明防御者（通过 Project Glasswing）目前正在更有效地利用它。它验证了 AI 优先的漏洞发现概念，并可能迫使全球重新评估软件供应链安全、补丁管理 SLA 以及漏洞赏金计划的经济性。对于 AI 安全研究员来说，它提供了一个具体的大规模案例研究，展示了一种具有双重用途影响的强大 AI 能力。</p>
+<h2>批判性视角</h2>
+<p>该报告是 Anthropic 自行发布的公告，缺乏对总体声明的独立同行评审。90.6% 的真实阳性率是基于已分类的发现子集（23,019 个中的 1,752 个），可能存在选择偏差。许多漏洞的严重性（例如，在晦涩的开源库中）在实践中可能较低。关于瓶颈已转移的说法是基于当前的人力分类能力，这可以通过更多资源或自动化来扩展。对攻防平衡的长期影响尚不清楚；对手可能很快就能获得类似的能力。该报告未详细说明以这种规模运行 Mythos Preview 所需的成本或计算资源。</p>
+<h2>后续关注</h2>
+<ul>
+<li><strong>补丁速度</strong>：追踪主要供应商（Microsoft、Oracle、Palo Alto）的补丁发布率，观察 5 倍以上补丁的趋势是否持续。</li>
+<li><strong>披露政策变化</strong>：关注行业范围内是否偏离 90 天披露规范，可能转向更快、更自动化的披露流程。</li>
+<li><strong>对抗性使用</strong>：监控威胁行为者使用类似 AI 模型进行漏洞发现和漏洞利用开发的证据。</li>
+<li><strong>开源维护者倦怠</strong>：报告提到维护者要求放慢披露速度；这可能导致开源维护危机。</li>
+<li><strong>模型访问控制</strong>：Anthropic 如何控制对 Mythos 级模型的访问将至关重要。任何泄露或更广泛的商业发布都可能极大地改变威胁格局。</li>
+<li><strong>误报管理</strong>：仪表板显示急剧下降；关注自动化分类和修补方面的创新，以解决新的瓶颈。</li>
+</ul>
+        </div>
         
 
         

@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For Harmony Security and SOC researchers, this bulletin provides critical intelligence on the convergence of AI and cyber threats. The 'SHADOW-AETHER' campaigns are a prime example of AI4SEC (AI for Security) being weaponized, using agentic AI to dynamically generate tools and evade signature-based detection. This directly impacts our research into Advanced AI/Agent Security Technologies & Defenses and Threat Vectors. The OrBit rootkit's evolution, including its use by a ransomware group, highlights the persistent threat to Linux/endpoint environments, relevant to On-Device Agent & Endpoint Security. The NCSC guidance on agentic AI underscores the urgent need for robust security architectures for AI agents, a core focus for us. The Composer token leak (CVE-2026-45793) is a practical supply-chain vulnerability that affects CI/CD pipelines, relevant to Industry Intelligence & AI Security Landscape.</p>
+        <p class="lang-zh">对于 Harmony Security 和 SOC 研究员来说，本简报提供了关于 AI 与网络威胁融合的关键情报。'SHADOW-AETHER' 活动是 AI4SEC（用于安全的 AI）被武器化的典型例子，利用 Agentic AI 动态生成工具并规避基于签名的检测。这直接影响我们对先进 AI/Agent 安全技术与防御以及威胁向量的研究。OrBit Rootkit 的演变，包括被勒索软件组织使用，凸显了对 Linux/终端环境的持续威胁，这与端侧 Agent 与终端安全相关。NCSC 关于 Agentic AI 的指导强调了为 AI 智能体构建强大安全架构的迫切需求，这是我们的核心关注点。Composer 令牌泄露（CVE-2026-45793）是一个影响 CI/CD 管道的实际供应链漏洞，与行业情报与 AI 安全态势相关。</p>
+      </div>
+      
+
+      
       
 
       
@@ -77,13 +85,66 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>This bulletin covers a week of cybersecurity incidents highlighting how attackers leverage trusted components—software updates, tokens, AI tools—to breach systems. Key stories include 47 zero-days at Pwn2Own Berlin, UK NCSC guidance on agentic AI security, Poland urging use of a Signal alternative amid social engineering attacks, Dutch police identifying fraud suspects via public billboards, Gunra ransomware targeting South Korea, a Composer token leak, persistence of the OrBit Linux rootkit, and two AI-driven intrusion campaigns in Latin America. The common thread is that threats now exploit everyday digital trust mechanisms.</p></div>
+          <div class="lede"><p>This bulletin covers a wide range of security events, including 47 zero-days from Pwn2Own, new NCSC guidance on agentic AI security, a resurgence of the OrBit Linux rootkit, and two campaigns using agentic AI for intrusions in Latin America.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>本周网络安全公告显示攻击者利用可信组件（更新、令牌、AI）突破系统。关键事件：Pwn2Own柏林47个0-day、英国NCSC的agentic AI指南、波兰推广Signal替代品、荷兰识别诈骗嫌疑人、Gunra勒索软件、Composer令牌泄露、OrBit Linux rootkit持续活跃、拉丁美洲AI入侵活动。威胁正利用日常数字信任。</p></div>
+          <div class="lede"><p>本简报涵盖了广泛的安全事件，包括 Pwn2Own 上发现的 47 个零日漏洞、NCSC 关于 Agentic AI 安全的新指南、OrBit Linux Rootkit 的复活，以及两个在拉丁美洲使用 Agentic AI 进行入侵的活动。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li><strong>Pwn2Own Berlin 2026:</strong> 47 zero-days exploited, $1.3M in rewards. Targets included Windows, Linux, VMware, NVIDIA, Microsoft SharePoint/Exchange/Edge/Windows 11.</li>
+<li><strong>NCSC Agentic AI Guidance:</strong> UK NCSC warns that over-privileged or poorly designed AI agents can turn a single failure into a serious incident.</li>
+<li><strong>OrBit Linux Rootkit Resurgence:</strong> Active development after 4 years. Two lineages found (full-featured and lite). Used by Blockade Spider (Embargo ransomware group). Fork of open-source Medusa rootkit.</li>
+<li><strong>AI-Driven Intrusions (SHADOW-AETHER):</strong> Two campaigns (SHADOW-AETHER-040, -064) used agentic AI to dynamically generate tools, bypass safety controls by framing requests as pen-testing, and tunnel into victim networks via ProxyChains/SSH.</li>
+<li><strong>Composer Token Leak (CVE-2026-45793):</strong> GitHub Actions tokens leaked to logs due to a validation flaw with new token format. Affects PHP dependency manager.</li>
+<li><strong>Other Events:</strong> Poland urges switch from Signal to mSzyfr; Dutch police 'Game Over?!' campaign identifies 74/100 fraud suspects; Gunra ransomware targets South Korea; US President acknowledges espionage against China.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>This bulletin contrasts with typical weekly threat roundups by highlighting the shift from exploiting new vulnerabilities to abusing trusted systems and processes. The AI intrusions (SHADOW-AETHER) are a significant evolution from traditional APT attacks, moving from static malware to dynamic, AI-generated tooling that adapts to the environment. The OrBit rootkit's persistence over 4 years and its forking into multiple lineages shows a maturation of the threat, contrasting with the typical 'one-off' malware campaigns. The NCSC guidance is a proactive policy response, contrasting with the reactive nature of most security advisories.</p>
+<h2>Why It Matters</h2>
+<p>The bulletin is significant because it provides concrete evidence of AI being used offensively in real-world campaigns, not just in theory. The SHADOW-AETHER campaigns demonstrate a new paradigm for intrusions that can bypass traditional defenses. The OrBit rootkit's evolution shows that even 'old' threats can be continuously refined and remain highly dangerous. The NCSC guidance signals that governments are taking agentic AI security seriously, which will likely lead to new compliance requirements. The Composer leak highlights a critical supply-chain vulnerability in the software development lifecycle.</p>
+<h2>Critical Take</h2>
+<p>While the SHADOW-AETHER campaigns are concerning, the details are from a single vendor (Trend Micro) and the full scope of the attacks is not yet public. The claim of 'agentic AI' might be overhyped; it could be automated scripting with LLM-based code generation rather than fully autonomous agents. The OrBit rootkit analysis is based on artifacts, not a live incident response, so the exact capabilities and deployment scale are inferred. The NCSC guidance is high-level and lacks specific technical controls. The Composer vulnerability is real but has a straightforward fix (update Composer).</p>
+<h2>What to Watch</h2>
+<ul>
+<li><strong>AI Intrusion Campaigns:</strong> Watch for more SHADOW-AETHER-like campaigns targeting other regions or sectors. Monitor for open-source tools that enable similar AI-driven intrusion capabilities.</li>
+<li><strong>OrBit Rootkit:</strong> Track if Blockade Spider or other groups integrate the new OrBit variants into their ransomware operations. Look for detection signatures for the new lineages.</li>
+<li><strong>Agentic AI Security:</strong> Monitor for follow-up guidance from NCSC or other regulators (e.g., CISA, ENISA) with more specific technical requirements. Watch for security products specifically designed to monitor AI agent behavior.</li>
+<li><strong>Supply Chain Security:</strong> The Composer leak is a reminder to audit CI/CD pipelines for similar token exposure risks. Watch for similar vulnerabilities in other package managers (npm, pip, etc.).</li>
+<li><strong>Pwn2Own Exploits:</strong> Monitor for the public release of PoCs or exploit code for the 47 zero-days, especially those affecting VMware and NVIDIA.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li><strong>Pwn2Own Berlin 2026:</strong> 47 个零日漏洞被利用，奖金 130 万美元。目标包括 Windows、Linux、VMware、NVIDIA、Microsoft SharePoint/Exchange/Edge/Windows 11。</li>
+<li><strong>NCSC Agentic AI 指南：</strong> 英国 NCSC 警告，权限过高或设计不佳的 AI 智能体可能将单个故障转变为严重事件。</li>
+<li><strong>OrBit Linux Rootkit 复活：</strong> 4 年后仍在积极开发。发现两个分支（完整版和精简版）。被 Blockade Spider（Embargo 勒索软件团伙）使用。是开源 Medusa Rootkit 的分支。</li>
+<li><strong>AI 驱动的入侵 (SHADOW-AETHER)：</strong> 两个活动（SHADOW-AETHER-040, -064）使用 Agentic AI 动态生成工具，通过将请求伪装成渗透测试来绕过安全控制，并通过 ProxyChains/SSH 建立隧道进入受害者网络。</li>
+<li><strong>Composer 令牌泄露 (CVE-2026-45793)：</strong> 由于新令牌格式的验证缺陷，GitHub Actions 令牌泄露到日志中。影响 PHP 依赖管理器。</li>
+<li><strong>其他事件：</strong> 波兰敦促从 Signal 切换到 mSzyfr；荷兰警方 'Game Over?!' 活动识别出 100 名诈骗嫌疑人中的 74 名；Gunra 勒索软件针对韩国；美国总统承认针对中国的间谍活动。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>本简报与典型的每周威胁汇总形成对比，强调了从利用新漏洞转向滥用受信任系统和流程的趋势。AI 入侵（SHADOW-AETHER）是从传统 APT 攻击的重大演变，从静态恶意软件转向动态、AI 生成的、能适应环境的工具。OrBit Rootkit 持续 4 年的活跃及其分支成多个谱系，显示了威胁的成熟度，与典型的‘一次性’恶意软件活动形成对比。NCSC 的指南是一种主动的政策响应，与大多数安全公告的被动性质形成对比。</p>
+<h2>重要性</h2>
+<p>本简报意义重大，因为它提供了 AI 在实际活动中被用于攻击的具体证据，而不仅仅是理论。SHADOW-AETHER 活动展示了一种可以绕过传统防御的入侵新范式。OrBit Rootkit 的演变表明，即使是‘旧’威胁也能被不断改进并保持高度危险。NCSC 的指南表明政府正在认真对待 Agentic AI 安全，这可能会导致新的合规要求。Composer 泄露事件凸显了软件开发生命周期中的一个关键供应链漏洞。</p>
+<h2>批判性视角</h2>
+<p>虽然 SHADOW-AETHER 活动令人担忧，但细节来自单一供应商（Trend Micro），且攻击的全部范围尚未公开。'Agentic AI' 的说法可能被夸大；它可能是基于 LLM 代码生成的自动化脚本，而非完全自主的智能体。OrBit Rootkit 的分析基于工件，而非实时事件响应，因此确切的能力和部署规模是推断出来的。NCSC 的指南是高层级的，缺乏具体的技术控制措施。Composer 漏洞是真实的，但有直接的修复方法（更新 Composer）。</p>
+<h2>后续关注</h2>
+<ul>
+<li><strong>AI 入侵活动：</strong> 关注更多类似 SHADOW-AETHER 的活动，针对其他地区或行业。监控能够实现类似 AI 驱动入侵能力的开源工具。</li>
+<li><strong>OrBit Rootkit：</strong> 追踪 Blockade Spider 或其他组织是否将新的 OrBit 变种整合到其勒索软件操作中。寻找针对新谱系的检测签名。</li>
+<li><strong>Agentic AI 安全：</strong> 关注 NCSC 或其他监管机构（如 CISA、ENISA）发布更具体技术要求的后续指南。关注专门设计用于监控 AI 智能体行为的安全产品。</li>
+<li><strong>供应链安全：</strong> Composer 泄露事件提醒我们审计 CI/CD 管道是否存在类似的令牌暴露风险。关注其他包管理器（npm、pip 等）中的类似漏洞。</li>
+<li><strong>Pwn2Own 漏洞：</strong> 关注 47 个零日漏洞的 PoC 或利用代码的公开发布，尤其是影响 VMware 和 NVIDIA 的漏洞。</li>
+</ul>
+        </div>
         
 
         

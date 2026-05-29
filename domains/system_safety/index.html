@@ -202,8 +202,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1347.html">JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1347.html">JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware</a></h4>
-          <p class="lang-en">A previously undocumented threat actor, JINX-0164, targets cryptocurrency firms using recruitment-themed social engineering and custom macOS malware. Active since mid-2025, the group uses fake LinkedIn profiles and meeting invites to trick victims into installing a Python-based infostealer and remote access trojan called AUDIOFIX. The malware steals credentials, cryptocurrency wallet data, and SSH keys, and enables lateral movement to CI/CD infrastructure. In one case, a supply chain attack was executed. The actor also distributes a Go-based backdoor named MiniRAT via a compromised npm package. While tactics resemble North Korean groups, no direct infrastructure overlaps have been found.</p>
-          <p class="lang-zh">一个名为JINX-0164的未知威胁行为者利用招聘主题的社会工程学和定制macOS恶意软件攻击加密货币公司。自2025年中活跃以来，该组织通过虚假LinkedIn资料和会议邀请诱骗受害者安装基于Python的信息窃取器和远程访问木马AUDIOFIX。该恶意软件窃取凭证、加密货币钱包数据和SSH密钥，并横向移动到CI/CD基础设施。在至少一个案例中，实施了供应链攻击。该行为者还通过被篡改的npm包分发名为MiniRAT的Go后门。虽然战术与朝鲜黑客组织相似，但尚未发现直接的基础设施重叠。</p>
+          <p class="lang-en">A previously undocumented threat actor, JINX-0164, targets cryptocurrency firms using fake recruiter lures on LinkedIn to deliver macOS malware (AUDIOFIX infostealer/RAT and MiniRAT backdoor), with lateral movement into CI/CD pipelines enabling supply chain compromise.</p>
+          <p class="lang-zh">一个此前未被记录的威胁行为者JINX-0164，利用LinkedIn上的虚假招聘诱饵针对加密货币公司，投放macOS恶意软件（AUDIOFIX信息窃取器/RAT和MiniRAT后门），并通过横向移动到CI/CD管道实现供应链攻陷。</p>
           
           <a href="https://thehackernews.com/2026/05/jinx-0164-targets-cryptocurrency-firms.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -221,8 +221,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1341.html">GlassWorm Malware Takedown Disrupts Developer Supply Chain Attack Infrastructure</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1341.html">GlassWorm Malware Takedown Disrupts Developer Supply Chain Attack Infrastructure</a></h4>
-          <p class="lang-en">CrowdStrike, Google, and the Shadowserver Foundation disrupted all command-and-control channels of GlassWorm malware, which since early 2025 targeted software developers via malicious VS Code extensions and npm/Python packages. GlassWorm used four resilient C2 methods: Solana blockchain, BitTorrent DHT, Google Calendar, and VPS infrastructure. It deployed a JavaScript RAT to steal credentials, crypto wallets, and browser data, and turned infected hosts into proxies and remote execution nodes. Over 300 GitHub repositories were poisoned. The takedown neutralized all channels simultaneously, preventing further instructions. The campaign is attributed to likely Russia-based cybercriminals.</p>
-          <p class="lang-zh">CrowdStrike、Google和Shadowserver Foundation联合摧毁了GlassWorm恶意软件的所有command-and-control通道。自2025年初以来，GlassWorm通过恶意VS Code扩展和npm/Python包针对软件开发者，利用Solana区块链、BitTorrent DHT、Google Calendar和VPS四种C2方法实现弹性通信。该恶意软件部署JavaScript RAT窃取凭证、加密货币钱包和浏览器数据，并将受感染主机转化为代理和远程执行节点，污染了超过300个GitHub仓库。此次行动同时瘫痪所有通道，阻止了进一步指令下发。攻击者疑似俄罗斯网络犯罪分子。</p>
+          <p class="lang-en">CrowdStrike, Google, and Shadowserver disrupted GlassWorm, a supply-chain malware targeting developers via malicious VS Code extensions and npm/Python packages, using Solana blockchain, BitTorrent DHT, and Google Calendar as resilient C2 channels.</p>
+          <p class="lang-zh">CrowdStrike、Google 与 Shadowserver 联合摧毁了 GlassWorm 恶意软件，该软件通过恶意 VS Code 扩展和 npm/Python 包针对开发者，并利用 Solana 区块链、BitTorrent DHT 和 Google Calendar 作为弹性 C2 通道。</p>
           
           <a href="https://thehackernews.com/2026/05/glassworm-malware-takedown-disrupts.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -240,8 +240,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1340.html">Malicious npm Package Stole Files From Claude AI User Directory via GitHub</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1340.html">Malicious npm Package Stole Files From Claude AI User Directory via GitHub</a></h4>
-          <p class="lang-en">A malicious npm package named 'mouse5212-super-formatter' was discovered stealing files from Claude AI's user data directory. It authenticates to GitHub during installation, creates a repository, and uploads all files to a threat actor-controlled account. The package leaked its own GitHub token, suggesting AI-generated malware with poor operational security. It has been downloaded 676 times.</p>
-          <p class="lang-zh">一个名为'mouse5212-super-formatter'的恶意npm包被发现从Claude AI的用户数据目录窃取文件。它在安装过程中通过GitHub认证，创建仓库并将所有文件上传到攻击者控制的账户。该包泄露了自身的GitHub令牌，表明这是AI生成的恶意软件且缺乏基本操作安全。该包已被下载676次。</p>
+          <p class="lang-en">A malicious npm package named 'mouse5212-super-formatter' was discovered exfiltrating files from Claude AI's user data directory to a GitHub repository controlled by the attacker, using a hardcoded or environment-based GitHub token.</p>
+          <p class="lang-zh">发现一个名为 'mouse5212-super-formatter' 的恶意 npm 包，它利用硬编码或环境中的 GitHub token，将 Claude AI 用户数据目录中的文件外泄到攻击者控制的 GitHub 仓库。</p>
           
           <a href="https://thehackernews.com/2026/05/malicious-npm-package-stole-files-from.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -259,8 +259,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1337.html">MFA Prompt Bombing: Why Your Second Factor Isn't Saving You</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1337.html">MFA Prompt Bombing: Why Your Second Factor Isn't Saving You</a></h4>
-          <p class="lang-en">MFA prompt bombing exploits push-based multi-factor authentication by repeatedly sending approval requests to a user's device until they accept, often combined with vishing calls impersonating IT support. The 2022 Cisco breach demonstrated its effectiveness against mature security programs. Attackers need only valid credentials and a push-MFA-enabled portal. Once approved, the login appears legitimate, bypassing security alerts. Organizations can mitigate this by using phishing-resistant MFA factors like FIDO2 keys, blocking compromised passwords at the source, and adding risk-based conditional access policies. Push MFA alone does not eliminate risk due to lack of context in approval prompts.</p>
-          <p class="lang-zh">MFA Prompt Bombing 攻击利用基于推送的多因素认证，通过反复向用户设备发送批准请求，直到用户接受，常结合冒充IT支持的语音钓鱼电话。2022年的Cisco入侵事件展示了该技术对成熟安全程序的有效性。攻击者只需有效凭证和启用推送MFA的门户。一旦批准，登录看似合法，绕过安全警报。组织可通过使用抗钓鱼的MFA因素（如FIDO2密钥）、从源头阻止泄露密码以及添加基于风险的条件访问策略来缓解。仅靠推送MFA无法消除风险，因为批准提示缺乏上下文。</p>
+          <p class="lang-en">MFA prompt bombing exploits push-based multi-factor authentication by repeatedly sending approval requests to a user until they accept, often combined with vishing social engineering, as demonstrated in the 2022 Cisco breach.</p>
+          <p class="lang-zh">MFA提示轰炸利用基于推送的多因素认证，通过反复向用户发送批准请求直到其接受，通常结合语音钓鱼社会工程学，2022年思科入侵事件即为典型例证。</p>
           
           <a href="https://thehackernews.com/2026/05/mfa-prompt-bombing-why-your-second.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -278,8 +278,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1285.html">TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm, PyPI, and CratesIO</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1285.html">TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm, PyPI, and CratesIO</a></h4>
-          <p class="lang-en">A coordinated supply chain attack named TrapDoor has targeted npm, PyPI, and Crates.io with over 34 malicious packages across 384 versions, aiming to steal credentials, crypto wallets, SSH keys, and cloud credentials from developers in crypto, DeFi, Solana, and AI communities. The malware uses ecosystem-specific execution paths, including postinstall hooks, remote JavaScript payloads, and malicious build.rs scripts. Notably, it implants hidden instructions in .cursorrules and CLAUDE.md files to trick AI assistants into exfiltrating secrets. The campaign also opens GitHub PRs on popular AI projects to propagate malicious files, demonstrating a novel blend of typosquatting and developer-environment attacks.</p>
-          <p class="lang-zh">名为TrapDoor的协同供应链攻击针对npm、PyPI和Crates.io，发布了超过34个恶意包（共384个版本），旨在窃取加密货币、DeFi、Solana和AI领域开发者的凭证、加密钱包、SSH密钥和云凭证。恶意软件利用生态系统特定的执行路径，包括postinstall钩子、远程JavaScript载荷和恶意build.rs脚本。值得注意的是，它在.cursorrules和CLAUDE.md文件中植入隐藏指令，诱骗AI助手泄露机密。该活动还向热门AI项目发起GitHub PR以传播恶意文件，展示了typosquatting与开发者环境攻击的新型结合。</p>
+          <p class="lang-en">A coordinated supply chain attack named TrapDoor has been discovered across npm, PyPI, and Crates.io, deploying over 34 malicious packages designed to steal credentials, crypto wallets, and developer secrets, with novel persistence mechanisms including AI-assisted exfiltration via .cursorrules and CLAUDE.md files.</p>
+          <p class="lang-zh">一场名为 TrapDoor 的协同供应链攻击在 npm、PyPI 和 Crates.io 上被发现，部署了超过 34 个恶意包，旨在窃取凭证、加密钱包和开发者机密，并采用了通过 .cursorrules 和 CLAUDE.md 文件进行 AI 辅助数据窃取的新型持久化机制。</p>
           
           <a href="https://thehackernews.com/2026/05/trapdoor-supply-chain-attack-spreads.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -335,8 +335,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1263.html">Akamai Joins Growing Chorus of Vendors Betting Big on Secure Enterprise Browsers</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1263.html">Akamai Joins Growing Chorus of Vendors Betting Big on Secure Enterprise Browsers</a></h4>
-          <p class="lang-en">Akamai's acquisition of LayerX for $205 million underscores the growing trend of secure enterprise browsers as critical components for Zero Trust Network Access (ZTNA) and SaaS security. LayerX's browser extension enforces security policies on major browsers like Chrome and Firefox, monitoring actions before encryption. Akamai plans to integrate LayerX into its ZTNA portfolio, extending access control into browser sessions. This move follows similar acquisitions by Zscaler and CrowdStrike, reflecting the industry's shift toward endpoint-level browser security. Gartner predicts 25% of organizations will adopt secure enterprise browsers by 2028, driven by AI adoption and remote work.</p>
-          <p class="lang-zh">Akamai以2.05亿美元收购LayerX，凸显了安全企业浏览器在Zero Trust Network Access (ZTNA)和SaaS安全中的关键趋势。LayerX的浏览器扩展可在Chrome、Firefox等主流浏览器上强制执行安全策略，在加密前监控用户操作。Akamai计划将LayerX集成到其ZTNA产品组合中，将访问控制扩展至浏览器会话。此举紧随Zscaler和CrowdStrike的类似收购，反映了行业向端点级浏览器安全的转变。Gartner预测，到2028年，25%的组织将采用安全企业浏览器，这得益于AI采用和远程工作的发展。</p>
+          <p class="lang-en">Akamai acquires LayerX for $205M to integrate a secure enterprise browser extension into its ZTNA portfolio, following a trend of major security vendors (Zscaler, CrowdStrike, Palo Alto Networks) adding browser-level security controls to address the risks of SaaS and AI tool usage in remote work.</p>
+          <p class="lang-zh">Akamai以2.05亿美元收购LayerX，将其安全企业浏览器扩展集成到ZTNA产品组合中，延续了主要安全厂商（Zscaler、CrowdStrike、Palo Alto Networks）增加浏览器级安全控制的趋势，以应对远程工作中SaaS和AI工具使用的风险。</p>
           
           <a href="https://www.darkreading.com/remote-workforce/akamai-growing-chorus-betting-on-secure-enterprise-browsers" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -354,8 +354,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1266.html">Google API Keys Remain Active After Deletion</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1266.html">Google API Keys Remain Active After Deletion</a></h4>
-          <p class="lang-en">This paper reveals a critical security flaw in Google Cloud Platform where API keys remain active even after being deleted by users. The researchers demonstrate that deleted keys can still be used for authentication, posing a significant risk of unauthorized access and data breaches. The issue stems from caching mechanisms and eventual consistency models in distributed systems. The findings highlight the need for immediate revocation enforcement and improved key lifecycle management in cloud services.</p>
-          <p class="lang-zh">本文揭示了Google Cloud Platform中的一个关键安全漏洞：用户删除API密钥后，这些密钥仍然保持激活状态。研究人员证明，已删除的密钥仍可用于身份验证，构成未授权访问和数据泄露的重大风险。该问题源于分布式系统中的缓存机制和最终一致性模型。研究结果强调了在云服务中实施即时撤销和改进密钥生命周期管理的必要性。</p>
+          <p class="lang-en">Researchers discovered that Google Cloud Platform API keys remain functional for authentication even after users delete them, due to distributed system caching and eventual consistency, posing a risk of unauthorized access.</p>
+          <p class="lang-zh">研究人员发现，由于分布式系统的缓存和最终一致性模型，Google Cloud Platform 的 API 密钥在用户删除后仍可用于身份验证，存在未授权访问的风险。</p>
           
           <a href="https://www.darkreading.com/identity-access-management-security/google-api-keys-active-after-deletion" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -392,8 +392,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1269.html">Content Delivery Exploit Opens Websites to Brand Hijacking</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1269.html">Content Delivery Exploit Opens Websites to Brand Hijacking</a></h4>
-          <p class="lang-en">Researchers have identified a new domain-fronting exploit called Underminr that allows attackers to hijack the brand reputation of legitimate websites by manipulating DNS and CDN interactions. Unlike earlier domain fronting, Underminr bypasses existing mitigations by exploiting the lack of cross-referencing between DNS and CDN systems, enabling malicious traffic to be routed through trusted domains. ADAMnetworks found that 42% of global websites are vulnerable, with US sites at 51% risk. The attack can be used for scams, C2 operations, and data exfiltration while evading detection. Mitigation requires CDNs to adopt reputation-based domain grouping, as exemplified by Fastly.</p>
-          <p class="lang-zh">研究人员发现了一种名为Underminr的新型域名前端攻击，攻击者通过操纵DNS和CDN交互，利用合法网站的品牌声誉进行恶意活动。与早期的domain fronting不同，Underminr绕过了现有缓解措施，利用DNS和CDN系统之间缺乏交叉验证的漏洞，将恶意流量通过受信任域名路由。ADAMnetworks发现全球42%的网站易受攻击，美国网站风险高达51%。攻击可用于诈骗、C2操作和数据窃取，同时规避检测。缓解措施要求CDN采用基于声誉的域名分组，如Fastly的做法。</p>
+          <p class="lang-en">Researchers at ADAMnetworks have identified 'Underminr', a domain-fronting-like exploit that abuses the siloed operation of DNS and CDN systems to allow attackers to route malicious traffic through trusted websites, affecting 42% of global websites.</p>
+          <p class="lang-zh">ADAMnetworks 的研究人员发现了 'Underminr'，这是一种类似 domain fronting 的利用手法，通过滥用 DNS 和 CDN 系统的孤立运行，允许攻击者通过受信任的网站路由恶意流量，影响全球 42% 的网站。</p>
           
           <a href="https://www.darkreading.com/cyber-risk/content-delivery-exploit-websites-brand-hijacking" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -411,8 +411,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1271.html">GitHub Confirms Breach, 4K Internal Repos Stolen</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1271.html">GitHub Confirms Breach, 4K Internal Repos Stolen</a></h4>
-          <p class="lang-en">GitHub confirmed a data breach where a threat actor named TeamPCP stole approximately 4,000 internal code repositories. The breach originated from a compromised employee device via a poisoned VS Code extension. GitHub detected and contained the incident, rotated critical secrets, and is investigating. TeamPCP, known for financially motivated attacks on the open source ecosystem, offered the stolen data for sale on a dark web forum, threatening to leak it if no buyer is found. The incident highlights risks in developer tooling trust models and supply chain security.</p>
-          <p class="lang-zh">GitHub确认发生数据泄露，攻击者TeamPCP通过被投毒的VS Code扩展入侵员工设备，窃取了约4000个内部代码仓库。GitHub已检测并控制事件，轮换了关键密钥并展开调查。TeamPCP是一个以经济为动机的威胁行为者，曾在暗网论坛出售数据，并威胁若无买家将公开泄露。此事件凸显了开发者工具信任模型和供应链安全的风险。</p>
+          <p class="lang-en">GitHub confirmed a breach where an attacker stole ~4,000 internal repositories via a poisoned VS Code extension on an employee device, attributed to the threat actor TeamPCP.</p>
+          <p class="lang-zh">GitHub确认发生数据泄露，攻击者通过员工设备上被投毒的VS Code扩展窃取了约4000个内部仓库，该事件归因于威胁行为者TeamPCP。</p>
           
           <a href="https://www.darkreading.com/application-security/github-confirms-breach-4k-internal-repos-stolen" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -430,8 +430,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1272.html">Fake Android Apps Commit Carrier Billing Fraud for Premium Services</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1272.html">Fake Android Apps Commit Carrier Billing Fraud for Premium Services</a></h4>
-          <p class="lang-en">This article reports on fraudulent Android apps that exploit carrier billing to charge users for premium services without consent. These malicious apps, often disguised as legitimate tools or games, use techniques like SMS interception and hidden webviews to authorize unauthorized transactions. The fraud primarily targets users in regions where carrier billing is common, leading to financial losses and privacy risks. The piece highlights the need for enhanced app vetting, user awareness, and carrier-side monitoring to mitigate such threats.</p>
-          <p class="lang-zh">本文报道了虚假Android应用利用运营商计费（carrier billing）欺诈用户订阅付费服务。这些恶意应用伪装成合法工具或游戏，通过SMS拦截和隐藏WebView等技术进行未经授权的交易。此类欺诈主要针对运营商计费普及的地区，造成经济损失和隐私风险。文章强调需加强应用审核、用户意识及运营商端监控以应对威胁。</p>
+          <p class="lang-en">Fake Android apps exploit carrier billing to silently charge users for premium services via SMS interception and hidden webviews, primarily affecting regions where carrier billing is prevalent.</p>
+          <p class="lang-zh">虚假Android应用利用运营商代扣功能，通过拦截短信和隐藏Webview静默向用户收取高级服务费用，主要影响运营商代扣普及的地区。</p>
           
           <a href="https://www.darkreading.com/mobile-security/fake-android-apps-carrier-billing-fraud" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -468,8 +468,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1276.html">How CISOs Should Prep for Agentic-Ready AI BOMs</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1276.html">How CISOs Should Prep for Agentic-Ready AI BOMs</a></h4>
-          <p class="lang-en">This article advises Chief Information Security Officers (CISOs) on preparing for agentic AI by adopting AI Bill of Materials (AI BOMs). It emphasizes the need to inventory AI components, track dependencies, and manage supply chain risks as AI agents become more autonomous. The piece outlines practical steps for integrating AI BOMs into existing security frameworks to ensure transparency and accountability in AI-driven operations.</p>
-          <p class="lang-zh">本文建议首席信息安全官（CISO）通过采用AI Bill of Materials（AI BOM）来为自主AI代理做好准备。文章强调需要清点AI组件、跟踪依赖关系并管理供应链风险，同时概述了将AI BOM集成到现有安全框架中的实用步骤，以确保AI驱动操作的透明度和问责制。</p>
+          <p class="lang-en">The article advises CISOs to prepare for agentic AI by adopting AI Bill of Materials (AI BOMs) to inventory AI components, track dependencies, and manage supply chain risks as AI agents become more autonomous.</p>
+          <p class="lang-zh">文章建议首席信息安全官（CISO）通过采用AI物料清单（AI BOM）来为代理式AI做准备，以盘点AI组件、跟踪依赖关系并管理供应链风险，因为AI代理正变得越来越自主。</p>
           
           <a href="https://www.darkreading.com/cyber-risk/how-cisos-should-prep-for-agentic-ready-ai-boms" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -506,8 +506,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1279.html">What Will Make AI BOMs Real?</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1279.html">What Will Make AI BOMs Real?</a></h4>
-          <p class="lang-en">The article examines the growing momentum behind AI Bill of Materials (BOMs), driven by standards bodies, open-source projects, commercial vendors, and regulatory pressures. Key developments include OWASP's CycloneDX and Linux Foundation's SPDX AI extensions, the OpenSSF model-signing specification, and CISA's foundational guidance. Commercial tools from Manifest Cyber, Cycode, JFrog, and Apiiro are emerging. Regulatory drivers like the EU AI Act and US NDAA requirements are pushing adoption. Cyber insurers are also conditioning coverage on AI governance documentation. Despite progress, widespread adoption remains aspirational as the industry races to finalize standards and tooling before regulatory deadlines.</p>
-          <p class="lang-zh">本文探讨了推动AI BOM（人工智能物料清单）成为现实的多股力量。OWASP的CycloneDX和Linux基金会的SPDX已发布AI专用扩展，OpenSSF制定了模型签名规范，CISA发布了基础指南。商业方面，Manifest Cyber、Cycode、JFrog等厂商推出了AI BOM生成与管理工具。监管压力是主要驱动力，EU AI Act和US NDAA要求供应商在SBOM中纳入AI组件。网络保险公司也开始将AI治理文档作为承保条件。尽管进展显著，但AI BOM的广泛采用仍处于理想阶段，行业正争分夺秒地在监管截止日期前完善标准与工具。</p>
+          <p class="lang-en">The article discusses the growing momentum behind AI Bill of Materials (AI BOMs), driven by standards bodies (OWASP, Linux Foundation), open-source tools, commercial vendors, and regulatory pressure from the EU AI Act and US defense mandates, though adoption remains largely aspirational.</p>
+          <p class="lang-zh">本文讨论了AI物料清单（AI BOM）日益增长的势头，其推动力来自标准组织（OWASP、Linux基金会）、开源工具、商业供应商以及欧盟AI法案和美国国防授权法案的监管压力，尽管采用率仍主要停留在理想阶段。</p>
           
           <a href="https://www.darkreading.com/cybersecurity-analytics/what-make-ai-bom-real" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -544,8 +544,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1281.html">Windows Zero-Day Barrage Continues After Patch Tuesday</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1281.html">Windows Zero-Day Barrage Continues After Patch Tuesday</a></h4>
-          <p class="lang-en">This article reports on a continued wave of Windows zero-day vulnerabilities being exploited in the wild shortly after Microsoft's Patch Tuesday updates. It highlights the persistent threat landscape where attackers rapidly weaponize newly disclosed flaws before patches can be widely deployed. The piece underscores the challenge for security teams in prioritizing and applying fixes amidst a barrage of critical vulnerabilities affecting core Windows components.</p>
-          <p class="lang-zh">本文报道了微软Patch Tuesday更新后，Windows零日漏洞持续被野外利用的情况。文章强调攻击者迅速武器化新披露漏洞的威胁态势，以及安全团队在大量关键Windows组件漏洞中优先修复的挑战。</p>
+          <p class="lang-en">A wave of Windows zero-day vulnerabilities is being actively exploited in the wild immediately following Microsoft's Patch Tuesday, highlighting the rapid weaponization of newly disclosed flaws.</p>
+          <p class="lang-zh">在微软补丁星期二之后，一波Windows零日漏洞正在野外被积极利用，凸显了攻击者对新披露漏洞的快速武器化。</p>
           
           <a href="https://www.darkreading.com/cyberattacks-data-breaches/windows-zero-day-barrage-continues-after-patch-tuesday" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -563,8 +563,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1282.html">CISA Exposes Secrets, Credentials in 'Private' Repo</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1282.html">CISA Exposes Secrets, Credentials in 'Private' Repo</a></h4>
-          <p class="lang-en">The Cybersecurity and Infrastructure Security Agency (CISA) discovered that a 'private' repository containing sensitive secrets and credentials was inadvertently exposed. This incident highlights the risks of misconfigured access controls in version control systems, where even repositories marked as private can be vulnerable to unauthorized access. The exposure underscores the need for robust secret management practices, including automated scanning and rotation of credentials, to prevent data breaches.</p>
-          <p class="lang-zh">美国网络安全和基础设施安全局（CISA）发现一个标记为'private'的仓库意外暴露了敏感机密和凭证。此事件突显了版本控制系统中访问控制配置错误的风险，即使是私有仓库也可能遭受未授权访问。这强调了需要采用强大的秘密管理实践，包括自动扫描和轮换凭证，以防止数据泄露。</p>
+          <p class="lang-en">CISA discovered that a repository marked as 'private' inadvertently exposed sensitive secrets and credentials, highlighting risks of misconfigured access controls in version control systems.</p>
+          <p class="lang-zh">CISA发现一个标记为'private'的仓库意外暴露了敏感机密和凭证，凸显了版本控制系统中访问控制配置错误的风险。</p>
           
           <a href="https://www.darkreading.com/cybersecurity-operations/cisa-exposes-secrets-credentials-private-repo" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -601,8 +601,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1261.html">Packagist Supply Chain Attack Infects 8 Packages Using GitHub-Hosted Linux Malware</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1261.html">Packagist Supply Chain Attack Infects 8 Packages Using GitHub-Hosted Linux Malware</a></h4>
-          <p class="lang-en">A coordinated supply chain attack compromised eight packages on Packagist by injecting malicious code into package.json instead of composer.json, targeting projects that use JavaScript build tooling alongside PHP. The code downloads a Linux binary from a GitHub Releases URL, saves it to /tmp/.sshd, and executes it in the background. The same payload was found in 777 GitHub files, including workflow files, suggesting a broader campaign. The second-stage payload's purpose is unknown as the associated GitHub account is no longer available. This cross-ecosystem placement allows the attack to bypass traditional PHP dependency scans, highlighting the need for comprehensive security checks across all build artifacts.</p>
-          <p class="lang-zh">Packagist供应链攻击入侵了8个包，通过将恶意代码注入package.json而非composer.json，利用JavaScript构建工具链下载并执行GitHub上的Linux二进制文件。该跨生态系统攻击绕过了PHP依赖扫描，相同载荷出现在777个GitHub文件中，表明这是一次大规模活动。由于托管仓库的GitHub账户已不可用，第二阶段载荷的性质不明。此事件凸显了软件供应链安全中跨平台检查的重要性。</p>
+          <p class="lang-en">A coordinated supply chain attack on Packagist compromised eight PHP/Composer packages by injecting malicious postinstall scripts into package.json, which download and execute a Linux binary from a GitHub Releases URL. The campaign is notable for its cross-ecosystem placement, targeting JavaScript build tooling alongside PHP code.</p>
+          <p class="lang-zh">一场针对 Packagist 的协同供应链攻击通过向 package.json 注入恶意 postinstall 脚本，感染了八个 PHP/Composer 包，这些脚本从 GitHub Releases URL 下载并执行 Linux 二进制文件。该攻击因其跨生态系统的放置方式而引人注目，同时针对 PHP 代码和 JavaScript 构建工具。</p>
           
           <a href="https://thehackernews.com/2026/05/packagist-supply-chain-attack-infects-8.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -620,8 +620,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1262.html">Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1262.html">Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software</a></h4>
-          <p class="lang-en">Anthropic's Project Glasswing, leveraging its Claude Mythos Preview AI model, has uncovered over 10,000 high-severity vulnerabilities in widely used open-source software within the first month of the initiative. Of 1,726 confirmed true positives, 1,094 were rated high or critical, including a critical flaw in WolfSSL (CVE-2026-5194, CVSS 9.1) enabling certificate forgery. The model, provided exclusively to 50 partner organizations, also prevented a $1.5 million fraudulent wire transfer. Anthropic urges faster patch cycles and warns that similar capabilities may soon become broadly available, posing both defensive opportunities and misuse risks. The company has launched a Cyber Verification Program for legitimate security research.</p>
-          <p class="lang-zh">Anthropic的Project Glasswing利用其Claude Mythos Preview AI模型，在一个月内发现了超过10,000个广泛使用的开源软件中的高危漏洞。在1,726个确认的真实阳性中，1,094个被评为高危或严重，包括WolfSSL中的一个关键漏洞（CVE-2026-5194，CVSS 9.1），可导致证书伪造。该模型仅提供给50个合作伙伴，还阻止了一笔150万美元的欺诈电汇。Anthropic敦促加快补丁周期，并警告类似能力可能很快广泛可用，带来防御机会和滥用风险。公司还推出了Cyber Verification Program以支持合法的安全研究。</p>
+          <p class="lang-en">Anthropic's Project Glasswing, using the Claude Mythos Preview model, has uncovered over 10,000 high/critical severity vulnerabilities in widely-used open-source software within a month, with 1,094 confirmed high/critical flaws and 97 already patched upstream.</p>
+          <p class="lang-zh">Anthropic 的 Project Glasswing 利用 Claude Mythos Preview 模型，在一个月内发现了广泛使用的开源软件中超过 10,000 个高危/严重漏洞，其中 1,094 个被确认为高危/严重漏洞，97 个已被上游修复。</p>
           
           <a href="https://thehackernews.com/2026/05/claude-mythos-ai-finds-10000-high.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -677,8 +677,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1242.html">Drupal Core SQL Injection Bug Actively Exploited, Added to CISA KEV</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1242.html">Drupal Core SQL Injection Bug Actively Exploited, Added to CISA KEV</a></h4>
-          <p class="lang-en">The U.S. CISA has added a critical Drupal Core SQL injection vulnerability (CVE-2026-9082, CVSS 6.5) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation. The bug affects all supported Drupal versions and can lead to privilege escalation and remote code execution. Over 15,000 attack attempts have been observed targeting nearly 6,000 sites across 65 countries, primarily gaming and financial services. While most activity appears to be probing, the risk of data extraction or privilege escalation is high. Patches are available, and U.S. federal agencies must apply fixes by May 27, 2026.</p>
-          <p class="lang-zh">美国CISA将Drupal Core的一个严重SQL注入漏洞（CVE-2026-9082，CVSS评分6.5）列入已知被利用漏洞目录，因发现活跃利用。该漏洞影响所有受支持的Drupal版本，可导致权限提升和远程代码执行。已观察到超过15000次攻击尝试，针对65个国家近6000个网站，主要攻击游戏和金融服务行业。目前多数活动为探测，但数据窃取或权限提升风险很高。补丁已发布，美国联邦机构须在2026年5月27日前完成修复。</p>
+          <p class="lang-en">CISA added CVE-2026-9082, a critical SQL injection vulnerability in Drupal Core, to its KEV catalog after observing active exploitation. Over 15,000 attack attempts targeting 6,000 sites have been detected, primarily probing for vulnerable PostgreSQL-backed Drupal instances.</p>
+          <p class="lang-zh">CISA 将 Drupal Core 中的一个严重 SQL 注入漏洞 CVE-2026-9082 添加到其 KEV 目录，原因是观察到活跃的利用。已检测到超过 15,000 次攻击尝试，针对 6,000 个站点，主要探测存在漏洞的 PostgreSQL 后端 Drupal 实例。</p>
           
           <a href="https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -696,8 +696,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1243.html">First VPN Dismantled in Global Takedown Over Use by 25 Ransomware Groups</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1243.html">First VPN Dismantled in Global Takedown Over Use by 25 Ransomware Groups</a></h4>
-          <p class="lang-en">In a coordinated international operation codenamed Operation Saffron, law enforcement agencies across Europe and North America dismantled First VPN, a criminal virtual private network service that had been used by at least 25 ransomware groups since 2014. The service, advertised on Russian-language cybercrime forums, allowed anonymous payments and hidden infrastructure to obfuscate attacks including ransomware, data theft, and DDoS. Authorities interviewed the administrator in Ukraine, seized 33 servers, and took down domains. The FBI confirmed the service provided exit nodes in 27 countries, including Singapore. The takedown raises the operational cost for cybercriminals and proves that even specialized anonymization services can be disrupted.</p>
-          <p class="lang-zh">代号为'Operation Saffron'的国际执法行动成功捣毁了First VPN，这是一项被至少25个勒索软件组织使用的犯罪虚拟专用网络服务。该服务自2014年起运作，通过俄语网络犯罪论坛推广，提供匿名支付和隐藏基础设施以掩护勒索软件、数据窃取和DDoS攻击。当局在乌克兰约谈管理员、查封33台服务器并关闭相关域名。FBI确认其出口节点遍布27国，包括新加坡。此次行动提高了网络犯罪生态系统的运营成本。</p>
+          <p class="lang-en">International law enforcement (Operation Saffron) dismantled First VPN, a criminal VPN service used by at least 25 ransomware groups since 2014 to anonymize attacks, seizing 33 servers and identifying its users.</p>
+          <p class="lang-zh">国际执法行动（Operation Saffron）捣毁了First VPN，这是一个自2014年以来被至少25个勒索软件团伙用于匿名化攻击的犯罪VPN服务，查获了33台服务器并识别了其用户。</p>
           
           <a href="https://thehackernews.com/2026/05/first-vpn-dismantled-in-global-takedown.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -715,8 +715,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1245.html">Megalodon GitHub Attack Targets 5,561 Repos with Malicious CI/CD Workflows</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1245.html">Megalodon GitHub Attack Targets 5,561 Repos with Malicious CI/CD Workflows</a></h4>
-          <p class="lang-en">A new automated campaign dubbed 'Megalodon' pushed 5,718 malicious commits to 5,561 GitHub repositories within six hours using throwaway accounts and forged author identities. The attacker injected GitHub Actions workflows containing base64-encoded bash payloads that exfiltrate CI secrets, cloud credentials, SSH keys, OIDC tokens, and source code secrets to a command-and-control server. The attack is linked to the TeamPCP group, which has been compromising open-source projects in a worm-like fashion. This incident highlights the escalating threat of supply chain attacks targeting CI/CD pipelines and credential theft at scale.</p>
-          <p class="lang-zh">一项名为'Megalodon'的自动化攻击活动在六小时内向5,561个GitHub仓库推送了5,718个恶意提交，使用一次性账户和伪造的作者身份（如build-bot、auto-ci）注入GitHub Actions工作流，其中包含base64编码的bash载荷，用于窃取CI secret、云凭证、SSH密钥、OIDC token等敏感数据，并发送至C2服务器。该攻击与TeamPCP组织相关，其通过供应链攻击大规模传播恶意软件，凸显了CI/CD管道安全面临的严峻挑战。</p>
+          <p class="lang-en">A large-scale automated campaign called Megalodon pushed 5,718 malicious commits to 5,561 GitHub repositories in six hours, using forged identities and compromised tokens to inject CI/CD workflows that exfiltrate credentials and secrets.</p>
+          <p class="lang-zh">名为 Megalodon 的大规模自动化攻击在六小时内向 5,561 个 GitHub 仓库推送了 5,718 个恶意提交，利用伪造身份和泄露的令牌注入 CI/CD 工作流，窃取凭据和密钥。</p>
           
           <a href="https://thehackernews.com/2026/05/megalodon-github-attack-targets-5561.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -734,8 +734,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1246.html">Making Vulnerable Drivers Exploitable Without Hardware - The BYOVD Perspective</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1246.html">Making Vulnerable Drivers Exploitable Without Hardware - The BYOVD Perspective</a></h4>
-          <p class="lang-en">The article explores how vulnerable Windows kernel drivers can be exploited without the required hardware, focusing on the Bring Your Own Vulnerable Driver (BYOVD) attack technique. It analyzes device object creation patterns in drivers, distinguishing between unconditional creation upon load and conditional creation tied to hardware presence or registry keys. The author demonstrates that many PnP-compatible drivers require specific setup to trigger AddDevice and other initialization routines, making hardware-gating a key obstacle. Techniques to bypass hardware dependencies solely from userland are discussed, emphasizing the relevance for post-exploitation attacks that aim to disable security components like EDR. The work provides a methodology for evaluating driver vulnerability reachability.</p>
-          <p class="lang-zh">本文探讨了如何在没有所需硬件的情况下利用有漏洞的Windows内核驱动程序，重点介绍了BYOVD（Bring Your Own Vulnerable Driver）攻击技术。分析了驱动程序中设备对象的创建模式，区分了加载时的无条件创建和与硬件存在或注册表键相关的条件创建。作者证明了许多PnP兼容驱动程序需要特定设置才能触发AddDevice等初始化例程，使得硬件门控成为关键障碍。讨论了仅从用户态绕过硬件依赖的方法，强调了对后利用攻击（如禁用EDR安全组件）的相关性。该工作提供了一种评估驱动程序漏洞可达性的方法论。</p>
+          <p class="lang-en">This article analyzes how Windows kernel-mode drivers can be interacted with from user mode without the required hardware, focusing on device object creation patterns and PnP architecture to assess exploitability for BYOVD attacks.</p>
+          <p class="lang-zh">本文分析了如何在缺少对应硬件的情况下从用户态与Windows内核模式驱动交互，重点研究了设备对象创建模式和PnP架构，以评估BYOVD攻击的可利用性。</p>
           
           <a href="https://thehackernews.com/2026/05/making-vulnerable-drivers-exploitable.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -753,8 +753,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1247.html">Kimwolf DDoS Botnet Operator Arrested in Canada Over DDoS-for-Hire Attacks</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1247.html">Kimwolf DDoS Botnet Operator Arrested in Canada Over DDoS-for-Hire Attacks</a></h4>
-          <p class="lang-en">Canadian national Jacob Butler (aka Dort) was arrested for operating the Kimwolf DDoS botnet, a variant of AISURU that infected Android devices via exposed Android Debug Bridge (ADB) services. The botnet enslaved IoT devices like digital photo frames and webcams to launch distributed denial-of-service attacks, including against U.S. Department of Defense networks. Kimwolf issued over 25,000 attack commands and was part of record-setting DDoS events reaching 31.4 Tbps. The arrest follows a joint international takedown of the botnet's command-and-control infrastructure by the U.S., Canada, and Germany. Butler faces up to 10 years in prison for aiding and abetting computer intrusion.</p>
-          <p class="lang-zh">加拿大男子Jacob Butler（化名Dort）因运营Kimwolf DDoS僵尸网络被捕。Kimwolf是AISURU的变种，通过暴露的Android Debug Bridge (ADB)服务感染Android设备，将数字相框、网络摄像头等IoT设备沦为肉鸡，用于发起分布式拒绝服务（DDoS）攻击，目标包括美国国防部网络。该僵尸网络发布了超过25,000条攻击指令，并参与了峰值达31.4 Tbps的创纪录攻击。此次逮捕是美国、加拿大和德国联合执法行动的一部分。Butler被控协助和教唆计算机入侵，最高面临10年监禁。</p>
+          <p class="lang-en">Canadian national Jacob Butler (aka Dort) was arrested for operating the Kimwolf DDoS botnet, a variant of AISURU that enslaved Android devices with exposed ADB services, issuing over 25,000 attack commands and contributing to record-setting 31.4 Tbps DDoS attacks.</p>
+          <p class="lang-zh">加拿大公民 Jacob Butler（又名 Dort）因运营 Kimwolf DDoS 僵尸网络被捕。该变种基于 AISURU，通过暴露的 Android Debug Bridge (ADB) 服务感染 Android 设备，发布了超过 25,000 条攻击指令，并参与了峰值达 31.4 Tbps 的创纪录 DDoS 攻击。</p>
           
           <a href="https://thehackernews.com/2026/05/kimwolf-ddos-botnet-operator-arrested.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -772,8 +772,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1248.html">CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1248.html">CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV</a></h4>
-          <p class="lang-en">The U.S. CISA added two actively exploited vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog: CVE-2025-34291 (CVSS 9.4) in Langflow, an origin validation error allowing arbitrary code execution and full system compromise, and CVE-2026-34926 (CVSS 6.7) in Trend Micro Apex One, a directory traversal flaw enabling malicious code injection. The Langflow bug has been exploited by Iranian state-sponsored group MuddyWater for initial access. Federal agencies must patch by June 4, 2026. These additions highlight the urgency of addressing both AI-related and legacy on-premise vulnerabilities under active attack.</p>
-          <p class="lang-zh">美国CISA将两个被积极利用的漏洞加入其Known Exploited Vulnerabilities (KEV)目录：Langflow中的CVE-2025-34291（CVSS 9.4，origin validation error导致任意代码执行）和Trend Micro Apex One中的CVE-2026-34926（CVSS 6.7，directory traversal漏洞）。Langflow漏洞已被伊朗国家支持黑客组织MuddyWater用于初始入侵。联邦机构须在2026年6月4日前完成修复。</p>
+          <p class="lang-en">CISA added two actively exploited vulnerabilities to its KEV catalog: CVE-2025-34291 (Langflow, CVSS 9.4, origin validation error leading to RCE) and CVE-2026-34926 (Trend Micro Apex One, CVSS 6.7, directory traversal enabling code injection). Langflow flaw was exploited by Iranian state group MuddyWater for initial access.</p>
+          <p class="lang-zh">CISA 将两个已遭主动利用的漏洞加入其 KEV 目录：CVE-2025-34291（Langflow，CVSS 9.4，来源验证错误导致远程代码执行）和 CVE-2026-34926（Trend Micro Apex One，CVSS 6.7，目录遍历导致代码注入）。Langflow 漏洞已被伊朗国家背景黑客组织 MuddyWater 用于初始访问。</p>
           
           <a href="https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -791,8 +791,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1249.html">Cisco Patches CVSS 10.0 Secure Workload REST API Flaw Enabling Data Access</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1249.html">Cisco Patches CVSS 10.0 Secure Workload REST API Flaw Enabling Data Access</a></h4>
-          <p class="lang-en">Cisco has released updates to address a maximum-severity vulnerability (CVE-2026-20223, CVSS 10.0) in its Secure Workload product. The flaw stems from insufficient validation and authentication in REST API endpoints, allowing an unauthenticated remote attacker to read sensitive data and make configuration changes across tenant boundaries with Site Admin privileges. The issue affects both SaaS and on-prem deployments. Cisco discovered the flaw during internal testing and reports no evidence of exploitation in the wild. Patches are available for affected releases. This disclosure follows another actively exploited Cisco flaw in Catalyst SD-WAN Controller.</p>
-          <p class="lang-zh">思科发布了补丁，修复了Secure Workload中的一个最高严重性漏洞（CVE-2026-20223，CVSS 10.0）。该漏洞源于REST API端点的验证和认证不足，未认证的远程攻击者可跨租户边界读取敏感数据并以Site Admin权限进行配置更改。影响SaaS和本地部署。思科在内部测试中发现此漏洞，尚未发现野外利用。补丁已发布。此前思科还披露了Catalyst SD-WAN Controller中另一个被积极利用的漏洞。</p>
+          <p class="lang-en">Cisco patched a CVSS 10.0 vulnerability (CVE-2026-20223) in Secure Workload that allows unauthenticated remote attackers to read sensitive data and make configuration changes across tenant boundaries via crafted REST API requests.</p>
+          <p class="lang-zh">Cisco 修复了 Secure Workload 中的一个 CVSS 10.0 漏洞 (CVE-2026-20223)，该漏洞允许未经身份验证的远程攻击者通过精心构造的 REST API 请求跨租户边界读取敏感数据并进行配置更改。</p>
           
           <a href="https://thehackernews.com/2026/05/cisco-patches-cvss-100-secure-workload.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -829,8 +829,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1252.html">Microsoft Warns of Two Actively Exploited Defender Vulnerabilities</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1252.html">Microsoft Warns of Two Actively Exploited Defender Vulnerabilities</a></h4>
-          <p class="lang-en">Microsoft disclosed two actively exploited vulnerabilities in Microsoft Defender: a privilege escalation flaw (CVE-2026-41091, CVSS 7.8) allowing SYSTEM privileges via improper link resolution, and a denial-of-service bug (CVE-2026-45498, CVSS 4.0). A third heap-based buffer overflow (CVE-2026-45584, CVSS 8.1) enabling remote code execution was patched but not exploited. The U.S. CISA added both exploited flaws to its Known Exploited Vulnerabilities catalog. Defender auto-updates address these issues; systems with Defender disabled are unaffected.</p>
-          <p class="lang-zh">Microsoft披露了Defender中两个正被活跃利用的漏洞：权限提升漏洞CVE-2026-41091（CVSS 7.8）和拒绝服务漏洞CVE-2026-45498（CVSS 4.0）。第三个堆缓冲区溢出漏洞CVE-2026-45584（CVSS 8.1）虽已修补但未被利用。美国CISA已将前两个漏洞加入其Known Exploited Vulnerabilities（KEV）目录。Defender自动更新已修复这些问题，禁用Defender的系统不受影响。</p>
+          <p class="lang-en">Microsoft disclosed two actively exploited vulnerabilities in Microsoft Defender: a privilege escalation (CVE-2026-41091, CVSS 7.8) and a denial-of-service (CVE-2026-45498, CVSS 4.0). Patches are available in platform versions 1.1.26040.8 and 4.18.26040.7, and CISA has added both to its KEV catalog.</p>
+          <p class="lang-zh">微软披露了 Microsoft Defender 中两个正在被积极利用的漏洞：一个权限提升漏洞（CVE-2026-41091，CVSS 7.8）和一个拒绝服务漏洞（CVE-2026-45498，CVSS 4.0）。补丁已在平台版本 1.1.26040.8 和 4.18.26040.7 中提供，CISA 已将这两个漏洞列入其 KEV 目录。</p>
           
           <a href="https://thehackernews.com/2026/05/microsoft-warns-of-two-actively.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -848,8 +848,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1254.html">9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1254.html">9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros</a></h4>
-          <p class="lang-en">Cybersecurity researchers at Qualys have disclosed a nine-year-old Linux kernel vulnerability, CVE-2026-46333, that enables unprivileged local users to execute arbitrary commands as root on major distributions including Debian, Fedora, and Ubuntu. The flaw resides in the __ptrace_may_access() function, introduced in November 2016. Exploitation allows disclosure of sensitive files like /etc/shadow and SSH private keys, as well as root execution via chage, ssh-keysign, pkexec, or accounts-daemon. A proof-of-concept exploit has been released. The article also covers a separate local privilege escalation vulnerability called PinTheft affecting Arch Linux. Users are advised to apply kernel updates immediately.</p>
-          <p class="lang-zh">Qualys披露了一个存在九年的Linux内核漏洞CVE-2026-46333，允许本地非特权用户在Debian、Fedora、Ubuntu等主流发行版上以root权限执行任意命令。漏洞位于__ptrace_may_access()函数，自2016年引入，可泄露/etc/shadow和SSH私钥等敏感文件，并通过chage、ssh-keysign、pkexec或accounts-daemon实现root提权。概念验证漏洞已发布。文章还提及影响Arch Linux的PinTheft提权漏洞。建议立即更新内核。</p>
+          <p class="lang-en">A 9-year-old Linux kernel vulnerability (CVE-2026-46333) in the __ptrace_may_access() function allows unprivileged local users to escalate privileges to root on major distributions like Debian, Fedora, and Ubuntu.</p>
+          <p class="lang-zh">Linux 内核中存在一个长达 9 年的漏洞（CVE-2026-46333），位于 __ptrace_may_access() 函数中，允许无特权的本地用户在 Debian、Fedora 和 Ubuntu 等主要发行版上将权限提升至 root。</p>
           
           <a href="https://thehackernews.com/2026/05/9-year-old-linux-kernel-flaw-enables.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -867,8 +867,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1255.html">GitHub Internal Repositories Breached via Malicious Nx Console VS Code Extension</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1255.html">GitHub Internal Repositories Breached via Malicious Nx Console VS Code Extension</a></h4>
-          <p class="lang-en">GitHub confirmed that a breach of its internal repositories was caused by a malicious version of the Nx Console VS Code extension, which was deployed after an attacker compromised a developer's system. The tampered extension was live on the Visual Studio Marketplace for only 18 minutes but installed a credential stealer that harvested sensitive data from password managers and cloud services. The attack, attributed to the TeamPCP group, exfiltrated approximately 3,800 repositories. GitHub stated that customer data may have been exposed in limited form and rotated critical secrets. The incident underscores the dangers of auto-updating extension marketplaces and the interconnected nature of software supply chain attacks.</p>
-          <p class="lang-zh">GitHub 确认其内部仓库被入侵源于一个恶意的 Nx Console VS Code 扩展，该扩展在攻击者攻陷开发者系统后被发布。篡改后的扩展仅在 Visual Studio Marketplace 上存活了 18 分钟，但植入了凭据窃取器，能收集来自密码管理器、AWS 和 GitHub 等服务的敏感数据。攻击者 TeamPCP 组织窃取了约 3800 个仓库。GitHub 表示客户数据可能以有限形式暴露，并轮换了关键密钥。此事件凸显了扩展市场自动更新机制的风险及软件供应链安全的连锁效应。</p>
+          <p class="lang-en">GitHub confirmed that a breach of its internal repositories was caused by a malicious Nx Console VS Code extension, which was distributed for 18 minutes and exfiltrated ~3,800 repos via credential theft.</p>
+          <p class="lang-zh">GitHub 确认其内部仓库泄露是由于一个恶意的 Nx Console VS Code 扩展导致，该扩展仅上线 18 分钟，通过凭证窃取盗取了约 3800 个仓库。</p>
           
           <a href="https://thehackernews.com/2026/05/github-internal-repositories-breached.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -924,8 +924,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1142.html">Our response to the TanStack npm supply chain attack</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1142.html">Our response to the TanStack npm supply chain attack</a></h4>
-          <p class="lang-en">OpenAI disclosed a security incident involving the TanStack npm library, part of the broader Mini Shai-Hulud supply chain attack. Two employee devices were compromised, leading to limited credential exfiltration from internal source code repositories. No evidence of user data, production system, or intellectual property compromise was found. As a precaution, OpenAI is rotating code-signing certificates, requiring macOS users to update apps by June 12, 2026. The company has implemented additional security controls and is coordinating with platform providers to prevent unauthorized certificate use. This incident highlights the growing threat of supply chain attacks targeting shared software dependencies.</p>
-          <p class="lang-zh">OpenAI披露了一起涉及TanStack npm库的安全事件，该事件是更广泛的Mini Shai-Hulud供应链攻击的一部分。两台员工设备被入侵，导致内部源代码仓库中的有限凭据被窃取。没有证据表明用户数据、生产系统或知识产权受损。作为预防措施，OpenAI正在轮换代码签名证书，要求macOS用户在2026年6月12日前更新应用。公司已实施额外的安全控制，并与平台提供商协调以防止证书被滥用。此事件凸显了针对共享软件依赖的供应链攻击威胁日益增长。</p>
+          <p class="lang-en">OpenAI disclosed a supply chain attack on the TanStack npm library, where two employee devices were compromised, leading to limited credential exfiltration from internal source code repositories. No user data or production systems were affected, but code-signing certificates are being rotated as a precaution.</p>
+          <p class="lang-zh">OpenAI披露了一起针对TanStack npm库的供应链攻击，两名员工设备被入侵，导致内部源代码仓库的凭证被有限窃取。用户数据和生成系统未受影响，但作为预防措施，代码签名证书正在轮换。</p>
           
           <a href="https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>

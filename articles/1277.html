@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For SOC researchers benchmarking HarmonyOS endpoint security, this operation demonstrates a critical real-world threat landscape: cybercriminal infrastructure (compromised devices, phishing servers) is actively targeting the MENA region. The collaboration model highlights the need for HarmonyOS to support cross-border threat intelligence sharing (e.g., IoC correlation) and to harden endpoints against credential-spraying and phishing-as-a-service attacks, which are prevalent in this region. The use of private threat intel partners (Group-IB, Kaspersky) also underscores the value of integrating commercial threat feeds into endpoint detection and response (EDR) systems.</p>
+        <p class="lang-zh">对于对标鸿蒙端侧安全的研究人员而言，此次行动展示了一个关键的真实威胁态势：网络犯罪基础设施（受感染设备、钓鱼服务器）正积极瞄准中东和北非地区。该合作模式凸显了鸿蒙需要支持跨境威胁情报共享（例如，IoC 关联），并强化终端以抵御该地区盛行的凭证填充和钓鱼即服务攻击。使用私营威胁情报合作伙伴（Group-IB、卡巴斯基）也强调了将商业威胁情报源集成到端点检测与响应 (EDR) 系统中的价值。</p>
+      </div>
+      
+
+      
       
 
       
@@ -77,13 +85,66 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Interpol's Operation Ramz marks the first large-scale cross-regional law enforcement collaboration in the Middle East and North Africa, involving 13 countries. Over five months, the operation identified nearly 583 suspected cybercriminals, shut down phishing-as-a-service infrastructure, and notified thousands of victims. While arrest numbers are modest compared to other regions, the operation established critical channels for threat intelligence sharing and laid the groundwork for a long-term regional cyber operational framework. The initiative highlights growing cooperation between law enforcement and private cybersecurity firms to combat cybercrime that transcends borders.</p></div>
+          <div class="lede"><p>Interpol's Operation Ramz, involving 13 MENA countries, marks the largest cross-region law enforcement collaboration in the Middle East, identifying 583 suspects, seizing 53 servers, and notifying nearly 4,000 victims over five months.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>Interpol的Operation Ramz是中东和北非地区首次大规模跨境执法合作，涉及13个国家。在五个月的行动中，识别了近583名网络犯罪嫌疑人，关闭了钓鱼即服务基础设施，并通知了数千名受害者。尽管逮捕人数相比其他地区较少，但该行动建立了关键的情报共享渠道，为长期区域网络行动框架奠定了基础，凸显了执法机构与私营网络安全公司之间日益增强的合作。</p></div>
+          <div class="lede"><p>国际刑警组织的 'Ramz 行动' 涉及 13 个中东和北非国家，是中东地区规模最大的跨区域执法合作，在五个月内识别出 583 名嫌疑人，查获 53 台服务器，并通知了近 4000 名受害者。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>13 MENA countries (Algeria, Bahrain, Egypt, Iraq, Jordan, Lebanon, Libya, Morocco, Oman, Palestine, Qatar, Tunisia, UAE) participated in Interpol's Operation Ramz.</li>
+<li>Identified 583 suspected cybercriminals, arrested 201 suspects, seized 53 servers, and notified nearly 4,000 victims.</li>
+<li>Disrupted phishing-as-a-service in Algeria, investment fraud in Jordan (linked to human trafficking), and compromised servers in private residences in Oman.</li>
+<li>Collaboration included private partners: Group-IB, Kaspersky, Shadowserver Foundation, Team Cymru, TrendAI.</li>
+<li>MENA region faces 600,000 cyber probes/attack attempts per day (up from 200,000) post-February 2026 conflict.</li>
+<li>Credential-spraying attacks surged in Q1 2026 in the region (Barracuda Networks).</li>
+<li>Operation builds a foundation for a long-term regional cyber operational framework in MENA.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>与之前在撒哈拉以南非洲开展的大规模行动（例如，逮捕 651 人的 'Red Card 2.0 行动'）不同，'Ramz 行动' 聚焦于地缘政治复杂且因地区冲突导致网络攻击激增的中东和北非地区。相对于识别出的嫌疑人数量（583 人），逮捕人数（201 人）较少，这表明重点在于情报收集和基础设施破坏，而非大规模逮捕。这与网络犯罪分子此前认为该地区风险较低而采取的 '肆无忌惮' 的操作模式形成对比。</p>
+<h2>Why It Matters</h2>
+<p>This operation validates the effectiveness of cross-border, public-private threat intelligence sharing in disrupting cybercrime ecosystems. For endpoint security, it highlights the importance of device-level compromise detection (compromised phones, servers in private homes) and the need for OS-level telemetry that can feed into such collaborative frameworks. It also signals that threat actors are actively targeting the MENA region, which may influence threat modeling for global enterprises operating there.</p>
+<h2>Critical Take</h2>
+<p>The article is based on official Interpol and partner statements; specific technical details (e.g., IoCs, malware families, exploitation techniques) are not disclosed. The '600,000 probes per day' figure from the UAE Cyber Security Council lacks independent verification and may conflate scanning with targeted attacks. The long-term impact on cybercriminal behavior in the region remains to be seen, as the operation may only displace activity rather than eliminate it.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Follow-up operations in MENA: Will a permanent regional cyber operational framework be established?</li>
+<li>Technical reports from Group-IB, Kaspersky, etc., detailing the infrastructure and TTPs uncovered.</li>
+<li>Changes in credential-spraying and phishing-as-a-service activity in the region post-operation.</li>
+<li>Any public attribution of the investment fraud ring in Jordan to specific threat actor groups.</li>
+<li>How HarmonyOS and other endpoint platforms adapt to support cross-border IoC sharing standards (e.g., MISP, STIX/TAXII).</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>13 个中东和北非国家（阿尔及利亚、巴林、埃及、伊拉克、约旦、黎巴嫩、利比亚、摩洛哥、阿曼、巴勒斯坦、卡塔尔、突尼斯、阿联酋）参与了国际刑警组织的 'Ramz 行动'。</li>
+<li>识别出 583 名疑似网络犯罪分子，逮捕 201 名嫌疑人，查获 53 台服务器，并通知了近 4000 名受害者。</li>
+<li>捣毁了阿尔及利亚的钓鱼即服务、约旦的（与人口贩卖相关的）投资诈骗以及阿曼私人住宅中的受感染服务器。</li>
+<li>合作方包括私营合作伙伴：Group-IB、卡巴斯基、Shadowserver 基金会、Team Cymru、TrendAI。</li>
+<li>2026 年 2 月冲突后，中东和北非地区每天面临 60 万次网络探测/攻击尝试（此前为 20 万次）。</li>
+<li>2026 年第一季度该地区凭证填充攻击激增（Barracuda Networks）。</li>
+<li>该行动为中东和北非地区建立长期区域网络行动框架奠定了基础。</li>
+</ul>
+<h2>重要性</h2>
+<p>此次行动验证了跨境、公私合作的威胁情报共享在破坏网络犯罪生态系统方面的有效性。对于端侧安全而言，它凸显了设备级入侵检测（受感染的手机、私人住宅中的服务器）的重要性，以及操作系统级遥测数据能够输入此类协作框架的必要性。这也表明威胁行为者正积极瞄准中东和北非地区，这可能会影响在该地区运营的全球企业的威胁建模。</p>
+<h2>批判性视角</h2>
+<p>本文基于国际刑警组织和合作伙伴的官方声明；未披露具体的技术细节（例如，IoC、恶意软件家族、利用技术）。阿联酋网络安全委员会提出的 '每天 60 万次探测' 的数据缺乏独立验证，可能混淆了扫描与定向攻击。该行动对该地区网络犯罪行为的长期影响仍有待观察，因为行动可能只是转移了活动而非消除活动。</p>
+<h2>后续关注</h2>
+<ul>
+<li>中东和北非地区的后续行动：是否会建立永久性的区域网络行动框架？</li>
+<li>Group-IB、卡巴斯基等公司发布的技术报告，详细说明被发现的网络基础设施和 TTP。</li>
+<li>行动后该地区凭证填充和钓鱼即服务活动的变化。</li>
+<li>约旦投资诈骗团伙是否会被公开归因于特定的威胁行为者组织。</li>
+<li>鸿蒙和其他终端平台如何适应以支持跨境 IoC 共享标准（例如，MISP、STIX/TAXII）。</li>
+</ul>
+        </div>
         
 
         

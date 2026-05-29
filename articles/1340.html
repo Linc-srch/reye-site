@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">This incident is a textbook software supply-chain attack targeting the AI tool ecosystem, specifically Anthropic's Claude. For a system security researcher, it highlights a novel attack surface: the dedicated user-data directory of a local AI agent. The attack chain — malicious npm package -> postinstall script -> GitHub API exfiltration — is a classic supply-chain vector, but the target (AI agent data) and the sloppy OPSEC (leaked token) are noteworthy. The researcher should note that this is not a kernel exploit or memory corruption, but a high-level abuse of package manager trust and developer credentials to steal sensitive data (potentially including prompts, outputs, or uploaded files).</p>
+        <p class="lang-zh">此事件是针对 AI 工具生态系统（特别是 Anthropic 的 Claude）的典型软件供应链攻击。对于系统安全研究员而言，它突显了一个新的攻击面：本地 AI 代理的专用用户数据目录。攻击链——恶意 npm 包 -> postinstall 脚本 -> GitHub API 外泄——是经典的供应链向量，但攻击目标（AI 代理数据）和草率的 OPSEC（泄露 token）值得关注。研究员应注意，这不是内核漏洞或内存损坏，而是对包管理器信任和开发者凭证的高层滥用，以窃取敏感数据（可能包括提示词、输出或上传的文件）。</p>
+      </div>
+      
+
+      
       
 
       
@@ -77,13 +85,66 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>A malicious npm package named 'mouse5212-super-formatter' was discovered stealing files from Claude AI's user data directory. It authenticates to GitHub during installation, creates a repository, and uploads all files to a threat actor-controlled account. The package leaked its own GitHub token, suggesting AI-generated malware with poor operational security. It has been downloaded 676 times.</p></div>
+          <div class="lede"><p>A malicious npm package named 'mouse5212-super-formatter' was discovered exfiltrating files from Claude AI's user data directory to a GitHub repository controlled by the attacker, using a hardcoded or environment-based GitHub token.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>一个名为'mouse5212-super-formatter'的恶意npm包被发现从Claude AI的用户数据目录窃取文件。它在安装过程中通过GitHub认证，创建仓库并将所有文件上传到攻击者控制的账户。该包泄露了自身的GitHub令牌，表明这是AI生成的恶意软件且缺乏基本操作安全。该包已被下载676次。</p></div>
+          <div class="lede"><p>发现一个名为 'mouse5212-super-formatter' 的恶意 npm 包，它利用硬编码或环境中的 GitHub token，将 Claude AI 用户数据目录中的文件外泄到攻击者控制的 GitHub 仓库。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>Malicious npm package: <code>mouse5212-super-formatter</code>.</li>
+<li>Target: <code>/mnt/user-data</code> directory used by Anthropic's Claude AI tool.</li>
+<li>Exfiltration method: Uses a GitHub access token (from environment or hardcoded) to authenticate to GitHub, creates a repository if needed, and recursively uploads all files.</li>
+<li>Stealth: Writes a fake "network connections" log to disguise the data theft as diagnostic information.</li>
+<li>Scale: 676 downloads; attacker's GitHub account created hours before the first malicious version.</li>
+<li>Attacker OPSEC failure: The package leaked the attacker's private GitHub token, suggesting AI-generated malware with poor operational security.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>This attack fits the growing trend of supply-chain attacks on package registries (npm, PyPI) targeting developer machines. However, it is distinct in its specific targeting of an AI tool's local data directory, rather than stealing environment variables or SSH keys. It also contrasts with more sophisticated APT-style supply-chain attacks by its sloppy OPSEC (leaked token), which is a hallmark of lower-sophistication, AI-assisted malware generation. Prior attacks like <code>colors.js</code> or <code>faker.js</code> were about dependency confusion or protestware; this is pure data theft.</p>
+<h2>Why It Matters</h2>
+<p>For system security, this demonstrates a new and practical attack vector: compromising the data of local AI agents via the software supply chain. As AI coding assistants (Claude, Copilot) become ubiquitous on developer machines, their local data stores become high-value targets. This attack bypasses traditional kernel-level security controls by exploiting trust in the npm ecosystem and developer credentials. It underscores that supply-chain security is not just about code execution, but also about data exfiltration from trusted applications.</p>
+<h2>Critical Take</h2>
+<p>The article is based on a single vendor's (OX Security) analysis. The claim that the attacker used AI to generate the malware is speculative, inferred from the poor OPSEC. The actual impact (what data was stolen, from whom) is unverified. The 676 download count may include automated mirrors or security scans. The hardcoded token leak is a significant OPSEC failure, but it's unclear if this was a deliberate distraction or genuine incompetence. The attack's sophistication is low; it's a simple script, not a complex exploit.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Watch for similar packages targeting other AI tool data directories (e.g., Copilot, Cursor).</li>
+<li>Monitor npm for packages with suspicious postinstall scripts that interact with cloud APIs (GitHub, AWS S3).</li>
+<li>Track if the leaked GitHub token leads to identification of the attacker or other campaigns.</li>
+<li>Observe if npm registry implements automated scanning for such exfiltration patterns.</li>
+<li>Look for CVEs or advisories related to Claude's <code>/mnt/user-data</code> directory permissions.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>恶意 npm 包：<code>mouse5212-super-formatter</code>。</li>
+<li>目标：Anthropic 的 Claude AI 工具使用的 <code>/mnt/user-data</code> 目录。</li>
+<li>外泄方法：使用 GitHub 访问令牌（来自环境变量或硬编码）向 GitHub 进行身份验证，必要时创建仓库，然后递归上传所有文件。</li>
+<li>隐蔽性：写入虚假的“网络连接”日志，将数据窃取伪装成诊断信息。</li>
+<li>规模：676 次下载；攻击者的 GitHub 账户在第一个恶意版本上传前几小时创建。</li>
+<li>攻击者 OPSEC 失败：该包泄露了攻击者的私有 GitHub 令牌，表明这是由 AI 生成的、缺乏良好操作安全的恶意软件。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>此攻击符合针对包注册表（npm、PyPI）的供应链攻击日益增长的趋势，这些攻击针对的是开发者机器。然而，它的独特之处在于专门针对 AI 工具的本地数据目录，而不是窃取环境变量或 SSH 密钥。它也与更复杂的 APT 式供应链攻击形成对比，其草率的 OPSEC（泄露 token）是低复杂度、AI 辅助恶意软件生成的标志。之前的攻击如 <code>colors.js</code> 或 <code>faker.js</code> 是关于依赖混淆或抗议软件；而这是纯粹的数据窃取。</p>
+<h2>重要性</h2>
+<p>对于系统安全而言，这展示了一个新的、实际的攻击向量：通过软件供应链破坏本地 AI 代理的数据。随着 AI 编码助手（Claude、Copilot）在开发者机器上变得无处不在，它们的本地数据存储成为高价值目标。此攻击通过利用对 npm 生态系统的信任和开发者凭证，绕过了传统的内核级安全控制。它强调了供应链安全不仅关乎代码执行，还关乎从受信任应用程序中窃取数据。</p>
+<h2>批判性视角</h2>
+<p>该文章基于单一供应商（OX Security）的分析。关于攻击者使用 AI 生成恶意软件的说法是推测性的，是从糟糕的 OPSEC 推断出来的。实际影响（哪些数据被盗，来自谁）尚未得到验证。676 次下载计数可能包括自动镜像或安全扫描。硬编码的令牌泄露是一个重大的 OPSEC 失败，但尚不清楚这是故意的干扰还是真正的无能。该攻击的复杂度很低；它是一个简单的脚本，而不是复杂的漏洞利用。</p>
+<h2>后续关注</h2>
+<ul>
+<li>关注针对其他 AI 工具数据目录（例如 Copilot、Cursor）的类似包。</li>
+<li>监控 npm 上具有可疑 postinstall 脚本并与云 API（GitHub、AWS S3）交互的包。</li>
+<li>追踪泄露的 GitHub 令牌是否会导致攻击者或其他活动的识别。</li>
+<li>观察 npm 注册表是否实施针对此类外泄模式的自动扫描。</li>
+<li>寻找与 Claude 的 <code>/mnt/user-data</code> 目录权限相关的 CVE 或安全公告。</li>
+</ul>
+        </div>
         
 
         

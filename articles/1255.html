@@ -66,6 +66,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For a system security researcher focused on software supply-chain security and developer tooling, this incident is a textbook case of a 'trusted distribution channel' compromise. The attack vector—a poisoned IDE extension with auto-update enabled—highlights a critical blind spot in the software supply chain: the implicit trust placed in package managers and extension marketplaces. The fact that the malicious extension was live for only 18 minutes yet caused massive damage underscores the need for runtime integrity checks and code signing verification at the client side, not just static analysis at the marketplace. This also demonstrates a new exploitation pattern where attackers chain compromises across multiple open-source projects (TanStack -> Nx Console -> GitHub) to escalate access.</p>
+        <p class="lang-zh">对于专注于软件供应链安全和开发者工具的系统安全研究员而言，此事件是“可信分发渠道”被攻陷的教科书式案例。攻击向量——一个启用了自动更新的恶意 IDE 扩展——突显了软件供应链中的一个关键盲点：对包管理器和扩展市场隐含的信任。恶意扩展仅上线 18 分钟却造成巨大破坏，这强调了在客户端进行运行时完整性检查和代码签名验证的必要性，而不仅仅是市场端的静态分析。这也展示了一种新的利用模式：攻击者通过链式攻陷多个开源项目（TanStack -> Nx Console -> GitHub）来提升访问权限。</p>
+      </div>
+      
+
+      
       
 
       
@@ -73,13 +81,70 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>GitHub confirmed that a breach of its internal repositories was caused by a malicious version of the Nx Console VS Code extension, which was deployed after an attacker compromised a developer's system. The tampered extension was live on the Visual Studio Marketplace for only 18 minutes but installed a credential stealer that harvested sensitive data from password managers and cloud services. The attack, attributed to the TeamPCP group, exfiltrated approximately 3,800 repositories. GitHub stated that customer data may have been exposed in limited form and rotated critical secrets. The incident underscores the dangers of auto-updating extension marketplaces and the interconnected nature of software supply chain attacks.</p></div>
+          <div class="lede"><p>GitHub confirmed that a breach of its internal repositories was caused by a malicious Nx Console VS Code extension, which was distributed for 18 minutes and exfiltrated ~3,800 repos via credential theft.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>GitHub 确认其内部仓库被入侵源于一个恶意的 Nx Console VS Code 扩展，该扩展在攻击者攻陷开发者系统后被发布。篡改后的扩展仅在 Visual Studio Marketplace 上存活了 18 分钟，但植入了凭据窃取器，能收集来自密码管理器、AWS 和 GitHub 等服务的敏感数据。攻击者 TeamPCP 组织窃取了约 3800 个仓库。GitHub 表示客户数据可能以有限形式暴露，并轮换了关键密钥。此事件凸显了扩展市场自动更新机制的风险及软件供应链安全的连锁效应。</p></div>
+          <div class="lede"><p>GitHub 确认其内部仓库泄露是由于一个恶意的 Nx Console VS Code 扩展导致，该扩展仅上线 18 分钟，通过凭证窃取盗取了约 3800 个仓库。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>GitHub confirmed internal repo breach via a poisoned Nx Console VS Code extension (nrwl.angular-console).</li>
+<li>The malicious extension was live on Visual Studio Marketplace for only 18 minutes.</li>
+<li>It exfiltrated ~3,800 repositories; no evidence of customer data outside internal repos.</li>
+<li>Attack attributed to cybercriminal group TeamPCP, linked to the recent TanStack supply chain attack.</li>
+<li>The extension silently ran a shell command that downloaded a credential stealer from a planted commit on the official nrwl/nx GitHub repo.</li>
+<li>Stolen credentials targeted 1Password, Anthropic Claude Code, npm, GitHub, and AWS.</li>
+<li>Auto-update feature in VS Code/Cursor was exploited to push the malicious update to all installed clients without review.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>This attack differs from typical package typosquatting or dependency confusion attacks. It targets the IDE extension ecosystem, which has a different trust model: extensions are often granted broad system access (e.g., file system, network, shell execution) by default. The 18-minute window is extremely short compared to other supply chain attacks (e.g., SolarWinds had months of dwell time). The attack also demonstrates a novel 'cross-repo credential harvesting' technique where the malicious payload was hosted on the legitimate project's own GitHub repo (via a planted commit), making it harder to detect as a supply chain compromise.</p>
+<h2>Why It Matters</h2>
+<p>This incident is a watershed moment for IDE extension security. It proves that the 'auto-update' mechanism, designed for convenience, is a critical vulnerability when the publisher is compromised. It also shows that the attack surface of developer workstations is expanding beyond traditional package managers (npm, PyPI) to include IDE extensions, which often have higher privilege levels. For system security, this highlights the need for mandatory code signing, delayed rollout of updates, and runtime behavioral monitoring for developer tools. The cascading nature of the attack (TanStack -&gt; Nx Console -&gt; GitHub) demonstrates a new class of 'supply chain chaining' attacks that can rapidly compromise multiple high-value targets.</p>
+<h2>Critical Take</h2>
+<p>The article is based on official statements from GitHub and the Nx team, so the core facts are reliable. However, the full extent of the damage (e.g., whether any customer data was actually accessed from internal repos) is still under investigation. The claim that the attack was 'only 18 minutes' may be understated if the attacker had prior access or if the credential stealer continued to exfiltrate data after the extension was removed. The attribution to TeamPCP is based on the researchers' claims and may be part of a larger, more sophisticated operation. The article does not detail the specific technical mechanism of how the planted commit on the official repo was achieved (e.g., via stolen maintainer credentials or a repo takeover).</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Follow-up disclosures from GitHub about the specific internal repositories accessed and any customer data impact.</li>
+<li>Technical deep-dives from OX Security or Aikido on the exact payload and C2 infrastructure.</li>
+<li>Changes to VS Code/Cursor marketplace policies: mandatory code signing, delayed auto-update, or review gates.</li>
+<li>Broader industry response: will other IDE extension marketplaces (JetBrains, Eclipse) adopt similar hardening?</li>
+<li>Further attacks from TeamPCP using the same 'chain compromise' pattern against other high-profile developer tools.</li>
+<li>Research into runtime integrity monitoring for IDE extensions (e.g., blocking unexpected shell execution by extensions).</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>GitHub 确认内部仓库泄露是由于一个被投毒的 Nx Console VS Code 扩展 (nrwl.angular-console)。</li>
+<li>恶意扩展在 Visual Studio Marketplace 上仅上线了 18 分钟。</li>
+<li>约 3800 个仓库被窃取；没有证据表明客户数据（内部仓库之外）受影响。</li>
+<li>攻击归因于网络犯罪团伙 TeamPCP，与近期 TanStack 供应链攻击有关。</li>
+<li>该扩展在启动时静默运行一个 shell 命令，从官方 nrwl/nx GitHub 仓库的一个植入提交中下载凭证窃取器。</li>
+<li>窃取的凭证目标包括 1Password、Anthropic Claude Code、npm、GitHub 和 AWS。</li>
+<li>VS Code/Cursor 的自动更新功能被利用，将恶意更新推送给所有已安装客户端，无需审核。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>此攻击不同于典型的包名抢注或依赖混淆攻击。它针对的是 IDE 扩展生态系统，该生态系统具有不同的信任模型：扩展通常默认被授予广泛的系统访问权限（例如文件系统、网络、shell 执行）。18 分钟的时间窗口与其他供应链攻击相比极短（例如 SolarWinds 有数月的驻留时间）。该攻击还展示了一种新颖的“跨仓库凭证收集”技术，恶意负载被托管在合法项目自己的 GitHub 仓库中（通过一个植入的提交），使得检测供应链受损更加困难。</p>
+<h2>重要性</h2>
+<p>此事件是 IDE 扩展安全的一个分水岭。它证明了为方便而设计的“自动更新”机制，在发布者被攻陷时是一个关键漏洞。它还表明，开发者工作站的攻击面正在从传统的包管理器（npm、PyPI）扩展到 IDE 扩展，后者通常具有更高的权限级别。对于系统安全而言，这凸显了对开发者工具实施强制性代码签名、延迟更新推送和运行时行为监控的必要性。攻击的级联性质（TanStack -&gt; Nx Console -&gt; GitHub）展示了一类新的“供应链链式攻击”，可以迅速攻陷多个高价值目标。</p>
+<h2>批判性视角</h2>
+<p>文章基于 GitHub 和 Nx 团队的官方声明，核心事实可靠。然而，损害的全部范围（例如，是否从内部仓库实际访问了任何客户数据）仍在调查中。声称攻击“仅持续 18 分钟”可能被低估，如果攻击者事先已有访问权限，或者凭证窃取器在扩展被移除后仍在继续窃取数据。将攻击归因于 TeamPCP 基于研究人员的声明，可能是一个更大、更复杂行动的一部分。文章没有详细说明在官方仓库上实现植入提交的具体技术机制（例如，通过窃取维护者凭证或仓库接管）。</p>
+<h2>后续关注</h2>
+<ul>
+<li>GitHub 关于被访问的具体内部仓库以及任何客户数据影响的后续披露。</li>
+<li>OX Security 或 Aikido 关于确切负载和 C2 基础设施的技术深度分析。</li>
+<li>VS Code/Cursor 市场政策的变更：强制性代码签名、延迟自动更新或审核关卡。</li>
+<li>更广泛的行业反应：其他 IDE 扩展市场（JetBrains、Eclipse）是否会采取类似的强化措施？</li>
+<li>TeamPCP 使用相同的“链式攻陷”模式针对其他知名开发者工具的进一步攻击。</li>
+<li>针对 IDE 扩展的运行时完整性监控研究（例如，阻止扩展意外执行 shell 命令）。</li>
+</ul>
+        </div>
         
 
         

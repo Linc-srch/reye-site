@@ -66,6 +66,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For a system security researcher focused on OS & kernel security and vulnerability research, this report highlights that even critical security components like Microsoft Defender are susceptible to local privilege escalation via symlink following (CVE-2026-41091). This is a classic kernel-adjacent attack pattern: an unprivileged user can leverage a race condition or improper link resolution in a high-integrity process to gain SYSTEM privileges. The heap-based buffer overflow (CVE-2026-45584) in Defender, though not yet exploited, is a strong candidate for future weaponization and represents a remote code execution vector in a core security service. The overlap with publicly disclosed zero-days (RedSun, UnDefend) underscores the value of monitoring underground exploit markets and the speed at which n-days can be operationalized.</p>
+        <p class="lang-zh">对于专注于操作系统与内核安全以及漏洞研究的系统安全研究员而言，这份报告突显了即使是 Microsoft Defender 这样的关键安全组件，也容易受到通过符号链接跟随（CVE-2026-41091）实现的本地权限提升攻击。这是一种经典的近内核攻击模式：非特权用户可以利用高完整性进程中的条件竞争或不当链接解析来获取 SYSTEM 权限。Defender 中的堆缓冲区溢出漏洞（CVE-2026-45584）虽然尚未被利用，但它是未来武器化的有力候选者，代表了核心安全服务中的一个远程代码执行向量。这些漏洞与公开披露的零日漏洞（RedSun、UnDefend）的重叠，凸显了监控地下漏洞利用市场的价值以及 n-day 漏洞被快速武器化的速度。</p>
+      </div>
+      
+
+      
       
 
       
@@ -73,13 +81,68 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Microsoft disclosed two actively exploited vulnerabilities in Microsoft Defender: a privilege escalation flaw (CVE-2026-41091, CVSS 7.8) allowing SYSTEM privileges via improper link resolution, and a denial-of-service bug (CVE-2026-45498, CVSS 4.0). A third heap-based buffer overflow (CVE-2026-45584, CVSS 8.1) enabling remote code execution was patched but not exploited. The U.S. CISA added both exploited flaws to its Known Exploited Vulnerabilities catalog. Defender auto-updates address these issues; systems with Defender disabled are unaffected.</p></div>
+          <div class="lede"><p>Microsoft disclosed two actively exploited vulnerabilities in Microsoft Defender: a privilege escalation (CVE-2026-41091, CVSS 7.8) and a denial-of-service (CVE-2026-45498, CVSS 4.0). Patches are available in platform versions 1.1.26040.8 and 4.18.26040.7, and CISA has added both to its KEV catalog.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>Microsoft披露了Defender中两个正被活跃利用的漏洞：权限提升漏洞CVE-2026-41091（CVSS 7.8）和拒绝服务漏洞CVE-2026-45498（CVSS 4.0）。第三个堆缓冲区溢出漏洞CVE-2026-45584（CVSS 8.1）虽已修补但未被利用。美国CISA已将前两个漏洞加入其Known Exploited Vulnerabilities（KEV）目录。Defender自动更新已修复这些问题，禁用Defender的系统不受影响。</p></div>
+          <div class="lede"><p>微软披露了 Microsoft Defender 中两个正在被积极利用的漏洞：一个权限提升漏洞（CVE-2026-41091，CVSS 7.8）和一个拒绝服务漏洞（CVE-2026-45498，CVSS 4.0）。补丁已在平台版本 1.1.26040.8 和 4.18.26040.7 中提供，CISA 已将这两个漏洞列入其 KEV 目录。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>Two actively exploited Microsoft Defender vulnerabilities: CVE-2026-41091 (privilege escalation, CVSS 7.8) and CVE-2026-45498 (DoS, CVSS 4.0).</li>
+<li>CVE-2026-41091 is a local privilege escalation via improper link resolution (symlink following), allowing an attacker to gain SYSTEM privileges.</li>
+<li>CVE-2026-45584 is a heap-based buffer overflow in Defender (CVSS 8.1) that could lead to remote code execution, but not yet exploited.</li>
+<li>Patches are in Microsoft Defender Antimalware Platform versions 1.1.26040.8 and 4.18.26040.7.</li>
+<li>CISA added both exploited flaws to its Known Exploited Vulnerabilities (KEV) catalog.</li>
+<li>The vulnerabilities overlap with publicly disclosed zero-days (RedSun, UnDefend) from Chaotic Eclipse.</li>
+<li>Huntress has observed exploitation of both vulnerabilities alongside BlueHammer (CVE-2026-33825).</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>Historically, Microsoft Defender vulnerabilities have been rare but impactful. This disclosure is notable for the simultaneous active exploitation of two distinct bug classes (LPE and DoS) in the same security product. The overlap with publicly named zero-days (RedSun, UnDefend) suggests a shift toward targeted research and weaponization of endpoint protection platforms. The inclusion of a heap-based buffer overflow (CVE-2026-45584) in the same patch batch indicates that Defender's attack surface is expanding beyond local flaws to include remote code execution vectors, which is a significant escalation in risk profile.</p>
+<h2>Why It Matters</h2>
+<p>This matters because Microsoft Defender is a ubiquitous, high-integrity security component running with SYSTEM privileges on millions of Windows endpoints. A local privilege escalation in Defender provides a reliable, low-complexity path to full system compromise, bypassing many user-level mitigations. The heap buffer overflow (CVE-2026-45584) is particularly concerning as it could allow remote code execution in a process that is trusted and often has broad access. For the security research community, these vulnerabilities provide concrete case studies in symlink race conditions and heap corruption within a complex, real-time scanning engine.</p>
+<h2>Critical Take</h2>
+<p>The article does not provide technical details on the exploitation method or proof-of-concept code. The claim that systems with Defender disabled are not susceptible is a trivial tautology. The attribution of the vulnerabilities to specific researchers (Chaotic Eclipse) and the overlap with named zero-days (RedSun, UnDefend) is based on 'overlap' in descriptions, not confirmed by Microsoft. The heap buffer overflow (CVE-2026-45584) is not yet exploited, so its real-world impact remains theoretical. The inclusion of ancient IE and DirectX flaws in the KEV catalog is a separate, unrelated data point that may distract from the Defender-specific story.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Public release of technical write-ups or PoCs for CVE-2026-41091 and CVE-2026-45584.</li>
+<li>Detection of in-the-wild exploitation of CVE-2026-45584 (heap buffer overflow).</li>
+<li>Analysis of the symlink following mechanism in Defender's scanning engine.</li>
+<li>Further disclosures from Chaotic Eclipse or Huntress regarding Defender internals.</li>
+<li>Microsoft's response to the weaponization of security product vulnerabilities.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>两个正在被积极利用的 Microsoft Defender 漏洞：CVE-2026-41091（权限提升，CVSS 7.8）和 CVE-2026-45498（拒绝服务，CVSS 4.0）。</li>
+<li>CVE-2026-41091 是一个通过不当链接解析（符号链接跟随）实现的本地权限提升漏洞，允许攻击者获取 SYSTEM 权限。</li>
+<li>CVE-2026-45584 是 Defender 中的一个基于堆的缓冲区溢出漏洞（CVSS 8.1），可能导致远程代码执行，但尚未被利用。</li>
+<li>补丁位于 Microsoft Defender 反恶意软件平台版本 1.1.26040.8 和 4.18.26040.7 中。</li>
+<li>CISA 已将这两个被利用的漏洞添加到其已知被利用漏洞（KEV）目录中。</li>
+<li>这些漏洞与 Chaotic Eclipse 公开披露的零日漏洞（RedSun、UnDefend）存在重叠。</li>
+<li>Huntress 已观察到这两个漏洞与 BlueHammer（CVE-2026-33825）一起被利用。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>从历史上看，Microsoft Defender 的漏洞很少见，但影响很大。此次披露值得注意，因为同一安全产品中同时有两个不同类别的漏洞（LPE 和 DoS）被积极利用。这些漏洞与公开命名的零日漏洞（RedSun、UnDefend）的重叠表明，针对端点保护平台的定向研究和武器化趋势正在转变。在同一补丁批次中包含一个基于堆的缓冲区溢出漏洞（CVE-2026-45584）表明，Defender 的攻击面正在从本地漏洞扩展到包括远程代码执行向量，这是风险状况的重大升级。</p>
+<h2>重要性</h2>
+<p>这很重要，因为 Microsoft Defender 是一个无处不在、高完整性的安全组件，在数百万 Windows 端点以 SYSTEM 权限运行。Defender 中的本地权限提升为完全控制系统提供了一条可靠、低复杂度的路径，绕过了许多用户级缓解措施。堆缓冲区溢出（CVE-2026-45584）尤其令人担忧，因为它可能允许在一个受信任且通常具有广泛访问权限的进程中进行远程代码执行。对于安全研究社区而言，这些漏洞为研究复杂实时扫描引擎中的符号链接条件竞争和堆损坏提供了具体的案例。</p>
+<h2>批判性视角</h2>
+<p>文章未提供利用方法或概念验证代码的技术细节。声称禁用 Defender 的系统不易受攻击是一个显而易见的同义反复。将漏洞归因于特定研究人员（Chaotic Eclipse）以及与命名零日漏洞（RedSun、UnDefend）的重叠是基于描述中的“重叠”，而非微软确认。堆缓冲区溢出（CVE-2026-45584）尚未被利用，因此其现实影响仍是理论上的。将古老的 IE 和 DirectX 漏洞纳入 KEV 目录是一个独立的、不相关的数据点，可能会分散对 Defender 特定事件的注意力。</p>
+<h2>后续关注</h2>
+<ul>
+<li>CVE-2026-41091 和 CVE-2026-45584 的技术文章或 PoC 的公开发布。</li>
+<li>检测到 CVE-2026-45584（堆缓冲区溢出）的在野利用。</li>
+<li>对 Defender 扫描引擎中符号链接跟随机制的分析。</li>
+<li>Chaotic Eclipse 或 Huntress 关于 Defender 内部机制的进一步披露。</li>
+<li>微软对安全产品漏洞武器化的回应。</li>
+</ul>
+        </div>
         
 
         

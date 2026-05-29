@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For a system security researcher focused on OS/kernel and software supply-chain security, this flaw represents a fundamental failure in access revocation and state management within a critical cloud infrastructure component. It mirrors classic TOCTOU (time-of-check time-of-use) vulnerabilities and highlights how distributed systems' eventual consistency models can create persistent security gaps. The finding underscores that cloud platforms, despite their sophistication, suffer from the same class of logic bugs found in kernels and runtimes—where a deletion operation is not immediately enforced across all replicas. This is directly relevant to supply-chain security, as leaked or compromised API keys are a primary vector for CI/CD pipeline attacks and data exfiltration.</p>
+        <p class="lang-zh">对于专注于操作系统/内核安全和软件供应链安全的研究人员而言，此缺陷代表了关键云基础设施组件中访问撤销和状态管理的根本性失败。它类似于经典的 TOCTOU（检查时间与使用时间）漏洞，并突显了分布式系统的最终一致性模型如何造成持久的安全缺口。该发现强调，云平台尽管复杂，但仍存在与内核和运行时中相同类型的逻辑错误——即删除操作未在所有副本中立即执行。这与供应链安全直接相关，因为泄露或受损的 API 密钥是 CI/CD 流水线攻击和数据泄露的主要途径。</p>
+      </div>
+      
+
+      
       
 
       
@@ -77,11 +85,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>This paper reveals a critical security flaw in Google Cloud Platform where API keys remain active even after being deleted by users. The researchers demonstrate that deleted keys can still be used for authentication, posing a significant risk of unauthorized access and data breaches. The issue stems from caching mechanisms and eventual consistency models in distributed systems. The findings highlight the need for immediate revocation enforcement and improved key lifecycle management in cloud services.</p></div>
+          <div class="lede"><p>Researchers discovered that Google Cloud Platform API keys remain functional for authentication even after users delete them, due to distributed system caching and eventual consistency, posing a risk of unauthorized access.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>本文揭示了Google Cloud Platform中的一个关键安全漏洞：用户删除API密钥后，这些密钥仍然保持激活状态。研究人员证明，已删除的密钥仍可用于身份验证，构成未授权访问和数据泄露的重大风险。该问题源于分布式系统中的缓存机制和最终一致性模型。研究结果强调了在云服务中实施即时撤销和改进密钥生命周期管理的必要性。</p></div>
+          <div class="lede"><p>研究人员发现，由于分布式系统的缓存和最终一致性模型，Google Cloud Platform 的 API 密钥在用户删除后仍可用于身份验证，存在未授权访问的风险。</p></div>
         </div>
 
         

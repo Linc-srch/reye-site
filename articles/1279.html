@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For a system security researcher focused on OS/kernel and software supply-chain security, AI BOMs represent a new attack surface and a new hardening requirement. The integration of AI models into software artifacts (e.g., via Hugging Face, MCP registries) means that supply-chain attacks can now target model provenance, training data integrity, and model signing. The OpenSSF model-signing spec and CISA guidance are directly relevant to ensuring the integrity of AI components in the software stack. The EU AI Act's logging and monitoring requirements also intersect with kernel-level telemetry and audit mechanisms.</p>
+        <p class="lang-zh">对于专注于操作系统/内核和软件供应链安全的研究人员而言，AI BOM代表了一个新的攻击面和一个新的加固需求。AI模型集成到软件制品中（例如通过Hugging Face、MCP注册表）意味着供应链攻击现在可以针对模型来源、训练数据完整性和模型签名。OpenSSF的模型签名规范和CISA指南直接关系到确保软件栈中AI组件的完整性。欧盟AI法案的日志记录和监控要求也与内核级遥测和审计机制相交织。</p>
+      </div>
+      
+
+      
       
 
       
@@ -77,13 +85,70 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>The article examines the growing momentum behind AI Bill of Materials (BOMs), driven by standards bodies, open-source projects, commercial vendors, and regulatory pressures. Key developments include OWASP's CycloneDX and Linux Foundation's SPDX AI extensions, the OpenSSF model-signing specification, and CISA's foundational guidance. Commercial tools from Manifest Cyber, Cycode, JFrog, and Apiiro are emerging. Regulatory drivers like the EU AI Act and US NDAA requirements are pushing adoption. Cyber insurers are also conditioning coverage on AI governance documentation. Despite progress, widespread adoption remains aspirational as the industry races to finalize standards and tooling before regulatory deadlines.</p></div>
+          <div class="lede"><p>The article discusses the growing momentum behind AI Bill of Materials (AI BOMs), driven by standards bodies (OWASP, Linux Foundation), open-source tools, commercial vendors, and regulatory pressure from the EU AI Act and US defense mandates, though adoption remains largely aspirational.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>本文探讨了推动AI BOM（人工智能物料清单）成为现实的多股力量。OWASP的CycloneDX和Linux基金会的SPDX已发布AI专用扩展，OpenSSF制定了模型签名规范，CISA发布了基础指南。商业方面，Manifest Cyber、Cycode、JFrog等厂商推出了AI BOM生成与管理工具。监管压力是主要驱动力，EU AI Act和US NDAA要求供应商在SBOM中纳入AI组件。网络保险公司也开始将AI治理文档作为承保条件。尽管进展显著，但AI BOM的广泛采用仍处于理想阶段，行业正争分夺秒地在监管截止日期前完善标准与工具。</p></div>
+          <div class="lede"><p>本文讨论了AI物料清单（AI BOM）日益增长的势头，其推动力来自标准组织（OWASP、Linux基金会）、开源工具、商业供应商以及欧盟AI法案和美国国防授权法案的监管压力，尽管采用率仍主要停留在理想阶段。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>OWASP CycloneDX and Linux Foundation SPDX have released AI-specific extensions for BOMs.</li>
+<li>OWASP AI BOM Generator is the first open-source tool to auto-generate AIBOMs from Hugging Face models.</li>
+<li>OpenSSF AI/ML Working Group formalized a model-signing specification in 2025 (Google, HiddenLayer, NVIDIA).</li>
+<li>CISA's AI SBOM Tiger Team published foundational guidance in 2025, but agency cuts create uncertainty.</li>
+<li>Commercial vendors (Manifest Cyber, Cycode, JFrog, Apiiro) are adding AI BOM capabilities.</li>
+<li>EU AI Act (full effect August 2026) requires documentation aligning with AI BOM content for high-risk systems.</li>
+<li>US FY26 NDAA mandates AI components in SBOMs for DoD software vendors.</li>
+<li>Cyber insurers are beginning to condition coverage on AI governance documentation.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>This article builds on the established SBOM (Software Bill of Materials) movement, extending it to AI/ML models. Unlike traditional SBOMs which focus on libraries and dependencies, AI BOMs must capture model architecture, training data provenance, and model signatures. The regulatory push (EU AI Act, NDAA) is stronger and more specific than earlier software supply-chain mandates, creating a compliance-driven market. The involvement of cyber insurers mirrors the post-ransomware underwriting shift, indicating a hardening of the risk landscape.</p>
+<h2>Why It Matters</h2>
+<p>For system security, AI BOMs are a critical supply-chain security control. They enable verification of model integrity, detection of tampered or backdoored models, and auditing of training data provenance. This directly impacts the security of systems that embed AI components (e.g., kernel-level anomaly detection, autonomous agents). The OpenSSF model-signing spec provides a cryptographic foundation for trust, similar to code signing. The EU AI Act's logging requirements may drive kernel-level audit enhancements for AI model execution.</p>
+<h2>Critical Take</h2>
+<p>The article is largely promotional and lacks critical analysis of implementation challenges. It does not address how AI BOMs will be verified at runtime, the performance overhead of cryptographic signing for large models, or the risk of BOMs themselves being tampered with. The CISA cuts and the aspirational nature of adoption are noted but not deeply explored. The 'agentic-ready' framing is buzzword-heavy. No concrete exploits or vulnerabilities are discussed.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Adoption of OpenSSF model-signing spec in major model registries (Hugging Face, PyTorch Hub).</li>
+<li>CISA's ability to enforce AI SBOM guidance despite personnel cuts.</li>
+<li>Emergence of runtime AI BOM verification tools (e.g., kernel modules that check model signatures before loading).</li>
+<li>Real-world attacks exploiting missing or forged AI BOMs (e.g., supply-chain compromise of a popular model).</li>
+<li>Integration of AI BOMs into existing SBOM toolchains (e.g., CycloneDX, SPDX) and CI/CD pipelines.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>OWASP CycloneDX和Linux基金会SPDX已发布针对BOM的AI专用扩展。</li>
+<li>OWASP AI BOM Generator是首个从Hugging Face模型自动生成AIBOM的开源工具。</li>
+<li>OpenSSF AI/ML工作组于2025年正式确定了模型签名规范（Google、HiddenLayer、NVIDIA）。</li>
+<li>CISA的AI SBOM老虎团队于2025年发布了基础指南，但机构裁员带来了不确定性。</li>
+<li>商业供应商（Manifest Cyber、Cycode、JFrog、Apiiro）正在增加AI BOM功能。</li>
+<li>欧盟AI法案（2026年8月全面生效）要求高风险系统的文档与AI BOM内容对齐。</li>
+<li>美国FY26 NDAA要求国防部软件供应商在SBOM中纳入AI组件。</li>
+<li>网络保险公司开始将承保条件与AI治理文档挂钩。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>本文建立在已建立的SBOM（软件物料清单）运动基础上，将其扩展到AI/ML模型。与关注库和依赖关系的传统SBOM不同，AI BOM必须捕获模型架构、训练数据来源和模型签名。监管推动（欧盟AI法案、NDAA）比早期的软件供应链授权更强大、更具体，创造了一个合规驱动的市场。网络保险公司的参与反映了后勒索软件时代承保的转变，表明风险格局正在收紧。</p>
+<h2>重要性</h2>
+<p>对于系统安全而言，AI BOM是一个关键的供应链安全控制措施。它们能够验证模型完整性、检测被篡改或植入后门的模型，并审计训练数据来源。这直接影响嵌入AI组件的系统安全（例如内核级异常检测、自主代理）。OpenSSF的模型签名规范为信任提供了密码学基础，类似于代码签名。欧盟AI法案的日志记录要求可能会推动针对AI模型执行的内核级审计增强。</p>
+<h2>批判性视角</h2>
+<p>本文主要是宣传性的，缺乏对实施挑战的批判性分析。它没有解决如何在运行时验证AI BOM、大型模型密码学签名的性能开销，或者BOM本身被篡改的风险。文中提到了CISA裁员和采用的理想化性质，但未深入探讨。'为代理就绪'的框架充满了流行词汇。没有讨论具体的漏洞或利用。</p>
+<h2>后续关注</h2>
+<ul>
+<li>OpenSSF模型签名规范在主要模型注册表（Hugging Face、PyTorch Hub）中的采用情况。</li>
+<li>CISA在人员裁减后执行AI SBOM指南的能力。</li>
+<li>运行时AI BOM验证工具的出现（例如，在加载模型前检查模型签名的内核模块）。</li>
+<li>利用缺失或伪造的AI BOM的真实攻击（例如，流行模型的供应链妥协）。</li>
+<li>AI BOM与现有SBOM工具链（如CycloneDX、SPDX）和CI/CD管道的集成。</li>
+</ul>
+        </div>
         
 
         

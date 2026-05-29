@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For AI Security researchers, TAI's agenda provides a rare, high-fidelity window into real-world deployment dynamics of frontier LLMs. The focus on 'AI systems in the wild' and 'threats and resilience' directly aligns with needs for empirical red-teaming baselines (e.g., FinSafetyBench) and runtime agent governance (e.g., ClawGuard). The commitment to sharing granular data on labor impacts and cyber threat analyses offers a new source for validating automated evaluation frameworks and understanding emergent attack surfaces in deployed agents. For SOC and Harmony Security analysts, the emphasis on 'resilience' and 'cyber threat analyses feeding into Project Glasswing' signals a shift from model-level vulnerabilities to systemic, ecosystem-level defense strategies, which is critical for benchmarking endpoint security against AI-enabled threats.</p>
+        <p class="lang-zh">对于AI安全研究员而言，TAI的议程提供了一个罕见的、高保真度的窗口，用以观察前沿大语言模型在现实世界中的部署动态。对“现实世界中的AI系统”和“威胁与韧性”的关注，直接契合了对经验性红队测试基线（如FinSafetyBench）和运行时Agent治理（如ClawGuard）的需求。共享劳动力影响和网络威胁分析等细粒度数据的承诺，为验证自动化评估框架和理解已部署Agent中涌现的攻击面提供了新来源。对于SOC和Harmony安全分析师而言，对“韧性”和“为Project Glasswing提供输入的网络威胁分析”的强调，标志着从模型级漏洞向系统性、生态系统级防御策略的转变，这对于针对AI驱动的威胁进行终端安全基准测试至关重要。</p>
+      </div>
+      
+
+      
       
 
       
@@ -77,13 +85,66 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>The Anthropic Institute (TAI) announces its research agenda as of May 7, 2026, focusing on four areas: economic diffusion, threats and resilience, AI systems in the wild, and AI-driven R&amp;D. Leveraging insider access at frontier lab Anthropic, TAI will study real-world AI impacts, including labor market changes, emerging security risks, and recursive self-improvement. It will share granular data, early warning signals, and tools to inform policymakers, researchers, and the public. The agenda is developed with Anthropic's Long-Term Benefit Trust and aims to guide decisions on AI deployment for long-term human benefit, with a call for fellowship applications to tackle these questions.</p></div>
+          <div class="lede"><p>The Anthropic Institute (TAI) announces a research agenda focused on four areas: economic diffusion of AI, threats and resilience, AI systems in the wild, and AI-driven R&amp;D, leveraging internal Anthropic data to inform public policy and safety decisions.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>The Anthropic Institute (TAI) 于2026年5月7日发布研究议程，聚焦经济扩散、威胁与韧性、野外的AI系统及AI驱动的研发。TAI利用前沿实验室Anthropic的内部视角，研究AI对就业、安全风险及递归自我改进的实际影响，并公开数据以协助政策制定。该议程由Anthropic的Long-Term Benefit Trust支持，旨在为AI的长期有益部署提供指导。</p></div>
+          <div class="lede"><p>Anthropic Institute (TAI) 公布了一项研究议程，聚焦于四个领域：AI的经济扩散、威胁与韧性、现实世界中的AI系统以及AI驱动的研发，利用Anthropic内部数据为公共政策和安全决策提供信息。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>TAI will use internal Anthropic data to study AI's real-world impacts across four pillars: Economic diffusion, Threats and resilience, AI systems in the wild, and AI-driven R&amp;D.</li>
+<li>They will publish granular data from the Anthropic Economic Index at a higher cadence, focusing on labor impacts and AI usage.</li>
+<li>Research on 'AI systems in the wild' will investigate new threats emerging from deployed systems, including dual-use capabilities.</li>
+<li>TAI will share how AI tools have accelerated Anthropic's own R&amp;D, exploring implications for recursive self-improvement.</li>
+<li>Findings will inform Anthropic's Long-Term Benefit Trust (LTBT) and external policy decisions, including cyber threat analyses for initiatives like Project Glasswing.</li>
+<li>The agenda is described as 'living' and open to revision based on feedback and new evidence.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>Unlike most AI safety research which is conducted externally or on open-source models, TAI's approach is unique in its 'insider' perspective from within a frontier lab. This contrasts with prior work that relied on synthetic benchmarks or post-hoc analysis. It also differs from typical corporate transparency reports by being explicitly framed as a research institute with a public-good mission, directly feeding into a governance structure (LTBT). The focus on 'economic diffusion' and 'resilience' moves beyond model alignment to systemic societal impacts, a shift from the narrower technical focus of earlier safety agendas.</p>
+<h2>Why It Matters</h2>
+<p>This agenda is significant because it operationalizes the concept of 'monitoring' for frontier AI risks at scale. For the AI Security field, it provides a potential goldmine of real-world data on how LLMs are actually being used and abused, which is critical for grounding red-teaming and evaluation frameworks in reality. For SOC and endpoint security, the explicit link to 'cyber threat analyses' and 'Project Glasswing' indicates that systemic defenses against AI-enabled attacks are becoming a first-class concern at the highest levels of frontier labs. The focus on 'resilience' rather than just prevention signals a mature understanding of the threat landscape.</p>
+<h2>Critical Take</h2>
+<p>The agenda is ambitious but lacks concrete methodological details. The promise of 'sharing granular data' is vague; the actual utility for external researchers depends on the data's structure, privacy safeguards, and release cadence. There is a potential conflict of interest: TAI is funded by and embedded within Anthropic, which may bias research questions or limit publication of findings that are commercially sensitive. The 'AI systems in the wild' pillar is promising but currently underspecified compared to the economic diffusion pillar. The claim of being an 'early warning signal' needs to be validated against independent benchmarks.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>The first batch of granular data releases from the Economic Index: What specific metrics (e.g., task-level substitution rates, sector-specific adoption curves) are shared?</li>
+<li>Publication of the first 'cyber threat analysis' and its integration with Project Glasswing: What novel attack vectors are identified?</li>
+<li>Any research output on 'AI systems in the wild' that documents real-world jailbreaks or agent misalignment incidents.</li>
+<li>The evolution of the LTBT's decisions based on TAI findings: Will it lead to concrete product changes (e.g., deployment gating, capability restrictions)?</li>
+<li>The profile and output of the first cohort of 'Anthropic Fellows'.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>TAI将利用Anthropic内部数据研究AI在现实世界中的影响，涵盖四大支柱：经济扩散、威胁与韧性、现实世界中的AI系统以及AI驱动的研发。</li>
+<li>他们将以更高的频率发布来自Anthropic经济指数的细粒度数据，重点关注劳动力影响和AI使用情况。</li>
+<li>对“现实世界中的AI系统”的研究将调查已部署系统涌现出的新威胁，包括双重用途能力。</li>
+<li>TAI将分享AI工具如何加速Anthropic自身的研发，并探讨对递归自我改进的影响。</li>
+<li>研究结果将为Anthropic的长期利益信托基金（LTBT）和外部政策决策提供信息，包括为Project Glasswing等计划提供的网络威胁分析。</li>
+<li>该议程被描述为“活的”，并可根据反馈和新证据进行修订。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>与大多数在外部或开源模型上进行的AI安全研究不同，TAI的方法独特之处在于其来自前沿实验室内部的“内部人士”视角。这与以往依赖合成基准或事后分析的研究形成对比。它也与典型的企业透明度报告不同，因为它明确地定位为一个以公共利益为使命的研究机构，并直接服务于治理结构（LTBT）。对“经济扩散”和“韧性”的关注超越了模型对齐，转向了系统性的社会影响，这是对早期安全议程更狭窄的技术焦点的一种转变。</p>
+<h2>重要性</h2>
+<p>这一议程意义重大，因为它将大规模监控前沿AI风险的概念付诸实践。对于AI安全领域而言，它提供了一个关于大语言模型实际如何被使用和滥用的潜在金矿般的真实世界数据，这对于将红队测试和评估框架建立在现实基础上至关重要。对于SOC和终端安全而言，与“网络威胁分析”和“Project Glasswing”的明确联系表明，针对AI驱动攻击的系统性防御正成为前沿实验室最高层的一级关注事项。对“韧性”而非仅仅预防的关注，标志着对威胁态势的成熟理解。</p>
+<h2>批判性视角</h2>
+<p>该议程雄心勃勃，但缺乏具体的方法论细节。“共享细粒度数据”的承诺较为模糊；对外部研究人员的实际效用取决于数据的结构、隐私保护措施和发布频率。存在潜在的利益冲突：TAI由Anthropic资助并嵌入其中，这可能会使研究问题产生偏差，或限制发布具有商业敏感性的发现。与“经济扩散”支柱相比，“现实世界中的AI系统”支柱虽然前景广阔，但目前定义不够明确。其作为“早期预警信号”的说法需要通过与独立基准的对比来验证。</p>
+<h2>后续关注</h2>
+<ul>
+<li>经济指数的首批细粒度数据发布：共享了哪些具体指标（例如，任务级替代率、特定行业采用曲线）？</li>
+<li>首次“网络威胁分析”的发布及其与Project Glasswing的整合：识别出了哪些新型攻击向量？</li>
+<li>任何关于“现实世界中的AI系统”的研究成果，记录了现实世界中的越狱或Agent失调事件。</li>
+<li>基于TAI研究结果的LTBT决策的演变：是否会导致具体的产品变更（例如，部署门控、能力限制）？</li>
+<li>首批“Anthropic研究员”的背景和研究成果。</li>
+</ul>
+        </div>
         
 
         

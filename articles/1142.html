@@ -70,6 +70,14 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For a system security researcher focused on software supply-chain security, this incident underscores the persistent risk of credential theft from developer endpoints, even at well-resourced organizations. The attack vector—compromised employee devices—bypasses many network-level defenses and directly targets the integrity of shared dependencies (npm packages). The response (certificate rotation, additional controls) is standard but highlights the need for stronger endpoint isolation and hardware-backed credential management for developers.</p>
+        <p class="lang-zh">对于专注于软件供应链安全的系统安全研究人员来说，此事件突显了即使是在资源充足的组织中，开发者端点凭证被盗的持续风险。攻击向量——员工设备被入侵——绕过了许多网络级防御，直接针对共享依赖项（npm包）的完整性。响应措施（证书轮换、额外控制）是标准的，但凸显了为开发者提供更强的端点隔离和硬件支持的凭证管理的必要性。</p>
+      </div>
+      
+
+      
       
 
       
@@ -77,11 +85,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>OpenAI disclosed a security incident involving the TanStack npm library, part of the broader Mini Shai-Hulud supply chain attack. Two employee devices were compromised, leading to limited credential exfiltration from internal source code repositories. No evidence of user data, production system, or intellectual property compromise was found. As a precaution, OpenAI is rotating code-signing certificates, requiring macOS users to update apps by June 12, 2026. The company has implemented additional security controls and is coordinating with platform providers to prevent unauthorized certificate use. This incident highlights the growing threat of supply chain attacks targeting shared software dependencies.</p></div>
+          <div class="lede"><p>OpenAI disclosed a supply chain attack on the TanStack npm library, where two employee devices were compromised, leading to limited credential exfiltration from internal source code repositories. No user data or production systems were affected, but code-signing certificates are being rotated as a precaution.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>OpenAI披露了一起涉及TanStack npm库的安全事件，该事件是更广泛的Mini Shai-Hulud供应链攻击的一部分。两台员工设备被入侵，导致内部源代码仓库中的有限凭据被窃取。没有证据表明用户数据、生产系统或知识产权受损。作为预防措施，OpenAI正在轮换代码签名证书，要求macOS用户在2026年6月12日前更新应用。公司已实施额外的安全控制，并与平台提供商协调以防止证书被滥用。此事件凸显了针对共享软件依赖的供应链攻击威胁日益增长。</p></div>
+          <div class="lede"><p>OpenAI披露了一起针对TanStack npm库的供应链攻击，两名员工设备被入侵，导致内部源代码仓库的凭证被有限窃取。用户数据和生成系统未受影响，但作为预防措施，代码签名证书正在轮换。</p></div>
         </div>
 
         
