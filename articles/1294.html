@@ -154,11 +154,7 @@ file paths. Then an Auditor Agent audits based on issue categories and severity 
 <p>There is no existing automated framework that can systematically audit diverse benchmark tasks across domains for hidden environment dependencies, specification gaps, and evaluation logic issues. Human annotation is too slow and unreliable for the scale and complexity of modern benchmarks, and prior automated approaches lack the generality to handle heterogeneous benchmark artifacts.</p>
 <h3>P — Proposal</h3>
 <p>The Auto Benchmark Audit (ABA) framework uses two agentic components: an Evidence Collector Agent that downloads benchmark files and resolves heterogeneous artifacts into a uniform manifest, and an Auditor Agent that audits tasks based on issue categories and severity scales. The key insight is to treat benchmark auditing as a structured agentic pipeline that can detect instruction, environment, and evaluation issues across diverse benchmarks.</p>
-<figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_001.png" alt="Figure 2: The Auto Benchmark Audit pipeline. Given benchmark name and URL, an Evidence Collector Agent downloads necessary files and resolves each
-benchmark’s heterogeneous artifacts into a uniform manifest of
-file paths. Then an Auditor Agent audits based on issue categories and severity scale. Then findings include specific evidences, reasoning and suggested fix." width="967" height="334" style="max-width: min(967px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: The Auto Benchmark Audit pipeline. Given benchmark name and URL, an Evidence Collector Agent downloads necessary files and resolves each
-benchmark’s heterogeneous artifacts into a uniform manifest of
-file paths. Then an Auditor Agent audits based on issue categories and severity scale. Then findings include specific evidences, reasoning and suggested fix.</span><span class="lang-zh">图2：自动基准审计流程。给定基准名称和URL，证据收集代理下载必要文件，并将每个基准的异构工件解析为统一的文件路径清单。然后审计代理根据问题类别和严重性等级进行审计。最终发现包括具体证据、推理和建议修复。</span></figcaption></figure>
+
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
@@ -185,7 +181,29 @@ file paths. Then an Auditor Agent audits based on issue categories and severity 
 </ul>
 <hr />
 <h2>7) Scoring</h2>
-<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_002.png" alt="Figure 4: Issue categories
+per audited benchmark, grouped by domain, for all non-clean static-audit findings. Each finding is one of Instruction, Environment, or Evaluation issues. We present the domain average plus a few specific benchmarks for each domain." width="996" height="382" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4: Issue categories
+per audited benchmark, grouped by domain, for all non-clean static-audit findings. Each finding is one of Instruction, Environment, or Evaluation issues. We present the domain average plus a few specific benchmarks for each domain.</span><span class="lang-zh">图4：每个被审计基准的问题类别，按领域分组，涵盖所有非清洁静态审计发现。每个发现属于指令、环境或评估问题之一。我们展示领域平均值以及每个领域的几个特定基准。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_003.png" alt="Figure 5: Static-vs-trajectory audit comparison on the benchmarks
+audited in both modes. (a) Severity distribution per benchmark at task-level. Each task is counted as a Major task if it has at least one Major issue. It is a Minor task if most severe finding is Minor. (b) Agreement between the two modes on shared tasks." width="996" height="397" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5: Static-vs-trajectory audit comparison on the benchmarks
+audited in both modes. (a) Severity distribution per benchmark at task-level. Each task is counted as a Major task if it has at least one Major issue. It is a Minor task if most severe finding is Minor. (b) Agreement between the two modes on shared tasks.</span><span class="lang-zh">图5：在两种模式下审计的基准的静态与轨迹审计比较。(a) 每个基准在任务级别的严重性分布。如果某个任务至少有一个主要问题，则计为主要任务；如果最严重的发现是次要问题，则计为次要任务。(b) 两种模式在共享任务上的一致性。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_004.png" alt="Figure 6: Frontier benchmark collection funnel. Five recent
+frontier model release reports (Opus 4.7, GPT-5.4, GLM-5.1,
+Kimi K2.6, MiniMax M2.7) are unioned, normalized, and filtered
+to the set of benchmarks cited by at least two releases, with
+manual removals for duplicates and off-scope task types." width="3803" height="1044" style="max-width: min(3803px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 6: Frontier benchmark collection funnel. Five recent
+frontier model release reports (Opus 4.7, GPT-5.4, GLM-5.1,
+Kimi K2.6, MiniMax M2.7) are unioned, normalized, and filtered
+to the set of benchmarks cited by at least two releases, with
+manual removals for duplicates and off-scope task types.</span><span class="lang-zh">图6：前沿基准收集漏斗。五个近期前沿模型发布报告（Opus 4.7、GPT-5.4、GLM-5.1、Kimi K2.6、MiniMax M2.7）被合并、归一化并过滤，得到至少被两个发布引用的基准集，并手动移除重复和范围外的任务类型。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_005.png" alt="Figure 7: Mean per-model score change (in percentage points) after
+excluding audit-flagged tasks, on the five benchmarks for which
+per-instance leaderboard data are available. (a) removes tasks
+flagged at Minor or Major severity (severity ≥ 1 \geq 1 ); (b) removes
+only tasks flagged Major (severity ≥ 2 \geq 2 ). Bars average over
+all models reported on each benchmark." width="996" height="448" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 7: Mean per-model score change (in percentage points) after
+excluding audit-flagged tasks, on the five benchmarks for which
+per-instance leaderboard data are available. (a) removes tasks
+flagged at Minor or Major severity (severity ≥ 1 \geq 1 ); (b) removes
+only tasks flagged Major (severity ≥ 2 \geq 2 ). Bars average over
+all models reported on each benchmark.</span><span class="lang-zh">图7：在排除审计标记的任务后，每个模型的平均分数变化（百分点），基于五个有每实例排行榜数据的基准。(a) 移除标记为次要或主要严重性（严重性 ≥ 1）的任务；(b) 仅移除标记为主要严重性（严重性 ≥ 2）的任务。柱状图平均了每个基准上报告的所有模型。</span></figcaption></figure>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
@@ -223,11 +241,7 @@ file paths. Then an Auditor Agent audits based on issue categories and severity 
 <li>[ ] 将ABA集成到基准开发流程中，作为持续集成步骤，在公开发布前捕获问题。</li>
 <li>[ ] 扩展ABA的评分标准以涵盖更多问题类别，如数据泄露或动态基准中的时间依赖。</li>
 <li>[ ] 探索使用ABA的轨迹模式审计基准任务之外的智能体行为，例如在真实世界部署场景中。</li>
-</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_001.png" alt="Figure 2: The Auto Benchmark Audit pipeline. Given benchmark name and URL, an Evidence Collector Agent downloads necessary files and resolves each
-benchmark’s heterogeneous artifacts into a uniform manifest of
-file paths. Then an Auditor Agent audits based on issue categories and severity scale. Then findings include specific evidences, reasoning and suggested fix." width="967" height="334" style="max-width: min(967px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: The Auto Benchmark Audit pipeline. Given benchmark name and URL, an Evidence Collector Agent downloads necessary files and resolves each
-benchmark’s heterogeneous artifacts into a uniform manifest of
-file paths. Then an Auditor Agent audits based on issue categories and severity scale. Then findings include specific evidences, reasoning and suggested fix.</span><span class="lang-zh">图2：自动基准审计流程。给定基准名称和URL，证据收集代理下载必要文件，并将每个基准的异构工件解析为统一的文件路径清单。然后审计代理根据问题类别和严重性等级进行审计。最终发现包括具体证据、推理和建议修复。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_002.png" alt="Figure 4: Issue categories
+</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_002.png" alt="Figure 4: Issue categories
 per audited benchmark, grouped by domain, for all non-clean static-audit findings. Each finding is one of Instruction, Environment, or Evaluation issues. We present the domain average plus a few specific benchmarks for each domain." width="996" height="382" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4: Issue categories
 per audited benchmark, grouped by domain, for all non-clean static-audit findings. Each finding is one of Instruction, Environment, or Evaluation issues. We present the domain average plus a few specific benchmarks for each domain.</span><span class="lang-zh">图4：每个被审计基准的问题类别，按领域分组，涵盖所有非清洁静态审计发现。每个发现属于指令、环境或评估问题之一。我们展示领域平均值以及每个领域的几个特定基准。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_003.png" alt="Figure 5: Static-vs-trajectory audit comparison on the benchmarks
 audited in both modes. (a) Severity distribution per benchmark at task-level. Each task is counted as a Major task if it has at least one Major issue. It is a Minor task if most severe finding is Minor. (b) Agreement between the two modes on shared tasks." width="996" height="397" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5: Static-vs-trajectory audit comparison on the benchmarks

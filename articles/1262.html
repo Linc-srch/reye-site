@@ -72,8 +72,8 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For AI Security: This demonstrates a concrete, large-scale application of frontier LLMs for automated vulnerability discovery, directly advancing red-teaming and automated evaluation capabilities. The model's ability to find flaws and construct attack chains validates the potential of AI-driven security assessment, but also raises urgent questions about dual-use risks and the need for robust guardrails. For System Security: This represents a paradigm shift in vulnerability research, moving from manual or fuzzer-based discovery to AI-assisted, autonomous analysis at scale. The sheer volume of findings (10k+) and the focus on systemically important open-source software (e.g., WolfSSL) directly impacts the software supply chain and patch management landscape, forcing a re-evaluation of current mitigation and disclosure timelines.</p>
-        <p class="lang-zh">对于 AI 安全：这展示了前沿大语言模型在自动化漏洞发现方面的具体大规模应用，直接推进了红队测试和自动化评估能力。该模型发现漏洞并构建攻击链的能力验证了 AI 驱动安全评估的潜力，但也引发了关于双重用途风险和需要强大护栏的紧迫问题。对于系统安全：这代表了漏洞研究的范式转变，从手动或基于模糊测试的发现转向大规模、自主的 AI 辅助分析。发现的漏洞数量巨大（超过 10,000 个），且重点关注具有系统重要性的开源软件（如 WolfSSL），这直接影响软件供应链和补丁管理格局，迫使重新评估当前的缓解和披露时间表。</p>
+        <p class="lang-en">For AI Security: This demonstrates a paradigm shift from manual red-teaming to automated, large-scale vulnerability discovery by frontier LLMs. The model's ability to autonomously identify flaws and even construct end-to-end attack chains directly validates the core research objective of building automated evaluation frameworks. The 1,726 true positives from 10,000 candidates highlight the need for better automated validation pipelines (e.g., Claw-Eval) to filter noise. For System Security: This is a watershed moment for vulnerability research. The scale (10k flaws in a month) dwarfs traditional human-led efforts. The finding that fixing is harder than finding underscores a new bottleneck: patch management and supply-chain hygiene. The model's success in analyzing source code with a 'security mindset' suggests that AI-assisted vulnerability discovery will become the new baseline, forcing defenders to accelerate patch cycles (as Oracle has done).</p>
+        <p class="lang-zh">对于 AI 安全：这展示了从手动红队测试到由前沿大语言模型驱动的自动化、大规模漏洞发现的范式转变。该模型自主识别漏洞甚至构建端到端攻击链的能力，直接验证了构建自动化评估框架的核心研究目标。从 10,000 个候选漏洞中确认 1,726 个真阳性，凸显了对更好自动化验证流水线（例如 Claw-Eval）以过滤噪音的需求。对于系统安全：这是漏洞研究的一个分水岭时刻。其规模（一个月内发现 10,000 个漏洞）使传统人工主导的努力相形见绌。修复比发现更难这一发现突显了一个新的瓶颈：补丁管理和软件供应链卫生。该模型以‘安全思维’分析源代码的成功表明，AI 辅助的漏洞发现将成为新基线，迫使防御者加速补丁周期（正如 Oracle 所做的那样）。</p>
       </div>
       
 
@@ -84,11 +84,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Anthropic's Project Glasswing, using the Claude Mythos Preview model, has discovered over 10,000 high-severity vulnerabilities in widely-used software, with 1,726 confirmed true positives and 97 already patched upstream.</p></div>
+          <div class="lede"><p>Anthropic's Project Glasswing, using the Claude Mythos Preview model, has uncovered over 10,000 high/critical severity vulnerabilities in widely-used software, with 1,726 confirmed true positives and 97 already patched upstream.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>Anthropic 的 Project Glasswing 利用 Claude Mythos Preview 模型，在广泛使用的软件中发现了超过 10,000 个高危漏洞，其中 1,726 个被确认为真阳性，97 个已被上游修复。</p></div>
+          <div class="lede"><p>Anthropic 的 Project Glasswing 利用 Claude Mythos Preview 模型，在广泛使用的软件中发现了超过 10,000 个高危/严重漏洞，其中 1,726 个被确认为真阳性，97 个已被上游修复。</p></div>
         </div>
 
         
@@ -96,58 +96,58 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>Anthropic's Project Glasswing, using Claude Mythos Preview, found 10,000+ high/critical severity vulnerabilities.</li>
-<li>6,202 flaws impact 1,000+ open-source projects; 1,726 are confirmed true positives; 1,094 are high/critical.</li>
-<li>One critical flaw is in WolfSSL (CVE-2026-5194, CVSS 9.1) allowing certificate forgery.</li>
+<li>Anthropic's Project Glasswing discovered over 10,000 high/critical severity vulnerabilities in systemically important software.</li>
+<li>6,202 flaws impact over 1,000 open-source projects; 1,726 are confirmed true positives; 1,094 are high/critical.</li>
+<li>One critical flaw found: WolfSSL CVE-2026-5194 (CVSS 9.1) allowing certificate forgery.</li>
 <li>97 findings have been patched upstream; 88 advisories issued.</li>
-<li>The model can turn vulnerabilities into end-to-end attack chains.</li>
-<li>A partner bank used the model to prevent a $1.5M fraudulent wire transfer.</li>
-<li>Anthropic urges shorter patch cycles and has launched a Cyber Verification Program for legitimate security use.</li>
-<li>The model is not publicly released due to misuse concerns, similar to OpenAI's GPT-5.5-Cyber.</li>
+<li>Claude Mythos Preview is described as 'substantially better than prior models' at finding vulnerability candidates and adept at analyzing source code with a security mindset.</li>
+<li>The model can also turn vulnerabilities into end-to-end attack chains.</li>
+<li>Anthropic urges shorter patch cycles; Oracle has already shifted to monthly patches.</li>
+<li>Anthropic launched a Cyber Verification Program for legitimate security use without guardrails, similar to OpenAI's Daybreak.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>Prior work in AI-assisted vulnerability discovery was largely academic or limited to specific bug classes (e.g., buffer overflows via fuzzing). This is a production-scale deployment by a major AI company, yielding thousands of validated, high-severity findings across a broad range of real-world software in a short timeframe. It contrasts with traditional fuzzing by being source-code-aware and capable of constructing full attack chains, not just crashing inputs. It also differs from prior LLM-based code analysis by demonstrating autonomous, end-to-end exploitation capability.</p>
+<p>Prior AI-assisted vulnerability discovery (e.g., fuzzing, static analysis tools) was largely semi-automated and required significant human effort to triage. This marks a leap to fully autonomous, large-scale discovery by a frontier LLM. The scale (10k in a month) and the model's ability to construct attack chains from raw findings are unprecedented. It contrasts with earlier red-teaming efforts that focused on single models or small codebases; here the target is the global software supply chain.</p>
 <h2>Why It Matters</h2>
-<p>This signals a fundamental shift in the vulnerability landscape. The ability to autonomously discover and weaponize vulnerabilities at scale will dramatically compress the window between discovery and exploitation. For defenders, it forces a move to much faster patch cycles and proactive hardening. For the security research community, it validates AI as a primary tool for vulnerability research, but also highlights the urgent need for defensive AI and formal verification to keep pace. The dual-use dilemma is now a concrete, near-term problem.</p>
+<p>For AI Security: It validates that frontier LLMs can serve as powerful, scalable red-teaming tools for real-world software, not just LLM safety. This opens a new research axis: using LLMs to secure the AI supply chain itself. For System Security: It signals a fundamental shift in vulnerability research economics. The bottleneck moves from discovery to remediation. Defenders must adopt faster patch cycles and automated validation. The model's success also raises the bar for exploit prevention, as attackers will soon have similar capabilities.</p>
 <h2>Critical Take</h2>
-<p>The article is based on Anthropic's own press release; independent verification of the 1,726 true positives and the model's capabilities is limited. The '10,000 high-severity flaws' headline is inflated by including unverified candidates. The model's performance on closed-source or obfuscated software is not addressed. The claim of preventing a $1.5M fraud is an anecdote, not a controlled experiment. The long-term impact on patch management and the actual reduction in real-world exploitation remain to be seen.</p>
+<p>The 1,726 true positives out of 10,000 candidates (17.3% precision) indicates significant noise; the model may be overcounting or flagging low-impact issues. The claim of 'high/critical severity' for 1,094 flaws needs independent verification. The WolfSSL CVE is a single data point; broader impact across the 1,000 projects is unverified. Anthropic's framing as a 'defensive effort' is self-serving; the same model could be used offensively. The Cyber Verification Program's guardrails and misuse potential remain unclear.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Independent validation of Mythos Preview's true positive rate and false positive rate by third-party researchers.</li>
-<li>The speed and effectiveness of patch deployment by affected open-source projects (e.g., WolfSSL).</li>
-<li>Emergence of similar capabilities in open-source or competitor models (e.g., GPT-5.5-Cyber's results).</li>
-<li>Adoption of shorter patch cycles by major vendors (Oracle's shift is a signal).</li>
-<li>Any public disclosure of misuse or weaponization of similar AI models by threat actors.</li>
-<li>Development of defensive AI systems that can automatically generate and apply patches at a similar pace.</li>
+<li>Independent validation of the 1,094 high/critical severity claims by third-party researchers.</li>
+<li>Adoption of monthly patch cycles by other major vendors (beyond Oracle).</li>
+<li>Public release or leakage of Mythos-class models and subsequent misuse.</li>
+<li>Development of automated patch generation tools to match the discovery rate.</li>
+<li>Emergence of similar capabilities in open-source or adversarial models (e.g., GPT-5.5-Cyber).</li>
+<li>Impact on software supply-chain security practices (SBOM, dependency scanning).</li>
 </ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>Anthropic 的 Project Glasswing 使用 Claude Mythos Preview 发现了超过 10,000 个高危/严重漏洞。</li>
-<li>6,202 个漏洞影响超过 1,000 个开源项目；1,726 个被确认为真阳性；1,094 个为高危/严重。</li>
-<li>其中一个严重漏洞存在于 WolfSSL (CVE-2026-5194, CVSS 9.1)，可导致证书伪造。</li>
-<li>97 个发现已被上游修复；发布了 88 个安全公告。</li>
-<li>该模型能够将漏洞转化为端到端攻击链。</li>
-<li>一家合作银行利用该模型阻止了一笔 150 万美元的欺诈电汇。</li>
-<li>Anthropic 敦促缩短补丁周期，并启动了面向合法安全用途的 Cyber Verification Program。</li>
-<li>由于担心滥用，该模型尚未公开发布，类似于 OpenAI 的 GPT-5.5-Cyber。</li>
+<li>Anthropic 的 Project Glasswing 在系统重要性软件中发现了超过 10,000 个高危/严重漏洞。</li>
+<li>其中 6,202 个漏洞影响超过 1,000 个开源项目；1,726 个被确认为真阳性；1,094 个为高危/严重。</li>
+<li>发现的一个关键漏洞：WolfSSL CVE-2026-5194（CVSS 9.1），允许证书伪造。</li>
+<li>已有 97 个发现被上游修复；发布了 88 份安全公告。</li>
+<li>Claude Mythos Preview 被描述为在发现漏洞候选方面‘显著优于之前的模型’，并且擅长以安全思维分析源代码。</li>
+<li>该模型还能将漏洞转化为端到端攻击链。</li>
+<li>Anthropic 敦促缩短补丁周期；Oracle 已转向月度补丁。</li>
+<li>Anthropic 启动了网络验证计划，允许在无护栏的情况下进行合法的安全用途，类似于 OpenAI 的 Daybreak。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>以往 AI 辅助漏洞发现的工作主要停留在学术层面，或局限于特定漏洞类型（例如通过模糊测试发现缓冲区溢出）。这是由一家主要 AI 公司进行的生产级部署，在短时间内从大量真实世界软件中发现了数千个经过验证的高危漏洞。它与传统模糊测试的区别在于能够理解源代码并构建完整的攻击链，而不仅仅是产生崩溃输入。它也与之前基于大语言模型的代码分析不同，展示了自主的、端到端的利用能力。</p>
+<p>之前的 AI 辅助漏洞发现（例如模糊测试、静态分析工具）大多是半自动化的，需要大量人工进行分类。这标志着向由前沿大语言模型驱动的全自主、大规模发现的飞跃。其规模（一个月内 10,000 个）以及模型从原始发现构建攻击链的能力是前所未有的。这与早期专注于单个模型或小型代码库的红队测试工作形成对比；这里的目标是全球软件供应链。</p>
 <h2>重要性</h2>
-<p>这标志着漏洞格局的根本性转变。大规模自主发现和武器化漏洞的能力将极大地压缩从发现到利用的时间窗口。对于防御者而言，这迫使他们转向更快的补丁周期和主动加固。对于安全研究社区，这验证了 AI 作为漏洞研究主要工具的能力，但也凸显了防御性 AI 和形式化验证需要迎头赶上的紧迫性。双重用途困境现在是一个具体的、近在眼前的问题。</p>
+<p>对于 AI 安全：它验证了前沿大语言模型可以作为强大、可扩展的红队测试工具用于现实世界的软件，而不仅仅是 LLM 安全。这开辟了一个新的研究轴：使用 LLM 来保护 AI 供应链本身。对于系统安全：它标志着漏洞研究经济学的根本性转变。瓶颈从发现转移到修复。防御者必须采用更快的补丁周期和自动化验证。该模型的成功也提高了漏洞利用预防的门槛，因为攻击者很快将拥有类似的能力。</p>
 <h2>批判性视角</h2>
-<p>本文基于 Anthropic 自己的新闻稿；对 1,726 个真阳性和模型能力的独立验证有限。'10,000 个高危漏洞'的标题因包含未经验证的候选者而被夸大。该模型在闭源或混淆软件上的性能未被提及。阻止 150 万美元欺诈的说法是轶事，而非受控实验。对补丁管理的长期影响以及实际减少真实世界利用的效果仍有待观察。</p>
+<p>从 10,000 个候选漏洞中确认 1,726 个真阳性（17.3% 的精确率）表明存在显著噪音；该模型可能过度计数或标记了低影响问题。声称 1,094 个漏洞为‘高危/严重’需要独立验证。WolfSSL CVE 是单一数据点；对 1,000 个项目的更广泛影响尚未得到验证。Anthropic 将其描述为‘防御性努力’是利己的；同样的模型可能被用于攻击。网络验证计划的护栏和滥用潜力仍不清楚。</p>
 <h2>后续关注</h2>
 <ul>
-<li>第三方研究人员对 Mythos Preview 的真阳性率和假阳性率的独立验证。</li>
-<li>受影响的开源项目（如 WolfSSL）部署补丁的速度和有效性。</li>
-<li>开源或竞争对手模型（如 GPT-5.5-Cyber 的结果）中出现类似能力。</li>
-<li>主要供应商采用更短的补丁周期（Oracle 的转变是一个信号）。</li>
-<li>威胁行为者滥用或武器化类似 AI 模型的任何公开披露。</li>
-<li>能够以类似速度自动生成和应用补丁的防御性 AI 系统的开发。</li>
+<li>第三方研究人员对 1,094 个高危/严重声明的独立验证。</li>
+<li>其他主要供应商（除 Oracle 外）采用月度补丁周期。</li>
+<li>Mythos 类模型的公开发布或泄露以及随后的滥用。</li>
+<li>开发自动化补丁生成工具以匹配发现速度。</li>
+<li>在开源或对抗性模型（例如 GPT-5.5-Cyber）中出现类似能力。</li>
+<li>对软件供应链安全实践（SBOM、依赖扫描）的影响。</li>
 </ul>
         </div>
         

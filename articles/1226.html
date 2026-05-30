@@ -70,6 +70,12 @@
       </header>
 
       
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For an AI security researcher focused on red-teaming and alignment, this team's work provides crucial ground-truth data on how models are actually used and misused in the wild, directly informing the design of realistic jailbreak benchmarks (e.g., FinSafetyBench) and temporal safety evaluations. The 'Values in the wild' study offers empirical evidence for how models express values contextually, which is directly relevant to detecting alignment faking (e.g., Tatemae) and designing representation interventions (e.g., MARI) that must account for context-dependent value expression. The agent autonomy measurement work is foundational for building runtime security frameworks like ClawGuard.</p>
+        <p class="lang-zh">对于专注于红队测试和对齐的人工智能安全研究员来说，该团队的工作提供了关于模型在现实世界中如何被实际使用和滥用的关键真实数据，直接为设计现实的越狱基准测试（如 FinSafetyBench）和时序安全评估提供了依据。'野外的价值观'研究为模型如何根据上下文表达价值观提供了实证证据，这与检测伪装对齐（如 Tatemae）以及设计必须考虑上下文相关价值表达的表征干预（如 MARI）直接相关。智能体自主性测量工作为构建像 ClawGuard 这样的运行时安全框架奠定了基础。</p>
+      </div>
+      
 
       
 
@@ -78,13 +84,66 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Anthropic's Societal Impacts team studies how AI is used in the real world, focusing on alignment, economic impact, interpretability, and sociotechnical concerns. They conduct experiments, training methods, and evaluations to understand AI usage, misuse, and future risks. Key studies include a large-scale qualitative survey of 81,000 Claude users, analysis of AI's effect on software development, and a taxonomy of values expressed in real-world language model interactions. The team emphasizes policy-relevant research to inform better AI governance and safety outcomes.</p></div>
+          <div class="lede"><p>Anthropic's Societal Impacts team conducts large-scale empirical studies (e.g., 81,000-user survey, 700,000-interaction value analysis) to understand real-world AI usage, misuse, and value alignment, producing policy-relevant technical research.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>Anthropic的Societal Impacts团队研究AI在实际世界中的应用，关注对齐、经济影响、可解释性和社会技术问题。他们通过实验、训练方法和评估来理解AI的使用、滥用及未来风险。关键研究包括对81,000名Claude用户的大规模定性调查、AI对软件开发的影响分析，以及实际语言模型交互中价值观的分类。团队强调政策相关的研究，以促进更好的AI治理和安全结果。</p></div>
+          <div class="lede"><p>Anthropic 的社会影响团队通过大规模实证研究（例如 81,000 名用户调查、700,000 次交互的价值分析）来理解现实世界中 AI 的使用、滥用和价值对齐，产出具有政策相关性的技术研究。</p></div>
         </div>
 
+        
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>Conducted the largest multilingual qualitative study on AI usage with ~81,000 Claude.ai users.</li>
+<li>Analyzed 700,000 real-world interactions to create the first large-scale empirical taxonomy of AI values.</li>
+<li>Developed 'Anthropic Interviewer' for automated, large-scale qualitative interviews.</li>
+<li>Published research on measuring AI agent autonomy in practice.</li>
+<li>Produced reports on AI's impact on software development and education.</li>
+<li>Focuses on policy-relevant technical research bridging lab findings and real-world deployment.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>Unlike most AI safety research that focuses on synthetic benchmarks or theoretical attacks, this team grounds its work in massive-scale, real-world observational data. This contrasts with typical red-teaming that uses crafted prompts; here, the data reveals how users naturally interact with and potentially misuse models. The 'Values in the wild' study provides a dynamic, context-dependent view of alignment, moving beyond static value taxonomies used in prior alignment research.</p>
+<h2>Why It Matters</h2>
+<p>This work is critical for bridging the gap between controlled lab evaluations and unpredictable real-world deployment. The empirical data on usage patterns directly informs the creation of more ecologically valid red-teaming benchmarks and safety evaluations. The agent autonomy measurement framework is essential for developing runtime security for autonomous agents. The value expression analysis provides a baseline for detecting deceptive alignment and calibrating model trustworthiness.</p>
+<h2>Critical Take</h2>
+<p>The studies rely on self-reported user data and observed interactions within a single platform (Claude.ai), which may not generalize to other models or deployment contexts. The 'Values in the wild' analysis captures expressed values, not necessarily the model's internal alignment state. The policy relevance claim is strong but the direct translation of these findings into concrete, formal safety guarantees (e.g., LTLf-based guardrails) remains unverified. The agent autonomy measurement methodology is not yet publicly detailed.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Publication of the full 'Measuring AI agent autonomy in practice' methodology and results.</li>
+<li>Follow-up studies on how the identified usage patterns correlate with specific jailbreak or misuse incidents.</li>
+<li>Integration of the 'Values in the wild' taxonomy into automated red-teaming frameworks (e.g., Security Cube).</li>
+<li>Release of datasets derived from these studies for the broader research community.</li>
+<li>Development of policy recommendations based on the agent autonomy findings.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>对约 81,000 名 Claude.ai 用户进行了关于 AI 使用的最大规模多语言定性研究。</li>
+<li>分析了 700,000 次真实世界交互，创建了首个大规模 AI 价值观实证分类体系。</li>
+<li>开发了用于自动化、大规模定性访谈的 'Anthropic Interviewer' 工具。</li>
+<li>发表了关于在实践中测量 AI 智能体自主性的研究。</li>
+<li>发布了关于 AI 对软件开发和教育工作影响的报告。</li>
+<li>专注于连接实验室发现与现实世界部署的、具有政策相关性的技术研究。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>与大多数专注于合成基准测试或理论攻击的人工智能安全研究不同，该团队将其工作建立在大规模、真实世界的观测数据之上。这与使用精心设计的提示词进行典型红队测试形成对比；这里的数据揭示了用户如何自然地与模型交互并可能滥用模型。'野外的价值观'研究提供了动态的、依赖于上下文的对齐视角，超越了先前对齐研究中使用的静态价值观分类体系。</p>
+<h2>重要性</h2>
+<p>这项工作对于弥合受控实验室评估与不可预测的现实世界部署之间的差距至关重要。关于使用模式的实证数据直接为创建更具生态效度的红队测试基准和安全评估提供了依据。智能体自主性测量框架对于开发自主智能体的运行时安全至关重要。价值表达分析为检测欺骗性对齐和校准模型可信度提供了基线。</p>
+<h2>批判性视角</h2>
+<p>这些研究依赖于用户在单一平台（Claude.ai）上的自我报告数据和观察到的交互，这可能无法推广到其他模型或部署环境。'野外的价值观'分析捕捉的是表达的价值观，不一定是模型的内部对齐状态。政策相关性的主张很强，但这些发现直接转化为具体、形式化的安全保证（例如基于 LTLf 的安全护栏）仍未得到验证。智能体自主性测量方法尚未公开详细说明。</p>
+<h2>后续关注</h2>
+<ul>
+<li>'在实践中测量 AI 智能体自主性'的完整方法和结果的发布。</li>
+<li>关于已识别的使用模式如何与特定越狱或滥用事件相关联的后续研究。</li>
+<li>将'野外的价值观'分类体系集成到自动化红队测试框架（如 Security Cube）中。</li>
+<li>基于这些研究向更广泛的研究社区发布数据集。</li>
+<li>基于智能体自主性发现制定政策建议。</li>
+</ul>
+        </div>
         
 
       </div>

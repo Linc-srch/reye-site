@@ -72,8 +72,8 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">This incident is a textbook software supply-chain attack targeting the npm ecosystem, a core concern for System Security researchers. It demonstrates a low-sophistication but effective technique: abusing the postinstall hook for arbitrary code execution and using a legitimate cloud service (GitHub) as an exfiltration channel. The attack specifically targets AI tooling data, highlighting a new and valuable attack surface — the local storage of AI assistants. For researchers focused on OS & Kernel Security and Isolation & Containment, this underscores the need for stronger sandboxing and filesystem access controls for developer tools and AI applications, as they often have broad access to user data.</p>
-        <p class="lang-zh">此事件是针对 npm 生态系统的典型软件供应链攻击，是系统安全研究人员的核心关注点。它展示了一种低复杂度但有效的技术：滥用 postinstall 钩子执行任意代码，并使用合法云服务（GitHub）作为外泄通道。该攻击专门针对 AI 工具数据，突显了一个新的、有价值的攻击面——AI 助手的本地存储。对于专注于操作系统与内核安全以及隔离与容器化的研究人员来说，这强调了为开发者工具和 AI 应用程序实施更强的沙箱和文件系统访问控制的必要性，因为它们通常对用户数据拥有广泛的访问权限。</p>
+        <p class="lang-en">For a system security researcher focused on software supply-chain security, this incident is a textbook example of a low-sophistication, high-impact supply-chain attack targeting the npm ecosystem. The malware's use of a hardcoded GitHub token and its sloppy OPSEC (leaking the token) highlights that the barrier to entry for creating functional, data-stealing malware has dropped dramatically, likely due to AI-assisted coding. This shifts the threat landscape: we now face a higher volume of 'sloppy' but effective malware that exploits trusted distribution channels (npm) and developer workflows (postinstall scripts). The attack also demonstrates a novel targeting vector—AI application user data directories—which expands the attack surface for supply-chain compromises.</p>
+        <p class="lang-zh">对于专注于软件供应链安全的系统安全研究员来说，此事件是 npm 生态系统中一次低技术门槛、高影响力的供应链攻击的典型案例。恶意软件使用了硬编码的 GitHub token 且操作安全（OPSEC）极差（泄露了 token），这突显了创建功能性数据窃取恶意软件的准入门槛已大幅降低，很可能是由于 AI 辅助编码。这改变了威胁格局：我们现在面临大量‘粗糙’但有效的恶意软件，它们利用受信任的分发渠道（npm）和开发者工作流（postinstall 脚本）。该攻击还展示了一个新的攻击向量——AI 应用用户数据目录——这扩大了供应链攻击的攻击面。</p>
       </div>
       
 
@@ -84,11 +84,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>A malicious npm package named 'mouse5212-super-formatter' was discovered exfiltrating files from the Claude AI user data directory (/mnt/user-data) to a GitHub repository controlled by the attacker. The package used a hardcoded or environment-based GitHub token for authentication and uploaded all files during the postinstall step.</p></div>
+          <div class="lede"><p>A malicious npm package named 'mouse5212-super-formatter' was discovered exfiltrating files from the Claude AI user data directory (/mnt/user-data) to a threat actor-controlled GitHub repository during its postinstall hook.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>发现一个名为 'mouse5212-super-formatter' 的恶意 npm 包，它从 Claude AI 用户数据目录 (/mnt/user-data) 窃取文件，并将其上传到攻击者控制的 GitHub 仓库。该包在 postinstall 阶段使用硬编码或环境中的 GitHub 令牌进行认证并上传所有文件。</p></div>
+          <div class="lede"><p>一个名为 'mouse5212-super-formatter' 的恶意 npm 包被发现利用 postinstall 钩子，将 Claude AI 用户数据目录 (/mnt/user-data) 中的文件窃取到攻击者控制的 GitHub 仓库。</p></div>
         </div>
 
         
@@ -96,52 +96,50 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>Package name: <code>mouse5212-super-formatter</code> on npm.</li>
-<li>Target: <code>/mnt/user-data</code> directory used by Anthropic's Claude AI.</li>
-<li>Exfiltration method: Authenticates to GitHub (via hardcoded or env token) and uploads all files recursively to a threat-controlled GitHub repo.</li>
-<li>Trigger: <code>postinstall</code> npm script hook.</li>
-<li>Downloads: ~676 times; GitHub account created hours before first malicious version.</li>
-<li>Attacker OPSEC failure: Hardcoded GitHub token leaked in the package, suggesting AI-generated malware with poor operational security.</li>
-<li>Campaign name: Malware-Slop.</li>
+<li>Package name: mouse5212-super-formatter.</li>
+<li>Targets: /mnt/user-data directory (Claude AI user data).</li>
+<li>Mechanism: Uses npm postinstall script to authenticate to GitHub (hardcoded or env token), creates a repo, and recursively uploads all files.</li>
+<li>Estimated downloads: 676.</li>
+<li>Attacker OPSEC failure: Hardcoded GitHub token leaked in the package, suggesting AI-generated malware.</li>
+<li>GitHub account created hours before the first malicious version was uploaded.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>This attack follows a well-established pattern of malicious npm packages using postinstall scripts for data theft or cryptomining. However, it is novel in its specific targeting of AI application data (Claude's user directory) and its use of GitHub as both an authentication mechanism and an exfiltration endpoint. The sloppy OPSEC (hardcoded token) contrasts with more sophisticated supply-chain attacks that use stolen tokens or compromised maintainer accounts, suggesting a lower barrier to entry for attackers leveraging AI code generation.</p>
+<p>This attack is a continuation of the long-standing trend of malicious npm packages using postinstall scripts for data exfiltration (e.g., earlier typosquatting or dependency confusion attacks). However, it is novel in its specific targeting of an AI application's local data directory, reflecting the growing value of AI-related data. The sloppy OPSEC (leaked token) contrasts with more sophisticated, stealthy supply-chain attacks that use obfuscation or multi-stage payloads. This suggests a new class of 'AI-augmented script kiddie' threat actors who can produce functional malware but lack operational security discipline.</p>
 <h2>Why It Matters</h2>
-<p>For System Security researchers, this matters because it highlights a growing trend: the convergence of software supply-chain attacks with AI application security. The <code>/mnt/user-data</code> directory represents a high-value target containing sensitive user prompts, outputs, and potentially proprietary code. It also demonstrates that even low-sophistication attacks can be effective if they target a valuable data source and exploit a widely-used distribution mechanism (npm). This reinforces the importance of runtime monitoring, filesystem access control, and the principle of least privilege for development and AI tools.</p>
+<p>This incident underscores a critical vulnerability in the software supply chain: the npm registry remains a viable vector for data theft, and the barrier to entry for creating such malware is now negligible. For system security, it highlights that developer machines and CI/CD pipelines are prime targets, and that AI application data (e.g., Claude user files) is a high-value asset. The sloppy OPSEC is a double-edged sword: it makes attribution easier but also signals a flood of low-quality, high-volume attacks that will overwhelm traditional detection mechanisms. It also validates the need for runtime monitoring of postinstall scripts and stricter npm package validation.</p>
 <h2>Critical Take</h2>
-<p>The article is based on a single vendor report (OX Security) and the analysis is straightforward. The 'AI-generated malware' claim is speculative, inferred from the poor OPSEC rather than confirmed. The actual impact (number of compromised systems) is unknown, as download counts do not equal installs. The attack is technically unsophisticated and easily detectable by basic security measures (e.g., monitoring outbound connections, scanning for hardcoded tokens).</p>
+<p>The report's claim that the malware is 'AI-generated' is circumstantial (based on OPSEC failure) and not definitively proven. The actual impact (how many real installs vs. downloads) is unclear. The attack is technically trivial—a simple file upload script—and does not represent a novel exploitation technique. The hype around 'AI slop' may overshadow the more fundamental issue: the npm registry's lack of effective pre-publication scanning for malicious postinstall behavior. The hardcoded token leak is a significant attribution signal, but the attacker's identity remains unknown.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Increase in similar 'sloppy' malware targeting AI tool directories (e.g., ChatGPT, Copilot local data).</li>
-<li>npm registry's response and any automated malware blocking improvements.</li>
-<li>Emergence of more sophisticated variants that avoid hardcoded tokens and use stolen or OAuth-based credentials.</li>
-<li>Research into filesystem isolation mechanisms for AI assistants and developer tools (e.g., using containers, sandboxing, or virtualized filesystems).</li>
+<li>Monitor npm for similar packages targeting AI application directories (e.g., ChatGPT, Copilot local data).</li>
+<li>Watch for increased volume of npm packages with suspicious postinstall scripts that authenticate to external services.</li>
+<li>Track if npm registry implements automated scanning for hardcoded tokens or suspicious network calls in postinstall hooks.</li>
+<li>Observe if threat actors improve OPSEC in future AI-generated malware, making detection harder.</li>
 </ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>包名：npm 上的 <code>mouse5212-super-formatter</code>。</li>
-<li>目标：Anthropic 的 Claude AI 使用的 <code>/mnt/user-data</code> 目录。</li>
-<li>外泄方法：通过硬编码或环境变量中的令牌认证 GitHub，并将所有文件递归上传到攻击者控制的 GitHub 仓库。</li>
-<li>触发点：npm 的 <code>postinstall</code> 脚本钩子。</li>
-<li>下载量：约 676 次；GitHub 账户在首个恶意版本上传前几小时创建。</li>
-<li>攻击者 OPSEC 失败：包中泄露了硬编码的 GitHub 令牌，表明这是 AI 生成的恶意软件，操作安全性差。</li>
-<li>活动名称：Malware-Slop。</li>
+<li>包名：mouse5212-super-formatter。</li>
+<li>目标：/mnt/user-data 目录（Claude AI 用户数据）。</li>
+<li>机制：利用 npm postinstall 脚本向 GitHub 进行身份验证（使用硬编码或环境变量中的 token），创建仓库，并递归上传所有文件。</li>
+<li>估计下载量：676 次。</li>
+<li>攻击者 OPSEC 失败：包中泄露了硬编码的 GitHub token，暗示恶意软件由 AI 生成。</li>
+<li>GitHub 账户在首个恶意版本上传前几小时创建。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>此次攻击遵循了恶意 npm 包利用 postinstall 脚本进行数据窃取或挖矿的既定模式。但其新颖之处在于专门针对 AI 应用数据（Claude 的用户目录），并使用 GitHub 同时作为认证机制和外泄端点。其糟糕的 OPSEC（硬编码令牌）与使用窃取令牌或入侵维护者账户的更复杂供应链攻击形成对比，表明利用 AI 代码生成的攻击者入门门槛更低。</p>
+<p>此攻击是恶意 npm 包利用 postinstall 脚本进行数据窃取这一长期趋势的延续（例如早期的域名抢注或依赖混淆攻击）。然而，其新颖之处在于专门针对 AI 应用的本地数据目录，反映了 AI 相关数据日益增长的价值。糟糕的 OPSEC（泄露的 token）与使用混淆或多阶段 payload 的更复杂、隐蔽的供应链攻击形成对比。这表明出现了一类新的‘AI 增强的脚本小子’威胁行为者，他们能够生成功能性的恶意软件，但缺乏操作安全纪律。</p>
 <h2>重要性</h2>
-<p>对系统安全研究人员而言，此事之所以重要，是因为它突显了一个日益增长的趋势：软件供应链攻击与 AI 应用安全的融合。<code>/mnt/user-data</code> 目录是一个高价值目标，包含敏感的用户提示、输出和潜在的专有代码。它还表明，即使是低复杂度的攻击，只要瞄准有价值的数据源并利用广泛使用的分发机制（npm），也能奏效。这强化了运行时监控、文件系统访问控制以及为开发工具和 AI 工具应用最小权限原则的重要性。</p>
+<p>此事件强调了软件供应链中的一个关键漏洞：npm 注册表仍然是数据窃取的有效载体，而创建此类恶意软件的准入门槛现已微不足道。对于系统安全而言，它突显了开发者机器和 CI/CD 管道是主要目标，并且 AI 应用数据（例如 Claude 用户文件）是高价值资产。糟糕的 OPSEC 是一把双刃剑：它使归因更容易，但也预示着大量低质量、高数量的攻击将淹没传统的检测机制。它还验证了对 postinstall 脚本进行运行时监控以及更严格的 npm 包验证的必要性。</p>
 <h2>批判性视角</h2>
-<p>该文章基于单一供应商（OX Security）的报告，分析较为直接。关于‘AI 生成的恶意软件’的说法是推测性的，是基于糟糕的 OPSEC 推断而来，并非确凿证据。实际影响（受感染系统数量）未知，因为下载量不等于安装量。该攻击在技术上并不复杂，很容易被基本的安全措施（例如监控出站连接、扫描硬编码令牌）检测到。</p>
+<p>报告中关于恶意软件是‘AI 生成’的说法是间接证据（基于 OPSEC 失败），并未得到明确证实。实际影响（真实安装次数与下载次数对比）尚不清楚。该攻击在技术上微不足道——一个简单的文件上传脚本——并不代表一种新颖的利用技术。围绕‘AI 垃圾’的炒作可能会掩盖更根本的问题：npm 注册表缺乏对恶意 postinstall 行为的有效预发布扫描。硬编码的 token 泄露是一个重要的归因信号，但攻击者的身份仍然未知。</p>
 <h2>后续关注</h2>
 <ul>
-<li>针对 AI 工具目录（例如 ChatGPT、Copilot 本地数据）的类似‘粗糙’恶意软件的增加。</li>
-<li>npm 注册表的响应以及任何自动恶意软件拦截的改进。</li>
-<li>出现更复杂的变种，避免使用硬编码令牌，转而使用窃取的或基于 OAuth 的凭证。</li>
-<li>针对 AI 助手和开发者工具的文件系统隔离机制的研究（例如使用容器、沙箱或虚拟化文件系统）。</li>
+<li>监控 npm 上针对 AI 应用目录（例如 ChatGPT、Copilot 本地数据）的类似包。</li>
+<li>关注带有可疑 postinstall 脚本（向外部服务进行身份验证）的 npm 包数量是否增加。</li>
+<li>追踪 npm 注册表是否会对 postinstall 钩子中的硬编码 token 或可疑网络调用实施自动扫描。</li>
+<li>观察威胁行为者是否会在未来的 AI 生成恶意软件中改进 OPSEC，使检测更加困难。</li>
 </ul>
         </div>
         

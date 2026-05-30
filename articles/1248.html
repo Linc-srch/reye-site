@@ -68,8 +68,8 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For SOC researchers, this confirms that AI/LLM orchestration tools (Langflow) are now a primary initial access vector for APT groups, directly impacting the threat model for edge-cloud AI deployments. The cascading compromise of downstream SaaS/cloud tokens via a single Langflow exploit is a critical data privacy and supply-chain risk that must be benchmarked against HarmonyOS's AI agent isolation mechanisms. For System Security researchers, the Langflow vulnerability is a textbook case of insecure-by-design (permissive CORS, no CSRF, intentional code-exec endpoint) in a modern AI framework, highlighting the need for memory-safe and formally verified isolation primitives in AI runtimes. The Trend Micro Apex One flaw (CVE-2026-34926) is a classic privilege-escalation path via directory traversal in an on-premise endpoint security product, underscoring that even security software itself is a vulnerable attack surface.</p>
-        <p class="lang-zh">对于 SOC 研究员，这证实了 AI/LLM 编排工具（Langflow）现已成为 APT 组织的主要初始访问向量，直接影响端云 AI 部署的威胁模型。通过单个 Langflow 漏洞利用导致下游 SaaS/云令牌的级联泄露，是一个关键的数据隐私和供应链风险，必须与鸿蒙系统的 AI 智能体隔离机制进行对标。对于系统安全研究员，Langflow 漏洞是现代 AI 框架中典型的不安全设计案例（宽松的 CORS、无 CSRF、设计上允许代码执行的端点），凸显了在 AI 运行时中需要内存安全和形式化验证的隔离原语。Trend Micro Apex One 漏洞（CVE-2026-34926）是通过本地部署端点安全产品中的目录遍历实现的经典权限提升路径，强调了即使是安全软件本身也是一个易受攻击的攻击面。</p>
+        <p class="lang-en">For SOC researchers, this confirms that AI/LLM orchestration frameworks (Langflow) are now a prime initial-access vector for state-sponsored groups, directly impacting the AI security landscape. The cascading compromise of downstream cloud/SaaS tokens via a single Langflow instance is a critical threat model for edge-cloud environments. For System Security researchers, the Trend Micro Apex One vulnerability (CVE-2026-34926) highlights a classic on-premise supply-chain attack: a local admin compromise on the management server leads to agent-wide code injection, underscoring the need for strict server-side access controls and integrity checks in endpoint management platforms.</p>
+        <p class="lang-zh">对于 SOC 研究员，这证实了 AI/LLM 编排框架（Langflow）现已成为国家背景黑客组织的首要初始访问向量，直接影响 AI 安全态势。单个 Langflow 实例被攻陷导致下游云/SaaS 令牌级联泄露，是端云环境中的关键威胁模型。对于系统安全研究员，Trend Micro Apex One 漏洞（CVE-2026-34926）凸显了经典本地供应链攻击：管理服务器上的本地管理员失陷导致代理端代码注入，强调了在终端管理平台中实施严格服务器端访问控制与完整性检查的必要性。</p>
       </div>
       
 
@@ -80,11 +80,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>CISA added two actively exploited vulnerabilities to its KEV catalog: CVE-2025-34291 (Langflow, CVSS 9.4, origin validation error leading to RCE) and CVE-2026-34926 (Trend Micro Apex One, CVSS 6.7, directory traversal allowing code injection). Langflow flaw was exploited by Iranian state group MuddyWater for initial access.</p></div>
+          <div class="lede"><p>CISA added two actively exploited vulnerabilities to its KEV catalog: CVE-2025-34291 (Langflow, CVSS 9.4, origin validation error leading to RCE) and CVE-2026-34926 (Trend Micro Apex One, CVSS 6.7, directory traversal allowing code injection). Langflow flaw was exploited by Iranian state group MuddyWater.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>CISA 将两个已遭积极利用的漏洞加入其 KEV 目录：CVE-2025-34291（Langflow，CVSS 9.4，来源验证错误导致远程代码执行）和 CVE-2026-34926（Trend Micro Apex One，CVSS 6.7，目录遍历允许代码注入）。Langflow 漏洞已被伊朗国家背景黑客组织 MuddyWater 用于初始访问。</p></div>
+          <div class="lede"><p>CISA 将两个已遭积极利用的漏洞加入其 KEV 目录：CVE-2025-34291（Langflow，CVSS 9.4，来源验证错误导致远程代码执行）和 CVE-2026-34926（Trend Micro Apex One，CVSS 6.7，目录遍历允许代码注入）。Langflow 漏洞已被伊朗国家背景黑客组织 MuddyWater 利用。</p></div>
         </div>
 
         
@@ -93,26 +93,24 @@
           <h2>Key Points</h2>
 <ul>
 <li>CISA added CVE-2025-34291 (Langflow, CVSS 9.4) and CVE-2026-34926 (Trend Micro Apex One, CVSS 6.7) to KEV.</li>
-<li>Langflow vulnerability: origin validation error, permissive CORS, lack of CSRF protection, and a code-execution endpoint by design.</li>
-<li>Exploitation of Langflow exposes all sensitive access tokens and API keys, enabling cascading compromise of downstream services.</li>
-<li>MuddyWater (Iranian state-sponsored group) exploited CVE-2025-34291 for initial access.</li>
-<li>Trend Micro Apex One vulnerability: directory traversal allowing pre-authenticated local attacker to modify server key table and inject malicious code to agents.</li>
-<li>Trend Micro confirmed at least one instance of active exploitation in the wild.</li>
+<li>Langflow vulnerability: origin validation error, overly permissive CORS, lack of CSRF protection, and a code-execution-by-design endpoint.</li>
+<li>Exploitation of Langflow exposes all stored API keys and tokens, enabling cascading compromise of downstream services.</li>
+<li>MuddyWater (Iranian state-sponsored group) exploited CVE-2025-34291 for initial access (per Ctrl-Alt-Intel, March 2026).</li>
+<li>Trend Micro Apex One vulnerability: directory traversal allowing malicious code injection into agents; requires prior admin credentials on the server.</li>
 <li>FCEB agencies must patch by June 4, 2026.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>This is a significant escalation: while AI/ML framework vulnerabilities have been disclosed before, this is one of the first clear cases of a state-sponsored APT group weaponizing an AI orchestration tool (Langflow) for initial access, moving AI supply-chain attacks from theoretical to operational. The Trend Micro Apex One flaw is a reminder that on-premise security products remain a persistent attack surface, contrasting with the industry's shift to cloud-native endpoint detection and response (EDR).</p>
+<p>This is a rare public attribution of an AI orchestration framework vulnerability to a state-sponsored APT group (MuddyWater), moving AI security from theoretical risk to confirmed operational threat. Prior Langflow vulnerabilities were mostly researched in academic or bug-bounty contexts. The Trend Micro Apex One flaw is a classic on-premise supply-chain attack vector, contrasting with the cloud-native Langflow attack, showing that both legacy and modern platforms are under active exploitation.</p>
 <h2>Why It Matters</h2>
-<p>For AI Security, this demonstrates that AI orchestration layers are now a prime target for advanced persistent threats, necessitating robust security-by-design (not just bolted-on) for any AI agent framework. For OS/Endpoint Security, it shows that even security software (Apex One) can be a vector for privilege escalation, reinforcing the need for kernel-level isolation and integrity measurement. The cascading token theft from Langflow is a critical data privacy and supply-chain risk that SOC teams must model in their threat intelligence.</p>
+<p>For AI security, this demonstrates that AI agent orchestration layers are now a high-value, actively targeted attack surface, not just a theoretical concern. The cascading token theft model is a new class of supply-chain risk for AI deployments. For endpoint security, the Apex One case reinforces that on-premise management servers remain a critical weak link; a single admin compromise can pivot to mass agent compromise, bypassing endpoint defenses.</p>
 <h2>Critical Take</h2>
-<p>The Langflow CVE-2025-34291 is a design-level flaw (permissive CORS, no CSRF, intentional code-exec endpoint), not a subtle memory corruption bug, making it a 'low-hanging fruit' for attackers. The MuddyWater attribution is based on a single analysis (Ctrl-Alt-Intel) and should be treated with standard attribution confidence caveats. The Trend Micro Apex One flaw requires prior administrative credentials, significantly reducing its practical exploitability in well-secured environments.</p>
+<p>The Langflow CVE-2025-34291 exploit chain (CORS + no CSRF + code execution endpoint) is a basic web security failure, not an advanced AI-specific vulnerability. The hype around 'AI agent security' should be tempered: the root cause is poor web application security hygiene. The MuddyWater attribution relies on a single third-party analysis (Ctrl-Alt-Intel) and may not be independently confirmed. For Trend Micro, the pre-authentication requirement (admin credentials) significantly reduces the real-world exploitability in well-managed environments.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Monitor for additional APT groups adopting AI orchestration tools (Langflow, Ollama, Flowise) as initial access vectors.</li>
-<li>Track CISA KEV additions for other AI/ML framework vulnerabilities (e.g., Ollama OOB read mentioned in sidebar).</li>
-<li>Observe how Langflow and similar projects harden their default configurations (CORS, CSRF, authentication).</li>
-<li>Watch for patch bypasses or incomplete fixes for CVE-2026-34926 in on-premise Apex One deployments.</li>
-<li>Follow Obsidian Security's research for deeper analysis of AI supply-chain attack chains.</li>
+<li>Monitor for additional Langflow CVEs or similar flaws in other AI orchestration tools (e.g., Flowise, Dify, AutoGPT).</li>
+<li>Track MuddyWater's TTPs post-compromise to see if they deploy custom backdoors or use the access for data exfiltration.</li>
+<li>Watch for CISA KEV additions involving AI/ML frameworks as a leading indicator of APT interest.</li>
+<li>Observe Trend Micro's patch adoption rate for on-premise Apex One; slow patching could lead to broader exploitation.</li>
 </ul>
         </div>
         <div class="lang-zh">
@@ -120,26 +118,24 @@
           <h2>要点</h2>
 <ul>
 <li>CISA 将 CVE-2025-34291（Langflow，CVSS 9.4）和 CVE-2026-34926（Trend Micro Apex One，CVSS 6.7）加入 KEV。</li>
-<li>Langflow 漏洞：来源验证错误、宽松的 CORS、缺乏 CSRF 保护以及设计上允许代码执行的端点。</li>
-<li>利用 Langflow 漏洞会暴露所有敏感访问令牌和 API 密钥，导致下游服务级联沦陷。</li>
-<li>MuddyWater（伊朗国家背景黑客组织）利用 CVE-2025-34291 进行初始访问。</li>
-<li>Trend Micro Apex One 漏洞：目录遍历，允许预认证的本地攻击者修改服务器密钥表并向代理注入恶意代码。</li>
-<li>Trend Micro 确认至少发现一例野外积极利用实例。</li>
-<li>FCEB 机构须在 2026 年 6 月 4 日前完成修补。</li>
+<li>Langflow 漏洞：来源验证错误、过度宽松的 CORS、缺少 CSRF 保护以及一个设计上可执行代码的端点。</li>
+<li>利用 Langflow 会暴露所有存储的 API 密钥和令牌，导致下游服务级联失陷。</li>
+<li>MuddyWater（伊朗国家背景黑客组织）利用 CVE-2025-34291 获取初始访问权限（据 Ctrl-Alt-Intel 2026 年 3 月报告）。</li>
+<li>Trend Micro Apex One 漏洞：目录遍历，允许向代理注入恶意代码；需要服务器上的管理员凭据。</li>
+<li>FCEB 机构需在 2026 年 6 月 4 日前完成修补。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>这是一个显著的升级：虽然 AI/ML 框架漏洞此前已有披露，但这是首批明确的国家背景 APT 组织将 AI 编排工具（Langflow）武器化用于初始访问的案例之一，将 AI 供应链攻击从理论推向了实战。Trend Micro Apex One 漏洞则提醒我们，本地部署的安全产品仍然是一个持续存在的攻击面，这与行业向云原生端点检测与响应（EDR）的转变形成对比。</p>
+<p>这是罕见的将 AI 编排框架漏洞归因于国家背景 APT 组织（MuddyWater）的公开案例，将 AI 安全从理论风险推向了已确认的作战威胁。此前 Langflow 漏洞多在学术或漏洞奖励计划中被研究。Trend Micro Apex One 漏洞是经典的本地供应链攻击向量，与云原生的 Langflow 攻击形成对比，表明传统与现代平台均面临积极利用。</p>
 <h2>重要性</h2>
-<p>对于 AI 安全，这表明 AI 编排层现已成为高级持续性威胁的主要目标，任何 AI 智能体框架都需要强健的、内建安全（而非事后附加）的设计。对于操作系统/端点安全，它表明即使是安全软件（Apex One）也可能成为权限提升的向量，强化了内核级隔离和完整性度量的必要性。Langflow 的级联令牌窃取是一个关键的数据隐私和供应链风险，SOC 团队必须在其威胁情报中对此进行建模。</p>
+<p>对于 AI 安全，这表明 AI 智能体编排层现在是一个高价值、被积极攻击的攻击面，而不仅仅是理论上的担忧。级联令牌窃取模型是 AI 部署中一类新的供应链风险。对于终端安全，Apex One 案例强化了本地管理服务器仍然是关键薄弱环节；一次管理员失陷可导致大规模代理失陷，绕过终端防御。</p>
 <h2>批判性视角</h2>
-<p>Langflow 的 CVE-2025-34291 是一个设计层面的缺陷（宽松的 CORS、无 CSRF、设计上允许代码执行的端点），而非微妙的 memory corruption 漏洞，使其成为攻击者的‘低垂果实’。MuddyWater 的归因基于单一分析（Ctrl-Alt-Intel），应遵循标准的归因置信度警告。Trend Micro Apex One 漏洞需要预先拥有管理凭据，这大大降低了其在良好安全环境中的实际可利用性。</p>
+<p>Langflow CVE-2025-34291 的利用链（CORS + 无 CSRF + 代码执行端点）是基本的 Web 安全失败，而非高级的 AI 特有漏洞。对 'AI 智能体安全' 的炒作应有所降温：根本原因是糟糕的 Web 应用安全实践。MuddyWater 的归因仅依赖单一第三方分析（Ctrl-Alt-Intel），可能未经独立确认。对于 Trend Micro，预认证要求（管理员凭据）显著降低了在管理良好环境中的实际可利用性。</p>
 <h2>后续关注</h2>
 <ul>
-<li>监控是否有更多 APT 组织将 AI 编排工具（Langflow、Ollama、Flowise）作为初始访问向量。</li>
-<li>追踪 CISA KEV 目录中其他 AI/ML 框架漏洞的添加情况（例如侧边栏提到的 Ollama OOB 读取）。</li>
-<li>观察 Langflow 及类似项目如何强化其默认配置（CORS、CSRF、身份验证）。</li>
-<li>关注 CVE-2026-34926 在本地部署 Apex One 中是否存在补丁绕过或不完整修复。</li>
-<li>跟进 Obsidian Security 的研究，以获取对 AI 供应链攻击链的更深入分析。</li>
+<li>关注 Langflow 的其他 CVE 或其他 AI 编排工具（如 Flowise、Dify、AutoGPT）中的类似漏洞。</li>
+<li>追踪 MuddyWater 在入侵后的 TTPs，观察其是否部署自定义后门或利用访问权限进行数据窃取。</li>
+<li>关注 CISA KEV 中涉及 AI/ML 框架的添加，作为 APT 兴趣的领先指标。</li>
+<li>观察 Trend Micro 对本地 Apex One 的补丁采用率；补丁缓慢可能导致更广泛的利用。</li>
 </ul>
         </div>
         
