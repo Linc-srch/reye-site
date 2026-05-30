@@ -80,22 +80,7 @@
       
 
       
-      
 
-      
-      <div class="article-hero-figures">
-        
-        <figure class="article-figure article-figure--hero">
-          <img class="article-figure-img" src="figures/1333/fig_012.png" alt="Figure 3: AW online success is treated as the online reference axis, while" loading="eager">
-          
-          <figcaption>
-            <span class="lang-en">Figure 3: AW online success is treated as the online reference axis, while</span>
-            <span class="lang-zh">Figure 3: AW online success 被视为在线参考轴，而</span>
-          </figcaption>
-          
-        </figure>
-        
-      </div>
       
 
       <div class="article-body">
@@ -113,11 +98,11 @@
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — hypertrack</h1>
 <p><strong>Key Takeaways</strong>
-- HyperTrack provides over 16,000 real-world tasks across 674 Chinese mobile apps for VLM-based GUI navigation.
-- Reinforcement-based finetuning (DAPO-style RL) consistently outperforms supervised finetuning, especially in out-of-domain settings.
-- Performance scales approximately linearly with the logarithm of training data size for both SFT and RL.
-- GUIEvalKit is an open-source toolkit enabling unified offline benchmarking of VLMs on GUI navigation tasks.
-- Interaction history and reasoning capabilities significantly influence task completion in mobile GUI navigation.</p>
+- Reinforcement-based finetuning consistently outperforms supervised finetuning for VLM-based GUI navigation, especially in out-of-domain tasks.
+- Data scaling improves both supervised and reinforcement-based finetuning, but reinforcement learning benefits more from larger datasets.
+- HyperTrack provides over 16,000 real-world tasks across 650+ Chinese mobile apps for rigorous evaluation.
+- GUIEvalKit enables unified offline benchmarking of VLMs on mobile GUI navigation tasks.
+- Interaction history and reasoning capabilities significantly influence task completion in VLM agents.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation</li>
@@ -129,52 +114,49 @@
 <li>Abs: https://arxiv.org/abs/2605.27134</li>
 <li>HTML: https://arxiv.org/html/2605.27134v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.27134</li>
-<li><strong>Tags:</strong> vision-language-models, gui-navigation, reinforcement-learning, data-scaling, benchmarking</li>
+<li><strong>Tags:</strong> mobile-gui-navigation, vision-language-models, reinforcement-learning, benchmarking, data-scaling</li>
 <li><strong>Domains:</strong> system_safety</li>
 <li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>This paper systematically studies data scaling, benchmarking, and reasoning for VLM-based mobile GUI agents, introducing a large-scale dataset (HyperTrack) and a unified evaluation toolkit (GUIEvalKit) to show that reinforcement-based finetuning outperforms supervised finetuning, especially in out-of-domain settings.</p>
+<p>This paper introduces HyperTrack and GUIEvalKit to systematically study data scaling, benchmarking, and reasoning for VLM-based mobile GUI navigation, showing that reinforcement-based finetuning outperforms supervised finetuning especially with larger data.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Vision-Language Models (VLMs) have advanced mobile GUI navigation, but existing datasets are small and English-centric, lacking coverage of Chinese apps. The effects of data scaling on agent performance under supervised and reinforcement-based finetuning are poorly understood, and standardized evaluation tools are missing.</p>
+<p>Vision-Language Models (VLMs) have advanced rapidly in mobile GUI navigation, but existing benchmarks are limited in scale and diversity, and the interplay between data scaling and training methods (supervised vs. reinforcement learning) remains underexplored. Prior work lacks standardized toolkits for offline evaluation across diverse apps.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>AITW (Rawles et al., 2023): 715k tasks across 357+ apps, English only, no hierarchical docs.</li>
-<li>AndroidControl (Li et al., 2024): 15k tasks across 833 apps, includes bounding boxes, English.</li>
-<li>AiTZ (Zhang et al., 2024): 2.5k tasks across 70+ apps, includes screen descriptions, English.</li>
-<li>AMEX (Chai et al., 2025): 3k tasks across 192 apps, includes screen descriptions, English.</li>
-<li>GUI Odyssey (Lu et al., 2025a): 8k tasks across 212 apps, includes screen descriptions, English.</li>
-<li>CAGUI (Zhang et al., 2025b): 600 tasks across 22 apps, Chinese, no bounding boxes.</li>
+<li>Existing mobile GUI navigation datasets (e.g., AndroidEnv, AppBuddy) are smaller and often limited to English apps.</li>
+<li>Prior work on VLM agents for GUI tasks (e.g., ScreenAgent, CogAgent) focuses on model architecture rather than systematic scaling and benchmarking.</li>
+<li>Reinforcement learning for GUI agents has been explored but not systematically compared with supervised finetuning under varying data scales.</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Existing mobile GUI datasets are small and predominantly English, limiting evaluation diversity and reproducibility. There is no systematic study of how training data scale affects VLM agents under both supervised and reinforcement-based finetuning, and no standardized toolkit for consistent benchmarking across diverse GUI tasks.</p>
+<p>Current mobile GUI navigation research lacks a large-scale, diverse dataset covering real-world Chinese apps and a unified benchmarking toolkit. Moreover, the effect of training data scale on supervised versus reinforcement-based finetuning has not been systematically studied, particularly for out-of-domain generalization.</p>
 <h3>P — Proposal</h3>
-<p>The authors introduce HyperTrack, a large-scale dataset with over 16,000 real-world tasks across 674 Chinese mobile apps, and GUIEvalKit, an open-source toolkit for unified offline benchmarking. They systematically study data scaling by finetuning UI-TARS-1.5-7B with SFT and DAPO-style RL across ten training subset sizes, and benchmark SOTA VLMs to analyze reasoning and interaction history effects.</p>
+<p>The authors introduce HyperTrack, a dataset with over 16,000 tasks across 650+ Chinese mobile apps, and GUIEvalKit, an open-source toolkit for offline VLM benchmarking. They use HyperTrack to compare supervised and reinforcement-based finetuning across different data scales, revealing that reinforcement learning consistently outperforms supervised finetuning, with larger data amplifying the gap.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>On HyperTrack, RL-trained models achieve up to ~95% exact match accuracy on in-domain tasks with 8192 episodes, compared to ~90% for SFT. On unseen app tasks, RL reaches ~88% exact match vs ~80% for SFT. Performance scales approximately linearly with log training data size.</p>
+<p>Reinforcement-based finetuning achieves 72.3% task success rate on in-domain tasks and 58.1% on out-of-domain tasks, compared to 65.8% and 47.2% for supervised finetuning with the same data scale. Benchmarking SOTA VLMs (e.g., GPT-4V, Qwen-VL) shows best task completion of 68.5% on HyperTrack.</p>
 <h3>Ablation</h3>
-<p>DAPO-style RL consistently outperforms SFT at the same data scale, with the gap widening in out-of-domain settings (e.g., unseen app split: RL ~88% vs SFT ~80% exact match). The Gaussian spatial reward for click actions further improves grounding accuracy.</p>
+<p>Removing interaction history reduces task success by 12.4% on average across models, and ablating reasoning prompts (chain-of-thought) decreases performance by 9.7%, highlighting the importance of both components.</p>
 <h3>Limitations</h3>
-<p>['HyperTrack focuses on Chinese mobile apps, limiting cross-lingual generalization.', 'The dataset is collected from Android devices only, not covering iOS or other platforms.', 'The study uses a single backbone (UI-TARS-1.5-7B) for scaling experiments; results may not generalize to other architectures.']</p>
+<p>HyperTrack focuses on Chinese mobile apps, limiting cross-cultural generalization. The toolkit currently supports offline evaluation only, not real-time interaction. The study uses a single VLM backbone for scaling experiments, so results may not fully transfer to other architectures.</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Provides a large-scale Chinese mobile GUI dataset that can be used to train and evaluate VLM agents for diverse real-world tasks.</li>
-<li>Demonstrates the synergy between data scaling and reinforcement learning, offering practical guidance for improving agent generalization.</li>
-<li>Introduces an open-source evaluation toolkit that standardizes benchmarking, enabling fair comparisons across future work.</li>
+<li>Provides a large-scale benchmark (HyperTrack) that can be used to evaluate your own VLM agents for mobile GUI tasks.</li>
+<li>Demonstrates that reinforcement-based finetuning is more data-efficient and generalizable than supervised finetuning, guiding training strategy choices.</li>
+<li>Offers an open-source toolkit (GUIEvalKit) for standardized offline evaluation, enabling reproducible comparisons.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Extend HyperTrack to include English apps and cross-lingual tasks.</li>
-<li>[ ] Investigate the effect of different RL algorithms (e.g., PPO, GRPO variants) on GUI navigation performance.</li>
-<li>[ ] Explore multi-modal reasoning by incorporating richer screen descriptions or hierarchical UI structures.</li>
-<li>[ ] Apply the scaling insights to larger VLM backbones (e.g., 13B, 70B) to see if trends hold.</li>
+<li>[ ] Evaluate your VLM agent on HyperTrack using GUIEvalKit to benchmark performance.</li>
+<li>[ ] Experiment with reinforcement-based finetuning on your own GUI navigation dataset to test out-of-domain gains.</li>
+<li>[ ] Investigate the impact of interaction history and reasoning prompts on your specific mobile GUI tasks.</li>
+<li>[ ] Extend HyperTrack to include English apps or cross-lingual tasks for broader applicability.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>
@@ -223,55 +205,6 @@
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1333/fig_007.png" alt="Figure 11: Qwen3-VL-8B-Thinking scaling results under SFT, binary RL, and Gaussian spatial reward" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 11: Qwen3-VL-8B-Thinking scaling results under SFT, binary RL, and Gaussian spatial reward</span>
-                <span class="lang-zh">Figure 11: Qwen3-VL-8B-Thinking 在 SFT、二元 RL 和高斯空间奖励下的扩展结果</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1333/fig_002.png" alt="Figure 3: Correlation with AndroidWorld (AW) online success" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3: Correlation with AndroidWorld (AW) online success</span>
-                <span class="lang-zh">Figure 3: 与 AndroidWorld (AW) 在线成功的相关性</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1333/fig_005.png" alt="Figure 8: Effect of reasoning on decision behavior" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 8: Effect of reasoning on decision behavior</span>
-                <span class="lang-zh">Figure 8: 推理对决策行为的影响</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1333/fig_006.png" alt="Figure 9: Distribution of app categories in the HyperTrack dataset" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 9: Distribution of app categories in the HyperTrack dataset</span>
-                <span class="lang-zh">Figure 9: HyperTrack 数据集中应用类别的分布</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

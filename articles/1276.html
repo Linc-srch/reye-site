@@ -72,12 +72,11 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For Digital Identity & Trust research, AI BOMs are a critical mechanism for establishing cryptographic provenance and automated auditing of agentic AI systems. They provide a structured inventory that can be linked to Non-Human Identities (NHIs), enabling granular access control and Zero Trust enforcement. For System Security, AI BOMs extend software supply-chain security (SBOM) concepts to AI components, introducing new attack surfaces in dependency management and build-system integrity that require memory-safe tooling and isolation.</p>
-        <p class="lang-zh">对于数字身份与信任研究，AI BOM是建立代理式AI系统的密码学来源和自动化审计的关键机制。它提供了一个结构化清单，可与非人类身份（NHI）关联，从而实现细粒度访问控制和零信任执行。对于系统安全，AI BOM将软件供应链安全（SBOM）概念扩展到AI组件，在依赖关系管理和构建系统完整性方面引入了新的攻击面，需要内存安全工具和隔离机制。</p>
+        <p class="lang-en">For the Digital Identity & Trust researcher, AI BOMs are a critical missing piece for Non-Human Identity (NHI) lifecycle management. They provide a structured inventory of all AI components (models, data, libraries) that an agent relies on, enabling automated attestation of agent state, granular access control based on component provenance, and continuous auditing of supply chain integrity. This directly supports Zero Trust principles for agents by making every dependency a verifiable identity. For the System Security researcher, AI BOMs extend software supply-chain security (SBOM) into the AI domain, creating a new attack surface for dependency confusion, poisoned models, and compromised pipelines that must be hardened with cryptographic signatures and integrity checks.</p>
+        <p class="lang-zh">对于数字身份与信任领域的研究人员而言，AI BOM是NHI生命周期管理中缺失的关键一环。它提供了代理所依赖的所有AI组件（模型、数据、库）的结构化清单，从而支持代理状态的自动证明、基于组件来源的细粒度访问控制，以及供应链完整性的持续审计。这直接支持了针对代理的零信任原则，使每个依赖项都成为可验证的身份。对于系统安全研究人员而言，AI BOM将软件供应链安全（SBOM）扩展到AI领域，创造了新的攻击面，如依赖混淆、投毒模型和受损的流水线，这些都必须通过密码学签名和完整性检查来加固。</p>
       </div>
       
 
-      
       
 
       
@@ -89,7 +88,7 @@
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>文章建议首席信息安全官（CISO）通过采用AI物料清单（AI BOM）来为代理式AI做准备，以盘点AI组件、跟踪依赖关系并管理供应链风险，因为AI代理正变得越来越自主。</p></div>
+          <div class="lede"><p>文章建议首席信息安全官（CISO）通过采用人工智能物料清单（AI BOM）来盘点AI组件、跟踪依赖关系并管理供应链风险，以应对日益自主的代理式AI。</p></div>
         </div>
 
         
@@ -97,51 +96,52 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>AI BOMs are an extension of SBOMs tailored for AI components (models, datasets, training pipelines).</li>
-<li>They enable CISOs to inventory and track AI dependencies, similar to traditional software supply chain management.</li>
-<li>The article emphasizes transparency and accountability as AI agents become more autonomous.</li>
-<li>Practical steps include integrating AI BOMs into existing security frameworks and automating their generation.</li>
+<li>AI BOMs (Bill of Materials) are proposed as a standard inventory for agentic AI systems, listing models, datasets, libraries, and dependencies.</li>
+<li>CISOs are urged to adopt AI BOMs to manage supply chain risks as AI agents gain autonomy.</li>
+<li>AI BOMs enable tracking of component provenance, versioning, and vulnerability disclosures.</li>
+<li>The article emphasizes integration with existing security tools (e.g., SIEM, SOAR) and compliance frameworks.</li>
+<li>Agentic AI introduces new risks: autonomous decision-making, data poisoning, and model theft.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>Prior work focused on SBOMs for traditional software; this article extends the concept to AI/ML components, reflecting the industry shift toward agentic systems. It aligns with emerging standards like C2PA for provenance but lacks concrete implementation details or protocol-level interoperability guidance.</p>
+<p>This article extends the software SBOM concept (common in System Security for tracking library dependencies) to AI components. Unlike traditional SBOMs focused on code libraries, AI BOMs must account for model weights, training data provenance, and fine-tuning pipelines. This is a novel development for both Digital Identity (agent identity tied to model lineage) and System Security (new supply chain attack vectors).</p>
 <h2>Why It Matters</h2>
-<p>AI BOMs are foundational for managing the lifecycle of Non-Human Identities (NHIs) in agentic AI, enabling automated auditing and Zero Trust enforcement. For system security, they introduce new supply-chain attack vectors that require hardened build pipelines and memory-safe tooling.</p>
+<p>For Digital Identity &amp; Trust: AI BOMs provide the foundational inventory needed to assign verifiable credentials to each AI component, enabling agent attestation and automated auditing under Zero Trust. For System Security: AI BOMs introduce a new class of supply-chain threats (model poisoning, dependency hijacking) that require new mitigations (cryptographic model signing, runtime integrity checks). Both domains must collaborate to secure the agentic AI lifecycle.</p>
 <h2>Critical Take</h2>
-<p>The article is high-level and prescriptive; it does not address technical challenges such as dynamic AI BOM generation for self-modifying agents, cryptographic binding between AI BOMs and agent identities, or integration with existing identity protocols (OAuth/OIDC). The hype around 'agentic-ready' may outpace practical tooling maturity.</p>
+<p>The article is prescriptive but lacks technical depth on implementation (e.g., how to cryptographically bind a model to its BOM entry, or how to handle dynamic agent composition). It does not address the scalability of AI BOMs for real-time agent updates or multi-agent systems. The hype around 'agentic-ready' may outpace practical tooling.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Emergence of AI BOM standards (e.g., OWASP CycloneDX extensions for ML).</li>
-<li>Tooling for automated AI BOM generation and verification.</li>
-<li>Integration of AI BOMs with identity providers (IdPs) and certificate automation (ACME).</li>
-<li>Vulnerability disclosures targeting AI BOM components (model serialization, dataset poisoning).</li>
+<li>Emergence of AI BOM standards (e.g., OWASP CycloneDX for AI, SPDX for ML).</li>
+<li>Tooling for automated AI BOM generation and verification (e.g., model signing with Sigstore).</li>
+<li>Integration of AI BOMs with identity providers (e.g., Microsoft Entra ID) for agent authorization.</li>
+<li>Real-world incidents of AI supply-chain attacks (e.g., compromised model repositories).</li>
 </ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>AI BOM是SBOM针对AI组件（模型、数据集、训练流水线）的扩展。</li>
-<li>它使CISO能够盘点并跟踪AI依赖关系，类似于传统软件供应链管理。</li>
-<li>文章强调随着AI代理变得更加自主，透明度和问责制的重要性。</li>
-<li>实际步骤包括将AI BOM集成到现有安全框架中并自动化其生成。</li>
+<li>AI BOM（物料清单）被提议作为代理式AI系统的标准清单，列出模型、数据集、库和依赖项。</li>
+<li>随着AI代理获得自主性，CISO被敦促采用AI BOM来管理供应链风险。</li>
+<li>AI BOM能够跟踪组件来源、版本控制和漏洞披露。</li>
+<li>文章强调与现有安全工具（如SIEM、SOAR）和合规框架的集成。</li>
+<li>代理式AI引入了新的风险：自主决策、数据投毒和模型窃取。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>先前的工作侧重于传统软件的SBOM；本文将该概念扩展到AI/ML组件，反映了行业向代理式系统的转变。它与C2PA等新兴来源标准一致，但缺乏具体的实施细节或协议级互操作性指导。</p>
+<p>本文将软件SBOM概念（在系统安全中常用于跟踪库依赖）扩展到AI组件。与专注于代码库的传统SBOM不同，AI BOM必须考虑模型权重、训练数据来源和微调流水线。这对数字身份（代理身份与模型血统绑定）和系统安全（新的供应链攻击向量）来说都是一个新颖的发展。</p>
 <h2>重要性</h2>
-<p>AI BOM是管理代理式AI中非人类身份（NHI）生命周期的基础，支持自动化审计和零信任执行。对于系统安全，它们引入了新的供应链攻击向量，需要加固的构建流水线和内存安全工具。</p>
+<p>对于数字身份与信任：AI BOM提供了必要的底层清单，以便为每个AI组件分配可验证凭证，从而在零信任下实现代理证明和自动化审计。对于系统安全：AI BOM引入了一类新的供应链威胁（模型投毒、依赖劫持），需要新的缓解措施（密码学模型签名、运行时完整性检查）。两个领域必须协作以保护代理式AI的生命周期。</p>
 <h2>批判性视角</h2>
-<p>文章是高层级和规范性的；它没有解决技术挑战，例如针对自修改代理的动态AI BOM生成、AI BOM与代理身份之间的密码学绑定，或与现有身份协议（OAuth/OIDC）的集成。关于“代理就绪”的宣传可能超过实际工具的成熟度。</p>
+<p>文章具有指导性，但缺乏技术深度（例如，如何将模型与其BOM条目进行密码学绑定，或如何处理动态代理组合）。它没有解决AI BOM在实时代理更新或多代理系统中的可扩展性问题。关于“为代理式AI做好准备”的宣传可能超过了实际工具的发展。</p>
 <h2>后续关注</h2>
 <ul>
-<li>AI BOM标准的出现（例如OWASP CycloneDX对ML的扩展）。</li>
-<li>自动化AI BOM生成和验证的工具。</li>
-<li>AI BOM与身份提供商（IdP）和证书自动化（ACME）的集成。</li>
-<li>针对AI BOM组件（模型序列化、数据集投毒）的漏洞披露。</li>
+<li>AI BOM标准的出现（例如，OWASP CycloneDX for AI、SPDX for ML）。</li>
+<li>用于自动生成和验证AI BOM的工具（例如，使用Sigstore进行模型签名）。</li>
+<li>AI BOM与身份提供商（如Microsoft Entra ID）的集成，用于代理授权。</li>
+<li>AI供应链攻击的真实事件（例如，受损的模型仓库）。</li>
 </ul>
         </div>
         
 
-        
       </div>
 
       

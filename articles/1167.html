@@ -78,7 +78,6 @@
       
 
       
-      
 
       
       <div class="article-hero-figures">
@@ -92,7 +91,7 @@ For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlappi
             <span class="lang-en">Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
 The shaded region denotes the ground-truth adversarial suffix.
 For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does.</span>
-            <span class="lang-zh">图1：上方：良性提示，CUSUM统计量W_t^+（紫色）在松弛参数k=0（用于表1和附录A的规范Page-CUSUM设置）下保持在阈值h（橙色）以下。下方：对抗性提示（AdvPrompter）；后缀起始（绿色）后token熵的持续上升导致W_t^+越过h，在时间τ（红色）触发警报。阴影区域表示真实对抗性后缀。为比较，叠加了WPP 15基线（棕色点划线，绘制为检测器实际评分的非重叠窗口均值NLL）及其F1最优阈值（棕色虚线）：在此流畅攻击下，WPP 15从未越过其阈值，而CPD的W_t^+则越过了。</span>
+            <span class="lang-zh">图1：顶部：良性提示，CUSUM统计量 W_t^+（紫色）在松弛参数 k=0（表1和附录A中使用的标准Page-CUSUM设置）下保持在阈值 h（橙色）以下。底部：对抗性提示（AdvPrompter）；后缀起始（绿色）后token熵的持续上升导致 W_t^+ 超过 h，在时间 τ（红色）触发警报。阴影区域表示真实对抗性后缀。作为对比，叠加显示了WPP 15基线（棕色点划线，绘制为检测器实际评分的非重叠窗口均值NLL）及其F1最优阈值（棕色虚线）：在此流畅攻击中，WPP 15从未超过其阈值，而CPD的 W_t^+ 则超过了。</span>
           </figcaption>
           
         </figure>
@@ -115,11 +114,11 @@ For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlappi
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — cpd-online</h1>
 <p><strong>Key Takeaways</strong>
-- Adversarial suffix detection is cast as an online change-point detection problem on token-level entropy streams.
-- CPD uses a robust baseline from the system prompt (median + MAD) and a one-sided CUSUM statistic, requiring no training.
-- CPD outperforms windowed perplexity (WPP) on F1 across all six tested LLMs, achieving AUROC 0.88 and F1 0.82 on LLaMA-2-7B.
-- CPD localizes 79.6% of triggers inside the adversarial suffix, vs. 17-46% for WPP, enabling token-level attack localization.
-- As a gate for LLaMA Guard, CPD reduces guard calls by 17-22% on benign-dominated traffic while preserving detection quality.</p>
+- Adversarial suffix detection is reformulated as an online change-point detection (CPD) problem over token-level next-token entropy, using a one-sided CUSUM statistic.
+- CPD Online is model-agnostic, training-free, and runs online, achieving F1 0.82 and AUROC 0.88 on LLaMA-2-7B against optimization-based attacks.
+- CPD localizes 79.6% of its triggers inside the adversarial suffix, far outperforming windowed perplexity baselines (17-46%).
+- As a lightweight gate for LLaMA Guard, CPD reduces guard calls by 17-22% on benign-dominated traffic without degrading detection quality.
+- The method generalizes across six open-weight chat models and four attack families (GCG, AutoDAN, AdvPrompter, BEAST).</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes</li>
@@ -131,54 +130,64 @@ For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlappi
 <li>Abs: https://arxiv.org/abs/2605.19966</li>
 <li>HTML: https://arxiv.org/html/2605.19966v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.19966</li>
-<li><strong>Tags:</strong> adversarial-suffix-detection, change-point-detection, llm-safety, entropy-analysis, online-detection</li>
-<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Tags:</strong> adversarial-suffix, change-point-detection, llm-safety, entropy-detection, cusum</li>
+<li><strong>Domains:</strong> ai_safety</li>
 <li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>CPD Online detects fluent optimization-based adversarial suffixes by monitoring sequential entropy changes, achieving superior F1 and localization without training.</p>
+<p>This paper shows that monitoring sequential entropy changes with a CUSUM detector can reliably catch fluent optimization-based adversarial suffixes that fool static perplexity-based defenses.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Optimization-based adversarial suffixes (e.g., GCG, AutoDAN) can jailbreak aligned LLMs while remaining fluent, evading static and windowed perplexity detectors. Existing defenses either use statistical perplexity-based scores or auxiliary safety classifiers (e.g., LLaMA Guard), but both have limitations: perplexity methods fail on fluent attacks, and guard models add latency and can be attacked themselves.</p>
+<p>Optimization-based adversarial suffixes can jailbreak aligned LLMs while remaining fluent, evading static and windowed perplexity detectors. Existing defenses often require training, are model-specific, or fail to localize the adversarial region within a prompt.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>Perplexity-based detectors (PP, WPP) assume adversarial suffixes are disfluent, but fail on fluency-optimized attacks (Jain et al., 2023; Alon &amp; Kamfonas, 2023).</li>
-<li>Safety classifiers like LLaMA Guard (Inan et al., 2023) achieve strong benchmark scores but introduce latency and can be targeted by optimization-based attacks.</li>
-<li>Optimization-based suffix attacks: GCG (Zou et al., 2023), AutoDAN (Zhu et al., 2024), AdvPrompter (Paulus et al., 2025), BEAST (Sadasivan et al., 2024), AutoDAN-HGA (Liu et al., 2024).</li>
-<li>Change-point detection (Page CUSUM) is applied to token-level entropy streams for the first time in this context.</li>
+<li>Perplexity-based detection (e.g., PPL, windowed PPL) for adversarial prompts</li>
+<li>LLM-based guardrails (e.g., LLaMA Guard, Safety Guard)</li>
+<li>Change-point detection (CUSUM) in time-series anomaly detection</li>
+<li>Optimization-based attacks: GCG, AutoDAN, AdvPrompter, BEAST</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Existing statistical detectors (PP, WPP) assume adversarial suffixes are statistically unlikely and disfluent, but optimization-based attacks can produce fluent suffixes with perplexity within benign range. Safety classifiers like LLaMA Guard are expensive and can be attacked. No prior work applies online change-point detection within a single request at the token level to detect and localize adversarial suffixes.</p>
+<p>Static and windowed perplexity detectors struggle with fluent adversarial suffixes because they average over the entire prompt or a fixed window, diluting the signal. Existing methods also lack online capability and precise localization of the attack onset.</p>
 <h3>P — Proposal</h3>
-<p>CPD Online formulates adversarial suffix detection as an online change-point detection problem on the token-level next-token entropy stream. It uses the LLM system prompt to estimate a robust baseline (median and MAD), standardizes user-token entropies, and applies a one-sided Page CUSUM statistic to detect sustained upward shifts. The method is model-agnostic, training-free, and runs online, providing both prompt-level decisions and token-level localization of the suffix onset.</p>
+<p>The paper proposes CPD Online, which applies a one-sided CUSUM statistic to the standardized token-level next-token entropy stream. It uses the LLM's system prompt to estimate a robust baseline, enabling online detection and precise localization of the adversarial suffix onset without training.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>On a benchmark of 1,012 optimization-based suffix attacks (GCG, AutoDAN, AdvPrompter, BEAST, AutoDAN-HGA) and 1,012 perplexity-controlled benign prompts, CPD improves F1 over the strongest windowed-perplexity baseline on all six open-weight chat models (LLaMA-2-7B/13B, Vicuna-7B/13B, Qwen2.5-7B/14B). On LLaMA-2-7B at k=0, CPD achieves AUROC 0.88 and F1 0.82 (vs. PP AUROC 0.46 and best WPP F1 0.74). CPD concentrates 79.6% of its triggers inside the adversarial suffix, versus 17-46% for WPP. As a gate for LLaMA Guard, CPD reduces guard calls by 17-22% on benign-dominated deployment while preserving detection quality.</p>
+<p>On LLaMA-2-7B with k=0, CPD achieves AUROC 0.88 and F1 0.82 on a benchmark of 1,012 adversarial and 1,012 benign prompts. It improves F1 over the strongest windowed-perplexity baseline on all six tested models. CPD concentrates 79.6% of triggers inside the adversarial suffix vs. 17-46% for baselines.</p>
 <h3>Ablation</h3>
-<p>The canonical CUSUM setting (k=0) yields the best trade-off; CPD's performance is robust to the choice of threshold via simple sweeps over F1 and false-positive rates.</p>
+<p>The canonical CUSUM setting (k=0) outperforms k=0.5 in aggregate trajectories (Figure 4). The locality breakdown (Figure 2) shows CPD triggers are far more concentrated in the suffix region than any WPP window size.</p>
 <h3>Limitations</h3>
-<p>['CPD relies on a fixed system prompt for baseline estimation; changes in system prompt may require recalibration.', 'The method assumes adversarial suffixes induce a sustained upward shift in entropy; attacks that mimic benign entropy dynamics could potentially evade detection.', 'Evaluation is limited to open-weight chat models; performance on proprietary or instruction-tuned models may vary.']</p>
+<p>['The method relies on access to token-level next-token entropy from the target LLM, which may not be available in black-box settings.', 'Performance may degrade on attacks that manipulate entropy in a more stealthy, non-monotonic manner.', 'The benchmark is limited to optimization-based suffix attacks; other attack types (e.g., prefix, prompt injection) are not evaluated.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>CPD offers a lightweight, training-free detection method that can be integrated into existing LLM serving pipelines with minimal overhead.</li>
-<li>Token-level localization of adversarial suffixes enables targeted mitigation (e.g., truncation or re-prompting) rather than full prompt rejection.</li>
-<li>The approach is model-agnostic and can be applied to any autoregressive LLM with access to token-level logits.</li>
+<li>Provides a principled, online detection framework that can be integrated into real-time LLM serving pipelines.</li>
+<li>Demonstrates that entropy-based change-point detection is a lightweight and effective alternative to perplexity-based methods.</li>
+<li>Offers a practical way to reduce computational overhead of guard models like LLaMA Guard by filtering benign prompts.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Evaluate CPD on proprietary models (e.g., GPT-4, Claude) to assess transferability.</li>
-<li>[ ] Explore adaptive attacks that specifically target entropy-based detection to understand robustness boundaries.</li>
-<li>[ ] Integrate CPD as a real-time filter in production LLM serving systems and measure latency/throughput impact.</li>
-<li>[ ] Extend CPD to detect other types of adversarial inputs (e.g., prompt injection, multi-turn attacks).</li>
+<li>[ ] Test CPD Online on additional attack types (e.g., prefix attacks, multi-turn jailbreaks) and in black-box settings.</li>
+<li>[ ] Explore adaptive thresholding or meta-learning to set CUSUM parameters per model or domain.</li>
+<li>[ ] Combine CPD with other lightweight signals (e.g., token-level uncertainty) for multi-modal detection.</li>
+<li>[ ] Deploy CPD as a real-time filter in production LLM systems and measure end-to-end latency and false positive rates.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>
-<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p><figure class="article-figure"><img class="article-figure-img" src="figures/1167/fig_001.png" alt="Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
+The shaded region denotes the ground-truth adversarial suffix.
+For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does." width="997" height="799" style="max-width: min(997px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
+The shaded region denotes the ground-truth adversarial suffix.
+For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does.</span><span class="lang-zh">图1：顶部：良性提示，CUSUM统计量 W_t^+（紫色）在松弛参数 k=0（表1和附录A中使用的标准Page-CUSUM设置）下保持在阈值 h（橙色）以下。底部：对抗性提示（AdvPrompter）；后缀起始（绿色）后token熵的持续上升导致 W_t^+ 超过 h，在时间 τ（红色）触发警报。阴影区域表示真实对抗性后缀。作为对比，叠加显示了WPP 15基线（棕色点划线，绘制为检测器实际评分的非重叠窗口均值NLL）及其F1最优阈值（棕色虚线）：在此流畅攻击中，WPP 15从未超过其阈值，而CPD的 W_t^+ 则超过了。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1167/fig_002.png" alt="Figure 2: Locality breakdown for LLaMA-2-7B: distribution of triggers across regions before the suffix, before+in (boundary-straddling), in-suffix , and in-benign . Left: F1-optimal threshold. Right: FPR@10% on benign prompts.
+For readability we plot CPD Online and representative WPP windows (WPP 5 , WPP 20 ); the full sweep over w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} is in
+Appendix B.1 ." width="997" height="502" style="max-width: min(997px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: Locality breakdown for LLaMA-2-7B: distribution of triggers across regions before the suffix, before+in (boundary-straddling), in-suffix , and in-benign . Left: F1-optimal threshold. Right: FPR@10% on benign prompts.
+For readability we plot CPD Online and representative WPP windows (WPP 5 , WPP 20 ); the full sweep over w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} is in
+Appendix B.1 .</span><span class="lang-zh">图2：LLaMA-2-7B的局部性分解：触发器在后缀之前、之前+之中（边界跨越）、后缀之内和良性之内的区域分布。左图：F1最优阈值。右图：良性提示上的FPR@10%。为便于阅读，我们绘制了CPD Online和代表性WPP窗口（WPP 5, WPP 20）；w ∈ {5, 10, 15, 20}的完整扫描见附录B.1。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1167/fig_003.png" alt="Figure 3: A second AdvPrompter example to reinforce Figure 1 .
+Token-level entropy (blue) and CUSUM statistic W t + W_{t}^{+} (purple) at the canonical slack k = 0 k=0 used throughout the main paper, with the WPP 15 baseline curve (brown dash-dot) and its F1-optimal threshold (brown dotted) overlaid for comparison. Top: benign prompt, no CPD alarm. Bottom: adversarial prompt (a different AdvPrompter suffix from Figure 1 ); CPD’s W t + W_{t}^{+} crosses h h inside the shaded suffix region, while WPP 15 stays below its threshold throughout." width="997" height="799" style="max-width: min(997px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3: A second AdvPrompter example to reinforce Figure 1 .
+Token-level entropy (blue) and CUSUM statistic W t + W_{t}^{+} (purple) at the canonical slack k = 0 k=0 used throughout the main paper, with the WPP 15 baseline curve (brown dash-dot) and its F1-optimal threshold (brown dotted) overlaid for comparison. Top: benign prompt, no CPD alarm. Bottom: adversarial prompt (a different AdvPrompter suffix from Figure 1 ); CPD’s W t + W_{t}^{+} crosses h h inside the shaded suffix region, while WPP 15 stays below its threshold throughout.</span><span class="lang-zh">图3：第二个AdvPrompter示例以强化图1。在全文使用的标准松弛参数 k=0 下的token级熵（蓝色）和CUSUM统计量 W_t^+（紫色），叠加了WPP 15基线曲线（棕色点划线）及其F1最优阈值（棕色虚线）以作比较。顶部：良性提示，无CPD警报。底部：对抗性提示（与图1不同的AdvPrompter后缀）；CPD的 W_t^+ 在阴影后缀区域内超过 h，而WPP 15在整个过程中保持在其阈值以下。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1167/fig_004.png" alt="Figure 4: Aggregate CPD Online CUSUM trajectories by prompt type (LLaMA-2-7B benchmark). Top: k = 0 k=0 . Bottom: k = 0.5 k=0.5 . Curves show the median W t + W_{t}^{+} across prompts with an interquartile band. For adversarial prompts, the green dashed line marks the aligned suffix onset; the orange dashed line marks the threshold h h used for visualization (a representative pooled F1-optimal value; main-paper Table 1 numbers are evaluated with per-fold CV thresholds). The flat segments visible after each attack’s rise (e.g. GCG, AdvPrompter, BEAST) reflect aggregation rather than a saturating detector: prompts of varying length are padded by holding the final W t + W_{t}^{+} value beyond the per-prompt end, so the median plateaus once most prompts at that aligned offset have terminated." width="996" height="456" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4: Aggregate CPD Online CUSUM trajectories by prompt type (LLaMA-2-7B benchmark). Top: k = 0 k=0 . Bottom: k = 0.5 k=0.5 . Curves show the median W t + W_{t}^{+} across prompts with an interquartile band. For adversarial prompts, the green dashed line marks the aligned suffix onset; the orange dashed line marks the threshold h h used for visualization (a representative pooled F1-optimal value; main-paper Table 1 numbers are evaluated with per-fold CV thresholds). The flat segments visible after each attack’s rise (e.g. GCG, AdvPrompter, BEAST) reflect aggregation rather than a saturating detector: prompts of varying length are padded by holding the final W t + W_{t}^{+} value beyond the per-prompt end, so the median plateaus once most prompts at that aligned offset have terminated.</span><span class="lang-zh">图4：按提示类型聚合的CPD Online CUSUM轨迹（LLaMA-2-7B基准）。顶部：k=0。底部：k=0.5。曲线显示各提示的 W_t^+ 中位数及四分位距带。对于对抗性提示，绿色虚线标记对齐的后缀起始点；橙色虚线标记用于可视化的阈值 h（代表性的合并F1最优值；主文表1中的数字使用每折交叉验证阈值评估）。每次攻击上升后可见的平坦段（例如GCG、AdvPrompter、BEAST）反映的是聚合效应而非检测器饱和：不同长度的提示通过将最终 W_t^+ 值保持到每个提示结束后来填充，因此一旦大多数提示在该对齐偏移处终止，中位数便进入平台期。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1167/fig_005.png" alt="Figure 5: Locality breakdown for LLaMA-2-7B at the F1-optimal threshold for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar." width="996" height="598" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5: Locality breakdown for LLaMA-2-7B at the F1-optimal threshold for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar.</span><span class="lang-zh">图5：LLaMA-2-7B在CPD Online和WPP（w ∈ {5, 10, 15, 20}）的F1最优阈值下的局部性分解。条形按局部性类别（之前/之前+之中/后缀之内/良性之内）分组，并在每个方法的条形内使用填充图案按攻击家族分解。</span></figcaption></figure>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
@@ -216,61 +225,20 @@ For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlappi
 <li>[ ] 探索专门针对熵检测的自适应攻击，理解鲁棒性边界。</li>
 <li>[ ] 将CPD集成到生产LLM服务系统中作为实时过滤器，测量延迟和吞吐量影响。</li>
 <li>[ ] 扩展CPD以检测其他类型的对抗输入（如提示注入、多轮攻击）。</li>
-</ul>
+</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1167/fig_001.png" alt="Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
+The shaded region denotes the ground-truth adversarial suffix.
+For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does." width="997" height="799" style="max-width: min(997px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1: Top: benign prompt where the CUSUM statistic W t + W_{t}^{+} (purple) stays below threshold h h (orange) at slack k = 0 k=0 (the canonical Page-CUSUM setting used for Table 1 ; Appendix A ). Bottom: adversarial prompt (AdvPrompter); a sustained upward shift in token entropy after the suffix onset (green) causes W t + W_{t}^{+} to cross h h , triggering an alarm at time τ \tau (red).
+The shaded region denotes the ground-truth adversarial suffix.
+For comparison the WPP 15 baseline (brown dash-dot, plotted as the non-overlapping window-mean NLL the detector actually scores) and its F1-optimal threshold (brown dotted) are overlaid: on this fluent attack WPP 15 never crosses its threshold while CPD’s W t + W_{t}^{+} does.</span><span class="lang-zh">图1：顶部：良性提示，CUSUM统计量 W_t^+（紫色）在松弛参数 k=0（表1和附录A中使用的标准Page-CUSUM设置）下保持在阈值 h（橙色）以下。底部：对抗性提示（AdvPrompter）；后缀起始（绿色）后token熵的持续上升导致 W_t^+ 超过 h，在时间 τ（红色）触发警报。阴影区域表示真实对抗性后缀。作为对比，叠加显示了WPP 15基线（棕色点划线，绘制为检测器实际评分的非重叠窗口均值NLL）及其F1最优阈值（棕色虚线）：在此流畅攻击中，WPP 15从未超过其阈值，而CPD的 W_t^+ 则超过了。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1167/fig_002.png" alt="Figure 2: Locality breakdown for LLaMA-2-7B: distribution of triggers across regions before the suffix, before+in (boundary-straddling), in-suffix , and in-benign . Left: F1-optimal threshold. Right: FPR@10% on benign prompts.
+For readability we plot CPD Online and representative WPP windows (WPP 5 , WPP 20 ); the full sweep over w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} is in
+Appendix B.1 ." width="997" height="502" style="max-width: min(997px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: Locality breakdown for LLaMA-2-7B: distribution of triggers across regions before the suffix, before+in (boundary-straddling), in-suffix , and in-benign . Left: F1-optimal threshold. Right: FPR@10% on benign prompts.
+For readability we plot CPD Online and representative WPP windows (WPP 5 , WPP 20 ); the full sweep over w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} is in
+Appendix B.1 .</span><span class="lang-zh">图2：LLaMA-2-7B的局部性分解：触发器在后缀之前、之前+之中（边界跨越）、后缀之内和良性之内的区域分布。左图：F1最优阈值。右图：良性提示上的FPR@10%。为便于阅读，我们绘制了CPD Online和代表性WPP窗口（WPP 5, WPP 20）；w ∈ {5, 10, 15, 20}的完整扫描见附录B.1。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1167/fig_003.png" alt="Figure 3: A second AdvPrompter example to reinforce Figure 1 .
+Token-level entropy (blue) and CUSUM statistic W t + W_{t}^{+} (purple) at the canonical slack k = 0 k=0 used throughout the main paper, with the WPP 15 baseline curve (brown dash-dot) and its F1-optimal threshold (brown dotted) overlaid for comparison. Top: benign prompt, no CPD alarm. Bottom: adversarial prompt (a different AdvPrompter suffix from Figure 1 ); CPD’s W t + W_{t}^{+} crosses h h inside the shaded suffix region, while WPP 15 stays below its threshold throughout." width="997" height="799" style="max-width: min(997px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3: A second AdvPrompter example to reinforce Figure 1 .
+Token-level entropy (blue) and CUSUM statistic W t + W_{t}^{+} (purple) at the canonical slack k = 0 k=0 used throughout the main paper, with the WPP 15 baseline curve (brown dash-dot) and its F1-optimal threshold (brown dotted) overlaid for comparison. Top: benign prompt, no CPD alarm. Bottom: adversarial prompt (a different AdvPrompter suffix from Figure 1 ); CPD’s W t + W_{t}^{+} crosses h h inside the shaded suffix region, while WPP 15 stays below its threshold throughout.</span><span class="lang-zh">图3：第二个AdvPrompter示例以强化图1。在全文使用的标准松弛参数 k=0 下的token级熵（蓝色）和CUSUM统计量 W_t^+（紫色），叠加了WPP 15基线曲线（棕色点划线）及其F1最优阈值（棕色虚线）以作比较。顶部：良性提示，无CPD警报。底部：对抗性提示（与图1不同的AdvPrompter后缀）；CPD的 W_t^+ 在阴影后缀区域内超过 h，而WPP 15在整个过程中保持在其阈值以下。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1167/fig_004.png" alt="Figure 4: Aggregate CPD Online CUSUM trajectories by prompt type (LLaMA-2-7B benchmark). Top: k = 0 k=0 . Bottom: k = 0.5 k=0.5 . Curves show the median W t + W_{t}^{+} across prompts with an interquartile band. For adversarial prompts, the green dashed line marks the aligned suffix onset; the orange dashed line marks the threshold h h used for visualization (a representative pooled F1-optimal value; main-paper Table 1 numbers are evaluated with per-fold CV thresholds). The flat segments visible after each attack’s rise (e.g. GCG, AdvPrompter, BEAST) reflect aggregation rather than a saturating detector: prompts of varying length are padded by holding the final W t + W_{t}^{+} value beyond the per-prompt end, so the median plateaus once most prompts at that aligned offset have terminated." width="996" height="456" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4: Aggregate CPD Online CUSUM trajectories by prompt type (LLaMA-2-7B benchmark). Top: k = 0 k=0 . Bottom: k = 0.5 k=0.5 . Curves show the median W t + W_{t}^{+} across prompts with an interquartile band. For adversarial prompts, the green dashed line marks the aligned suffix onset; the orange dashed line marks the threshold h h used for visualization (a representative pooled F1-optimal value; main-paper Table 1 numbers are evaluated with per-fold CV thresholds). The flat segments visible after each attack’s rise (e.g. GCG, AdvPrompter, BEAST) reflect aggregation rather than a saturating detector: prompts of varying length are padded by holding the final W t + W_{t}^{+} value beyond the per-prompt end, so the median plateaus once most prompts at that aligned offset have terminated.</span><span class="lang-zh">图4：按提示类型聚合的CPD Online CUSUM轨迹（LLaMA-2-7B基准）。顶部：k=0。底部：k=0.5。曲线显示各提示的 W_t^+ 中位数及四分位距带。对于对抗性提示，绿色虚线标记对齐的后缀起始点；橙色虚线标记用于可视化的阈值 h（代表性的合并F1最优值；主文表1中的数字使用每折交叉验证阈值评估）。每次攻击上升后可见的平坦段（例如GCG、AdvPrompter、BEAST）反映的是聚合效应而非检测器饱和：不同长度的提示通过将最终 W_t^+ 值保持到每个提示结束后来填充，因此一旦大多数提示在该对齐偏移处终止，中位数便进入平台期。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1167/fig_005.png" alt="Figure 5: Locality breakdown for LLaMA-2-7B at the F1-optimal threshold for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar." width="996" height="598" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5: Locality breakdown for LLaMA-2-7B at the F1-optimal threshold for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar.</span><span class="lang-zh">图5：LLaMA-2-7B在CPD Online和WPP（w ∈ {5, 10, 15, 20}）的F1最优阈值下的局部性分解。条形按局部性类别（之前/之前+之中/后缀之内/良性之内）分组，并在每个方法的条形内使用填充图案按攻击家族分解。</span></figcaption></figure>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1167/fig_005.png" alt="Figure 5: Locality breakdown for LLaMA-2-7B at the F1-optimal threshold for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 5: Locality breakdown for LLaMA-2-7B at the F1-optimal threshold for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar.</span>
-                <span class="lang-zh">图5：LLaMA-2-7B在CPD Online和WPP（w ∈ {5, 10, 15, 20}）的F1最优阈值下的局部性分解。柱状图按局部性类别（Before / Before+In / In-suffix / In-benign）分组，并通过每种方法柱内的填充图案按攻击家族分解。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1167/fig_006.png" alt="Figure 6: Locality breakdown for LLaMA-2-7B at FPR@10% on benign prompts for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 6: Locality breakdown for LLaMA-2-7B at FPR@10% on benign prompts for CPD Online and WPP with w ∈ { 5 , 10 , 15 , 20 } w\in\{5,10,15,20\} . Bars are grouped by locality category (Before / Before+In / In-suffix / In-benign) and are decomposed by attack family using hatch fill within each method’s bar.</span>
-                <span class="lang-zh">图6：LLaMA-2-7B在良性提示的FPR@10%条件下，CPD Online和WPP（w ∈ {5, 10, 15, 20}）的局部性分解。柱状图按局部性类别（Before / Before+In / In-suffix / In-benign）分组，并通过每种方法柱内的填充图案按攻击家族分解。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1167/fig_003.png" alt="Figure 3: A second AdvPrompter example to reinforce Figure 1 .
-Token-level entropy (blue) and CUSUM statistic W t + W_{t}^{+} (purple) at the canonical slack k = 0 k=0 used throughout the main paper, with the WPP 15 baseline curve (brown dash-dot) and its F1-optimal threshold (brown dotted) overlaid for comparison. Top: benign prompt, no CPD alarm. Bottom: adversarial prompt (a different AdvPrompter suffix from Figure 1 ); CPD’s W t + W_{t}^{+} crosses h h inside the shaded suffix region, while WPP 15 stays below its threshold throughout." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3: A second AdvPrompter example to reinforce Figure 1 .
-Token-level entropy (blue) and CUSUM statistic W t + W_{t}^{+} (purple) at the canonical slack k = 0 k=0 used throughout the main paper, with the WPP 15 baseline curve (brown dash-dot) and its F1-optimal threshold (brown dotted) overlaid for comparison. Top: benign prompt, no CPD alarm. Bottom: adversarial prompt (a different AdvPrompter suffix from Figure 1 ); CPD’s W t + W_{t}^{+} crosses h h inside the shaded suffix region, while WPP 15 stays below its threshold throughout.</span>
-                <span class="lang-zh">图3：第二个AdvPrompter示例以强化图1。Token级熵（蓝色）和CUSUM统计量W_t^+（紫色）在全文中使用的规范松弛参数k=0下，叠加了WPP 15基线曲线（棕色点划线）及其F1最优阈值（棕色虚线）以作比较。上方：良性提示，无CPD警报。下方：对抗性提示（与图1不同的AdvPrompter后缀）；CPD的W_t^+在阴影后缀区域内越过h，而WPP 15全程保持在其阈值以下。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1167/fig_004.png" alt="Figure 4: Aggregate CPD Online CUSUM trajectories by prompt type (LLaMA-2-7B benchmark). Top: k = 0 k=0 . Bottom: k = 0.5 k=0.5 . Curves show the median W t + W_{t}^{+} across prompts with an interquartile band. For adversarial prompts, the green dashed line marks the aligned suffix onset; the orange dashed line marks the threshold h h used for visualization (a representative pooled F1-optimal value; main-paper Table 1 numbers are evaluated with per-fold CV thresholds). The flat segments visible after each attack’s rise (e.g. GCG, AdvPrompter, BEAST) reflect aggregation rather than a saturating detector: prompts of varying length are padded by holding the final W t + W_{t}^{+} value beyond the per-prompt end, so the median plateaus once most prompts at that aligned offset have terminated." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 4: Aggregate CPD Online CUSUM trajectories by prompt type (LLaMA-2-7B benchmark). Top: k = 0 k=0 . Bottom: k = 0.5 k=0.5 . Curves show the median W t + W_{t}^{+} across prompts with an interquartile band. For adversarial prompts, the green dashed line marks the aligned suffix onset; the orange dashed line marks the threshold h h used for visualization (a representative pooled F1-optimal value; main-paper Table 1 numbers are evaluated with per-fold CV thresholds). The flat segments visible after each attack’s rise (e.g. GCG, AdvPrompter, BEAST) reflect aggregation rather than a saturating detector: prompts of varying length are padded by holding the final W t + W_{t}^{+} value beyond the per-prompt end, so the median plateaus once most prompts at that aligned offset have terminated.</span>
-                <span class="lang-zh">图4：按提示类型（LLaMA-2-7B基准）聚合的CPD Online CUSUM轨迹。上方：k=0。下方：k=0.5。曲线显示所有提示中W_t^+的中位数及四分位距带。对于对抗性提示，绿色虚线标记对齐的后缀起始点；橙色虚线标记用于可视化的阈值h（代表性的合并F1最优值；主论文表1中的数值通过每折交叉验证阈值评估）。每次攻击上升后可见的平坦段（例如GCG、AdvPrompter、BEAST）反映的是聚合效应而非检测器饱和：不同长度的提示通过将最终W_t^+值保持到每个提示结束之后进行填充，因此一旦大多数提示在该对齐偏移处终止，中位数便进入平台期。</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

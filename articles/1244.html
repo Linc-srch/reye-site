@@ -68,12 +68,11 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For Harmony Security and SOC researchers, this incident underscores the convergence of AI-enabled targeting (Russia using ChatGPT/Gemini for reconnaissance) with traditional phishing-to-C2 kill chains. The use of JavaScript-based loaders and Registry-resident payloads (OYSTERBLUES) highlights evasion techniques relevant to on-device agent security and endpoint detection. The report also confirms that state-backed actors are actively integrating AI into malware generation and target scouting, a trend that demands updated threat models for AI/Agent security defenses and OS-level benchmarking (e.g., restricting wscript.exe execution).</p>
-        <p class="lang-zh">对于 Harmony Security 和 SOC 研究人员而言，此事件凸显了 AI 赋能的目标侦察（俄罗斯使用 ChatGPT/Gemini 进行侦察）与传统钓鱼到 C2 攻击链的融合。基于 JavaScript 的加载器和驻留注册表的载荷（OYSTERBLUES）所使用的规避技术，与端侧 Agent 安全和端点检测密切相关。报告还证实，国家背景的威胁行为者正在积极将 AI 集成到恶意软件生成和目标侦察中，这一趋势要求更新 AI/Agent 安全防御的威胁模型，并在操作系统层面进行对标（例如限制 wscript.exe 的执行）。</p>
+        <p class="lang-en">For Harmony Security, this confirms that AI is being weaponized at both the strategic (target scouting, code generation) and tactical (phishing lure personalization) levels by state actors, directly impacting the threat vectors and data privacy risks we track. The use of AI to generate malicious commands at runtime represents a new, adaptive evasion technique that complicates static detection and underscores the need for AI-driven defenses. For the SOC, the Ghostwriter campaign highlights a persistent, multi-stage attack chain targeting government endpoints, reinforcing the importance of OS-level restrictions (e.g., blocking wscript.exe for standard users) and the need for HarmonyOS to benchmark against Windows security controls for script execution and registry-based persistence. The AI-generated malware component also signals a shift in the threat landscape that endpoint security architectures must address.</p>
+        <p class="lang-zh">对于Harmony Security而言，这证实了国家级行为者正在战略层面（目标侦察、代码生成）和战术层面（钓鱼诱饵个性化）将AI武器化，直接影响我们追踪的威胁向量和数据隐私风险。AI在运行时生成恶意命令代表了一种新的自适应规避技术，使静态检测复杂化，并凸显了对AI驱动防御的需求。对于SOC，Ghostwriter活动突显了一个针对政府终端的持续性多阶段攻击链，强化了操作系统级限制（例如，为标准用户阻止wscript.exe）的重要性，以及HarmonyOS需要对标Windows在脚本执行和注册表持久化方面的安全控制。AI生成的恶意软件组件也标志着端点安全架构必须应对的威胁格局转变。</p>
       </div>
       
 
-      
       
 
       
@@ -81,11 +80,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Ghostwriter (UAC-0057/UNC1151) is targeting Ukrainian government entities with phishing emails disguised as Prometheus online learning platform lures, delivering a multi-stage malware chain (OYSTERFRESH, OYSTERBLUES, OYSTERSHUCK) that culminates in Cobalt Strike deployment.</p></div>
+          <div class="lede"><p>Ghostwriter (UAC-0057/UNC1151) is targeting Ukrainian government entities with phishing emails impersonating the Prometheus online learning platform, using a multi-stage JavaScript malware chain (OYSTERFRESH, OYSTERBLUES, OYSTERSHUCK) that ultimately delivers Cobalt Strike. Concurrently, Ukraine's government reports that Russian threat actors are using AI tools like ChatGPT and Gemini for target scouting and generating malicious code at runtime.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>Ghostwriter (UAC-0057/UNC1151) 利用伪装成乌克兰在线学习平台 Prometheus 诱饵的钓鱼邮件，针对乌克兰政府实体发起攻击，通过多阶段恶意软件链（OYSTERFRESH、OYSTERBLUES、OYSTERSHUCK）最终部署 Cobalt Strike。</p></div>
+          <div class="lede"><p>Ghostwriter（UAC-0057/UNC1151）正利用伪装成乌克兰在线学习平台Prometheus的钓鱼邮件攻击政府机构，通过多阶段JavaScript恶意软件链（OYSTERFRESH、OYSTERBLUES、OYSTERSHUCK）最终投放Cobalt Strike。同时，乌克兰政府报告称俄罗斯威胁行为者正在使用ChatGPT和Gemini等AI工具进行目标侦察，并在运行时生成恶意代码。</p></div>
         </div>
 
         
@@ -93,123 +92,58 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>Threat actor: Ghostwriter (UAC-0057, UNC1151), Belarus-aligned.</li>
-<li>Target: Ukrainian government entities.</li>
-<li>Lure: Phishing emails referencing the Prometheus online learning platform, sent from compromised accounts.</li>
-<li>Initial payload: PDF attachment with a link to a ZIP archive containing a JavaScript file (OYSTERFRESH).</li>
-<li>Execution chain: OYSTERFRESH displays a decoy document, writes obfuscated/encrypted payload OYSTERBLUES to the Windows Registry, then downloads and runs OYSTERSHUCK to decode OYSTERBLUES.</li>
-<li>Capabilities: OYSTERBLUES harvests system info (computer name, user account, OS version, boot time, running processes) and exfiltrates via HTTP POST to C2.</li>
-<li>Final payload: Cobalt Strike, executed via eval() of next-stage JavaScript from C2.</li>
-<li>Mitigation: CERT-UA advises restricting wscript.exe execution for standard user accounts.</li>
-<li>Broader context: Ukraine's National Security and Defense Council reports Russia using AI tools (ChatGPT, Gemini) for target scouting and embedding AI into malware for runtime command generation.</li>
-<li>Additional: Pro-Kremlin propaganda campaign (Matryoshka) hijacking Bluesky accounts since 2024, attributed to Social Design Agency.</li>
+<li>Ghostwriter (UAC-0057/UNC1151) targets Ukrainian government entities using phishing emails with Prometheus-themed lures.</li>
+<li>The attack chain: PDF → ZIP → JavaScript (OYSTERFRESH) → writes obfuscated payload (OYSTERBLUES) to Windows Registry → downloads OYSTERSHUCK to decode and execute.</li>
+<li>OYSTERBLUES harvests system info (computer name, user, OS version, boot time, running processes) and exfiltrates via HTTP POST.</li>
+<li>Final payload is Cobalt Strike, executed via eval() on next-stage JS from C2.</li>
+<li>CERT-UA recommends restricting wscript.exe for standard user accounts.</li>
+<li>Ukraine's National Security and Defense Council reports Russian use of ChatGPT and Gemini for target scouting and embedding AI into malware to generate malicious commands at runtime.</li>
+<li>A separate pro-Kremlin propaganda campaign (Matryoshka) hijacked Bluesky accounts since 2024, attributed to Social Design Agency.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>Ghostwriter's use of Prometheus-themed lures is a novel social engineering tactic tailored to the Ukrainian context. The multi-stage JavaScript-to-Registry-to-Cobalt Strike chain is a well-known pattern, but the explicit mention of AI integration by Russian state actors (for target scouting and malware command generation) marks an escalation in the AI4SEC threat landscape. This contrasts with earlier Ghostwriter operations that relied more on credential harvesting and influence operations without AI-augmented payload generation.</p>
+<p>Ghostwriter's use of Prometheus-themed lures is a novel social engineering tactic tailored to the Ukrainian context, but the multi-stage JavaScript-to-Cobalt Strike chain is a well-established pattern seen in many APT campaigns. The significant new development is the explicit confirmation from Ukraine's government that AI tools (ChatGPT, Gemini) are being used by Russian threat actors for target scouting and runtime malicious code generation—this moves AI from a supporting role (e.g., writing phishing emails) to a core component of the attack lifecycle, representing an escalation in AI-enabled cyber operations.</p>
 <h2>Why It Matters</h2>
-<p>This report provides concrete evidence of state-sponsored actors operationalizing AI for both reconnaissance (target scouting) and offensive payload development (AI-generated malicious commands). For AI security researchers, it validates the need for defenses against AI-augmented phishing and adaptive malware. For SOC and OS security teams, the attack chain (JavaScript loader, Registry persistence, Cobalt Strike) reinforces the importance of endpoint hardening (e.g., script execution controls) and behavioral detection. The Bluesky account hijacking campaign further illustrates the expanding attack surface of social media platforms as vectors for influence operations.</p>
+<p>This report provides concrete evidence of state-sponsored actors integrating AI into both the planning (scouting) and execution (runtime code generation) phases of cyber attacks. For AI security researchers, it validates the threat model where AI is used to dynamically evade detection. For OS and endpoint security teams, it underscores the need for robust execution controls (e.g., script blocking, registry monitoring) and the importance of benchmarking against Windows security configurations. The use of AI to generate commands at runtime makes signature-based detection nearly impossible, accelerating the need for AI-driven behavioral analysis and anomaly detection in SOCs.</p>
 <h2>Critical Take</h2>
-<p>The article's claim that Russia uses AI for 'malware to generate malicious commands at runtime' lacks technical detail—it is unclear whether this refers to LLM-generated shellcode, polymorphic code, or simply AI-assisted script generation. The attribution of the Bluesky hijack to Social Design Agency is based on external reporting and may not be independently verified. The CERT-UA advisory is credible but the operational impact of the Ghostwriter campaign (e.g., number of compromised entities, data exfiltrated) is not disclosed.</p>
+<p>The report from Ukraine's government on AI usage by Russian actors is a high-level claim without detailed technical evidence (e.g., specific prompts, model outputs, or code samples) provided in this article. The attribution of AI-generated malware commands is difficult to verify independently. The Ghostwriter campaign details are solid (from CERT-UA), but the AI integration narrative should be treated as a strategic warning rather than a fully documented technical finding. The Bluesky account hijacking is a separate, older campaign and its inclusion may conflate distinct threat activities.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Technical details on how AI is specifically used in malware command generation (e.g., LLM-based payload obfuscation, dynamic C2 communication).</li>
-<li>CERT-UA or other agencies releasing indicators of compromise (IOCs) for the OYSTER* malware family.</li>
-<li>Further reports on Ghostwriter's shift toward AI-augmented targeting and payload delivery.</li>
-<li>Bluesky's response and any cross-platform propagation of the Matryoshka account hijacking campaign.</li>
-<li>Updates on Russia's AI-for-cyber doctrine from official Ukrainian or NATO sources.</li>
+<li>Technical reports or samples from CERT-UA or other researchers detailing the AI-generated malware commands (e.g., how ChatGPT/Gemini outputs were embedded).</li>
+<li>Any follow-up from OpenAI or Google on how they are responding to the weaponization of their models by state actors.</li>
+<li>Evolution of Ghostwriter's TTPs: whether they adopt AI-generated lures or payloads in future campaigns.</li>
+<li>CERT-UA's specific recommendations for restricting script execution (wscript.exe) and whether other OS vendors (Apple, Google) issue similar guidance.</li>
+<li>Broader trend of AI being used for runtime payload generation in other APT groups (e.g., APT29, Lazarus).</li>
 </ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>威胁行为者：Ghostwriter (UAC-0057, UNC1151)，亲白俄罗斯背景。</li>
-<li>目标：乌克兰政府实体。</li>
-<li>诱饵：使用被入侵账户发送的、引用 Prometheus 在线学习平台的钓鱼邮件。</li>
-<li>初始载荷：包含链接的 PDF 附件，链接指向包含 JavaScript 文件 (OYSTERFRESH) 的 ZIP 压缩包。</li>
-<li>执行链：OYSTERFRESH 显示诱饵文档，将混淆加密的载荷 OYSTERBLUES 写入 Windows 注册表，然后下载并运行 OYSTERSHUCK 以解码 OYSTERBLUES。</li>
-<li>能力：OYSTERBLUES 收集系统信息（计算机名、用户账户、操作系统版本、启动时间、运行进程）并通过 HTTP POST 外传至 C2。</li>
-<li>最终载荷：Cobalt Strike，通过 eval() 执行来自 C2 的下一阶段 JavaScript 代码。</li>
-<li>缓解措施：CERT-UA 建议限制标准用户账户执行 wscript.exe。</li>
-<li>更广泛背景：乌克兰国家安全与国防委员会报告称，俄罗斯使用 AI 工具（ChatGPT、Gemini）进行目标侦察，并将 AI 嵌入恶意软件以在运行时生成命令。</li>
-<li>其他：自 2024 年起，亲克里姆林宫的宣传行动（Matryoshka）劫持 Bluesky 账户，归因于 Social Design Agency。</li>
+<li>Ghostwriter（UAC-0057/UNC1151）利用伪装成Prometheus主题的钓鱼邮件攻击乌克兰政府实体。</li>
+<li>攻击链：PDF → ZIP → JavaScript（OYSTERFRESH）→ 将混淆加密的有效载荷（OYSTERBLUES）写入Windows注册表 → 下载OYSTERSHUCK进行解码和执行。</li>
+<li>OYSTERBLUES收集系统信息（计算机名、用户、操作系统版本、启动时间、运行进程）并通过HTTP POST外传。</li>
+<li>最终有效载荷为Cobalt Strike，通过eval()执行来自C2的下一阶段JS代码。</li>
+<li>CERT-UA建议限制标准用户账户运行wscript.exe。</li>
+<li>乌克兰国家安全与国防委员会报告称，俄罗斯使用ChatGPT和Gemini进行目标侦察，并将AI嵌入恶意软件以在运行时生成恶意命令。</li>
+<li>另一起亲克里姆林宫的宣传行动（Matryoshka）自2024年起劫持Bluesky账户，归因于Social Design Agency。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>Ghostwriter 使用 Prometheus 主题诱饵是针对乌克兰背景的新颖社会工程学手段。多阶段 JavaScript-注册表-Cobalt Strike 链是已知模式，但俄罗斯国家行为者明确提及 AI 集成（用于目标侦察和恶意软件命令生成）标志着 AI4SEC 威胁格局的升级。这与早期 Ghostwriter 更依赖凭据窃取和影响力行动、未使用 AI 增强载荷生成的操作形成对比。</p>
+<p>Ghostwriter使用Prometheus主题诱饵是针对乌克兰语境的新颖社会工程策略，但多阶段JavaScript到Cobalt Strike的攻击链是许多APT活动中常见的成熟模式。重大的新发展是乌克兰政府明确确认俄罗斯威胁行为者使用AI工具（ChatGPT、Gemini）进行目标侦察和运行时恶意代码生成——这将AI从辅助角色（例如编写钓鱼邮件）提升为攻击生命周期的核心组成部分，代表了AI赋能网络行动的升级。</p>
 <h2>重要性</h2>
-<p>该报告提供了国家背景行为者将 AI 用于侦察（目标搜索）和攻击载荷开发（AI 生成的恶意命令）的具体证据。对于 AI 安全研究人员，它验证了针对 AI 增强型钓鱼和自适应恶意软件防御的必要性。对于 SOC 和操作系统安全团队，攻击链（JavaScript 加载器、注册表持久化、Cobalt Strike）强化了端点加固（例如脚本执行控制）和行为检测的重要性。Bluesky 账户劫持活动进一步说明了社交媒体平台作为影响力操作载体的攻击面正在扩大。</p>
+<p>这份报告提供了国家支持的行为者将AI整合到网络攻击规划（侦察）和执行（运行时代码生成）阶段的具体证据。对于AI安全研究人员，它验证了AI被用于动态规避检测的威胁模型。对于操作系统和端点安全团队，它强调了强大执行控制（例如脚本阻止、注册表监控）的必要性，以及对标Windows安全配置的重要性。AI在运行时生成命令使得基于签名的检测几乎不可能，加速了SOC中对AI驱动的行为分析和异常检测的需求。</p>
 <h2>批判性视角</h2>
-<p>文章声称俄罗斯使用 AI 使恶意软件在运行时生成恶意命令，但缺乏技术细节——不清楚这是指 LLM 生成的 shellcode、多态代码，还是仅仅 AI 辅助的脚本生成。Bluesky 劫持归因于 Social Design Agency 是基于外部报告，可能未经独立验证。CERT-UA 的公告可信，但 Ghostwriter 活动的实际影响（例如受感染实体数量、外泄数据量）未披露。</p>
+<p>乌克兰政府关于俄罗斯行为者使用AI的报告是一个高层声明，本文未提供详细的技术证据（例如具体提示词、模型输出或代码样本）。AI生成的恶意软件命令的归因难以独立验证。Ghostwriter活动的细节是可靠的（来自CERT-UA），但AI整合的叙述应被视为战略警告，而非完全记录的技术发现。Bluesky账户劫持是一个独立的、较早的活动，其包含在内可能混淆了不同的威胁活动。</p>
 <h2>后续关注</h2>
 <ul>
-<li>关于 AI 如何具体用于恶意软件命令生成的技术细节（例如基于 LLM 的载荷混淆、动态 C2 通信）。</li>
-<li>CERT-UA 或其他机构发布 OYSTER* 恶意软件家族的入侵指标 (IOC)。</li>
-<li>关于 Ghostwriter 转向 AI 增强型目标选择和载荷投递的进一步报告。</li>
-<li>Bluesky 的回应以及 Matryoshka 账户劫持活动是否跨平台传播。</li>
-<li>乌克兰或北约官方来源关于俄罗斯 AI 网络战学说的更新。</li>
+<li>CERT-UA或其他研究人员发布的详细技术报告或样本，展示AI生成的恶意软件命令（例如ChatGPT/Gemini输出如何被嵌入）。</li>
+<li>OpenAI或Google关于如何应对其模型被国家行为者武器化的后续行动。</li>
+<li>Ghostwriter TTPs的演变：他们是否在未来的活动中采用AI生成的诱饵或有效载荷。</li>
+<li>CERT-UA关于限制脚本执行（wscript.exe）的具体建议，以及其他操作系统厂商（苹果、谷歌）是否发布类似指南。</li>
+<li>更广泛的趋势：其他APT组织（例如APT29、Lazarus）是否使用AI进行运行时有效载荷生成。</li>
 </ul>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1244/fig_01.webp" alt="ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</span>
-                <span class="lang-zh">威胁日报：Linux Rootkits、路由器0-Day、AI入侵、诈骗工具包及25条新消息</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1244/fig_02.gif" alt="9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros</span>
-                <span class="lang-zh">9年历史的Linux内核漏洞使主流发行版可执行Root命令</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1244/fig_03.webp" alt="Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit</span>
-                <span class="lang-zh">微软发布针对YellowKey BitLocker绕过漏洞CVE-2026-45585利用的缓解措施</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1244/fig_04.gif" alt="Developer Workstations Are Now Part of the Software Supply Chain" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Developer Workstations Are Now Part of the Software Supply Chain</span>
-                <span class="lang-zh">开发者工作站现已成为软件供应链的一部分</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1244/fig_05.jpg" alt="Articles" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Articles</span>
-                <span class="lang-zh">文章</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

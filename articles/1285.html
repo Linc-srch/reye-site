@@ -72,12 +72,11 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For a system security researcher, this campaign is a critical case study in the evolution of software supply chain attacks. It demonstrates a multi-ecosystem (npm, PyPI, Crates.io) approach that bypasses single-registry defenses, uses ecosystem-specific execution vectors (postinstall hooks, build.rs, import-time execution), and introduces a novel persistence and data exfiltration technique by poisoning AI coding assistant configuration files (.cursorrules, CLAUDE.md). This blurs the line between supply chain compromise and AI-assisted social engineering, creating a new attack surface for developer workstations that traditional endpoint security may not cover.</p>
-        <p class="lang-zh">对于系统安全研究员来说，这次活动是软件供应链攻击演变中的一个关键案例研究。它展示了一种跨生态系统（npm、PyPI、Crates.io）的攻击方法，绕过了单一注册表的防御，利用了特定生态系统的执行向量（postinstall 钩子、build.rs、导入时执行），并通过投毒 AI 编码助手的配置文件（.cursorrules、CLAUDE.md）引入了一种新颖的持久化和数据窃取技术。这模糊了供应链妥协与 AI 辅助社会工程之间的界限，为开发者工作站创造了一个传统端点安全可能无法覆盖的新攻击面。</p>
+        <p class="lang-en">For a system security researcher focused on software supply-chain security and exploitation, TrapDoor is a significant case study in cross-ecosystem compromise. It demonstrates the evolution from simple typosquatting to multi-stage attacks that leverage ecosystem-specific execution hooks (postinstall, build.rs, import-time), credential validation against cloud APIs (AWS/GitHub), and lateral movement via SSH. The use of AI coding tool configuration files (.cursorrules, CLAUDE.md) as a persistence and exfiltration vector is a novel technique that blurs the line between supply-chain attack and developer workstation compromise, warranting deep analysis of its detection and mitigation.</p>
+        <p class="lang-zh">对于专注于软件供应链安全和漏洞利用的系统安全研究员来说，TrapDoor 是一个重要的跨生态系统妥协案例研究。它展示了从简单的域名抢注到多阶段攻击的演变，这些攻击利用了特定生态系统的执行钩子（postinstall、build.rs、导入时执行）、针对云 API（AWS/GitHub）的凭证验证以及通过 SSH 的横向移动。使用 AI 编码工具配置文件（.cursorrules、CLAUDE.md）作为持久化和数据窃取向量是一种新颖的技术，模糊了供应链攻击和开发者工作站妥协之间的界限，值得对其检测和缓解措施进行深入分析。</p>
       </div>
       
 
-      
       
 
       
@@ -85,11 +84,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>A coordinated supply chain attack named TrapDoor has been discovered across npm, PyPI, and Crates.io, deploying over 34 malicious packages designed to steal credentials, crypto wallets, and developer secrets, with novel persistence mechanisms including AI-assisted exfiltration via .cursorrules and CLAUDE.md files.</p></div>
+          <div class="lede"><p>A coordinated supply chain attack named TrapDoor has been discovered across npm, PyPI, and Crates.io, deploying over 34 malicious packages designed to steal developer credentials, crypto wallets, and cloud secrets, with novel persistence mechanisms including AI-assisted exfiltration via .cursorrules and CLAUDE.md files.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>一场名为 TrapDoor 的协同供应链攻击在 npm、PyPI 和 Crates.io 上被发现，部署了超过 34 个恶意包，旨在窃取凭证、加密钱包和开发者机密，并采用了通过 .cursorrules 和 CLAUDE.md 文件进行 AI 辅助数据窃取的新型持久化机制。</p></div>
+          <div class="lede"><p>一个名为 TrapDoor 的协同供应链攻击在 npm、PyPI 和 Crates.io 上被发现，部署了超过 34 个恶意包，旨在窃取开发者凭证、加密钱包和云密钥，并采用新颖的持久化机制，包括通过 .cursorrules 和 CLAUDE.md 文件进行 AI 辅助的数据窃取。</p></div>
         </div>
 
         
@@ -97,117 +96,58 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>Multi-ecosystem attack targeting npm, PyPI, and Crates.io with 34+ malicious packages across 384 versions.</li>
-<li>Malware steals developer secrets, crypto wallets, SSH keys, cloud credentials, and environment variables.</li>
-<li>Uses ecosystem-specific execution: npm postinstall hooks, Rust build.rs scripts, Python import-time execution.</li>
-<li>Novel persistence via .cursorrules and CLAUDE.md files to trick AI coding assistants into executing exfiltration commands.</li>
-<li>Lateral movement via SSH and persistence via cron, systemd, Git hooks, and shell hooks.</li>
-<li>Remote payload hosted on GitHub Pages for dynamic updates without re-publishing packages.</li>
-<li>Targeted at crypto, DeFi, Solana, and AI developer communities.</li>
+<li>Cross-ecosystem attack targeting npm, PyPI, and Crates.io with 34+ malicious packages across 384+ versions.</li>
+<li>Targets developers in crypto, DeFi, Solana, and AI communities.</li>
+<li>Uses ecosystem-specific execution: postinstall hooks (npm), build.rs (Rust crates), import-time execution (PyPI).</li>
+<li>Deploys a shared JS payload (trap-core.js) that scans for credentials, validates AWS/GitHub tokens, and performs SSH lateral movement.</li>
+<li>Establishes persistence via .cursorrules, CLAUDE.md, Git hooks, shell hooks, systemd, cron, and SSH.</li>
+<li>Exfiltrates data via GitHub Gists using XOR-encrypted keystores.</li>
+<li>Opens GitHub PRs to inject hidden instructions into AI project files (langchain, browser-use, langflow).</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>This attack is more sophisticated than typical typosquatting or dependency confusion campaigns. It combines multiple execution vectors across three major package registries, which is rare. The use of AI assistant configuration files (.cursorrules, CLAUDE.md) as a persistence and exfiltration mechanism is novel and represents a significant evolution from traditional supply chain attacks that only rely on post-install scripts or runtime code injection. It also demonstrates a shift from purely technical exploitation to manipulating AI-assisted development workflows.</p>
+<p>Prior supply-chain attacks (e.g., SolarWinds, Codecov, event-stream) typically focused on a single ecosystem or used generic backdoors. TrapDoor is notable for its coordinated multi-ecosystem approach (npm, PyPI, Crates.io) and its novel use of AI coding assistant configuration files as a persistence and exfiltration channel. This represents a shift from passive package poisoning to active, multi-vector compromise of the developer environment, including lateral movement and cloud credential validation.</p>
 <h2>Why It Matters</h2>
-<p>This campaign highlights a critical blind spot in current software supply chain security: the lack of defense-in-depth for developer workstations against attacks that leverage AI coding tools. The ability to poison AI assistant configurations via pull requests on popular open-source projects creates a new, hard-to-detect attack vector. For system security, it underscores the need for runtime monitoring of AI tool behavior, stricter sandboxing of package installation scripts, and validation of configuration files that influence code generation and execution.</p>
+<p>This attack highlights the expanding attack surface of the software supply chain, now incorporating AI tooling configurations. For system security researchers, it underscores the need for runtime monitoring of developer workstations, validation of package execution hooks across ecosystems, and detection of anomalous SSH lateral movement and cloud API calls from build processes. The technique of poisoning AI configuration files to exfiltrate secrets represents a new class of threat that requires updated security policies for CI/CD pipelines and developer environments.</p>
 <h2>Critical Take</h2>
-<p>The analysis is based on a single vendor's (Socket) report. The full scope of compromise, including the number of affected developers and the success rate of the AI assistant poisoning via PRs, is unverified. The claim that the AI assistants actually executed the hidden instructions in .cursorrules/CLAUDE.md needs independent confirmation. The attribution to a single threat actor is based on behavioral clustering, which may be incomplete.</p>
+<p>The report is based on analysis by Socket, a security vendor, and while the technical details are credible, the full scope of compromise (number of affected developers, actual data exfiltration) is not independently verified. The claim of AI assistant 'trickery' via .cursorrules and CLAUDE.md is novel but the practical impact (whether any AI assistant actually executed the hidden instructions) requires further validation. The attribution to a single campaign is based on behavioral similarities; some packages may be copycat or unrelated.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Independent verification of the AI assistant poisoning technique (e.g., by other security researchers or AI vendors).</li>
-<li>Disclosure of the specific GitHub PRs used to inject .cursorrules/CLAUDE.md files.</li>
-<li>Response from GitHub, npm, PyPI, and Crates.io regarding package takedowns and account bans.</li>
-<li>Emergence of similar attacks targeting other AI coding tools (e.g., GitHub Copilot, Amazon CodeWhisperer).</li>
-<li>Development of detection rules for malicious .cursorrules and CLAUDE.md content in CI/CD pipelines.</li>
+<li>Monitor for similar cross-ecosystem campaigns using AI configuration files as attack vectors.</li>
+<li>Track GitHub PRs targeting popular AI/developer projects for hidden instructions.</li>
+<li>Watch for updates from npm, PyPI, and Crates.io security teams on package takedowns and ecosystem-wide mitigations.</li>
+<li>Observe if threat actors adopt similar techniques for other package managers (RubyGems, Go modules).</li>
+<li>Look for research on detecting and sandboxing build.rs and postinstall hooks at scale.</li>
 </ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>跨生态系统攻击，针对 npm、PyPI 和 Crates.io，包含 34 多个恶意包，共 384 个版本。</li>
-<li>恶意软件窃取开发者机密、加密钱包、SSH 密钥、云凭证和环境变量。</li>
-<li>使用特定生态系统执行方式：npm 的 postinstall 钩子、Rust 的 build.rs 脚本、Python 的导入时执行。</li>
-<li>通过 .cursorrules 和 CLAUDE.md 文件实现新型持久化，诱骗 AI 编码助手执行数据窃取命令。</li>
-<li>通过 SSH 进行横向移动，并通过 cron、systemd、Git 钩子和 shell 钩子实现持久化。</li>
-<li>远程载荷托管在 GitHub Pages 上，无需重新发布包即可动态更新。</li>
-<li>针对加密货币、DeFi、Solana 和 AI 开发者社区。</li>
+<li>跨生态系统攻击，针对 npm、PyPI 和 Crates.io，涉及超过 34 个恶意包，共 384 多个版本。</li>
+<li>针对加密、DeFi、Solana 和 AI 社区的开发者。</li>
+<li>利用特定生态系统的执行方式：npm 的 postinstall 钩子、Rust crate 的 build.rs、PyPI 的导入时执行。</li>
+<li>部署共享的 JS 载荷（trap-core.js），用于扫描凭证、验证 AWS/GitHub 令牌并执行 SSH 横向移动。</li>
+<li>通过 .cursorrules、CLAUDE.md、Git 钩子、shell 钩子、systemd、cron 和 SSH 建立持久化。</li>
+<li>使用 XOR 加密的密钥库通过 GitHub Gist 窃取数据。</li>
+<li>通过 GitHub PR 向 AI 项目文件（langchain、browser-use、langflow）注入隐藏指令。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>这次攻击比典型的域名抢注或依赖混淆活动更为复杂。它结合了三个主要包注册表上的多种执行向量，这很罕见。使用 AI 助手配置文件（.cursorrules、CLAUDE.md）作为持久化和数据窃取机制是新颖的，代表了从仅依赖安装后脚本或运行时代码注入的传统供应链攻击的重大演变。它还展示了从纯粹的技术利用向操纵 AI 辅助开发工作流程的转变。</p>
+<p>以往的供应链攻击（例如 SolarWinds、Codecov、event-stream）通常专注于单一生态系统或使用通用后门。TrapDoor 以其协调的多生态系统方法（npm、PyPI、Crates.io）以及将 AI 编码助手配置文件用作持久化和数据窃取渠道的新颖方式而引人注目。这代表了从被动的包投毒向主动、多向量入侵开发者环境的转变，包括横向移动和云凭证验证。</p>
 <h2>重要性</h2>
-<p>这次活动凸显了当前软件供应链安全中的一个关键盲点：缺乏针对利用 AI 编码工具的攻击的开发者工作站深度防御。通过在流行开源项目上发起拉取请求来投毒 AI 助手配置的能力，创造了一个新的、难以检测的攻击向量。对于系统安全而言，它强调了需要对 AI 工具行为进行运行时监控、对包安装脚本进行更严格的沙箱化，以及对影响代码生成和执行的配置文件进行验证。</p>
+<p>这次攻击凸显了软件供应链攻击面的扩大，现在已纳入 AI 工具配置。对于系统安全研究员来说，它强调了需要对开发者工作站进行运行时监控、跨生态系统验证包执行钩子，以及检测来自构建过程的异常 SSH 横向移动和云 API 调用。投毒 AI 配置文件以窃取机密的技术代表了一类新的威胁，需要为 CI/CD 流水线和开发者环境更新安全策略。</p>
 <h2>批判性视角</h2>
-<p>该分析基于单一供应商（Socket）的报告。受影响开发者的数量以及通过 PR 进行 AI 助手投毒的成功率等全部妥协范围尚未得到验证。关于 AI 助手实际执行了 .cursorrules/CLAUDE.md 中隐藏指令的说法需要独立确认。将攻击归因于单个威胁行为者是基于行为聚类，这可能不完整。</p>
+<p>该报告基于安全供应商 Socket 的分析，虽然技术细节可信，但妥协的全部范围（受影响的开发者数量、实际数据窃取）尚未得到独立验证。通过 .cursorrules 和 CLAUDE.md 进行 AI 助手‘欺骗’的说法很新颖，但其实际影响（是否有任何 AI 助手实际执行了隐藏指令）需要进一步验证。将攻击归因于单一活动是基于行为相似性；某些包可能是模仿或无关的。</p>
 <h2>后续关注</h2>
 <ul>
-<li>其他安全研究人员或 AI 供应商对 AI 助手投毒技术的独立验证。</li>
-<li>用于注入 .cursorrules/CLAUDE.md 文件的具体 GitHub PR 的披露。</li>
-<li>GitHub、npm、PyPI 和 Crates.io 关于下架包和封禁账户的回应。</li>
-<li>针对其他 AI 编码工具（如 GitHub Copilot、Amazon CodeWhisperer）的类似攻击的出现。</li>
-<li>在 CI/CD 管道中针对恶意 .cursorrules 和 CLAUDE.md 内容的检测规则的开发。</li>
+<li>关注使用 AI 配置文件作为攻击向量的类似跨生态系统活动。</li>
+<li>追踪针对流行 AI/开发者项目的 GitHub PR，查找隐藏指令。</li>
+<li>关注 npm、PyPI 和 Crates.io 安全团队关于包下架和生态系统范围缓解措施的更新。</li>
+<li>观察威胁行为者是否对其他包管理器（RubyGems、Go modules）采用类似技术。</li>
+<li>寻找关于大规模检测和沙箱化 build.rs 和 postinstall 钩子的研究。</li>
 </ul>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1285/fig_01.webp" alt="ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</span>
-                <span class="lang-zh">威胁日报：Linux Rootkits、路由器0-Day、AI入侵、诈骗工具包及25条新动态</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1285/fig_02.gif" alt="9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros</span>
-                <span class="lang-zh">存在9年的Linux内核漏洞使主流发行版可执行Root命令</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1285/fig_03.webp" alt="Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit</span>
-                <span class="lang-zh">微软发布针对YellowKey BitLocker绕过漏洞CVE-2026-45585的缓解措施</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1285/fig_04.gif" alt="Developer Workstations Are Now Part of the Software Supply Chain" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Developer Workstations Are Now Part of the Software Supply Chain</span>
-                <span class="lang-zh">开发者工作站现已成为软件供应链的一部分</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1285/fig_05.jpg" alt="Articles" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Articles</span>
-                <span class="lang-zh">文章</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

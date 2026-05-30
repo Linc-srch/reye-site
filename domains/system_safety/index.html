@@ -202,8 +202,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1347.html">JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1347.html">JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware</a></h4>
-          <p class="lang-en">A previously undocumented threat actor, JINX-0164, targets cryptocurrency firms using fake recruiter lures on LinkedIn to deliver macOS malware (AUDIOFIX infostealer/RAT and MiniRAT backdoor), with lateral movement into CI/CD pipelines enabling supply chain compromise.</p>
-          <p class="lang-zh">一个此前未被记录的威胁行为者JINX-0164，利用LinkedIn上的虚假招聘诱饵针对加密货币公司，投放macOS恶意软件（AUDIOFIX信息窃取器/RAT和MiniRAT后门），并通过横向移动到CI/CD管道实现供应链攻陷。</p>
+          <p class="lang-en">A previously undocumented threat actor, JINX-0164, targets cryptocurrency firms using fake recruiter lures on LinkedIn to deploy macOS malware (AUDIOFIX, MiniRAT) for credential theft and supply-chain compromise of CI/CD infrastructure.</p>
+          <p class="lang-zh">此前未记录的威胁行为者JINX-0164利用LinkedIn上的虚假招聘诱饵针对加密货币公司，部署macOS恶意软件（AUDIOFIX、MiniRAT）以窃取凭证并入侵CI/CD基础设施，实现供应链攻击。</p>
           
           <a href="https://thehackernews.com/2026/05/jinx-0164-targets-cryptocurrency-firms.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -221,8 +221,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1341.html">GlassWorm Malware Takedown Disrupts Developer Supply Chain Attack Infrastructure</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1341.html">GlassWorm Malware Takedown Disrupts Developer Supply Chain Attack Infrastructure</a></h4>
-          <p class="lang-en">CrowdStrike, Google, and Shadowserver disrupted GlassWorm, a supply-chain malware targeting developers via malicious VS Code extensions and npm/Python packages, using Solana blockchain, BitTorrent DHT, and Google Calendar as resilient C2 channels.</p>
-          <p class="lang-zh">CrowdStrike、Google 与 Shadowserver 联合摧毁了 GlassWorm 恶意软件，该软件通过恶意 VS Code 扩展和 npm/Python 包针对开发者，并利用 Solana 区块链、BitTorrent DHT 和 Google Calendar 作为弹性 C2 通道。</p>
+          <p class="lang-en">CrowdStrike, Google, and Shadowserver disrupted GlassWorm, a supply-chain malware targeting developers via malicious VS Code extensions, npm/Python packages, and using Solana blockchain, BitTorrent DHT, and Google Calendar as resilient C2 channels.</p>
+          <p class="lang-zh">CrowdStrike、Google 和 Shadowserver 联合摧毁了 GlassWorm 恶意软件，该软件通过恶意 VS Code 扩展、npm/Python 包针对开发者，并利用 Solana 区块链、BitTorrent DHT 和 Google Calendar 作为弹性 C2 通道。</p>
           
           <a href="https://thehackernews.com/2026/05/glassworm-malware-takedown-disrupts.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -240,8 +240,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1340.html">Malicious npm Package Stole Files From Claude AI User Directory via GitHub</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1340.html">Malicious npm Package Stole Files From Claude AI User Directory via GitHub</a></h4>
-          <p class="lang-en">A malicious npm package named 'mouse5212-super-formatter' was discovered exfiltrating files from Claude AI's user data directory to a GitHub repository controlled by the attacker, using a hardcoded or environment-based GitHub token.</p>
-          <p class="lang-zh">发现一个名为 'mouse5212-super-formatter' 的恶意 npm 包，它利用硬编码或环境中的 GitHub token，将 Claude AI 用户数据目录中的文件外泄到攻击者控制的 GitHub 仓库。</p>
+          <p class="lang-en">A malicious npm package named 'mouse5212-super-formatter' was discovered exfiltrating files from the Claude AI user data directory (/mnt/user-data) to a GitHub repository controlled by the attacker. The package used a hardcoded or environment-based GitHub token for authentication and uploaded all files during the postinstall step.</p>
+          <p class="lang-zh">发现一个名为 'mouse5212-super-formatter' 的恶意 npm 包，它从 Claude AI 用户数据目录 (/mnt/user-data) 窃取文件，并将其上传到攻击者控制的 GitHub 仓库。该包在 postinstall 阶段使用硬编码或环境中的 GitHub 令牌进行认证并上传所有文件。</p>
           
           <a href="https://thehackernews.com/2026/05/malicious-npm-package-stole-files-from.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -278,8 +278,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1285.html">TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm, PyPI, and CratesIO</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1285.html">TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm, PyPI, and CratesIO</a></h4>
-          <p class="lang-en">A coordinated supply chain attack named TrapDoor has been discovered across npm, PyPI, and Crates.io, deploying over 34 malicious packages designed to steal credentials, crypto wallets, and developer secrets, with novel persistence mechanisms including AI-assisted exfiltration via .cursorrules and CLAUDE.md files.</p>
-          <p class="lang-zh">一场名为 TrapDoor 的协同供应链攻击在 npm、PyPI 和 Crates.io 上被发现，部署了超过 34 个恶意包，旨在窃取凭证、加密钱包和开发者机密，并采用了通过 .cursorrules 和 CLAUDE.md 文件进行 AI 辅助数据窃取的新型持久化机制。</p>
+          <p class="lang-en">A coordinated supply chain attack named TrapDoor has been discovered across npm, PyPI, and Crates.io, deploying over 34 malicious packages designed to steal developer credentials, crypto wallets, and cloud secrets, with novel persistence mechanisms including AI-assisted exfiltration via .cursorrules and CLAUDE.md files.</p>
+          <p class="lang-zh">一个名为 TrapDoor 的协同供应链攻击在 npm、PyPI 和 Crates.io 上被发现，部署了超过 34 个恶意包，旨在窃取开发者凭证、加密钱包和云密钥，并采用新颖的持久化机制，包括通过 .cursorrules 和 CLAUDE.md 文件进行 AI 辅助的数据窃取。</p>
           
           <a href="https://thehackernews.com/2026/05/trapdoor-supply-chain-attack-spreads.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -316,8 +316,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1283.html">Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1283.html">Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks</a></h4>
-          <p class="lang-en">Threat actors are exploiting CVE-2026-26980, a critical SQL injection vulnerability in Ghost CMS (CVSS 9.4), to hijack over 700 websites for ClickFix attacks. Discovered by Anthropic using Claude and patched in February 2026, the flaw allows unauthenticated attackers to obtain the admin API key and inject malicious JavaScript loaders into articles. The campaign, detected by QiAnXin XLab on May 7, 2026, targets universities, blockchain, AI, SaaS, and fintech sectors. The injected code uses a two-stage loader with a cloaking script to serve fake CAPTCHA pages, tricking victims into running Base64-encoded commands that deliver malware, including a modified Electron app for persistence.</p>
-          <p class="lang-zh">攻击者利用Ghost CMS中一个严重的SQL注入漏洞CVE-2026-26980（CVSS 9.4），劫持超过700个网站以发起ClickFix攻击。该漏洞由Anthropic使用Claude发现，并于2026年2月修复，允许未认证攻击者获取管理员API密钥，在文章中注入恶意JavaScript加载器。奇安信XLab于2026年5月7日检测到该活动，目标涵盖大学、区块链、AI、SaaS和金融科技领域。注入代码使用两级加载器和cloaking脚本，通过虚假CAPTCHA页面诱骗受害者执行Base64编码命令，最终投放包含持久化能力的恶意软件。</p>
+          <p class="lang-en">Threat actors are exploiting CVE-2026-26980, a critical SQL injection vulnerability in Ghost CMS (patched in Feb 2026), to steal Admin API keys and inject malicious JavaScript into over 700 websites, primarily to serve ClickFix fake CAPTCHA attacks that ultimately deploy remote access trojans.</p>
+          <p class="lang-zh">威胁行为者正在利用 Ghost CMS 中一个关键的 SQL 注入漏洞 CVE-2026-26980（已于 2026 年 2 月修复），窃取管理员 API 密钥，并向超过 700 个网站注入恶意 JavaScript，主要用于发起 ClickFix 虚假验证码攻击，最终部署远程访问木马。</p>
           
           <a href="https://thehackernews.com/2026/05/ghost-cms-cve-2026-26980-exploited-to.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -469,7 +469,7 @@ Scope boundary: This domain covers the security of general computing systems and
           <h4 class="lang-en"><a href="../../articles/1276.html">How CISOs Should Prep for Agentic-Ready AI BOMs</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1276.html">How CISOs Should Prep for Agentic-Ready AI BOMs</a></h4>
           <p class="lang-en">The article advises CISOs to prepare for agentic AI by adopting AI Bill of Materials (AI BOMs) to inventory AI components, track dependencies, and manage supply chain risks as AI agents become more autonomous.</p>
-          <p class="lang-zh">文章建议首席信息安全官（CISO）通过采用AI物料清单（AI BOM）来为代理式AI做准备，以盘点AI组件、跟踪依赖关系并管理供应链风险，因为AI代理正变得越来越自主。</p>
+          <p class="lang-zh">文章建议首席信息安全官（CISO）通过采用人工智能物料清单（AI BOM）来盘点AI组件、跟踪依赖关系并管理供应链风险，以应对日益自主的代理式AI。</p>
           
           <a href="https://www.darkreading.com/cyber-risk/how-cisos-should-prep-for-agentic-ready-ai-boms" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -563,8 +563,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1282.html">CISA Exposes Secrets, Credentials in 'Private' Repo</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1282.html">CISA Exposes Secrets, Credentials in 'Private' Repo</a></h4>
-          <p class="lang-en">CISA discovered that a repository marked as 'private' inadvertently exposed sensitive secrets and credentials, highlighting risks of misconfigured access controls in version control systems.</p>
-          <p class="lang-zh">CISA发现一个标记为'private'的仓库意外暴露了敏感机密和凭证，凸显了版本控制系统中访问控制配置错误的风险。</p>
+          <p class="lang-en">CISA disclosed that a repository marked as 'private' inadvertently exposed sensitive secrets and credentials, underscoring risks of misconfigured access controls in version control systems.</p>
+          <p class="lang-zh">CISA披露，一个标记为'private'的仓库无意中暴露了敏感机密和凭证，凸显了版本控制系统中访问控制配置错误的风险。</p>
           
           <a href="https://www.darkreading.com/cybersecurity-operations/cisa-exposes-secrets-credentials-private-repo" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -620,8 +620,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1262.html">Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1262.html">Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software</a></h4>
-          <p class="lang-en">Anthropic's Project Glasswing, using the Claude Mythos Preview model, has uncovered over 10,000 high/critical severity vulnerabilities in widely-used open-source software within a month, with 1,094 confirmed high/critical flaws and 97 already patched upstream.</p>
-          <p class="lang-zh">Anthropic 的 Project Glasswing 利用 Claude Mythos Preview 模型，在一个月内发现了广泛使用的开源软件中超过 10,000 个高危/严重漏洞，其中 1,094 个被确认为高危/严重漏洞，97 个已被上游修复。</p>
+          <p class="lang-en">Anthropic's Project Glasswing, using the Claude Mythos Preview model, has discovered over 10,000 high-severity vulnerabilities in widely-used software, with 1,726 confirmed true positives and 97 already patched upstream.</p>
+          <p class="lang-zh">Anthropic 的 Project Glasswing 利用 Claude Mythos Preview 模型，在广泛使用的软件中发现了超过 10,000 个高危漏洞，其中 1,726 个被确认为真阳性，97 个已被上游修复。</p>
           
           <a href="https://thehackernews.com/2026/05/claude-mythos-ai-finds-10000-high.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -677,8 +677,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1242.html">Drupal Core SQL Injection Bug Actively Exploited, Added to CISA KEV</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1242.html">Drupal Core SQL Injection Bug Actively Exploited, Added to CISA KEV</a></h4>
-          <p class="lang-en">CISA added CVE-2026-9082, a critical SQL injection vulnerability in Drupal Core, to its KEV catalog after observing active exploitation. Over 15,000 attack attempts targeting 6,000 sites have been detected, primarily probing for vulnerable PostgreSQL-backed Drupal instances.</p>
-          <p class="lang-zh">CISA 将 Drupal Core 中的一个严重 SQL 注入漏洞 CVE-2026-9082 添加到其 KEV 目录，原因是观察到活跃的利用。已检测到超过 15,000 次攻击尝试，针对 6,000 个站点，主要探测存在漏洞的 PostgreSQL 后端 Drupal 实例。</p>
+          <p class="lang-en">CISA added CVE-2026-9082, a critical SQL injection vulnerability in Drupal Core, to its KEV catalog after active exploitation was observed, with over 15,000 attack attempts targeting 6,000 sites across 65 countries.</p>
+          <p class="lang-zh">CISA 将 Drupal Core 中的严重 SQL 注入漏洞 CVE-2026-9082 添加到其 KEV 目录，原因是已观察到活跃利用，超过 15,000 次攻击尝试针对 65 个国家的 6,000 个站点。</p>
           
           <a href="https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -772,8 +772,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1248.html">CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1248.html">CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV</a></h4>
-          <p class="lang-en">CISA added two actively exploited vulnerabilities to its KEV catalog: CVE-2025-34291 (Langflow, CVSS 9.4, origin validation error leading to RCE) and CVE-2026-34926 (Trend Micro Apex One, CVSS 6.7, directory traversal enabling code injection). Langflow flaw was exploited by Iranian state group MuddyWater for initial access.</p>
-          <p class="lang-zh">CISA 将两个已遭主动利用的漏洞加入其 KEV 目录：CVE-2025-34291（Langflow，CVSS 9.4，来源验证错误导致远程代码执行）和 CVE-2026-34926（Trend Micro Apex One，CVSS 6.7，目录遍历导致代码注入）。Langflow 漏洞已被伊朗国家背景黑客组织 MuddyWater 用于初始访问。</p>
+          <p class="lang-en">CISA added two actively exploited vulnerabilities to its KEV catalog: CVE-2025-34291 (Langflow, CVSS 9.4, origin validation error leading to RCE) and CVE-2026-34926 (Trend Micro Apex One, CVSS 6.7, directory traversal allowing code injection). Langflow flaw was exploited by Iranian state group MuddyWater for initial access.</p>
+          <p class="lang-zh">CISA 将两个已遭积极利用的漏洞加入其 KEV 目录：CVE-2025-34291（Langflow，CVSS 9.4，来源验证错误导致远程代码执行）和 CVE-2026-34926（Trend Micro Apex One，CVSS 6.7，目录遍历允许代码注入）。Langflow 漏洞已被伊朗国家背景黑客组织 MuddyWater 用于初始访问。</p>
           
           <a href="https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -810,8 +810,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1250.html">Showboat Linux Malware Hits Middle East Telecom with SOCKS5 Proxy Backdoor</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1250.html">Showboat Linux Malware Hits Middle East Telecom with SOCKS5 Proxy Backdoor</a></h4>
-          <p class="lang-en">Showboat is a modular Linux post-exploitation framework used since mid-2022 against a Middle Eastern telecom provider. It enables remote shell access, file transfer, and SOCKS5 proxy capabilities to pivot within internal networks. The malware, linked to Chinese threat actors including Calypso (Red Lamassu), shares code and infrastructure with other known backdoors like PlugX and ShadowPad. The initial access vector remains unknown, but past campaigns used ProxyLogon exploits or ASPX webshells. The findings underscore sustained cyber-espionage targeting critical telecommunications infrastructure, leveraging shared tooling to maintain persistent covert access.</p>
-          <p class="lang-zh">Showboat是一个模块化Linux后渗透框架，自2022年中旬以来针对中东电信运营商使用，提供远程shell、文件传输及SOCKS5代理功能以在内网横向移动。该恶意软件关联中国APT组织（包括Calypso/Red Lamassu），与PlugX、ShadowPad等共享工具池。初始入侵向量未知，但过往活动使用ProxyLogon或ASPX webshell。研究凸显电信基础设施面临的持续间谍威胁。</p>
+          <p class="lang-en">Researchers disclose Showboat, a modular Linux post-exploitation framework used since mid-2022 against a Middle East telecom. It provides remote shell, file transfer, and SOCKS5 proxy capabilities, attributed to China-linked threat actors including Calypso.</p>
+          <p class="lang-zh">研究人员披露了Showboat，一个自2022年中以来用于针对中东电信公司的模块化Linux后渗透框架。它提供远程shell、文件传输和SOCKS5代理功能，归因于包括Calypso在内的中国关联威胁行为者。</p>
           
           <a href="https://thehackernews.com/2026/05/showboat-linux-malware-hits-middle-east.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>
@@ -886,8 +886,8 @@ Scope boundary: This domain covers the security of general computing systems and
           </div>
           <h4 class="lang-en"><a href="../../articles/1258.html">Microsoft Takes Down Malware-Signing Service Behind Ransomware Attacks</a></h4>
           <h4 class="lang-zh"><a href="../../articles/1258.html">Microsoft Takes Down Malware-Signing Service Behind Ransomware Attacks</a></h4>
-          <p class="lang-en">Microsoft disrupted a malware-signing-as-a-service (MSaaS) operation, dubbed Fox Tempest, which abused the company's Artifact Signing system to generate fraudulent code-signing certificates for signing malware. The service enabled ransomware attacks, including Rhysida, and distributed malware like Oyster, Lumma Stealer, and Vidar. Fox Tempest used stolen identities from the US and Canada to obtain legitimate certificates and offered the service for $5,000–$9,000. The takedown, OpFauxSign, seized the website, virtual machines, and hosting infrastructure. The operation targeted healthcare, education, government, and financial sectors globally. Microsoft emphasized that such abuse undermines trust in software legitimacy and security controls.</p>
-          <p class="lang-zh">微软捣毁了一个名为Fox Tempest的恶意签名服务平台，该平台滥用微软的Artifact Signing系统生成伪造的代码签名证书，为勒索软件（如Rhysida）及其他恶意软件签名。该服务使用美国与加拿大的被盗身份获取合法证书，收费5000-9000美元，并通过Cloudzy虚拟机分发。行动代号OpFauxSign，查封了网站和基础设施。此举突显了代码签名信任机制被武器化的风险。</p>
+          <p class="lang-en">Microsoft disrupted a malware-signing-as-a-service (MSaaS) operation called Fox Tempest that abused its Artifact Signing system to issue short-lived fraudulent code-signing certificates, enabling ransomware (Rhysida, INC, Qilin, BlackByte, Akira) and other malware to be signed and delivered as legitimate software.</p>
+          <p class="lang-zh">微软捣毁了一个名为 Fox Tempest 的恶意软件签名即服务（MSaaS）运营，该运营滥用微软的 Artifact Signing 系统签发短期伪造代码签名证书，使勒索软件（Rhysida、INC、Qilin、BlackByte、Akira）及其他恶意软件能够以合法软件签名形式分发。</p>
           
           <a href="https://thehackernews.com/2026/05/microsoft-takes-down-malware-signing.html" target="_blank" rel="noopener" class="original-link">
             <span class="lang-en">Original source</span>

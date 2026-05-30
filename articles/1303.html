@@ -80,7 +80,6 @@
       
 
       
-      
 
       
       <div class="article-hero-figures">
@@ -90,7 +89,7 @@
           
           <figcaption>
             <span class="lang-en">Figure 5: Three-way generator scatter on n = 8 n{=}8 paired cells. Left: within-architecture (qwen 3B vs. qwen 14B) preserves ranking. Centre and right: cross-architecture pairs destroy ranking. Dashed line is y = x y{=}x .</span>
-            <span class="lang-zh">图5：n=8个配对细胞上的三路生成器散点图。左：架构内（qwen 3B vs. qwen 14B）保持排序。中、右：跨架构对破坏排序。虚线为y=x。</span>
+            <span class="lang-zh">图5：n=8 n{=}8个配对细胞的三向生成器散点图。左：架构内（qwen 3B vs. qwen 14B）保持排名。中、右：跨架构对破坏排名。虚线为y=x y{=}x。</span>
           </figcaption>
           
         </figure>
@@ -111,17 +110,17 @@
         
         <div class="lang-en">
           <span class="eyebrow">Deep Note</span>
-          <h1>Deep Note — agentdiff-noise</h1>
+          <h1>Deep Note — surface-vs-semantic-noise</h1>
 <p><strong>Key Takeaways</strong>
-- Semantic perturbations (paraphrase, synonym) cause final-answer changes 19.69 pp more often than presentation perturbations (formatting, reordering) after severity matching across 68 cells.
-- The gap survives four severity-proxy audits and remains significant when excluding qwen models (+11.10 pp).
-- Held-out validation on qwen2.5-14B-Instruct (1,800 trajectories) confirms the effect; trace-level analysis reveals a 'stealth-divergence' mechanism where semantic noise corrupts intermediate reasoning from step 2 onward.
-- Two prior mechanism claims fail to replicate and are retracted; cross-architecture generator swaps destroy per-cell rankings (Spearman ρ=+0.14).
-- A second LLM judge yields only moderate agreement (Cohen's κ=0.50), indicating unbiased but limited judge reliability.</p>
+- Meaning-bearing perturbations (paraphrase, synonym) cause 19.69 pp more answer changes than presentation perturbations (formatting, reordering) after severity matching, with 64/68 cells positive.
+- The effect survives four severity-proxy audits and holds when excluding Qwen models (+11.10 pp), but fails cluster-bootstrap significance under stricter assumptions.
+- Held-out validation on qwen2.5-14B-Instruct confirms a small positive effect (3/4 cells; pooled Welch t=3.81, p=9.6e-4).
+- Two prior mechanism claims (e.g., first-action divergence) fail to replicate; new probes support a 'stealth-divergence' picture where semantic perturbations preserve early actions but cause later reasoning divergence.
+- Cross-architecture generator swaps destroy per-cell rankings, and a second LLM judge shows only moderate agreement (κ=0.50), highlighting measurement fragility.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation</li>
-<li><strong>Alias:</strong> agentdiff-noise</li>
+<li><strong>Alias:</strong> surface-vs-semantic-noise</li>
 <li><strong>Authors:</strong> Liyun Zhang, Jiayi Guo</li>
 <li><strong>arXiv ID:</strong> 2605.25981</li>
 <li><strong>Published:</strong> </li>
@@ -129,53 +128,54 @@
 <li>Abs: https://arxiv.org/abs/2605.25981</li>
 <li>HTML: https://arxiv.org/html/2605.25981v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.25981</li>
-<li><strong>Tags:</strong> llm-agents, perturbation-robustness, semantic-noise, chain-of-thought, measurement-study</li>
-<li><strong>Domains:</strong> system_safety</li>
-<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+<li><strong>Tags:</strong> llm-agents, robustness, semantic-noise, chain-of-thought, react</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>This paper provides a rigorous measurement study showing that LLM agents are systematically more sensitive to semantic noise than surface noise, with a held-out replication and trace-level mechanism analysis.</p>
+<p>This paper provides a rigorous 68-cell measurement study showing that LLM agents are systematically more sensitive to semantic noise than surface noise, with a held-out replication and trace-level mechanism analysis.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Prior work on perturbation robustness has focused on single-step models or classifiers, not multi-step agents. Agent benchmarks measure raw success rate, not perturbation sensitivity. Prompt formatting alone can shift accuracy by tens of points, motivating the need to understand how different noise types propagate through agent reasoning.</p>
+<p>LLM agents using chain-of-thought or ReAct are known to be brittle to input perturbations, but prior work conflates perturbation types and lacks controlled severity matching. Existing studies often rely on single models or benchmarks without held-out validation or trace-level mechanism probes.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>PromptBench (Zhu et al., 2024) studies perturbation operators on classification/generation models but does not separate meaning-bearing vs. presentation gaps or study agent trajectories.</li>
-<li>CheckList (Ribeiro et al., 2020) defines behavioral categories for classifiers, not agents with tool use.</li>
-<li>AgentBench (Liu et al., 2024) and AgentBoard (Ma et al., 2024) measure end-to-end success, not perturbation sensitivity.</li>
-<li>GSM-Symbolic (Mirzadeh et al., 2025) measures accuracy drops under template-level paraphrase on multi-step reasoning, but does not compare directional gaps or perform severity matching.</li>
+<li>Prior work on LLM robustness to paraphrasing and formatting changes (e.g., prompt sensitivity studies).</li>
+<li>Studies on chain-of-thought brittleness and reasoning faithfulness.</li>
+<li>Research on perturbation severity metrics and matching techniques.</li>
+<li>Work on ReAct agent trajectory analysis and failure modes.</li>
 </ul>
 <h3>G — Gap</h3>
-<p>No prior work has systematically measured whether LLM agents treat meaning-bearing perturbations differently from presentation perturbations of comparable severity, nor has any study subjected such a gap to severity matching, generator swaps, judge swaps, and held-out validation. The methodological question of robustness to these confounds remains unanswered.</p>
+<p>No prior study systematically compares meaning-bearing vs. presentation perturbations under severity-matched conditions across multiple models, benchmarks, and perturbation types, nor validates findings with a held-out model and trace-level mechanism probes.</p>
 <h3>P — Proposal</h3>
-<p>The authors conduct a 68-cell measurement study across 10 LLMs, 3 benchmarks, and 2 scaffolds, applying 5 perturbation operators (2 semantic, 3 presentation) and recording final answers and full trajectories. They perform severity matching, stress tests (cluster bootstrap, generator swap, judge swap), and validate on a held-out 11th model with 1,800 trajectories, probing trace-level mechanism signals to identify a 'stealth-divergence' pattern.</p>
+<p>The authors conduct a 68-cell measurement study across 10 LLMs (7 families) on GSM8K, MATH, and HotpotQA, using severity-matched perturbations and four severity-proxy audits. They then validate the headline effect on a held-out model (qwen2.5-14B-Instruct) with 1,800 trajectories and probe four trace-level mechanism signals, proposing a 'stealth-divergence' account.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>Across 68 cells (1,530 originals, ~11,150 variants), severity-matched inconsistency gap averages +19.69 pp (paired t=9.58, p&lt;0.0001; 64/68 positive). Gap survives four severity proxies (edit distance, token Jaccard, Sentence-BERT cosine, length-change ratio) at p&lt;0.0001. On 48 non-qwen cells: +11.10 pp (p&lt;0.0001). Held-out validation on qwen2.5-14B-Instruct: 3/4 cells positive, pooled Welch t=3.81, p=9.6e-4. Trace-level: per-step similarity gap -5.6 to -10.5 pp from step 2 onward; cascade depth +0.17 steps (paired t=7.69, p=2.5e-14).</p>
+<p>Across 68 cells (1,530 originals, ~11,150 variants), the inconsistency gap averages +19.69 pp (paired t=9.58, p&lt;0.0001), with 64/68 cells positive. Excluding Qwen models gives +11.10 pp (p&lt;0.0001). Held-out validation on qwen2.5-14B-Instruct yields 3/4 cells positive, pooled Welch t=3.81, p=9.6e-4. Second LLM judge agreement κ=0.50.</p>
 <h3>Ablation</h3>
-<p>Excluding qwen models reduces the gap from +19.69 pp to +11.10 pp (still p&lt;0.0001), showing the effect is not driven by a single family. Cross-architecture generator swap destroys per-cell ranking (Spearman ρ=+0.14), while within-family swap preserves it (ρ=+0.71). Wild cluster bootstrap at K=10 and K=7 is non-significant, indicating limited cluster-level identification.</p>
+<p>Cluster-bootstrap significance disappears under stricter assumptions; tractability contrasts do not replicate; cross-architecture generator swaps break per-cell rankings. Two prior mechanism claims fail to replicate and are retracted.</p>
 <h3>Limitations</h3>
-<p>Wild cluster bootstrap fails to reach significance at small cluster counts (K=10, K=7), limiting cross-benchmark heterogeneity claims. The second LLM judge shows only moderate agreement (κ=0.50), suggesting answer evaluation is noisy. The held-out validation uses only one model (qwen2.5-14B-Instruct), so generalizability to other architectures is not fully established.</p>
+<p>['The held-out validation uses only one model (qwen2.5-14B-Instruct), limiting generality.', 'The stealth-divergence mechanism is supported by only two probes and may not fully explain the effect.', 'Perturbation generation relies on a single LLM (GPT-4), which may introduce biases.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Provides a rigorous methodology for measuring perturbation sensitivity in agents, including severity matching and multiple stress tests that can be adopted in your own evaluations.</li>
-<li>Reveals that semantic noise propagates through intermediate reasoning steps (stealth-divergence), which has implications for input normalization and adversarial robustness in deployed agents.</li>
-<li>Demonstrates the importance of held-out validation and honest reporting of non-significant stress tests, setting a standard for empirical work in agent robustness.</li>
+<li>Highlights the need for severity-matched controls in robustness studies to avoid conflating perturbation types.</li>
+<li>Demonstrates that measurement fragility (e.g., cross-architecture ranking destruction) can undermine claims without held-out validation.</li>
+<li>Provides a replicable methodology (code, corpus, trajectories released) for future agent robustness research.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Apply the severity-matching and stress-test framework to your own agent pipelines (e.g., tool-use, multi-hop QA) to measure perturbation sensitivity.</li>
-<li>[ ] Investigate whether stealth-divergence generalizes to other model families and task types beyond math and QA.</li>
-<li>[ ] Design input normalization strategies that specifically target semantic perturbations (e.g., paraphrase detection, synonym grounding) based on the finding that they cause deeper reasoning corruption.</li>
+<li>[ ] Extend held-out validation to more models and architectures.</li>
+<li>[ ] Design interventions to mitigate semantic noise sensitivity (e.g., robust prompting or training).</li>
+<li>[ ] Investigate whether stealth-divergence generalizes to other agent frameworks (e.g., tool-use, multi-step planning).</li>
+<li>[ ] Develop better severity metrics that align with human judgment and downstream task performance.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>
-<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p><figure class="article-figure"><img class="article-figure-img" src="figures/1303/fig_005.png" alt="Figure 5: Three-way generator scatter on n = 8 n{=}8 paired cells. Left: within-architecture (qwen 3B vs. qwen 14B) preserves ranking. Centre and right: cross-architecture pairs destroy ranking. Dashed line is y = x y{=}x ." width="996" height="317" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5: Three-way generator scatter on n = 8 n{=}8 paired cells. Left: within-architecture (qwen 3B vs. qwen 14B) preserves ranking. Centre and right: cross-architecture pairs destroy ranking. Dashed line is y = x y{=}x .</span><span class="lang-zh">图5：n=8 n{=}8个配对细胞的三向生成器散点图。左：架构内（qwen 3B vs. qwen 14B）保持排名。中、右：跨架构对破坏排名。虚线为y=x y{=}x。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1303/fig_001.png" alt="Figure 1: Per-cell severity-matched Δ \Delta across 68 cells of the 10-model panel; 64/68 are positive, with a mean of + 19.69 +19.69 pp (paired t = 9.58 t=9.58 , p &lt; 0.0001 p&lt;0.0001 )." width="996" height="432" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1: Per-cell severity-matched Δ \Delta across 68 cells of the 10-model panel; 64/68 are positive, with a mean of + 19.69 +19.69 pp (paired t = 9.58 t=9.58 , p &lt; 0.0001 p&lt;0.0001 ).</span><span class="lang-zh">图1：10模型面板中68个细胞上每个细胞严重程度匹配的Δ \Delta；64/68为正，平均值为+19.69 +19.69个百分点（配对t=9.58 t=9.58，p&lt;0.0001 p&lt;0.0001）。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1303/fig_002.png" alt="Figure 2: (a) Per-operator edit-distance severity (blue: meaning-bearing; orange: presentation). (b) Δ raw \Delta_{\text{raw}} vs. Δ matched \Delta_{\text{matched}} scatter; the dashed line is y = x y{=}x . Mean shrinkage is − 0.79 -0.79 pp (matched is slightly larger than raw)." width="996" height="357" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: (a) Per-operator edit-distance severity (blue: meaning-bearing; orange: presentation). (b) Δ raw \Delta_{\text{raw}} vs. Δ matched \Delta_{\text{matched}} scatter; the dashed line is y = x y{=}x . Mean shrinkage is − 0.79 -0.79 pp (matched is slightly larger than raw).</span><span class="lang-zh">图2：(a) 每个操作员的编辑距离严重程度（蓝色：表意；橙色：呈现）。(b) Δ raw \Delta_{\text{raw}}与Δ matched \Delta_{\text{matched}}散点图；虚线为y=x y{=}x。平均收缩率为−0.79 -0.79个百分点（匹配值略大于原始值）。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1303/fig_003.png" alt="Figure 3: Cascade-depth gap (steps), exact match vs. TF-IDF cosine alignment with thresholds 0.3 0.3 , 0.5 0.5 , 0.7 0.7 . Stars: ∗ p &lt; .05 , ∗ ∗ p &lt; .01 , ∗ ∗ ∗ p &lt; .001 *p{&lt;}.05,**p{&lt;}.01,***p{&lt;}.001 ." width="996" height="422" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3: Cascade-depth gap (steps), exact match vs. TF-IDF cosine alignment with thresholds 0.3 0.3 , 0.5 0.5 , 0.7 0.7 . Stars: ∗ p &lt; .05 , ∗ ∗ p &lt; .01 , ∗ ∗ ∗ p &lt; .001 *p{&lt;}.05,**p{&lt;}.01,***p{&lt;}.001 .</span><span class="lang-zh">图3：级联深度差距（步数），精确匹配与TF-IDF余弦对齐，阈值分别为0.3 0.3、0.5 0.5、0.7 0.7。星号：∗ p &lt; .05、∗∗ p &lt; .01、∗∗∗ p &lt; .001 *p{&lt;}.05,**p{&lt;}.01,***p{&lt;}.001。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1303/fig_004.png" alt="Figure 4: Within-benchmark tractability strata Δ \Delta for GSM8K, MATH, and HotpotQA. Error bars show standard error across 20 cells per benchmark; 0 / 3 0/3 contrasts significant." width="996" height="419" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4: Within-benchmark tractability strata Δ \Delta for GSM8K, MATH, and HotpotQA. Error bars show standard error across 20 cells per benchmark; 0 / 3 0/3 contrasts significant.</span><span class="lang-zh">图4：GSM8K、MATH和HotpotQA的基准内可处理性分层Δ \Delta。误差棒显示每个基准20个细胞的标准误差；0/3 0/3对比显著。</span></figcaption></figure>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
@@ -215,59 +215,10 @@
 <li>[ ] 将严重性匹配和压力测试框架应用于你自己的智能体管道（例如工具使用、多跳问答），以测量扰动敏感性。</li>
 <li>[ ] 研究隐性分歧是否泛化到其他模型族和任务类型（超越数学和问答）。</li>
 <li>[ ] 基于语义扰动导致更深层推理破坏的发现，设计专门针对语义扰动的输入归一化策略（例如释义检测、同义词接地）。</li>
-</ul>
+</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1303/fig_005.png" alt="Figure 5: Three-way generator scatter on n = 8 n{=}8 paired cells. Left: within-architecture (qwen 3B vs. qwen 14B) preserves ranking. Centre and right: cross-architecture pairs destroy ranking. Dashed line is y = x y{=}x ." width="996" height="317" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5: Three-way generator scatter on n = 8 n{=}8 paired cells. Left: within-architecture (qwen 3B vs. qwen 14B) preserves ranking. Centre and right: cross-architecture pairs destroy ranking. Dashed line is y = x y{=}x .</span><span class="lang-zh">图5：n=8 n{=}8个配对细胞的三向生成器散点图。左：架构内（qwen 3B vs. qwen 14B）保持排名。中、右：跨架构对破坏排名。虚线为y=x y{=}x。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1303/fig_001.png" alt="Figure 1: Per-cell severity-matched Δ \Delta across 68 cells of the 10-model panel; 64/68 are positive, with a mean of + 19.69 +19.69 pp (paired t = 9.58 t=9.58 , p &lt; 0.0001 p&lt;0.0001 )." width="996" height="432" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1: Per-cell severity-matched Δ \Delta across 68 cells of the 10-model panel; 64/68 are positive, with a mean of + 19.69 +19.69 pp (paired t = 9.58 t=9.58 , p &lt; 0.0001 p&lt;0.0001 ).</span><span class="lang-zh">图1：10模型面板中68个细胞上每个细胞严重程度匹配的Δ \Delta；64/68为正，平均值为+19.69 +19.69个百分点（配对t=9.58 t=9.58，p&lt;0.0001 p&lt;0.0001）。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1303/fig_002.png" alt="Figure 2: (a) Per-operator edit-distance severity (blue: meaning-bearing; orange: presentation). (b) Δ raw \Delta_{\text{raw}} vs. Δ matched \Delta_{\text{matched}} scatter; the dashed line is y = x y{=}x . Mean shrinkage is − 0.79 -0.79 pp (matched is slightly larger than raw)." width="996" height="357" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: (a) Per-operator edit-distance severity (blue: meaning-bearing; orange: presentation). (b) Δ raw \Delta_{\text{raw}} vs. Δ matched \Delta_{\text{matched}} scatter; the dashed line is y = x y{=}x . Mean shrinkage is − 0.79 -0.79 pp (matched is slightly larger than raw).</span><span class="lang-zh">图2：(a) 每个操作员的编辑距离严重程度（蓝色：表意；橙色：呈现）。(b) Δ raw \Delta_{\text{raw}}与Δ matched \Delta_{\text{matched}}散点图；虚线为y=x y{=}x。平均收缩率为−0.79 -0.79个百分点（匹配值略大于原始值）。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1303/fig_003.png" alt="Figure 3: Cascade-depth gap (steps), exact match vs. TF-IDF cosine alignment with thresholds 0.3 0.3 , 0.5 0.5 , 0.7 0.7 . Stars: ∗ p &lt; .05 , ∗ ∗ p &lt; .01 , ∗ ∗ ∗ p &lt; .001 *p{&lt;}.05,**p{&lt;}.01,***p{&lt;}.001 ." width="996" height="422" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3: Cascade-depth gap (steps), exact match vs. TF-IDF cosine alignment with thresholds 0.3 0.3 , 0.5 0.5 , 0.7 0.7 . Stars: ∗ p &lt; .05 , ∗ ∗ p &lt; .01 , ∗ ∗ ∗ p &lt; .001 *p{&lt;}.05,**p{&lt;}.01,***p{&lt;}.001 .</span><span class="lang-zh">图3：级联深度差距（步数），精确匹配与TF-IDF余弦对齐，阈值分别为0.3 0.3、0.5 0.5、0.7 0.7。星号：∗ p &lt; .05、∗∗ p &lt; .01、∗∗∗ p &lt; .001 *p{&lt;}.05,**p{&lt;}.01,***p{&lt;}.001。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1303/fig_004.png" alt="Figure 4: Within-benchmark tractability strata Δ \Delta for GSM8K, MATH, and HotpotQA. Error bars show standard error across 20 cells per benchmark; 0 / 3 0/3 contrasts significant." width="996" height="419" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4: Within-benchmark tractability strata Δ \Delta for GSM8K, MATH, and HotpotQA. Error bars show standard error across 20 cells per benchmark; 0 / 3 0/3 contrasts significant.</span><span class="lang-zh">图4：GSM8K、MATH和HotpotQA的基准内可处理性分层Δ \Delta。误差棒显示每个基准20个细胞的标准误差；0/3 0/3对比显著。</span></figcaption></figure>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1303/fig_001.png" alt="Figure 1: Per-cell severity-matched Δ \Delta across 68 cells of the 10-model panel; 64/68 are positive, with a mean of + 19.69 +19.69 pp (paired t = 9.58 t=9.58 , p < 0.0001 p<0.0001 )." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1: Per-cell severity-matched Δ \Delta across 68 cells of the 10-model panel; 64/68 are positive, with a mean of + 19.69 +19.69 pp (paired t = 9.58 t=9.58 , p < 0.0001 p<0.0001 ).</span>
-                <span class="lang-zh">图1：10模型面板中68个细胞上每个细胞严重性匹配的Δ；64/68为正，平均值为+19.69个百分点（配对t=9.58，p<0.0001）。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1303/fig_006.png" alt="Figure 6: Per-step thought-similarity gap (sem − - sur) on the qwen2.5-14B trace probe ( n = 1 , 800 n{=}1{,}800 ). Step 1 is null ( p = 0.12 p{=}0.12 ); the gap opens at step 2 and remains highly significant through step 6. Consistent with stealth divergence : a semantic perturbation does not change the model’s first surface action — it silently corrupts intermediate thought content from step 2 onward, and that corruption cascades 0.17 steps deeper than a presentation-level edit (M3)." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 6: Per-step thought-similarity gap (sem − - sur) on the qwen2.5-14B trace probe ( n = 1 , 800 n{=}1{,}800 ). Step 1 is null ( p = 0.12 p{=}0.12 ); the gap opens at step 2 and remains highly significant through step 6. Consistent with stealth divergence : a semantic perturbation does not change the model’s first surface action — it silently corrupts intermediate thought content from step 2 onward, and that corruption cascades 0.17 steps deeper than a presentation-level edit (M3).</span>
-                <span class="lang-zh">图6：qwen2.5-14B轨迹探针上每步思维相似性差距（sem − sur）（n=1,800）。第1步为零（p=0.12）；差距从第2步开始出现，并保持高度显著直至第6步。与隐形偏离一致：语义扰动不会改变模型的第一个表面动作——它从第2步开始悄然破坏中间思维内容，且这种破坏比呈现层面编辑（M3）深0.17步。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1303/fig_004.png" alt="Figure 4: Within-benchmark tractability strata Δ \Delta for GSM8K, MATH, and HotpotQA. Error bars show standard error across 20 cells per benchmark; 0 / 3 0/3 contrasts significant." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 4: Within-benchmark tractability strata Δ \Delta for GSM8K, MATH, and HotpotQA. Error bars show standard error across 20 cells per benchmark; 0 / 3 0/3 contrasts significant.</span>
-                <span class="lang-zh">图4：GSM8K、MATH和HotpotQA的基准内可处理性分层Δ。误差棒显示每个基准20个细胞的标准误差；0/3对比显著。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1303/fig_002.png" alt="Figure 2: (a) Per-operator edit-distance severity (blue: meaning-bearing; orange: presentation). (b) Δ raw \Delta_{\text{raw}} vs. Δ matched \Delta_{\text{matched}} scatter; the dashed line is y = x y{=}x . Mean shrinkage is − 0.79 -0.79 pp (matched is slightly larger than raw)." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 2: (a) Per-operator edit-distance severity (blue: meaning-bearing; orange: presentation). (b) Δ raw \Delta_{\text{raw}} vs. Δ matched \Delta_{\text{matched}} scatter; the dashed line is y = x y{=}x . Mean shrinkage is − 0.79 -0.79 pp (matched is slightly larger than raw).</span>
-                <span class="lang-zh">图2：(a) 每个算子的编辑距离严重性（蓝色：承载意义；橙色：呈现）。(b) Δ原始值与Δ匹配值散点图；虚线为y=x。平均收缩为−0.79个百分点（匹配值略大于原始值）。</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

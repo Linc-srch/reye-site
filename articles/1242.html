@@ -68,12 +68,11 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For a system security researcher focused on OS, kernel, and software safety, this vulnerability is a classic example of a server-side web application flaw (SQL injection) that can lead to privilege escalation and remote code execution. While not a kernel or memory-safety bug, its exploitation pattern—rapid weaponization after patch release, widespread scanning, and targeting of specific database backends (PostgreSQL)—highlights the operational security challenges in the software supply chain and the importance of rapid patch deployment. The fact that it enables privilege escalation and RCE from a database abstraction layer flaw is a reminder that application-level vulnerabilities can directly compromise the underlying system's integrity.</p>
-        <p class="lang-zh">对于专注于操作系统、内核和软件安全性的系统安全研究员来说，此漏洞是一个典型的服务器端 Web 应用程序缺陷（SQL 注入）示例，可导致权限提升和远程代码执行。虽然这不是内核或内存安全错误，但其利用模式——补丁发布后迅速武器化、广泛扫描以及针对特定数据库后端（PostgreSQL）——突显了软件供应链中的运营安全挑战以及快速部署补丁的重要性。该漏洞能够通过数据库抽象层缺陷实现权限提升和 RCE，这提醒我们，应用程序级别的漏洞可以直接危及底层系统的完整性。</p>
+        <p class="lang-en">For a system security researcher focused on OS/kernel and software safety, this incident highlights that SQL injection in a widely-deployed content management system can lead to privilege escalation and remote code execution, effectively bypassing application-layer defenses. The rapid exploitation (within two days of patch release) underscores the critical need for automated patch management and the value of fuzzing database abstraction layers in large codebases. The attack pattern—probing followed by potential data extraction—mirrors common exploitation lifecycles seen in memory-corruption bugs, but here the entry point is a web-facing API rather than a kernel interface.</p>
+        <p class="lang-zh">对于专注于操作系统/内核和软件安全的系统安全研究人员来说，此事件突显了广泛部署的内容管理系统中的 SQL 注入可导致权限提升和远程代码执行，有效绕过应用层防御。补丁发布后两天内即出现快速利用，凸显了自动化补丁管理的必要性，以及在大型代码库中对数据库抽象层进行模糊测试的价值。攻击模式——探测后可能进行数据提取——与内存损坏漏洞中常见的利用生命周期相似，但这里的入口点是面向 Web 的 API，而非内核接口。</p>
       </div>
       
 
-      
       
 
       
@@ -81,11 +80,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>CISA added CVE-2026-9082, a critical SQL injection vulnerability in Drupal Core, to its KEV catalog after observing active exploitation. Over 15,000 attack attempts targeting 6,000 sites have been detected, primarily probing for vulnerable PostgreSQL-backed Drupal instances.</p></div>
+          <div class="lede"><p>CISA added CVE-2026-9082, a critical SQL injection vulnerability in Drupal Core, to its KEV catalog after active exploitation was observed, with over 15,000 attack attempts targeting 6,000 sites across 65 countries.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>CISA 将 Drupal Core 中的一个严重 SQL 注入漏洞 CVE-2026-9082 添加到其 KEV 目录，原因是观察到活跃的利用。已检测到超过 15,000 次攻击尝试，针对 6,000 个站点，主要探测存在漏洞的 PostgreSQL 后端 Drupal 实例。</p></div>
+          <div class="lede"><p>CISA 将 Drupal Core 中的严重 SQL 注入漏洞 CVE-2026-9082 添加到其 KEV 目录，原因是已观察到活跃利用，超过 15,000 次攻击尝试针对 65 个国家的 6,000 个站点。</p></div>
         </div>
 
         
@@ -93,119 +92,60 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>CVE-2026-9082 is an SQL injection vulnerability in Drupal Core (CVSS 6.5).</li>
+<li>CVE-2026-9082 is an SQL injection vulnerability in Drupal Core with a CVSS score of 6.5.</li>
+<li>It allows privilege escalation and remote code execution via specially crafted requests to the database abstraction API.</li>
 <li>CISA added it to the Known Exploited Vulnerabilities (KEV) catalog based on active exploitation evidence.</li>
-<li>Patches were released less than two days before exploitation was confirmed.</li>
+<li>Patches were released for multiple Drupal versions (11.3.10, 11.2.12, 11.1.10, 10.6.9, 10.5.10, 10.4.10, 9.5, 8.9).</li>
 <li>Imperva observed over 15,000 attack attempts targeting nearly 6,000 sites across 65 countries.</li>
-<li>Attacks primarily target gaming and financial services sites (50% of attacks).</li>
-<li>Most observed activity is probing/reconnaissance, targeting PostgreSQL-backed Drupal configurations.</li>
-<li>Successful exploitation could lead to privilege escalation and remote code execution.</li>
+<li>Attacks primarily target gaming and financial services sites (almost 50% of attacks).</li>
+<li>Most observed activity is probing/reconnaissance, but successful exploitation could lead to data extraction or privilege escalation.</li>
 <li>FCEB agencies must apply fixes by May 27, 2026.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>This is a classic SQL injection vulnerability in a widely-used CMS, but its rapid addition to CISA KEV (within days of patch) and the scale of observed scanning (15k attempts) is notable. It contrasts with more complex memory-corruption or kernel-level exploits that require significant sophistication. The targeting of specific database backends (PostgreSQL) is a tactical detail that differentiates it from generic SQLi attacks. The speed of exploitation (patch-to-exploit in &lt;2 days) aligns with the trend of 'N-day' exploitation becoming nearly as dangerous as '0-day'.</p>
+<p>SQL injection vulnerabilities in CMS platforms are well-known, but this case is notable for the speed of exploitation (within 48 hours of patch release) and the direct linkage to privilege escalation and RCE, not just data exfiltration. Unlike typical memory-corruption bugs in kernels or runtimes, this flaw resides in the application's database abstraction layer, yet its impact (RCE, privilege escalation) overlaps with classic system-level vulnerabilities. The inclusion in CISA KEV and the scale of probing (15,000 attempts) indicate a shift toward weaponizing SQLi for full system compromise rather than simple data theft.</p>
 <h2>Why It Matters</h2>
-<p>For system security, this matters because it demonstrates that application-layer vulnerabilities (SQLi) can be a direct vector for privilege escalation and RCE, compromising the entire host. The rapid, widespread scanning indicates that attackers are automating the discovery of vulnerable instances, making unpatched systems extremely high-risk. This reinforces the need for robust patch management, vulnerability scanning, and the principle of least privilege at the application and database level. It also highlights the supply-chain risk of using complex CMS frameworks.</p>
+<p>This vulnerability bridges the gap between web application security and system security: an SQL injection in a CMS can lead to full system compromise (RCE, privilege escalation). For researchers studying exploitation techniques, this demonstrates that database abstraction APIs are a viable attack surface for gaining code execution, similar to how kernel syscalls or driver interfaces are exploited. The rapid exploitation timeline reinforces the importance of proactive patch deployment and the need for runtime defenses (e.g., WAF, RASP) that can detect SQLi-based RCE attempts. The targeting of PostgreSQL-backed configurations suggests that database-specific features (e.g., stored procedures, extensions) may be leveraged for privilege escalation.</p>
 <h2>Critical Take</h2>
-<p>The article is based on vendor reports (Imperva, Drupal) and CISA announcements. The exact exploitation method and the final payload (e.g., data exfiltration vs. RCE) are not detailed. The CVSS score of 6.5 is moderate, but the impact (privilege escalation, RCE) suggests the score may be understated or the attack complexity is higher than typical SQLi. The claim of 'active exploitation' is credible but the scale and sophistication of the attacks (mostly probing) should be monitored. The specific PostgreSQL targeting is a key detail that needs further verification from independent sources.</p>
+<p>The article relies heavily on vendor reports (Imperva, Drupal) and CISA announcements; independent verification of the exploitation method and the exact RCE/privilege escalation mechanism is not provided. The CVSS score of 6.5 (medium severity) seems low given the claimed impact (RCE, privilege escalation), which may indicate that the attack requires specific conditions (e.g., PostgreSQL backend, specific API usage). The 'active exploitation' evidence is based on observed probing, not confirmed successful compromises. The attribution to 'attackers' is vague; no specific threat actor or campaign is identified.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Public disclosure of the specific SQL injection vector and proof-of-concept (PoC) code.</li>
-<li>Reports of successful exploitation leading to data breaches or ransomware deployment on Drupal sites.</li>
-<li>Analysis of whether the PostgreSQL-specific targeting is due to a quirk in the Drupal database abstraction layer or a broader technique.</li>
-<li>Emergence of mass exploitation campaigns (e.g., botnets) targeting this CVE.</li>
-<li>Updates from Drupal on whether older, unsupported versions (8.9, 9.5) are being targeted more heavily.</li>
+<li>Detailed technical analysis or PoC for CVE-2026-9082, especially how the SQL injection leads to RCE.</li>
+<li>Whether the vulnerability is exploited in PostgreSQL-only setups or also affects MySQL/SQLite.</li>
+<li>Emergence of exploit kits or botnets incorporating this vulnerability.</li>
+<li>Patch adoption rates and reports of successful data breaches or ransomware deployments linked to this CVE.</li>
+<li>Updates from Drupal on whether the flaw was introduced in a specific code change (regression analysis).</li>
 </ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>CVE-2026-9082 是 Drupal Core 中的一个 SQL 注入漏洞（CVSS 6.5）。</li>
-<li>CISA 基于活跃的利用证据将其添加到已知被利用漏洞（KEV）目录。</li>
-<li>在确认被利用前不到两天，补丁已发布。</li>
+<li>CVE-2026-9082 是 Drupal Core 中的一个 SQL 注入漏洞，CVSS 评分为 6.5。</li>
+<li>通过向数据库抽象 API 发送特制请求，可实现权限提升和远程代码执行。</li>
+<li>CISA 基于活跃利用证据将其添加到已知被利用漏洞（KEV）目录。</li>
+<li>已为多个 Drupal 版本（11.3.10、11.2.12、11.1.10、10.6.9、10.5.10、10.4.10、9.5、8.9）发布补丁。</li>
 <li>Imperva 观察到超过 15,000 次攻击尝试，针对 65 个国家的近 6,000 个站点。</li>
-<li>攻击主要针对游戏和金融服务网站（占攻击的 50%）。</li>
-<li>大多数观察到的活动是探测/侦察，针对 PostgreSQL 后端的 Drupal 配置。</li>
-<li>成功利用可能导致权限提升和远程代码执行。</li>
+<li>攻击主要针对游戏和金融服务网站（占攻击总量的近 50%）。</li>
+<li>大多数观察到的活动是探测/侦察，但成功利用可能导致数据提取或权限提升。</li>
 <li>FCEB 机构必须在 2026 年 5 月 27 日前应用修复程序。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>这是一个广泛使用的 CMS 中的经典 SQL 注入漏洞，但其在补丁发布后几天内迅速被添加到 CISA KEV，以及观察到的扫描规模（15k 次尝试）值得注意。这与需要更高复杂度的内存损坏或内核级漏洞形成对比。针对特定数据库后端（PostgreSQL）是一个战术细节，使其与通用的 SQLi 攻击区分开来。利用速度（补丁到利用 &lt;2 天）符合 'N-day' 利用变得几乎与 '0-day' 一样危险的趋势。</p>
+<p>CMS 平台中的 SQL 注入漏洞众所周知，但此案例的突出之处在于利用速度（补丁发布后 48 小时内）以及直接关联到权限提升和 RCE，而不仅仅是数据泄露。与内核或运行时中典型的内存损坏漏洞不同，此缺陷位于应用程序的数据库抽象层，但其影响（RCE、权限提升）与经典的系统级漏洞重叠。纳入 CISA KEV 以及探测规模（15,000 次尝试）表明，攻击者正将 SQLi 武器化以实现完全系统入侵，而非简单的数据窃取。</p>
 <h2>重要性</h2>
-<p>对于系统安全而言，这很重要，因为它表明应用层漏洞（SQLi）可以成为权限提升和 RCE 的直接向量，从而危及整个主机。快速、广泛的扫描表明攻击者正在自动化发现易受攻击的实例，这使得未打补丁的系统风险极高。这强化了对稳健的补丁管理、漏洞扫描以及在应用程序和数据库级别遵循最小权限原则的需求。它也凸显了使用复杂 CMS 框架的供应链风险。</p>
+<p>此漏洞弥合了 Web 应用安全与系统安全之间的差距：CMS 中的 SQL 注入可导致完全系统入侵（RCE、权限提升）。对于研究利用技术的研究人员来说，这表明数据库抽象 API 是获取代码执行能力的可行攻击面，类似于内核系统调用或驱动程序接口被利用的方式。快速的利用时间线强化了主动部署补丁的重要性，以及需要能够检测基于 SQLi 的 RCE 尝试的运行时防御（例如 WAF、RASP）。针对 PostgreSQL 配置的攻击表明，数据库特定功能（例如存储过程、扩展）可能被用于权限提升。</p>
 <h2>批判性视角</h2>
-<p>文章基于供应商报告（Imperva、Drupal）和 CISA 公告。确切的利用方法和最终载荷（例如，数据窃取 vs. RCE）没有详细说明。CVSS 评分为 6.5，属于中等，但影响（权限提升、RCE）表明评分可能被低估，或者攻击复杂性高于典型的 SQLi。'活跃利用'的说法是可信的，但攻击的规模和复杂性（主要是探测）需要持续监控。针对特定 PostgreSQL 是一个关键细节，需要来自独立来源的进一步验证。</p>
+<p>文章严重依赖供应商报告（Imperva、Drupal）和 CISA 公告；未提供对利用方法及确切 RCE/权限提升机制的独立验证。考虑到声称的影响（RCE、权限提升），CVSS 评分 6.5（中等严重性）似乎偏低，这可能表明攻击需要特定条件（例如 PostgreSQL 后端、特定 API 使用）。“活跃利用”的证据基于观察到的探测，而非确认的成功入侵。对“攻击者”的归因模糊；未识别出特定的威胁行为者或活动。</p>
 <h2>后续关注</h2>
 <ul>
-<li>特定 SQL 注入向量和概念验证（PoC）代码的公开披露。</li>
-<li>成功利用导致 Drupal 站点数据泄露或勒索软件部署的报告。</li>
-<li>分析针对特定 PostgreSQL 是由于 Drupal 数据库抽象层的特性还是更广泛的技术。</li>
-<li>针对此 CVE 的大规模利用活动（例如，僵尸网络）的出现。</li>
-<li>Drupal 关于较旧、不受支持的版本（8.9, 9.5）是否成为更严重目标的更新。</li>
+<li>针对 CVE-2026-9082 的详细技术分析或 PoC，特别是 SQL 注入如何导致 RCE。</li>
+<li>该漏洞是否仅在 PostgreSQL 环境中被利用，还是也影响 MySQL/SQLite。</li>
+<li>包含此漏洞的利用工具包或僵尸网络的出现。</li>
+<li>补丁采用率以及与此 CVE 相关的成功数据泄露或勒索软件部署的报告。</li>
+<li>Drupal 关于该缺陷是否由特定代码更改引入的更新（回归分析）。</li>
 </ul>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1242/fig_01.webp" alt="ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</span>
-                <span class="lang-zh">威胁日报：Linux Rootkits、路由器0-Day、AI入侵、诈骗工具包及25条新动态</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1242/fig_02.gif" alt="9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros</span>
-                <span class="lang-zh">存在9年的Linux内核漏洞使主流发行版可执行Root命令</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1242/fig_03.webp" alt="Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit</span>
-                <span class="lang-zh">微软发布针对YellowKey BitLocker绕过漏洞CVE-2026-45585的缓解措施</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1242/fig_04.gif" alt="Developer Workstations Are Now Part of the Software Supply Chain" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Developer Workstations Are Now Part of the Software Supply Chain</span>
-                <span class="lang-zh">开发者工作站现已成为软件供应链的一部分</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1242/fig_05.jpg" alt="Articles" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Articles</span>
-                <span class="lang-zh">文章</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

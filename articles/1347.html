@@ -70,12 +70,11 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For a system security researcher focused on OS/kernel security and software supply-chain attacks, this campaign demonstrates a sophisticated multi-stage attack chain that bridges endpoint compromise (macOS malware) with developer infrastructure (CI/CD, npm). The use of macOS-specific payloads (Intel/Apple Silicon compatible) and lateral movement into code distribution systems highlights a growing threat surface: developer workstations as a pivot point into the software supply chain. The abuse of legitimate developer tools (npm packages) for backdoor delivery is a direct concern for supply-chain integrity.</p>
-        <p class="lang-zh">对于专注于操作系统/内核安全和软件供应链攻击的系统安全研究员而言，该活动展示了一个复杂的多阶段攻击链，将端点攻陷（macOS恶意软件）与开发者基础设施（CI/CD、npm）相连接。使用macOS特定载荷（兼容Intel/Apple Silicon）并横向移动到代码分发系统，突出了一个日益增长的威胁面：开发者工作站作为进入软件供应链的支点。滥用合法开发者工具（npm包）进行后门投递直接关系到供应链完整性。</p>
+        <p class="lang-en">For a system security researcher focused on OS/kernel security and software supply-chain attacks, this campaign demonstrates a sophisticated cross-platform attack chain that moves from macOS endpoint compromise (via social engineering) to lateral movement into internal CI/CD systems and source-code repositories. The use of macOS-specific malware (AUDIOFIX) that masquerades as a system audio driver (coreaudiod) and persists via launchctl highlights the growing threat surface on macOS, particularly in developer environments. The supply-chain angle—compromising an npm package (@velora-dex/sdk) to deliver MiniRAT—underscores the need for rigorous dependency integrity checks and build-system hardening. The attacker's ability to modify source code to steal cryptocurrency wallet credentials from other endpoints is a direct threat to software supply-chain security.</p>
+        <p class="lang-zh">对于专注于操作系统/内核安全和软件供应链安全的研究人员而言，此攻击活动展示了一条复杂的跨平台攻击链：从macOS端点入侵（通过社会工程学）横向移动到内部CI/CD系统和源代码仓库。macOS恶意软件AUDIOFIX伪装成系统音频驱动（coreaudiod）并通过launchctl持久化，凸显了macOS（尤其是开发者环境）日益增长的攻击面。供应链角度——通过篡改npm包（@velora-dex/sdk）分发MiniRAT——强调了严格的依赖完整性检查和构建系统加固的必要性。攻击者修改源代码以从其他端点窃取加密货币钱包凭证的能力，直接威胁到软件供应链安全。</p>
       </div>
       
 
-      
       
 
       
@@ -83,11 +82,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>A previously undocumented threat actor, JINX-0164, targets cryptocurrency firms using fake recruiter lures on LinkedIn to deliver macOS malware (AUDIOFIX infostealer/RAT and MiniRAT backdoor), with lateral movement into CI/CD pipelines enabling supply chain compromise.</p></div>
+          <div class="lede"><p>A previously undocumented threat actor, JINX-0164, targets cryptocurrency firms using fake recruiter lures on LinkedIn to deploy macOS malware (AUDIOFIX, MiniRAT) for credential theft and supply-chain compromise of CI/CD infrastructure.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>一个此前未被记录的威胁行为者JINX-0164，利用LinkedIn上的虚假招聘诱饵针对加密货币公司，投放macOS恶意软件（AUDIOFIX信息窃取器/RAT和MiniRAT后门），并通过横向移动到CI/CD管道实现供应链攻陷。</p></div>
+          <div class="lede"><p>此前未记录的威胁行为者JINX-0164利用LinkedIn上的虚假招聘诱饵针对加密货币公司，部署macOS恶意软件（AUDIOFIX、MiniRAT）以窃取凭证并入侵CI/CD基础设施，实现供应链攻击。</p></div>
         </div>
 
         
@@ -95,115 +94,58 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>Threat actor JINX-0164 targets cryptocurrency firms via LinkedIn recruiter lures.</li>
-<li>Victims are tricked into downloading a Python-based macOS infostealer/RAT named AUDIOFIX.</li>
-<li>AUDIOFIX steals credentials, SSH keys, crypto wallet data, and session tokens; supports remote shell and lateral movement.</li>
-<li>Lateral movement targets CI/CD systems and internal code distribution, leading to a supply chain attack.</li>
-<li>A second malware, MiniRAT (Go-based backdoor), was distributed via a compromised npm package (@velora-dex/sdk).</li>
-<li>No infrastructure overlaps with known North Korean groups, despite tactical similarities.</li>
+<li>Threat actor JINX-0164 targets cryptocurrency firms via fake recruiter lures on LinkedIn.</li>
+<li>Initial compromise: victims download a fake teleconference app that triggers a bash script to fetch AUDIOFIX (Python infostealer/RAT).</li>
+<li>AUDIOFIX masquerades as system audio driver coreaudiod, saved as ChromeUpdater, executed via launchctl.</li>
+<li>Lateral movement: AUDIOFIX injects payload into internal CI/CD systems and modifies source code to steal cryptocurrency wallet credentials.</li>
+<li>Stolen data includes credentials from password managers, browsers, iCloud Keychain, SSH keys, config files, crypto wallet addresses, and active Discord/Slack/Telegram sessions.</li>
+<li>Second malware: MiniRAT (Go-based backdoor) distributed via compromised npm package @velora-dex/sdk.</li>
+<li>No confirmed attribution to North Korea despite behavioral similarities to BlueNoroff/Contagious Interview.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>This campaign is reminiscent of North Korean clusters (BlueNoroff, Contagious Interview) that use social engineering and crypto-theft, but Wiz explicitly states no infrastructure overlap. It differs by specifically targeting macOS with a custom Python RAT (AUDIOFIX) and by pivoting from endpoint compromise to supply-chain attacks via CI/CD. The use of a fake driver store domain and architecture-aware payloads is a notable technical detail.</p>
+<p>This campaign is notable for combining macOS-specific malware (AUDIOFIX) with supply-chain compromise (npm package) in a single operation targeting cryptocurrency developers. Previous macOS malware campaigns (e.g., RustBucket, DPRK-linked) often focused on single-stage infostealers or RATs, but JINX-0164 demonstrates multi-stage lateral movement into CI/CD pipelines—a more advanced operational security (OPSEC) pattern. The use of fake recruiter lures is not new (e.g., Contagious Interview), but the integration with npm supply-chain attacks and macOS-specific persistence (launchctl) represents an escalation in sophistication.</p>
 <h2>Why It Matters</h2>
-<p>It underscores the convergence of endpoint malware and software supply-chain attacks, a critical concern for system security. The ability to move from a developer's macOS laptop into CI/CD pipelines and modify source code represents a high-impact attack vector. The use of macOS-specific malware and npm package compromise shows that supply-chain security must account for all platforms in the development toolchain.</p>
+<p>For system security researchers, this campaign highlights the convergence of endpoint compromise (macOS) with software supply-chain attacks (npm). The ability to move from a developer's laptop to CI/CD systems and modify source code represents a critical threat to the integrity of the software supply chain. The use of macOS-specific malware that mimics system drivers (coreaudiod) and persists via launchctl underscores the need for better macOS security monitoring, especially in developer environments. The campaign also demonstrates that social engineering remains a highly effective initial vector, bypassing technical controls.</p>
 <h2>Critical Take</h2>
-<p>Attribution to a specific state actor is unconfirmed; the lack of infrastructure overlap with known groups leaves open the possibility of a new financially motivated group or a false flag. The full technical details of the CI/CD lateral movement and source code modification are not publicly disclosed. The effectiveness of the social engineering lures is not quantified.</p>
+<p>The article is based on Wiz's threat intelligence, which provides detailed technical analysis but lacks independent verification of the attribution claims. The 'no infrastructure overlaps with North Korean groups' statement is based on Wiz's own tracking, which may be incomplete. The effectiveness of the supply-chain attack (npm package compromise) is not fully detailed—e.g., how the package was compromised (typosquatting, credential theft, or maintainer compromise) is unclear. The scale of the campaign (number of victims, financial losses) is not disclosed. The macOS malware's capabilities are well-documented, but its evasion techniques (e.g., against macOS Gatekeeper, notarization) are not discussed.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Public disclosure of AUDIOFIX and MiniRAT samples for technical analysis.</li>
-<li>Any follow-up reports detailing the CI/CD lateral movement technique.</li>
-<li>Whether similar fake recruiter campaigns appear targeting other sectors (e.g., fintech, SaaS).</li>
-<li>Monitoring of npm for other compromised packages related to this actor.</li>
-<li>Potential expansion of macOS malware targeting developer tools (e.g., Xcode, Homebrew).</li>
+<li>Follow-up analysis of the compromised npm package (@velora-dex/sdk) to understand the attack vector (typosquatting vs. credential theft).</li>
+<li>Monitor for similar campaigns using macOS-specific malware targeting CI/CD systems.</li>
+<li>Track any new CVEs or vulnerability disclosures related to macOS launchctl persistence or driver masquerading.</li>
+<li>Watch for attribution updates: if infrastructure overlaps with known North Korean groups are found.</li>
+<li>Observe whether the AUDIOFIX malware is adapted for Windows/Linux targets.</li>
 </ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>威胁行为者JINX-0164通过LinkedIn招聘诱饵针对加密货币公司。</li>
-<li>受害者被诱骗下载基于Python的macOS信息窃取器/RAT，名为AUDIOFIX。</li>
-<li>AUDIOFIX窃取凭据、SSH密钥、加密货币钱包数据和会话令牌；支持远程shell和横向移动。</li>
-<li>横向移动针对CI/CD系统和内部代码分发，导致供应链攻击。</li>
-<li>第二种恶意软件MiniRAT（Go后门）通过被攻陷的npm包（@velora-dex/sdk）分发。</li>
-<li>尽管战术相似，但与已知朝鲜组织无基础设施重叠。</li>
+<li>威胁行为者JINX-0164通过LinkedIn上的虚假招聘诱饵针对加密货币公司。</li>
+<li>初始入侵：受害者下载虚假电话会议应用，触发bash脚本获取AUDIOFIX（Python信息窃取器/RAT）。</li>
+<li>AUDIOFIX伪装成系统音频驱动coreaudiod，保存为ChromeUpdater，通过launchctl执行。</li>
+<li>横向移动：AUDIOFIX将载荷注入内部CI/CD系统并修改源代码以窃取加密货币钱包凭证。</li>
+<li>窃取数据包括密码管理器、浏览器、iCloud Keychain的凭证，SSH密钥，配置文件，加密钱包地址以及活跃的Discord/Slack/Telegram会话。</li>
+<li>第二种恶意软件：MiniRAT（Go后门）通过被篡改的npm包@velora-dex/sdk分发。</li>
+<li>尽管行为与BlueNoroff/Contagious Interview相似，但尚未确认归属朝鲜。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>该活动让人联想到使用社会工程和加密货币盗窃的朝鲜集群（BlueNoroff、Contagious Interview），但Wiz明确表示无基础设施重叠。其不同之处在于专门针对macOS使用自定义Python RAT（AUDIOFIX），并通过CI/CD从端点攻陷转向供应链攻击。使用虚假驱动商店域和架构感知载荷是一个值得注意的技术细节。</p>
+<p>此攻击活动将macOS特定恶意软件（AUDIOFIX）与供应链攻击（npm包）结合在单一行动中，针对加密货币开发者，值得关注。以往的macOS恶意软件活动（如RustBucket、与朝鲜相关的活动）通常侧重于单阶段信息窃取器或RAT，但JINX-0164展示了向CI/CD流水线的多阶段横向移动——这是一种更高级的操作安全模式。虚假招聘诱饵并非新手法（如Contagious Interview），但与npm供应链攻击和macOS特定持久化（launchctl）的结合代表了复杂度的升级。</p>
 <h2>重要性</h2>
-<p>它强调了端点恶意软件与软件供应链攻击的融合，这是系统安全的一个关键问题。从开发者的macOS笔记本电脑移动到CI/CD管道并修改源代码的能力代表了一个高影响力的攻击向量。使用macOS特定恶意软件和npm包攻陷表明，供应链安全必须考虑开发工具链中的所有平台。</p>
+<p>对于系统安全研究人员而言，此活动凸显了端点入侵（macOS）与软件供应链攻击（npm）的融合。从开发者笔记本电脑横向移动到CI/CD系统并修改源代码的能力，对软件供应链的完整性构成了关键威胁。使用模仿系统驱动（coreaudiod）并通过launchctl持久化的macOS特定恶意软件，强调了在开发者环境中加强macOS安全监控的必要性。该活动还表明，社会工程学仍然是绕过技术控制的高效初始向量。</p>
 <h2>批判性视角</h2>
-<p>归因于特定国家行为者尚未确认；与已知组织缺乏基础设施重叠，留下了可能是新的经济动机团体或虚假旗帜的可能性。CI/CD横向移动和源代码修改的完整技术细节未公开披露。社会工程诱饵的有效性未被量化。</p>
+<p>文章基于Wiz的威胁情报，提供了详细的技术分析，但缺乏对归属声明的独立验证。'与朝鲜组织无基础设施重叠'的声明基于Wiz自身的追踪，可能不完整。供应链攻击（npm包篡改）的有效性未完全说明——例如，包是如何被篡改的（域名抢注、凭证窃取或维护者入侵）尚不清楚。活动的规模（受害者数量、财务损失）未披露。macOS恶意软件的能力有详细记录，但其规避技术（如针对macOS Gatekeeper、公证）未讨论。</p>
 <h2>后续关注</h2>
 <ul>
-<li>AUDIOFIX和MiniRAT样本的公开披露以供技术分析。</li>
-<li>任何详细说明CI/CD横向移动技术的后续报告。</li>
-<li>是否出现针对其他行业（如金融科技、SaaS）的类似虚假招聘活动。</li>
-<li>监控npm中与该行为者相关的其他被攻陷包。</li>
-<li>针对开发者工具（如Xcode、Homebrew）的macOS恶意软件可能扩展。</li>
+<li>跟进对受篡改的npm包（@velora-dex/sdk）的分析，以了解攻击向量（域名抢注 vs. 凭证窃取）。</li>
+<li>监测使用macOS特定恶意软件针对CI/CD系统的类似活动。</li>
+<li>追踪与macOS launchctl持久化或驱动伪装相关的新CVE或漏洞披露。</li>
+<li>关注归属更新：是否发现与已知朝鲜组织的基础设施重叠。</li>
+<li>观察AUDIOFIX恶意软件是否被适配用于Windows/Linux目标。</li>
 </ul>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1347/fig_01.webp" alt="ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</span>
-                <span class="lang-zh">威胁日报：Linux Rootkits、路由器0-Day、AI入侵、诈骗工具包及25条新动态</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1347/fig_02.gif" alt="9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros</span>
-                <span class="lang-zh">9年历史的Linux内核漏洞使主流发行版可执行Root命令</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1347/fig_03.webp" alt="Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit</span>
-                <span class="lang-zh">微软发布针对YellowKey BitLocker绕过漏洞CVE-2026-45585利用的缓解措施</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1347/fig_04.gif" alt="Developer Workstations Are Now Part of the Software Supply Chain" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Developer Workstations Are Now Part of the Software Supply Chain</span>
-                <span class="lang-zh">开发者工作站现已成为软件供应链的一部分</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1347/fig_05.jpg" alt="Articles" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Articles</span>
-                <span class="lang-zh">文章</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

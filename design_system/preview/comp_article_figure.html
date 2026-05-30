@@ -1,0 +1,106 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { background: var(--color-bg-1, #07070f); color: var(--color-fg-1); font-family: var(--font-body, sans-serif); padding: 32px; }
+  h1 { font-size: 13px; font-weight: 600; color: var(--color-fg-2); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 32px; }
+  .section-label { font-size: 11px; color: var(--color-fg-2); letter-spacing: 0.06em; text-transform: uppercase; margin: 28px 0 10px; }
+
+  /* ---- replicated from agent/templates/style.css ---- */
+  .article-figure {
+    margin: 0;
+    background: var(--color-bg-2, #0d0d1a);
+    border: 1px solid var(--color-border, #1e1e3a);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 640px;
+  }
+  .article-figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  .article-figure figcaption {
+    padding: 0.7rem 1rem;
+    font-size: 12px;
+    color: var(--color-fg-2, #8888aa);
+    line-height: 1.55;
+  }
+  .article-figure--hero {
+    margin: 0;
+    background: var(--color-bg-2, #0d0d1a);
+    border: 1px solid var(--color-border, #1e1e3a);
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 900px;
+  }
+  .article-figure--hero img {
+    max-width: min(900px, 100%);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .article-figure--hero figcaption {
+    padding: 14px 20px;
+    font-size: 12px;
+    color: var(--color-fg-1);
+    line-height: 1.55;
+    text-align: center;
+    font-style: italic;
+  }
+  /* lang helpers */
+  .lang-zh { display: none; }
+  body.lang-zh .lang-en { display: none; }
+  body:not(.lang-zh) .lang-zh { display: none; }
+  body.lang-zh .lang-zh { display: block; }
+</style></head>
+<body>
+
+<h1>Component — article-figure</h1>
+<p style="font-size:12px;color:var(--color-fg-2);margin-bottom:28px;">
+  Native-dim sizing: the <code>&lt;img&gt;</code> carries explicit <code>width</code>/<code>height</code>
+  attrs + <code>style="max-width: min(Npx, 100%)"</code>.
+  No <code>width: 100%</code> — images never scale above their source resolution.
+</p>
+
+<div class="section-label">Inline figure — 320 × 180 (native dims known)</div>
+<figure class="article-figure">
+  <img class="article-figure-img"
+       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='180'%3E%3Crect width='320' height='180' fill='%231a1a2e'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' fill='%234466ff' font-family='monospace' font-size='14'%3E320 × 180%3C/text%3E%3C/svg%3E"
+       alt="Example figure 320x180"
+       width="320" height="180"
+       style="max-width: min(320px, 100%)"
+       loading="lazy">
+  <figcaption>
+    <span class="lang-en">Figure 1 — Attention pattern for a 512-token context window.</span>
+    <span class="lang-zh">图1 — 512个令牌上下文窗口的注意力模式。</span>
+  </figcaption>
+</figure>
+
+<div class="section-label">Inline figure — no dims (fallback: max-width: 100%)</div>
+<figure class="article-figure">
+  <img class="article-figure-img"
+       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='200'%3E%3Crect width='480' height='200' fill='%230d0d1a'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' fill='%238888aa' font-family='monospace' font-size='14'%3Eno native dims — max-width: 100%25%3C/text%3E%3C/svg%3E"
+       alt="Example figure no dims"
+       style="max-width: 100%"
+       loading="lazy">
+  <figcaption>
+    <span class="lang-en">Figure 2 — Benchmark results across 8 model families.</span>
+    <span class="lang-zh">图2 — 8个模型系列的基准测试结果。</span>
+  </figcaption>
+</figure>
+
+<div class="section-label">Hero figure — architectural diagram (max-width: min(900px, 100%))</div>
+<figure class="article-figure article-figure--hero">
+  <img class="article-figure-img"
+       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='360'%3E%3Crect width='900' height='360' fill='%230a0a18'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' fill='%234466ff' font-family='monospace' font-size='16'%3EHero — 900 × 360 — max-width: min(900px, 100%25)%3C/text%3E%3C/svg%3E"
+       alt="Hero architectural diagram"
+       width="900" height="360"
+       style="max-width: min(900px, 100%)"
+       loading="lazy">
+  <figcaption>
+    <span class="lang-en">Figure 1 — Overall system architecture showing the three-stage pipeline.</span>
+    <span class="lang-zh">图1 — 展示三阶段管道的整体系统架构。</span>
+  </figcaption>
+</figure>
+
+</body></html>

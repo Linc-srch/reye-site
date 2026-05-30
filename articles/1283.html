@@ -70,8 +70,13 @@
       </header>
 
       
-
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For a system security researcher, this incident is a textbook case of a web-facing vulnerability (SQLi) enabling a full server-side compromise (Admin API key theft), which then facilitates a client-side social engineering attack (ClickFix) to achieve code execution on end-user machines. The attack chain bridges web application security, content management system (CMS) hardening, and endpoint malware delivery. The use of a commercial cloaking service (Adspect) to evade analysis and target only real victims is a notable operational security (OPSEC) technique that complicates detection and reverse engineering. The final payload, a modified Electron app (Grape client) for persistence and C2, highlights the trend of using legitimate frameworks for malware.</p>
+        <p class="lang-zh">对于系统安全研究员而言，此事件是一个教科书式的案例：一个面向 Web 的漏洞（SQL 注入）实现了完整的服务器端攻陷（管理员 API 密钥窃取），进而促成客户端社会工程攻击（ClickFix），最终在终端用户机器上实现代码执行。攻击链连接了 Web 应用安全、内容管理系统（CMS）加固和端点恶意软件投递。使用商业流量分发服务（Adspect）来逃避分析并仅针对真实受害者，是一项值得注意的运营安全（OPSEC）技术，使检测和逆向工程复杂化。最终载荷是一个用于持久化和 C2 通信的修改版 Electron 应用（Grape 客户端），凸显了使用合法框架进行恶意软件投递的趋势。</p>
+      </div>
       
+
       
 
       
@@ -79,74 +84,72 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Threat actors are exploiting CVE-2026-26980, a critical SQL injection vulnerability in Ghost CMS (CVSS 9.4), to hijack over 700 websites for ClickFix attacks. Discovered by Anthropic using Claude and patched in February 2026, the flaw allows unauthenticated attackers to obtain the admin API key and inject malicious JavaScript loaders into articles. The campaign, detected by QiAnXin XLab on May 7, 2026, targets universities, blockchain, AI, SaaS, and fintech sectors. The injected code uses a two-stage loader with a cloaking script to serve fake CAPTCHA pages, tricking victims into running Base64-encoded commands that deliver malware, including a modified Electron app for persistence.</p></div>
+          <div class="lede"><p>Threat actors are exploiting CVE-2026-26980, a critical SQL injection vulnerability in Ghost CMS (patched in Feb 2026), to steal Admin API keys and inject malicious JavaScript into over 700 websites, primarily to serve ClickFix fake CAPTCHA attacks that ultimately deploy remote access trojans.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>攻击者利用Ghost CMS中一个严重的SQL注入漏洞CVE-2026-26980（CVSS 9.4），劫持超过700个网站以发起ClickFix攻击。该漏洞由Anthropic使用Claude发现，并于2026年2月修复，允许未认证攻击者获取管理员API密钥，在文章中注入恶意JavaScript加载器。奇安信XLab于2026年5月7日检测到该活动，目标涵盖大学、区块链、AI、SaaS和金融科技领域。注入代码使用两级加载器和cloaking脚本，通过虚假CAPTCHA页面诱骗受害者执行Base64编码命令，最终投放包含持久化能力的恶意软件。</p></div>
+          <div class="lede"><p>威胁行为者正在利用 Ghost CMS 中一个关键的 SQL 注入漏洞 CVE-2026-26980（已于 2026 年 2 月修复），窃取管理员 API 密钥，并向超过 700 个网站注入恶意 JavaScript，主要用于发起 ClickFix 虚假验证码攻击，最终部署远程访问木马。</p></div>
         </div>
 
         
-
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1283/fig_01.webp" alt="ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</span>
-                <span class="lang-zh">威胁日报：Linux Rootkits、路由器0-Day、AI入侵、诈骗工具包及25篇新报道</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1283/fig_02.gif" alt="9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros</span>
-                <span class="lang-zh">9年历史的Linux内核漏洞使主流发行版可执行Root命令</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1283/fig_03.webp" alt="Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit</span>
-                <span class="lang-zh">微软发布针对YellowKey BitLocker绕过漏洞CVE-2026-45585利用的缓解措施</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1283/fig_04.gif" alt="Developer Workstations Are Now Part of the Software Supply Chain" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Developer Workstations Are Now Part of the Software Supply Chain</span>
-                <span class="lang-zh">开发者工作站现已成为软件供应链的一部分</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1283/fig_05.jpg" alt="Articles" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Articles</span>
-                <span class="lang-zh">文章</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>CVE-2026-26980 is an unauthenticated SQL injection in Ghost CMS's Content API (CVSS 9.4), discovered by Anthropic using Claude.</li>
+<li>Patched in Ghost CMS version 6.19.1 (February 2026).</li>
+<li>Exploitation allows theft of the site's Admin API key, enabling bulk modification of articles.</li>
+<li>Attackers injected a two-stage JavaScript loader at the bottom of articles.</li>
+<li>The loader retrieves a PHP script from 'clo4shara[.]xyz' which uses Adspect cloaking to fingerprint visitors and serve fake CAPTCHA (ClickFix) only to real users.</li>
+<li>ClickFix attack instructs victims to run a Base64-encoded command, leading to a DLL or JavaScript payload that drops a modified Electron app (Grape client) for persistence and C2.</li>
+<li>Over 700 sites compromised, targeting universities, blockchain, AI, SaaS, security research, media, and fintech.</li>
+<li>First detected May 7, 2026; at least two threat clusters involved.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>This attack is a sophisticated evolution of the classic 'watering hole' technique, leveraging a CMS vulnerability for mass compromise rather than targeted site defacement. The use of a commercial cloaking service (Adspect) to filter out researchers and sandboxes is a significant step up in operational security compared to typical drive-by download campaigns. The final payload being a modified Electron app (Grape) for persistence is a departure from traditional malware droppers, showing an adaptation to modern endpoint defenses by using a legitimate framework. The scale (700+ sites) and speed (compromise within a day) are notable.</p>
+<h2>Why It Matters</h2>
+<p>This incident demonstrates a critical supply-chain-like risk: a vulnerability in a widely-used CMS (Ghost) can be weaponized to compromise hundreds of downstream sites, which then serve as trusted vectors to attack their visitors. For system security, it highlights the importance of patching web-facing software (especially CMS platforms) and the need for robust API security (authentication, authorization, input validation). The attack chain also underscores the convergence of web security and endpoint security, where a web vulnerability leads directly to a sophisticated client-side malware deployment. The use of AI (Claude) to discover the vulnerability is a notable trend.</p>
+<h2>Critical Take</h2>
+<p>The report is from a single vendor (QiAnXin XLab) and while detailed, independent verification of the scale (700+ sites) and attribution (two clusters) is pending. The vulnerability was patched three months prior to the observed exploitation, suggesting a significant window of exposure for unpatched instances. The effectiveness of the ClickFix attack relies on user social engineering, which is a variable factor. The claim that the vulnerability was discovered by AI (Claude) is interesting but does not change the technical analysis of the exploit. The long-term impact on compromised users is unverified.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Monitor for Ghost CMS CVE-2026-26980 exploitation attempts in honeypots and web logs.</li>
+<li>Track the evolution of the ClickFix payload, particularly the modified Grape Electron app and its C2 infrastructure.</li>
+<li>Watch for similar attacks using other CMS platforms (WordPress, Drupal) with SQL injection or API key theft vulnerabilities.</li>
+<li>Observe the adoption of commercial cloaking services (like Adspect) in other malware campaigns.</li>
+<li>Look for disclosure of the technical details of the SQL injection vulnerability (CVE-2026-26980) for deeper analysis.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>CVE-2026-26980 是 Ghost CMS 内容 API 中的一个未经认证的 SQL 注入漏洞（CVSS 9.4），由 Anthropic 使用 Claude 发现。</li>
+<li>已在 Ghost CMS 6.19.1 版本中修复（2026 年 2 月）。</li>
+<li>利用该漏洞可窃取网站的管理员 API 密钥，从而批量修改文章。</li>
+<li>攻击者在文章底部注入了两阶段 JavaScript 加载器。</li>
+<li>加载器从 'clo4shara[.]xyz' 获取 PHP 脚本，该脚本使用 Adspect 流量分发服务对访问者进行指纹识别，并仅向真实用户提供虚假验证码（ClickFix）。</li>
+<li>ClickFix 攻击指示受害者运行 Base64 编码的命令，导致 DLL 或 JavaScript 载荷，最终投放一个修改版的 Electron 应用（Grape 客户端）以实现持久化和 C2 通信。</li>
+<li>超过 700 个网站被攻陷，目标涵盖大学、区块链、人工智能、SaaS、安全研究、媒体和金融科技领域。</li>
+<li>首次检测于 2026 年 5 月 7 日；至少涉及两个威胁集群。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>此攻击是经典‘水坑’技术的一次复杂演变，利用 CMS 漏洞进行大规模攻陷，而非针对性的网站篡改。与典型的路过式下载攻击相比，使用商业流量分发服务（Adspect）来过滤研究人员和沙箱，在运营安全方面是一个显著的进步。最终载荷是一个用于持久化的修改版 Electron 应用（Grape），这背离了传统的恶意软件投放器，显示出通过使用合法框架来适应现代端点防御的趋势。其规模（超过 700 个网站）和速度（一天内完成攻陷）值得注意。</p>
+<h2>重要性</h2>
+<p>此事件展示了一种关键的类似供应链的风险：广泛使用的 CMS（Ghost）中的漏洞可被武器化，以攻陷数百个下游网站，这些网站随后成为攻击其访客的可信向量。对于系统安全而言，它凸显了修补面向 Web 的软件（尤其是 CMS 平台）的重要性，以及健壮的 API 安全（认证、授权、输入验证）的必要性。该攻击链还强调了 Web 安全与端点安全的融合，即一个 Web 漏洞直接导致了复杂的客户端恶意软件部署。使用 AI（Claude）发现漏洞是一个值得注意的趋势。</p>
+<h2>批判性视角</h2>
+<p>该报告来自单一厂商（奇安信 XLab），虽然详细，但关于规模（超过 700 个网站）和归因（两个集群）的独立验证尚待进行。该漏洞在观察到被利用前三个月已修复，表明未修补实例存在显著的暴露窗口。ClickFix 攻击的有效性依赖于用户的社会工程学，这是一个可变因素。关于漏洞由 AI（Claude）发现的声称很有趣，但并不改变对漏洞利用的技术分析。对受感染用户的长期影响尚未得到验证。</p>
+<h2>后续关注</h2>
+<ul>
+<li>监控蜜罐和 Web 日志中针对 Ghost CMS CVE-2026-26980 的利用尝试。</li>
+<li>追踪 ClickFix 载荷的演变，特别是修改后的 Grape Electron 应用及其 C2 基础设施。</li>
+<li>关注针对其他 CMS 平台（WordPress、Drupal）利用 SQL 注入或 API 密钥窃取漏洞的类似攻击。</li>
+<li>观察商业流量分发服务（如 Adspect）在其他恶意软件活动中的使用情况。</li>
+<li>期待 CVE-2026-26980 SQL 注入漏洞的技术细节披露，以便进行更深入的分析。</li>
+</ul>
         </div>
         
+
       </div>
 
       

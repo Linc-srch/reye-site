@@ -80,7 +80,6 @@
       
 
       
-      
 
       
       <div class="article-hero-figures">
@@ -94,25 +93,7 @@ file paths. Then an Auditor Agent audits based on issue categories and severity 
             <span class="lang-en">Figure 2: The Auto Benchmark Audit pipeline. Given benchmark name and URL, an Evidence Collector Agent downloads necessary files and resolves each
 benchmark’s heterogeneous artifacts into a uniform manifest of
 file paths. Then an Auditor Agent audits based on issue categories and severity scale. Then findings include specific evidences, reasoning and suggested fix.</span>
-            <span class="lang-zh">图2：自动基准审计流程。给定基准名称和URL，证据收集代理下载必要文件，并将每个基准的异构工件解析为统一的文件路径清单。然后审计代理根据问题类别和严重程度进行审计。最终结果包括具体证据、推理过程和修复建议。</span>
-          </figcaption>
-          
-        </figure>
-        
-        <figure class="article-figure article-figure--hero">
-          <img class="article-figure-img" src="figures/1294/fig_004.png" alt="Figure 6: Frontier benchmark collection funnel. Five recent
-frontier model release reports (Opus 4.7, GPT-5.4, GLM-5.1,
-Kimi K2.6, MiniMax M2.7) are unioned, normalized, and filtered
-to the set of benchmarks cited by at least two releases, with
-manual removals for duplicates and off-scope task types." loading="eager">
-          
-          <figcaption>
-            <span class="lang-en">Figure 6: Frontier benchmark collection funnel. Five recent
-frontier model release reports (Opus 4.7, GPT-5.4, GLM-5.1,
-Kimi K2.6, MiniMax M2.7) are unioned, normalized, and filtered
-to the set of benchmarks cited by at least two releases, with
-manual removals for duplicates and off-scope task types.</span>
-            <span class="lang-zh">图6：前沿基准收集漏斗。五个最新的前沿模型发布报告（Opus 4.7、GPT-5.4、GLM-5.1、Kimi K2.6、MiniMax M2.7）被合并、归一化并过滤，仅保留至少被两个发布版本引用的基准，同时手动去除重复项和范围外的任务类型。</span>
+            <span class="lang-zh">图2：自动基准审计流程。给定基准名称和URL，证据收集代理下载必要文件，并将每个基准的异构工件解析为统一的文件路径清单。然后，审计代理根据问题类别和严重性等级进行审计。最终发现包括具体证据、推理过程和建议修复方案。</span>
           </figcaption>
           
         </figure>
@@ -135,11 +116,11 @@ manual removals for duplicates and off-scope task types.</span>
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — auto-benchmark-audit</h1>
 <p><strong>Key Takeaways</strong>
-- ABA is an agentic framework that systematically audits AI benchmarks for hidden environment dependencies, specification gaps, and brittle grading logic.
-- Applied to 168 benchmarks across nine domains, ABA identifies critical issues in over 25.7% of tasks.
-- Filtering out problematic tasks shifts model rankings and increases average performance on SWE-bench Verified and Terminal-Bench 2 by 9.9% and 9.6% respectively.
-- ABA operates in static and trajectory modes, with trajectory mode finding more issues by leveraging runtime behavior.
-- Findings are validated by expert review and upstream pull requests, demonstrating high precision.</p>
+- ABA is an agentic framework that automatically audits AI benchmarks for issues like hidden dependencies, specification gaps, and incorrect ground truths.
+- Over 25.7% of tasks across 168 benchmarks were flagged with critical issues, validated by expert review and upstream PRs.
+- Filtering out problematic tasks shifts model rankings and boosts average performance on SWE-bench Verified and Terminal-Bench 2 by 9.9% and 9.6% respectively.
+- The framework uses a two-stage pipeline: an Evidence Collector Agent normalizes heterogeneous artifacts, then an Auditor Agent classifies issues by severity and category.
+- ABA reveals that benchmark flaws systematically distort capability assessments of LLMs and agents, highlighting the need for automated audit tools.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> Automated Benchmark Auditing for AI Agents and Large Language Models</li>
@@ -151,55 +132,80 @@ manual removals for duplicates and off-scope task types.</span>
 <li>Abs: https://arxiv.org/abs/2605.26079</li>
 <li>HTML: https://arxiv.org/html/2605.26079v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.26079</li>
-<li><strong>Tags:</strong> benchmark-auditing, agentic-framework, llm-evaluation, reproducibility, safety-evaluation</li>
+<li><strong>Tags:</strong> benchmark-auditing, agentic-framework, llm-evaluation, reproducibility, ai-safety</li>
 <li><strong>Domains:</strong> ai_safety, system_safety</li>
-<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>This paper introduces Auto Benchmark Audit (ABA), an agentic framework that systematically uncovers hidden environment dependencies, specification gaps, and grading logic flaws in AI benchmarks, showing that over 25.7% of tasks have critical issues that distort model rankings.</p>
+<p>This paper introduces an automated agentic framework for auditing AI benchmarks, revealing that over 25.7% of tasks contain critical issues that significantly distort model rankings and performance assessments.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Modern AI benchmarks have grown too complex for traditional manual verification, with tasks involving containerized environments, multi-stage evaluation harnesses, and runtime-dependent grading logic. Prior work like Gururangan et al. (2018) exposed annotation artifacts in NLI benchmarks through sustained manual effort, but such approaches cannot scale to the complexity of current benchmarks like SWE-bench and Terminal-Bench.</p>
+<p>Modern AI benchmarks are increasingly complex, often authored by domain experts with implicit assumptions and brittle evaluation logic. Traditional human annotation cannot reliably catch these issues at scale, leading to potentially flawed capability assessments for LLMs and agents.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>Gururangan et al. (2018) exposed annotation artifacts in SNLI and MNLI through manual inspection.</li>
-<li>Akrami et al. (2020) showed data redundancy and test leakage in knowledge graph completion benchmarks.</li>
-<li>Jimenez et al. (2024) introduced SWE-bench, a complex agentic benchmark with containerized environments.</li>
-<li>Merrill et al. (2026) introduced Terminal-Bench, a benchmark requiring runtime state evaluation.</li>
-<li>Phan et al. (2025) and Rein et al. (2024) introduced static QA datasets HLE and GPQA respectively.</li>
+<li>Prior work on benchmark quality has focused on manual inspection or simple statistical checks, lacking systematic automation.</li>
+<li>Existing audit tools for software systems (e.g., static analysis) have been adapted for ML pipelines but not for benchmark task integrity.</li>
+<li>Studies on data contamination and overfitting in benchmarks highlight the need for robust evaluation hygiene, but do not address task-level specification and environment issues.</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Existing benchmark verification relies on manual effort that cannot scale to modern complex benchmarks with containerized environments, multi-stage evaluation harnesses, and runtime-dependent grading logic. Domain experts often leave implicit assumptions and environment specifications incomplete, and generalist annotation cannot fill this expertise gap.</p>
+<p>No prior work provides a scalable, automated method to audit individual benchmark tasks for hidden environment dependencies, specification gaps, and grading logic errors. Human review is too slow and inconsistent for the growing number of complex benchmarks, and existing tools do not cover the full range of issue categories found in practice.</p>
 <h3>P — Proposal</h3>
-<p>ABA is an agentic framework that uses an evidence collector agent to resolve heterogeneous benchmark artifacts into a uniform manifest, then an auditor agent inspects tasks using shell tools guided by a standardized rubric. It operates in static mode (analyzing task definitions) and trajectory mode (analyzing recorded agent traces), identifying issues in instruction clarity, environment compatibility, and evaluation correctness.</p>
+<p>The Auto Benchmark Audit (ABA) framework uses an agentic pipeline: an Evidence Collector Agent downloads and normalizes benchmark artifacts into a uniform manifest, then an Auditor Agent classifies issues into Instruction, Environment, or Evaluation categories with severity levels. The key insight is that automated agents can systematically uncover flaws that human annotators miss, validated by expert review and real-world PRs.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>ABA was applied to 168 benchmarks across nine domains, covering over 30,000 tasks. It identified critical issues in over 25.7% of evaluated tasks. Filtering out problematic tasks increased average performance on SWE-bench Verified by 9.9% and on Terminal-Bench 2 by 9.6%, shifting model rankings. Findings were validated by expert review and upstream pull requests.</p>
+<p>ABA audited 168 benchmarks across nine domains, identifying critical issues in over 25.7% of tasks. On SWE-bench Verified, filtering out flagged tasks increased average model performance by 9.9%; on Terminal-Bench 2, the increase was 9.6%. Expert review confirmed high precision, and independent third-party reports (e.g., upstream PRs) corroborated findings.</p>
 <h3>Ablation</h3>
-<p>Trajectory mode finds more issues than static mode by leveraging intermediate execution traces and runtime behavior, as shown in Section 5 of the paper.</p>
+<p>The static audit mode (analyzing task files without execution) found that 22.3% of tasks had at least one Major issue, while the trajectory audit mode (with execution traces) identified additional environment-specific issues. Agreement between the two modes on shared tasks was moderate, indicating that both are complementary for comprehensive auditing.</p>
 <h3>Limitations</h3>
-<p>["ABA's effectiveness depends on the quality and completeness of the evidence collector's manifest; benchmarks with highly non-standard structures may require manual configuration.", 'The framework may miss issues that require domain-specific knowledge not captured in the rubric or shell tools.', 'Validation relies on expert review and upstream PRs, which may not cover all identified issues uniformly.']</p>
+<p>["The framework relies on the quality of the Evidence Collector's parsing, which may miss issues in benchmarks with highly non-standard formats.", 'Trajectory audits require execution environments that may not be available for all benchmarks, limiting coverage.', 'The severity scale is subjective; some issues classified as Minor may still significantly affect results in certain use cases.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>For researchers building or using AI benchmarks, ABA provides a systematic way to detect hidden flaws that distort capability assessments, directly impacting the reliability of model comparisons.</li>
-<li>The finding that over 25.7% of tasks have critical issues highlights the fragility of current evaluation practices and the need for automated auditing tools.</li>
-<li>The 9.9% and 9.6% performance shifts on SWE-bench and Terminal-Bench demonstrate that benchmark issues can significantly alter perceived model capabilities, which is crucial for safety-critical applications.</li>
+<li>Your work on evaluating LLM agents will benefit from understanding how benchmark flaws can distort performance metrics and rankings.</li>
+<li>The ABA framework provides a template for automated quality assurance in your own benchmark development or selection process.</li>
+<li>The finding that filtering problematic tasks shifts rankings by up to 9.9% underscores the importance of benchmark hygiene for reliable evaluation.</li>
+<li>The open-source release of the tool and annotations enables you to audit benchmarks relevant to your research.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Apply ABA to your own benchmark suite to identify and fix hidden environment dependencies, specification gaps, and grading logic issues.</li>
-<li>[ ] Integrate ABA into the benchmark development pipeline as a continuous integration step to catch issues before public release.</li>
-<li>[ ] Extend ABA's rubric to cover additional issue categories such as data leakage or temporal dependency in dynamic benchmarks.</li>
-<li>[ ] Explore using ABA's trajectory mode to audit agent behavior beyond benchmark tasks, e.g., in real-world deployment scenarios.</li>
+<li>[ ] Apply ABA to your own benchmarks (e.g., agent task suites) to identify and fix hidden issues before publication.</li>
+<li>[ ] Extend the framework to support multi-modal benchmarks (vision, audio) by adding appropriate artifact parsers.</li>
+<li>[ ] Integrate ABA into a continuous integration pipeline for benchmark maintenance and versioning.</li>
+<li>[ ] Collaborate with benchmark authors to adopt ABA as a standard pre-release audit step.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>
-<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_001.png" alt="Figure 2: The Auto Benchmark Audit pipeline. Given benchmark name and URL, an Evidence Collector Agent downloads necessary files and resolves each
+benchmark’s heterogeneous artifacts into a uniform manifest of
+file paths. Then an Auditor Agent audits based on issue categories and severity scale. Then findings include specific evidences, reasoning and suggested fix." width="967" height="334" style="max-width: min(967px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: The Auto Benchmark Audit pipeline. Given benchmark name and URL, an Evidence Collector Agent downloads necessary files and resolves each
+benchmark’s heterogeneous artifacts into a uniform manifest of
+file paths. Then an Auditor Agent audits based on issue categories and severity scale. Then findings include specific evidences, reasoning and suggested fix.</span><span class="lang-zh">图2：自动基准审计流程。给定基准名称和URL，证据收集代理下载必要文件，并将每个基准的异构工件解析为统一的文件路径清单。然后，审计代理根据问题类别和严重性等级进行审计。最终发现包括具体证据、推理过程和建议修复方案。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_002.png" alt="Figure 4: Issue categories
+per audited benchmark, grouped by domain, for all non-clean static-audit findings. Each finding is one of Instruction, Environment, or Evaluation issues. We present the domain average plus a few specific benchmarks for each domain." width="996" height="382" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4: Issue categories
+per audited benchmark, grouped by domain, for all non-clean static-audit findings. Each finding is one of Instruction, Environment, or Evaluation issues. We present the domain average plus a few specific benchmarks for each domain.</span><span class="lang-zh">图4：每个被审计基准的问题类别，按领域分组，涵盖所有非干净的静态审计发现。每个发现属于指令、环境或评估问题之一。我们展示每个领域的平均情况以及几个特定基准。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_003.png" alt="Figure 5: Static-vs-trajectory audit comparison on the benchmarks
+audited in both modes. (a) Severity distribution per benchmark at task-level. Each task is counted as a Major task if it has at least one Major issue. It is a Minor task if most severe finding is Minor. (b) Agreement between the two modes on shared tasks." width="996" height="397" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5: Static-vs-trajectory audit comparison on the benchmarks
+audited in both modes. (a) Severity distribution per benchmark at task-level. Each task is counted as a Major task if it has at least one Major issue. It is a Minor task if most severe finding is Minor. (b) Agreement between the two modes on shared tasks.</span><span class="lang-zh">图5：在两种模式下审计的基准的静态审计与轨迹审计对比。（a）每个基准在任务级别的严重性分布。如果某个任务至少有一个Major问题，则计为Major任务；如果最严重的发现是Minor，则计为Minor任务。（b）两种模式在共享任务上的一致性。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_004.png" alt="Figure 6: Frontier benchmark collection funnel. Five recent
+frontier model release reports (Opus 4.7, GPT-5.4, GLM-5.1,
+Kimi K2.6, MiniMax M2.7) are unioned, normalized, and filtered
+to the set of benchmarks cited by at least two releases, with
+manual removals for duplicates and off-scope task types." width="3803" height="1044" style="max-width: min(3803px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 6: Frontier benchmark collection funnel. Five recent
+frontier model release reports (Opus 4.7, GPT-5.4, GLM-5.1,
+Kimi K2.6, MiniMax M2.7) are unioned, normalized, and filtered
+to the set of benchmarks cited by at least two releases, with
+manual removals for duplicates and off-scope task types.</span><span class="lang-zh">图6：前沿基准收集漏斗。对五份最新的前沿模型发布报告（Opus 4.7、GPT-5.4、GLM-5.1、Kimi K2.6、MiniMax M2.7）进行并集、归一化和过滤，保留至少被两份报告引用的基准，并手动移除重复和超出范围的任务类型。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_005.png" alt="Figure 7: Mean per-model score change (in percentage points) after
+excluding audit-flagged tasks, on the five benchmarks for which
+per-instance leaderboard data are available. (a) removes tasks
+flagged at Minor or Major severity (severity ≥ 1 \geq 1 ); (b) removes
+only tasks flagged Major (severity ≥ 2 \geq 2 ). Bars average over
+all models reported on each benchmark." width="996" height="448" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 7: Mean per-model score change (in percentage points) after
+excluding audit-flagged tasks, on the five benchmarks for which
+per-instance leaderboard data are available. (a) removes tasks
+flagged at Minor or Major severity (severity ≥ 1 \geq 1 ); (b) removes
+only tasks flagged Major (severity ≥ 2 \geq 2 ). Bars average over
+all models reported on each benchmark.</span><span class="lang-zh">图7：在排除审计标记的任务后，五个有逐实例排行榜数据的基准上每个模型的平均得分变化（百分比点）。（a）移除标记为Minor或Major严重性（严重性 ≥ 1）的任务；（b）仅移除标记为Major严重性（严重性 ≥ 2）的任务。柱状图取每个基准上所有报告模型的平均值。</span></figcaption></figure>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
@@ -237,85 +243,36 @@ manual removals for duplicates and off-scope task types.</span>
 <li>[ ] 将ABA集成到基准开发流程中，作为持续集成步骤，在公开发布前捕获问题。</li>
 <li>[ ] 扩展ABA的评分标准以涵盖更多问题类别，如数据泄露或动态基准中的时间依赖。</li>
 <li>[ ] 探索使用ABA的轨迹模式审计基准任务之外的智能体行为，例如在真实世界部署场景中。</li>
-</ul>
+</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_001.png" alt="Figure 2: The Auto Benchmark Audit pipeline. Given benchmark name and URL, an Evidence Collector Agent downloads necessary files and resolves each
+benchmark’s heterogeneous artifacts into a uniform manifest of
+file paths. Then an Auditor Agent audits based on issue categories and severity scale. Then findings include specific evidences, reasoning and suggested fix." width="967" height="334" style="max-width: min(967px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: The Auto Benchmark Audit pipeline. Given benchmark name and URL, an Evidence Collector Agent downloads necessary files and resolves each
+benchmark’s heterogeneous artifacts into a uniform manifest of
+file paths. Then an Auditor Agent audits based on issue categories and severity scale. Then findings include specific evidences, reasoning and suggested fix.</span><span class="lang-zh">图2：自动基准审计流程。给定基准名称和URL，证据收集代理下载必要文件，并将每个基准的异构工件解析为统一的文件路径清单。然后，审计代理根据问题类别和严重性等级进行审计。最终发现包括具体证据、推理过程和建议修复方案。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_002.png" alt="Figure 4: Issue categories
+per audited benchmark, grouped by domain, for all non-clean static-audit findings. Each finding is one of Instruction, Environment, or Evaluation issues. We present the domain average plus a few specific benchmarks for each domain." width="996" height="382" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4: Issue categories
+per audited benchmark, grouped by domain, for all non-clean static-audit findings. Each finding is one of Instruction, Environment, or Evaluation issues. We present the domain average plus a few specific benchmarks for each domain.</span><span class="lang-zh">图4：每个被审计基准的问题类别，按领域分组，涵盖所有非干净的静态审计发现。每个发现属于指令、环境或评估问题之一。我们展示每个领域的平均情况以及几个特定基准。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_003.png" alt="Figure 5: Static-vs-trajectory audit comparison on the benchmarks
+audited in both modes. (a) Severity distribution per benchmark at task-level. Each task is counted as a Major task if it has at least one Major issue. It is a Minor task if most severe finding is Minor. (b) Agreement between the two modes on shared tasks." width="996" height="397" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5: Static-vs-trajectory audit comparison on the benchmarks
+audited in both modes. (a) Severity distribution per benchmark at task-level. Each task is counted as a Major task if it has at least one Major issue. It is a Minor task if most severe finding is Minor. (b) Agreement between the two modes on shared tasks.</span><span class="lang-zh">图5：在两种模式下审计的基准的静态审计与轨迹审计对比。（a）每个基准在任务级别的严重性分布。如果某个任务至少有一个Major问题，则计为Major任务；如果最严重的发现是Minor，则计为Minor任务。（b）两种模式在共享任务上的一致性。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_004.png" alt="Figure 6: Frontier benchmark collection funnel. Five recent
+frontier model release reports (Opus 4.7, GPT-5.4, GLM-5.1,
+Kimi K2.6, MiniMax M2.7) are unioned, normalized, and filtered
+to the set of benchmarks cited by at least two releases, with
+manual removals for duplicates and off-scope task types." width="3803" height="1044" style="max-width: min(3803px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 6: Frontier benchmark collection funnel. Five recent
+frontier model release reports (Opus 4.7, GPT-5.4, GLM-5.1,
+Kimi K2.6, MiniMax M2.7) are unioned, normalized, and filtered
+to the set of benchmarks cited by at least two releases, with
+manual removals for duplicates and off-scope task types.</span><span class="lang-zh">图6：前沿基准收集漏斗。对五份最新的前沿模型发布报告（Opus 4.7、GPT-5.4、GLM-5.1、Kimi K2.6、MiniMax M2.7）进行并集、归一化和过滤，保留至少被两份报告引用的基准，并手动移除重复和超出范围的任务类型。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1294/fig_005.png" alt="Figure 7: Mean per-model score change (in percentage points) after
+excluding audit-flagged tasks, on the five benchmarks for which
+per-instance leaderboard data are available. (a) removes tasks
+flagged at Minor or Major severity (severity ≥ 1 \geq 1 ); (b) removes
+only tasks flagged Major (severity ≥ 2 \geq 2 ). Bars average over
+all models reported on each benchmark." width="996" height="448" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 7: Mean per-model score change (in percentage points) after
+excluding audit-flagged tasks, on the five benchmarks for which
+per-instance leaderboard data are available. (a) removes tasks
+flagged at Minor or Major severity (severity ≥ 1 \geq 1 ); (b) removes
+only tasks flagged Major (severity ≥ 2 \geq 2 ). Bars average over
+all models reported on each benchmark.</span><span class="lang-zh">图7：在排除审计标记的任务后，五个有逐实例排行榜数据的基准上每个模型的平均得分变化（百分比点）。（a）移除标记为Minor或Major严重性（严重性 ≥ 1）的任务；（b）仅移除标记为Major严重性（严重性 ≥ 2）的任务。柱状图取每个基准上所有报告模型的平均值。</span></figcaption></figure>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1294/fig_005.png" alt="Figure 7: Mean per-model score change (in percentage points) after
-excluding audit-flagged tasks, on the five benchmarks for which
-per-instance leaderboard data are available. (a) removes tasks
-flagged at Minor or Major severity (severity ≥ 1 \geq 1 ); (b) removes
-only tasks flagged Major (severity ≥ 2 \geq 2 ). Bars average over
-all models reported on each benchmark." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 7: Mean per-model score change (in percentage points) after
-excluding audit-flagged tasks, on the five benchmarks for which
-per-instance leaderboard data are available. (a) removes tasks
-flagged at Minor or Major severity (severity ≥ 1 \geq 1 ); (b) removes
-only tasks flagged Major (severity ≥ 2 \geq 2 ). Bars average over
-all models reported on each benchmark.</span>
-                <span class="lang-zh">图7：在排除审计标记的任务后，五个有逐实例排行榜数据的基准上，每个模型的平均得分变化（以百分点计）。(a) 移除标记为轻微或严重（严重程度 ≥ 1）的任务；(b) 仅移除标记为严重（严重程度 ≥ 2）的任务。柱状图对每个基准上报告的所有模型取平均值。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1294/fig_007.png" alt="Figure 9: Top-15 of swe_bench_verified after removing all
-Major and Minor trajectory-flagged tasks. orig % is the
-public matrix-mean score; new % is recomputed on the
-audited task set; Δ \Delta % and Δ \Delta Rank report the change
-relative to the public ordering. Even with the broader exclusion
-rule the top three slots are stable, but several middle-of-pack
-systems swing by up to eight places (e.g. Sonar Foundation Agent
-+ Claude 4.5 Sonnet rises eight, EPAM AI/Run Developer Agent
-drops eight), with the largest score lifts exceeding +13 points." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 9: Top-15 of swe_bench_verified after removing all
-Major and Minor trajectory-flagged tasks. orig % is the
-public matrix-mean score; new % is recomputed on the
-audited task set; Δ \Delta % and Δ \Delta Rank report the change
-relative to the public ordering. Even with the broader exclusion
-rule the top three slots are stable, but several middle-of-pack
-systems swing by up to eight places (e.g. Sonar Foundation Agent
-+ Claude 4.5 Sonnet rises eight, EPAM AI/Run Developer Agent
-drops eight), with the largest score lifts exceeding +13 points.</span>
-                <span class="lang-zh">图9：移除所有标记为严重和轻微的轨迹问题任务后，swe_bench_verified 的前15名。orig % 是公开矩阵平均得分；new % 是在审计任务集上重新计算的结果；Δ % 和 Δ 排名报告相对于公开排序的变化。即使采用更宽泛的排除规则，前三名仍然稳定，但多个中游系统的排名波动高达八位（例如 Sonar Foundation Agent + Claude 4.5 Sonnet 上升八位，EPAM AI/Run Developer Agent 下降八位），最大得分提升超过 +13 个百分点。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1294/fig_008.png" alt="Figure 10: Top-15 of swe_bench_verified after removing only
-Major trajectory-flagged tasks (the conservative filter). The
-rank reshuffle is smaller than under the Major+Minor filter –
-most movements are within ± 2 \pm 2 – but the average per-model
-lift remains around five points, and the head of the leaderboard
-still re-orders around the 5th–14th slots." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 10: Top-15 of swe_bench_verified after removing only
-Major trajectory-flagged tasks (the conservative filter). The
-rank reshuffle is smaller than under the Major+Minor filter –
-most movements are within ± 2 \pm 2 – but the average per-model
-lift remains around five points, and the head of the leaderboard
-still re-orders around the 5th–14th slots.</span>
-                <span class="lang-zh">图10：仅移除标记为严重的轨迹问题任务（保守过滤）后，swe_bench_verified 的前15名。排名重排幅度小于严重+轻微过滤——大多数变动在 ±2 以内——但每个模型的平均提升仍保持在五分左右，排行榜头部在第5至第14名附近仍有重新排序。</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

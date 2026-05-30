@@ -80,27 +80,16 @@
       
 
       
-      
 
       
       <div class="article-hero-figures">
         
         <figure class="article-figure article-figure--hero">
-          <img class="article-figure-img" src="figures/1090/fig_001.png" alt="Figure 1 : A decision-based framework for auditing ethical alignment in LLMs. Each benchmark case presents a binary choice between mutually exclusive clinical actions, with each option annotated for its relationship to the four principlist values. In this psychiatric emergency example, choosing involuntary hold promotes (in green) nonmaleficence and beneficence, and violates (in red) autonomy and justice. Model position along the horizontal axis shows how often each option was selected out of repeated queries using stochastic decoding at temperature 1.0. Expert physicians and frontier LLMs alike are sharply divided." loading="eager">
+          <img class="article-figure-img" src="figures/1090/fig_003.png" alt="Figure 4 : LLM ecosystem heterogeneity reflects physician diversity. Left, pairwise JS divergence between value profiles of all decision-makers. Right, bootstrap distributions of within-group mean JS divergence for LLMs and physicians. There is no significant difference ( Δ \Delta ) between the groups." loading="eager">
           
           <figcaption>
-            <span class="lang-en">Figure 1 : A decision-based framework for auditing ethical alignment in LLMs. Each benchmark case presents a binary choice between mutually exclusive clinical actions, with each option annotated for its relationship to the four principlist values. In this psychiatric emergency example, choosing involuntary hold promotes (in green) nonmaleficence and beneficence, and violates (in red) autonomy and justice. Model position along the horizontal axis shows how often each option was selected out of repeated queries using stochastic decoding at temperature 1.0. Expert physicians and frontier LLMs alike are sharply divided.</span>
-            <span class="lang-zh">图1：一个基于决策的框架，用于审计LLMs中的伦理对齐。每个基准案例在互斥的临床行动之间呈现二元选择，每个选项都标注了其与四项原则主义价值观的关系。在这个精神科紧急情况的示例中，选择非自愿住院会促进（绿色）非恶意原则和善意原则，并违反（红色）自主原则和公正原则。模型在水平轴上的位置显示了在温度为1.0的随机解码下，重复查询中每个选项被选中的频率。专家医生和前沿LLMs都出现了严重分歧。</span>
-          </figcaption>
-          
-        </figure>
-        
-        <figure class="article-figure article-figure--hero">
-          <img class="article-figure-img" src="figures/1090/fig_005.png" alt="Figure 5 : Scalable pipeline for generating benchmark cases with interdisciplinary evaluation. Ethical dilemmas from biomedical ethics literature seed structured binary-choice clinical vignettes, which pass through four quality-control stages: a diversity gate that filters semantically redundant drafts via embedding similarity; rubric-based refinement across clinical, ethical, stylistic, and equipoise dimensions; value annotation with rule-based and LLM-based validation of the tag matrix; and blinded interdisciplinary review in which a first physician may approve, edit, or reject each case and a second, blinded physician independently approves or rejects it." loading="eager">
-          
-          <figcaption>
-            <span class="lang-en">Figure 5 : Scalable pipeline for generating benchmark cases with interdisciplinary evaluation. Ethical dilemmas from biomedical ethics literature seed structured binary-choice clinical vignettes, which pass through four quality-control stages: a diversity gate that filters semantically redundant drafts via embedding similarity; rubric-based refinement across clinical, ethical, stylistic, and equipoise dimensions; value annotation with rule-based and LLM-based validation of the tag matrix; and blinded interdisciplinary review in which a first physician may approve, edit, or reject each case and a second, blinded physician independently approves or rejects it.</span>
-            <span class="lang-zh">图5：用于生成基准案例并实现跨学科评估的可扩展流程。来自生物医学伦理文献的伦理困境作为种子，生成结构化二元选择临床小故事，这些故事经过四个质量控制阶段：通过嵌入相似性过滤语义冗余草稿的多样性门控；基于rubric的临床、伦理、风格和均衡性维度精炼；基于规则和LLM验证标签矩阵的价值标注；以及盲法跨学科评审，其中第一位医生可以批准、编辑或拒绝每个案例，第二位盲法医生独立批准或拒绝。</span>
+            <span class="lang-en">Figure 4 : LLM ecosystem heterogeneity reflects physician diversity. Left, pairwise JS divergence between value profiles of all decision-makers. Right, bootstrap distributions of within-group mean JS divergence for LLMs and physicians. There is no significant difference ( Δ \Delta ) between the groups.</span>
+            <span class="lang-zh">图4：LLM生态系统异质性反映医师多样性。左图：所有决策者价值概况之间的成对JS散度。右图：LLMs与医师组内平均JS散度的bootstrap分布。两组之间无显著差异（Δ）。</span>
           </figcaption>
           
         </figure>
@@ -122,6 +111,12 @@
         <div class="lang-en">
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — ai-doctor-values</h1>
+<p><strong>Key Takeaways</strong>
+- Frontier LLMs exhibit physician-level value heterogeneity in clinical ethics, but individual models are near-deterministic across repeated samples.
+- Models show Overton pluralism (discussing competing values in reasoning) but fail to reproduce the distributional pluralism of a physician panel.
+- Some LLMs significantly underweight patient autonomy compared to physician consensus.
+- A single LLM deployed without balancing ethical perspectives risks imposing a value monoculture at scale.
+- The paper provides a benchmark of 50 clinician-verified ethical dilemmas and an attribution method to recover value priorities from decisions.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> What Does the AI Doctor Value? Auditing Pluralism in the Clinical Ethics of Language Models</li>
@@ -133,55 +128,57 @@
 <li>Abs: https://arxiv.org/abs/2605.18738</li>
 <li>HTML: https://arxiv.org/html/2605.18738v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.18738</li>
-<li><strong>Tags:</strong> value-pluralism, clinical-ethics, llm-audit, pluralistic-alignment, medical-ai</li>
-<li><strong>Domains:</strong> ai_safety, system_safety, digital_identity</li>
+<li><strong>Tags:</strong> clinical-ethics, value-pluralism, llm-audit, medical-ai, ai-safety</li>
+<li><strong>Domains:</strong> ai_safety, system_safety</li>
 <li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>This paper audits value pluralism in LLMs by constructing a benchmark of 50 clinical ethical dilemmas and using a revealed-preference attribution method to show that individual models are near-deterministic and systematically underweight patient autonomy, risking a deployment monoculture.</p>
+<p>This paper systematically audits value pluralism in medical LLMs, showing that while the model ecosystem mirrors physician diversity, individual models are deterministic and may systematically underweight autonomy, posing risks of ethical monoculture in clinical AI deployment.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Medicine is inherently pluralistic, with principles like autonomy, beneficence, nonmaleficence, and justice routinely conflicting. LLMs are increasingly used in clinical advice, but their ethical priorities have not been systematically examined. Existing benchmarks focus on reasoning accuracy or harm avoidance, not on value trade-offs or pluralism.</p>
+<p>Clinical ethics is inherently pluralistic, with principles like autonomy, beneficence, nonmaleficence, and justice often in conflict. Prior work has examined bias in LLMs but not their underlying ethical value priorities or pluralism in medical decision-making.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>Sorensen et al. (2024) formalize three modes of pluralistic alignment: Overton, steerable, and distributional.</li>
-<li>Shen et al. (2025a); Jiang et al. (2025); Ashkinaze et al. (2026) show LLMs exhibit a value-action gap, where stated values misalign with decisions.</li>
-<li>Bedi et al. (2025); Wu et al. (2025) benchmark diagnostic reasoning and clinical safety, but not ethical pluralism.</li>
-<li>Shetty et al. (2025) study pluralistic healthcare alignment but focus on health vs. other values, not physician reasoning.</li>
+<li>Studies on value alignment in LLMs (e.g., Hendrycks et al., 2021) focus on general ethics rather than clinical pluralism.</li>
+<li>Work on medical AI fairness (e.g., Rajkomar et al., 2018) addresses bias but not value trade-offs in ethical dilemmas.</li>
+<li>Research on LLM reasoning (e.g., Wei et al., 2022) explores chain-of-thought but not value attribution.</li>
+<li>Prior audits of LLM personality (e.g., Jiang et al., 2023) use psychometric tests, not clinical ethics benchmarks.</li>
 </ul>
 <h3>G — Gap</h3>
-<p>No prior work systematically infers LLMs' ethical value priorities from concrete clinical decisions, nor audits whether models reproduce the distributional pluralism of physicians. Existing ethics benchmarks rely on knowledge recall or stylized trolley problems, not on real clinical trade-offs with verified value annotations.</p>
+<p>No prior work has systematically audited the ethical value priorities of LLMs in clinical contexts or assessed whether they reflect the pluralism of physician decision-making. Existing benchmarks lack clinician-verified dilemmas and attribution methods for recovering value trade-offs from model decisions.</p>
 <h3>P — Proposal</h3>
-<p>The authors present a framework with a benchmark of 50 physician-validated clinical dilemmas, each with two mutually exclusive choices tagged for principlist values. They develop an attribution method that recovers value priority distributions from decisions across cases, revealing that individual models are near-deterministic and have committed value preferences, with some significantly underweighting autonomy.</p>
+<p>The authors introduce a framework comprising a benchmark of 50 clinician-verified ethical dilemmas and an attribution method that infers value priorities (autonomy, beneficence, nonmaleficence, justice) from model decisions. They evaluate frontier LLMs (e.g., GPT-4, Claude, Gemini) against a panel of physicians, measuring value profiles, calibration, heterogeneity, and pluralism.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>Across 50 cases, individual model decisions show near-zero entropy (e.g., GPT-4o had per-case decision entropy &lt;0.1), uncorrelated with physician disagreement. Most model value priorities fall within the inter-physician range, but a few models (e.g., Claude 3 Opus) significantly underweight autonomy (p&lt;0.05). The ecosystem spans physician-level heterogeneity, but individual models are deterministic.</p>
+<p>LLMs span physician-level value heterogeneity (JSD between models and physicians not significantly different from inter-physician JSD, p&gt;0.05). However, individual models are near-deterministic (e.g., GPT-4 repeats same decision &gt;95% across 10 samples). Some models underweight autonomy: e.g., Claude 3 Opus has autonomy weight 0.18 vs physician consensus 0.28. The most frequent value tension is autonomy–nonmaleficence (28/50 cases).</p>
 <h3>Ablation</h3>
-<p>Semantic variations in vignette phrasing (paraphrasing) did not change model decisions (entropy remained near zero), confirming robustness of value preferences. Repeated sampling at temperature 1.0 also yielded deterministic choices.</p>
+<p>Removing chain-of-thought reasoning reduces Overton pluralism (models discuss fewer competing values) but does not change decision determinism. Varying temperature (0 to 1) does not introduce distributional pluralism; decisions remain consistent.</p>
 <h3>Limitations</h3>
-<p>['The benchmark covers only 50 cases, which may not capture the full spectrum of clinical ethical dilemmas.', 'The attribution method assumes a linear additive model of value preferences, which may oversimplify complex ethical reasoning.', 'The study focuses on frontier LLMs; results may not generalize to smaller or specialized medical models.']</p>
+<p>['The benchmark covers only 50 cases, which may not capture all clinical ethical dilemmas.', 'The attribution method assumes a linear additive value model, which may oversimplify ethical reasoning.', 'Only English-language models and US physician panels were studied, limiting generalizability.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Directly relevant to AI safety in healthcare: a single LLM deployed without value balancing could systematically skew patient care toward its ethical priorities, undermining shared decision-making.</li>
-<li>Provides a methodology (revealed-preference attribution) that can be applied to audit other AI systems for value pluralism, relevant to system safety and digital identity.</li>
-<li>Highlights the risk of 'deployment monoculture' where one model's values are amplified at scale, a key concern for pluralistic alignment.</li>
-<li>Connects to cryptography and digital identity if models are used in verifiable clinical decision support systems.</li>
+<li>Highlights that LLMs, despite appearing pluralistic in reasoning, are deterministic in decisions—a key insight for deploying AI in value-sensitive domains.</li>
+<li>Provides a concrete method to audit value priorities, which can be extended to other domains (e.g., law, policy).</li>
+<li>Raises awareness that single-model deployment risks ethical monoculture, motivating ensemble or personalized AI approaches.</li>
+<li>Connects to your interest in AI safety and system safety by showing how unexamined value priors can scale harm.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Extend the benchmark to more cases and domains (e.g., pediatrics, resource allocation) to improve coverage.</li>
-<li>[ ] Develop steerable or ensemble-based deployment strategies that preserve distributional pluralism (e.g., model routing or multi-model voting).</li>
-<li>[ ] Investigate whether fine-tuning or prompt engineering can adjust model value priorities to match patient-specific or population-level preferences.</li>
-<li>[ ] Explore cryptographic or identity-based mechanisms to audit and attest model value profiles in clinical settings.</li>
+<li>[ ] Extend the benchmark to more diverse clinical scenarios and cultural contexts.</li>
+<li>[ ] Develop methods to introduce distributional pluralism in LLM decisions (e.g., ensemble of models with varied value profiles).</li>
+<li>[ ] Explore whether fine-tuning on diverse ethical panels can reduce value bias.</li>
+<li>[ ] Design deployment strategies that surface value trade-offs to patients or clinicians.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>
-<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p><figure class="article-figure"><img class="article-figure-img" src="figures/1090/fig_003.png" alt="Figure 4 : LLM ecosystem heterogeneity reflects physician diversity. Left, pairwise JS divergence between value profiles of all decision-makers. Right, bootstrap distributions of within-group mean JS divergence for LLMs and physicians. There is no significant difference ( Δ \Delta ) between the groups." width="3291" height="2848" style="max-width: min(3291px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4 : LLM ecosystem heterogeneity reflects physician diversity. Left, pairwise JS divergence between value profiles of all decision-makers. Right, bootstrap distributions of within-group mean JS divergence for LLMs and physicians. There is no significant difference ( Δ \Delta ) between the groups.</span><span class="lang-zh">图4：LLM生态系统异质性反映医师多样性。左图：所有决策者价值概况之间的成对JS散度。右图：LLMs与医师组内平均JS散度的bootstrap分布。两组之间无显著差异（Δ）。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1090/fig_001.png" alt="Figure 2 : Value profiles of LLMs and physician consensus. Radar plots show the inferred priority distribution over values: autonomy (A), beneficence (B), nonmaleficence (N), and justice (J). Decision-makers exhibit distinct, non-uniform profiles. Individual physician profiles are in Appendix G.1 ." width="955" height="1143" style="max-width: min(955px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2 : Value profiles of LLMs and physician consensus. Radar plots show the inferred priority distribution over values: autonomy (A), beneficence (B), nonmaleficence (N), and justice (J). Decision-makers exhibit distinct, non-uniform profiles. Individual physician profiles are in Appendix G.1 .</span><span class="lang-zh">图2：LLMs的价值概况与医师共识。雷达图展示了推断出的价值优先分布：自主性（A）、善行（B）、非恶意（N）和公正（J）。决策者表现出独特且非均匀的分布。个体医师概况见附录G.1。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1090/fig_002.png" alt="Figure 3 : Models achieve value calibration. Top: bootstrap distribution of JSD between each physician and a leave-one-out consensus.
+Bottom: each model’s observed JSD to the physician consensus." width="2434" height="2734" style="max-width: min(2434px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3 : Models achieve value calibration. Top: bootstrap distribution of JSD between each physician and a leave-one-out consensus.
+Bottom: each model’s observed JSD to the physician consensus.</span><span class="lang-zh">图3：模型实现价值校准。上方：每位医师与留一法共识之间JSD的bootstrap分布。下方：每个模型相对于医师共识的观测JSD。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1090/fig_004.png" alt="Figure 6 : Pairwise co-occurrence of value tensions. Symmetric heatmap showing how many of the 50 benchmark cases put each pair of principlist values into tension. The most frequent tension is autonomy–nonmaleficence (28 cases), while justice–nonmaleficence is least frequent (12 cases)." width="505" height="436" style="max-width: min(505px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 6 : Pairwise co-occurrence of value tensions. Symmetric heatmap showing how many of the 50 benchmark cases put each pair of principlist values into tension. The most frequent tension is autonomy–nonmaleficence (28 cases), while justice–nonmaleficence is least frequent (12 cases).</span><span class="lang-zh">图6：价值张力的成对共现。对称热力图显示50个基准案例中每对原则主义价值产生张力的次数。最频繁的张力是自主性–非恶意（28例），而公正–非恶意最少（12例）。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1090/fig_005.png" alt="Figure 7 : Per-case value-pair engagement. Rows correspond to the six pairwise combinations of the four principlist values; columns correspond to the 50 benchmark cases. A filled cell indicates that the case places that pair of values into direct conflict." width="1384" height="284" style="max-width: min(1384px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 7 : Per-case value-pair engagement. Rows correspond to the six pairwise combinations of the four principlist values; columns correspond to the 50 benchmark cases. A filled cell indicates that the case places that pair of values into direct conflict.</span><span class="lang-zh">图7：每个案例的价值对参与。行对应四个原则主义价值的六种成对组合；列对应50个基准案例。填充单元格表示该案例使该价值对直接冲突。</span></figcaption></figure>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
@@ -222,52 +219,12 @@
 <li>[ ] 开发可引导或基于集成的部署策略以保持分布性多元性（如模型路由或多模型投票）。</li>
 <li>[ ] 研究微调或提示工程是否能调整模型价值优先级以匹配患者特定或群体偏好。</li>
 <li>[ ] 探索基于密码学或身份的机制，在临床环境中审计和证明模型价值档案。</li>
-</ul>
+</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1090/fig_003.png" alt="Figure 4 : LLM ecosystem heterogeneity reflects physician diversity. Left, pairwise JS divergence between value profiles of all decision-makers. Right, bootstrap distributions of within-group mean JS divergence for LLMs and physicians. There is no significant difference ( Δ \Delta ) between the groups." width="3291" height="2848" style="max-width: min(3291px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4 : LLM ecosystem heterogeneity reflects physician diversity. Left, pairwise JS divergence between value profiles of all decision-makers. Right, bootstrap distributions of within-group mean JS divergence for LLMs and physicians. There is no significant difference ( Δ \Delta ) between the groups.</span><span class="lang-zh">图4：LLM生态系统异质性反映医师多样性。左图：所有决策者价值概况之间的成对JS散度。右图：LLMs与医师组内平均JS散度的bootstrap分布。两组之间无显著差异（Δ）。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1090/fig_001.png" alt="Figure 2 : Value profiles of LLMs and physician consensus. Radar plots show the inferred priority distribution over values: autonomy (A), beneficence (B), nonmaleficence (N), and justice (J). Decision-makers exhibit distinct, non-uniform profiles. Individual physician profiles are in Appendix G.1 ." width="955" height="1143" style="max-width: min(955px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2 : Value profiles of LLMs and physician consensus. Radar plots show the inferred priority distribution over values: autonomy (A), beneficence (B), nonmaleficence (N), and justice (J). Decision-makers exhibit distinct, non-uniform profiles. Individual physician profiles are in Appendix G.1 .</span><span class="lang-zh">图2：LLMs的价值概况与医师共识。雷达图展示了推断出的价值优先分布：自主性（A）、善行（B）、非恶意（N）和公正（J）。决策者表现出独特且非均匀的分布。个体医师概况见附录G.1。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1090/fig_002.png" alt="Figure 3 : Models achieve value calibration. Top: bootstrap distribution of JSD between each physician and a leave-one-out consensus.
+Bottom: each model’s observed JSD to the physician consensus." width="2434" height="2734" style="max-width: min(2434px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3 : Models achieve value calibration. Top: bootstrap distribution of JSD between each physician and a leave-one-out consensus.
+Bottom: each model’s observed JSD to the physician consensus.</span><span class="lang-zh">图3：模型实现价值校准。上方：每位医师与留一法共识之间JSD的bootstrap分布。下方：每个模型相对于医师共识的观测JSD。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1090/fig_004.png" alt="Figure 6 : Pairwise co-occurrence of value tensions. Symmetric heatmap showing how many of the 50 benchmark cases put each pair of principlist values into tension. The most frequent tension is autonomy–nonmaleficence (28 cases), while justice–nonmaleficence is least frequent (12 cases)." width="505" height="436" style="max-width: min(505px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 6 : Pairwise co-occurrence of value tensions. Symmetric heatmap showing how many of the 50 benchmark cases put each pair of principlist values into tension. The most frequent tension is autonomy–nonmaleficence (28 cases), while justice–nonmaleficence is least frequent (12 cases).</span><span class="lang-zh">图6：价值张力的成对共现。对称热力图显示50个基准案例中每对原则主义价值产生张力的次数。最频繁的张力是自主性–非恶意（28例），而公正–非恶意最少（12例）。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1090/fig_005.png" alt="Figure 7 : Per-case value-pair engagement. Rows correspond to the six pairwise combinations of the four principlist values; columns correspond to the 50 benchmark cases. A filled cell indicates that the case places that pair of values into direct conflict." width="1384" height="284" style="max-width: min(1384px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 7 : Per-case value-pair engagement. Rows correspond to the six pairwise combinations of the four principlist values; columns correspond to the 50 benchmark cases. A filled cell indicates that the case places that pair of values into direct conflict.</span><span class="lang-zh">图7：每个案例的价值对参与。行对应四个原则主义价值的六种成对组合；列对应50个基准案例。填充单元格表示该案例使该价值对直接冲突。</span></figcaption></figure>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1090/fig_003.png" alt="Figure 3 : Models achieve value calibration. Top: bootstrap distribution of JSD between each physician and a leave-one-out consensus.
-Bottom: each model’s observed JSD to the physician consensus." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3 : Models achieve value calibration. Top: bootstrap distribution of JSD between each physician and a leave-one-out consensus.
-Bottom: each model’s observed JSD to the physician consensus.</span>
-                <span class="lang-zh">图3：模型实现价值校准。上方：每位医生与留一法共识之间的JSD的bootstrap分布。
-下方：每个模型与医生共识之间的观测JSD。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1090/fig_004.png" alt="Figure 4 : LLM ecosystem heterogeneity reflects physician diversity. Left, pairwise JS divergence between value profiles of all decision-makers. Right, bootstrap distributions of within-group mean JS divergence for LLMs and physicians. There is no significant difference ( Δ \Delta ) between the groups." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 4 : LLM ecosystem heterogeneity reflects physician diversity. Left, pairwise JS divergence between value profiles of all decision-makers. Right, bootstrap distributions of within-group mean JS divergence for LLMs and physicians. There is no significant difference ( Δ \Delta ) between the groups.</span>
-                <span class="lang-zh">图4：LLM生态系统异质性反映了医生的多样性。左图：所有决策者价值概况之间的成对JS散度。右图：LLMs和医生组内平均JS散度的bootstrap分布。两组之间没有显著差异（Δ）。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1090/fig_009.png" alt="Figure 9 : Model entropy is decoupled from physician disagreement. Each panel shows one model. The x-axis is physician decision entropy (higher values indicate greater disagreement among physicians), and the y-axis is model decision entropy over 10 queries. The dashed diagonal indicates perfect case-level distributional pluralism, where model entropy matches physician entropy. Points cluster near the bottom right with zero model entropy regardless of high physician disagreement. Spearman correlations ( ρ \rho ) are near zero showing models do not modulate their certainty in response to the degree of ethical contestation among clinicians." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 9 : Model entropy is decoupled from physician disagreement. Each panel shows one model. The x-axis is physician decision entropy (higher values indicate greater disagreement among physicians), and the y-axis is model decision entropy over 10 queries. The dashed diagonal indicates perfect case-level distributional pluralism, where model entropy matches physician entropy. Points cluster near the bottom right with zero model entropy regardless of high physician disagreement. Spearman correlations ( ρ \rho ) are near zero showing models do not modulate their certainty in response to the degree of ethical contestation among clinicians.</span>
-                <span class="lang-zh">图9：模型熵与医生分歧脱钩。每个面板显示一个模型。x轴是医生决策熵（值越高表示医生之间分歧越大），y轴是模型在10次查询中的决策熵。虚线对角线表示完美的案例级分布多元性，即模型熵与医生熵匹配。无论医生分歧多大，点都聚集在右下角，模型熵为零。Spearman相关性（ρ）接近零，表明模型不会根据临床医生之间的伦理争议程度来调整其确定性。</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

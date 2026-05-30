@@ -66,8 +66,13 @@
       </header>
 
       
-
+      <div class="insight-callout">
+        <span class="insight-label">启示 · Insight</span>
+        <p class="lang-en">For a system security researcher focused on software supply-chain security and malware, this case demonstrates a critical failure in a trusted signing infrastructure: a cloud-based code-signing service (Azure Trusted Signing) was weaponized by a threat actor using stolen identities to obtain valid certificates, bypassing identity validation. The operational model—MSaaS with short-lived (72h) certificates and later VM-based delivery—highlights how attackers can commoditize trust mechanisms. The incident underscores the need for stronger identity verification (beyond verifiable credentials), continuous certificate revocation monitoring, and runtime behavioral analysis to detect signed malware that evades static trust checks.</p>
+        <p class="lang-zh">对于专注于软件供应链安全和恶意软件的系统安全研究员，此案例展示了可信签名基础设施中的关键失败：云代码签名服务（Azure Trusted Signing）被威胁行为者利用窃取的身份获取有效证书，绕过了身份验证。运营模式——MSaaS 搭配短期（72小时）证书及后续基于 VM 的交付——凸显了攻击者如何将信任机制商品化。该事件强调了需要更强的身份验证（超越可验证凭证）、持续的证书吊销监控以及运行时行为分析，以检测绕过静态信任检查的签名恶意软件。</p>
+      </div>
       
+
       
 
       
@@ -75,74 +80,66 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Microsoft disrupted a malware-signing-as-a-service (MSaaS) operation, dubbed Fox Tempest, which abused the company's Artifact Signing system to generate fraudulent code-signing certificates for signing malware. The service enabled ransomware attacks, including Rhysida, and distributed malware like Oyster, Lumma Stealer, and Vidar. Fox Tempest used stolen identities from the US and Canada to obtain legitimate certificates and offered the service for $5,000–$9,000. The takedown, OpFauxSign, seized the website, virtual machines, and hosting infrastructure. The operation targeted healthcare, education, government, and financial sectors globally. Microsoft emphasized that such abuse undermines trust in software legitimacy and security controls.</p></div>
+          <div class="lede"><p>Microsoft disrupted a malware-signing-as-a-service (MSaaS) operation called Fox Tempest that abused its Artifact Signing system to issue short-lived fraudulent code-signing certificates, enabling ransomware (Rhysida, INC, Qilin, BlackByte, Akira) and other malware to be signed and delivered as legitimate software.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>微软捣毁了一个名为Fox Tempest的恶意签名服务平台，该平台滥用微软的Artifact Signing系统生成伪造的代码签名证书，为勒索软件（如Rhysida）及其他恶意软件签名。该服务使用美国与加拿大的被盗身份获取合法证书，收费5000-9000美元，并通过Cloudzy虚拟机分发。行动代号OpFauxSign，查封了网站和基础设施。此举突显了代码签名信任机制被武器化的风险。</p></div>
+          <div class="lede"><p>微软捣毁了一个名为 Fox Tempest 的恶意软件签名即服务（MSaaS）运营，该运营滥用微软的 Artifact Signing 系统签发短期伪造代码签名证书，使勒索软件（Rhysida、INC、Qilin、BlackByte、Akira）及其他恶意软件能够以合法软件签名形式分发。</p></div>
         </div>
 
         
-
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1258/fig_01.webp" alt="ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</span>
-                <span class="lang-zh">威胁日报：Linux Rootkits、路由器0-Day、AI入侵、诈骗工具包及25条新动态</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1258/fig_02.gif" alt="9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros</span>
-                <span class="lang-zh">存在9年的Linux内核漏洞可在主流发行版上实现Root命令执行</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1258/fig_03.webp" alt="Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit</span>
-                <span class="lang-zh">微软发布针对YellowKey BitLocker绕过漏洞CVE-2026-45585利用的缓解措施</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1258/fig_04.gif" alt="Developer Workstations Are Now Part of the Software Supply Chain" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Developer Workstations Are Now Part of the Software Supply Chain</span>
-                <span class="lang-zh">开发者工作站现已成为软件供应链的一部分</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1258/fig_05.jpg" alt="Articles" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Articles</span>
-                <span class="lang-zh">文章</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>Microsoft disrupted Fox Tempest, an MSaaS operation abusing Azure Artifact Signing.</li>
+<li>Fox Tempest used stolen US/Canadian identities to obtain valid 72-hour code-signing certificates.</li>
+<li>The service signed Rhysida ransomware, Oyster, Lumma Stealer, Vidar, and was linked to INC, Qilin, BlackByte, Akira affiliates.</li>
+<li>Customers paid $5,000–$9,000; later shifted to providing pre-configured VMs on Cloudzy.</li>
+<li>Signed malware was distributed via malvertising (fake Microsoft Teams downloads).</li>
+<li>Microsoft seized the signspace[.]cloud domain, took down VMs, and blocked code-hosting sites.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>Previous code-signing abuse cases (e.g., stolen certificates, rogue CAs) typically involved compromising a single certificate or CA. This case is novel because it weaponizes a cloud-native signing service (Azure Trusted Signing) as a platform for a pay-per-sign MSaaS business, with short-lived certificates and VM-based delivery to evade revocation. It mirrors the commoditization seen in Ransomware-as-a-Service but applied to the trust layer.</p>
+<h2>Why It Matters</h2>
+<p>This incident directly undermines the trust model of code signing, a cornerstone of software supply-chain security. It shows that even a well-designed identity validation process (verifiable credentials) can be bypassed with stolen identities, and that short-lived certificates make revocation impractical. For defenders, it means signed binaries can no longer be implicitly trusted; runtime detection and behavioral analysis become essential. It also highlights the risk of cloud services being repurposed as attack infrastructure.</p>
+<h2>Critical Take</h2>
+<p>The article is based on Microsoft's own disclosure; independent verification of the scale (thousands of machines) and the full list of affected ransomware families is not provided. The claim that stolen identities were used is plausible but not detailed (e.g., how they were obtained). The effectiveness of the takedown (seizing domain, VMs) may be temporary—Fox Tempest could re-emerge with new infrastructure. The long-term impact on the MSaaS ecosystem is unclear.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Whether Fox Tempest or copycat groups re-emerge using alternative signing services (e.g., other cloud CAs, hardware tokens).</li>
+<li>Microsoft's response: improvements to identity validation for Artifact Signing, faster certificate revocation mechanisms, or behavioral monitoring for signed binaries.</li>
+<li>Adoption of runtime integrity checks (e.g., attestation, behavioral analysis) by security products to detect signed malware.</li>
+<li>Disclosure of the stolen identity sources and any related identity-theft campaigns.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>微软捣毁了 Fox Tempest，一个滥用 Azure Artifact Signing 的 MSaaS 运营。</li>
+<li>Fox Tempest 使用被盗的美国/加拿大身份获取有效的 72 小时代码签名证书。</li>
+<li>该服务为 Rhysida 勒索软件、Oyster、Lumma Stealer、Vidar 签名，并与 INC、Qilin、BlackByte、Akira 的关联方有联系。</li>
+<li>客户支付 5,000–9,000 美元；后期转向在 Cloudzy 上提供预配置的 VM。</li>
+<li>签名恶意软件通过恶意广告（假冒 Microsoft Teams 下载）分发。</li>
+<li>微软查封了 signspace[.]cloud 域名，下线了 VM，并屏蔽了代码托管站点。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>以往的代码签名滥用案例（如窃取证书、流氓 CA）通常涉及单个证书或 CA 的攻陷。本案的新颖之处在于将云原生签名服务（Azure Trusted Signing）武器化为按次付费的 MSaaS 业务平台，使用短期证书和基于 VM 的交付来规避吊销。这反映了在信任层上类似于勒索软件即服务（RaaS）的商品化趋势。</p>
+<h2>重要性</h2>
+<p>该事件直接动摇了代码签名的信任模型，而代码签名是软件供应链安全的基石。它表明即使设计良好的身份验证流程（可验证凭证）也可能被窃取的身份绕过，且短期证书使吊销不切实际。对于防御者而言，这意味着签名二进制文件不能再被隐式信任；运行时检测和行为分析变得至关重要。它还凸显了云服务被重新用作攻击基础设施的风险。</p>
+<h2>批判性视角</h2>
+<p>该文章基于微软自身的披露；未提供对受影响规模（数千台机器）及完整勒索软件家族列表的独立验证。使用被盗身份的声称虽合理但缺乏细节（例如如何获取）。查封域名和 VM 的取缔行动可能是暂时的——Fox Tempest 可能以新基础设施重新出现。对 MSaaS 生态系统的长期影响尚不明确。</p>
+<h2>后续关注</h2>
+<ul>
+<li>Fox Tempest 或模仿者是否使用其他签名服务（如其他云 CA、硬件令牌）重新出现。</li>
+<li>微软的回应：改进 Artifact Signing 的身份验证、更快的证书吊销机制，或对签名二进制文件的行为监控。</li>
+<li>安全产品采用运行时完整性检查（如证明、行为分析）来检测签名恶意软件。</li>
+<li>被盗身份来源的披露及任何相关的身份盗窃活动。</li>
+</ul>
         </div>
         
+
       </div>
 
       

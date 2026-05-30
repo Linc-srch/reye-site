@@ -72,12 +72,11 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For Digital Identity & Trust research, this article directly validates the need for Agentic AI identity lifecycle management and Zero Trust architectures. The highlighted risk of AI agents inheriting high-level permissions via MCP servers underscores the urgency of agent attestation, granular access control, and automated auditing for NHIs. The failure of isolated IGA/PAM tools to detect chained exposures reinforces the requirement for unified identity infrastructure that maps agent permissions across endpoints, AD, and cloud, aligning with our focus on protocol interoperability (OAuth, OIDC) and certificate automation (ACME) to enforce least privilege for non-human identities.</p>
-        <p class="lang-zh">对于数字身份与信任研究，本文直接验证了代理式AI身份生命周期管理和零信任架构的必要性。文中强调的AI代理通过MCP服务器继承高级权限的风险，凸显了针对非人类身份（NHI）进行代理证明、细粒度访问控制和自动化审计的紧迫性。孤立的IGA/PAM工具无法检测链式暴露的失败，强化了对统一身份基础设施的需求，该基础设施需映射跨端点、AD和云的代理权限，这与我们在协议互操作性（OAuth、OIDC）和证书自动化（ACME）方面的重点一致，以对非人类身份实施最小权限原则。</p>
+        <p class="lang-en">For Digital Identity & Trust research, this article directly validates the core thesis that Non-Human Identities (NHIs) for Agentic AI are a critical and growing attack surface. The example of an MCP server with high-level permissions inherited by an AI agent, leading to cloud resource compromise, is a concrete case for Agent Attestation and Zero Trust architecture. It underscores the urgent need for automated lifecycle management (provisioning/deprovisioning) and continuous auditing of agent permissions, as well as cryptographic provenance (C2PA/VC) to verify agent state and prevent identity theft. The failure of isolated tools highlights the need for interoperable identity infrastructure (OAuth/OIDC/ACME) that can map identity chains across endpoints, AD, and cloud.</p>
+        <p class="lang-zh">对于数字身份与信任研究，这篇文章直接验证了核心论点：代理式AI的非人类身份（NHI）是一个关键且不断增长的攻击面。文中提到的MCP服务器拥有高权限并被AI代理继承，从而导致云资源受损的例子，是代理证明（Agent Attestation）和零信任架构的一个具体案例。这凸显了对自动化生命周期管理（配置/取消配置）和持续审计代理权限的迫切需求，以及利用密码学来源（C2PA/可验证凭证）来验证代理状态、防止身份盗窃的必要性。孤立工具的失败强调了需要可互操作的身份基础设施（OAuth/OIDC/ACME），以跨端点、Active Directory和云环境映射身份链。</p>
       </div>
       
 
-      
       
 
       
@@ -85,11 +84,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>The article argues that identity has become the primary attack path in hybrid environments, using examples like cached AWS keys and overprivileged AI agent roles to show how single credentials can chain into critical asset access, while existing IGA and PAM tools fail to map these cross-domain paths.</p></div>
+          <div class="lede"><p>The article argues that identity, not just perimeter defense, is the primary attack path in modern hybrid environments, using examples like cached AWS keys and overprivileged AI agent roles to show how single credentials can chain into critical asset compromise. It criticizes existing IGA and PAM tools for lacking cross-domain visibility to map these attack paths.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>文章指出，在混合环境中，身份已成为主要的攻击路径，通过缓存AWS密钥和过度授权的AI代理角色等示例，展示了单一凭证如何串联成对关键资产的访问，而现有的IGA和PAM工具无法映射这些跨域路径。</p></div>
+          <div class="lede"><p>文章认为，在现代混合环境中，身份（而非仅仅是边界防御）是主要的攻击路径。文章通过缓存AWS密钥和权限过高的AI代理角色等例子，展示了单一凭证如何串联成通往关键资产的攻击路径，并批评现有的IGA和PAM工具缺乏跨域可见性来映射这些攻击路径。</p></div>
         </div>
 
         
@@ -97,113 +96,56 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>A single cached AWS access key on a Windows machine could expose 98% of cloud entities.</li>
-<li>Identity weaknesses played a role in nearly 90% of Palo Alto's 2025 incident response investigations.</li>
-<li>SpyCloud's 2026 report flags non-human identity theft as a fast-growing category, with 1/3 of recovered non-human credentials tied to AI tools.</li>
-<li>AI agents inheriting high-level permissions via MCP servers create direct attack paths to cloud resources.</li>
-<li>IBM X-Force 2026 Index: stolen/misused credentials accounted for 32% of incidents (second most common initial access vector).</li>
-<li>Over 90% of 2025 breaches were enabled by exposures that existing tools (IGA, PAM) should have caught but missed due to lack of cross-domain visibility.</li>
+<li>Identity is the primary attack path, not a perimeter; a single cached credential can chain to 98% of cloud entities.</li>
+<li>Non-human identity (NHI) theft is a fast-growing category, with 1/3 of recovered non-human credentials tied to AI tools.</li>
+<li>AI agents inheriting high-level permissions from MCP servers create direct attack paths to cloud resources and production infrastructure.</li>
+<li>Existing IGA and PAM tools operate in isolation and cannot map identity exposure chains across hybrid environments.</li>
+<li>Palo Alto found identity weaknesses in nearly 90% of 2025 incident response investigations; over 90% of breaches were enabled by exposures existing tools should have caught.</li>
+<li>Stolen/misused credentials were the second most common initial access vector (32% of incidents) per IBM X-Force 2026.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>This article shifts from traditional identity-as-perimeter thinking to identity-as-highway, emphasizing chained exposures across hybrid environments. It contrasts with earlier focus on user-centric IGA/PAM by highlighting non-human identities (AI agents, service accounts) as primary vectors. The call for unified mapping of identity, permissions, and environment context aligns with emerging Zero Trust and NHI frameworks, but goes beyond by explicitly linking AI agent permissions to attack paths.</p>
+<p>This article moves beyond traditional discussions of credential theft (e.g., password spraying, phishing) to focus on the chaining of identity exposures across hybrid environments. It contrasts with earlier identity security approaches that treated IGA and PAM as separate silos, arguing for a unified attack path mapping. The specific focus on AI agent identities (MCP servers, NHI) as a new, high-risk vector is a significant update from prior discourse that centered on human and service accounts.</p>
 <h2>Why It Matters</h2>
-<p>The article underscores a paradigm shift: identity is no longer just an authentication gate but the primary lateral movement vector. For researchers in Digital Identity &amp; Trust, it validates that NHI lifecycle management and Zero Trust for agents are not theoretical but urgent operational needs. The failure of existing tools to detect chained exposures highlights a critical market gap for unified identity security platforms that integrate agent attestation, automated PKI, and cross-domain policy enforcement.</p>
+<p>This article is highly significant for the Digital Identity &amp; Trust field because it provides real-world evidence and industry data (Palo Alto, IBM X-Force, SpyCloud) that identity-based attacks are the dominant threat, and that NHIs for AI agents are a rapidly expanding, poorly managed attack surface. It reinforces the necessity of Zero Trust for NHIs, automated PKI/ACME for agent certificates, and the use of Verifiable Credentials for agent attestation. It also highlights a critical market gap: the lack of integrated tools that can map identity attack paths across endpoints, AD, cloud, and AI agent layers, which is a direct call to action for new identity infrastructure and protocol interoperability solutions.</p>
 <h2>Critical Take</h2>
-<p>The article relies heavily on vendor-sponsored data (Palo Alto, SpyCloud, IBM X-Force) which may overstate the prevalence of identity-based attacks to promote security products. The specific claim that a single key could expose 98% of entities is anecdotal and lacks verifiable technical details. The solution proposed (unified mapping) is high-level and does not address practical challenges like real-time performance, multi-cloud heterogeneity, or the complexity of agent identity attestation at scale.</p>
+<p>The article is a contributed piece from a vendor (XM Cyber) that sells attack path management solutions, so it may overstate the uniqueness of its approach and the failure of all existing tools. The claim that 'over 90% of breaches...were enabled by exposures that existing tools should have caught' is a strong assertion that requires independent verification. The article lacks specific technical details on how to implement the proposed unified mapping, and does not address the complexity of real-time, cross-domain identity graph construction at scale.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Adoption of unified identity security platforms that map cross-domain attack paths (e.g., XM Cyber, CrowdStrike, Tenable).</li>
-<li>Industry standards for AI agent identity attestation and permission scoping (e.g., OAuth for agents, Verifiable Credentials for NHIs).</li>
-<li>Regulatory developments requiring non-human identity lifecycle management (e.g., EU AI Act, NIST guidance).</li>
-<li>Real-world incidents where AI agent permissions are exploited via MCP or similar tooling.</li>
+<li>Adoption of attack path management (APM) tools that specifically map NHI and AI agent permissions.</li>
+<li>New standards or protocols for AI agent identity attestation and permission scoping (e.g., OAuth for agents, Verifiable Credentials for MCP servers).</li>
+<li>SpyCloud and other threat intel reports tracking the sale and use of stolen AI agent credentials in criminal markets.</li>
+<li>Case studies of breaches involving MCP servers or similar AI agent infrastructure.</li>
+<li>Updates from IGA/PAM vendors on integrating AI agent identity lifecycle management.</li>
 </ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>一台Windows机器上的单个缓存AWS访问密钥可能暴露98%的云实体。</li>
-<li>身份弱点在Palo Alto 2025年近90%的事件响应调查中扮演了重要角色。</li>
-<li>SpyCloud 2026年报告指出非人类身份盗窃是快速增长类别，回收的非人类凭证中有1/3与AI工具相关。</li>
-<li>AI代理通过MCP服务器继承高级权限，直接创建通往云资源的攻击路径。</li>
-<li>IBM X-Force 2026指数：被盗或滥用的凭证占事件的32%（第二常见的初始访问向量）。</li>
-<li>2025年超过90%的漏洞由现有工具（IGA、PAM）本应发现但未发现的暴露促成，原因是缺乏跨域可见性。</li>
+<li>身份是主要的攻击路径，而非边界；单个缓存的凭证可以链接到98%的云实体。</li>
+<li>非人类身份（NHI）盗窃是一个快速增长类别，回收的非人类凭证中有1/3与AI工具相关。</li>
+<li>AI代理从MCP服务器继承的高权限直接创建了通往云资源和生产基础设施的攻击路径。</li>
+<li>现有的IGA和PAM工具孤立运行，无法跨混合环境映射身份暴露链。</li>
+<li>Palo Alto发现近90%的2025年事件响应调查中存在身份弱点；超过90%的入侵是由现有工具本应发现的暴露所促成。</li>
+<li>根据IBM X-Force 2026报告，被盗/误用的凭证是第二常见的初始访问向量（占事件的32%）。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>本文从传统的“身份即边界”思维转向“身份即高速公路”，强调跨混合环境的链式暴露。它与早期以用户为中心的IGA/PAM重点形成对比，突出了非人类身份（AI代理、服务账户）作为主要向量。对统一映射身份、权限和环境上下文的呼吁与新兴的零信任和NHI框架一致，但更进一步，明确将AI代理权限与攻击路径联系起来。</p>
+<p>这篇文章超越了传统关于凭证盗窃（如密码喷洒、钓鱼）的讨论，聚焦于跨混合环境的身份暴露链。它与早期将IGA和PAM视为独立孤岛的身份安全方法形成对比，主张进行统一的攻击路径映射。文章特别关注AI代理身份（MCP服务器、NHI）作为一个新的高风险向量，这是对先前以人类和服务账户为中心的讨论的一个重要更新。</p>
 <h2>重要性</h2>
-<p>本文强调了一种范式转变：身份不再仅仅是身份验证的门户，而是主要的横向移动向量。对于数字身份与信任的研究人员，它验证了非人类身份（NHI）生命周期管理和代理零信任不仅是理论上的，而且是紧迫的操作需求。现有工具无法检测链式暴露，突显了统一身份安全平台的关键市场空白，该平台需集成代理证明、自动化PKI和跨域策略执行。</p>
+<p>这篇文章对数字身份与信任领域意义重大，因为它提供了真实世界的证据和行业数据（Palo Alto、IBM X-Force、SpyCloud），表明基于身份的攻击是主要威胁，而AI代理的NHI是一个快速扩张且管理不善的攻击面。它强化了对NHI实施零信任、为代理证书实施自动化PKI/ACME以及使用可验证凭证进行代理证明的必要性。文章还突出了一个关键的市场空白：缺乏能够跨端点、AD、云和AI代理层映射身份攻击路径的集成工具，这直接呼吁采取行动，开发新的身份基础设施和协议互操作性解决方案。</p>
 <h2>批判性视角</h2>
-<p>文章严重依赖供应商赞助的数据（Palo Alto、SpyCloud、IBM X-Force），这些数据可能夸大基于身份的攻击的普遍性以推广安全产品。关于单个密钥可能暴露98%实体的具体说法是轶事性的，缺乏可验证的技术细节。提出的解决方案（统一映射）是高层级的，并未解决实际挑战，如实时性能、多云异构性或大规模代理身份证明的复杂性。</p>
+<p>这篇文章来自一家销售攻击路径管理解决方案的供应商（XM Cyber），因此可能夸大了其方法的独特性和所有现有工具的失败。关于“超过90%的入侵……是由现有工具本应发现的暴露所促成”的说法是一个强有力的断言，需要独立验证。文章缺乏关于如何实施所提议的统一映射的具体技术细节，也没有解决大规模实时、跨域身份图谱构建的复杂性。</p>
 <h2>后续关注</h2>
 <ul>
-<li>采用统一身份安全平台，映射跨域攻击路径（例如XM Cyber、CrowdStrike、Tenable）。</li>
-<li>AI代理身份证明和权限范围界定的行业标准（例如针对代理的OAuth、针对NHI的可验证凭证）。</li>
-<li>要求非人类身份生命周期管理的监管发展（例如欧盟AI法案、NIST指南）。</li>
-<li>AI代理权限通过MCP或类似工具被利用的真实世界事件。</li>
+<li>关注专门映射NHI和AI代理权限的攻击路径管理（APM）工具的采用情况。</li>
+<li>关注AI代理身份证明和权限范围界定的新标准或协议（例如，针对代理的OAuth，针对MCP服务器的可验证凭证）。</li>
+<li>关注SpyCloud和其他威胁情报报告，追踪被盗AI代理凭证在犯罪市场上的销售和使用情况。</li>
+<li>关注涉及MCP服务器或类似AI代理基础设施的入侵案例研究。</li>
+<li>关注IGA/PAM供应商在集成AI代理身份生命周期管理方面的更新。</li>
 </ul>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1253/fig_01.webp" alt="ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories</span>
-                <span class="lang-zh">威胁日报：Linux Rootkits、路由器0-Day、AI入侵、诈骗工具包及25条新动态</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1253/fig_02.gif" alt="9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">9-Year-Old Linux Kernel Flaw Enables Root Command Execution on Major Distros</span>
-                <span class="lang-zh">存在9年的Linux内核漏洞使主流发行版可执行Root命令</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1253/fig_03.webp" alt="Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Microsoft Releases Mitigation for YellowKey BitLocker Bypass CVE-2026-45585 Exploit</span>
-                <span class="lang-zh">微软发布针对YellowKey BitLocker绕过漏洞CVE-2026-45585利用的缓解措施</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1253/fig_04.gif" alt="Developer Workstations Are Now Part of the Software Supply Chain" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Developer Workstations Are Now Part of the Software Supply Chain</span>
-                <span class="lang-zh">开发者工作站现已成为软件供应链的一部分</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1253/fig_05.jpg" alt="Articles" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Articles</span>
-                <span class="lang-zh">文章</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

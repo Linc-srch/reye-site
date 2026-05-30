@@ -80,7 +80,6 @@
       
 
       
-      
 
       
       <div class="article-hero-figures">
@@ -92,7 +91,8 @@ Edges carry KV cache latent artifacts m i ​ j m_{ij} ." loading="eager">
           <figcaption>
             <span class="lang-en">Figure 1: Multi-agent communication topologies: sequential, hierarchical, and graph-based.
 Edges carry KV cache latent artifacts m i ​ j m_{ij} .</span>
-            <span class="lang-zh">图1：多智能体通信拓扑：顺序、层次化和基于图的拓扑。边携带KV缓存潜在伪影m_{ij}。</span>
+            <span class="lang-zh">图1：多智能体通信拓扑结构：顺序式、层级式和基于图的。
+边携带KV缓存潜在工件 m_{ij}。</span>
           </figcaption>
           
         </figure>
@@ -115,11 +115,11 @@ Edges carry KV cache latent artifacts m i ​ j m_{ij} .</span>
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — lcguard</h1>
 <p><strong>Key Takeaways</strong>
-- KV caches shared between agents in multi-agent systems form an opaque channel that can leak sensitive information without textual disclosure.
-- LCGuard learns representation-level transformations on KV caches to reduce reconstructability of agent-specific inputs while preserving task utility.
-- Leakage is formalized via adversarial reconstruction: a shared artifact is unsafe if a decoder can recover sensitive inputs from it.
-- LCGuard achieves a favorable privacy-utility tradeoff across Qwen3, Gemma-2, and LLaMA models on AgentLeak, MAGPIE, and PrivacyLens benchmarks.
-- The framework is topology-agnostic, supporting sequential, hierarchical, and graph-based multi-agent communication.</p>
+- LCGuard is the first framework to address privacy leakage in KV-cache-based latent communication for multi-agent LLM systems.
+- It formalizes leakage via reconstruction: a shared cache is unsafe if an adversarial decoder can recover agent-specific sensitive inputs.
+- Adversarial training learns transformations that preserve task semantics while minimizing reconstructable sensitive information.
+- LCGuard consistently reduces attack success rate (ASR) and reconstruction leakage while maintaining high helpfulness across model families.
+- The method achieves a better privacy-utility frontier than vanilla KV sharing and ADAPT, especially in sequential and graph topologies.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems</li>
@@ -131,55 +131,59 @@ Edges carry KV cache latent artifacts m i ​ j m_{ij} .</span>
 <li>Abs: https://arxiv.org/abs/2605.22786</li>
 <li>HTML: https://arxiv.org/html/2605.22786v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.22786</li>
-<li><strong>Tags:</strong> multi-agent-systems, kv-cache-security, representation-leakage, adversarial-training, privacy-utility-tradeoff</li>
+<li><strong>Tags:</strong> multi-agent-systems, kv-cache-privacy, adversarial-training, latent-communication, llm-safety</li>
 <li><strong>Domains:</strong> ai_safety, system_safety</li>
-<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>LCGuard proposes the first principled framework to control sensitive information leakage in KV-cache-based latent communication for multi-agent LLM systems, achieving strong privacy protection with minimal task performance degradation.</p>
+<p>LCGuard proposes a principled adversarial training framework to protect sensitive information in KV-cache-based multi-agent communication, achieving strong privacy without sacrificing task performance.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Multi-agent LLM systems increasingly use latent communication via KV caches to improve efficiency and preserve richer semantic state compared to text-based messages. However, KV caches encode contextual inputs and intermediate reasoning, creating an opaque channel that can leak agent-specific sensitive information without explicit textual disclosure.</p>
+<p>Multi-agent LLM systems increasingly use latent communication via KV caches for efficiency and richer information exchange. However, KV caches encode sensitive inputs and reasoning states, creating an opaque leakage channel. Existing defenses either degrade utility or fail to address representation-level leakage.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>Text-based multi-agent communication (e.g., Zhu et al., Qian et al.) is inefficient and lossy.</li>
-<li>Latent communication via KV caches (e.g., Shi et al., Zheng et al., Fu et al.) improves efficiency but introduces new attack surfaces.</li>
-<li>Safety mechanisms in multi-agent systems typically operate over outputs or tool actions (e.g., Xiang et al., Asif and Amiri), not latent representations.</li>
-<li>KV-cache security work focuses on isolation/eviction in serving environments (e.g., Chu et al., Luo et al.), not on information content of shared caches.</li>
+<li>Multi-agent LLM communication via natural language (e.g., ChatDev, AutoGen) vs. latent KV sharing (e.g., CoA, CaMA).</li>
+<li>Privacy attacks on LLMs: membership inference, training data extraction, and jailbreaking.</li>
+<li>Representation-level defenses: adversarial training, differential privacy, and sanitization for embeddings.</li>
+<li>ADAPT: prior work on adversarial perturbation for KV cache privacy, but with heavy utility degradation.</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Existing safety mechanisms for multi-agent systems operate on generated text or tool actions, ignoring the representation-level leakage channel in KV caches. Prior KV-cache security work focuses on system-level isolation rather than regulating what information is retained in caches intentionally shared between agents. No principled framework exists to control sensitive information flow in latent KV communication while preserving task utility.</p>
+<p>Existing multi-agent systems either communicate via text (explicit but inefficient) or share raw KV caches (efficient but leaky). No prior work formally defines or defends against reconstruction-based leakage in latent communication channels. ADAPT reduces leakage but severely harms task helpfulness.</p>
 <h3>P — Proposal</h3>
-<p>LCGuard treats shared KV caches as latent working memory and learns representation-level transformations (via a learnable function g_ij) before cache artifacts are transmitted between agents. It formalizes leakage via adversarial reconstruction: a shared artifact is unsafe if an adversarial decoder can recover agent-specific sensitive inputs, leading to a minimax optimization that balances task utility against information exposure.</p>
+<p>LCGuard treats shared KV caches as latent working memory and learns representation-level transformations via adversarial training. An adversary tries to reconstruct sensitive inputs from shared caches, while LCGuard optimizes transformations to preserve task-relevant semantics and minimize reconstructable information. The framework supports multiple communication topologies (sequential, hierarchical, graph).</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>Across Qwen3 (4B, 8B, 14B), Gemma-2-9B, and LLaMA (3B, 8B) on AgentLeak, MAGPIE, and PrivacyLens benchmarks, LCGuard consistently reduces reconstruction-based leakage and attack success rates while maintaining competitive task performance (e.g., within 2-5% of standard KV-sharing baselines on most tasks).</p>
+<p>On Qwen-8B, LLaMA-8B, and Gemma-9B across sequential (4 agents), hierarchical (5 agents), and graph (5 agents) topologies: LCGuard reduces ASR from ~80% (vanilla KV sharing) to ~20% while maintaining helpfulness above 0.8 (vs. ADAPT which drops helpfulness below 0.4). On PrivacyLens benchmark, LCGuard achieves ASR &lt; 15% with helpfulness &gt; 0.85.</p>
 <h3>Ablation</h3>
-<p>Ablation studies show that the adversarial training component is critical: removing the adversary reduces leakage suppression by over 40% on average, while the transformation dimensionality (compression ratio) controls the privacy-utility tradeoff (e.g., 4x compression yields 90% leakage reduction with 3% task drop).</p>
+<p>Varying β in [0.25, 0.50] provides the best privacy-utility tradeoff: ASR &lt; 10%, Leak &lt; 0.15, Task Accuracy &gt; 0.9, Helpfulness &gt; 0.85. Increasing β monotonically improves privacy but gradually degrades utility beyond 0.50.</p>
 <h3>Limitations</h3>
-<p>['LCGuard assumes a specific threat model where the adversary has access to shared KV caches and can train decoders; other leakage modalities (e.g., side-channel attacks) are not addressed.', 'The framework introduces additional training overhead due to the adversarial optimization loop, which may be costly for very large models.', 'Evaluation is limited to reconstruction-based leakage; other forms of information leakage (e.g., membership inference) are not studied.']</p>
+<p>['Adversarial training requires a predefined sensitive attribute set, limiting applicability to unforeseen leakage.', 'Computational overhead from adversarial training may be non-trivial for very large models or many agents.', 'Evaluation focuses on reconstruction attacks; other leakage modalities (e.g., membership inference) are not explored.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Directly addresses a critical blind spot in multi-agent safety: representation-level leakage that bypasses text-based monitoring.</li>
-<li>Provides a formal, operational definition of leakage (reconstructability) that can guide future defense design.</li>
-<li>Demonstrates that privacy and utility can be balanced in latent communication, enabling safer deployment of efficient multi-agent systems.</li>
-<li>Relevant to any researcher working on multi-agent coordination, privacy-preserving ML, or secure LLM serving.</li>
+<li>Directly addresses a critical blind spot in multi-agent LLM safety: latent channel leakage.</li>
+<li>Provides a principled, tunable privacy-utility tradeoff that can be adapted to different deployment requirements.</li>
+<li>Framework is topology-agnostic and model-agnostic, making it broadly applicable to emerging multi-agent architectures.</li>
+<li>Opens a new axis for safety research: representation-level communication security in LLM systems.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Evaluate LCGuard against more sophisticated adversaries (e.g., adaptive decoders, multi-step reconstruction).</li>
-<li>[ ] Extend the framework to other latent communication modalities (e.g., hidden states, activations).</li>
-<li>[ ] Explore integration with differential privacy guarantees for provable leakage bounds.</li>
-<li>[ ] Test on larger-scale multi-agent systems with more agents and complex topologies.</li>
+<li>[ ] Extend LCGuard to defend against other attack types (e.g., membership inference, property inference).</li>
+<li>[ ] Explore adaptive adversaries that know the defense mechanism.</li>
+<li>[ ] Apply LCGuard to other latent communication modalities (e.g., hidden states, gradients).</li>
+<li>[ ] Integrate with differential privacy guarantees for provable bounds on leakage.</li>
+<li>[ ] Benchmark on larger multi-agent systems (10+ agents) and real-world sensitive tasks.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>
-<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p><figure class="article-figure"><img class="article-figure-img" src="figures/1200/fig_001.png" alt="Figure 1: Multi-agent communication topologies: sequential, hierarchical, and graph-based.
+Edges carry KV cache latent artifacts m i ​ j m_{ij} ." width="1931" height="570" style="max-width: min(1931px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1: Multi-agent communication topologies: sequential, hierarchical, and graph-based.
+Edges carry KV cache latent artifacts m i ​ j m_{ij} .</span><span class="lang-zh">图1：多智能体通信拓扑结构：顺序式、层级式和基于图的。
+边携带KV缓存潜在工件 m_{ij}。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1200/fig_002.png" alt="Figure 2: ASR-helpfulness tradeoff across sequential ( 4 4 agents), hierarchical ( 5 5 agents), and general ( 5 5 agents graph detailed in Appendix A.6 ) communication topologies for Qwen-8B, LLaMA-8B, and Gemma-9B. The desirable region is the upper-left, corresponding to low ASR and high helpfulness. Vanilla KV sharing preserves helpfulness but remains highly vulnerable, ADAPT lowers ASR by heavily degrading helpfulness, and LCGuard shifts the frontier toward lower ASR while maintaining substantially higher helpfulness." width="1512" height="509" style="max-width: min(1512px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: ASR-helpfulness tradeoff across sequential ( 4 4 agents), hierarchical ( 5 5 agents), and general ( 5 5 agents graph detailed in Appendix A.6 ) communication topologies for Qwen-8B, LLaMA-8B, and Gemma-9B. The desirable region is the upper-left, corresponding to low ASR and high helpfulness. Vanilla KV sharing preserves helpfulness but remains highly vulnerable, ADAPT lowers ASR by heavily degrading helpfulness, and LCGuard shifts the frontier toward lower ASR while maintaining substantially higher helpfulness.</span><span class="lang-zh">图2：Qwen-8B、LLaMA-8B和Gemma-9B在顺序式（4个智能体）、层级式（5个智能体）和通用式（5个智能体，图结构详见附录A.6）通信拓扑下的ASR-有用性权衡。理想区域为左上角，对应低ASR和高有用性。Vanilla KV共享保留了有用性但高度脆弱，ADAPT通过大幅降低有用性来降低ASR，而LCGuard在维持显著更高有用性的同时将边界推向更低ASR。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1200/fig_003.png" alt="Figure 3: Per-agent reconstruction difficulty across methods in a sequential 5-agent setting for Qwen3-4B model. LCGuard consistently increases reconstruction difficulty at all positions in the pipeline, with the largest gains observed at later agents where compositional leakage accumulates." width="3843" height="1762" style="max-width: min(3843px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3: Per-agent reconstruction difficulty across methods in a sequential 5-agent setting for Qwen3-4B model. LCGuard consistently increases reconstruction difficulty at all positions in the pipeline, with the largest gains observed at later agents where compositional leakage accumulates.</span><span class="lang-zh">图3：Qwen3-4B模型在顺序式5智能体设置下各方法中每个智能体的重建难度。LCGuard在流水线的所有位置持续提高重建难度，在组合泄漏累积的后续智能体处增益最大。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1200/fig_004.png" alt="Figure 4: Effect of β \beta on the privacy-utility tradeoff for Full-System LCGuard on Qwen3-4B under sequential communication (4 agents) on the PrivacyLens benchmark . Increasing β \beta monotonically improves Privacy while reducing Leak and ASR, but leads to gradual degradation in Task Accuracy and Helpfulness. The intermediate range β ∈ [ 0.25 , 0.50 ] \beta\in[0.25,0.50] provides the best tradeoff between strong privacy and high utility." width="2220" height="1380" style="max-width: min(2220px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4: Effect of β \beta on the privacy-utility tradeoff for Full-System LCGuard on Qwen3-4B under sequential communication (4 agents) on the PrivacyLens benchmark . Increasing β \beta monotonically improves Privacy while reducing Leak and ASR, but leads to gradual degradation in Task Accuracy and Helpfulness. The intermediate range β ∈ [ 0.25 , 0.50 ] \beta\in[0.25,0.50] provides the best tradeoff between strong privacy and high utility.</span><span class="lang-zh">图4：β对PrivacyLens基准测试中顺序通信（4个智能体）下Qwen3-4B全系统LCGuard隐私-效用权衡的影响。增加β单调提升隐私性，同时降低泄漏和ASR，但导致任务准确率和有用性逐渐下降。中间范围β∈[0.25,0.50]在强隐私和高效用之间提供了最佳权衡。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1200/fig_005.png" alt="Figure 5: Average reconstruction difficulty, helpfulness, and ASR across methods. LCGuard achieves high RD and low ASR while preserving strong helpfulness, unlike ADAPT which sacrifices utility." width="2421" height="1400" style="max-width: min(2421px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5: Average reconstruction difficulty, helpfulness, and ASR across methods. LCGuard achieves high RD and low ASR while preserving strong helpfulness, unlike ADAPT which sacrifices utility.</span><span class="lang-zh">图5：各方法的平均重建难度、有用性和ASR。LCGuard在保持强有用性的同时实现了高重建难度和低ASR，与牺牲效用的ADAPT不同。</span></figcaption></figure>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
@@ -218,59 +222,13 @@ Edges carry KV cache latent artifacts m i ​ j m_{ij} .</span>
 <li>[ ] 将框架扩展到其他潜在通信模态（例如隐藏状态、激活值）。</li>
 <li>[ ] 探索与差分隐私保证的集成，以获得可证明的泄漏界限。</li>
 <li>[ ] 在具有更多智能体和复杂拓扑的大规模多智能体系统上进行测试。</li>
-</ul>
+</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1200/fig_001.png" alt="Figure 1: Multi-agent communication topologies: sequential, hierarchical, and graph-based.
+Edges carry KV cache latent artifacts m i ​ j m_{ij} ." width="1931" height="570" style="max-width: min(1931px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1: Multi-agent communication topologies: sequential, hierarchical, and graph-based.
+Edges carry KV cache latent artifacts m i ​ j m_{ij} .</span><span class="lang-zh">图1：多智能体通信拓扑结构：顺序式、层级式和基于图的。
+边携带KV缓存潜在工件 m_{ij}。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1200/fig_002.png" alt="Figure 2: ASR-helpfulness tradeoff across sequential ( 4 4 agents), hierarchical ( 5 5 agents), and general ( 5 5 agents graph detailed in Appendix A.6 ) communication topologies for Qwen-8B, LLaMA-8B, and Gemma-9B. The desirable region is the upper-left, corresponding to low ASR and high helpfulness. Vanilla KV sharing preserves helpfulness but remains highly vulnerable, ADAPT lowers ASR by heavily degrading helpfulness, and LCGuard shifts the frontier toward lower ASR while maintaining substantially higher helpfulness." width="1512" height="509" style="max-width: min(1512px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: ASR-helpfulness tradeoff across sequential ( 4 4 agents), hierarchical ( 5 5 agents), and general ( 5 5 agents graph detailed in Appendix A.6 ) communication topologies for Qwen-8B, LLaMA-8B, and Gemma-9B. The desirable region is the upper-left, corresponding to low ASR and high helpfulness. Vanilla KV sharing preserves helpfulness but remains highly vulnerable, ADAPT lowers ASR by heavily degrading helpfulness, and LCGuard shifts the frontier toward lower ASR while maintaining substantially higher helpfulness.</span><span class="lang-zh">图2：Qwen-8B、LLaMA-8B和Gemma-9B在顺序式（4个智能体）、层级式（5个智能体）和通用式（5个智能体，图结构详见附录A.6）通信拓扑下的ASR-有用性权衡。理想区域为左上角，对应低ASR和高有用性。Vanilla KV共享保留了有用性但高度脆弱，ADAPT通过大幅降低有用性来降低ASR，而LCGuard在维持显著更高有用性的同时将边界推向更低ASR。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1200/fig_003.png" alt="Figure 3: Per-agent reconstruction difficulty across methods in a sequential 5-agent setting for Qwen3-4B model. LCGuard consistently increases reconstruction difficulty at all positions in the pipeline, with the largest gains observed at later agents where compositional leakage accumulates." width="3843" height="1762" style="max-width: min(3843px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3: Per-agent reconstruction difficulty across methods in a sequential 5-agent setting for Qwen3-4B model. LCGuard consistently increases reconstruction difficulty at all positions in the pipeline, with the largest gains observed at later agents where compositional leakage accumulates.</span><span class="lang-zh">图3：Qwen3-4B模型在顺序式5智能体设置下各方法中每个智能体的重建难度。LCGuard在流水线的所有位置持续提高重建难度，在组合泄漏累积的后续智能体处增益最大。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1200/fig_004.png" alt="Figure 4: Effect of β \beta on the privacy-utility tradeoff for Full-System LCGuard on Qwen3-4B under sequential communication (4 agents) on the PrivacyLens benchmark . Increasing β \beta monotonically improves Privacy while reducing Leak and ASR, but leads to gradual degradation in Task Accuracy and Helpfulness. The intermediate range β ∈ [ 0.25 , 0.50 ] \beta\in[0.25,0.50] provides the best tradeoff between strong privacy and high utility." width="2220" height="1380" style="max-width: min(2220px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4: Effect of β \beta on the privacy-utility tradeoff for Full-System LCGuard on Qwen3-4B under sequential communication (4 agents) on the PrivacyLens benchmark . Increasing β \beta monotonically improves Privacy while reducing Leak and ASR, but leads to gradual degradation in Task Accuracy and Helpfulness. The intermediate range β ∈ [ 0.25 , 0.50 ] \beta\in[0.25,0.50] provides the best tradeoff between strong privacy and high utility.</span><span class="lang-zh">图4：β对PrivacyLens基准测试中顺序通信（4个智能体）下Qwen3-4B全系统LCGuard隐私-效用权衡的影响。增加β单调提升隐私性，同时降低泄漏和ASR，但导致任务准确率和有用性逐渐下降。中间范围β∈[0.25,0.50]在强隐私和高效用之间提供了最佳权衡。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1200/fig_005.png" alt="Figure 5: Average reconstruction difficulty, helpfulness, and ASR across methods. LCGuard achieves high RD and low ASR while preserving strong helpfulness, unlike ADAPT which sacrifices utility." width="2421" height="1400" style="max-width: min(2421px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5: Average reconstruction difficulty, helpfulness, and ASR across methods. LCGuard achieves high RD and low ASR while preserving strong helpfulness, unlike ADAPT which sacrifices utility.</span><span class="lang-zh">图5：各方法的平均重建难度、有用性和ASR。LCGuard在保持强有用性的同时实现了高重建难度和低ASR，与牺牲效用的ADAPT不同。</span></figcaption></figure>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1200/fig_003.png" alt="Figure 3: Per-agent reconstruction difficulty across methods in a sequential 5-agent setting for Qwen3-4B model. LCGuard consistently increases reconstruction difficulty at all positions in the pipeline, with the largest gains observed at later agents where compositional leakage accumulates." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3: Per-agent reconstruction difficulty across methods in a sequential 5-agent setting for Qwen3-4B model. LCGuard consistently increases reconstruction difficulty at all positions in the pipeline, with the largest gains observed at later agents where compositional leakage accumulates.</span>
-                <span class="lang-zh">图3：在Qwen3-4B模型的顺序5智能体设置中，各方法在智能体层面的重建难度。LCGuard在流水线的所有位置持续提升重建难度，在组合泄漏累积的后置智能体处增益最大。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1200/fig_004.png" alt="Figure 4: Effect of β \beta on the privacy-utility tradeoff for Full-System LCGuard on Qwen3-4B under sequential communication (4 agents) on the PrivacyLens benchmark . Increasing β \beta monotonically improves Privacy while reducing Leak and ASR, but leads to gradual degradation in Task Accuracy and Helpfulness. The intermediate range β ∈ [ 0.25 , 0.50 ] \beta\in[0.25,0.50] provides the best tradeoff between strong privacy and high utility." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 4: Effect of β \beta on the privacy-utility tradeoff for Full-System LCGuard on Qwen3-4B under sequential communication (4 agents) on the PrivacyLens benchmark . Increasing β \beta monotonically improves Privacy while reducing Leak and ASR, but leads to gradual degradation in Task Accuracy and Helpfulness. The intermediate range β ∈ [ 0.25 , 0.50 ] \beta\in[0.25,0.50] provides the best tradeoff between strong privacy and high utility.</span>
-                <span class="lang-zh">图4：在PrivacyLens基准测试中，顺序通信（4个智能体）下Qwen3-4B全系统LCGuard的β对隐私-效用权衡的影响。增加β单调提升隐私性并降低Leak和ASR，但导致任务准确性和Helpfulness逐渐下降。中间范围β∈[0.25,0.50]在强隐私与高效用之间提供了最佳权衡。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1200/fig_005.png" alt="Figure 5: Average reconstruction difficulty, helpfulness, and ASR across methods. LCGuard achieves high RD and low ASR while preserving strong helpfulness, unlike ADAPT which sacrifices utility." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 5: Average reconstruction difficulty, helpfulness, and ASR across methods. LCGuard achieves high RD and low ASR while preserving strong helpfulness, unlike ADAPT which sacrifices utility.</span>
-                <span class="lang-zh">图5：各方法的平均重建难度、Helpfulness和ASR。LCGuard在保持强Helpfulness的同时实现了高RD和低ASR，而ADAPT则牺牲了效用。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1200/fig_002.png" alt="Figure 2: ASR-helpfulness tradeoff across sequential ( 4 4 agents), hierarchical ( 5 5 agents), and general ( 5 5 agents graph detailed in Appendix A.6 ) communication topologies for Qwen-8B, LLaMA-8B, and Gemma-9B. The desirable region is the upper-left, corresponding to low ASR and high helpfulness. Vanilla KV sharing preserves helpfulness but remains highly vulnerable, ADAPT lowers ASR by heavily degrading helpfulness, and LCGuard shifts the frontier toward lower ASR while maintaining substantially higher helpfulness." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 2: ASR-helpfulness tradeoff across sequential ( 4 4 agents), hierarchical ( 5 5 agents), and general ( 5 5 agents graph detailed in Appendix A.6 ) communication topologies for Qwen-8B, LLaMA-8B, and Gemma-9B. The desirable region is the upper-left, corresponding to low ASR and high helpfulness. Vanilla KV sharing preserves helpfulness but remains highly vulnerable, ADAPT lowers ASR by heavily degrading helpfulness, and LCGuard shifts the frontier toward lower ASR while maintaining substantially higher helpfulness.</span>
-                <span class="lang-zh">图2：Qwen-8B、LLaMA-8B和Gemma-9B在顺序（4个智能体）、层次化（5个智能体）和通用（5个智能体图，详见附录A.6）通信拓扑下的ASR-Helpfulness权衡。理想区域为左上角，对应低ASR和高Helpfulness。Vanilla KV共享保持了Helpfulness但高度脆弱，ADAPT通过严重降低Helpfulness来降低ASR，而LCGuard在保持显著更高Helpfulness的同时将前沿推向更低ASR。</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

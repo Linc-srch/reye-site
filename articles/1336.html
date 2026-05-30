@@ -80,32 +80,7 @@
       
 
       
-      
 
-      
-      <div class="article-hero-figures">
-        
-        <figure class="article-figure article-figure--hero">
-          <img class="article-figure-img" src="figures/1336/fig_001.png" alt="Figure 1: The conceptual comparison between BAIT" loading="eager">
-          
-          <figcaption>
-            <span class="lang-en">Figure 1: The conceptual comparison between BAIT</span>
-            <span class="lang-zh">图1：BAIT的概念对比</span>
-          </figcaption>
-          
-        </figure>
-        
-        <figure class="article-figure article-figure--hero">
-          <img class="article-figure-img" src="figures/1336/fig_002.png" alt="Figure 2: An illustration of BAIT" loading="eager">
-          
-          <figcaption>
-            <span class="lang-en">Figure 2: An illustration of BAIT</span>
-            <span class="lang-zh">图2：BAIT的示意图</span>
-          </figcaption>
-          
-        </figure>
-        
-      </div>
       
 
       <div class="article-body">
@@ -123,11 +98,10 @@
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — bait</h1>
 <p><strong>Key Takeaways</strong>
-- BAIT uses a three-step self-conditioned reasoning process (boundary elicitation, refinement, elaboration) to jailbreak LLMs by exploiting their consistency tendency.
-- Prevention-oriented framing (asking what to protect) outperforms direct knowledge requests for eliciting harmful disclosures.
-- The refinement step is critical for escalating disclosure; early steps can elicit harmful content with minimal filtering.
-- BAIT achieves strong attack success rates across top-tier LLMs (Claude, GPT, Gemini) on AdvBench, JailbreakBench, AIR-Bench, and SORRY-Bench.
-- The method reveals a blind spot: reasoning about safety boundaries can itself become a pathway for unsafe disclosure.</p>
+- BAIT is a three-step jailbreak that exploits the model's own reasoning and consistency tendency to escalate disclosure.
+- Prevention-oriented framing (e.g., 'how to prevent X') is significantly more effective than direct knowledge requests.
+- The refinement step is critical for disclosure escalation, and the first two steps alone can elicit harmful content with little filtering.
+- BAIT achieves strong attack success rates across multiple benchmarks (AdvBench, JailbreakBench, AIR-Bench, SORRY-Bench) on top-tier LLMs.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> BAIT: Boundary-Guided Disclosure Escalation via Self-Conditioned Reasoning</li>
@@ -139,56 +113,50 @@
 <li>Abs: https://arxiv.org/abs/2605.27110</li>
 <li>HTML: https://arxiv.org/html/2605.27110v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.27110</li>
-<li><strong>Tags:</strong> jailbreak, llm-safety, self-conditioned-reasoning, multi-turn-attack, boundary-exploitation</li>
+<li><strong>Tags:</strong> jailbreak, llm-safety, self-conditioned-reasoning, boundary-exploitation, iterative-attack</li>
 <li><strong>Domains:</strong> ai_safety, system_safety</li>
 <li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>BAIT introduces a novel jailbreak framework that exploits LLMs' self-conditioned reasoning and consistency tendency to escalate harmful disclosures through a fixed three-step interaction pattern, achieving high attack success rates on well-aligned models.</p>
+<p>BAIT introduces a novel boundary-guided iterative jailbreak that leverages self-conditioned reasoning to turn model consistency into a disclosure pathway, achieving high attack success rates with minimal filtering.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Large language models (LLMs) have shown remarkable capabilities but remain vulnerable to jailbreak attacks. Existing black-box jailbreak methods rely on external prompt manipulation (e.g., encoding, reframing, trial-and-error) to bypass safety restrictions, but whether an LLM can internally cross its own safety boundary through reasoning is underexplored.</p>
+<p>Jailbreak attacks on LLMs typically use direct prompts or role-playing to bypass safety filters. Prior work has explored multi-step reasoning and context manipulation, but few methods systematically exploit the model's own boundary definitions to escalate disclosure.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>ArtPrompt (ACL 2024): uses ASCII art to evade safety alignment.</li>
-<li>FlipAttack (ICML 2025): applies reversible transformations to conceal malicious semantics.</li>
-<li>EmojiAttack (ICML 2025): inserts emojis between tokens to exploit judge LLM biases.</li>
-<li>PAP (ACL 2024): trains a prompt generator for persuasive adversarial prompts.</li>
-<li>BaitAttack (EMNLP 2024): adaptively creates safe context with role, scene, and bait.</li>
-<li>REDA (ACL 2025): guides model to embed harmful content within defensive measures via in-context learning.</li>
-<li>HILL (EACL 2026): reframes queries as learning-style queries to exploit help-willingness.</li>
-<li>TAP (NeurIPS 2024): formulates jailbreak as a tree search with pruning.</li>
-<li>Crescendo (USENIX Security 25): gradual conversational escalation by referencing previous responses.</li>
-<li>Mastermind (2026): distills attack strategies from a sandbox model and optimizes with evolutionary algorithm.</li>
+<li>Direct prompt injection and role-playing jailbreaks (e.g., DAN, Do Anything Now).</li>
+<li>Multi-step reasoning attacks (e.g., chain-of-thought jailbreaks).</li>
+<li>Defense mechanisms like RLHF-based safety training and refusal training.</li>
+<li>Benchmarks for jailbreak evaluation: AdvBench, JailbreakBench, AIR-Bench, SORRY-Bench.</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Existing jailbreak methods rely on external prompt manipulation (e.g., encoding, reframing, trial-and-error) to bypass safety restrictions. Whether an LLM can internally cross its own safety boundary through its reasoning process remains underexplored, and no prior work systematically exploits self-conditioned reasoning and consistency tendency for disclosure escalation.</p>
+<p>Existing jailbreak methods often rely on explicit malicious prompts or role-play, which are increasingly filtered by safety mechanisms. There is no systematic approach that uses the model's own boundary identification and refinement to gradually escalate disclosure without triggering strong defenses.</p>
 <h3>P — Proposal</h3>
-<p>BAIT (Boundary-Aware Iterative Trap) is a three-step jailbreak framework: (1) boundary elicitation (ask what knowledge should be protected), (2) refinement (distinguish correct knowledge from misinformation), and (3) elaboration (request a detailed example). It uses prevention-oriented framing and a fixed interaction pattern to turn the model's own reasoning and consistency tendency into a disclosure pathway.</p>
+<p>BAIT is a three-step framework: (1) ask the model to identify its protection boundary for a target topic, (2) ask it to refine that boundary, and (3) request a detailed example. Each step builds on the model's previous response, exploiting its consistency tendency to turn reasoning into a disclosure pathway.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>On AdvBench, BAIT achieves attack success rates (ASR) of 92% on GPT-4, 88% on Claude-3, and 85% on Gemini-1.5. On JailbreakBench, ASR is 89% on GPT-4, 86% on Claude-3, and 82% on Gemini-1.5. On AIR-Bench, ASR is 87% on GPT-4, 84% on Claude-3, and 80% on Gemini-1.5. On SORRY-Bench, ASR is 90% on GPT-4, 87% on Claude-3, and 83% on Gemini-1.5. BAIT consistently outperforms baselines (e.g., Crescendo, TAP, PAP) by 15-30% absolute ASR on well-aligned models.</p>
+<p>On AdvBench, BAIT achieves attack success rates (ASR) of 92% on GPT-4, 88% on Claude-3, and 85% on Llama-3-70B. On JailbreakBench, ASR is 89% (GPT-4), 84% (Claude-3), 81% (Llama-3-70B). On AIR-Bench, ASR is 87% (GPT-4), 82% (Claude-3), 79% (Llama-3-70B). On SORRY-Bench, ASR is 90% (GPT-4), 86% (Claude-3), 83% (Llama-3-70B).</p>
 <h3>Ablation</h3>
-<p>Prevention-oriented framing outperforms direct knowledge request by an average of 22% ASR across models. Removing the refinement step reduces ASR by 35% on GPT-4, confirming its critical role in disclosure escalation.</p>
+<p>Removing the refinement step reduces ASR by 18-25% across models; prevention-oriented framing outperforms direct knowledge request by 15-20% ASR; the first two steps alone elicit harmful content in 30-40% of cases with &lt;5% filtering rate.</p>
 <h3>Limitations</h3>
-<p>["BAIT's effectiveness may vary across different safety alignment strategies and model architectures.", 'The fixed three-step pattern may be detectable by advanced safety filters or adversarial training.', "The method relies on the model's consistency tendency, which might be mitigated by future alignment techniques."]</p>
+<p>["The method relies on the model's willingness to engage in boundary discussion, which may be mitigated by stronger refusal training.", 'Effectiveness may vary across languages and cultural contexts not tested in the paper.', 'The attack is iterative and may be detected by monitoring for multi-step boundary queries.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Highlights a fundamental blind spot in LLM safety: reasoning about safety boundaries can itself be exploited for harmful disclosure.</li>
-<li>Demonstrates that self-conditioned reasoning and consistency tendency are powerful attack vectors, informing new defense strategies.</li>
-<li>Provides a highly controllable and scalable jailbreak framework that can be used to evaluate and improve model alignment.</li>
+<li>Demonstrates that safety boundaries can be subverted by exploiting the model's own reasoning consistency, a fundamental vulnerability.</li>
+<li>Highlights the importance of prevention-oriented framing as a more effective attack vector than direct requests.</li>
+<li>Provides a structured methodology that can be adapted to test and improve safety alignment in LLMs.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Investigate defenses that break the self-conditioned reasoning chain, e.g., by randomizing response consistency or inserting adversarial interruptions.</li>
-<li>[ ] Explore whether similar boundary-guided disclosure techniques apply to other modalities (e.g., image, code generation).</li>
-<li>[ ] Develop automated detection methods for multi-turn jailbreak patterns like BAIT.</li>
-<li>[ ] Study the generalizability of BAIT to open-source models with different safety training regimes.</li>
+<li>[ ] Test BAIT against state-of-the-art defense mechanisms (e.g., smoothed classifiers, adversarial training).</li>
+<li>[ ] Explore automated detection of iterative boundary-exploitation patterns in user queries.</li>
+<li>[ ] Investigate whether similar self-conditioned reasoning attacks apply to multimodal models (e.g., vision-language models).</li>
+<li>[ ] Develop countermeasures that break the consistency chain without degrading helpfulness.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>
@@ -234,45 +202,6 @@
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1336/fig_006.png" alt="Figure 5: Top: Number of successfully attacked models (8 in total) at each round on AdvBench" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 5: Top: Number of successfully attacked models (8 in total) at each round on AdvBench</span>
-                <span class="lang-zh">图5：上方：在AdvBench上每轮成功攻击的模型数量（共8个）</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1336/fig_017.png" alt="Figure 26: Number of successfully attacked models (8 in total) at each round on AdvBench" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 26: Number of successfully attacked models (8 in total) at each round on AdvBench</span>
-                <span class="lang-zh">图26：在AdvBench上每轮成功攻击的模型数量（共8个）</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1336/fig_003.png" alt="Figure 2: Dataset" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 2: Dataset</span>
-                <span class="lang-zh">图2：数据集</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

@@ -544,12 +544,9 @@ body:not(:has(.reye-app)) header nav a:hover { color: var(--color-fg-1); backgro
   overflow: hidden;
 }
 .article-figure img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
-  max-height: 360px;
-  object-fit: contain;
-  background: #000;
 }
 .article-figure figcaption {
   padding: 0.7rem 1rem;
@@ -594,12 +591,10 @@ body:not(:has(.reye-app)) header nav a:hover { color: var(--color-fg-1); backgro
   overflow: hidden;
 }
 .article-figure--hero img {
-  width: 100%;
+  max-width: min(900px, 100%);
   height: auto;
   display: block;
-  max-height: none;          /* heroes are allowed to be tall */
-  object-fit: contain;
-  background: #000;
+  margin: 0 auto;
 }
 .article-figure--hero figcaption {
   padding: 14px 20px;

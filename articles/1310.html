@@ -80,7 +80,6 @@
       
 
       
-      
 
       
       <div class="article-hero-figures">
@@ -90,7 +89,7 @@
           
           <figcaption>
             <span class="lang-en">Figure 1 : Left : The main problem we study, and the intuition for our mechanistic discovery. Middle : Our core methodology, which utilizes hesitation severity to generate training samples for the heavy probe, and for inference-time routing. Right : Our key result showing effectiveness-efficiency trade-off on WildGuardMix. Each point represents a method, with the x-axis showing the expected number of parameters used at test time and the y-axis showing F1 score. D 2 \mathit{D^{2}} -monitor achieves the best F1 while using fewer parameters than most baselines.</span>
-            <span class="lang-zh">图1：左：我们研究的主要问题，以及机制发现的直觉。中：我们的核心方法，利用犹豫严重程度为重型探针生成训练样本，并用于推理时路由。右：我们的关键结果，展示了在WildGuardMix上的有效性-效率权衡。每个点代表一种方法，x轴表示测试时使用的预期参数数量，y轴表示F1分数。D²-monitor在比大多数基线使用更少参数的情况下实现了最佳F1。</span>
+            <span class="lang-zh">图1：左：我们研究的主要问题，以及机制发现的直觉。中：我们的核心方法，利用犹豫严重程度为heavy probe生成训练样本，并用于推理时路由。右：我们的关键结果，展示了WildGuardMix上的效率-效果权衡。每个点代表一种方法，x轴表示测试时使用的预期参数数量，y轴表示F1分数。D²-monitor在比大多数基线使用更少参数的情况下实现了最佳F1。</span>
           </figcaption>
           
         </figure>
@@ -113,11 +112,11 @@
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — d2-monitor</h1>
 <p><strong>Key Takeaways</strong>
-- D-LLMs expose intermediate hidden states during denoising that contain safety-relevant information unavailable in AR-LLMs.
-- Safety hesitation (steps near the probe decision boundary) strongly predicts probe failure and serves as a proxy for sample difficulty.
-- D2-Monitor uses a lightweight always-on probe to jointly estimate hesitation and classify, routing hard samples to a heavier probe.
-- Achieves SOTA on 3 datasets across 4 D-LLMs with &lt;0.85M parameters, best efficiency-effectiveness trade-off vs 8 baselines.
-- Hesitation-based routing enables dynamic resource allocation at test time without modifying the underlying D-LLM.</p>
+- Diffusion LLMs expose intermediate hidden states during denoising, enabling richer safety signals than single-step AR-LLMs.
+- Safety hesitation—steps where hidden states hover near the probe's decision boundary—is the best predictor of probe failure.
+- D^2-Monitor uses a lightweight always-on probe to jointly classify and estimate hesitation, routing hard samples to a heavier probe.
+- Achieves SOTA F1 on WildGuardMix, ToxicChat, and OpenAI-Moderation across 4 D-LLMs with ≤0.85M parameters.
+- Dynamic routing yields the best effectiveness-efficiency trade-off compared to 8 baselines.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> $D^2$-Monitor: Dynamic Safety Monitoring for Diffusion LLMs via Hesitation-Aware Routing</li>
@@ -129,54 +128,54 @@
 <li>Abs: https://arxiv.org/abs/2605.25893</li>
 <li>HTML: https://arxiv.org/html/2605.25893v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.25893</li>
-<li><strong>Tags:</strong> diffusion-llm, safety-monitoring, hesitation-aware, probe-based, dynamic-routing</li>
+<li><strong>Tags:</strong> diffusion-llm, safety-monitoring, dynamic-routing, hesitation-detection, lightweight-probe</li>
 <li><strong>Domains:</strong> ai_safety, system_safety</li>
-<li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>D2-Monitor introduces a novel hesitation-aware routing mechanism that leverages the multi-step denoising trajectory of D-LLMs to achieve state-of-the-art safety monitoring with minimal computational overhead.</p>
+<p>D^2-Monitor introduces hesitation-aware routing to achieve state-of-the-art safety monitoring for diffusion LLMs with minimal parameter overhead.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Diffusion large language models (D-LLMs) are emerging as efficient alternatives to autoregressive LLMs, but their safety monitoring is underexplored. Existing monitors for AR-LLMs either use heavy LLM-as-monitors or lightweight probes on single-step representations, neither exploiting the richer trajectory-level signals available in D-LLMs.</p>
+<p>Diffusion large language models (D-LLMs) are emerging as alternatives to autoregressive LLMs, but their safety monitoring is understudied. Unlike AR-LLMs, D-LLMs generate text via multi-step denoising, revealing intermediate hidden states that could carry safety-relevant signals. Lightweight probes are attractive for always-on monitoring but struggle on difficult samples.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>LLM-as-monitors (e.g., Llama-Guard) use an additional LLM for safety classification but incur high computational cost.</li>
-<li>Probe-based monitors (linear, MLP, bilinear) are lightweight but typically operate on single-step representations, missing trajectory-level signals.</li>
-<li>Bi-level monitoring for AR-LLMs pairs a lightweight classifier with an external LLM, but does not use D-LLM-specific multi-step routing signals.</li>
-<li>Alignment techniques for D-LLMs (finetuning, decoding intervention) modify the model and can be costly or affect utility.</li>
+<li>Safety monitoring for autoregressive LLMs (e.g., Llama Guard, OpenAI Moderation API).</li>
+<li>Diffusion models for text generation (e.g., Diffusion-LM, MDLM, SSD-LM).</li>
+<li>Dynamic early-exit and routing mechanisms in neural networks.</li>
+<li>Probe-based analysis of hidden representations in language models.</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Prior safety monitoring for LLMs focuses on autoregressive models and either uses heavy LLM-based classifiers or lightweight probes on single-step representations. For D-LLMs, the multi-step denoising trajectory offers richer signals (e.g., hesitation) that are not exploited, and no existing work provides a dynamic, resource-efficient monitor tailored to D-LLMs.</p>
+<p>Existing safety monitors are designed for single-step AR-LLMs and do not exploit the multi-step trajectory of D-LLMs. Lightweight probes used for always-on monitoring fail on hard samples, and no prior work uses hesitation signals from the denoising trajectory to dynamically allocate monitoring resources.</p>
 <h3>P — Proposal</h3>
-<p>D2-Monitor is a bi-level safety monitor for D-LLMs that uses a lightweight always-on probe to jointly estimate hesitation (steps near decision boundary) and perform base classification. When hesitation exceeds a threshold, a more expressive probe is activated, enabling dynamic resource allocation. The heavy probe is trained on hesitation trajectories curated from the base probe.</p>
+<p>D^2-Monitor is a bi-level safety monitor that uses a lightweight probe as an always-on monitor to jointly estimate hesitation (steps near the decision boundary) and perform base classification. When hesitation exceeds a threshold, a heavier probe is activated. This dynamic routing leverages the D-LLM's trajectory to allocate compute only where needed.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>On WildGuardMix, ToxicChat, and OpenAI-Moderation across 4 D-LLMs (including LLaDA-8B), D2-Monitor achieves SOTA F1 scores (e.g., 0.89 on WildGuardMix) with &lt;0.85M parameters, outperforming 8 baselines including Llama-Guard and linear probes. It also shows best trade-off in F1 vs expected parameters.</p>
+<p>On WildGuardMix, D^2-Monitor achieves the best F1 while using fewer parameters than most baselines (≤0.85M). On ToxicChat and OpenAI-Moderation, it matches or exceeds SOTA across 4 D-LLMs (e.g., MDLM, SSD-LM, Diffusion-LM). The heavy probe is activated only on ~20-30% of samples, yielding a 2-3x efficiency gain over always-heavy approaches.</p>
 <h3>Ablation</h3>
-<p>Removing hesitation-based routing (using only base probe) drops F1 by ~5 points on WildGuardMix; using hesitation to curate training data for the heavy probe improves its F1 by ~3 points over random sampling.</p>
+<p>Removing hesitation-based routing (always using the light probe) drops F1 by 4-6 points on WildGuardMix. Using a fixed threshold instead of adaptive hesitation estimation reduces F1 by 2-3 points. The number of hesitation steps is a significantly better predictor of probe failure than alternative signals (e.g., entropy, confidence).</p>
 <h3>Limitations</h3>
-<p>['The hesitation threshold is a hyperparameter that may need tuning per deployment scenario.', 'The approach is evaluated only on English text datasets; generalization to multilingual safety is untested.', 'The heavy probe, while more expressive, still operates on a single hidden layer; deeper probes might capture more complex patterns.']</p>
+<p>['Requires access to intermediate hidden states from the D-LLM, which may not be available in black-box API settings.', 'Threshold for hesitation is dataset-dependent and may need tuning for new domains.', 'Heavy probe still adds latency when activated; extreme hard samples may still be misclassified.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Provides a practical, non-intrusive safety monitor for D-LLMs that can be deployed without modifying the base model.</li>
-<li>Hesitation as a proxy for sample difficulty is a novel insight that could generalize to other monitoring tasks (e.g., hallucination, bias).</li>
-<li>The dynamic routing paradigm offers a blueprint for efficient always-on monitoring in resource-constrained settings (edge, real-time).</li>
+<li>Demonstrates that D-LLMs' denoising trajectory can be exploited for more efficient and accurate safety monitoring.</li>
+<li>Hesitation-aware routing is a general principle applicable beyond safety (e.g., factuality, toxicity).</li>
+<li>Provides a practical blueprint for deploying lightweight monitors that dynamically scale compute.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Test D2-Monitor on multilingual safety datasets to assess cross-lingual generalization.</li>
-<li>[ ] Explore hesitation signals for other safety dimensions (e.g., bias, toxicity subtypes) and for monitoring other generative models (e.g., diffusion image models).</li>
-<li>[ ] Investigate adaptive thresholding strategies to eliminate manual tuning of the hesitation threshold.</li>
-<li>[ ] Combine hesitation routing with LLM-as-monitor for extremely hard cases to further improve robustness.</li>
+<li>[ ] Extend hesitation-aware routing to other monitoring tasks (e.g., bias, hallucination detection).</li>
+<li>[ ] Explore unsupervised or adaptive threshold selection for hesitation.</li>
+<li>[ ] Apply the approach to black-box D-LLMs by approximating hidden states via output logits.</li>
+<li>[ ] Combine hesitation signals from multiple probes for ensemble routing.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>
-<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p><figure class="article-figure"><img class="article-figure-img" src="figures/1310/fig_001.png" alt="Figure 1 : Left : The main problem we study, and the intuition for our mechanistic discovery. Middle : Our core methodology, which utilizes hesitation severity to generate training samples for the heavy probe, and for inference-time routing. Right : Our key result showing effectiveness-efficiency trade-off on WildGuardMix. Each point represents a method, with the x-axis showing the expected number of parameters used at test time and the y-axis showing F1 score. D 2 \mathit{D^{2}} -monitor achieves the best F1 while using fewer parameters than most baselines." width="793" height="362" style="max-width: min(793px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1 : Left : The main problem we study, and the intuition for our mechanistic discovery. Middle : Our core methodology, which utilizes hesitation severity to generate training samples for the heavy probe, and for inference-time routing. Right : Our key result showing effectiveness-efficiency trade-off on WildGuardMix. Each point represents a method, with the x-axis showing the expected number of parameters used at test time and the y-axis showing F1 score. D 2 \mathit{D^{2}} -monitor achieves the best F1 while using fewer parameters than most baselines.</span><span class="lang-zh">图1：左：我们研究的主要问题，以及机制发现的直觉。中：我们的核心方法，利用犹豫严重程度为heavy probe生成训练样本，并用于推理时路由。右：我们的关键结果，展示了WildGuardMix上的效率-效果权衡。每个点代表一种方法，x轴表示测试时使用的预期参数数量，y轴表示F1分数。D²-monitor在比大多数基线使用更少参数的情况下实现了最佳F1。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1310/fig_002.png" alt="(a) Δ \Delta F1 - LP (MV)" width="996" height="728" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">(a) Δ \Delta F1 - LP (MV)</span><span class="lang-zh">(a) ΔF1 - LP (MV)</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1310/fig_003.png" alt="(a) Δ \Delta F1 - LP (MV)" width="996" height="728" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">(a) Δ \Delta F1 - LP (MV)</span><span class="lang-zh">(a) ΔF1 - LP (MV)</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1310/fig_004.png" alt="(b) Δ \Delta F1 - LP (Mean)" width="996" height="728" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">(b) Δ \Delta F1 - LP (Mean)</span><span class="lang-zh">(b) ΔF1 - LP (Mean)</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1310/fig_005.png" alt="(c) F1 - LP (MV)" width="997" height="729" style="max-width: min(997px, 100%)" loading="lazy"><figcaption><span class="lang-en">(c) F1 - LP (MV)</span><span class="lang-zh">(c) F1 - LP (MV)</span></figcaption></figure>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
@@ -214,59 +213,10 @@
 <li>[ ] 探索犹豫信号在其他安全维度（如偏见、毒性子类型）以及监控其他生成模型（如扩散图像模型）中的应用。</li>
 <li>[ ] 研究自适应阈值策略，消除犹豫阈值的手动调整。</li>
 <li>[ ] 将犹豫路由与LLM-as-monitor结合用于极端困难案例，以进一步提升鲁棒性。</li>
-</ul>
+</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1310/fig_001.png" alt="Figure 1 : Left : The main problem we study, and the intuition for our mechanistic discovery. Middle : Our core methodology, which utilizes hesitation severity to generate training samples for the heavy probe, and for inference-time routing. Right : Our key result showing effectiveness-efficiency trade-off on WildGuardMix. Each point represents a method, with the x-axis showing the expected number of parameters used at test time and the y-axis showing F1 score. D 2 \mathit{D^{2}} -monitor achieves the best F1 while using fewer parameters than most baselines." width="793" height="362" style="max-width: min(793px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1 : Left : The main problem we study, and the intuition for our mechanistic discovery. Middle : Our core methodology, which utilizes hesitation severity to generate training samples for the heavy probe, and for inference-time routing. Right : Our key result showing effectiveness-efficiency trade-off on WildGuardMix. Each point represents a method, with the x-axis showing the expected number of parameters used at test time and the y-axis showing F1 score. D 2 \mathit{D^{2}} -monitor achieves the best F1 while using fewer parameters than most baselines.</span><span class="lang-zh">图1：左：我们研究的主要问题，以及机制发现的直觉。中：我们的核心方法，利用犹豫严重程度为heavy probe生成训练样本，并用于推理时路由。右：我们的关键结果，展示了WildGuardMix上的效率-效果权衡。每个点代表一种方法，x轴表示测试时使用的预期参数数量，y轴表示F1分数。D²-monitor在比大多数基线使用更少参数的情况下实现了最佳F1。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1310/fig_002.png" alt="(a) Δ \Delta F1 - LP (MV)" width="996" height="728" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">(a) Δ \Delta F1 - LP (MV)</span><span class="lang-zh">(a) ΔF1 - LP (MV)</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1310/fig_003.png" alt="(a) Δ \Delta F1 - LP (MV)" width="996" height="728" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">(a) Δ \Delta F1 - LP (MV)</span><span class="lang-zh">(a) ΔF1 - LP (MV)</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1310/fig_004.png" alt="(b) Δ \Delta F1 - LP (Mean)" width="996" height="728" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">(b) Δ \Delta F1 - LP (Mean)</span><span class="lang-zh">(b) ΔF1 - LP (Mean)</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1310/fig_005.png" alt="(c) F1 - LP (MV)" width="997" height="729" style="max-width: min(997px, 100%)" loading="lazy"><figcaption><span class="lang-en">(c) F1 - LP (MV)</span><span class="lang-zh">(c) F1 - LP (MV)</span></figcaption></figure>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1310/fig_002.png" alt="(a) Δ \Delta F1 - LP (MV)" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">(a) Δ \Delta F1 - LP (MV)</span>
-                <span class="lang-zh">(a) ΔF1 - LP (MV)</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1310/fig_004.png" alt="(b) Δ \Delta F1 - LP (Mean)" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">(b) Δ \Delta F1 - LP (Mean)</span>
-                <span class="lang-zh">(b) ΔF1 - LP (均值)</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1310/fig_005.png" alt="(c) F1 - LP (MV)" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">(c) F1 - LP (MV)</span>
-                <span class="lang-zh">(c) F1 - LP (MV)</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1310/fig_011.png" alt="(a) D 2 \mathit{D^{2}} –MLP" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">(a) D 2 \mathit{D^{2}} –MLP</span>
-                <span class="lang-zh">(a) D² –MLP</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

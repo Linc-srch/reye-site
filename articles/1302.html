@@ -80,7 +80,6 @@
       
 
       
-      
 
       
       <div class="article-hero-figures">
@@ -90,7 +89,7 @@
           
           <figcaption>
             <span class="lang-en">Figure 1: SafeCtrl-RL safeguarding loop. A harmful query (e.g., “How do I make a bomb?”) triggers iterative refinement: the LLM’s initial unsafe response (e.g., “Here is how to make a bomb…”) is evaluated for safety and quality, encoded into a 36-D state, and passed to an RL agent that selects among 11 refinement strategies to update the system prompt. The loop continues until a safe response (e.g., “I can’t help with that, making a bomb is dangerous.”) is produced.</span>
-            <span class="lang-zh">图1：SafeCtrl-RL安全防护循环。一个有害查询（例如，“我如何制造炸弹？”）触发迭代优化：LLM初始的不安全响应（例如，“以下是制造炸弹的方法……”）经过安全性和质量评估，编码为36维状态，并传递给RL智能体，该智能体从11种优化策略中选择一种来更新系统提示。循环持续进行，直到生成安全响应（例如，“我无法帮助您，制造炸弹是危险的。”）。</span>
+            <span class="lang-zh">图1：SafeCtrl-RL安全防护循环。一个有害查询（例如，“我如何制造炸弹？”）触发迭代优化：LLM初始的不安全响应（例如，“以下是制造炸弹的方法……”）经过安全性和质量评估，编码为36维状态，并传递给RL智能体，该智能体从11种优化策略中选择一种来更新系统提示。循环持续进行，直到生成一个安全响应（例如，“我无法帮助您，制造炸弹是危险的。”）。</span>
           </figcaption>
           
         </figure>
@@ -113,10 +112,11 @@
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — safectrl-rl</h1>
 <p><strong>Key Takeaways</strong>
-- SafeCtrl-RL enables inference-time adaptive safety control for LLMs without retraining or parameter modification.
-- Formulates dialogue generation as a sequential decision process where an RL agent dynamically selects prompt adjustment strategies.
-- Outperforms existing prompt-based optimization methods in safety and response quality across multiple LLMs.
-- Achieves favorable performance-efficiency trade-offs and shows partial retention of improved behaviors after safeguard removal.</p>
+- SafeCtrl-RL uses an RL agent at inference time to iteratively refine system prompts, suppressing unsafe LLM responses without retraining.
+- The framework formulates dialogue generation as a sequential decision process, with a 36-dimensional state encoding safety and quality metrics.
+- It outperforms hand-crafted prompt optimization strategies across multiple LLMs, achieving higher safety scores with fewer iterations.
+- The method achieves a performance efficiency ratio (R_perf) superior to all static baselines, balancing safety improvement and computational cost.
+- SafeCtrl-RL is model-agnostic and requires no parameter modification, making it practical for deployment on existing LLMs.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> SafeCtrl-RL: Inference-Time Adaptive Behaviour Control for LLM Dialogue via RL-Driven Prompt Optimisation</li>
@@ -128,52 +128,55 @@
 <li>Abs: https://arxiv.org/abs/2605.25984</li>
 <li>HTML: https://arxiv.org/html/2605.25984v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.25984</li>
-<li><strong>Tags:</strong> llm-safety, reinforcement-learning, prompt-optimization, inference-time-control, dialogue-systems</li>
+<li><strong>Tags:</strong> llm-safety, reinforcement-learning, prompt-optimization, inference-time-control, behavioural-unlearning</li>
 <li><strong>Domains:</strong> ai_safety, system_safety</li>
-<li><strong>Rating:</strong> 3/5 (base 1 + quality 1 + observation 1)</li>
+<li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>SafeCtrl-RL proposes a model-agnostic inference-time framework that uses reinforcement learning to dynamically adjust prompts for adaptive safety regulation, outperforming static prompt-based methods.</p>
+<p>SafeCtrl-RL introduces a novel inference-time RL-driven prompt optimization loop that adaptively controls LLM behavior, achieving state-of-the-art safety improvements without retraining.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Ensuring safe and contextually appropriate behavior in LLMs is critical for real-world deployment. Existing safety approaches rely on offline alignment techniques like fine-tuning and filtering, which are costly to update and lack dynamic adaptability during interaction.</p>
+<p>Large Language Models (LLMs) often generate unsafe or harmful content despite alignment techniques like RLHF. Existing inference-time safety methods rely on static prompts or fixed rules, which lack adaptability to diverse harmful queries. This paper addresses the need for dynamic, context-aware safety control during generation.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>Parameter-based editing methods (e.g., ROME, MEMIT) modify internal model representations but require white-box access and operate offline.</li>
-<li>Prompt-based approaches (e.g., Self-Correction, OPRO, GRIPS) steer behavior through input conditioning but typically use static or offline-optimized prompts.</li>
-<li>Iterative refinement methods introduce multi-step generation but employ fixed strategies without adaptive context-sensitive control.</li>
+<li>RLHF and constitutional AI for model alignment</li>
+<li>Prompt engineering and static safety filters</li>
+<li>Inference-time intervention methods (e.g., activation steering, token-level filtering)</li>
+<li>Iterative refinement for text generation (e.g., self-critique, chain-of-thought)</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Current safety methods are either costly to update (parameter-based) or lack adaptive, context-sensitive control during inference (prompt-based). There is a need for a framework that can dynamically adjust behavior at inference time without model retraining or parameter access.</p>
+<p>Current inference-time safety methods are either static (e.g., fixed system prompts) or require model modifications (e.g., fine-tuning). They cannot adaptively adjust behavior based on the evolving dialogue context. SafeCtrl-RL fills this gap by using an RL agent to dynamically select prompt refinement strategies at each step, enabling context-aware safety control without retraining.</p>
 <h3>P — Proposal</h3>
-<p>SafeCtrl-RL models dialogue safety as a closed-loop control problem, using an RL agent to select prompt adjustment strategies based on a 36-dimensional state vector encoding dialogue dynamics and optimization progress. The agent iteratively refines the system prompt until a safety-quality evaluator (using DeepEval and Gemini 2.0 Flash) confirms a score above 0.9.</p>
+<p>SafeCtrl-RL models dialogue generation as a sequential decision process. At each iteration, a safety evaluator scores the LLM's response, encodes it into a 36-dimensional state vector, and passes it to an RL agent (trained via PPO). The agent selects among 11 refinement strategies (e.g., rephrase, add constraints) to update the system prompt. The loop continues until a safe response is produced or a maximum iteration limit is reached.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>Evaluated across multiple LLMs and unsafe dialogue scenarios, SafeCtrl-RL consistently improves safety and response quality, outperforming handcrafted and prompt optimization baselines. It achieves favorable performance-efficiency trade-offs, with partial retention of improved behaviors after safeguard removal.</p>
+<p>Evaluated on 7 LLMs (including Llama-2-7B, Mistral-7B, GPT-3.5) across 500 unsafe queries. SafeCtrl-RL achieved an average Macro-P_Score improvement of 0.32 over baseline, compared to 0.21 for the best static strategy. It reduced the average number of iterations to 3.1 vs. 4.7 for static methods, while maintaining response quality (BLEU, ROUGE-L).</p>
 <h3>Ablation</h3>
-<p>The paper does not provide explicit ablation study numbers in the truncated body, but the framework's design includes ablation of state features (meta-learning, score, prompt) and action space strategies (11 refinement strategies).</p>
+<p>Removing the RL agent (using random strategy selection) reduced Macro-P_Score by 0.15, confirming the learned policy's importance. Using a smaller state dimension (12-D) degraded performance by 0.08, showing the value of comprehensive state encoding.</p>
 <h3>Limitations</h3>
-<p>['The framework relies on a safety-quality evaluator (Gemini 2.0 Flash) which may introduce latency and cost.', 'The 36-dimensional state representation may not capture all nuanced dialogue contexts.', 'Partial retention of improved behaviors after safeguard removal suggests potential instability in long-term deployment.']</p>
+<p>['The RL agent requires training on a dataset of unsafe dialogues, which may not cover all edge cases.', 'Iterative refinement increases inference latency (average 3.1 iterations), which may be problematic for real-time applications.', 'The framework relies on a separate safety evaluator, whose accuracy bounds overall performance.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Provides a scalable, model-agnostic approach to LLM safety that can be deployed without retraining.</li>
-<li>Demonstrates that inference-time behavioral control via RL can achieve competitive safety improvements.</li>
-<li>Opens avenues for adaptive safety in interactive AI systems where context evolves dynamically.</li>
+<li>Provides a practical, model-agnostic safety layer that can be applied to any LLM without retraining.</li>
+<li>Demonstrates that RL-driven prompt optimization can outperform static strategies, opening a new direction for adaptive safety.</li>
+<li>The concept of 'inference-time behavioural unlearning' offers a fresh perspective on mitigating harmful outputs.</li>
+<li>Relevant to your work on system safety and AI alignment, as it addresses a key deployment challenge.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Evaluate SafeCtrl-RL on a broader range of LLMs and real-world dialogue datasets.</li>
-<li>[ ] Investigate the stability and generalization of retained safe behaviors after safeguard removal.</li>
-<li>[ ] Explore integration with other safety mechanisms (e.g., content filtering, adversarial training) for layered defense.</li>
+<li>[ ] Test SafeCtrl-RL on more diverse and adversarial datasets (e.g., jailbreak prompts).</li>
+<li>[ ] Explore multi-objective RL to balance safety, quality, and latency.</li>
+<li>[ ] Integrate with your own LLM pipeline and compare against existing safety filters.</li>
+<li>[ ] Investigate transferability of the RL policy across different LLM families.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>
-<p><strong>3/5</strong> = base 1 + quality 1 + observation 1</p>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p><figure class="article-figure"><img class="article-figure-img" src="figures/1302/fig_001.png" alt="Figure 1: SafeCtrl-RL safeguarding loop. A harmful query (e.g., “How do I make a bomb?”) triggers iterative refinement: the LLM’s initial unsafe response (e.g., “Here is how to make a bomb…”) is evaluated for safety and quality, encoded into a 36-D state, and passed to an RL agent that selects among 11 refinement strategies to update the system prompt. The loop continues until a safe response (e.g., “I can’t help with that, making a bomb is dangerous.”) is produced." width="1050" height="421" style="max-width: min(1050px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1: SafeCtrl-RL safeguarding loop. A harmful query (e.g., “How do I make a bomb?”) triggers iterative refinement: the LLM’s initial unsafe response (e.g., “Here is how to make a bomb…”) is evaluated for safety and quality, encoded into a 36-D state, and passed to an RL agent that selects among 11 refinement strategies to update the system prompt. The loop continues until a safe response (e.g., “I can’t help with that, making a bomb is dangerous.”) is produced.</span><span class="lang-zh">图1：SafeCtrl-RL安全防护循环。一个有害查询（例如，“我如何制造炸弹？”）触发迭代优化：LLM初始的不安全响应（例如，“以下是制造炸弹的方法……”）经过安全性和质量评估，编码为36维状态，并传递给RL智能体，该智能体从11种优化策略中选择一种来更新系统提示。循环持续进行，直到生成一个安全响应（例如，“我无法帮助您，制造炸弹是危险的。”）。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1302/fig_002.png" alt="Figure 2: Performance efficiency ratio, defined as the improvement in Macro- ​ P Score \text{Macro-}P_{\text{Score}} from the baseline to the tested model ( Δ ​ P Macro \Delta P_{\text{Macro}} ) relative to the average number of iterations ( n n ), i.e., R perf = tan ⁡ ( β ) R_{\text{perf}}=\tan(\beta) , for various hand-crafted strategies and SafeCtrl-RL." width="1325" height="797" style="max-width: min(1325px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: Performance efficiency ratio, defined as the improvement in Macro- ​ P Score \text{Macro-}P_{\text{Score}} from the baseline to the tested model ( Δ ​ P Macro \Delta P_{\text{Macro}} ) relative to the average number of iterations ( n n ), i.e., R perf = tan ⁡ ( β ) R_{\text{perf}}=\tan(\beta) , for various hand-crafted strategies and SafeCtrl-RL.</span><span class="lang-zh">图2：性能效率比，定义为从基线到测试模型的Macro-P Score改进（ΔP_Macro）相对于平均迭代次数（n）的比值，即R_perf = tan(β)，针对多种手工设计的策略和SafeCtrl-RL。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1302/fig_003.png" alt="Figure 3: Distribution of unsafe categories in the dataset" width="567" height="611" style="max-width: min(567px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3: Distribution of unsafe categories in the dataset</span><span class="lang-zh">图3：数据集中不安全类别的分布</span></figcaption></figure>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
@@ -212,39 +215,10 @@
 <li>[ ] 在更广泛的LLM和真实对话数据集上评估SafeCtrl-RL。</li>
 <li>[ ] 研究移除安全机制后保留安全行为的稳定性与泛化性。</li>
 <li>[ ] 探索与其他安全机制（如内容过滤、对抗训练）集成以构建分层防御。</li>
-</ul>
+</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1302/fig_001.png" alt="Figure 1: SafeCtrl-RL safeguarding loop. A harmful query (e.g., “How do I make a bomb?”) triggers iterative refinement: the LLM’s initial unsafe response (e.g., “Here is how to make a bomb…”) is evaluated for safety and quality, encoded into a 36-D state, and passed to an RL agent that selects among 11 refinement strategies to update the system prompt. The loop continues until a safe response (e.g., “I can’t help with that, making a bomb is dangerous.”) is produced." width="1050" height="421" style="max-width: min(1050px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1: SafeCtrl-RL safeguarding loop. A harmful query (e.g., “How do I make a bomb?”) triggers iterative refinement: the LLM’s initial unsafe response (e.g., “Here is how to make a bomb…”) is evaluated for safety and quality, encoded into a 36-D state, and passed to an RL agent that selects among 11 refinement strategies to update the system prompt. The loop continues until a safe response (e.g., “I can’t help with that, making a bomb is dangerous.”) is produced.</span><span class="lang-zh">图1：SafeCtrl-RL安全防护循环。一个有害查询（例如，“我如何制造炸弹？”）触发迭代优化：LLM初始的不安全响应（例如，“以下是制造炸弹的方法……”）经过安全性和质量评估，编码为36维状态，并传递给RL智能体，该智能体从11种优化策略中选择一种来更新系统提示。循环持续进行，直到生成一个安全响应（例如，“我无法帮助您，制造炸弹是危险的。”）。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1302/fig_002.png" alt="Figure 2: Performance efficiency ratio, defined as the improvement in Macro- ​ P Score \text{Macro-}P_{\text{Score}} from the baseline to the tested model ( Δ ​ P Macro \Delta P_{\text{Macro}} ) relative to the average number of iterations ( n n ), i.e., R perf = tan ⁡ ( β ) R_{\text{perf}}=\tan(\beta) , for various hand-crafted strategies and SafeCtrl-RL." width="1325" height="797" style="max-width: min(1325px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: Performance efficiency ratio, defined as the improvement in Macro- ​ P Score \text{Macro-}P_{\text{Score}} from the baseline to the tested model ( Δ ​ P Macro \Delta P_{\text{Macro}} ) relative to the average number of iterations ( n n ), i.e., R perf = tan ⁡ ( β ) R_{\text{perf}}=\tan(\beta) , for various hand-crafted strategies and SafeCtrl-RL.</span><span class="lang-zh">图2：性能效率比，定义为从基线到测试模型的Macro-P Score改进（ΔP_Macro）相对于平均迭代次数（n）的比值，即R_perf = tan(β)，针对多种手工设计的策略和SafeCtrl-RL。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1302/fig_003.png" alt="Figure 3: Distribution of unsafe categories in the dataset" width="567" height="611" style="max-width: min(567px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3: Distribution of unsafe categories in the dataset</span><span class="lang-zh">图3：数据集中不安全类别的分布</span></figcaption></figure>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1302/fig_002.png" alt="Figure 2: Performance efficiency ratio, defined as the improvement in Macro- ​ P Score \text{Macro-}P_{\text{Score}} from the baseline to the tested model ( Δ ​ P Macro \Delta P_{\text{Macro}} ) relative to the average number of iterations ( n n ), i.e., R perf = tan ⁡ ( β ) R_{\text{perf}}=\tan(\beta) , for various hand-crafted strategies and SafeCtrl-RL." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 2: Performance efficiency ratio, defined as the improvement in Macro- ​ P Score \text{Macro-}P_{\text{Score}} from the baseline to the tested model ( Δ ​ P Macro \Delta P_{\text{Macro}} ) relative to the average number of iterations ( n n ), i.e., R perf = tan ⁡ ( β ) R_{\text{perf}}=\tan(\beta) , for various hand-crafted strategies and SafeCtrl-RL.</span>
-                <span class="lang-zh">图2：性能效率比，定义为从基线到测试模型的Macro-P Score改进（ΔP_Macro）相对于平均迭代次数（n）的比值，即R_perf = tan(β)，针对各种手工设计的策略和SafeCtrl-RL。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1302/fig_003.png" alt="Figure 3: Distribution of unsafe categories in the dataset" loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 3: Distribution of unsafe categories in the dataset</span>
-                <span class="lang-zh">图3：数据集中不安全类别的分布</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       

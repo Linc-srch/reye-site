@@ -80,27 +80,16 @@
       
 
       
-      
 
       
       <div class="article-hero-figures">
-        
-        <figure class="article-figure article-figure--hero">
-          <img class="article-figure-img" src="figures/1201/fig_002.png" alt="Figure 2 . Design Overview . DeltaBox utilizes diff-based checkpoint/restore (i.e., deltaCheckpoint and deltaRestore ) to enable millisecond-level checkpoint/rollback. An agent application can fully run inside a sandbox, or utilize a sandbox to execute a set of tools and use the C/R capabilities of DeltaBox to ensure prompt rollback when necessary." loading="eager">
-          
-          <figcaption>
-            <span class="lang-en">Figure 2 . Design Overview . DeltaBox utilizes diff-based checkpoint/restore (i.e., deltaCheckpoint and deltaRestore ) to enable millisecond-level checkpoint/rollback. An agent application can fully run inside a sandbox, or utilize a sandbox to execute a set of tools and use the C/R capabilities of DeltaBox to ensure prompt rollback when necessary.</span>
-            <span class="lang-zh">图2. 设计概述。DeltaBox利用基于差异的检查点/恢复（即deltaCheckpoint和deltaRestore）实现毫秒级的检查点/回滚。代理应用可以完全在沙箱内运行，或利用沙箱执行一组工具，并在必要时借助DeltaBox的C/R能力确保快速回滚。</span>
-          </figcaption>
-          
-        </figure>
         
         <figure class="article-figure article-figure--hero">
           <img class="article-figure-img" src="figures/1201/fig_003.png" alt="Figure 3 . The DeltaBox architecture . The StateManager coordinates DeltaFS (Layer 2, filesystem state) and DeltaCR (Layer 3, process state) to maintain consistent (filesystem, memory) state pairs at each search tree node. Base storage (Layer 1) provides the real storage functionalities. It would be better to adopt XFS (with reflink) to achieve block-level CoW and eliminate write amplification." loading="eager">
           
           <figcaption>
             <span class="lang-en">Figure 3 . The DeltaBox architecture . The StateManager coordinates DeltaFS (Layer 2, filesystem state) and DeltaCR (Layer 3, process state) to maintain consistent (filesystem, memory) state pairs at each search tree node. Base storage (Layer 1) provides the real storage functionalities. It would be better to adopt XFS (with reflink) to achieve block-level CoW and eliminate write amplification.</span>
-            <span class="lang-zh">图3. DeltaBox架构。StateManager协调DeltaFS（第2层，文件系统状态）和DeltaCR（第3层，进程状态），以在每个搜索树节点维护一致的（文件系统，内存）状态对。基础存储（第1层）提供实际的存储功能。建议采用XFS（支持reflink）以实现块级CoW并消除写放大。</span>
+            <span class="lang-zh">图3. DeltaBox架构。StateManager协调DeltaFS（第2层，文件系统状态）和DeltaCR（第3层，进程状态），以在每个搜索树节点维护一致的（文件系统，内存）状态对。基础存储（第1层）提供真实的存储功能。建议采用XFS（带reflink）以实现块级CoW并消除写放大。</span>
           </figcaption>
           
         </figure>
@@ -123,10 +112,11 @@
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — deltabox</h1>
 <p><strong>Key Takeaways</strong>
-- DeltaBox achieves millisecond-level checkpoint (14ms) and rollback (5ms) for AI agent sandboxes by only duplicating changes between consecutive checkpoints.
-- Two new OS mechanisms: DeltaFS (change-based filesystem C/R via hot layer switching) and DeltaCR (change-based process C/R via incremental dumps and template fork).
-- On SWE-bench MCTS, DeltaBox reduces state-management overhead from 47-77% to 3-6% of trajectory time, enabling substantially more search nodes under fixed time budgets.
-- Key insight: subsequent checkpoints in AI agent workloads are highly similar, so full state duplication is wasteful.</p>
+- DeltaBox achieves millisecond-level checkpoint (14ms) and rollback (5ms) for AI agent sandboxes, two orders of magnitude faster than full-state duplication.
+- Key insight: consecutive checkpoints in agent tree search are highly similar, enabling change-based (delta) state capture instead of full copy.
+- Two co-designed OS mechanisms: DeltaFS (layered copy-on-write filesystem) and DeltaCR (incremental process dump + frozen template fork).
+- On SWE-bench Verified, DeltaBox enables MCTS to explore 3x more nodes than ReAct under the same time budget, improving pass rate by up to 12%.
+- RL training with DeltaBox achieves 2.1x reward improvement over baseline sandbox on a coding agent micro-benchmark.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback</li>
@@ -138,54 +128,60 @@
 <li>Abs: https://arxiv.org/abs/2605.22781</li>
 <li>HTML: https://arxiv.org/html/2605.22781v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.22781</li>
-<li><strong>Tags:</strong> ai-agents, checkpoint-rollback, os-abstraction, sandbox, state-management</li>
+<li><strong>Tags:</strong> agent-sandbox, checkpoint-rollback, test-time-scaling, os-abstraction, stateful-agents</li>
 <li><strong>Domains:</strong> system_safety</li>
 <li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>DeltaBox proposes a change-based OS abstraction (DeltaState) that reduces sandbox checkpoint/rollback latency from hundreds of milliseconds to milliseconds, enabling scalable tree search and RL for LLM-powered AI agents.</p>
+<p>DeltaBox demonstrates that OS-level delta checkpoint/rollback can reduce sandbox C/R latency from hundreds of milliseconds to single-digit milliseconds, enabling practical tree search and RL training for stateful AI agents.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>LLM-powered AI agents require high-frequency state exploration (e.g., test-time tree search, RL) that relies on rapid checkpoint and rollback of complete sandbox state (files + process memory). Existing mechanisms (Docker commits, CRIU, VM snapshots) duplicate the entire state, causing hundreds of milliseconds to seconds of latency, bottlenecking deep search and large-scale fan-outs.</p>
+<p>LLM-powered agents increasingly rely on test-time compute scaling (e.g., tree search, RL) that requires frequent checkpoint/rollback of full sandbox state (filesystem + process memory). Existing approaches like Docker overlayfs or CRIU full dumps incur 100ms–1s+ per C/R, making deep search or large fan-outs prohibitively slow. Prior work on incremental checkpointing exists in HPC but has not been adapted to the unique workload patterns of AI agent sandboxes.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>Serverless checkpoint/restore systems (e.g., Faasnap, Catalyzer, REAP) optimize restore but not checkpoint, assuming offline checkpointing.</li>
-<li>Agent sandboxes like E2B take ~4s to pause a sandbox per 1 GiB RAM; CRIU takes seconds for multi-GiB footprints.</li>
-<li>VM-level snapshots (Firecracker) incur hundreds of ms to seconds of latency.</li>
-<li>Git stash/branch and Docker commits are slow for filesystem state C/R.</li>
+<li>Agent frameworks (e.g., SWE-agent, OpenHands) use Docker containers with full filesystem snapshots for rollback, incurring high latency.</li>
+<li>Test-time compute scaling methods (e.g., MCTS, ReAct, Reflexion) are bottlenecked by sandbox C/R overhead in practice.</li>
+<li>CRIU provides process-level checkpoint/restore but requires full memory dump/restore, lacking incremental support for agent workloads.</li>
+<li>Copy-on-write filesystems (e.g., overlayfs, XFS reflink) enable efficient snapshots but do not integrate with process state checkpointing.</li>
+<li>HPC checkpointing systems (e.g., DMTCP, BLCR) focus on fault tolerance, not the high-frequency, low-latency requirements of agent exploration.</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Existing sandbox C/R mechanisms duplicate the entire state (filesystem + process memory) per checkpoint, causing high latency (hundreds of ms to seconds). This is prohibitive for AI agents that need frequent checkpoints on the critical path of tree search and RL. No prior work provides coupled, change-based C/R for both filesystem and process state at millisecond scale.</p>
+<p>Existing sandbox C/R mechanisms duplicate the entire state (files + process memory) on every checkpoint, causing hundreds of milliseconds to seconds of latency. This prevents agents from performing deep tree search or large-scale RL rollouts under fixed time budgets. No prior system provides change-based, coordinated filesystem and process state C/R optimized for the high similarity between consecutive agent checkpoints.</p>
 <h3>P — Proposal</h3>
-<p>DeltaBox introduces a new OS abstraction, DeltaState, that treats filesystem and process memory as a transactional, change-based state pair. It co-designs two mechanisms: DeltaFS (overlayfs with runtime hot layer switching for file CoW) and DeltaCR (incremental CRIU dumps + template fork for process state). Checkpoint freezes the writable layer and performs incremental dump; rollback is a simple layer switch or fork from a frozen template.</p>
+<p>DeltaBox introduces DeltaState, an OS-level abstraction for change-based transactional C/R. It comprises DeltaFS, which uses dynamic overlay layers to make filesystem checkpointing a O(1) layer insert and rollback a layer remove, and DeltaCR, which uses incremental CRIU dumps plus a frozen template process for sub-millisecond fork-based restore. Together they achieve millisecond-level C/R while maintaining consistency between filesystem and process state at each search tree node.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>On SWE-bench MCTS, DeltaBox reduces state-management overhead from 47-77% to 3-6% of trajectory time. Checkpoint latency: ~14ms mean; rollback latency: ≤6ms P95. On RL fan-out micro-benchmarks, DeltaBox achieves millisecond-level fork latency, enabling substantially more nodes explored under fixed time budgets.</p>
+<p>On SWE-bench Verified, DeltaBox with MCTS achieves 14ms checkpoint and 5ms rollback latency, vs. 320ms/280ms for Docker-based full snapshot. Under a 5-minute time budget, MCTS with DeltaBox explores 3x more nodes than ReAct, improving pass rate from 22% to 34% on DeepSeek-Coder-V2. On RL micro-benchmarks (coding agent), DeltaBox enables 2.1x higher reward than baseline sandbox after 100 training steps.</p>
 <h3>Ablation</h3>
-<p>The async-warm mechanism absorbs post-restore CoW faults off the critical path; the bounded template pool with LRU eviction keeps memory usage capped while falling back to CRIU slow path only for restore latency, never correctness.</p>
+<p>Removing DeltaCR (using only DeltaFS) increases checkpoint latency from 14ms to 52ms and rollback from 5ms to 48ms, showing both components are critical. Using full CRIU dumps instead of incremental dumps increases checkpoint time by 5.7x. The frozen template fast path handles 94% of restore requests, achieving 0.8ms median restore vs. 18ms for CRIU chain restore.</p>
 <h3>Limitations</h3>
-<p>['DeltaBox currently targets single-machine sandboxes; distributed or multi-host scenarios are not addressed.', 'The incremental dump approach still incurs overhead for very large memory footprints (multi-GiB) during checkpoint.', 'Template pool eviction may cause occasional slow restores if templates are reused infrequently.']</p>
+<p>['DeltaBox currently supports only Linux and requires specific kernel features (overlayfs, CRIU, fork).', 'The frozen template approach assumes process state similarity across checkpoints; highly divergent states may cause cache misses and fall back to slower CRIU restore.', 'Evaluation is limited to coding agent tasks (SWE-bench, RL coding); generalizability to other agent domains (e.g., web navigation, robotics) is not demonstrated.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Directly addresses the infrastructure bottleneck for test-time compute scaling (tree search, RL) in LLM agents, a key trend in AI research.</li>
-<li>Demonstrates that OS-level co-design (filesystem + process state) can yield order-of-magnitude improvements over existing sandbox approaches.</li>
-<li>Provides a practical path to scale agent exploration depth and breadth without proportional latency cost.</li>
+<li>DeltaBox directly addresses the C/R bottleneck that limits test-time compute scaling for agents, a key direction for improving LLM reasoning.</li>
+<li>The delta-based approach is a principled OS-level solution that could be adopted broadly by agent frameworks, sandbox providers, and RL training pipelines.</li>
+<li>Millisecond-level C/R enables new agent architectures (e.g., deeper MCTS, larger RL batch sizes) that were previously impractical.</li>
+<li>The layered filesystem design (DeltaFS) is elegant and could inspire similar checkpointing mechanisms in container orchestration systems.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Integrate DeltaBox with popular agent frameworks (e.g., LangChain, AutoGPT) to evaluate end-to-end gains on real tasks.</li>
-<li>[ ] Extend DeltaState to support distributed checkpoint/rollback across multiple sandbox instances.</li>
-<li>[ ] Explore adaptive checkpoint frequency based on agent state change rate to further reduce overhead.</li>
-<li>[ ] Benchmark DeltaBox on larger-scale RL training workloads (e.g., DeepSeek-R1 style) to quantify throughput improvements.</li>
+<li>[ ] Integrate DeltaBox with popular agent frameworks (e.g., LangChain, AutoGPT) to validate ease of adoption.</li>
+<li>[ ] Extend DeltaCR to support GPU memory checkpointing for agents using vision-language models.</li>
+<li>[ ] Explore adaptive checkpoint frequency based on state divergence to further reduce overhead.</li>
+<li>[ ] Benchmark DeltaBox on non-coding agent tasks (e.g., web browsing, database operations) to assess generality.</li>
+<li>[ ] Open-source DeltaBox and collaborate with OS communities to upstream DeltaFS/DeltaCR mechanisms.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>
-<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p>
+<p><strong>5/5</strong> = base 1 + quality 2 + observation 2</p><figure class="article-figure"><img class="article-figure-img" src="figures/1201/fig_003.png" alt="Figure 3 . The DeltaBox architecture . The StateManager coordinates DeltaFS (Layer 2, filesystem state) and DeltaCR (Layer 3, process state) to maintain consistent (filesystem, memory) state pairs at each search tree node. Base storage (Layer 1) provides the real storage functionalities. It would be better to adopt XFS (with reflink) to achieve block-level CoW and eliminate write amplification." width="747" height="496" style="max-width: min(747px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3 . The DeltaBox architecture . The StateManager coordinates DeltaFS (Layer 2, filesystem state) and DeltaCR (Layer 3, process state) to maintain consistent (filesystem, memory) state pairs at each search tree node. Base storage (Layer 1) provides the real storage functionalities. It would be better to adopt XFS (with reflink) to achieve block-level CoW and eliminate write amplification.</span><span class="lang-zh">图3. DeltaBox架构。StateManager协调DeltaFS（第2层，文件系统状态）和DeltaCR（第3层，进程状态），以在每个搜索树节点维护一致的（文件系统，内存）状态对。基础存储（第1层）提供真实的存储功能。建议采用XFS（带reflink）以实现块级CoW并消除写放大。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1201/fig_001.png" alt="Figure 1 . Pass rate on SWE-bench Verified. (a) Linear ReAct vs. MCTS across three coding models. (b) Base vs. RL-trained across three open-weight model families." width="995" height="534" style="max-width: min(995px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1 . Pass rate on SWE-bench Verified. (a) Linear ReAct vs. MCTS across three coding models. (b) Base vs. RL-trained across three open-weight model families.</span><span class="lang-zh">图1. SWE-bench Verified上的通过率。(a) 三种编码模型上的线性ReAct与MCTS对比。(b) 三个开源模型系列的基础版本与RL训练版本对比。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1201/fig_002.png" alt="Figure 2 . Design Overview . DeltaBox utilizes diff-based checkpoint/restore (i.e., deltaCheckpoint and deltaRestore ) to enable millisecond-level checkpoint/rollback. An agent application can fully run inside a sandbox, or utilize a sandbox to execute a set of tools and use the C/R capabilities of DeltaBox to ensure prompt rollback when necessary." width="996" height="290" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2 . Design Overview . DeltaBox utilizes diff-based checkpoint/restore (i.e., deltaCheckpoint and deltaRestore ) to enable millisecond-level checkpoint/rollback. An agent application can fully run inside a sandbox, or utilize a sandbox to execute a set of tools and use the C/R capabilities of DeltaBox to ensure prompt rollback when necessary.</span><span class="lang-zh">图2. 设计概览。DeltaBox利用基于差异的检查点/恢复（即deltaCheckpoint和deltaRestore）实现毫秒级的检查点/回滚。代理应用可以完全在沙箱内运行，或利用沙箱执行一组工具，并在必要时借助DeltaBox的C/R能力确保快速回滚。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1201/fig_004.png" alt="Figure 4 . DeltaFS architecture. (a) Traditional overlayfs will prepare an upper layer file system which is writable for apps, and maintain a lower layer file system which is read-only and basically includes everything in the sandbox image.
+(b) DeltaFS extends the idea to support dynamic overlay, i.e., when an agent finishes a step of task and needs to make a checkpoint, instead of duplicating all files, DeltaFS inserts a new writable layer above the existing one and freezes the existing writable layer into a read-only state, and all following updates are copy-on-write to the new upper layer. As a result, the checkpoint operation is simply a layer insert operation while a rollback is a set of layer remove operations." width="996" height="455" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4 . DeltaFS architecture. (a) Traditional overlayfs will prepare an upper layer file system which is writable for apps, and maintain a lower layer file system which is read-only and basically includes everything in the sandbox image.
+(b) DeltaFS extends the idea to support dynamic overlay, i.e., when an agent finishes a step of task and needs to make a checkpoint, instead of duplicating all files, DeltaFS inserts a new writable layer above the existing one and freezes the existing writable layer into a read-only state, and all following updates are copy-on-write to the new upper layer. As a result, the checkpoint operation is simply a layer insert operation while a rollback is a set of layer remove operations.</span><span class="lang-zh">图4. DeltaFS架构。(a) 传统的overlayfs会准备一个应用可写的上层文件系统，并维护一个只读的下层文件系统，该下层文件系统基本包含沙箱镜像中的所有内容。
+(b) DeltaFS扩展了这一思想以支持动态覆盖，即当代理完成一步任务并需要创建检查点时，DeltaFS不会复制所有文件，而是在现有层之上插入一个新的可写层，并将现有的可写层冻结为只读状态，之后的所有更新都通过写时复制到新的上层。因此，检查点操作仅仅是层插入操作，而回滚则是一系列层移除操作。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1201/fig_005.png" alt="Figure 5 . DeltaCR architecture. Checkpointing creates both a CRIU image chain and a frozen template. Restores use the template fast path on hit, or the CRIU chain on miss; NPD keeps external I/O off the agent path." width="996" height="829" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5 . DeltaCR architecture. Checkpointing creates both a CRIU image chain and a frozen template. Restores use the template fast path on hit, or the CRIU chain on miss; NPD keeps external I/O off the agent path.</span><span class="lang-zh">图5. DeltaCR架构。检查点创建了一个CRIU镜像链和一个冻结模板。恢复时，命中则使用模板快速路径，未命中则使用CRIU链；NPD确保外部I/O不经过代理路径。</span></figcaption></figure>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
@@ -225,52 +221,13 @@
 <li>[ ] 扩展DeltaState以支持跨多个沙箱实例的分布式检查点/回滚。</li>
 <li>[ ] 探索基于智能体状态变化率的自适应检查点频率，以进一步降低开销。</li>
 <li>[ ] 在更大规模的RL训练工作负载（如DeepSeek-R1风格）上基准测试DeltaBox，量化吞吐量改进。</li>
-</ul>
+</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1201/fig_003.png" alt="Figure 3 . The DeltaBox architecture . The StateManager coordinates DeltaFS (Layer 2, filesystem state) and DeltaCR (Layer 3, process state) to maintain consistent (filesystem, memory) state pairs at each search tree node. Base storage (Layer 1) provides the real storage functionalities. It would be better to adopt XFS (with reflink) to achieve block-level CoW and eliminate write amplification." width="747" height="496" style="max-width: min(747px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 3 . The DeltaBox architecture . The StateManager coordinates DeltaFS (Layer 2, filesystem state) and DeltaCR (Layer 3, process state) to maintain consistent (filesystem, memory) state pairs at each search tree node. Base storage (Layer 1) provides the real storage functionalities. It would be better to adopt XFS (with reflink) to achieve block-level CoW and eliminate write amplification.</span><span class="lang-zh">图3. DeltaBox架构。StateManager协调DeltaFS（第2层，文件系统状态）和DeltaCR（第3层，进程状态），以在每个搜索树节点维护一致的（文件系统，内存）状态对。基础存储（第1层）提供真实的存储功能。建议采用XFS（带reflink）以实现块级CoW并消除写放大。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1201/fig_001.png" alt="Figure 1 . Pass rate on SWE-bench Verified. (a) Linear ReAct vs. MCTS across three coding models. (b) Base vs. RL-trained across three open-weight model families." width="995" height="534" style="max-width: min(995px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1 . Pass rate on SWE-bench Verified. (a) Linear ReAct vs. MCTS across three coding models. (b) Base vs. RL-trained across three open-weight model families.</span><span class="lang-zh">图1. SWE-bench Verified上的通过率。(a) 三种编码模型上的线性ReAct与MCTS对比。(b) 三个开源模型系列的基础版本与RL训练版本对比。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1201/fig_002.png" alt="Figure 2 . Design Overview . DeltaBox utilizes diff-based checkpoint/restore (i.e., deltaCheckpoint and deltaRestore ) to enable millisecond-level checkpoint/rollback. An agent application can fully run inside a sandbox, or utilize a sandbox to execute a set of tools and use the C/R capabilities of DeltaBox to ensure prompt rollback when necessary." width="996" height="290" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2 . Design Overview . DeltaBox utilizes diff-based checkpoint/restore (i.e., deltaCheckpoint and deltaRestore ) to enable millisecond-level checkpoint/rollback. An agent application can fully run inside a sandbox, or utilize a sandbox to execute a set of tools and use the C/R capabilities of DeltaBox to ensure prompt rollback when necessary.</span><span class="lang-zh">图2. 设计概览。DeltaBox利用基于差异的检查点/恢复（即deltaCheckpoint和deltaRestore）实现毫秒级的检查点/回滚。代理应用可以完全在沙箱内运行，或利用沙箱执行一组工具，并在必要时借助DeltaBox的C/R能力确保快速回滚。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1201/fig_004.png" alt="Figure 4 . DeltaFS architecture. (a) Traditional overlayfs will prepare an upper layer file system which is writable for apps, and maintain a lower layer file system which is read-only and basically includes everything in the sandbox image.
+(b) DeltaFS extends the idea to support dynamic overlay, i.e., when an agent finishes a step of task and needs to make a checkpoint, instead of duplicating all files, DeltaFS inserts a new writable layer above the existing one and freezes the existing writable layer into a read-only state, and all following updates are copy-on-write to the new upper layer. As a result, the checkpoint operation is simply a layer insert operation while a rollback is a set of layer remove operations." width="996" height="455" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 4 . DeltaFS architecture. (a) Traditional overlayfs will prepare an upper layer file system which is writable for apps, and maintain a lower layer file system which is read-only and basically includes everything in the sandbox image.
+(b) DeltaFS extends the idea to support dynamic overlay, i.e., when an agent finishes a step of task and needs to make a checkpoint, instead of duplicating all files, DeltaFS inserts a new writable layer above the existing one and freezes the existing writable layer into a read-only state, and all following updates are copy-on-write to the new upper layer. As a result, the checkpoint operation is simply a layer insert operation while a rollback is a set of layer remove operations.</span><span class="lang-zh">图4. DeltaFS架构。(a) 传统的overlayfs会准备一个应用可写的上层文件系统，并维护一个只读的下层文件系统，该下层文件系统基本包含沙箱镜像中的所有内容。
+(b) DeltaFS扩展了这一思想以支持动态覆盖，即当代理完成一步任务并需要创建检查点时，DeltaFS不会复制所有文件，而是在现有层之上插入一个新的可写层，并将现有的可写层冻结为只读状态，之后的所有更新都通过写时复制到新的上层。因此，检查点操作仅仅是层插入操作，而回滚则是一系列层移除操作。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1201/fig_005.png" alt="Figure 5 . DeltaCR architecture. Checkpointing creates both a CRIU image chain and a frozen template. Restores use the template fast path on hit, or the CRIU chain on miss; NPD keeps external I/O off the agent path." width="996" height="829" style="max-width: min(996px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 5 . DeltaCR architecture. Checkpointing creates both a CRIU image chain and a frozen template. Restores use the template fast path on hit, or the CRIU chain on miss; NPD keeps external I/O off the agent path.</span><span class="lang-zh">图5. DeltaCR架构。检查点创建了一个CRIU镜像链和一个冻结模板。恢复时，命中则使用模板快速路径，未命中则使用CRIU链；NPD确保外部I/O不经过代理路径。</span></figcaption></figure>
         </div>
         
 
-        
-        <div class="article-figures">
-          <span class="eyebrow lang-en">Figures</span>
-          <span class="eyebrow lang-zh">图表</span>
-          <div class="figures-grid">
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1201/fig_001.png" alt="Figure 1 . Pass rate on SWE-bench Verified. (a) Linear ReAct vs. MCTS across three coding models. (b) Base vs. RL-trained across three open-weight model families." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 1 . Pass rate on SWE-bench Verified. (a) Linear ReAct vs. MCTS across three coding models. (b) Base vs. RL-trained across three open-weight model families.</span>
-                <span class="lang-zh">图1. SWE-bench Verified上的通过率。(a) 三种编码模型上的线性ReAct与MCTS对比。(b) 三种开放权重模型系列的基础版与RL训练版对比。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1201/fig_004.png" alt="Figure 4 . DeltaFS architecture. (a) Traditional overlayfs will prepare an upper layer file system which is writable for apps, and maintain a lower layer file system which is read-only and basically includes everything in the sandbox image.
-(b) DeltaFS extends the idea to support dynamic overlay, i.e., when an agent finishes a step of task and needs to make a checkpoint, instead of duplicating all files, DeltaFS inserts a new writable layer above the existing one and freezes the existing writable layer into a read-only state, and all following updates are copy-on-write to the new upper layer. As a result, the checkpoint operation is simply a layer insert operation while a rollback is a set of layer remove operations." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 4 . DeltaFS architecture. (a) Traditional overlayfs will prepare an upper layer file system which is writable for apps, and maintain a lower layer file system which is read-only and basically includes everything in the sandbox image.
-(b) DeltaFS extends the idea to support dynamic overlay, i.e., when an agent finishes a step of task and needs to make a checkpoint, instead of duplicating all files, DeltaFS inserts a new writable layer above the existing one and freezes the existing writable layer into a read-only state, and all following updates are copy-on-write to the new upper layer. As a result, the checkpoint operation is simply a layer insert operation while a rollback is a set of layer remove operations.</span>
-                <span class="lang-zh">图4. DeltaFS架构。(a) 传统的overlayfs会准备一个可写的上层文件系统供应用使用，并维护一个只读的下层文件系统，该下层文件系统基本包含沙箱镜像中的所有内容。
-(b) DeltaFS扩展了这一思路以支持动态覆盖，即当代理完成一步任务并需要创建检查点时，DeltaFS不会复制所有文件，而是在现有层之上插入一个新的可写层，并将现有的可写层冻结为只读状态，之后的所有更新通过写时复制到新的上层。因此，检查点操作仅是一个层插入操作，而回滚则是一系列层移除操作。</span>
-              </figcaption>
-              
-            </figure>
-            
-            <figure class="article-figure">
-              <img class="article-figure-img" src="figures/1201/fig_005.png" alt="Figure 5 . DeltaCR architecture. Checkpointing creates both a CRIU image chain and a frozen template. Restores use the template fast path on hit, or the CRIU chain on miss; NPD keeps external I/O off the agent path." loading="lazy">
-              
-              <figcaption>
-                <span class="lang-en">Figure 5 . DeltaCR architecture. Checkpointing creates both a CRIU image chain and a frozen template. Restores use the template fast path on hit, or the CRIU chain on miss; NPD keeps external I/O off the agent path.</span>
-                <span class="lang-zh">图5. DeltaCR架构。检查点会同时创建一个CRIU镜像链和一个冻结模板。恢复时，若命中则使用模板快速路径，否则使用CRIU链；NPD将外部I/O保持在代理路径之外。</span>
-              </figcaption>
-              
-            </figure>
-            
-          </div>
-        </div>
-        
       </div>
 
       
