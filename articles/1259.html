@@ -68,8 +68,8 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For Harmony Security and SOC researchers, this report provides critical intelligence on how advanced adversaries are weaponizing legitimate platforms (Discord, Microsoft Graph API, GitHub) for stealthy C2, directly impacting AI/Agent security architectures that rely on these same APIs. The shift to custom proxy tools and encrypted chaining highlights new evasion techniques that must be modeled in AI-driven threat detection systems. The use of open-source tools (dirsearch, nuclei) for initial access underscores the need for continuous vulnerability scanning and AI-based anomaly detection in endpoint and cloud environments.</p>
-        <p class="lang-zh">对于 Harmony Security 和 SOC 研究人员而言，此报告提供了关键情报，揭示了高级威胁行为者如何利用合法平台（Discord、Microsoft Graph API、GitHub）进行隐蔽 C2 通信，这直接影响了依赖相同 API 的 AI/Agent 安全架构。向定制代理工具和加密链的转变凸显了新的规避技术，必须在 AI 驱动的威胁检测系统中进行建模。使用开源工具（dirsearch、nuclei）进行初始访问，强调了在终端和云环境中进行持续漏洞扫描和基于 AI 的异常检测的必要性。</p>
+        <p class="lang-en">For Harmony Security and SOC researchers, this report provides critical intelligence on how advanced threat actors are weaponizing trusted third-party platforms (Discord, Microsoft Graph API, GitHub) for C2 operations. This directly impacts the 'Threat Vectors, Vulnerabilities & Data Privacy' and 'Advanced AI/Agent Security Technologies & Defenses' taxonomies. The use of legitimate APIs for malicious purposes underscores the need for AI-driven anomaly detection systems that can baseline normal API traffic patterns and detect deviations, rather than relying solely on signature-based detection. For SOC teams, this highlights a blind spot in monitoring: traffic to legitimate cloud services (OneDrive, Discord) may be malicious, requiring behavioral analysis and UEBA integration. The shift from custom RATs to proxy tools also informs endpoint security strategies, emphasizing the need to monitor for unauthorized proxy software and VPN usage.</p>
+        <p class="lang-zh">对于 Harmony Security 和 SOC 研究人员而言，这份报告提供了关键情报，揭示了高级威胁行为者如何将受信任的第三方平台（Discord、Microsoft Graph API、GitHub）武器化用于 C2 操作。这直接影响“威胁向量、漏洞与数据隐私”和“先进 AI/Agent 安全技术与防御”分类。利用合法 API 进行恶意活动，凸显了对基于 AI 的异常检测系统的需求，该系统能够建立正常 API 流量模式基线并检测偏差，而非仅依赖基于签名的检测。对于 SOC 团队，这突出了一个监控盲点：流向合法云服务（OneDrive、Discord）的流量可能是恶意的，需要行为分析和 UEBA 集成。从定制 RAT 向代理工具的转变也为端点安全策略提供了信息，强调需要监控未经授权的代理软件和 VPN 使用。</p>
       </div>
       
 
@@ -80,11 +80,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>China-aligned threat actor Webworm has deployed two new custom backdoors, EchoCreep and GraphWorm, which use Discord and Microsoft Graph API respectively for C2 communication, marking a shift from traditional RATs to stealthier proxy tools and legitimate service abuse.</p></div>
+          <div class="lede"><p>China-aligned threat actor Webworm has deployed two new custom backdoors, EchoCreep and GraphWorm, which leverage Discord and Microsoft Graph API for stealthy command-and-control communications, marking a shift from traditional RATs to semi-legitimate proxy tools.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>疑似与中国有关联的威胁行为者 Webworm 部署了两个新的定制后门 EchoCreep 和 GraphWorm，分别利用 Discord 和 Microsoft Graph API 进行 C2 通信，标志着其从传统 RAT 向更隐蔽的代理工具和合法服务滥用的转变。</p></div>
+          <div class="lede"><p>疑似具有中国背景的威胁行为者 Webworm 部署了两种新的定制后门 EchoCreep 和 GraphWorm，它们利用 Discord 和 Microsoft Graph API 进行隐蔽的命令与控制通信，标志着其从传统 RAT 向半合法代理工具的转变。</p></div>
         </div>
 
         
@@ -92,56 +92,58 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>Webworm deployed two new backdoors in 2025: EchoCreep (Discord C2) and GraphWorm (Microsoft Graph API C2).</li>
-<li>EchoCreep supports file upload/download and command execution via cmd.exe; GraphWorm can spawn cmd.exe sessions, execute processes, and upload/download files to/from Microsoft OneDrive.</li>
-<li>The group shifted from traditional RATs (Trochilus, Gh0st RAT, 9002 RAT) to custom proxy tools (WormFrp, ChainWorm, SmuxProxy, WormSocket) and semi-legitimate utilities like SOCKS proxies and SoftEther VPN.</li>
-<li>A GitHub repository impersonating a WordPress fork was used as a staging ground for malware and tools.</li>
-<li>Targets expanded from Russia/Asia to include European governmental organizations (Belgium, Italy, Serbia, Poland, Spain) and a South African university.</li>
-<li>Initial access methods remain unknown but involve open-source tools like dirsearch and nuclei for brute-forcing and vulnerability scanning.</li>
-<li>The link to Space Pirates is considered tenuous by ESET, citing open-source RAT usage as insufficient evidence.</li>
-<li>EchoCreep's Discord C2 channel showed commands dating back to March 21, 2024, with 433 messages sent to over 50 unique targets.</li>
+<li>Webworm, a China-aligned threat actor active since at least 2022, has deployed two new backdoors: EchoCreep (uses Discord for C2) and GraphWorm (uses Microsoft Graph API for C2).</li>
+<li>The group has shifted from traditional RATs (Trochilus, Gh0st, 9002) to semi-legitimate proxy tools (SoftEther VPN, iox, WormFrp, ChainWorm, SmuxProxy, WormSocket) for stealth.</li>
+<li>A GitHub repository impersonating a WordPress fork is used as a staging ground for malware and tools.</li>
+<li>EchoCreep supports file upload/download and command execution; GraphWorm can spawn cmd.exe, execute processes, upload/download to OneDrive, and self-terminate.</li>
+<li>Over 433 Discord C2 messages were sent to more than 50 unique targets since March 2024.</li>
+<li>Initial access vectors are unknown but involve open-source tools like dirsearch and nuclei for brute-forcing and vulnerability scanning.</li>
+<li>Links to the Space Pirates cluster are considered tenuous by ESET, based on shared open-source RAT usage.</li>
+<li>A separate disclosure covers a BadIIS variant sold under a MaaS model by an actor using the alias 'lwxat'.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>This report contrasts with prior Webworm activity by showing a clear evolution from using commodity RATs to developing custom backdoors that abuse trusted SaaS platforms (Discord, Microsoft Graph API) for C2, a technique increasingly observed across APT groups. The shift to proxy tools and encrypted chaining represents a sophistication increase over earlier, noisier methods. The expansion of targeting to Europe and Africa also marks a geographic shift from the group's traditional focus on Central Asia and Russia.</p>
+<p>This development marks a significant evolution in Webworm's TTPs. Historically, the group relied on well-known, often signatured RATs. The shift to custom backdoors that abuse legitimate APIs (Discord, Microsoft Graph) and the adoption of proxy tools represent a move toward 'living off the land' and 'trusted platform abuse' techniques. This contrasts with earlier, more overt malware deployments. The use of GitHub as a staging ground is also a notable tactic to blend with legitimate developer activity. The report also clarifies that the link to Space Pirates is weaker than previously thought, refining the threat intelligence picture.</p>
 <h2>Why It Matters</h2>
-<p>The abuse of Discord and Microsoft Graph API for C2 is significant because these platforms are often whitelisted by enterprise security tools, making detection difficult. For AI security researchers, this highlights a critical blind spot: AI agents and LLM workflows that integrate with these same APIs could be exploited as C2 channels. The use of custom proxy tools with encrypted chaining also raises the bar for network-based detection, requiring AI/ML models to analyze behavioral patterns rather than simple signatures. The MaaS model for BadIIS further indicates commoditization of evasion techniques.</p>
+<p>This matters because it demonstrates a sophisticated, persistent threat actor adapting to modern defenses by abusing trusted platforms that are often whitelisted or poorly monitored. The use of Discord and Microsoft Graph API for C2 makes detection significantly harder for traditional network security tools. For AI security, it highlights the need for models that can distinguish between benign and malicious API usage patterns. For SOCs, it underscores the necessity of monitoring cloud application traffic and endpoint proxy usage. The shift to proxy tools also complicates forensic analysis and attribution.</p>
 <h2>Critical Take</h2>
-<p>The report lacks details on initial access vectors, which is a critical gap for defensive planning. The attribution to a 'China-aligned' actor is based on open-source intelligence and tool overlaps, which can be misleading due to the widespread use of open-source RATs. The claim that EchoCreep's Discord channel had 433 messages to 50+ targets is interesting but doesn't reveal the success rate or impact of those operations. The tenuous link to Space Pirates should be treated with caution.</p>
+<p>While the report is from a reputable source (ESET), several caveats exist. The initial access vector remains unknown, which is a critical gap in understanding the full attack chain. The claimed link to China is based on open-source intelligence and may be contested. The report does not provide specific indicators of compromise (IOCs) or detection rules for the new backdoors, limiting immediate defensive utility. The 'tenuous' link to Space Pirates suggests some earlier threat intelligence may have been overconfident. The BadIIS disclosure is a separate, albeit related, story and should not be conflated with Webworm's activities.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Monitor for further abuse of Discord, Microsoft Graph API, and other SaaS platforms for C2 by other threat actors.</li>
-<li>Track the evolution of Webworm's custom proxy tools (WormFrp, ChainWorm) and whether they are shared or sold to other groups.</li>
-<li>Watch for new variants of EchoCreep and GraphWorm that may incorporate additional evasion techniques or target different platforms.</li>
-<li>Observe if the BadIIS MaaS model expands to include other evasion capabilities or targets.</li>
-<li>Look for disclosures on initial access methods used by Webworm, particularly how they compromise victim web servers.</li>
+<li>Publication of IOCs, YARA rules, or detection signatures for EchoCreep and GraphWorm.</li>
+<li>Further analysis of the Discord C2 channel and Microsoft Graph API usage patterns.</li>
+<li>Identification of the initial access vector (e.g., specific vulnerabilities or phishing campaigns).</li>
+<li>Monitoring for similar abuse of other legitimate APIs (e.g., Slack, Telegram, Google Drive) by Webworm or other actors.</li>
+<li>Tracking the evolution of the BadIIS MaaS offering and its adoption by other groups.</li>
+<li>Any reports of Webworm targeting AI/ML infrastructure or using AI-generated content for social engineering.</li>
 </ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>Webworm 在 2025 年部署了两个新的后门：EchoCreep（Discord C2）和 GraphWorm（Microsoft Graph API C2）。</li>
-<li>EchoCreep 支持文件上传/下载和通过 cmd.exe 执行命令；GraphWorm 可以生成 cmd.exe 会话、执行进程，并上传/下载文件到 Microsoft OneDrive。</li>
-<li>该组织从传统的 RAT（Trochilus、Gh0st RAT、9002 RAT）转向定制代理工具（WormFrp、ChainWorm、SmuxProxy、WormSocket）和半合法实用程序，如 SOCKS 代理和 SoftEther VPN。</li>
+<li>至少自 2022 年以来活跃的疑似中国背景威胁行为者 Webworm 部署了两种新的后门：EchoCreep（使用 Discord 进行 C2）和 GraphWorm（使用 Microsoft Graph API 进行 C2）。</li>
+<li>该组织已从传统 RAT（Trochilus、Gh0st、9002）转向半合法代理工具（SoftEther VPN、iox、WormFrp、ChainWorm、SmuxProxy、WormSocket）以增强隐蔽性。</li>
 <li>一个冒充 WordPress 分支的 GitHub 仓库被用作恶意软件和工具的暂存地。</li>
-<li>目标从俄罗斯/亚洲扩展到包括欧洲政府组织（比利时、意大利、塞尔维亚、波兰、西班牙）和一所南非大学。</li>
-<li>初始访问方法尚不清楚，但涉及使用开源工具（如 dirsearch 和 nuclei）进行暴力破解和漏洞扫描。</li>
-<li>ESET 认为与 Space Pirates 的关联性很弱，理由是使用开源 RAT 的证据不足。</li>
-<li>EchoCreep 的 Discord C2 频道显示命令最早可追溯到 2024 年 3 月 21 日，共向超过 50 个独特目标发送了 433 条消息。</li>
+<li>EchoCreep 支持文件上传/下载和命令执行；GraphWorm 可以生成 cmd.exe、执行进程、上传/下载到 OneDrive 并自我终止。</li>
+<li>自 2024 年 3 月以来，超过 433 条 Discord C2 消息被发送到 50 多个独特目标。</li>
+<li>初始访问向量未知，但涉及使用 dirsearch 和 nuclei 等开源工具进行暴力破解和漏洞扫描。</li>
+<li>ESET 认为与 Space Pirates 集群的联系很薄弱，基于共享的开源 RAT 使用。</li>
+<li>另一份披露涉及一个由化名“lwxat”的行为者以 MaaS 模式销售的 BadIIS 变体。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>此报告与 Webworm 之前的活动形成对比，显示了从使用商品化 RAT 到开发滥用可信 SaaS 平台（Discord、Microsoft Graph API）进行 C2 的定制后门的明显演变，这种技术越来越多地在 APT 组织中被观察到。转向代理工具和加密链代表了比早期更嘈杂的方法更复杂。目标扩展到欧洲和非洲也标志着该组织从传统上关注中亚和俄罗斯的地理转变。</p>
+<p>这一发展标志着 Webworm 的 TTP 发生了显著演变。历史上，该组织依赖知名的、通常有签名的 RAT。转向利用合法 API（Discord、Microsoft Graph）的定制后门以及采用代理工具，代表了向“离地生存”和“滥用可信平台”技术的转变。这与早期更公开的恶意软件部署形成对比。使用 GitHub 作为暂存地也是一种值得注意的策略，旨在融入合法的开发者活动。该报告还澄清了与 Space Pirates 的联系比之前认为的要弱，从而完善了威胁情报图景。</p>
 <h2>重要性</h2>
-<p>滥用 Discord 和 Microsoft Graph API 进行 C2 通信意义重大，因为这些平台通常被企业安全工具列入白名单，使得检测变得困难。对于 AI 安全研究人员来说，这突出了一个关键盲点：与这些相同 API 集成的 AI 智能体和 LLM 工作流可能被利用为 C2 通道。使用带有加密链的定制代理工具也提高了基于网络的检测门槛，需要 AI/ML 模型分析行为模式而非简单签名。BadIIS 的 MaaS 模式进一步表明规避技术的商品化。</p>
+<p>这很重要，因为它展示了一个复杂、持久的威胁行为者通过滥用通常被列入白名单或监控不足的可信平台来适应现代防御。使用 Discord 和 Microsoft Graph API 进行 C2 使得传统网络安全工具的检测难度显著增加。对于 AI 安全，它凸显了需要能够区分良性 API 使用模式和恶意 API 使用模式的模型。对于 SOC，它强调了监控云应用流量和端点代理使用的必要性。向代理工具的转变也使取证分析和归因复杂化。</p>
 <h2>批判性视角</h2>
-<p>该报告缺乏关于初始访问向量的细节，这是防御规划的一个关键缺口。将攻击者归因于‘疑似与中国有关联’是基于开源情报和工具重叠，由于开源 RAT 的广泛使用，这可能会产生误导。关于 EchoCreep 的 Discord 频道有 433 条消息发送给 50 多个目标的说法很有趣，但并未透露这些操作的成功率或影响。与 Space Pirates 的薄弱关联应谨慎对待。</p>
+<p>虽然该报告来自知名来源（ESET），但存在几个注意事项。初始访问向量仍然未知，这是理解完整攻击链的关键缺口。声称与中国有关联是基于开源情报，可能存在争议。该报告未提供新后门的具体入侵指标（IOC）或检测规则，限制了直接的防御效用。与 Space Pirates 的“薄弱”联系表明一些早期的威胁情报可能过于自信。BadIIS 的披露是一个独立但相关的事件，不应与 Webworm 的活动混为一谈。</p>
 <h2>后续关注</h2>
 <ul>
-<li>监控其他威胁行为者是否进一步滥用 Discord、Microsoft Graph API 和其他 SaaS 平台进行 C2 通信。</li>
-<li>追踪 Webworm 定制代理工具（WormFrp、ChainWorm）的演变，以及它们是否被共享或出售给其他组织。</li>
-<li>关注 EchoCreep 和 GraphWorm 的新变种，这些变种可能包含额外的规避技术或针对不同平台。</li>
-<li>观察 BadIIS MaaS 模型是否扩展到包括其他规避能力或目标。</li>
-<li>寻找关于 Webworm 使用的初始访问方法的披露，特别是他们如何入侵受害者的 Web 服务器。</li>
+<li>发布 EchoCreep 和 GraphWorm 的 IOC、YARA 规则或检测签名。</li>
+<li>进一步分析 Discord C2 频道和 Microsoft Graph API 使用模式。</li>
+<li>识别初始访问向量（例如，特定漏洞或钓鱼活动）。</li>
+<li>监控 Webworm 或其他行为者是否类似地滥用其他合法 API（例如 Slack、Telegram、Google Drive）。</li>
+<li>追踪 BadIIS MaaS 产品的演变及其被其他组织的采用情况。</li>
+<li>任何关于 Webworm 针对 AI/ML 基础设施或使用 AI 生成内容进行社会工程的报告。</li>
 </ul>
         </div>
         

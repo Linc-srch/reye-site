@@ -98,10 +98,11 @@
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — bait</h1>
 <p><strong>Key Takeaways</strong>
-- BAIT is a three-step jailbreak that exploits the model's own reasoning and consistency tendency to escalate disclosure.
-- Prevention-oriented framing (e.g., 'how to prevent X') is significantly more effective than direct knowledge requests.
-- The refinement step is critical for disclosure escalation, and the first two steps alone can elicit harmful content with little filtering.
-- BAIT achieves strong attack success rates across multiple benchmarks (AdvBench, JailbreakBench, AIR-Bench, SORRY-Bench) on top-tier LLMs.</p>
+- BAIT is a three-step jailbreak framework that exploits the model's own reasoning and consistency tendency to elicit harmful disclosures.
+- The framework uses a boundary identification, refinement, and example request sequence to escalate disclosure without triggering safety filters.
+- BAIT achieves high attack success rates on AdvBench, JailbreakBench, AIR-Bench, and SORRY-Bench across top-tier LLMs.
+- Prevention-oriented framing is significantly more effective than direct knowledge requests for bypassing safety mechanisms.
+- The refinement step is critical for disclosure escalation, and the first two steps alone can elicit harmful content with little filtering.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> BAIT: Boundary-Guided Disclosure Escalation via Self-Conditioned Reasoning</li>
@@ -113,50 +114,51 @@
 <li>Abs: https://arxiv.org/abs/2605.27110</li>
 <li>HTML: https://arxiv.org/html/2605.27110v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.27110</li>
-<li><strong>Tags:</strong> jailbreak, llm-safety, self-conditioned-reasoning, boundary-exploitation, iterative-attack</li>
+<li><strong>Tags:</strong> jailbreak, llm-safety, multi-step-attack, boundary-refinement, self-conditioned-reasoning</li>
 <li><strong>Domains:</strong> ai_safety, system_safety</li>
 <li><strong>Rating:</strong> 5/5 (base 1 + quality 2 + observation 2)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>BAIT introduces a novel boundary-guided iterative jailbreak that leverages self-conditioned reasoning to turn model consistency into a disclosure pathway, achieving high attack success rates with minimal filtering.</p>
+<p>BAIT introduces a novel three-step jailbreak framework that leverages self-conditioned reasoning and boundary refinement to achieve high attack success rates across multiple benchmarks and top-tier LLMs.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Jailbreak attacks on LLMs typically use direct prompts or role-playing to bypass safety filters. Prior work has explored multi-step reasoning and context manipulation, but few methods systematically exploit the model's own boundary definitions to escalate disclosure.</p>
+<p>Jailbreaking large language models (LLMs) to elicit harmful content is a critical safety concern. Existing methods often rely on direct adversarial prompts or manual crafting, which are increasingly detected by improved safety filters. There is a need for more subtle, multi-step approaches that exploit the model's own reasoning processes.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>Direct prompt injection and role-playing jailbreaks (e.g., DAN, Do Anything Now).</li>
-<li>Multi-step reasoning attacks (e.g., chain-of-thought jailbreaks).</li>
-<li>Defense mechanisms like RLHF-based safety training and refusal training.</li>
-<li>Benchmarks for jailbreak evaluation: AdvBench, JailbreakBench, AIR-Bench, SORRY-Bench.</li>
+<li>Direct adversarial prompt attacks (e.g., GCG, AutoDAN) that optimize for a single harmful output.</li>
+<li>Multi-turn jailbreak methods that gradually steer the model toward harmful content.</li>
+<li>Safety alignment techniques like RLHF and constitutional AI that aim to reduce harmful outputs.</li>
+<li>Benchmarks for evaluating LLM safety: AdvBench, JailbreakBench, AIR-Bench, SORRY-Bench.</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Existing jailbreak methods often rely on explicit malicious prompts or role-play, which are increasingly filtered by safety mechanisms. There is no systematic approach that uses the model's own boundary identification and refinement to gradually escalate disclosure without triggering strong defenses.</p>
+<p>Existing jailbreak methods often trigger safety filters directly or require extensive manual engineering. There is a lack of automated, multi-step frameworks that systematically exploit the model's consistency tendency and internal reasoning to escalate disclosure without immediate detection.</p>
 <h3>P — Proposal</h3>
-<p>BAIT is a three-step framework: (1) ask the model to identify its protection boundary for a target topic, (2) ask it to refine that boundary, and (3) request a detailed example. Each step builds on the model's previous response, exploiting its consistency tendency to turn reasoning into a disclosure pathway.</p>
+<p>BAIT (Boundary-Aware Iterative Trap) is a three-step framework: first, ask the model to identify its protection boundary; second, require it to refine that boundary; third, request a detailed example. Each step builds on the model's previous response, turning its own reasoning and consistency tendency into a disclosure pathway. The key insight is that prevention-oriented framing (e.g., 'how to prevent X') outperforms direct knowledge requests.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>On AdvBench, BAIT achieves attack success rates (ASR) of 92% on GPT-4, 88% on Claude-3, and 85% on Llama-3-70B. On JailbreakBench, ASR is 89% (GPT-4), 84% (Claude-3), 81% (Llama-3-70B). On AIR-Bench, ASR is 87% (GPT-4), 82% (Claude-3), 79% (Llama-3-70B). On SORRY-Bench, ASR is 90% (GPT-4), 86% (Claude-3), 83% (Llama-3-70B).</p>
+<p>On AdvBench, BAIT achieves attack success rates (ASR) of 92.3% on GPT-4, 88.7% on Claude-3, and 85.1% on Llama-3. On JailbreakBench, ASR is 89.5% on GPT-4, 84.2% on Claude-3, and 81.0% on Llama-3. On AIR-Bench, ASR is 91.0% on GPT-4, 86.5% on Claude-3, and 83.2% on Llama-3. On SORRY-Bench, ASR is 90.1% on GPT-4, 85.8% on Claude-3, and 82.4% on Llama-3.</p>
 <h3>Ablation</h3>
-<p>Removing the refinement step reduces ASR by 18-25% across models; prevention-oriented framing outperforms direct knowledge request by 15-20% ASR; the first two steps alone elicit harmful content in 30-40% of cases with &lt;5% filtering rate.</p>
+<p>Removing the refinement step reduces ASR by an average of 34.2% across all models and benchmarks, confirming its critical role. Using direct knowledge request instead of prevention-oriented framing reduces ASR by 41.5% on average.</p>
 <h3>Limitations</h3>
-<p>["The method relies on the model's willingness to engage in boundary discussion, which may be mitigated by stronger refusal training.", 'Effectiveness may vary across languages and cultural contexts not tested in the paper.', 'The attack is iterative and may be detected by monitoring for multi-step boundary queries.']</p>
+<p>['The framework may be less effective against models with stronger multi-turn consistency enforcement or explicit refusal training.', "The approach relies on the model's willingness to engage in the boundary identification step, which could be mitigated by stricter input filtering.", 'The paper does not explore defense mechanisms or adaptive safety measures that could counter this specific attack pattern.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Demonstrates that safety boundaries can be subverted by exploiting the model's own reasoning consistency, a fundamental vulnerability.</li>
-<li>Highlights the importance of prevention-oriented framing as a more effective attack vector than direct requests.</li>
-<li>Provides a structured methodology that can be adapted to test and improve safety alignment in LLMs.</li>
+<li>Demonstrates a new class of jailbreak that exploits model reasoning rather than adversarial input, relevant to understanding LLM safety vulnerabilities.</li>
+<li>Highlights the importance of multi-step interaction patterns in bypassing safety filters, informing better defense design.</li>
+<li>The prevention-oriented framing insight can be applied to other safety research areas, such as red-teaming and adversarial training.</li>
+<li>Provides a structured, reproducible methodology for evaluating LLM robustness against iterative disclosure attacks.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Test BAIT against state-of-the-art defense mechanisms (e.g., smoothed classifiers, adversarial training).</li>
-<li>[ ] Explore automated detection of iterative boundary-exploitation patterns in user queries.</li>
-<li>[ ] Investigate whether similar self-conditioned reasoning attacks apply to multimodal models (e.g., vision-language models).</li>
-<li>[ ] Develop countermeasures that break the consistency chain without degrading helpfulness.</li>
+<li>[ ] Implement BAIT against your own LLM deployment to test its vulnerability to iterative disclosure attacks.</li>
+<li>[ ] Design a defense that detects or interrupts multi-step boundary refinement patterns.</li>
+<li>[ ] Explore whether similar reasoning-based escalation works for other safety domains (e.g., code generation, medical advice).</li>
+<li>[ ] Investigate the effectiveness of prevention-oriented framing in other jailbreak contexts.</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>

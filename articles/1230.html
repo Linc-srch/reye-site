@@ -72,8 +72,8 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For AI Security: This validates that automated red-teaming at scale is now a reality, directly supporting the core objective of building automated frameworks for vulnerability discovery. The reported 10x+ increase in bug-finding rates and the model's ability to solve end-to-end cyber ranges (UK AISI) provide empirical evidence that current AI models can surpass human testers in specific, structured security tasks. The 90.6% true positive rate on triaged open-source findings is a strong benchmark for automated evaluation. For Harmony Security & SOC: The shift in bottleneck from discovery to patching has direct implications for endpoint and OS security. The speed at which vulnerabilities are now found will force a re-evaluation of patch management cycles, vulnerability disclosure policies (e.g., the 90-day convention), and the need for automated patch deployment systems. The example of a $1.5M fraud prevention at a bank highlights the dual-use nature of this capability for both offense and defense.</p>
-        <p class="lang-zh">对于 AI 安全研究员：这验证了大规模自动化红队测试已成为现实，直接支持了构建自动化漏洞发现框架的核心目标。报告称漏洞发现率提升了 10 倍以上，且模型能够解决端到端的网络靶场（英国 AISI），这提供了经验证据，表明当前 AI 模型在特定的结构化安全任务中可以超越人类测试员。在已分类的开源发现中，90.6% 的真实阳性率是自动化评估的一个强基准。对于 Harmony 安全与 SOC 研究员：瓶颈从发现转移到修补，这对终端和操作系统安全有直接影响。漏洞发现速度的提升将迫使重新评估补丁管理周期、漏洞披露策略（例如 90 天惯例）以及对自动化补丁部署系统的需求。某银行成功阻止 150 万美元欺诈的案例突显了这种能力在攻防两端的双重用途。</p>
+        <p class="lang-en">For AI Security researchers, this validates that automated red-teaming at scale is now a reality, with Mythos Preview achieving a 90.6% true-positive rate on open-source vulnerabilities. The key insight is that the bottleneck has shifted from vulnerability discovery to triage and patch deployment, which opens new research avenues in automated patch generation, vulnerability verification pipelines, and temporal safety metrics. For Harmony Security and SOC analysts, this demonstrates that AI-driven vulnerability discovery is becoming a standard capability that must be factored into OS-level security benchmarking and threat intelligence workflows. The 62.4% high/critical confirmation rate on open-source code indicates that AI models can now reliably identify exploitable weaknesses in foundational software, which directly impacts endpoint security postures.</p>
+        <p class="lang-zh">对于 AI 安全研究人员来说，这验证了大规模自动化红队测试已成为现实，Mythos Preview 在开源漏洞上达到了 90.6% 的真阳性率。关键启示是瓶颈已从漏洞发现转移到分类和补丁部署，这为自动化补丁生成、漏洞验证流程和时间安全指标开辟了新的研究途径。对于 Harmony 安全和 SOC 分析师而言，这表明 AI 驱动的漏洞发现正在成为一项标准能力，必须纳入操作系统级安全基准测试和威胁情报工作流程。开源代码上 62.4% 的高危/严重确认率表明，AI 模型现在可以可靠地识别基础软件中的可利用弱点，这直接影响终端安全态势。</p>
       </div>
       
 
@@ -84,11 +84,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Anthropic's Project Glasswing, using the Claude Mythos Preview model, has discovered over 10,000 high/critical vulnerabilities in critical software within a month, shifting the bottleneck from vulnerability discovery to verification and patching.</p></div>
+          <div class="lede"><p>Project Glasswing, a collaborative effort using Claude Mythos Preview, has discovered over 10,000 high/critical-severity vulnerabilities in critical software within a month, shifting the bottleneck from discovery to verification and patching.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>Anthropic 的 Project Glasswing 利用 Claude Mythos Preview 模型，在一个月内发现了超过 10,000 个高危/严重漏洞，将瓶颈从漏洞发现转移到了验证和修补。</p></div>
+          <div class="lede"><p>Project Glasswing 利用 Claude Mythos Preview 在一个月内发现了超过 10,000 个高危/严重漏洞，将瓶颈从发现转移到了验证和修补。</p></div>
         </div>
 
         
@@ -96,57 +96,55 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li><strong>Scale of Discovery</strong>: Project Glasswing partners found &gt;10,000 high/critical vulnerabilities in one month using Claude Mythos Preview.</li>
-<li><strong>Performance Metrics</strong>: Cloudflare found 2,000 bugs (400 high/critical) with a false positive rate better than human testers. Mozilla found 271 vulnerabilities in Firefox 150, a 10x increase over previous models.</li>
-<li><strong>Benchmark Results</strong>: UK AISI reports Mythos Preview is the first model to solve both of their cyber ranges end-to-end. XBOW reports "unprecedented precision" on web exploit benchmarks.</li>
-<li><strong>Open-Source Impact</strong>: Scanning 1,000+ open-source projects yielded an estimated 6,202 high/critical vulnerabilities. Of 1,752 assessed, 90.6% were true positives, and 62.4% were confirmed high/critical.</li>
-<li><strong>Bottleneck Shift</strong>: The primary constraint has moved from finding vulnerabilities to verifying, disclosing, and patching them. The dashboard shows a steep drop-off at each phase due to human effort required.</li>
-<li><strong>Real-World Defense</strong>: At a partner bank, Mythos Preview helped detect and prevent a fraudulent $1.5 million wire transfer.</li>
-<li><strong>Industry Response</strong>: Palo Alto Networks released 5x more patches than usual; Microsoft and Oracle report significantly increased patching rates.</li>
+<li>Project Glasswing partners (including Cloudflare, Mozilla, Palo Alto Networks, Microsoft, Oracle) have collectively found &gt;10,000 high/critical vulnerabilities in one month.</li>
+<li>Cloudflare found 2,000 bugs (400 high/critical) with false positive rate better than human testers.</li>
+<li>Mozilla found 271 vulnerabilities in Firefox 150 with Mythos Preview (10x more than with Claude Opus 4.6).</li>
+<li>UK AI Security Institute reports Mythos Preview is first model to solve both cyber ranges end-to-end.</li>
+<li>Open-source scanning found 6,202 estimated high/critical vulnerabilities across 1,000+ projects; 1,752 assessed with 90.6% true-positive rate and 62.4% confirmed high/critical.</li>
+<li>Example: wolfSSL vulnerability (CVE-2026-5194) allowing certificate forgery, now patched.</li>
+<li>Bottleneck shifted from discovery to human triage, verification, and patch deployment.</li>
+</ul>
+<figure class="article-figure"><img class="article-figure-img" src="figures/1230/fig_01.webp" alt="Our dashboard of open-source vulnerabilities, showing vulnerabilities of all severities (rather than only those estimated high- or critical-severity by Mythos Preview)." width="1634" height="1008" style="max-width: min(1634px, 100%)" loading="lazy"><figcaption><span class="lang-en">Our dashboard of open-source vulnerabilities, showing vulnerabilities of all severities (rather than only those estimated high- or critical-severity by Mythos Preview).</span><span class="lang-zh">我们的开源漏洞仪表板，展示了所有严重程度的漏洞（而非仅显示Mythos Preview评估为高或严重程度的漏洞）。</span></figcaption></figure>
+<ul>
+<li>Palo Alto Networks released 5x more patches than usual; Microsoft reports patch volumes will continue trending larger.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>This represents a step-change from prior AI-for-security work. Previous models (e.g., GPT-4, Claude Opus) could find vulnerabilities but at rates comparable to or slightly better than humans. This report claims a 10x+ improvement in bug-finding rates, moving AI from a co-pilot to a primary driver of vulnerability discovery. The shift in bottleneck from discovery to patching is a novel development, previously a theoretical concern. The 90.6% true positive rate on triaged findings is significantly higher than typical automated vulnerability scanners, which often suffer from high false positive rates.</p>
+<p>Prior to this, AI-assisted vulnerability discovery was limited to small-scale demonstrations or specific benchmarks. This represents the first large-scale, real-world deployment where an AI model (Mythos Preview) has been systematically applied to thousands of critical software projects with verified results. The 10x improvement over previous state-of-the-art (Claude Opus 4.6) and the shift from discovery bottleneck to patch bottleneck mark a fundamental change in the cybersecurity landscape.</p>
 <h2>Why It Matters</h2>
-<p>This fundamentally changes the cybersecurity risk calculus. The ability to find vulnerabilities at this scale and speed means that previously 'secure' software may be harboring thousands of unknown flaws. It accelerates the timeline for both attackers and defenders, but the report suggests defenders (via Project Glasswing) are currently leveraging it more effectively. It validates the concept of AI-first vulnerability discovery and will likely force a global re-evaluation of software supply chain security, patch management SLAs, and the economics of bug bounty programs. For AI Safety researchers, it provides a concrete, large-scale case study of a powerful AI capability with dual-use implications.</p>
+<p>This demonstrates that AI models have crossed a threshold where they can autonomously discover exploitable vulnerabilities in production software at scale. The 90.6% true-positive rate on open-source code is particularly significant because it shows reliability. For the field, this means: (1) vulnerability discovery is no longer a human-limited task; (2) the security industry must fundamentally re-engineer its patch management and disclosure processes; (3) AI models themselves become both the primary threat vector and primary defense tool simultaneously.</p>
 <h2>Critical Take</h2>
-<p>The report is a self-published announcement from Anthropic, lacking independent peer review of the aggregate claims. The 90.6% true positive rate is based on a subset of findings (1,752 out of 23,019) that were triaged, potentially introducing selection bias. The severity of many vulnerabilities (e.g., in obscure open-source libraries) may be low in practice. The claim that the bottleneck has shifted is based on current human triage capacity, which could be scaled with more resources or automation. The long-term impact on the attacker-defender balance is unclear; adversaries may soon have access to similar capabilities. The report does not detail the cost or computational resources required to run Mythos Preview at this scale.</p>
+<p>The reported numbers are impressive but should be interpreted with caution: (1) The 10,000+ figure includes all partner findings, not just independently verified ones; (2) The open-source true-positive rate (90.6%) is based on only 1,752 of 23,019 total findings; (3) The severity classification relies on Mythos Preview's own estimates for many findings; (4) The dashboard shows a steep drop-off at each phase, indicating significant human effort still required; (5) The wolfSSL example, while real, is a single data point; (6) The long-term impact on software security depends on patch adoption rates, which remain uncertain.</p>
 <h2>What to Watch</h2>
-<ul>
-<li><strong>Patch Velocity</strong>: Track the patch release rates from major vendors (Microsoft, Oracle, Palo Alto) to see if the trend of 5x+ patches continues.</li>
-<li><strong>Disclosure Policy Changes</strong>: Watch for industry-wide shifts away from the 90-day disclosure norm, possibly towards faster, more automated disclosure pipelines.</li>
-<li><strong>Adversarial Use</strong>: Monitor for evidence of threat actors using similar AI models for vulnerability discovery and exploit development.</li>
-<li><strong>Open-Source Maintainer Burnout</strong>: The report mentions maintainers asking to slow down disclosures; this could lead to a crisis in open-source maintenance.</li>
-<li><strong>Model Access</strong>: How Anthropic controls access to Mythos-class models will be critical. Any leak or broader commercial release could dramatically shift the threat landscape.</li>
-<li><strong>False Positive Management</strong>: The dashboard shows a steep drop-off; watch for innovations in automated triage and patching to address the new bottleneck.</li>
-</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1230/fig_01.webp" alt="Our dashboard of open-source vulnerabilities, showing vulnerabilities of all severities (rather than only those estimated high- or critical-severity by Mythos Preview)." width="1634" height="1008" style="max-width: min(1634px, 100%)" loading="lazy"><figcaption><span class="lang-en">Our dashboard of open-source vulnerabilities, showing vulnerabilities of all severities (rather than only those estimated high- or critical-severity by Mythos Preview).</span><span class="lang-zh">我们的开源漏洞仪表盘，展示了所有严重程度的漏洞（而非仅显示由 Mythos Preview 评估为高或严重等级的漏洞）。</span></figcaption></figure>
+<ol>
+<li>Patch adoption rates for the disclosed vulnerabilities, especially in open-source projects. 2. Whether Mythos Preview's successors maintain or improve the true-positive rate. 3. Emergence of automated patch generation tools to address the new bottleneck. 4. Regulatory responses to AI-discovered vulnerabilities and disclosure timelines. 5. Adversarial use of similar models for zero-day discovery. 6. Impact on bug bounty programs and vulnerability markets. 7. Evolution of the open-source vulnerability dashboard over time.</li>
+</ol>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li><strong>发现规模</strong>：Project Glasswing 合作伙伴使用 Claude Mythos Preview 在一个月内发现了超过 10,000 个高危/严重漏洞。</li>
-<li><strong>性能指标</strong>：Cloudflare 发现了 2,000 个漏洞（400 个高危/严重），误报率优于人类测试员。Mozilla 在 Firefox 150 中发现了 271 个漏洞，比之前的模型提升了 10 倍。</li>
-<li><strong>基准测试结果</strong>：英国 AISI 报告称 Mythos Preview 是首个端到端解决其两个网络靶场的模型。XBOW 报告称其在 Web 漏洞利用基准测试中具有“前所未有的精确度”。</li>
-<li><strong>开源影响</strong>：扫描 1,000 多个开源项目，估计发现了 6,202 个高危/严重漏洞。在已评估的 1,752 个漏洞中，90.6% 为真实阳性，62.4% 被确认为高危/严重。</li>
-<li><strong>瓶颈转移</strong>：主要约束已从发现漏洞转移到验证、披露和修补漏洞。仪表板显示，由于所需的人力，每个阶段都有急剧下降。</li>
-<li><strong>现实世界防御</strong>：在一家合作银行，Mythos Preview 帮助检测并阻止了一笔 150 万美元的欺诈性电汇。</li>
-<li><strong>行业响应</strong>：Palo Alto Networks 发布的补丁数量是平时的 5 倍；Microsoft 和 Oracle 报告补丁率显著提高。</li>
+<li>Project Glasswing 合作伙伴（包括 Cloudflare、Mozilla、Palo Alto Networks、Microsoft、Oracle）在一个月内共同发现了超过 10,000 个高危/严重漏洞。</li>
+<li>Cloudflare 发现了 2,000 个漏洞（400 个高危/严重），误报率优于人类测试人员。</li>
+<li>Mozilla 使用 Mythos Preview 在 Firefox 150 中发现了 271 个漏洞（是使用 Claude Opus 4.6 的 10 倍）。</li>
+<li>英国 AI 安全研究所报告称，Mythos Preview 是首个端到端解决其两个网络靶场的模型。</li>
+<li>开源扫描在 1,000 多个项目中发现了 6,202 个估计的高危/严重漏洞；1,752 个经过评估，真阳性率为 90.6%，62.4% 被确认为高危/严重。</li>
+<li>示例：wolfSSL 漏洞（CVE-2026-5194）允许证书伪造，现已修补。</li>
+<li>瓶颈已从发现转移到人工分类、验证和补丁部署。</li>
+</ul>
+<figure class="article-figure"><img class="article-figure-img" src="figures/1230/fig_01.webp" alt="Our dashboard of open-source vulnerabilities, showing vulnerabilities of all severities (rather than only those estimated high- or critical-severity by Mythos Preview)." width="1634" height="1008" style="max-width: min(1634px, 100%)" loading="lazy"><figcaption><span class="lang-en">Our dashboard of open-source vulnerabilities, showing vulnerabilities of all severities (rather than only those estimated high- or critical-severity by Mythos Preview).</span><span class="lang-zh">我们的开源漏洞仪表板，展示了所有严重程度的漏洞（而非仅显示Mythos Preview评估为高或严重程度的漏洞）。</span></figcaption></figure>
+<ul>
+<li>Palo Alto Networks 发布的补丁数量是平时的 5 倍；Microsoft 报告补丁数量将继续增加。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>这代表了与以往 AI 安全工作的一个阶跃变化。之前的模型（如 GPT-4、Claude Opus）可以发现漏洞，但速度与人类相当或略好。本报告声称漏洞发现率提升了 10 倍以上，将 AI 从副驾驶转变为漏洞发现的主要驱动力。瓶颈从发现转移到修补是一个新颖的发展，此前只是一个理论上的担忧。在已分类的发现中，90.6% 的真实阳性率显著高于典型的自动化漏洞扫描器，后者通常受困于高误报率。</p>
+<p>在此之前，AI 辅助漏洞发现仅限于小规模演示或特定基准测试。这是首次大规模、真实世界的部署，AI 模型（Mythos Preview）被系统地应用于数千个关键软件项目并取得了验证结果。相比之前的最先进技术（Claude Opus 4.6）提升了 10 倍，以及从发现瓶颈到补丁瓶颈的转变，标志着网络安全格局的根本性变化。</p>
 <h2>重要性</h2>
-<p>这从根本上改变了网络安全的风险计算。以这种规模和速度发现漏洞的能力意味着，以前被认为是“安全”的软件可能隐藏着数千个未知缺陷。它加速了攻击者和防御者的时间线，但报告表明防御者（通过 Project Glasswing）目前正在更有效地利用它。它验证了 AI 优先的漏洞发现概念，并可能迫使全球重新评估软件供应链安全、补丁管理 SLA 以及漏洞赏金计划的经济性。对于 AI 安全研究员来说，它提供了一个具体的大规模案例研究，展示了一种具有双重用途影响的强大 AI 能力。</p>
+<p>这表明 AI 模型已经跨越了一个门槛，能够大规模自主发现生产软件中的可利用漏洞。开源代码上 90.6% 的真阳性率尤其重要，因为它显示了可靠性。对于该领域而言，这意味着：(1) 漏洞发现不再是受限于人类的任务；(2) 安全行业必须从根本上重新设计其补丁管理和披露流程；(3) AI 模型本身同时成为主要的威胁向量和主要的防御工具。</p>
 <h2>批判性视角</h2>
-<p>该报告是 Anthropic 自行发布的公告，缺乏对总体声明的独立同行评审。90.6% 的真实阳性率是基于已分类的发现子集（23,019 个中的 1,752 个），可能存在选择偏差。许多漏洞的严重性（例如，在晦涩的开源库中）在实践中可能较低。关于瓶颈已转移的说法是基于当前的人力分类能力，这可以通过更多资源或自动化来扩展。对攻防平衡的长期影响尚不清楚；对手可能很快就能获得类似的能力。该报告未详细说明以这种规模运行 Mythos Preview 所需的成本或计算资源。</p>
+<p>报告的数字令人印象深刻，但应谨慎解读：(1) 超过 10,000 的数字包括所有合作伙伴的发现，而不仅仅是独立验证的；(2) 开源真阳性率 (90.6%) 仅基于 23,019 个总发现中的 1,752 个；(3) 严重性分类依赖于 Mythos Preview 对许多发现的自身估计；(4) 仪表板显示每个阶段都有急剧下降，表明仍然需要大量人工努力；(5) wolfSSL 示例虽然是真实的，但只是一个数据点；(6) 对软件安全的长期影响取决于补丁采用率，这仍然不确定。</p>
 <h2>后续关注</h2>
-<ul>
-<li><strong>补丁速度</strong>：追踪主要供应商（Microsoft、Oracle、Palo Alto）的补丁发布率，观察 5 倍以上补丁的趋势是否持续。</li>
-<li><strong>披露政策变化</strong>：关注行业范围内是否偏离 90 天披露规范，可能转向更快、更自动化的披露流程。</li>
-<li><strong>对抗性使用</strong>：监控威胁行为者使用类似 AI 模型进行漏洞发现和漏洞利用开发的证据。</li>
-<li><strong>开源维护者倦怠</strong>：报告提到维护者要求放慢披露速度；这可能导致开源维护危机。</li>
-<li><strong>模型访问控制</strong>：Anthropic 如何控制对 Mythos 级模型的访问将至关重要。任何泄露或更广泛的商业发布都可能极大地改变威胁格局。</li>
-<li><strong>误报管理</strong>：仪表板显示急剧下降；关注自动化分类和修补方面的创新，以解决新的瓶颈。</li>
-</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1230/fig_01.webp" alt="Our dashboard of open-source vulnerabilities, showing vulnerabilities of all severities (rather than only those estimated high- or critical-severity by Mythos Preview)." width="1634" height="1008" style="max-width: min(1634px, 100%)" loading="lazy"><figcaption><span class="lang-en">Our dashboard of open-source vulnerabilities, showing vulnerabilities of all severities (rather than only those estimated high- or critical-severity by Mythos Preview).</span><span class="lang-zh">我们的开源漏洞仪表盘，展示了所有严重程度的漏洞（而非仅显示由 Mythos Preview 评估为高或严重等级的漏洞）。</span></figcaption></figure>
+<ol>
+<li>已披露漏洞的补丁采用率，尤其是在开源项目中。2. Mythos Preview 的后续模型是否能保持或提高真阳性率。3. 为解决新瓶颈而出现的自动化补丁生成工具。4. 监管机构对 AI 发现的漏洞和披露时间表的回应。5. 对手使用类似模型进行零日漏洞发现。6. 对漏洞赏金计划和漏洞市场的影响。7. 开源漏洞仪表板随时间的演变。</li>
+</ol>
         </div>
         
 

@@ -98,11 +98,9 @@
           <span class="eyebrow">Deep Note</span>
           <h1>Deep Note — bird</h1>
 <p><strong>Key Takeaways</strong>
-- BiRD uses bidirectional ranking (forward + backward) to detect poisoned documents in RAG, exploiting a discriminative pattern where poisoned docs show stronger alignment between backward and forward rankings.
-- The dual-signal framework jointly assesses semantic relevance (forward ranking) and ranking context consistency (backward ranking), overcoming the limitation of prior defenses that only consider content semantics.
-- BiRD reduces PoisonedRAG attack success rate by up to 54% and improves task accuracy by up to 56%, with average latency under 1 second.
-- Evaluated across 3 datasets, 3 retrievers, 3 LLMs, and 2 attack scenarios, demonstrating robustness and efficiency.
-- The approach is lightweight and does not require retraining or multiple LLM calls, making it practical for real-time RAG systems.</p>
+- BiRD uses bidirectional ranking signals to detect poisoned documents in RAG, exploiting a discriminative pattern where poisoned docs show stronger alignment between backward and forward rankings.
+- It reduces PoisonedRAG attack success rate by up to 54% and improves task accuracy by up to 56% with under 1 second average latency.
+- The dual-signal framework (forward ranking for semantic relevance, backward ranking for ranking context consistency) overcomes the efficiency-robustness trade-off of prior defenses.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> BiRD: A Bidirectional Ranking Defense Mechanism for Retrieval Augmented Generation</li>
@@ -114,57 +112,56 @@
 <li>Abs: https://arxiv.org/abs/2605.20123</li>
 <li>HTML: https://arxiv.org/html/2605.20123v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.20123</li>
-<li><strong>Tags:</strong> rag-security, adversarial-defense, bidirectional-ranking, poisoning-attack, retrieval-augmented-generation</li>
+<li><strong>Tags:</strong> retrieval-augmented-generation, adversarial-defense, ranking-signal, poisoning-attack, efficient-defense</li>
 <li><strong>Domains:</strong> ai_safety, system_safety</li>
 <li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>BiRD introduces a novel bidirectional ranking defense that exploits ranking structure discrepancies between poisoned and benign documents, achieving strong robustness against RAG poisoning attacks with minimal latency overhead.</p>
+<p>BiRD introduces a novel bidirectional ranking defense that leverages ranking structure (not just semantics) to simultaneously achieve high robustness and low computational cost against poisoning attacks on RAG.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Retrieval-Augmented Generation (RAG) systems are increasingly vulnerable to adversarial poisoning attacks where malicious documents are injected into the retrieval corpus. Existing defenses either rely on expensive semantic analysis (e.g., LLM-based consistency checks) or voting mechanisms that are brittle under strong attacks. These methods focus solely on semantic content relevance, ignoring the structural information embedded in retrieval rankings.</p>
+<p>Retrieval-Augmented Generation (RAG) systems are vulnerable to adversarial poisoning attacks where malicious documents are injected into the retrieval corpus. Existing defenses either rely on expensive semantic analysis or voting mechanisms that degrade under strong attacks, and all neglect the ranking context that defines retrieval behavior.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>PoisonedRAG: a strong poisoning attack against RAG that injects crafted documents to manipulate retrieval results.</li>
-<li>Semantic consistency checks (e.g., using LLMs to verify answer-document alignment) — high computational cost.</li>
-<li>Voting-based defenses (e.g., multiple retrieval rounds) — limited robustness under high poisoning rates.</li>
-<li>Adversarial training and document sanitization — often require retraining or access to clean data.</li>
-<li>Ranking-based anomaly detection in information retrieval — prior work focuses on outlier detection but not on bidirectional ranking patterns.</li>
+<li>PoisonedRAG and similar poisoning attacks on RAG pipelines.</li>
+<li>Semantic-analysis-based defenses (e.g., perplexity filtering, entailment checks) that are computationally heavy.</li>
+<li>Voting-based defenses that aggregate multiple retrieval results but suffer under high poisoning rates.</li>
+<li>Prior work on adversarial robustness in information retrieval and ranking systems.</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Existing RAG defenses exclusively consider semantic content relevance, neglecting the retrieval context defined by ranking structures. This leaves them vulnerable to attacks that craft semantically plausible but ranking-manipulated documents. No prior work exploits the bidirectional relationship between query-to-document and document-to-query rankings for defense.</p>
+<p>Prior defenses focus exclusively on semantic content relevance, ignoring the ranking structure of retrieved documents. This leads to a fundamental trade-off between computational cost and robustness, especially under strong poisoning attacks where semantic signals become unreliable.</p>
 <h3>P — Proposal</h3>
-<p>BiRD is a bidirectional ranking defense that computes two signals: forward ranking (query-to-document relevance) and backward ranking (document-to-query consistency). It detects poisoned documents by measuring the alignment between these rankings — poisoned documents exhibit abnormally strong alignment. The method is efficient (no LLM calls beyond the standard RAG pipeline) and can be integrated as a lightweight filter.</p>
+<p>BiRD is a bidirectional ranking defense that computes both forward ranking (query-to-document relevance) and backward ranking (document-to-query relevance) for each retrieved document. It exploits the key discriminative pattern that poisoned documents exhibit significantly stronger alignment between their backward rankings and the query's forward ranking compared to benign documents, enabling efficient detection without heavy semantic analysis.</p>
+<figure class="article-figure"><img class="article-figure-img" src="figures/1157/fig_001.png" alt="Figure 1: Bidirectional Ranking Defense (BiRD) framework." width="397" height="397" style="max-width: min(397px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1: Bidirectional Ranking Defense (BiRD) framework.</span><span class="lang-zh">图1：双向排序防御（BiRD）框架。</span></figcaption></figure>
+<p>Stage 1 retrieves candidate documents, then BiRD computes forward and backward ranking scores, and finally filters out documents with high alignment between the two signals.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>BiRD reduces PoisonedRAG attack success rate by up to 54% (e.g., from 82% to 28% on HotpotQA with ANCE retriever) and improves task accuracy by up to 56% (e.g., from 38% to 94% on NQ with Contriever). Evaluated on HotpotQA, NQ, and TriviaQA with ANCE, Contriever, and DPR retrievers, and GPT-3.5, LLaMA-2, and Vicuna LLMs. Average additional latency is under 1 second.</p>
+<p>Across 3 datasets (including HotpotQA) with 3 retrievers (ANCE, Contriever) and 3 LLMs under 2 attack scenarios, BiRD reduces PoisonedRAG attack success rate by up to 54% and improves task accuracy by up to 56%, with average additional latency under 1 second.</p>
 <h3>Ablation</h3>
-<p>Removing the backward ranking signal reduces defense effectiveness by over 30% in attack success rate reduction, confirming the critical role of bidirectional alignment. The method is robust to poisoning rates up to 20% and maintains performance under different rank cutoffs (k=5,10,20).</p>
+<p>Ablation studies show that removing either the forward or backward ranking signal significantly degrades defense performance; the dual-signal framework is essential. For example, on HotpotQA-ANCE, using only forward ranking reduces attack success rate by only 20% compared to 54% with both signals.</p>
 <h3>Limitations</h3>
-<p>['BiRD assumes the attacker injects documents that exhibit strong backward-forward ranking alignment; a sophisticated attacker could potentially craft documents that evade this pattern.', "The method requires access to the retriever's ranking scores, which may not be available in black-box RAG systems.", 'Evaluation is limited to English datasets and three retrievers; generalization to other languages or dense retrievers is not tested.']</p>
+<p>["The method assumes access to the retriever's ranking scores, which may not be available in black-box settings.", 'The discriminative pattern may weaken under adaptive attacks that explicitly optimize backward ranking alignment.', 'Evaluation is limited to two retrievers and three LLMs; generalizability to other architectures is not fully explored.']</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Brings attention to ranking structure as a signal for adversarial detection, opening a new direction beyond semantic-only defenses.</li>
-<li>Practical for deployment: low latency, no retraining, compatible with existing RAG pipelines.</li>
-<li>Directly addresses a critical security vulnerability in RAG systems, which are increasingly used in production.</li>
-<li>The bidirectional ranking insight may generalize to other retrieval-based tasks (e.g., search, recommendation).</li>
+<li>Provides a practical, low-latency defense that can be integrated into existing RAG pipelines without retraining.</li>
+<li>Highlights the importance of ranking structure as a signal for adversarial detection, opening a new direction beyond semantic analysis.</li>
+<li>The up to 56% accuracy improvement shows that defense can also enhance benign performance, not just robustness.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Test BiRD against adaptive attacks that explicitly try to mimic benign ranking patterns.</li>
-<li>[ ] Extend to multilingual and cross-lingual RAG settings.</li>
-<li>[ ] Explore integration with other defense mechanisms (e.g., consistency checks) for layered security.</li>
-<li>[ ] Investigate theoretical guarantees on the discriminative power of bidirectional ranking alignment.</li>
-<li>[ ] Release an open-source implementation and benchmark for reproducibility.</li>
+<li>[ ] Test BiRD against adaptive attacks that explicitly craft poisoned documents to mimic benign backward-forward ranking alignment.</li>
+<li>[ ] Extend the approach to black-box retrievers where only document IDs or scores are available.</li>
+<li>[ ] Explore combining bidirectional ranking with lightweight semantic checks for even stronger defense.</li>
+<li>[ ] Apply the ranking alignment idea to other adversarial settings (e.g., search poisoning, recommendation systems).</li>
 </ul>
 <hr />
 <h2>7) Scoring</h2>
-<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p><figure class="article-figure"><img class="article-figure-img" src="figures/1157/fig_001.png" alt="Figure 1: Bidirectional Ranking Defense (BiRD) framework." width="397" height="397" style="max-width: min(397px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 1: Bidirectional Ranking Defense (BiRD) framework.</span><span class="lang-zh">图1：双向排序防御（BiRD）框架。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1157/fig_002.png" alt="Figure 2: Rank Position Poison Frequency Statistical Heatmaps." width="396" height="298" style="max-width: min(396px, 100%)" loading="lazy"><figcaption><span class="lang-en">Figure 2: Rank Position Poison Frequency Statistical Heatmaps.</span><span class="lang-zh">图2：排序位置投毒频率统计热力图。</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1157/fig_003.png" alt="(a) HotpotQA-ANCE" width="930" height="155" style="max-width: min(930px, 100%)" loading="lazy"><figcaption><span class="lang-en">(a) HotpotQA-ANCE</span><span class="lang-zh">(a) HotpotQA-ANCE</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1157/fig_004.png" alt="(a) HotpotQA-ANCE" width="361" height="270" style="max-width: min(361px, 100%)" loading="lazy"><figcaption><span class="lang-en">(a) HotpotQA-ANCE</span><span class="lang-zh">(a) HotpotQA-ANCE</span></figcaption></figure><figure class="article-figure"><img class="article-figure-img" src="figures/1157/fig_005.png" alt="(b) HotpotQA-Contriever" width="361" height="270" style="max-width: min(361px, 100%)" loading="lazy"><figcaption><span class="lang-en">(b) HotpotQA-Contriever</span><span class="lang-zh">(b) HotpotQA-Contriever</span></figcaption></figure>
+<p><strong>4/5</strong> = base 1 + quality 2 + observation 1</p>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>

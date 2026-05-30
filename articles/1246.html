@@ -68,8 +68,8 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For a system security researcher focused on kernel exploitation and privilege escalation, this work provides a practical methodology to determine whether a vulnerable driver is reachable without its intended hardware. It bridges the gap between static vulnerability discovery and dynamic exploitability assessment, particularly for BYOVD scenarios where hardware-gating is a key limiting factor. The analysis of device object creation patterns (unconditional vs. conditional) and PnP callbacks (AddDevice, IRP_MJ_PNP) offers a systematic way to evaluate attack surface without physical access, which is critical for assessing real-world exploitability of kernel driver CVEs.</p>
-        <p class="lang-zh">对于专注于内核利用和权限提升的系统安全研究人员而言，这项工作提供了一种实用的方法论，用于判断易受攻击的驱动程序在缺少其目标硬件时是否仍然可达。它弥合了静态漏洞发现与动态可利用性评估之间的差距，特别是在BYOVD场景中，硬件门控是一个关键限制因素。对设备对象创建模式（无条件 vs. 条件）和PnP回调（AddDevice、IRP_MJ_PNP）的分析提供了一种无需物理访问即可评估攻击面的系统方法，这对于评估内核驱动CVE的真实可利用性至关重要。</p>
+        <p class="lang-en">For a system security researcher focused on kernel exploitation and privilege escalation, this work provides a practical methodology to assess whether a driver vulnerability is reachable from user mode without physical hardware. It bridges the gap between static vulnerability discovery and dynamic exploitability assessment, particularly for BYOVD scenarios where attackers need to disable EDR components. The analysis of PnP callbacks and device object creation patterns offers concrete techniques for bypassing hardware-gating, which is critical for evaluating real-world exploitability of kernel driver CVEs.</p>
+        <p class="lang-zh">对于专注于内核利用和权限提升的系统安全研究员来说，这项工作提供了一种实用的方法论，用于评估在没有物理硬件的情况下，驱动程序漏洞是否可以从用户态到达。它弥合了静态漏洞发现与动态可利用性评估之间的差距，特别是在BYOVD场景中，攻击者需要禁用EDR组件。对PnP回调和设备对象创建模式的分析提供了绕过硬件门控的具体技术，这对于评估内核驱动程序CVE的真实可利用性至关重要。</p>
       </div>
       
 
@@ -80,11 +80,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>This article analyzes how Windows kernel-mode drivers can be interacted with from user mode without the required hardware, focusing on device object creation patterns and PnP architecture to assess exploitability for BYOVD attacks.</p></div>
+          <div class="lede"><p>This article analyzes how Windows kernel-mode driver vulnerabilities can be exploited without the intended hardware, focusing on device object reachability and PnP architecture bypasses for BYOVD attacks.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>本文分析了如何在缺少对应硬件的情况下从用户态与Windows内核模式驱动交互，重点研究了设备对象创建模式和PnP架构，以评估BYOVD攻击的可利用性。</p></div>
+          <div class="lede"><p>本文分析了如何在没有目标硬件的情况下利用Windows内核模式驱动漏洞，重点关注设备对象可达性和PnP架构绕过技术，用于BYOVD攻击。</p></div>
         </div>
 
         
@@ -92,50 +92,52 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>Many Windows kernel drivers require specific hardware to create device objects; without it, the driver may not be reachable from user mode.</li>
-<li>Two main criteria for BYOVD: exploit allows meaningful disruption (e.g., arbitrary memory read/write, code execution) and exploitability is independent of rare hardware conditions.</li>
-<li>Drivers with unconditional device creation (e.g., non-PnP drivers) can be deployed via <code>sc.exe</code> without hardware.</li>
-<li>Conditional creation often depends on registry keys or PnP callbacks (AddDevice, IRP_MJ_PNP), which are not triggered without the hardware.</li>
-<li>A race condition window exists when a device object is created and then deleted shortly after, potentially allowing transient interaction.</li>
-<li>The article provides a structured analysis of device object creation patterns to assess reachability of vulnerable code.</li>
+<li>Many Windows kernel drivers require specific hardware to create device objects, making vulnerabilities unreachable without it.</li>
+<li>The article categorizes drivers into unconditional creation (non-PnP) and conditional creation (PnP-dependent) based on device object creation patterns.</li>
+<li>PnP drivers rely on AddDevice and IRP_MJ_PNP handlers for initialization, which are not called on driver load without hardware.</li>
+<li>For BYOVD attacks, exploitability depends on whether the vulnerability can be triggered without hardware presence.</li>
+<li>The methodology involves analyzing driver code to identify hardware-gating logic and potential workarounds from userland.</li>
+<li>A race condition exists where device objects are briefly created then deleted, offering a narrow exploitation window.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>Prior BYOVD research (e.g., NDSS 2026 paper, Sophos blog) focused on exploitation techniques and real-world abuse but did not systematically address hardware-gating as a barrier to reachability. This article fills that gap by providing a taxonomy of device object creation patterns and practical methods to bypass hardware requirements, which is a novel contribution to the driver vulnerability assessment literature.</p>
+<p>Prior BYOVD research focused on cataloging vulnerable drivers and their exploitation techniques, but largely ignored the hardware-gating problem. This work systematically addresses the reachability question, providing a taxonomy of device object creation patterns and practical bypass methods. It extends the traditional BYOVD threat model by considering scenarios where the attacker cannot physically possess the target hardware.</p>
 <h2>Why It Matters</h2>
-<p>This work directly impacts kernel vulnerability research by enabling researchers to test exploitability of driver CVEs without needing the specific hardware, which is often unavailable. It also aids in prioritizing vulnerabilities for BYOVD weaponization by filtering out those that are hardware-gated. For defenders, it highlights that hardware-gating is not a reliable mitigation against driver exploitation, as many drivers can be triggered via software-only methods.</p>
+<p>This research is significant because it enables security researchers and defenders to accurately assess the real-world exploitability of kernel driver vulnerabilities. For attackers, it expands the pool of usable BYOVD drivers beyond those with hardware-independent vulnerabilities. For defenders, it highlights the need to evaluate driver attack surface even when hardware is absent, and informs mitigation strategies like driver blocklist policies and PnP configuration hardening.</p>
 <h2>Critical Take</h2>
-<p>The article is based on Windows 11 23H2; results may differ on other versions or with different driver architectures (e.g., WDF vs. legacy). The race condition window for transient device objects is mentioned but not deeply explored; its practical exploitability may be limited. The methodology assumes user-mode access to load drivers (administrator privileges), which is a prerequisite for BYOVD but not always present in real attacks.</p>
+<p>The article is well-grounded in Windows internals but lacks concrete CVE examples demonstrating successful exploitation without hardware. The race condition window for device object deletion is mentioned but not quantified. The methodology assumes attacker has user-mode code execution, which is already a significant foothold. The work does not address driver signing enforcement or HVCI (Hypervisor-protected Code Integrity) bypasses, which are practical barriers in modern Windows.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Follow-up research on race conditions in transient device object creation/deletion.</li>
-<li>Tooling that automates the assessment of driver reachability without hardware (e.g., scriptable PnP simulation).</li>
-<li>Microsoft's response: potential changes to driver loading policies or PnP manager behavior to mitigate software-only activation.</li>
-<li>Real-world BYOVD campaigns that leverage the techniques described (e.g., targeting security software drivers).</li>
+<li>Follow-up research applying this methodology to specific CVEs from loldrivers.io or MSRC.</li>
+<li>Development of automated tools to scan driver binaries for hardware-gating patterns and assess reachability.</li>
+<li>Microsoft's response: potential changes to PnP architecture or driver verification requirements.</li>
+<li>Real-world BYOVD campaigns exploiting hardware-gated drivers using these techniques.</li>
+<li>Community adoption of the proposed taxonomy for driver vulnerability classification.</li>
 </ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>许多Windows内核驱动程序需要特定硬件才能创建设备对象；缺少硬件时，驱动程序可能无法从用户态访问。</li>
-<li>BYOVD的两个主要标准：利用能够造成有意义的中断（如任意内存读写、代码执行），且可利用性不依赖于罕见的硬件条件。</li>
-<li>具有无条件设备创建的驱动程序（如非PnP驱动程序）可以通过<code>sc.exe</code>在无硬件情况下部署。</li>
-<li>条件创建通常依赖于注册表键或PnP回调（AddDevice、IRP_MJ_PNP），这些在没有硬件的情况下不会被触发。</li>
-<li>当设备对象被创建后很快被删除时，存在一个竞争窗口，可能允许短暂的交互。</li>
-<li>文章提供了设备对象创建模式的结构化分析，以评估易受攻击代码的可达性。</li>
+<li>许多Windows内核驱动程序需要特定硬件才能创建设备对象，导致没有硬件时漏洞无法到达。</li>
+<li>文章根据设备对象创建模式将驱动程序分为无条件创建（非PnP）和条件创建（PnP依赖）两类。</li>
+<li>PnP驱动程序依赖AddDevice和IRP_MJ_PNP处理程序进行初始化，这些在没有硬件的情况下不会在驱动加载时调用。</li>
+<li>对于BYOVD攻击，可利用性取决于是否能在没有硬件的情况下触发漏洞。</li>
+<li>方法论包括分析驱动程序代码以识别硬件门控逻辑和从用户态绕过的潜在方法。</li>
+<li>存在一个竞态条件，设备对象被短暂创建然后删除，提供了一个狭窄的利用窗口。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>先前的BYOVD研究（如NDSS 2026论文、Sophos博客）侧重于利用技术和实际滥用，但未系统性地解决硬件门控作为可达性障碍的问题。本文通过提供设备对象创建模式的分类学和绕过硬件要求的实用方法填补了这一空白，这是对驱动漏洞评估文献的新贡献。</p>
+<p>先前的BYOVD研究侧重于编录易受攻击的驱动程序及其利用技术，但很大程度上忽略了硬件门控问题。这项工作系统地解决了可达性问题，提供了设备对象创建模式的分类和实用的绕过方法。它通过考虑攻击者无法物理拥有目标硬件的场景，扩展了传统的BYOVD威胁模型。</p>
 <h2>重要性</h2>
-<p>这项工作直接影响内核漏洞研究，使研究人员无需特定硬件（通常不可用）即可测试驱动CVE的可利用性。它还有助于通过过滤掉硬件门控的漏洞来优先考虑BYOVD武器化的漏洞。对于防御者而言，它强调硬件门控并非对抗驱动利用的可靠缓解措施，因为许多驱动可以通过纯软件方法触发。</p>
+<p>这项研究意义重大，因为它使安全研究人员和防御者能够准确评估内核驱动程序漏洞的真实可利用性。对于攻击者来说，它扩展了可用的BYOVD驱动程序池，超越了那些与硬件无关的漏洞。对于防御者来说，它强调了即使在硬件缺失的情况下也需要评估驱动程序攻击面，并为缓解策略（如驱动程序黑名单策略和PnP配置加固）提供了信息。</p>
 <h2>批判性视角</h2>
-<p>文章基于Windows 11 23H2；在其他版本或不同驱动架构（如WDF vs. 传统）上结果可能不同。提到了瞬态设备对象的竞争窗口，但未深入探讨；其实际可利用性可能有限。该方法假设用户态可以加载驱动（管理员权限），这是BYOVD的前提，但在实际攻击中并不总是存在。</p>
+<p>文章基于Windows内部机制，但缺乏具体的CVE示例来证明在没有硬件的情况下成功利用。提到了设备对象删除的竞态条件窗口，但未量化。该方法假设攻击者已拥有用户态代码执行能力，这本身就是一个重要的立足点。该工作未涉及驱动程序签名强制或HVCI（虚拟机管理程序保护的代码完整性）绕过，这些是现代Windows中的实际障碍。</p>
 <h2>后续关注</h2>
 <ul>
-<li>关于瞬态设备对象创建/删除中竞争条件的后续研究。</li>
-<li>自动化评估无硬件驱动可达性的工具（如可脚本化的PnP模拟）。</li>
-<li>微软的回应：可能更改驱动加载策略或PnP管理器行为以缓解纯软件激活。</li>
-<li>利用所述技术的实际BYOVD活动（如针对安全软件驱动）。</li>
+<li>后续研究将此方法论应用于loldrivers.io或MSRC中的特定CVE。</li>
+<li>开发自动化工具扫描驱动程序二进制文件中的硬件门控模式并评估可达性。</li>
+<li>微软的回应：可能对PnP架构或驱动程序验证要求进行更改。</li>
+<li>利用这些技术利用硬件门控驱动程序的真实BYOVD攻击活动。</li>
+<li>社区采用提议的驱动程序漏洞分类法。</li>
 </ul>
         </div>
         

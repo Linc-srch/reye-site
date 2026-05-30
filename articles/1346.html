@@ -62,8 +62,16 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For the Digital Identity & Trust profile, this article directly validates the core research objective: lifecycle management and security architectures for Agentic AI systems using Non-Human Identities (NHI). The highlighted risks of unauthorized access and data leakage are precisely the problems that Zero Trust architectures, agent attestation, and granular access control (OAuth, Verifiable Credentials) are designed to solve. For the Harmony Security and SOC profiles, the article underscores the urgent need for industry intelligence on how leading firms (Google, OpenAI, Microsoft) are securing their agent ecosystems, and for developing dedicated threat detection and on-device security frameworks for autonomous agents. The article confirms that traditional perimeter-based security is obsolete, reinforcing the necessity of identity-centric, cryptographically verifiable, and continuously monitored security postures for agents.</p>
-        <p class="lang-zh">对于数字身份与信任（Digital Identity & Trust）研究方向，本文直接验证了其核心研究目标：利用非人类身份（NHI）的代理式AI系统的生命周期管理与安全架构。文中强调的未经授权访问和数据泄露风险，正是零信任架构、代理证明（Agent Attestation）以及细粒度访问控制（OAuth、可验证凭证）旨在解决的问题。对于Harmony Security和SOC研究方向，本文强调了追踪行业领先企业（如Google、OpenAI、Microsoft）如何保障其代理生态系统安全的紧迫性，以及为自主代理开发专用威胁检测和端侧安全框架的必要性。文章证实了传统的基于边界的安全模型已经过时，强化了以身份为中心、密码学可验证、持续监控的代理安全态势的必要性。</p>
+        <p class="lang-en">For Digital Identity & Trust: This article directly validates the core thesis of the NHI lifecycle management research. The highlighted risks of unauthorized access and data leakage are precisely the problems that Agent Attestation, granular Access Control, and Zero Trust architectures for Non-Human Identities are designed to solve. The inadequacy of traditional security measures underscores the urgent need for robust identity infrastructure (OAuth, OIDC, Verifiable Credentials) and automated PKI (ACME) for agent authentication and authorization.
+
+For Harmony Security: The article confirms that securing agentic AI is a top industry intelligence priority. The risks of adversarial manipulation and data leakage are key threat vectors that must be monitored and analyzed. This reinforces the need to track how leading organizations (Google, Microsoft, OpenAI) are evolving their security postures for LLM and agent ecosystems, particularly in on-device and endpoint contexts.
+
+For Security Operations Centre (SOC): The article highlights a critical gap in current SOC capabilities. Traditional security measures are not designed for autonomous agents, creating new attack surfaces. This necessitates the development of new threat detection, anomaly detection, and proactive threat hunting methodologies specifically for agent behavior, which aligns with the SOC's focus on AI for Security (AI4SEC) and advanced threat intelligence.</p>
+        <p class="lang-zh">对于数字身份与信任 (Digital Identity & Trust)：本文直接验证了非人类身份（NHI）生命周期管理研究的核心论点。所强调的未经授权访问和数据泄露风险，正是为应对代理证明（Agent Attestation）、细粒度访问控制（Access Control）以及针对非人类身份的零信任（Zero Trust）架构而设计要解决的问题。传统安全措施的不足，凸显了为代理身份验证与授权建立强大身份基础设施（OAuth、OIDC、可验证凭证）和自动化 PKI（ACME）的迫切需求。
+
+对于和谐安全 (Harmony Security)：本文证实了保护代理式 AI 安全是行业情报的首要任务。对抗性操纵和数据泄露的风险是需要监控和分析的关键威胁向量。这强化了追踪领先组织（Google、Microsoft、OpenAI）如何为其大语言模型（LLM）和代理生态系统（尤其是在端侧和终端环境中）演进其安全态势的必要性。
+
+对于安全运营中心 (Security Operations Centre, SOC)：本文指出了当前 SOC 能力中的一个关键缺口。传统安全措施并非为自主代理设计，从而创造了新的攻击面。这需要为代理行为专门开发新的威胁检测、异常检测和主动威胁追踪方法，这与 SOC 关注的人工智能安全（AI4SEC）和高级威胁情报的重点相一致。</p>
       </div>
       
 
@@ -78,7 +86,7 @@
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>本文指出安全问题是企业采用代理式AI（Agentic AI）的主要障碍，强调了未经授权的访问、数据泄露和对抗性操纵等风险，并认为传统安全措施不足以应对自主AI代理。</p></div>
+          <div class="lede"><p>本文指出安全问题是企业采用代理式 AI（Agentic AI）的主要障碍，强调了未经授权访问、数据泄露和对抗性操纵等风险，并认为传统安全措施不足以应对自主 AI 代理。</p></div>
         </div>
 
         
@@ -86,47 +94,53 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>Security is identified as the single biggest barrier to enterprise agentic AI adoption.</li>
-<li>Key risks include unauthorized access, data leakage, and adversarial manipulation of autonomous agents.</li>
-<li>Traditional security measures (e.g., perimeter-based defenses) are deemed inadequate for the dynamic, autonomous nature of AI agents.</li>
-<li>The article argues for a fundamental shift in security thinking to address agent-specific vulnerabilities.</li>
+<li>Security is identified as the single biggest challenge for enterprise adoption of agentic AI.</li>
+<li>Key risks include unauthorized access, data leakage, and adversarial manipulation.</li>
+<li>The article argues that traditional security measures are fundamentally inadequate for autonomous AI agents.</li>
+</ul>
+<figure class="article-figure"><img class="article-figure-img" src="figures/1346/fig_02.webp" alt="OpenClaw web page open on mobile device" width="1280" height="720" style="max-width: min(1280px, 100%)" loading="lazy"><figcaption><span class="lang-en">OpenClaw web page open on mobile device</span><span class="lang-zh">在移动设备上打开的 OpenClaw 网页</span></figcaption></figure>
+<ul>
+<li>The piece implies that existing security frameworks need to be re-architected to handle the dynamic, autonomous nature of AI agents.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>This article aligns with a growing consensus in the cybersecurity industry that agentic AI introduces novel attack surfaces beyond traditional AI/ML model vulnerabilities (e.g., prompt injection). It contrasts with earlier, more optimistic narratives that focused solely on agent capabilities without deeply addressing the security implications of granting autonomous systems persistent access to enterprise data and APIs. It echoes recent research from organizations like OWASP (e.g., Top 10 for LLM Applications) but specifically focuses on the enterprise deployment challenge.</p>
+<p>This article represents a shift from general AI security discussions (e.g., LLM prompt injection) to the specific operational security challenges of autonomous agents. It contrasts with earlier, more optimistic takes on agentic AI by centering security as a primary, unresolved barrier rather than a secondary concern. It also contrasts with traditional enterprise security, which is built around human users and static credentials, highlighting the need for a new paradigm focused on Non-Human Identities (NHI) and dynamic trust.</p>
 <h2>Why It Matters</h2>
-<p>This article is significant because it frames security not as an afterthought but as the foundational prerequisite for enterprise agentic AI. It signals that the market is moving from capability demonstration to secure deployment, creating immediate demand for the identity infrastructure, cryptographic provenance, and zero-trust architectures that the Digital Identity &amp; Trust profile researches. For SOC and Harmony Security profiles, it validates the need for new monitoring, detection, and response playbooks specifically for agent behaviors and agent-to-agent communications.</p>
+<p>This article matters because it validates the critical importance of the researcher's domains. For Digital Identity &amp; Trust, it confirms that identity and access management for agents is not a niche problem but a foundational requirement. For Harmony Security and SOC, it signals a new class of threats and a need for new detection and response capabilities. The article's framing of security as the 'biggest challenge' elevates the urgency for developing and deploying solutions in agent attestation, automated auditing, and Zero Trust architectures for NHIs.</p>
 <h2>Critical Take</h2>
-<p>The article is a high-level opinion piece that identifies the problem but does not provide specific technical solutions or case studies. It may overstate the novelty of the risks (e.g., unauthorized access is a classic security problem, though the agent context amplifies it). The claim that 'traditional security measures are inadequate' is broadly true but lacks nuance; many existing IAM and PKI principles can be adapted. The article does not address the significant engineering and cost challenges of implementing agent-specific security at scale.</p>
+<p>The article is a high-level opinion piece and lacks specific technical details or case studies. It does not propose concrete solutions or differentiate between various types of agentic AI architectures (e.g., single-agent vs. multi-agent systems). The claim that 'traditional security measures are inadequate' is a broad assertion that needs more granular analysis of which specific measures fail and why. The article may overstate the novelty of the risks, as many principles (e.g., least privilege, continuous monitoring) are well-established but need adaptation.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Follow-up publications from major cloud providers (AWS, Azure, Google Cloud) on their specific agent security frameworks.</li>
-<li>Announcements from identity providers (PingIdentity, Microsoft Entra ID) regarding NHI-specific features for agent lifecycle management.</li>
-<li>Emergence of new startups or open-source projects focused on agent attestation, agent auditing, and agent-to-agent security protocols.</li>
-<li>Updates to OWASP Top 10 for LLM Applications to include agent-specific risks like tool misuse and multi-step authorization failures.</li>
-</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1346/fig_02.webp" alt="OpenClaw web page open on mobile device" width="1280" height="720" style="max-width: min(1280px, 100%)" loading="lazy"><figcaption><span class="lang-en">OpenClaw web page open on mobile device</span><span class="lang-zh">在移动设备上打开的 OpenClaw 网页</span></figcaption></figure>
+<li>Concrete product announcements from major vendors (e.g., Microsoft, Google, PingIdentity) specifically addressing agent identity and access management.</li>
+<li>Emergence of new startups or open-source projects focused on NHI security, agent attestation, or automated agent auditing.</li>
+<li>Publication of industry standards or frameworks for agentic AI security (e.g., from OWASP, NIST, or the C2PA consortium).</li>
+<li>Case studies or incident reports detailing real-world security breaches involving autonomous AI agents.</li>
+</ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>安全问题被认定为企业采用代理式AI（Agentic AI）的最大障碍。</li>
-<li>关键风险包括未经授权的访问、数据泄露以及对自主代理的对抗性操纵。</li>
-<li>传统安全措施（如基于边界防御）被认为不足以应对AI代理的动态、自主特性。</li>
-<li>文章主张安全思维需要进行根本性转变，以解决代理特有的漏洞。</li>
+<li>安全问题被确定为企业采用代理式 AI（Agentic AI）的最大挑战。</li>
+<li>关键风险包括未经授权访问、数据泄露和对抗性操纵。</li>
+<li>文章认为，传统安全措施从根本上不足以应对自主 AI 代理。</li>
+</ul>
+<figure class="article-figure"><img class="article-figure-img" src="figures/1346/fig_02.webp" alt="OpenClaw web page open on mobile device" width="1280" height="720" style="max-width: min(1280px, 100%)" loading="lazy"><figcaption><span class="lang-en">OpenClaw web page open on mobile device</span><span class="lang-zh">在移动设备上打开的 OpenClaw 网页</span></figcaption></figure>
+<ul>
+<li>文章暗示，现有安全框架需要重新架构，以处理 AI 代理的动态、自主特性。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>本文与网络安全行业日益增长的共识一致，即代理式AI引入了超越传统AI/ML模型漏洞（如提示注入）的新型攻击面。它与早期更乐观的叙述形成对比，后者仅关注代理能力，而未深入探讨授予自主系统对企业数据和API的持久访问权限所带来的安全影响。它呼应了OWASP等组织的最新研究（例如LLM应用Top 10），但特别聚焦于企业部署的挑战。</p>
+<p>本文代表了从一般性 AI 安全讨论（例如，LLM 提示注入）向自主代理特定操作安全挑战的转变。它与早期对代理式 AI 更为乐观的看法形成对比，将安全问题定位为一个主要的、未解决的障碍，而非次要问题。它也与围绕人类用户和静态凭证构建的传统企业安全形成对比，凸显了对专注于非人类身份（NHI）和动态信任的新范式的需求。</p>
 <h2>重要性</h2>
-<p>本文的重要性在于，它将安全定位为企业代理式AI的基础前提，而非事后补救。这表明市场正从能力展示转向安全部署，从而为数字身份与信任研究方向所探索的身份基础设施、密码学来源和零信任架构创造了直接需求。对于SOC和Harmony Security研究方向，它验证了为代理行为和代理间通信制定全新监控、检测和响应预案的必要性。</p>
+<p>本文之所以重要，是因为它验证了研究人员所在领域的关键重要性。对于数字身份与信任 (Digital Identity &amp; Trust)，它确认了代理的身份和访问管理不是一个细分问题，而是一个基础性要求。对于和谐安全 (Harmony Security) 和安全运营中心 (SOC)，它预示着新一类威胁的出现，以及对新的检测和响应能力的需求。本文将安全定位为“最大挑战”，提升了在代理证明、自动化审计和针对非人类身份的零信任架构方面开发和部署解决方案的紧迫性。</p>
 <h2>批判性视角</h2>
-<p>本文是一篇高层次的评论文章，指出了问题，但未提供具体的技术解决方案或案例研究。它可能夸大了风险的新颖性（例如，未经授权的访问是一个经典的安全问题，尽管代理环境放大了它）。'传统安全措施不足'的说法大致正确，但缺乏细微差别；许多现有的IAM和PKI原则是可以被改造的。文章没有提及大规模实施代理专用安全所面临的重大工程和成本挑战。</p>
+<p>本文是一篇高层次的评论文章，缺乏具体的技术细节或案例研究。它没有提出具体的解决方案，也没有区分不同类型的代理式 AI 架构（例如，单代理与多代理系统）。“传统安全措施不足”的说法是一个宽泛的断言，需要更细粒度的分析，以确定哪些具体措施失败及其原因。文章可能夸大了风险的新颖性，因为许多原则（例如，最小权限、持续监控）已经成熟，但需要适应。</p>
 <h2>后续关注</h2>
 <ul>
-<li>关注主要云服务提供商（AWS、Azure、Google Cloud）关于其特定代理安全框架的后续发布。</li>
-<li>关注身份提供商（PingIdentity、Microsoft Entra ID）关于针对非人类身份（NHI）的代理生命周期管理功能的公告。</li>
-<li>关注专注于代理证明（Agent Attestation）、代理审计（Agent Auditing）和代理间安全协议的新兴初创公司或开源项目。</li>
-<li>关注OWASP LLM应用Top 10的更新，以纳入代理特有的风险，如工具滥用和多步骤授权失败。</li>
-</ul><figure class="article-figure"><img class="article-figure-img" src="figures/1346/fig_02.webp" alt="OpenClaw web page open on mobile device" width="1280" height="720" style="max-width: min(1280px, 100%)" loading="lazy"><figcaption><span class="lang-en">OpenClaw web page open on mobile device</span><span class="lang-zh">在移动设备上打开的 OpenClaw 网页</span></figcaption></figure>
+<li>主要供应商（例如，Microsoft、Google、PingIdentity）针对代理身份和访问管理的具体产品公告。</li>
+<li>专注于非人类身份（NHI）安全、代理证明或自动化代理审计的新兴初创公司或开源项目。</li>
+<li>针对代理式 AI 安全的行业标准或框架的发布（例如，来自 OWASP、NIST 或 C2PA 联盟）。</li>
+<li>详细描述涉及自主 AI 代理的真实世界安全漏洞的案例研究或事件报告。</li>
+</ul>
         </div>
         
 

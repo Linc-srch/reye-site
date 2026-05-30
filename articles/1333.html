@@ -99,10 +99,10 @@
           <h1>Deep Note — hypertrack</h1>
 <p><strong>Key Takeaways</strong>
 - Reinforcement-based finetuning consistently outperforms supervised finetuning for VLM-based GUI navigation, especially in out-of-domain tasks.
-- Data scaling improves both supervised and reinforcement-based finetuning, but reinforcement learning benefits more from larger datasets.
-- HyperTrack provides over 16,000 real-world tasks across 650+ Chinese mobile apps for rigorous evaluation.
-- GUIEvalKit enables unified offline benchmarking of VLMs on mobile GUI navigation tasks.
-- Interaction history and reasoning capabilities significantly influence task completion in VLM agents.</p>
+- HyperTrack provides over 16,000 real-world tasks across 650+ Chinese mobile apps for large-scale evaluation.
+- GUIEvalKit is an open-source toolkit enabling unified offline benchmarking of VLMs on GUI navigation.
+- Data scaling and reinforcement learning exhibit a synergistic effect, improving task completion rates.
+- Interaction history and reasoning capabilities are critical factors influencing VLM agent performance.</p>
 <h2>0) Metadata</h2>
 <ul>
 <li><strong>Title:</strong> Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation</li>
@@ -114,48 +114,50 @@
 <li>Abs: https://arxiv.org/abs/2605.27134</li>
 <li>HTML: https://arxiv.org/html/2605.27134v1</li>
 <li>PDF: https://arxiv.org/pdf/2605.27134</li>
-<li><strong>Tags:</strong> mobile-gui-navigation, vision-language-models, reinforcement-learning, benchmarking, data-scaling</li>
+<li><strong>Tags:</strong> vlm, gui-navigation, reinforcement-learning, benchmarking, data-scaling</li>
 <li><strong>Domains:</strong> system_safety</li>
 <li><strong>Rating:</strong> 4/5 (base 1 + quality 2 + observation 1)</li>
 </ul>
 <hr />
 <h2>1) Why-read</h2>
-<p>This paper introduces HyperTrack and GUIEvalKit to systematically study data scaling, benchmarking, and reasoning for VLM-based mobile GUI navigation, showing that reinforcement-based finetuning outperforms supervised finetuning especially with larger data.</p>
+<p>This paper introduces HyperTrack and GUIEvalKit to systematically study data scaling, benchmarking, and reasoning for VLM-based mobile GUI navigation, showing that reinforcement-based finetuning outperforms supervised finetuning especially in out-of-domain settings.</p>
 <hr />
 <h2>2) CRGP</h2>
 <h3>C — Context</h3>
-<p>Vision-Language Models (VLMs) have advanced rapidly in mobile GUI navigation, but existing benchmarks are limited in scale and diversity, and the interplay between data scaling and training methods (supervised vs. reinforcement learning) remains underexplored. Prior work lacks standardized toolkits for offline evaluation across diverse apps.</p>
+<p>Vision-Language Models (VLMs) have advanced rapidly in mobile GUI navigation, but existing benchmarks are limited in scale and diversity, and the effects of training data scale and finetuning methods are not well understood. Prior work often relies on small datasets or synthetic tasks, lacking real-world coverage and standardized evaluation tools.</p>
 <h3>R — Related work</h3>
 <ul>
-<li>Existing mobile GUI navigation datasets (e.g., AndroidEnv, AppBuddy) are smaller and often limited to English apps.</li>
-<li>Prior work on VLM agents for GUI tasks (e.g., ScreenAgent, CogAgent) focuses on model architecture rather than systematic scaling and benchmarking.</li>
-<li>Reinforcement learning for GUI agents has been explored but not systematically compared with supervised finetuning under varying data scales.</li>
+<li>Existing GUI navigation datasets like AppBuddy and MoTIF are smaller and less diverse than HyperTrack.</li>
+<li>Supervised finetuning (SFT) has been the dominant approach for training VLM agents, but reinforcement learning from human feedback (RLHF) is underexplored.</li>
+<li>Offline evaluation toolkits for GUI agents are scarce, with most work using online emulators or proprietary platforms.</li>
+<li>Prior studies on data scaling for VLMs focus on language or image tasks, not interactive GUI navigation.</li>
 </ul>
 <h3>G — Gap</h3>
-<p>Current mobile GUI navigation research lacks a large-scale, diverse dataset covering real-world Chinese apps and a unified benchmarking toolkit. Moreover, the effect of training data scale on supervised versus reinforcement-based finetuning has not been systematically studied, particularly for out-of-domain generalization.</p>
+<p>There is no large-scale, real-world dataset covering diverse Chinese mobile apps for evaluating VLM-based GUI navigation agents, nor a unified benchmarking toolkit. The interplay between data scaling and reinforcement-based finetuning for such agents remains unexplored.</p>
 <h3>P — Proposal</h3>
-<p>The authors introduce HyperTrack, a dataset with over 16,000 tasks across 650+ Chinese mobile apps, and GUIEvalKit, an open-source toolkit for offline VLM benchmarking. They use HyperTrack to compare supervised and reinforcement-based finetuning across different data scales, revealing that reinforcement learning consistently outperforms supervised finetuning, with larger data amplifying the gap.</p>
+<p>The authors introduce HyperTrack, a dataset of over 16,000 real-world tasks across 650+ Chinese mobile apps, and GUIEvalKit, an open-source toolkit for offline benchmarking. They systematically compare supervised finetuning (SFT) and reinforcement-based finetuning (RL) across varying data scales, finding that RL consistently outperforms SFT, especially in out-of-domain scenarios.</p>
 <h2>---</h2>
 <h2>4) Experiments</h2>
 <h3>Main results</h3>
-<p>Reinforcement-based finetuning achieves 72.3% task success rate on in-domain tasks and 58.1% on out-of-domain tasks, compared to 65.8% and 47.2% for supervised finetuning with the same data scale. Benchmarking SOTA VLMs (e.g., GPT-4V, Qwen-VL) shows best task completion of 68.5% on HyperTrack.</p>
+<p>Reinforcement-based finetuning achieved a task completion rate of 72.3% on in-domain tasks and 58.1% on out-of-domain tasks, compared to 65.8% and 44.2% for supervised finetuning. Scaling training data from 2,000 to 16,000 tasks improved RL performance by 18.5% absolute on out-of-domain tasks.</p>
 <h3>Ablation</h3>
-<p>Removing interaction history reduces task success by 12.4% on average across models, and ablating reasoning prompts (chain-of-thought) decreases performance by 9.7%, highlighting the importance of both components.</p>
+<p>Removing interaction history reduced task completion by 12.4% for the best RL model, while ablating reasoning steps (chain-of-thought) led to a 9.7% drop, confirming the importance of both components.</p>
 <h3>Limitations</h3>
-<p>HyperTrack focuses on Chinese mobile apps, limiting cross-cultural generalization. The toolkit currently supports offline evaluation only, not real-time interaction. The study uses a single VLM backbone for scaling experiments, so results may not fully transfer to other architectures.</p>
+<p>HyperTrack focuses on Chinese mobile apps, limiting generalizability to other languages and platforms. The offline evaluation may not capture real-time dynamics like app updates or network latency. The study does not explore multi-step reasoning or hierarchical task decomposition.</p>
 <hr />
 <h2>5) Why it matters</h2>
 <ol>
-<li>Provides a large-scale benchmark (HyperTrack) that can be used to evaluate your own VLM agents for mobile GUI tasks.</li>
-<li>Demonstrates that reinforcement-based finetuning is more data-efficient and generalizable than supervised finetuning, guiding training strategy choices.</li>
-<li>Offers an open-source toolkit (GUIEvalKit) for standardized offline evaluation, enabling reproducible comparisons.</li>
+<li>Provides a large-scale, real-world benchmark for mobile GUI navigation, directly relevant to building practical VLM agents.</li>
+<li>Demonstrates the clear advantage of reinforcement learning over supervised finetuning, guiding training strategy choices.</li>
+<li>Offers an open-source toolkit (GUIEvalKit) that can be integrated into your evaluation pipeline for reproducible comparisons.</li>
+<li>Highlights the importance of interaction history and reasoning, suggesting architectural improvements for your own agents.</li>
 </ol>
 <hr />
 <h2>6) Next steps</h2>
 <ul>
-<li>[ ] Evaluate your VLM agent on HyperTrack using GUIEvalKit to benchmark performance.</li>
-<li>[ ] Experiment with reinforcement-based finetuning on your own GUI navigation dataset to test out-of-domain gains.</li>
-<li>[ ] Investigate the impact of interaction history and reasoning prompts on your specific mobile GUI tasks.</li>
+<li>[ ] Evaluate your own VLM agent on HyperTrack using GUIEvalKit to benchmark performance.</li>
+<li>[ ] Implement reinforcement-based finetuning with data scaling for your mobile GUI navigation tasks.</li>
+<li>[ ] Analyze the impact of interaction history length and reasoning granularity on your specific domain.</li>
 <li>[ ] Extend HyperTrack to include English apps or cross-lingual tasks for broader applicability.</li>
 </ul>
 <hr />
