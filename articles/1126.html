@@ -72,8 +72,8 @@
       
       <div class="insight-callout">
         <span class="insight-label">启示 · Insight</span>
-        <p class="lang-en">For Digital Identity & Trust research, Nano Banana 2's integration of C2PA and SynthID directly supports cryptographic provenance and data authenticity. This model provides a practical testbed for verifying AI-generated content provenance, enabling researchers to evaluate C2PA-based attestation in real-world agentic workflows and assess its interoperability with existing identity infrastructure like OAuth and Verifiable Credentials.</p>
-        <p class="lang-zh">对于数字身份与信任研究，Nano Banana 2 集成 C2PA 和 SynthID 直接支持密码学来源与数据真实性。该模型为验证 AI 生成内容的来源提供了实际测试平台，使研究人员能够在真实的代理工作流中评估基于 C2PA 的证明，并评估其与现有身份基础设施（如 OAuth 和可验证凭证）的互操作性。</p>
+        <p class="lang-en">For Digital Identity & Trust research, Nano Banana 2's integration of C2PA (Coalition for Content Provenance and Authenticity) directly supports cryptographic provenance and data authenticity. This provides a concrete implementation of verifiable digital provenance for AI-generated images, which can be extended to agentic AI outputs. The use of SynthID for watermarking also aligns with agent attestation and automated auditing mechanisms, enabling non-human identities (NHI) to carry cryptographically verifiable provenance metadata. This strengthens zero-trust architectures for agentic AI by ensuring that every output can be traced and authenticated.</p>
+        <p class="lang-zh">对于数字身份与信任研究，Nano Banana 2 集成的 C2PA（内容来源和真实性联盟）直接支持密码学来源与数据真实性。这为 AI 生成的图像提供了可验证的数字来源的具体实现，并可扩展到代理式 AI 的输出。使用 SynthID 进行水印标记也与代理证明和自动化审计机制相一致，使非人类身份（NHI）能够携带可密码学验证的来源元数据。这通过确保每个输出都可追溯和验证，增强了代理式 AI 的零信任架构。</p>
       </div>
       
 
@@ -84,11 +84,11 @@
       <div class="article-body">
         <div class="lang-en">
           <span class="eyebrow">Summary</span>
-          <div class="lede"><p>Google DeepMind releases Nano Banana 2, a fast image generation model that combines Pro-level quality with Flash speed, integrating SynthID and C2PA for content provenance.</p></div>
+          <div class="lede"><p>Google DeepMind released Nano Banana 2, a fast image generation model that combines Pro-level quality with Flash speed, integrating SynthID and C2PA for content provenance.</p></div>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">摘要</span>
-          <div class="lede"><p>Google DeepMind 发布 Nano Banana 2，一款结合专业级质量与闪电速度的图像生成模型，集成了 SynthID 和 C2PA 以实现内容来源验证。</p></div>
+          <div class="lede"><p>Google DeepMind 发布了 Nano Banana 2，这是一款快速图像生成模型，结合了专业级质量与闪电般的速度，并集成了 SynthID 和 C2PA 以实现内容来源验证。</p></div>
         </div>
 
         
@@ -96,46 +96,48 @@
           <span class="eyebrow">Deep Note</span>
           <h2>Key Points</h2>
 <ul>
-<li>Google DeepMind launches Nano Banana 2, a fast image generation model.</li>
+<li>Google DeepMind released Nano Banana 2, a fast image generation model.</li>
 <li>Combines Pro-level quality with Flash speed.</li>
-<li>Integrates SynthID (digital watermarking) and C2PA (content provenance standard).</li>
-<li>Focus on content authenticity and provenance for AI-generated images.</li>
+<li>Integrates SynthID for watermarking and C2PA for content provenance.</li>
+<li>Focuses on fast generation while maintaining high quality and provenance.</li>
 </ul>
 <h2>Context &amp; Contrast</h2>
-<p>Prior image generation models (e.g., DALL-E, Stable Diffusion) lacked built-in provenance mechanisms. Nano Banana 2 is among the first to natively embed C2PA and SynthID, aligning with industry moves toward verifiable AI outputs. This contrasts with earlier approaches that relied on post-hoc detection or external watermarking.</p>
+<p>Prior image generation models often prioritized either speed or quality, with provenance features like C2PA being added as afterthoughts. Nano Banana 2 natively integrates C2PA and SynthID, making provenance a core design element rather than a bolt-on. This contrasts with earlier models that lacked built-in cryptographic provenance, requiring external tools for verification.</p>
 <h2>Why It Matters</h2>
-<p>This model demonstrates a concrete implementation of cryptographic provenance (C2PA) in a mainstream AI product, validating the feasibility of agent attestation and content authenticity at scale. It provides a reference architecture for integrating provenance into agentic AI systems, crucial for Zero Trust architectures and NHI lifecycle management.</p>
+<p>This model demonstrates that high-speed AI generation can coexist with robust cryptographic provenance, a critical requirement for trust in agentic AI systems. For NHI lifecycle management, it provides a practical example of how to embed verifiable credentials (via C2PA) into AI outputs, enabling automated auditing and attestation. This advances the field of digital trust by making provenance a default, not an option.</p>
 <h2>Critical Take</h2>
-<p>C2PA and SynthID effectiveness against sophisticated tampering or adversarial attacks remains unverified. The model's provenance claims rely on Google's proprietary infrastructure; interoperability with third-party identity providers (e.g., PingIdentity, Microsoft Entra ID) is not demonstrated. Hype around 'Pro capabilities' vs. actual quality needs independent benchmarking.</p>
+<p>While C2PA integration is promising, the actual security and tamper-resistance of the provenance metadata in practice remains unverified. SynthID watermarking may be vulnerable to removal or spoofing. The model's performance claims (Pro quality, Flash speed) need independent benchmarking. The announcement lacks details on how the provenance data is managed across the agent lifecycle, which is crucial for NHI architectures.</p>
 <h2>What to Watch</h2>
 <ul>
-<li>Independent security audits of C2PA/SynthID robustness.</li>
-<li>Integration with external identity providers (OAuth, OIDC) for agent authentication.</li>
-<li>Adoption of Nano Banana 2's provenance model by other AI platforms.</li>
-<li>Emergence of standards for agent attestation using C2PA in multi-agent systems.</li>
+<li>Independent security audits of C2PA and SynthID integration in Nano Banana 2.</li>
+<li>Adoption of C2PA by other AI generation models and platforms.</li>
+<li>Development of standards for agentic AI provenance (e.g., extending C2PA to agent actions).</li>
+<li>Any disclosed vulnerabilities or bypasses of SynthID watermarking.</li>
+<li>Integration of Nano Banana 2's provenance features with identity providers (IdP) like Microsoft Entra ID or PingIdentity.</li>
 </ul>
         </div>
         <div class="lang-zh">
           <span class="eyebrow">深度笔记</span>
           <h2>要点</h2>
 <ul>
-<li>Google DeepMind 发布 Nano Banana 2，一款快速图像生成模型。</li>
-<li>结合专业级质量与闪电速度。</li>
-<li>集成 SynthID（数字水印）和 C2PA（内容来源标准）。</li>
-<li>专注于 AI 生成图像的内容真实性与来源验证。</li>
+<li>Google DeepMind 发布了 Nano Banana 2，一款快速图像生成模型。</li>
+<li>结合了专业级质量与闪电般的速度。</li>
+<li>集成了 SynthID 用于水印标记，以及 C2PA 用于内容来源验证。</li>
+<li>专注于快速生成，同时保持高质量和来源可追溯。</li>
 </ul>
 <h2>背景与对比</h2>
-<p>先前的图像生成模型（如 DALL-E、Stable Diffusion）缺乏内置的来源验证机制。Nano Banana 2 是首批原生嵌入 C2PA 和 SynthID 的模型之一，与行业向可验证 AI 输出的趋势一致。这与早期依赖事后检测或外部水印的方法形成对比。</p>
+<p>先前的图像生成模型通常优先考虑速度或质量，而像 C2PA 这样的来源功能往往是事后添加的。Nano Banana 2 原生集成了 C2PA 和 SynthID，使来源成为核心设计元素而非附加功能。这与早期缺乏内置密码学来源、需要外部工具进行验证的模型形成对比。</p>
 <h2>重要性</h2>
-<p>该模型展示了在主流 AI 产品中密码学来源（C2PA）的具体实现，验证了大规模代理证明和内容真实性的可行性。它为将来源验证集成到代理式 AI 系统中提供了参考架构，对零信任架构和非人类身份生命周期管理至关重要。</p>
+<p>该模型表明，高速 AI 生成可以与强大的密码学来源共存，这是代理式 AI 系统信任的关键要求。对于 NHI 生命周期管理，它提供了一个实际示例，说明如何将可验证凭证（通过 C2PA）嵌入 AI 输出中，从而实现自动化审计和证明。这通过使来源成为默认而非选项，推动了数字信任领域的发展。</p>
 <h2>批判性视角</h2>
-<p>C2PA 和 SynthID 针对复杂篡改或对抗性攻击的有效性尚未得到验证。该模型的来源声明依赖于 Google 的专有基础设施；与第三方身份提供商（如 PingIdentity、Microsoft Entra ID）的互操作性尚未展示。关于“专业级能力”与实际质量的宣传需要独立基准测试。</p>
+<p>虽然 C2PA 集成前景广阔，但实际中来源元数据的安全性和防篡改性仍未得到验证。SynthID 水印可能容易被移除或伪造。该模型的性能声明（专业级质量、闪电速度）需要独立基准测试。公告缺乏关于如何在代理生命周期中管理来源数据的细节，这对 NHI 架构至关重要。</p>
 <h2>后续关注</h2>
 <ul>
-<li>C2PA/SynthID 鲁棒性的独立安全审计。</li>
-<li>与外部身份提供商（OAuth、OIDC）的集成，用于代理身份验证。</li>
-<li>其他 AI 平台对 Nano Banana 2 来源模型的采用。</li>
-<li>在多代理系统中使用 C2PA 进行代理证明的标准出现。</li>
+<li>对 Nano Banana 2 中 C2PA 和 SynthID 集成的独立安全审计。</li>
+<li>其他 AI 生成模型和平台对 C2PA 的采用情况。</li>
+<li>代理式 AI 来源标准的发展（例如，将 C2PA 扩展到代理行为）。</li>
+<li>任何已披露的 SynthID 水印漏洞或绕过方法。</li>
+<li>Nano Banana 2 的来源功能与身份提供商（如 Microsoft Entra ID 或 PingIdentity）的集成。</li>
 </ul>
         </div>
         
