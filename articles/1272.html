@@ -93,6 +93,55 @@
         </div>
 
         
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>Malicious Android apps disguise as legitimate tools or games.</li>
+<li>They exploit carrier billing (direct carrier billing) to charge users without consent.</li>
+<li>Techniques include SMS interception and hidden WebViews to authorize transactions.</li>
+<li>Primarily targets regions where carrier billing is common (e.g., developing markets).</li>
+<li>Financial loss and privacy risks for users.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>This attack is a variation of traditional premium SMS fraud, now adapted to carrier billing APIs. Unlike previous malware that relied on rooting or accessibility service abuse, this approach leverages legitimate Android APIs (e.g., SmsManager, WebView) without requiring elevated privileges, making it harder for existing kernel-level protections to detect.</p>
+<h2>Why It Matters</h2>
+<p>Highlights a systemic weakness in Android's permission model where carrier billing APIs are not adequately protected against silent abuse. It underscores the need for OS-level changes, such as requiring explicit user confirmation for each carrier billing transaction, and improved sandboxing of telephony-related services.</p>
+<h2>Critical Take</h2>
+<p>The article lacks technical depth on specific CVE identifiers, exploit code, or carrier-side mitigation details. The scale of the fraud and the exact number of affected apps remain unverified. It may overstate the novelty, as similar techniques have been used in SMS fraud for years.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Publication of specific malicious APK samples and their analysis.</li>
+<li>Carrier-side changes to billing APIs (e.g., mandatory OTP confirmation).</li>
+<li>Android OS updates that restrict WebView or SMS permissions for background apps.</li>
+<li>Research on detecting hidden WebView-based billing abuse.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>恶意Android应用伪装成合法工具或游戏。</li>
+<li>利用运营商代扣（直接运营商计费）在未经用户同意的情况下收费。</li>
+<li>技术手段包括拦截短信和使用隐藏WebView授权交易。</li>
+<li>主要针对运营商代扣普及的地区（如发展中市场）。</li>
+<li>用户面临经济损失和隐私风险。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>此攻击是传统高级短信欺诈的变种，现已适应运营商代扣API。与以往依赖Root或滥用无障碍服务的恶意软件不同，此方法利用合法的Android API（如SmsManager、WebView）且无需提升权限，使得现有内核级保护更难检测。</p>
+<h2>重要性</h2>
+<p>凸显了Android权限模型中的系统性弱点——运营商代扣API未得到充分保护以防止静默滥用。这强调了操作系统层面变革的必要性，例如要求每次运营商代扣交易都需用户明确确认，并改进电话相关服务的沙箱化。</p>
+<h2>批判性视角</h2>
+<p>文章缺乏具体CVE编号、利用代码或运营商侧缓解细节的技术深度。欺诈规模及受影响应用的具体数量尚未核实。可能夸大了新颖性，因为类似技术已在短信欺诈中使用多年。</p>
+<h2>后续关注</h2>
+<ul>
+<li>具体恶意APK样本及其分析的发布。</li>
+<li>运营商对代扣API的变更（如强制OTP确认）。</li>
+<li>Android系统更新中限制后台应用WebView或短信权限的举措。</li>
+<li>关于检测隐藏WebView代扣滥用的研究。</li>
+</ul>
+        </div>
+        
 
         
       </div>

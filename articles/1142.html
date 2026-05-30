@@ -93,6 +93,55 @@
         </div>
 
         
+        <div class="lang-en">
+          <span class="eyebrow">Deep Note</span>
+          <h2>Key Points</h2>
+<ul>
+<li>Two employee devices were compromised in the TanStack npm supply chain attack.</li>
+<li>Limited credential exfiltration from internal source code repositories occurred.</li>
+<li>No evidence of user data, production system, or intellectual property compromise.</li>
+<li>OpenAI is rotating code-signing certificates; macOS users must update apps by June 12, 2026.</li>
+<li>Additional security controls implemented; coordination with platform providers to prevent unauthorized certificate use.</li>
+</ul>
+<h2>Context &amp; Contrast</h2>
+<p>This incident is part of the broader Mini Shai-Hulud supply chain attack, which targets npm packages. Unlike many supply chain attacks that inject malicious code directly into packages, this one focused on credential theft from internal repositories, indicating a more targeted espionage or lateral movement phase. The response (certificate rotation) is a standard post-compromise step, but the fact that it took OpenAI to disclose suggests the attack may have been detected internally rather than by the open-source community.</p>
+<h2>Why It Matters</h2>
+<p>This incident demonstrates that even organizations with mature security programs are vulnerable to supply chain attacks via compromised developer endpoints. The theft of code-signing certificates could enable future malware distribution if not properly revoked. It reinforces the need for hardware-backed key storage, strict endpoint isolation, and continuous monitoring of credential usage in software supply chains.</p>
+<h2>Critical Take</h2>
+<p>The disclosure lacks technical details about the initial compromise vector (e.g., phishing, malware, or zero-day). The claim of 'limited' credential exfiltration is vague and unverifiable. The effectiveness of the additional security controls is not specified. The incident may be more severe than publicly stated, as credential theft from source code repositories can enable deeper lateral movement.</p>
+<h2>What to Watch</h2>
+<ul>
+<li>Any follow-up disclosures from OpenAI or TanStack about the root cause of the device compromise.</li>
+<li>Reports of unauthorized code-signing certificate usage in the wild.</li>
+<li>Adoption of hardware security keys (e.g., FIDO2) for developer credential management.</li>
+<li>Increased scrutiny of npm package maintainer security practices.</li>
+</ul>
+        </div>
+        <div class="lang-zh">
+          <span class="eyebrow">深度笔记</span>
+          <h2>要点</h2>
+<ul>
+<li>两名员工设备在TanStack npm供应链攻击中被入侵。</li>
+<li>内部源代码仓库的凭证被有限窃取。</li>
+<li>没有用户数据、生成系统或知识产权受损的证据。</li>
+<li>OpenAI正在轮换代码签名证书；macOS用户需在2026年6月12日前更新应用。</li>
+<li>已实施额外安全控制；与平台提供商协调以防止未经授权的证书使用。</li>
+</ul>
+<h2>背景与对比</h2>
+<p>此事件是更广泛的Mini Shai-Hulud供应链攻击的一部分，该攻击针对npm包。与许多直接向包中注入恶意代码的供应链攻击不同，此次攻击专注于从内部仓库窃取凭证，表明这是一个更具针对性的间谍或横向移动阶段。响应措施（证书轮换）是标准的事后步骤，但OpenAI主动披露的事实表明攻击可能是内部检测到的，而非开源社区发现。</p>
+<h2>重要性</h2>
+<p>此事件表明，即使拥有成熟安全程序的组织也容易通过受损的开发者端点遭受供应链攻击。如果代码签名证书未正确撤销，其被盗可能使未来的恶意软件分发成为可能。它强化了对硬件支持的密钥存储、严格的端点隔离以及软件供应链中凭证使用持续监控的需求。</p>
+<h2>批判性视角</h2>
+<p>披露内容缺乏关于初始入侵向量（例如钓鱼、恶意软件或零日漏洞）的技术细节。关于凭证被“有限”窃取的说法模糊且无法验证。额外安全控制的有效性未具体说明。该事件可能比公开陈述的更严重，因为从源代码仓库窃取凭证可能实现更深入的横向移动。</p>
+<h2>后续关注</h2>
+<ul>
+<li>OpenAI或TanStack关于设备入侵根本原因的任何后续披露。</li>
+<li>关于未经授权使用代码签名证书的野外报告。</li>
+<li>开发者凭证管理中硬件安全密钥（例如FIDO2）的采用情况。</li>
+<li>对npm包维护者安全实践的审查增加。</li>
+</ul>
+        </div>
+        
 
         
       </div>
